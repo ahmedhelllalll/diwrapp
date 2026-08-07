@@ -45,169 +45,38 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
   const current = languages.find((l) => l.code === currentLang) || languages[0];
 
   return (
-    <>
-      <style>{`
-        .lang-toggle-btn {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          padding: 7px 12px 7px 8px;
-          background: #ffffff;
-          border: 1.5px solid #e8eaed;
-          border-radius: 14px;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-          cursor: pointer;
-          transition: all 0.2s ease;
-          font-family: var(--font-jakarta, sans-serif);
-        }
-        .lang-toggle-btn:hover {
-          background: #f8f9fb;
-          border-color: #d1d5db;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 6px 20px rgba(0,0,0,0.05);
-          transform: translateY(-1px);
-        }
-        .lang-toggle-btn:active {
-          transform: translateY(0);
-          box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-        }
-        .lang-flag-img {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 1.5px solid #e8eaed;
-          background: #f0f0f0;
-        }
-        .lang-btn-code {
-          font-size: 13px;
-          font-weight: 700;
-          color: #111827;
-          letter-spacing: 0.02em;
-          line-height: 1;
-        }
-        .lang-chevron {
-          font-size: 9px;
-          color: #9ca3af;
-          margin-left: 2px;
-          transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .lang-chevron.open {
-          transform: rotate(180deg);
-        }
-        .lang-dropdown {
-          position: absolute;
-          top: calc(100% + 8px);
-          inset-inline-end: 0;
-          width: 196px;
-          background: #ffffff;
-          border: 1.5px solid #f0f0f2;
-          border-radius: 18px;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.06);
-          padding: 6px;
-          transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-          transform-origin: top right;
-          z-index: 100;
-        }
-        .lang-dropdown.closed {
-          opacity: 0;
-          transform: scale(0.92) translateY(-8px);
-          pointer-events: none;
-        }
-        .lang-dropdown.open {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-          pointer-events: all;
-        }
-        .lang-dropdown-header {
-          font-size: 10px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.07em;
-          color: #9ca3af;
-          padding: 6px 10px 4px;
-        }
-        .lang-option {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 10px 10px;
-          border-radius: 12px;
-          cursor: pointer;
-          transition: background 0.15s ease;
-          border: 1.5px solid transparent;
-          width: 100%;
-          text-align: start;
-          background: transparent;
-          font-family: var(--font-jakarta, sans-serif);
-        }
-        .lang-option:hover {
-          background: #f8f9fb;
-        }
-        .lang-option.active {
-          background: #f4f5f7;
-          border-color: #e8eaed;
-        }
-        .lang-option-flag {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 1.5px solid #e8eaed;
-          background: #f0f0f0;
-          flex-shrink: 0;
-        }
-        .lang-option-info {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          gap: 1px;
-        }
-        .lang-option-name {
-          font-size: 13.5px;
-          font-weight: 700;
-          color: #111827;
-          line-height: 1;
-        }
-        .lang-option-native {
-          font-size: 11.5px;
-          font-weight: 500;
-          color: #9ca3af;
-          line-height: 1;
-        }
-        .lang-active-dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background: #22c55e;
-          flex-shrink: 0;
-          box-shadow: 0 0 0 2.5px rgba(34,197,94,0.15);
-        }
-      `}</style>
+    <div className="relative z-50" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="h-11 px-3.5 flex items-center gap-2.5 rounded-xl border border-[#e2e8f0] dark:border-zinc-800 bg-transparent text-[#111827] dark:text-zinc-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:bg-[#f8fafc] dark:hover:bg-zinc-800/80 active:scale-[0.98] active:translate-y-0"
+        aria-label="Toggle Language"
+      >
+        <img src={current.flagUrl} alt={current.name} className="w-[18px] h-[18px] rounded-full object-cover border border-[#e2e8f0] dark:border-zinc-700 bg-[#f0f0f0] dark:bg-zinc-800" />
+        <span className="text-[13px] font-bold tracking-wide">{current.code.toUpperCase()}</span>
+        <i className={`fa-solid fa-chevron-down text-[9px] text-[#9ca3af] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
 
-      <div style={{ position: 'absolute', top: '20px', insetInlineEnd: '20px', zIndex: 50 }} ref={dropdownRef}>
-        <button className="lang-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-          <img src={current.flagUrl} alt={current.name} className="lang-flag-img" />
-          <span className="lang-btn-code">{current.code.toUpperCase()}</span>
-          <i className={`fa-solid fa-chevron-down lang-chevron ${isOpen ? 'open' : ''}`}></i>
-        </button>
-
-        <div className={`lang-dropdown ${isOpen ? 'open' : 'closed'}`}>
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => switchLanguage(lang.code)}
-              className={`lang-option ${currentLang === lang.code ? 'active' : ''}`}
-            >
-              <img src={lang.flagUrl} alt={lang.name} className="lang-option-flag" />
-              <div className="lang-option-info">
-                <span className="lang-option-name">{lang.native}</span>
-                <span className="lang-option-native">{lang.name}</span>
-              </div>
-              {currentLang === lang.code && <div className="lang-active-dot" />}
-            </button>
-          ))}
-        </div>
+      {/* Dropdown Menu - Minimal Design */}
+      <div 
+        className={`absolute top-[calc(100%+8px)] ltr:right-0 rtl:left-0 min-w-[140px] bg-white dark:bg-[#0f172a] border border-[#e2e8f0] dark:border-zinc-800 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] p-1.5 transition-all duration-200 origin-top-right ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
+      >
+        {languages.map((lang) => (
+          <button
+            key={lang.code}
+            onClick={() => switchLanguage(lang.code)}
+            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-[10px] transition-colors ${currentLang === lang.code ? 'bg-[#f8fafc] dark:bg-zinc-800/60 text-[#111827] dark:text-white' : 'text-[#64748b] dark:text-zinc-400 hover:bg-[#f8fafc] dark:hover:bg-zinc-800/40 hover:text-[#111827] dark:hover:text-zinc-200'}`}
+          >
+            <div className="flex items-center gap-2.5">
+              <img src={lang.flagUrl} alt={lang.name} className="w-[16px] h-[16px] rounded-full object-cover shrink-0" />
+              <span className={`text-[13px] leading-none ${currentLang === lang.code ? 'font-semibold' : 'font-medium'}`}>{lang.native}</span>
+            </div>
+            
+            {currentLang === lang.code && (
+              <i className="fa-solid fa-check text-[11px] text-[#0f172a] dark:text-white shrink-0 ml-3" />
+            )}
+          </button>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

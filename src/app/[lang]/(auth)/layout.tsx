@@ -1,4 +1,4 @@
-import './auth.css';
+
 
 export default function AuthLayout({
   children,
@@ -6,8 +6,8 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="auth-root dark:bg-black transition-colors duration-300">
+    <>
       {children}
-    </div>
+    </>
   );
 }
