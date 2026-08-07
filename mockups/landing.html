@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Di-wrapp - Largest Media Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    header {
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 100;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background-color: #0F172A;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-logo-sm {
+      display: flex;
+      align-items: flex-end;
+      gap: 2.5px;
+      height: 14px;
+    }
+
+    .custom-logo-sm span {
+      background-color: #ffffff;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .custom-logo-sm span:nth-child(1) { width: 3.5px; height: 14px; transform: skewX(-15deg); }
+    .custom-logo-sm span:nth-child(2) { width: 3.5px; height: 11px; transform: skewX(-15deg); }
+    .custom-logo-sm span:nth-child(3) { width: 3.5px; height: 8px; transform: skewX(-15deg); }
+    .custom-logo-sm span:nth-child(4) { width: 3px; height: 3px; border-radius: 50%; margin-bottom: 1px; }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 19px;
+      color: #0F172A;
+      display: inline-flex;
+      align-items: flex-start;
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      font-size: 8px;
+      margin-left: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #0F172A;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle {
+      width: 58px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #0F172A;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      background-color: #F8FAFC;
+    }
+
+    .btn-sign-in {
+      background-color: #111827;
+      color: #ffffff;
+      padding: 10px 24px;
+      height: 42px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lang-switch {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 30px 20px 0 20px;
+      text-align: center;
+    }
+
+    .grid-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+      background-size: 70px 70px;
+      z-index: 0;
+      mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
+      -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      border: 1px solid #E2E8F0;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      line-height: 1.12;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #64748B;
+      font-weight: 500;
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+
+    .btn-discover {
+      background-color: #1665FF;
+      color: #ffffff;
+      padding: 13px 32px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px -5px rgba(22, 101, 255, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .btn-discover:hover {
+      background-color: #0052E0;
+      transform: translateY(-2px);
+    }
+
+    /* Showcase Showcase */
+    .showcase-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: 560px;
+      margin: 30px auto 0 auto;
+      z-index: 5;
+    }
+
+    .tablet-mockup {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -40%);
+      width: 860px;
+      z-index: 10;
+      filter: drop-shadow(0 25px 45px rgba(15, 23, 42, 0.15));
+    }
+
+    .float-asset {
+      position: absolute;
+    }
+
+    .asset-calendar { top: 5%; left: 0%; width: 360px; z-index: 15; }
+    .asset-add-new { top: -6%; right: 15%; width: 240px; z-index: 15; }
+    .asset-campaign { top: 8%; right: -2%; width: 380px; z-index: 12; }
+
+    /* Works Section */
+    .works-section {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1180px;
+      margin: 90px auto 60px auto;
+      padding: 0 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .badge-user-guide {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 6px;
+      background-color: #F1F5F9;
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748B;
+      margin-bottom: 16px;
+    }
+
+    .works-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .works-subtitle {
+      font-size: 14.5px;
+      color: #64748B;
+      font-weight: 500;
+      max-width: 520px;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .works-toggle-container {
+      display: inline-flex;
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 3px;
+      margin-bottom: 48px;
+    }
+
+    .toggle-btn {
+      padding: 8px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: #64748B;
+    }
+
+    .toggle-btn.active {
+      background-color: #ffffff;
+      color: #0F172A;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .works-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin-bottom: 60px;
+    }
+
+    .work-card {
+      background-color: #ffffff;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: left;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .works-image-showcase {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .works-image-showcase img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========================================================
+       PIONEERING ACCESSIBILITY SECTION (FIGMA MATCHING PERFECT)
+       ======================================================== */
+    .pioneering-section {
+      width: 100%;
+      max-width: 1280px;
+      margin: 80px auto 120px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.25fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Left Text Side */
+    .pioneering-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .badge-subtle {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background-color: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .pioneering-title {
+      font-size: 38px;
+      line-height: 1.18;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .pioneering-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #64748B;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .feature-list li .check-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #1665FF;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .pioneering-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-outline {
+      padding: 11px 24px;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      background-color: #ffffff;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: #F8FAFC;
+      border-color: #CBD5E1;
+    }
+
+    .btn-primary-blue {
+      padding: 11px 24px;
+      border-radius: 10px;
+      background-color: #1665FF;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(22, 101, 255, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-primary-blue:hover {
+      background-color: #0052E0;
+    }
+
+    /* Right Side: Map & Figma Card Showcase Wrapper */
+    .pioneering-right {
+      position: relative;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 24px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* World Map Dotted Background Overlay */
+    .world-map-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 280px;
+      pointer-events: none;
+      background-image: radial-gradient(#94A3B8 1.3px, transparent 1.3px);
+      background-size: 18px 18px;
+      opacity: 0.35;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Map Region Tags (Blue Dots + Pill Label) */
+    .map-tag {
+      position: absolute;
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0F172A;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #E2E8F0;
+      z-index: 2;
+    }
+
+    .map-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #1665FF;
+      box-shadow: 0 0 0 3px rgba(22, 101, 255, 0.2);
+    }
+
+    .tag-us { top: 12%; left: 32%; }
+    .tag-europe { top: 6%; right: 40%; }
+    .tag-africa { top: 32%; right: 44%; }
+    .tag-mena { top: 36%; right: 35%; }
+    .tag-apac { top: 16%; right: 16%; }
+
+    /* Cards Grid System matching Figma */
+    .figma-cards-wrapper {
+      position: relative;
+      z-index: 5;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 24px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 80px; /* Space for the map tags */
+    }
+
+    .cards-top-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.25fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    /* Calendar UI Card */
+    .ui-card-calendar {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ui-card-calendar img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Developer Image & Status Card */
+    .ui-card-developer {
+      position: relative;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      min-height: 180px;
+    }
+
+    .ui-card-developer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dev-status-pill {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      padding: 8px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dev-status-pill .dot-active {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10B981;
+      flex-shrink: 0;
+    }
+
+    .dev-status-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dev-status-text h5 {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.1;
+    }
+
+    .dev-status-text span {
+      font-size: 8.5px;
+      color: #64748B;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* Kingdom Tower Listing Card */
+    .ui-card-listing {
+      position: relative;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .listing-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 110px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .listing-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Floating Overlay Tag on Kingdom Tower */
+    .listing-overlay-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      border-radius: 8px;
+      padding: 4px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: right;
+    }
+
+    .listing-overlay-badge span {
+      display: block;
+      font-size: 7px;
+      color: #64748B;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .listing-overlay-badge strong {
+      font-size: 9px;
+      color: #0F172A;
+      font-weight: 800;
+    }
+
+    .listing-overlay-badge .growth {
+      color: #10B981;
+      font-size: 8px;
+      margin-left: 2px;
+    }
+
+    .listing-details h4 {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .listing-details p {
+      font-size: 9px;
+      color: #64748B;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .listing-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .price-text {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .price-text span {
+      font-size: 8px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .rotana-tag {
+      font-size: 8px;
+      font-weight: 700;
+      color: #475569;
+      background: #F1F5F9;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .btn-book-channel {
+      width: 100%;
+      background-color: #0F172A;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-book-channel i {
+      font-size: 9px;
+    }
+
+    /* Productivity Banner (Bottom Card) */
+    .productivity-banner {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+      border: 1px solid #BFDBFE;
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow: hidden;
+    }
+
+    .productivity-banner .five-x {
+      font-size: 30px;
+      font-weight: 800;
+      color: #1665FF;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .productivity-banner .banner-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1E293B;
+      line-height: 1.4;
+      z-index: 2;
+    }
+
+    /* Watermark Lightning Icon on Bottom Banner */
+    .banner-watermark {
+      position: absolute;
+      right: 12px;
+      bottom: -10px;
+      font-size: 64px;
+      font-weight: 900;
+      color: rgba(22, 101, 255, 0.12);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Responsive Adaptations */
+    @media (max-width: 1024px) {
+      nav { display: none; }
+      .hero-title { font-size: 42px; }
+      .showcase-container { height: 420px; }
+      .tablet-mockup { width: 90%; }
+      .asset-calendar { width: 260px; left: -2%; }
+      .asset-campaign { width: 280px; right: -4%; }
+      .asset-add-new { width: 180px; }
+      .works-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pioneering-section { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title { font-size: 32px; }
+      .asset-calendar, .asset-campaign { display: none; }
+      .works-title, .pioneering-title { font-size: 28px; }
+      .cards-top-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <a href="#" class="brand-logo">
+      <div class="logo-icon">
+        <div class="custom-logo-sm">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="brand-name">
+        Di-wrapp <span>SD</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#">About us</a>
+      <a href="#">Advertise</a>
+      <a href="#">Blog</a>
+      <a href="#">Join us</a>
+      <a href="#">Contact us</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fa-regular fa-moon"></i>
+      </button>
+      <a href="#" class="btn-sign-in">Sign In</a>
+      <a href="#" class="lang-switch">عربي</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="grid-bg"></div>
+
+    <div class="hero-content">
+      <div class="badge">
+        <i class="fa-regular fa-star" style="font-size: 11px;"></i>
+        Streamline Your Presence, Amplify Your Reach
+      </div>
+
+      <h1 class="hero-title">
+        Welcome to the<br>largest media network
+      </h1>
+
+      <p class="hero-subtitle">
+        Where at Di-Wrapp, we strive to create a memorable experience contributed by a smarter solution for your digital interface.
+      </p>
+
+      <a href="#" class="btn-discover">Discover More</a>
+    </div>
+
+    <!-- Graphics Showcase Container -->
+    <div class="showcase-container">
+      <img src="27efe9fcb01b8c72255177a826e16ee90fe7c741.png" alt="Calendar and Credit Card 3D" class="float-asset asset-calendar">
+      <img src="1643639e611d77ddaaedaa6dbabcb97a23337176.png" alt="Add New Glass" class="float-asset asset-add-new">
+      <img src="7b925245e3f9b05000fbc30f2bc1b2a84e4d3891.png" alt="My Campaign UI" class="float-asset asset-campaign">
+      <img src="c19ab7412eacfdf0c248fbf2a4145f1fad7a8147.png" alt="Platform Dashboard" class="tablet-mockup">
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="works-section">
+    <span class="badge-user-guide">User Guide</span>
+    <h2 class="works-title">How it Works</h2>
+    <p class="works-subtitle">
+      Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence
+    </p>
+
+    <div class="works-toggle-container">
+      <button class="toggle-btn active">For Brands</button>
+      <button class="toggle-btn">For Vendors</button>
+    </div>
+
+    <div class="works-cards-grid">
+      <div class="work-card">
+        <div class="card-icon">
+          <i class="fa-regular fa-map"></i>
+        </div>
+        <h3 class="card-title">01. Choose Your Spot</h3>
+        <p class="card-desc">
+          Discover a Diverse Range of Inventories Across Multiple Cities and Countries.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <div class="card-icon">
+          <i class="fa-regular fa-calendar"></i>
+        </div>
+        <h3 class="card-title">02. Schedule & Upload</h3>
+        <p class="card-desc">
+          Select your preferred time slot and upload your media effortlessly.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3 class="card-title">03. Launch & Monitor</h3>
+        <p class="card-desc">
+          Once approved, your campaigns go live. Easily track and manage them.
+        </p>
+      </div>
+    </div>
+
+    <div class="works-image-showcase">
+      <img src="55629a32839c37a53edd07f90ced81b2c649673d.png" alt="Di-Wrapp Fleet Showcase">
+    </div>
+  </section>
+
+  <!-- Pioneering Accessibility Section (Redesigned Exact to Figma) -->
+  <section class="pioneering-section">
+    
+    <!-- Left Copywriting Block -->
+    <div class="pioneering-left">
+      <span class="badge-subtle">Smart, Fast & Reliable - Just for You!</span>
+      <h2 class="pioneering-title">Pioneering the Future of Media Accessibility</h2>
+      <p class="pioneering-desc">
+        Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every inventory is within reach for all.
+      </p>
+
+      <ul class="feature-list">
+        <li>
+          <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+          Expand Your Reach Across All Markets Easily
+        </li>
+        <li>
+          <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+          Manage your Listings anytime, anywhere and highlight key insights
+        </li>
+        <li>
+          <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+          Get instant notifications & important updates on Booking Reports
+        </li>
+      </ul>
+
+      <div class="pioneering-actions">
+        <a href="#" class="btn-outline">Learn More</a>
+        <a href="#" class="btn-primary-blue">Book Your Spot</a>
+      </div>
+    </div>
+
+    <!-- Right Map & Figma Cards Showcase -->
+    <div class="pioneering-right">
+      
+      <!-- World Dotted Map Layer -->
+      <div class="world-map-bg"></div>
+
+      <!-- Region Indicators -->
+      <div class="map-tag tag-us">US</div>
+      <div class="map-tag tag-europe">Europe</div>
+      <div class="map-tag tag-africa">Africa</div>
+      <div class="map-tag tag-mena">Mena</div>
+      <div class="map-tag tag-apac">APAC</div>
+
+      <!-- Floating Cards Outer Frame (Figma Component Container) -->
+      <div class="figma-cards-wrapper">
+        
+        <div class="cards-top-row">
+          
+          <!-- 1. Calendar Widget -->
+          <div class="ui-card-calendar">
+            <img src="e9926c58475acc19b3f33a13c3ed78a337217b5b.png" alt="August Calendar UI">
+          </div>
+
+          <!-- 2. Developer Upload Widget -->
+          <div class="ui-card-developer">
+            <img src="caec713e90f974512912cd1c634df0e460d843cb.jpg" alt="Developer UI">
+            <div class="dev-status-pill">
+              <span class="dot-active"></span>
+              <div class="dev-status-text">
+                <h5>Publish New Listing</h5>
+                <span>Due Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Kingdom Tower Listing Widget -->
+          <div class="ui-card-listing">
+            <div class="listing-image-wrap">
+              <img src="4aac63d14ee366d66404f93c416d7782779d8240.jpg" alt="Kingdom Tower">
+              <div class="listing-overlay-badge">
+                <span>Impressions Reach</span>
+                <strong>49% <span class="growth">↑ 9%</span></strong>
+              </div>
+            </div>
+
+            <div class="listing-details">
+              <h4>Kingdom Tower</h4>
+              <p>Olaya District, Riyadh Saudi Arabia</p>
+              
+              <div class="listing-meta-row">
+                <div class="price-text">Sar 1,500,000 <span>Daily</span></div>
+                <span class="rotana-tag">Rotana Signs</span>
+              </div>
+
+              <button class="btn-book-channel">
+                Book Channel <i class="fa-solid fa-circle-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4. Productivity Bottom Banner -->
+        <div class="productivity-banner">
+          <div class="five-x">5x</div>
+          <div class="banner-text">
+            Fasten your Business Productivity<br>with our cutting edge-solutions
+          </div>
+          <div class="banner-watermark">⚡</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

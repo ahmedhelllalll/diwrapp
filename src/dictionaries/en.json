@@ -1,0 +1,87 @@
+{
+  "page": {
+    "title": "To get started, edit the page.tsx file.",
+    "description": "Looking for a starting point or more instructions? Head over to",
+    "templates": "Templates",
+    "or": "or the",
+    "learning": "Learning",
+    "center": "center.",
+    "deploy": "Deploy Now",
+    "documentation": "Documentation"
+  },
+  "auth": {
+    "leftSubTag": "You can easily",
+    "leftHeading": "Get access for every advertising opportunity in one unified marketplace platform",
+    "or": "-or-",
+    "google": "Continue with Google",
+    "apple": "Continue with Apple",
+    "emailLabel": "Email",
+    "emailPlaceholder": "example@domain.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter Password"
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "subtitle": "Step back into the digital realm with a quick sign-in. Your next big campaign is just a click away!",
+    "forgot": "Forgot Password ?",
+    "submit": "Log in",
+    "noAccount": "Don't have an account?",
+    "register": "Register Now!"
+  },
+  "signup": {
+    "title": "Join us today",
+    "subtitle": "Join our world with ease. Start your booking journey today!",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter Full Name",
+    "confirmPasswordLabel": "Confirm Password",
+    "submit": "Sign up",
+    "hasAccount": "Already have an account?",
+    "login": "Log in"
+  },
+  "resetPassword": {
+    "title": "Reset your password",
+    "subtitle": "Enter your email, and we'll help you reset it in a snap. Security made simple",
+    "emailPlaceholder": "Enter Your Email",
+    "submit": "Continue",
+    "back": "Back to log in"
+  },
+  "landing": {
+    "nav": {
+      "about": "About us",
+      "advertise": "Advertise",
+      "blog": "Blog",
+      "join": "Join us",
+      "contact": "Contact us",
+      "signIn": "Sign In"
+    },
+    "hero": {
+      "badge": "Streamline Your Presence, Amplify Your Reach",
+      "title": "Welcome to the<br>largest media network",
+      "subtitle": "Where at Di-Wrapp, we strive to create a memorable experience contributed by a smarter solution for your digital interface.",
+      "discover": "Discover More"
+    },
+    "works": {
+      "badge": "User Guide",
+      "title": "How it Works",
+      "subtitle": "Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence",
+      "forBrands": "For Brands",
+      "forVendors": "For Vendors",
+      "step1Title": "01. Choose Your Spot",
+      "step1Desc": "Discover a Diverse Range of Inventories Across Multiple Cities and Countries.",
+      "step2Title": "02. Schedule & Upload",
+      "step2Desc": "Select your preferred time slot and upload your media effortlessly.",
+      "step3Title": "03. Launch & Monitor",
+      "step3Desc": "Once approved, your campaigns go live. Easily track and manage them."
+    },
+    "pioneering": {
+      "badge": "Smart, Fast & Reliable - Just for You!",
+      "title": "Pioneering the Future of Media Accessibility",
+      "desc": "Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every inventory is within reach for all.",
+      "feature1": "Expand Your Reach Across All Markets Easily",
+      "feature2": "Manage your Listings anytime, anywhere and highlight key insights",
+      "feature3": "Get instant notifications & important updates on Booking Reports",
+      "learnMore": "Learn More",
+      "bookSpot": "Book Your Spot"
+    }
+  }
+}
