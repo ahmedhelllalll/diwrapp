@@ -8,6 +8,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type Dict = any;
 
+type NavItem = {
+  id: string;
+  name: any;
+  href: string;
+  icon: string;
+  active?: boolean;
+  badge?: number;
+};
+
 export default function Sidebar({ dict, lang }: { dict: Dict; lang: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -40,7 +49,7 @@ export default function Sidebar({ dict, lang }: { dict: Dict; lang: string }) {
 
   const closeMobileSidebar = () => setIsMobileOpen(false);
 
-  const vendorNavItems = [
+  const vendorNavItems: NavItem[] = [
     { id: "overview", name: dict.dashboard.sidebar.overview, href: `/${lang}/vendor?tab=overview`, icon: "fa-house", active: true },
     { id: "listings", name: dict.dashboard.sidebar.myListings, href: `/${lang}/vendor?tab=listings`, icon: "fa-layer-group", active: false },
     { id: "bookings", name: dict.dashboard.sidebar.bookings, href: `/${lang}/vendor?tab=bookings`, icon: "fa-calendar-check", badge: 2, active: false },
@@ -48,7 +57,7 @@ export default function Sidebar({ dict, lang }: { dict: Dict; lang: string }) {
     { id: "settings", name: dict.dashboard.sidebar.settings, href: `/${lang}/vendor?tab=settings`, icon: "fa-gear", active: false },
   ];
 
-  const advertiserNavItems = [
+  const advertiserNavItems: NavItem[] = [
     { id: "overview", name: dict.dashboard.sidebar.overview, href: `/${lang}/advertiser?tab=overview`, icon: "fa-house", active: true },
     { id: "campaigns", name: dict.dashboard.sidebar.myCampaigns, href: `/${lang}/advertiser?tab=campaigns`, icon: "fa-bullhorn", active: false },
     { id: "bookings", name: dict.dashboard.sidebar.bookingsAndInvoices, href: `/${lang}/advertiser?tab=bookings`, icon: "fa-file-invoice-dollar", active: false },
