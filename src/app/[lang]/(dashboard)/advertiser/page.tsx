@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "../../../../dictionaries";
 import { Locale } from "../../../../i18n-config";
 import AdvertiserDashboardClient from "@/components/dashboard/advertiser/AdvertiserDashboardClient";
+import { Suspense } from "react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -17,5 +18,9 @@ export default async function AdvertiserDashboard(props: { params: Promise<{ lan
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
 
-  return <AdvertiserDashboardClient dict={dict} lang={lang} />;
+  return (
+    <Suspense>
+      <AdvertiserDashboardClient dict={dict} lang={lang} />
+    </Suspense>
+  );
 }
