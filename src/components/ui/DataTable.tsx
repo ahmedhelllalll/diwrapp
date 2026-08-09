@@ -70,7 +70,7 @@ export function DataTable() {
       </div>
 
       {/* Mobile Card View */}
-      <div className="block md:hidden space-y-3" style={{ isolate: 'isolate' }}>
+      <div className="block md:hidden space-y-3 isolate">
         {data.map((row) => (
           <div key={row.id} className="bg-white dark:bg-black p-4 rounded-xl border border-zinc-200/80 shadow-sm flex flex-col gap-3">
             <div className="flex items-start justify-between">
