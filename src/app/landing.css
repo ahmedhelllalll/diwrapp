@@ -1,4 +1,4 @@
-* {
+.landing-scope * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: Lufga, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-html[lang="ar"] * {
+html[lang="ar"] .landing-scope * {
   font-family: var(--font-cairo), "Lufga", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -20,7 +20,6 @@ header.landing-header {
   z-index: 1005;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  background: #ffffffd9;
   width: 100%;
   transition: background-color .3s, -webkit-backdrop-filter .3s, backdrop-filter .3s;
   position: fixed;
@@ -160,8 +159,6 @@ nav a:hover {
 }
 
 .btn-sign-in {
-  color: #fff;
-  background-color: #111827;
   border-radius: 12px;
   justify-content: center;
   align-items: center;
@@ -175,13 +172,11 @@ nav a:hover {
 }
 
 .btn-sign-in:hover {
-  background-color: #1665ff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px #1665ff33;
 }
 
 .lang-switch {
-  color: #111827;
   margin-left: 8px;
   font-size: 15px;
   font-weight: 700;
@@ -190,7 +185,6 @@ nav a:hover {
 }
 
 .lang-switch:hover {
-  color: #1665ff;
 }
 
 .hero-section {
@@ -244,7 +238,6 @@ nav a:hover {
 .hero-title {
   letter-spacing: -.01em;
   text-align: center;
-  color: #0f172a;
   margin-bottom: 18px;
   font-family: Lufga, sans-serif;
   font-size: 48px;
@@ -253,7 +246,6 @@ nav a:hover {
 }
 
 .hero-subtitle {
-  color: #64748b;
   max-width: 580px;
   margin-bottom: 28px;
   font-size: 15px;
@@ -278,49 +270,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-.showcase-container {
-  z-index: 5;
-  width: 100%;
-  max-width: 1200px;
-  height: 560px;
-  margin: 30px auto 0;
-  position: relative;
-}
-
-.tablet-mockup {
-  z-index: 10;
-  filter: drop-shadow(0 25px 45px #0f172a26);
-  width: 860px;
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-}
-
-.float-asset {
-  position: absolute;
-}
-
-.asset-calendar {
-  z-index: 15;
-  width: 360px;
-  top: 5%;
-  left: 0%;
-}
-
-.asset-add-new {
-  z-index: 15;
-  width: 240px;
-  top: -6%;
-  right: 15%;
-}
-
-.asset-campaign {
-  z-index: 12;
-  width: 380px;
-  top: 8%;
-  right: -2%;
-}
 
 .works-section {
   z-index: 10;
@@ -1032,7 +981,7 @@ nav a:hover {
 }
 
 .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
-  background-color: #0f172a;
+  background-color: currentColor;
   border-radius: 4px;
   width: 24px;
   height: 2px;
@@ -1062,7 +1011,7 @@ header.landing-header.menu-open .hamburger-inner, .mobile-menu-btn.is-active .ha
 }
 
 header.landing-header.menu-open .hamburger-inner:before, .mobile-menu-btn.is-active .hamburger-inner:before {
-  background-color: #0f172a;
+  background-color: currentColor;
   transform: translateY(7px)rotate(45deg);
 }
 

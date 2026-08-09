@@ -48,7 +48,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
     <div className="relative z-50" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="h-11 px-3.5 flex items-center gap-2.5 rounded-xl border border-[#e2e8f0] dark:border-zinc-800 bg-transparent text-[#111827] dark:text-zinc-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:bg-[#f8fafc] dark:hover:bg-zinc-800/80 active:scale-[0.98] active:translate-y-0"
+        className="h-9 px-3 flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-[#111827] dark:text-zinc-100 transition-all duration-200 ease-out hover:bg-zinc-100 dark:hover:bg-zinc-900 active:scale-[0.98]"
         aria-label="Toggle Language"
       >
         <img src={current.flagUrl} alt={current.name} className="w-[18px] h-[18px] rounded-full object-cover border border-[#e2e8f0] dark:border-zinc-700 bg-[#f0f0f0] dark:bg-zinc-800" />
@@ -58,21 +58,21 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
 
       {/* Dropdown Menu - Minimal Design */}
       <div 
-        className={`absolute top-[calc(100%+8px)] ltr:right-0 rtl:left-0 min-w-[140px] bg-white dark:bg-[#0f172a] border border-[#e2e8f0] dark:border-zinc-800 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] p-1.5 transition-all duration-200 origin-top-right ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
+        className={`absolute top-[calc(100%+8px)] end-0 min-w-[140px] bg-white dark:bg-[#0D0D0D] border border-slate-200/80 dark:border-zinc-800 rounded-xl shadow-2xl shadow-black/20 dark:shadow-black/60 p-1.5 transition-all duration-200 origin-top-right rtl:origin-top-left ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
       >
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => switchLanguage(lang.code)}
-            className={`w-full flex items-center justify-between px-3 py-2.5 rounded-[10px] transition-colors ${currentLang === lang.code ? 'bg-[#f8fafc] dark:bg-zinc-800/60 text-[#111827] dark:text-white' : 'text-[#64748b] dark:text-zinc-400 hover:bg-[#f8fafc] dark:hover:bg-zinc-800/40 hover:text-[#111827] dark:hover:text-zinc-200'}`}
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentLang === lang.code ? 'bg-slate-100/80 dark:bg-zinc-800 text-slate-900 dark:text-zinc-100' : 'text-slate-500 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800/60 hover:text-slate-900 dark:hover:text-zinc-100'}`}
           >
             <div className="flex items-center gap-2.5">
               <img src={lang.flagUrl} alt={lang.name} className="w-[16px] h-[16px] rounded-full object-cover shrink-0" />
-              <span className={`text-[13px] leading-none ${currentLang === lang.code ? 'font-semibold' : 'font-medium'}`}>{lang.native}</span>
+              <span className={`leading-none ${currentLang === lang.code ? 'font-semibold' : 'font-medium'}`}>{lang.native}</span>
             </div>
             
             {currentLang === lang.code && (
-              <i className="fa-solid fa-check text-[11px] text-[#0f172a] dark:text-white shrink-0 ml-3" />
+              <i className="fa-solid fa-check text-[11px] text-slate-900 dark:text-zinc-100 shrink-0 ml-3" />
             )}
           </button>
         ))}

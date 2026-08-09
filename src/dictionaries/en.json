@@ -36,7 +36,25 @@
     "confirmPasswordLabel": "Confirm Password",
     "submit": "Sign up",
     "hasAccount": "Already have an account?",
-    "login": "Log in"
+    "login": "Log in",
+    "step1": "Step 1 of 3",
+    "step2": "Step 2 of 3",
+    "step3": "Step 3 of 3",
+    "basicInfo": "Basic Info",
+    "security": "Security",
+    "selectRole": "Select Role",
+    "next": "Next",
+    "back": "Back",
+    "createAccount": "Create Account",
+    "advertiserTitle": "Advertiser",
+    "advertiserSubtitle": "Launch digital out-of-home campaigns, manage budgets, and reach audiences seamlessly.",
+    "vendorTitle": "Billboard Vendor",
+    "vendorSubtitle": "List your digital screens, manage bookings, and maximize inventory revenue.",
+    "validationName": "Full Name is required.",
+    "validationEmail": "Valid email is required.",
+    "validationPassword": "Password must be at least 6 characters.",
+    "validationMatch": "Passwords do not match.",
+    "validationRole": "Please select a role."
   },
   "resetPassword": {
     "title": "Reset your password",
@@ -82,6 +100,167 @@
       "feature3": "Get instant notifications & important updates on Booking Reports",
       "learnMore": "Learn More",
       "bookSpot": "Book Your Spot"
+    }
+  },
+  "dashboard": {
+    "vendor": {
+      "welcome": "Welcome back,",
+      "fallbackName": "Vendor",
+      "activeListingsBadge": "3 Active Listings",
+      "addListing": "Add New Listing",
+      "totalListings": "Total Listings",
+      "thisMonth": "+1 this month",
+      "pendingBookings": "Pending Bookings",
+      "requiresApproval": "Requires Approval",
+      "estimatedRevenue": "Estimated Revenue",
+      "actionRequired": "Action Required",
+      "actionDesc": "You have 2 new campaign booking requests awaiting your review.",
+      "reviewRequests": "Review Requests",
+      "inventoryTitle": "Active Inventory",
+      "assetName": "Asset Name",
+      "type": "Type",
+      "status": "Status",
+      "impressions": "Impressions",
+      "actions": "Actions",
+      "statusActive": "Active",
+      "statusPending": "Pending",
+      "statusSuspended": "Suspended",
+      "last30Days": "Last 30 Days",
+      "exportReport": "Export Report",
+      "revenueAnalytics": "Revenue & Occupancy Analytics",
+      "sevenDays": "7 Days",
+      "thirtyDays": "30 Days",
+      "twelveMonths": "12 Months",
+      "topAssets": "Top Assets",
+      "highestImpressions": "Highest performing by impressions",
+      "assetInventory": "Asset Inventory",
+      "all": "All",
+      "active": "Active",
+      "pending": "Pending",
+      "viewAnalytics": "View Analytics",
+      "downloadPdf": "Download PDF",
+      "pauseListing": "Pause Listing",
+      "recentRequests": "Recent Booking Requests",
+      "newRequest": "New Request",
+      "brand": "Brand",
+      "approve": "Approve",
+      "decline": "Decline",
+      "allCaughtUp": "All caught up!",
+      "noPendingRequests": "No pending campaign requests.",
+      "noAssetsFound": "No assets found for this filter."
+    },
+    "sidebar": {
+      "overview": "Overview",
+      "myListings": "My Listings",
+      "myCampaigns": "My Campaigns",
+      "bookings": "Bookings",
+      "bookingsAndInvoices": "Bookings & Invoices",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "logout": "Logout",
+      "vendor": "Vendor",
+      "advertiser": "Advertiser"
+    },
+    "advertiser": {
+      "welcome": "Welcome back,",
+      "fallbackName": "Advertiser",
+      "activeCampaignsCount": "Active Campaigns",
+      "credit": "Credit:",
+      "last30Days": "Last 30 Days",
+      "createCampaign": "Create Campaign",
+      "activeNow": "Active Now",
+      "activeCampaigns": "Active Campaigns",
+      "vsLastMonth": "vs last month",
+      "totalBudgetSpent": "Total Budget Spent",
+      "highImpact": "High Impact",
+      "estimatedReach": "Estimated Reach",
+      "performanceTrends": "Performance Trends",
+      "peakReach": "Peak daily reach:",
+      "impressionsSuffix": "impressions",
+      "sevenDays": "7 Days",
+      "thirtyDays": "30 Days",
+      "twelveMonths": "12 Months",
+      "budget": "Budget",
+      "reach": "Reach",
+      "spendProgress": "Spend Progress",
+      "viewDetails": "View Details",
+      "topRecommended": "Top Recommended Spots",
+      "highTraffic": "High traffic zone",
+      "estReach": "Est. Reach",
+      "premiumIndoor": "Premium indoor",
+      "quickBook": "Quick Book",
+      "statusActive": "Active",
+      "statusPendingApproval": "Pending Approval",
+      "statusDraftRejected": "Draft / Rejected"
+    },
+    "notifications": {
+      "vendor": {
+        "newRequestTitle": "New Booking Request",
+        "newRequestDesc": "You have a new campaign booking request awaiting review.",
+        "payoutTitle": "Payout Transferred",
+        "payoutDesc": "$1,200 has been successfully transferred to your bank account."
+      },
+      "advertiser": {
+        "approvedTitle": "Campaign Approved",
+        "approvedDesc": "'Downtown Digital Billboard' is now live!",
+        "invoiceTitle": "Invoice Generated",
+        "invoiceDesc": "$800 payment confirmed for July cycle."
+      }
+    },
+    "toasts": {
+      "bookingInitiatedTitle": "Booking Initiated",
+      "bookingInitiatedDesc": "Navigating to spot reservation flow...",
+      "campaignCreatedTitle": "Campaign Created",
+      "reportExportedTitle": "Report Exported",
+      "reportExportedDesc": "Your report PDF has been downloaded successfully."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "time": {
+      "minsAgo": "{{count}} mins ago",
+      "hourAgo": "1 hour ago",
+      "hoursAgo": "{{count}} hours ago",
+      "dayAgo": "1 day ago",
+      "daysAgo": "{{count}} days ago"
+    },
+    "items": {
+      "newRequestTitle": "New Campaign Request",
+      "pepsiRequest": "Pepsi requested Downtown Display.",
+      "paymentReceivedTitle": "Payment Received",
+      "paymentReceivedDesc": "$4,250 deposited for Metro Station B.",
+      "systemUpdateTitle": "System Update",
+      "systemUpdateDesc": "Analytics reporting v2.4 is now live.",
+      "redBullApproved": "Campaign request from Red Bull approved!"
+    }
+  },
+  "metadata": {
+    "defaultTitle": "Diwrapp - Revolutionizing DOOH Advertising",
+    "defaultDescription": "Diwrapp connects advertisers and vendors in an intuitive digital out-of-home advertising marketplace.",
+    "landing": {
+      "title": "Home",
+      "description": "Welcome to Diwrapp, the unified marketplace platform for advertising opportunities."
+    },
+    "login": {
+      "title": "Login",
+      "description": "Log in to your Diwrapp account to manage campaigns and listings."
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "Create a new Diwrapp account and start your advertising journey."
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Reset your Diwrapp account password."
+    },
+    "vendorDashboard": {
+      "title": "Vendor Dashboard",
+      "description": "Manage your advertising screens, slots, and revenue as a Diwrapp vendor."
+    },
+    "advertiserDashboard": {
+      "title": "Advertiser Dashboard",
+      "description": "Track your campaigns, discover new opportunities, and measure ROI as a Diwrapp advertiser."
     }
   }
 }

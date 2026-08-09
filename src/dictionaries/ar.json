@@ -36,7 +36,25 @@
     "confirmPasswordLabel": "تأكيد كلمة المرور",
     "submit": "إنشاء حساب",
     "hasAccount": "لديك حساب بالفعل؟",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "step1": "الخطوة 1 من 3",
+    "step2": "الخطوة 2 من 3",
+    "step3": "الخطوة 3 من 3",
+    "basicInfo": "المعلومات الأساسية",
+    "security": "الأمان",
+    "selectRole": "اختر الدور",
+    "next": "التالي",
+    "back": "رجوع",
+    "createAccount": "إنشاء حساب",
+    "advertiserTitle": "مُعلن",
+    "advertiserSubtitle": "أطلق حملات إعلانية رقمية خارجية، أدر الميزانيات، وتواصل مع جمهورك بسلاسة.",
+    "vendorTitle": "مالك شاشات",
+    "vendorSubtitle": "اعرض شاشاتك الرقمية، أدر الحجوزات، وضاعف إيرادات مساحاتك الإعلانية.",
+    "validationName": "الاسم الكامل مطلوب.",
+    "validationEmail": "البريد الإلكتروني صالح مطلوب.",
+    "validationPassword": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.",
+    "validationMatch": "كلمات المرور غير متطابقة.",
+    "validationRole": "يرجى تحديد دور."
   },
   "resetPassword": {
     "title": "إعادة تعيين كلمة المرور",
@@ -82,6 +100,167 @@
       "feature3": "احصل على إشعارات فورية وتحديثات مهمة حول تقارير الحجوزات",
       "learnMore": "اكتشف المزيد",
       "bookSpot": "احجز مساحتك"
+    }
+  },
+  "dashboard": {
+    "vendor": {
+      "welcome": "مرحباً بعودتك،",
+      "fallbackName": "مالك الشاشات",
+      "activeListingsBadge": "3 مساحات نشطة",
+      "addListing": "إضافة مساحة جديدة",
+      "totalListings": "إجمالي المساحات",
+      "thisMonth": "+1 هذا الشهر",
+      "pendingBookings": "الحجوزات المعلقة",
+      "requiresApproval": "تتطلب الموافقة",
+      "estimatedRevenue": "الإيرادات المقدرة",
+      "actionRequired": "إجراء مطلوب",
+      "actionDesc": "لديك طلبان جديدان لحجز حملة بانتظار مراجعتك.",
+      "reviewRequests": "مراجعة الطلبات",
+      "inventoryTitle": "المساحات النشطة",
+      "assetName": "اسم الأصل",
+      "type": "النوع",
+      "status": "الحالة",
+      "impressions": "المشاهدات",
+      "actions": "إجراءات",
+      "statusActive": "نشط",
+      "statusPending": "قيد الانتظار",
+      "statusSuspended": "مُعلق",
+      "last30Days": "آخر 30 يوم",
+      "exportReport": "تصدير التقرير",
+      "revenueAnalytics": "تحليلات الإيرادات والإشغال",
+      "sevenDays": "7 أيام",
+      "thirtyDays": "30 يوماً",
+      "twelveMonths": "12 شهراً",
+      "topAssets": "أفضل الأصول",
+      "highestImpressions": "الأعلى أداءً من حيث المشاهدات",
+      "assetInventory": "مخزون الأصول",
+      "all": "الكل",
+      "active": "نشط",
+      "pending": "قيد الانتظار",
+      "viewAnalytics": "عرض التحليلات",
+      "downloadPdf": "تحميل PDF",
+      "pauseListing": "إيقاف مؤقت",
+      "recentRequests": "طلبات الحجز الأخيرة",
+      "newRequest": "طلب جديد",
+      "brand": "العلامة التجارية",
+      "approve": "موافقة",
+      "decline": "رفض",
+      "allCaughtUp": "مُحدث بالكامل!",
+      "noPendingRequests": "لا توجد طلبات حملات معلقة.",
+      "noAssetsFound": "لم يتم العثور على أصول لهذا الفلتر."
+    },
+    "sidebar": {
+      "overview": "نظرة عامة",
+      "myListings": "عقاراتي / مساحاتي",
+      "myCampaigns": "حملاتي الإعلانية",
+      "bookings": "الحجوزات",
+      "bookingsAndInvoices": "الحجوزات والفواتير",
+      "analytics": "التحليلات",
+      "settings": "الإعدادات",
+      "logout": "تسجيل الخروج",
+      "vendor": "مالك الشاشات",
+      "advertiser": "المعلن"
+    },
+    "advertiser": {
+      "welcome": "مرحباً بعودتك،",
+      "fallbackName": "المعلن",
+      "activeCampaignsCount": "حملات نشطة",
+      "credit": "الرصيد:",
+      "last30Days": "آخر 30 يوم",
+      "createCampaign": "إنشاء حملة جديدة",
+      "activeNow": "نشط الآن",
+      "activeCampaigns": "الحملات النشطة",
+      "vsLastMonth": "مقارنة بالشهر الماضي",
+      "totalBudgetSpent": "إجمالي الميزانية المستهلكة",
+      "highImpact": "تأثير عالي",
+      "estimatedReach": "الوصول المقدر",
+      "performanceTrends": "اتجاهات الأداء",
+      "peakReach": "ذروة الوصول اليومي:",
+      "impressionsSuffix": "مشاهدة",
+      "sevenDays": "7 أيام",
+      "thirtyDays": "30 يوماً",
+      "twelveMonths": "12 شهراً",
+      "budget": "الميزانية",
+      "reach": "الوصول",
+      "spendProgress": "تقدم الإنفاق",
+      "viewDetails": "عرض التفاصيل",
+      "topRecommended": "أفضل المواقع الموصى بها",
+      "highTraffic": "منطقة مرور عالية",
+      "estReach": "الوصول المقدر",
+      "premiumIndoor": "داخلي فاخر",
+      "quickBook": "حجز سريع",
+      "statusActive": "نشط",
+      "statusPendingApproval": "في انتظار الموافقة",
+      "statusDraftRejected": "مسودة / مرفوض"
+    },
+    "notifications": {
+      "vendor": {
+        "newRequestTitle": "طلب حجز جديد",
+        "newRequestDesc": "لديك طلب حجز جديد لحملة أوت دور في انتظار مراجعتك.",
+        "payoutTitle": "تم تحويل المستحقات",
+        "payoutDesc": "تم تحويل مبلغ $1,200 إلى حسابك البنكي بنجاح."
+      },
+      "advertiser": {
+        "approvedTitle": "تمت الموافقة على الحملة",
+        "approvedDesc": "حملة 'Downtown Digital Billboard' أصبحت نشطة الآن.",
+        "invoiceTitle": "تم إصدار الفاتورة",
+        "invoiceDesc": "تم تأكيد دفع مبلغ $800 لدورة شهر يوليو."
+      }
+    },
+    "toasts": {
+      "bookingInitiatedTitle": "بدء عملية الحجز",
+      "bookingInitiatedDesc": "جاري التوجيه إلى صفحة تأكيد الحجز...",
+      "campaignCreatedTitle": "تم إنشاء الحملة",
+      "reportExportedTitle": "تم تصدير التقرير",
+      "reportExportedDesc": "تم تحميل ملف PDF الخاص بالتقرير بنجاح."
+    }
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "markAllRead": "تعليم الكل كمقروء",
+    "time": {
+      "minsAgo": "منذ {{count}} دقيقة",
+      "hourAgo": "منذ ساعة واحدة",
+      "hoursAgo": "منذ {{count}} ساعات",
+      "dayAgo": "منذ يوم واحد",
+      "daysAgo": "منذ {{count}} أيام"
+    },
+    "items": {
+      "newRequestTitle": "طلب حملة جديد",
+      "pepsiRequest": "قامت بيبسي بطلب حجز شاشة داون تاون.",
+      "paymentReceivedTitle": "تم استلام الدفعة",
+      "paymentReceivedDesc": "تم إيداع 4,250$ لحساب شاشة محطة المترو B.",
+      "systemUpdateTitle": "تحديث للنظام",
+      "systemUpdateDesc": "تقارير التحليلات الإصدار v2.4 متاحة الآن.",
+      "redBullApproved": "تم قبول طلب الحملة المقدم من ريد بول!"
+    }
+  },
+  "metadata": {
+    "defaultTitle": "داي راب - إحداث ثورة في الإعلانات الخارجية الرقمية",
+    "defaultDescription": "تربط داي راب بين المعلنين والموردين في منصة سوق إعلانات خارجية رقمية سهلة الاستخدام.",
+    "landing": {
+      "title": "الرئيسية",
+      "description": "مرحبًا بك في داي راب، المنصة الموحدة لفرص الإعلانات."
+    },
+    "login": {
+      "title": "تسجيل الدخول",
+      "description": "قم بتسجيل الدخول إلى حساب داي راب الخاص بك لإدارة الحملات والقوائم."
+    },
+    "signup": {
+      "title": "إنشاء حساب",
+      "description": "أنشئ حسابًا جديدًا في داي راب وابدأ رحلتك الإعلانية."
+    },
+    "resetPassword": {
+      "title": "إعادة تعيين كلمة المرور",
+      "description": "قم بإعادة تعيين كلمة مرور حساب داي راب الخاص بك."
+    },
+    "vendorDashboard": {
+      "title": "لوحة تحكم المورد",
+      "description": "أدر شاشاتك الإعلانية، والفترات الزمنية، وإيراداتك كمورد في داي راب."
+    },
+    "advertiserDashboard": {
+      "title": "لوحة تحكم المعلن",
+      "description": "تتبع حملاتك، واكتشف فرصًا جديدة، وقس العائد على الاستثمار كمعلن في داي راب."
     }
   }
 }

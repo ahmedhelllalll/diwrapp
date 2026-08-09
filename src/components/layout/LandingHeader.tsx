@@ -31,7 +31,7 @@ export default function LandingHeader({ lang, nextLang, langLabel, dictNav }: La
 
   return (
     <>
-      <header className={`landing-header ${isMenuOpen ? 'menu-open' : ''}`}>
+      <header className={`landing-header sticky top-0 z-50 bg-white/70 dark:bg-[#080808]/70 backdrop-blur-md transition-all duration-300 ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="header-container">
           <Link href={`/${lang}`} className="brand-logo">
             <div className="logo-icon w-10 h-10 bg-transparent flex items-center justify-center">
@@ -50,7 +50,7 @@ export default function LandingHeader({ lang, nextLang, langLabel, dictNav }: La
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="desktop-nav">
+          <nav className="desktop-nav *:text-slate-600 hover:*:text-slate-900 dark:*:text-zinc-400 dark:hover:*:text-white *:transition-colors">
             <Link href="#">{dictNav.about}</Link>
             <Link href="#">{dictNav.advertise}</Link>
             <Link href="#">{dictNav.blog}</Link>
@@ -61,18 +61,18 @@ export default function LandingHeader({ lang, nextLang, langLabel, dictNav }: La
           {/* Desktop Actions */}
           <div className="header-actions desktop-actions">
             <ThemeToggle />
-            <Link href={`/${lang}/login`} className="btn-sign-in">{dictNav.signIn}</Link>
-            <Link href={`/${nextLang}`} className="lang-switch">{langLabel}</Link>
+            <a href={`/${lang}/login`} className="btn-sign-in bg-slate-900 text-white hover:bg-blue-600 dark:bg-zinc-100 dark:text-slate-900 dark:hover:bg-blue-500 dark:hover:text-white shadow-blue-500/20 dark:shadow-blue-600/30">{dictNav.signIn}</a>
+            <Link href={`/${nextLang}`} className="lang-switch text-slate-900 hover:text-blue-600 dark:text-zinc-100 dark:hover:text-blue-500">{langLabel}</Link>
           </div>
 
           {/* Mobile Actions (Visible on Mobile) */}
           <div className="mobile-header-actions flex items-center gap-2">
             <ThemeToggle />
-            <Link href={`/${nextLang}`} className="lang-switch">{langLabel}</Link>
+            <Link href={`/${nextLang}`} className="lang-switch text-slate-900 hover:text-blue-600 dark:text-zinc-100 dark:hover:text-blue-500">{langLabel}</Link>
             
             {/* Mobile Hamburger Button */}
             <button 
-              className={`mobile-menu-btn ${isMenuOpen ? 'is-active' : ''}`} 
+              className={`mobile-menu-btn text-slate-900 dark:text-zinc-100 ${isMenuOpen ? 'is-active' : ''}`} 
               onClick={toggleMenu}
               aria-label="Toggle Menu"
             >
@@ -95,7 +95,7 @@ export default function LandingHeader({ lang, nextLang, langLabel, dictNav }: La
           <Link href="#" onClick={toggleMenu}>{dictNav.join}</Link>
           <Link href="#" onClick={toggleMenu}>{dictNav.contact}</Link>
           <div className="split-mobile-actions">
-            <Link href={`/${lang}/login`} className="btn-sign-in" onClick={toggleMenu}>{dictNav.signIn}</Link>
+            <a href={`/${lang}/login`} className="btn-sign-in bg-slate-900 text-white hover:bg-blue-600 dark:bg-zinc-100 dark:text-slate-900 dark:hover:bg-blue-500 dark:hover:text-white shadow-blue-500/20 dark:shadow-blue-600/30" onClick={toggleMenu}>{dictNav.signIn}</a>
           </div>
         </div>
       </div>

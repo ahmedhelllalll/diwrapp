@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-[#0a0a0a] border-t border-[#e2e8f0] dark:border-zinc-800/80 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <footer className="font-sans bg-white dark:bg-[#0a0a0a] border-t border-[#e2e8f0] dark:border-zinc-800/80 pt-16 pb-8">
+      <div className="w-full max-w-[1380px] mx-auto px-4 md:px-10">
         
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#e2e8f0] dark:border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-[13.5px] font-medium text-[#64748b] dark:text-zinc-400 order-3 md:order-1">
-            ©2024 <span className="font-bold text-black dark:text-zinc-100">Di-Wrapp.</span> - All rights reserved
+            ©{new Date().getFullYear()} <span className="font-bold text-black dark:text-zinc-100">Di-Wrapp.</span> - All rights reserved
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-6 text-[13.5px] font-bold text-[#475569] dark:text-zinc-400 order-2">

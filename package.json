@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@gsap/react": "^2.1.2",
+    "es-toolkit": "^1.50.0",
     "framer-motion": "^13.0.0",
     "lenis": "^1.1.13",
     "negotiator": "^0.6.3",
