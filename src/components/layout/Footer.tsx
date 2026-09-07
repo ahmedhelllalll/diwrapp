@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="font-sans bg-white dark:bg-[#0a0a0a] border-t border-[#e2e8f0] dark:border-zinc-800/80 pt-16 pb-8">
+    <footer className="font-sans bg-white dark:bg-[#0a0a0a] pt-16 pb-8">
       <div className="w-full max-w-[1380px] mx-auto px-4 md:px-10">
         
         {/* Top Grid */}
@@ -55,7 +55,12 @@ export default function Footer() {
             <ul className="space-y-4 text-[13.5px] font-semibold text-[#64748b] dark:text-zinc-400">
               {['About', 'Booking', 'Blog', 'Career', 'Contact', 'Investors', 'Life At Di-Wrapp', 'Promocodes'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="hover:text-[#1665ff] dark:hover:text-blue-500 hover:underline underline-offset-4 transition-all">{item}</Link>
+                  <Link
+                    href={item === 'Blog' ? '/blog' : item === 'About' ? '/about' : item === 'Contact' ? '/contact' : '#'}
+                    className="hover:text-[#1665ff] dark:hover:text-blue-500 hover:underline underline-offset-4 transition-all"
+                  >
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>

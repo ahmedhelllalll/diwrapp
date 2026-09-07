@@ -1,4 +1,87 @@
 {
+  "about": {
+    "badge": "More things to know about us",
+    "title": "Revolutionizing the industry<br/><b>by bridging the gaps</b>",
+    "leftPill": "Your On-the-Go Booking Platform.",
+    "rightText": "Smart tools, transparent pricing,<br/>and real-time management.",
+    "overview": {
+      "badge": "Overview",
+      "heading": "Di_Wrapp enables instant booking, tracking, and data-backed performance <b>insights — all from one unified system.</b>",
+      "description": "Redefining how the industry is discovered, managed, and commercialized by connecting brands, agencies, and media owners through one intelligent digital ecosystem. Using a scalable architecture and cloud based infrastructure, we ensure a reliable and high-performing platform. Where Our UX/UI is designed for ease of use, and our backend supports real-time reporting and vendor analytics.",
+      "visionTitle": "Vision:",
+      "visionText": "Leading the industry through a platform for managing and monetizing media mediums in the region and beyond.",
+      "missionTitle": "Mission:",
+      "missionText": "To simplify, digitize, and democratize the industry for all stakeholders."
+    },
+    "features": {
+      "badge": "Key Features",
+      "title": "What Makes<br/>Di_Wrapp Different",
+      "subtitle": "Whether you're a brand or managing media inventory, DiWrapp gives you the tools to operate with confidence and scale.",
+      "card1Title": "Unified Marketplace",
+      "card1Desc": "Access Every Advertising Opportunity in One Platform.",
+      "card1Btn": "Read More",
+      "card2Title": "Enterprise Platform",
+      "card2Desc": "Manage inventory, bookings, campaigns, analytics, financial operations, and customer relationships from one centralized workspace.",
+      "card3Title": "Scalable Infrastructure",
+      "card3Desc": "Designed to support local businesses, regional media networks, and enterprise advertising ecosystems.",
+      "card4Title": "Intelligent Commercial Models",
+      "card4Desc": "Support diverse inventory structures with flexible operating models designed around real business needs.",
+      "card4Btn": "Read More"
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "headingLine1": "Trusted by leaders",
+      "headingLine2": "from various industries",
+      "subtitle": "Discover why they rely on Di_Wrapp to power every step of their Booking journey",
+      "cta": "Book Your Spot Now"
+    }
+  },
+  "advertise": {
+    "heroBadge": "Bridging Vision with Functionality",
+    "heroTitleLight": "Empowering Brands Through",
+    "heroTitleBold": "Smart, Seamless Experiences",
+    "featureBadge": "Plan, Launch, and Track With Confidence",
+    "featureHeading": "All in One Place.",
+    "featureDescLight": "From discovering media spaces to managing budgets and accessing reports — ",
+    "featureDescBold": "everything is built to save time, boost impact, and deliver measurable value.",
+    "ctaButton": "Book Your Spot",
+    "bento": {
+      "card2Title": "Instant Browse & Book",
+      "card2Desc": "— no delays, no back-and-forth. Just select, schedule, and go live.",
+      "card3Title": "Smart Dashboard",
+      "card3Desc": "A fully customizable dashboard that highlights the data that matters most",
+      "card4Title": "Booking Proof & Reporting",
+      "card4Desc": "Get visual confirmation when your Booking goes live, along with detailed reports",
+      "card5Title": "Wallet Top-Ups & Payouts",
+      "card5Desc": "Securely Fund your account and track every transaction",
+      "card7Title": "Streamlined approval Workflows",
+      "card7Desc": "— ensuring quality, compliance, and control across the board.",
+      "card8Title": "Stay instantly updated",
+      "card8Desc": "— right when it happens."
+    },
+    "aiCarousel": {
+      "slides": [
+        {
+          "id": 1,
+          "badge": "Wrapp AI – Your Smart Companion",
+          "title": "Empowering Through intelligent, data-driven support.",
+          "description": "Ask_Di is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps brands, vendors, and support teams navigate booking, optimize campaigns, and even create content — all through intuitive, AI-powered interactions.",
+          "highlightText": "all through intuitive, AI-powered interactions.",
+          "ctaText": "Try Ask_Di",
+          "ctaLink": "#"
+        },
+        {
+          "id": 2,
+          "badge": "Wrapp AI – Automated Insights",
+          "title": "Instant campaign analytics and predictive forecasting.",
+          "description": "Analyze live engagement metrics and ad inventory in real-time. Ask_Di pinpoints high-converting billboard spaces and optimizes budget distribution — with zero manual guesswork.",
+          "highlightText": "with zero manual guesswork.",
+          "ctaText": "Explore Insights",
+          "ctaLink": "#"
+        }
+      ]
+    }
+  },
   "page": {
     "title": "To get started, edit the page.tsx file.",
     "description": "Looking for a starting point or more instructions? Head over to",
@@ -261,6 +344,152 @@
     "advertiserDashboard": {
       "title": "Advertiser Dashboard",
       "description": "Track your campaigns, discover new opportunities, and measure ROI as a Diwrapp advertiser."
+    },
+    "advertise": {
+      "title": "Advertise",
+      "description": "Empowering Brands Through Smart, Seamless Experiences. Plan, Launch, and Track With Confidence."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
+    },
+    "joinUs": {
+      "title": "Join Us",
+      "description": "Clone Yourself. Scale Your Expertise. Extend Your Reach. A Digital Marketplace that Operate Without Limits."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Stay tuned for exclusive updates, insights, and stories from Di-Wrapp."
     }
+  },
+  "joinUs": {
+    "hero": {
+      "badge": "Designed for Control, Simplicity & Scale",
+      "title": "Clone Yourself.",
+      "subtitleLine1": "Scale Your Expertise. Extend Your Reach.",
+      "subtitleLine2": "A Digital Marketplace that Operate Without Limits.",
+      "cta": "Join Us Now"
+    },
+    "opportunities": {
+      "titleLine1": "Every Advertising Opportunity,",
+      "titleLine2": "One Digital Platform",
+      "cards": {
+        "activation": "Activation Spaces",
+        "displays": "Advertising Displays",
+        "influencers": "Influencers",
+        "digital": "Digital Channels"
+      },
+      "description": "Di_Wrapp simplifies operations, automates scheduling, and maximizes monetization — all while giving media owners complete visibility and control over their media assets.",
+      "cta": "Book A Demo"
+    },
+    "metrics": {
+      "card1": {
+        "label": "Higher Occupancy",
+        "stat": "24/7",
+        "title": "Sell Your Inventory Around The Clock",
+        "description": "Turn your advertising assets into a continuously bookable digital marketplace with real-time availability and automated reservations."
+      },
+      "card2": {
+        "label": "Real-Time Management",
+        "stat": "Live",
+        "title": "Inventory Always Available",
+        "description": "Pricing, availability, scheduling, and bookings update instantly across your entire media network."
+      },
+      "card3": {
+        "label": "Automation First",
+        "stat": "100%",
+        "title": "Digital Booking Workflow",
+        "description": "Reduce manual quotations, approvals, and bookings management through automated workflows."
+      }
+    },
+    "metricsBento": {
+      "card1": {
+        "label": "Higher Occupancy",
+        "stat": "24/7",
+        "title": "Sell Your Inventory Around The Clock",
+        "description": "Turn your advertising assets into a continuously bookable digital marketplace with real-time availability and automated reservations."
+      },
+      "card2": {
+        "label": "Real-Time Management",
+        "stat": "Live",
+        "title": "Inventory Always Available",
+        "description": "Pricing, availability, scheduling, and bookings update instantly across your entire media network."
+      },
+      "card3": {
+        "label": "Automation First",
+        "stat": "100%",
+        "title": "Digital Booking Workflow",
+        "description": "Reduce manual quotations, approvals, and bookings management through automated workflows."
+      }
+    },
+    "platformFeatures": {
+      "badge": "Platform Features",
+      "headingPrefix": "Empowering Media Owners",
+      "headingSuffix": "with a robust toolset that transforms their inventory.",
+      "card1": {
+        "badge": "Inventory Listing & Categorization",
+        "title": "Manage your inventory efficiently.",
+        "description": "List and manage your inventory by categorizing them based on location, format, automation level, and availability, making it easier for brands to discover & book."
+      },
+      "card2": {
+        "badge": "Smart Hardware Integration \"Ai-Powered\"",
+        "title": "Empowering vendors to seamlessly upgrade their Inventories",
+        "description": "Powered by advanced hardware and AI-integrated sensors, Di_Wrapp empowers with an embedded system that allows automated booking, scheduling, and content capabilities —",
+        "descriptionHighlight": "eliminating manual intervention and reducing the risk of human error."
+      },
+      "card3": {
+        "badge": "Operation Modes",
+        "title": "Providing complete flexibility in how bookings are configured and managed.",
+        "description": "Assigning a unique operational mode to each media asset, Allows a tailored scheduling, dynamic availability settings, and optimized utilization based on the specific objectives of each bookings"
+      },
+      "ctaBanner": {
+        "badge": "Join Di_Wrapp Vendor Network",
+        "title": "Ready to connect your Inventory and earn more?",
+        "description": "Join instantly, link your Space, set your prices, and start Monitoring Bookings",
+        "contactBtn": "Contact Us",
+        "getStartedBtn": "Let's Get Started"
+      }
+    }
+  },
+  "contact": {
+    "breadcrumb": { "home": "Di-Wrapp", "current": "Contact" },
+    "hero": {
+      "title": "Let’s Get Connected",
+      "subtitle": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
+    },
+    "cards": {
+      "callUs": { "label": "Call Us", "value": "+966 00 000 0000" },
+      "visitUs": { "label": "Visit Us", "value": "View Our Location" },
+      "chatSales": { "label": "Chat To Sales", "value": "sales@di-wrapp.com" },
+      "chatSupport": { "label": "Chat To Support", "value": "support@di-wrapp.com" }
+    },
+    "form": {
+      "nameLabel": "Your name",
+      "namePlaceholder": "Enter name",
+      "emailLabel": "Your email",
+      "emailPlaceholder": "Enter email",
+      "phoneLabel": "Subject",
+      "phonePlaceholder": "+1 (000) 000 - 0000",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Enter Subject",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Type here...",
+      "charLimit": "0/250",
+      "submitButton": "Submit"
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Subscribe to our newsletter to get early news and topics of your choice.",
+    "inputPlaceholder": "Enter email",
+    "button": "Subscribe"
+  },
+  "stayTuned": {
+    "tag": "#Coming_Soon",
+    "title": "Stay tuned for exclusive updates and early access!",
+    "description": "We have something exciting in the works, and we can't wait to share it with you!",
+    "button": "Back To Homepage",
+    "screenLaunching": "Launching Soon",
+    "screenStayTuned": "Stay Tuned!"
   }
 }

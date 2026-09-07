@@ -1,15 +1,46 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
+import localFont from 'next/font/local';
+import { Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
+import "../landing.css";
+import "../about.css";
+import "../advertise.css";
+import "../contact.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
+const lufgaFont = localFont({
+  src: [
+    {
+      path: '../../fonts/Lufga-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/Lufga-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/Lufga-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/Lufga-SemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/Lufga-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-lufga',
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
@@ -62,11 +93,11 @@ export default async function RootLayout(
       <html
         lang={lang}
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} h-full antialiased`}
+        className={`${lufgaFont.variable} ${geistMono.variable} ${cairo.variable} h-full antialiased`}
         suppressHydrationWarning
       >
 
-        <body className={`min-h-full flex flex-col ${lang === 'ar' ? 'font-cairo' : 'font-sans'}`} suppressHydrationWarning>
+        <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

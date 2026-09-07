@@ -27,6 +27,16 @@ header.landing-header {
   left: 0;
 }
 
+header.landing-header.header-transparent {
+  position: absolute !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
 header.landing-header.menu-open {
   -webkit-backdrop-filter: none;
   backdrop-filter: none;

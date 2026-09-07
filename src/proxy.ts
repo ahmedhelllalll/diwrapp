@@ -4,18 +4,25 @@ import { i18n } from './i18n-config';
 import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-function getLocale(request: NextRequest): string | undefined {
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+function getLocale(request: NextRequest): string {
+  try {
+    const negotiatorHeaders: Record<string, string> = {};
+    request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-expect-error locales are readonly
-  const locales: string[] = i18n.locales;
+    // @ts-expect-error locales are readonly
+    const locales: string[] = i18n.locales;
 
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+    let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+    languages = languages.filter((lang) => lang && lang !== '*');
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+    if (languages.length === 0) {
+      return i18n.defaultLocale;
+    }
 
-  return locale;
+    return matchLocale(languages, locales, i18n.defaultLocale);
+  } catch {
+    return i18n.defaultLocale;
+  }
 }
 
 export function proxy(request: NextRequest) {

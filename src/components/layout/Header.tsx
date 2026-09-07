@@ -10,31 +10,32 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'About us', href: '#' },
-    { name: 'Advertise', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Join us', href: '#' },
-    { name: 'Contact us', href: '#' },
+    { name: 'About us', href: '/about' },
+    { name: 'Advertise', href: '/advertise' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Join us', href: '/join-us' },
+    { name: 'Contact us', href: '/contact' },
   ];
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-[#e2e8f0] dark:border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-105">
+        <Link href="#" className="brand-logo !inline-flex !items-center !gap-2 !shrink-0 select-none !m-0 !p-0">
+          <div className="!w-8 !h-8 !shrink-0 !m-0 !p-0 flex items-center justify-center">
             <Image 
               src="/logo.png" 
               alt="Di-wrapp Logo" 
-              width={40} 
-              height={40} 
-              className="object-contain w-full h-full"
+              width={32} 
+              height={32} 
+              priority
+              className="!m-0 !p-0 !block object-contain w-full h-full"
             />
           </div>
-          <div className="flex items-center">
-            <span className="text-[20px] font-bold text-[#0f172a] dark:text-zinc-100 tracking-tight leading-none">Di-wrapp</span>
-            <span className="text-[9px] font-bold text-[#64748b] dark:text-zinc-500 ml-0.5 uppercase tracking-wider relative -top-2">SD</span>
-          </div>
+          <span className="!font-semibold !text-xl !tracking-tight !leading-none text-[#101828] dark:text-zinc-100 flex items-center !m-0">
+            Di-wrapp
+            <sup className="text-[10px] font-bold ml-0.5 text-[#64748b] dark:text-zinc-500 uppercase">SD</sup>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
