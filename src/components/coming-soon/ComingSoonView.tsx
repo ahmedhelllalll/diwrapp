@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import StayTunedNavbar from './StayTunedNavbar';
+import ComingSoonNavbar from './ComingSoonNavbar';
 import Footer from '@/components/layout/Footer';
 
-interface StayTunedViewProps {
+interface ComingSoonViewProps {
   lang: string;
   dict?: {
     tag?: string;
@@ -25,7 +25,7 @@ interface StayTunedViewProps {
   showNavLinks?: boolean;
 }
 
-export default function StayTunedView({
+export default function ComingSoonView({
   lang,
   dict = {
     tag: '#Coming_Soon',
@@ -37,16 +37,16 @@ export default function StayTunedView({
   },
   dictNav,
   showNavLinks = true,
-}: StayTunedViewProps) {
+}: ComingSoonViewProps) {
   const isRtl = lang === 'ar';
 
   return (
     <div
       dir={isRtl ? 'rtl' : 'ltr'}
-      className="min-h-screen flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300"
+      className="min-h-screen flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
     >
       {/* 1. Header with System Design Links */}
-      <StayTunedNavbar
+      <ComingSoonNavbar
         lang={lang}
         dictNav={dictNav}
         showNavLinks={showNavLinks}

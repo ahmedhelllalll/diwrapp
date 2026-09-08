@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 
-interface StayTunedNavbarProps {
+interface ComingSoonNavbarProps {
   lang: string;
   dictNav?: {
     about?: string;
@@ -19,11 +19,11 @@ interface StayTunedNavbarProps {
   showNavLinks?: boolean;
 }
 
-export default function StayTunedNavbar({
+export default function ComingSoonNavbar({
   lang,
   dictNav,
   showNavLinks = true,
-}: StayTunedNavbarProps) {
+}: ComingSoonNavbarProps) {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function StayTunedNavbar({
   const langLabel = lang === 'en' ? 'عربي' : 'English';
   const targetLangHref = pathname.startsWith(`/${lang}`)
     ? pathname.replace(`/${lang}`, `/${nextLang}`)
-    : `/${nextLang}/blog`;
+    : `/${nextLang}/coming-soon`;
 
   const activeTheme = theme === 'system' ? resolvedTheme : theme;
   const toggleTheme = () => setTheme(activeTheme === 'dark' ? 'light' : 'dark');

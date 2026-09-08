@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '../../../dictionaries';
 import { Locale } from '../../../i18n-config';
-import StayTunedView from '@/components/coming-soon/StayTunedView';
+import ComingSoonView from '@/components/coming-soon/ComingSoonView';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -19,6 +19,14 @@ export default async function ComingSoonPage(props: { params: Promise<{ lang: st
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const stayTuned = (dict as any)?.stayTuned;
+  const l = dict.landing;
 
-  return <StayTunedView lang={lang} dict={stayTuned} />;
+  return (
+    <ComingSoonView
+      lang={lang}
+      dict={stayTuned}
+      dictNav={l.nav}
+      showNavLinks={true}
+    />
+  );
 }
