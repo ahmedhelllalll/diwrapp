@@ -4,10 +4,10 @@ import { Locale } from "@/i18n-config";
 import LandingHeader from "@/components/layout/LandingHeader";
 import Footer from "@/components/layout/Footer";
 
-import ContactHero from "@/components/contact/ContactHero";
-import ContactCardsGrid from "@/components/contact/ContactCardsGrid";
-import ContactForm from "@/components/contact/ContactForm";
-import NewsletterSection from "@/components/contact/NewsletterSection";
+import ContactHero from "@/components/marketing/contact/ContactHero";
+import ContactCardsGrid from "@/components/marketing/contact/ContactCardsGrid";
+import ContactForm from "@/components/marketing/contact/ContactForm";
+import NewsletterSection from "@/components/marketing/contact/NewsletterSection";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;

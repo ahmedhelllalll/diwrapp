@@ -5,7 +5,7 @@ import "../../../landing.css";
 import "../../../about.css";
 import LandingHeader from "@/components/layout/LandingHeader";
 import Footer from "@/components/layout/Footer";
-import TestimonialsSection from "@/components/common/TestimonialsSection";
+import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {

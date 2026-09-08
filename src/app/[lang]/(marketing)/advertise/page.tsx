@@ -8,8 +8,8 @@ import "../../../advertise.css";
 import LandingHeader from "@/components/layout/LandingHeader";
 import Footer from "@/components/layout/Footer";
 
-import FeatureBentoGrid from "@/components/advertise/FeatureBentoGrid";
-import AiCarouselSection from "@/components/advertise/AiCarouselSection";
+import FeatureBentoGrid from "@/components/marketing/advertise/FeatureBentoGrid";
+import AiCarouselSection from "@/components/marketing/advertise/AiCarouselSection";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;

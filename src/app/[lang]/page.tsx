@@ -3,13 +3,13 @@ import { getDictionary } from "../../dictionaries";
 import { Locale } from "../../i18n-config";
 import Link from 'next/link';
 import "../landing.css";
-import LandingAnimations from "@/components/common/LandingAnimations";
+import LandingAnimations from "@/components/marketing/landing/LandingAnimations";
 import LandingHeader from "@/components/layout/LandingHeader";
-import HeroVisual from "@/components/common/HeroVisual";
+import HeroVisual from "@/components/marketing/landing/HeroVisual";
 import Footer from "@/components/layout/Footer";
-import FaqSection from "@/components/common/FaqSection";
-import FeaturesSection from "@/components/common/FeaturesSection";
-import NewsSection from "@/components/common/NewsSection";
+import FaqSection from "@/components/marketing/landing/FaqSection";
+import FeaturesSection from "@/components/marketing/landing/FeaturesSection";
+import NewsSection from "@/components/marketing/landing/NewsSection";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;

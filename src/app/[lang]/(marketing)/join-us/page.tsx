@@ -4,10 +4,10 @@ import { Locale } from '@/i18n-config';
 import '../../../landing.css';
 import LandingHeader from '@/components/layout/LandingHeader';
 import Footer from '@/components/layout/Footer';
-import JoinUsHero from '@/components/join-us/JoinUsHero';
-import OpportunitiesSection from '@/components/join-us/OpportunitiesSection';
-import BentoShowcaseSection from '@/components/join-us/BentoShowcaseSection';
-import PlatformFeaturesSection from '@/components/join-us/PlatformFeaturesSection';
+import JoinUsHero from '@/components/marketing/join-us/JoinUsHero';
+import OpportunitiesSection from '@/components/marketing/join-us/OpportunitiesSection';
+import BentoShowcaseSection from '@/components/marketing/join-us/BentoShowcaseSection';
+import PlatformFeaturesSection from '@/components/marketing/join-us/PlatformFeaturesSection';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
