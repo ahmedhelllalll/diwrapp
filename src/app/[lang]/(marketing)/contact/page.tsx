@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { getDictionary } from "../../../dictionaries";
-import { Locale } from "../../../i18n-config";
+import { getDictionary } from "@/dictionaries";
+import { Locale } from "@/i18n-config";
 import LandingHeader from "@/components/layout/LandingHeader";
 import Footer from "@/components/layout/Footer";
 

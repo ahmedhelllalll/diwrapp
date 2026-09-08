@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '../../../dictionaries';
-import { Locale } from '../../../i18n-config';
+import { getDictionary } from '@/dictionaries';
+import { Locale } from '@/i18n-config';
 import ComingSoonView from '@/components/coming-soon/ComingSoonView';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {

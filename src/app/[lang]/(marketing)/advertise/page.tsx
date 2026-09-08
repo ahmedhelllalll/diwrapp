@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getDictionary } from "../../../dictionaries";
-import { Locale } from "../../../i18n-config";
-import "../../landing.css";
-import "../../advertise.css";
+import { getDictionary } from "@/dictionaries";
+import { Locale } from "@/i18n-config";
+import "../../../landing.css";
+import "../../../advertise.css";
 import LandingHeader from "@/components/layout/LandingHeader";
 import Footer from "@/components/layout/Footer";
 
