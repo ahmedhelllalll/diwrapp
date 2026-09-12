@@ -10,9 +10,10 @@ interface CardsDict {
 
 interface ContactCardsGridProps {
   cards?: CardsDict;
+  lang?: string;
 }
 
-export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
+export default function ContactCardsGrid({ cards, lang }: ContactCardsGridProps) {
   const callUs = cards?.callUs || { label: "Call Us", value: "+966 00 000 0000" };
   const visitUs = cards?.visitUs || { label: "Visit Us", value: "View Our Location" };
   const chatSales = cards?.chatSales || { label: "Chat To Sales", value: "sales@di-wrapp.com" };
@@ -65,15 +66,15 @@ export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
   ];
 
   return (
-    <div className="contact-cards-grid h-full grid grid-cols-1 gap-3.5 w-full mb-8 md:grid-cols-2 md:grid-rows-2 md:gap-5 md:mb-10 lg:mb-0 lg:h-full lg:grid-cols-2 lg:grid-rows-2" aria-label="Direct Contact Channels">
+    <div className="contact-cards-grid h-full grid grid-cols-1 gap-4 sm:gap-5 w-full md:grid-cols-2 md:grid-rows-2 lg:h-full lg:grid-cols-2 lg:grid-rows-2" aria-label="Direct Contact Channels">
       {contactItems.map((item) => (
         <div 
           key={item.id} 
-          className={`contact-card ${item.orderClass} h-full min-h-[140px] sm:min-h-[160px] md:min-h-[170px] lg:min-h-0 rounded-3xl border border-slate-200/80 bg-white/80 backdrop-blur-md shadow-[0_2px_10px_-2px_rgba(0,0,0,0.03)] dark:bg-zinc-900/40 dark:backdrop-blur-xl dark:border-white/[0.08] dark:hover:border-white/[0.18] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] p-6 md:p-7 flex flex-col justify-between hover:-translate-y-[2px] transition-all duration-300 ease-out cursor-default`}
+          className={`contact-card ${item.orderClass} h-full min-h-[150px] sm:min-h-[160px] md:min-h-[170px] lg:min-h-0 rounded-3xl border border-slate-200/90 bg-white shadow-[0_2px_10px_-2px_rgba(0,0,0,0.03)] dark:bg-zinc-900/40 dark:backdrop-blur-xl dark:border-white/[0.08] dark:hover:border-white/[0.18] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] p-6 md:p-7 flex flex-col justify-between hover:-translate-y-[2px] transition-all duration-300 ease-out cursor-default`}
         >
           {/* 40x40 Rounded-xl Transparent Icon Container */}
           <div 
-            className="contact-card-icon-box w-10 h-10 min-w-[40px] rounded-xl border border-slate-200/80 bg-slate-50/50 dark:bg-white/[0.04] dark:border-white/[0.1] dark:text-zinc-200 backdrop-blur-md flex items-center justify-center text-slate-800 mb-6 md:mb-8 self-start shrink-0" 
+            className="contact-card-icon-box w-10 h-10 min-w-[40px] rounded-xl border border-slate-200/90 bg-slate-50/80 dark:bg-white/[0.04] dark:border-white/[0.1] dark:text-zinc-200 backdrop-blur-md flex items-center justify-center text-slate-800 mb-6 md:mb-8 self-start shrink-0" 
             aria-hidden="true"
           >
             {item.icon}

@@ -2,7 +2,8 @@
    Contact Page Styles (Diwrapp Design System)
    ========================================================================== */
 
-.contact-scope {
+.contact-scope,
+.contact-page-container {
   --contact-bg: var(--background);
   --contact-text: var(--foreground);
   background-color: var(--contact-bg);
@@ -227,11 +228,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
   will-change: transform;
   transition: transform 300ms ease-out, 
               box-shadow 300ms ease-out, 
               border-color 250ms ease,
               background-color 250ms ease;
+}
+
+@media (min-width: 768px) {
+  .contact-card {
+    padding: 28px;
+    border-radius: 24px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -243,6 +256,7 @@
 
 .contact-card:hover {
   transform: translateY(-2px);
+  border-color: #CBD5E1;
   box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.06);
 }
 
@@ -250,8 +264,8 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  background-color: transparent;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -473,8 +487,9 @@
 }
 
 .contact-textarea {
-  min-height: 144px;
-  height: 144px;
+  min-height: 128px;
+  height: 128px;
+  max-height: 144px;
   width: 100%;
   border-radius: 12px;
   border: 1px solid #EAECF0;
@@ -486,7 +501,7 @@
   color: #101828;
   box-sizing: border-box;
   outline: none;
-  resize: vertical;
+  resize: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -523,28 +538,17 @@
 .contact-form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 16px;
+  width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .contact-form-actions {
-    grid-column: span 6 / span 6;
-    grid-column-start: 7;
-    grid-row-start: 2;
-    margin-top: 24px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  [dir="rtl"] .contact-form-actions {
-    justify-content: flex-start;
-  }
+[dir="rtl"] .contact-form-actions {
+  justify-content: flex-start;
 }
 
-@media (max-width: 1023px) {
-  .contact-form-actions {
+@media (max-width: 640px) {
+  .contact-form-actions .contact-btn-submit {
     width: 100%;
-    justify-content: stretch;
   }
 }
 
@@ -564,13 +568,6 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-@media (max-width: 1023px) {
-  .contact-btn-submit {
-    width: 100%;
-    padding: 14px 24px;
-  }
 }
 
 .contact-btn-submit:hover {
@@ -765,7 +762,7 @@
   background-color: rgba(24, 24, 27, 0.4); /* zinc-900/40 */
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
@@ -778,7 +775,7 @@
   background-color: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #E4E4E7; /* zinc-200 */
 }
 
