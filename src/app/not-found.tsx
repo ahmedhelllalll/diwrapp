@@ -48,7 +48,7 @@ export default async function RootNotFound() {
       className={`${lufgaFont.variable} ${cairo.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+      <body className={`min-h-full flex flex-col ${lang === 'ar' ? 'font-cairo' : 'font-lufga'}`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
