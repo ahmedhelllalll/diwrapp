@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
 import "../../../landing.css";
 import "../../../about.css";
-import LandingHeader from "@/components/layout/LandingHeader";
-import Footer from "@/components/layout/Footer";
 import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
 
@@ -21,27 +20,13 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const l = dict.landing;
   const about = dict.about;
   const features = about?.features;
   const testimonials = (about as any)?.testimonials;
 
-  // For the language switcher
-  const nextLang = lang === 'en' ? 'ar' : 'en';
-  const langLabel = lang === 'en' ? 'عربي' : 'English';
-
   return (
-    <>
-      <div className="about-scope">
-        {/* Navigation */}
-        <LandingHeader 
-          lang={lang} 
-          nextLang={nextLang} 
-          langLabel={langLabel} 
-          dictNav={l.nav} 
-        />
-
-        <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
+    <div className="about-scope">
+      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
           
           <section className="about-hero">
             <div className="about-badge">
@@ -60,9 +45,14 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             <div className="about-left-col">
               
               <div className="about-image-card">
-                {/* INSTRUCTION: Place the bus stop advertisement image here */}
-                {/* Recommended path: /public/assets/about-bus-stop.png */}
-                <img src="/assets/about-bus-stop.png" alt="Bus Stop Advertisement" />
+                <Image 
+                  src="/assets/about-bus-stop.webp" 
+                  alt="Bus Stop Advertisement" 
+                  width={790}
+                  height={460}
+                  priority
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
 
               <div className="about-info-card">
@@ -80,9 +70,14 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             {/* Right Column */}
             <div className="about-tall-card">
               <div className="tall-card-image">
-                {/* INSTRUCTION: Place the iPad dashboard mockup image here */}
-                {/* Recommended path: /public/assets/about-ipad.png */}
-                <img src="/assets/about-ipad.png" alt="iPad Dashboard Interface" />
+                <Image 
+                  src="/assets/about-ipad.webp" 
+                  alt="iPad Dashboard Interface" 
+                  width={1200}
+                  height={900}
+                  priority
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
 
               <div className="tall-card-content">
@@ -153,9 +148,11 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                 {/* Column 1: Tall Tablet Card */}
                 <div className="features-tall-card">
                   <div className="features-tablet-wrap">
-                    <img 
-                      src="/assets/tablet-image.png" 
+                    <Image 
+                      src="/assets/tablet-image.webp" 
                       alt="Di_Wrapp Tablet Interface" 
+                      width={960}
+                      height={720}
                       className="features-tablet-img" 
                     />
                   </div>
@@ -233,9 +230,6 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
           />
 
         </main>
-      </div>
-
-      <Footer />
-    </>
+    </div>
   );
 }

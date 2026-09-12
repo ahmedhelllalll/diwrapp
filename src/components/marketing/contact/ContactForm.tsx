@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, NavArrowDown } from "iconoir-react";
 
 interface FormDict {
@@ -187,24 +188,34 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
   const SelectedFlag = selectedCountry.FlagComponent;
 
   return (
-    <form className="contact-form w-full" onSubmit={handleSubmit} noValidate>
-      <div className="contact-content-grid grid grid-cols-1 lg:grid-cols-12 gap-x-8 lg:gap-x-10 items-start">
+    <form className="contact-form contact-form-container w-full" onSubmit={handleSubmit} noValidate>
+      <div className="contact-content-grid grid grid-cols-1 lg:grid-cols-12 gap-x-8 lg:gap-x-10 items-stretch w-full">
         {/* Left Column: Exactly equal in height to the inputs container */}
         {cardsSlot && (
-          <div className="contact-cards-column lg:col-span-6 lg:row-span-1 h-full">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="contact-cards-column w-full lg:col-span-6 lg:row-start-1 h-full flex flex-col"
+          >
             {cardsSlot}
-          </div>
+          </motion.div>
         )}
 
         {/* Right Column: All inputs from Name down to Message textarea */}
-        <div className={`contact-form-fields ${cardsSlot ? 'lg:col-span-6 lg:row-span-1' : 'w-full'} flex flex-col gap-4`}>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className={`contact-form-fields ${cardsSlot ? 'w-full lg:col-span-6 lg:col-start-7 lg:row-start-1' : 'w-full'} flex flex-col gap-4 h-full`}
+        >
           {/* Row 1: Name & Email */}
-          <div className="contact-form-row grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="contact-form-row grid grid-cols-1 gap-4 sm:grid-cols-2">
             {/* Your Name */}
             <div className="contact-field-group">
-              <label htmlFor="contact-name" className="contact-label">
+              <label htmlFor="contact-name" className="contact-label text-left rtl:text-right text-slate-800 dark:text-zinc-200 font-medium text-sm">
                 <span>{dict?.nameLabel || "Your name"}</span>
-                <span className="contact-required" aria-hidden="true">*</span>
+                <span className="contact-required text-rose-500 dark:text-rose-400 ml-1" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-name"
@@ -214,15 +225,15 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder={dict?.namePlaceholder || "Enter name"}
-                className="contact-input"
+                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
               />
             </div>
 
             {/* Your Email */}
             <div className="contact-field-group">
-              <label htmlFor="contact-email" className="contact-label">
+              <label htmlFor="contact-email" className="contact-label text-left rtl:text-right text-slate-800 dark:text-zinc-200 font-medium text-sm">
                 <span>{dict?.emailLabel || "Your email"}</span>
-                <span className="contact-required" aria-hidden="true">*</span>
+                <span className="contact-required text-rose-500 dark:text-rose-400 ml-1" aria-hidden="true">*</span>
               </label>
               <input
                 id="contact-email"
@@ -232,35 +243,40 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder={dict?.emailPlaceholder || "Enter email"}
-                className="contact-input"
+                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
               />
             </div>
           </div>
 
           {/* Row 2: Phone Input with Country Code Dropdown */}
           <div className="contact-field-group">
-            <label htmlFor="contact-phone" className="contact-label">
-              <span>{dict?.phoneLabel || "Subject"}</span>
+            <label htmlFor="contact-phone" className="contact-label text-left rtl:text-right text-slate-800 dark:text-zinc-200 font-medium text-sm">
+              <span>{dict?.phoneLabel || (isRtl ? "رقم الهاتف" : "Phone number")}</span>
             </label>
-            <div className="contact-phone-group relative">
+            <div 
+              className="contact-phone-group relative border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:dark:ring-1 focus-within:dark:ring-white/20 rounded-xl w-full transition-all"
+              dir="ltr"
+            >
               <div className="relative h-full flex items-center shrink-0">
                 <button
                   type="button"
-                  className="contact-country-trigger flex items-center gap-1.5 px-3 h-full border-r border-[#EAECF0] rtl:border-r-0 rtl:border-l rtl:border-[#EAECF0] bg-transparent hover:bg-[#F8F9FA] dark:hover:bg-[#181B22] transition-colors cursor-pointer outline-none shrink-0"
+                  className="contact-country-trigger flex items-center gap-1.5 px-3 h-full border-r border-slate-300 dark:border-white/[0.09] bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] transition-colors cursor-pointer outline-none shrink-0"
                   onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
                   aria-haspopup="listbox"
                   aria-expanded={isCountryDropdownOpen}
                   aria-label="Select country code"
                 >
                   <SelectedFlag className="w-5 h-5 rounded-full overflow-hidden shrink-0" />
-                  <NavArrowDown width={14} height={14} className="w-3.5 h-3.5 text-[#101828] dark:text-[#F8FAFC] shrink-0" aria-hidden="true" />
+                  <span className="text-xs font-semibold text-slate-800 dark:text-zinc-200 font-sans" dir="ltr" style={{ fontFamily: 'var(--font-lufga), var(--font-sans), sans-serif' }}>{selectedCountry.code}</span>
+                  <NavArrowDown width={14} height={14} className="w-3.5 h-3.5 text-slate-800 dark:text-zinc-200 shrink-0" aria-hidden="true" />
                 </button>
 
                 {/* Country Dropdown Menu */}
                 {isCountryDropdownOpen && (
                   <div 
-                    className="absolute top-full left-0 mt-1.5 w-52 bg-white dark:bg-[#181B22] border border-[#EAECF0] dark:border-[#27272A] rounded-xl shadow-lg z-30 py-1.5 overflow-hidden"
+                    className="absolute top-full left-0 mt-1.5 w-52 bg-white/95 dark:bg-zinc-900/90 dark:backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] rounded-xl shadow-xl z-30 py-1.5 overflow-hidden"
                     role="listbox"
+                    dir="ltr"
                   >
                     {COUNTRIES.map((c) => {
                       const Flag = c.FlagComponent;
@@ -271,13 +287,13 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                           role="option"
                           aria-selected={selectedCountry.code === c.code}
                           onClick={() => handleCountrySelect(c)}
-                          className="w-full px-3.5 py-2 text-left rtl:text-right flex items-center justify-between text-xs hover:bg-[#F8F9FA] dark:hover:bg-[#222630] transition-colors cursor-pointer text-[#101828] dark:text-[#F8FAFC]"
+                          className="w-full px-3.5 py-2 text-left flex items-center justify-between text-xs hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors cursor-pointer text-slate-900 dark:text-zinc-100"
                         >
                           <span className="flex items-center gap-2">
                             <Flag className="w-4 h-4 rounded-full overflow-hidden shrink-0" />
                             <span className="font-medium">{c.name}</span>
                           </span>
-                          <span className="text-[#637083] dark:text-[#94A3B8]">{c.code}</span>
+                          <span className="text-slate-500 dark:text-zinc-400 font-sans">{c.code}</span>
                         </button>
                       );
                     })}
@@ -289,17 +305,18 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 id="contact-phone"
                 name="phone"
                 type="tel"
+                dir="ltr"
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder={dict?.phonePlaceholder || "+1 (000) 000 - 0000"}
-                className="contact-phone-input"
+                className="contact-phone-input placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none text-left w-full bg-transparent"
               />
             </div>
           </div>
 
           {/* Row 3: Subject */}
           <div className="contact-field-group">
-            <label htmlFor="contact-subject" className="contact-label">
+            <label htmlFor="contact-subject" className="contact-label text-left rtl:text-right text-slate-800 dark:text-zinc-200 font-medium text-sm">
               <span>{dict?.subjectLabel || "Subject"}</span>
             </label>
             <input
@@ -309,13 +326,13 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               value={formData.subject}
               onChange={handleInputChange}
               placeholder={dict?.subjectPlaceholder || "Enter Subject"}
-              className="contact-input"
+              className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
             />
           </div>
 
           {/* Row 4: Message */}
           <div className="contact-field-group">
-            <label htmlFor="contact-message" className="contact-label">
+            <label htmlFor="contact-message" className="contact-label text-left rtl:text-right text-slate-800 dark:text-zinc-200 font-medium text-sm">
               <span>{dict?.messageLabel || "Message"}</span>
             </label>
             <div className="contact-textarea-wrapper">
@@ -326,36 +343,36 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder={dict?.messagePlaceholder || "Type here..."}
-                className="contact-textarea"
+                className="contact-textarea rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
               />
-              <span className="contact-char-count" aria-live="polite">
+              <span className="contact-char-count text-slate-500 dark:text-zinc-400 text-xs font-mono select-none" aria-live="polite">
                 {formData.message.length}/{maxChars}
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Form Submission Confirmation Notice */}
-        {isSuccess && (
-          <div className={`${cardsSlot ? 'lg:col-span-6 lg:col-start-7' : 'w-full'} p-3.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl text-emerald-800 dark:text-emerald-300 text-sm mt-3`}>
-            {isRtl
-              ? "تم استلام رسالتك بنجاح! سيتواصل فريقنا معك قريبًا."
-              : "Your message has been received! Our team will get back to you shortly."}
-          </div>
-        )}
+        {/* Submit Action: Explicitly full-width on mobile/tablet, right-aligned on desktop lg below fields */}
+        <div className={`contact-form-actions ${cardsSlot ? 'w-full lg:col-span-6 lg:col-start-7 lg:row-start-2' : 'w-full'} flex flex-col items-stretch lg:items-end rtl:lg:items-start mt-2 md:mt-4 lg:mt-6`}>
+          {/* Form Submission Confirmation Notice */}
+          {isSuccess && (
+            <div className="w-full p-3.5 mb-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl text-emerald-800 dark:text-emerald-300 text-sm">
+              {isRtl
+                ? "تم استلام رسالتك بنجاح! سيتواصل فريقنا معك قريبًا."
+                : "Your message has been received! Our team will get back to you shortly."}
+            </div>
+          )}
 
-        {/* Submit Action: Placed below the fields baseline on the right */}
-        <div className={`contact-form-actions ${cardsSlot ? 'lg:col-span-6 lg:col-start-7' : 'w-full'} flex justify-end mt-4`}>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="contact-btn-submit"
+            className="contact-btn-submit w-full lg:w-auto flex items-center justify-center gap-2 py-3.5 lg:py-3 lg:px-7 rounded-xl text-sm font-semibold bg-slate-950 dark:bg-white text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xs active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed mt-2 md:mt-0"
           >
             <span>{isSubmitting ? (isRtl ? "جاري الإرسال..." : "Sending...") : dict?.submitButton || "Submit"}</span>
             {isRtl ? (
-              <ArrowLeft width={16} height={16} strokeWidth={2} className="contact-btn-icon" aria-hidden="true" />
+              <ArrowLeft width={16} height={16} strokeWidth={2} className="contact-btn-icon shrink-0" aria-hidden="true" />
             ) : (
-              <ArrowRight width={16} height={16} strokeWidth={2} className="contact-btn-icon" aria-hidden="true" />
+              <ArrowRight width={16} height={16} strokeWidth={2} className="contact-btn-icon shrink-0" aria-hidden="true" />
             )}
           </button>
         </div>

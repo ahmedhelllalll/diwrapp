@@ -21,14 +21,11 @@ export default async function BlogPage(props: { params: Promise<{ lang: string }
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const stayTuned = (dict as any)?.stayTuned;
-  const l = dict.landing;
 
   return (
     <ComingSoonView
       lang={lang}
       dict={stayTuned}
-      dictNav={l.nav}
-      showNavLinks={true}
     />
   );
 }

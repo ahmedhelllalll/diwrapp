@@ -39,7 +39,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         <div className="bento-card bento-card-tablet">
           <div className="bento-tablet-inner">
             <Image
-              src="/assets/table.png"
+              src="/assets/table.webp"
               alt="Di_Wrapp Tablet Booking Showcase"
               width={640}
               height={480}

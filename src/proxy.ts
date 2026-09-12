@@ -137,7 +137,14 @@ export function proxy(request: NextRequest) {
   }
 
   // 4. If path is not protected or session is valid, pass through
-  const response = NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
   applySecurityHeaders(response);
   return response;
 }

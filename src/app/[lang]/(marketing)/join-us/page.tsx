@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
 import '../../../landing.css';
-import LandingHeader from '@/components/layout/LandingHeader';
-import Footer from '@/components/layout/Footer';
 import JoinUsHero from '@/components/marketing/join-us/JoinUsHero';
 import OpportunitiesSection from '@/components/marketing/join-us/OpportunitiesSection';
 import BentoShowcaseSection from '@/components/marketing/join-us/BentoShowcaseSection';
@@ -25,28 +23,14 @@ export default async function JoinUsPage(props: { params: Promise<{ lang: string
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const l = dict.landing;
   const joinData = (dict as any).joinUs;
   const joinHero = joinData?.hero;
   const opportunities = joinData?.opportunities;
   const metrics = joinData?.metricsBento || joinData?.metrics;
   const platformFeatures = joinData?.platformFeatures;
 
-  const nextLang = lang === 'en' ? 'ar' : 'en';
-  const langLabel = lang === 'en' ? 'عربي' : 'English';
-
   return (
-    <>
-      {/* Shared Navbar */}
-      <LandingHeader
-        lang={lang}
-        nextLang={nextLang}
-        langLabel={langLabel}
-        dictNav={l.nav}
-      />
-
-      {/* Main Content Area */}
-      <main className="flex-grow flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300">
+    <main className="flex-grow flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300">
         <JoinUsHero
           lang={lang}
           badgeText={joinHero?.badge}
@@ -90,9 +74,5 @@ export default async function JoinUsPage(props: { params: Promise<{ lang: string
           <div className="w-full border-t border-[#EAECF0] dark:border-[#222630]" />
         </div>
       </main>
-
-      {/* Shared Footer (placed outside any scoped wrapper) */}
-      <Footer />
-    </>
   );
 }

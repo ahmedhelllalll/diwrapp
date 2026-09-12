@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
-import LandingHeader from "@/components/layout/LandingHeader";
-import Footer from "@/components/layout/Footer";
-
 import ContactHero from "@/components/marketing/contact/ContactHero";
 import ContactCardsGrid from "@/components/marketing/contact/ContactCardsGrid";
 import ContactForm from "@/components/marketing/contact/ContactForm";
@@ -26,27 +23,20 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const l = dict.landing;
   const contact = (dict as any).contact;
   const newsletter = (dict as any).newsletter;
 
-  // Language switcher data
-  const nextLang = lang === 'en' ? 'ar' : 'en';
-  const langLabel = lang === 'en' ? 'عربي' : 'English';
-
   return (
-    <div className="contact-scope">
-      {/* Top Header Navigation */}
-      <LandingHeader 
-        lang={lang} 
-        nextLang={nextLang} 
-        langLabel={langLabel} 
-        dictNav={l.nav} 
-      />
+    <div className="contact-scope contact-page-container" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow flex flex-col relative overflow-hidden">
+        {/* Ambient Background Glow (Canvas Depth in Dark Mode) */}
+        <div 
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-gradient-to-b from-indigo-500/[0.07] via-slate-400/[0.03] to-transparent blur-3xl opacity-0 dark:opacity-100 transition-opacity duration-500" 
+        />
 
-      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow flex flex-col">
         {/* Main Content Container */}
-        <div className="contact-main-container">
+        <div className="contact-main-container relative z-10 px-4 sm:px-6 md:px-8">
           {/* Hero & Breadcrumb */}
           <ContactHero
             lang={lang}
@@ -67,9 +57,6 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
         {/* Full-Width Newsletter Banner */}
         <NewsletterSection dict={newsletter} lang={lang} />
       </main>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

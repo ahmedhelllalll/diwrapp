@@ -23,6 +23,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
     requestAnimationFrame(raf);
 
+    // Attach lenis instance to window for global scroll control
+    if (typeof window !== 'undefined') {
+      (window as any).lenis = lenis;
+    }
+
     // Automatic Resize Observer to recalculate page height for dynamic tabs/components
     const resizeObserver = new ResizeObserver(() => {
       lenis.resize();
@@ -30,6 +35,9 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     resizeObserver.observe(document.body);
 
     return () => {
+      if (typeof window !== 'undefined') {
+        delete (window as any).lenis;
+      }
       resizeObserver.disconnect();
       lenis.destroy();
     };

@@ -199,7 +199,7 @@ export default function PlatformFeaturesSection({
                   style={{ clipPath: 'inset(-300px -300px 0px -300px)' }}
                 >
                   <Image
-                    src="/assets/join-tablet.png"
+                    src="/assets/join-tablet.webp"
                     alt={card1.title || 'Platform Tablet'}
                     width={960}
                     height={720}

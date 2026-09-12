@@ -5,9 +5,6 @@ import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
 import "../../../landing.css";
 import "../../../advertise.css";
-import LandingHeader from "@/components/layout/LandingHeader";
-import Footer from "@/components/layout/Footer";
-
 import FeatureBentoGrid from "@/components/marketing/advertise/FeatureBentoGrid";
 import AiCarouselSection from "@/components/marketing/advertise/AiCarouselSection";
 
@@ -27,25 +24,11 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const l = dict.landing;
   const adv = dict.advertise as any;
 
-  // Language switcher data
-  const nextLang = lang === 'en' ? 'ar' : 'en';
-  const langLabel = lang === 'en' ? 'عربي' : 'English';
-
   return (
-    <>
-      <div className="advertise-scope">
-        {/* Top Navigation */}
-        <LandingHeader 
-          lang={lang} 
-          nextLang={nextLang} 
-          langLabel={langLabel} 
-          dictNav={l.nav} 
-        />
-
-        <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
+    <div className="advertise-scope">
+      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
           <div className="advertise-container">
             
             {/* Hero Section */}
@@ -153,8 +136,5 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
           </div>
         </main>
       </div>
-
-      <Footer />
-    </>
   );
 }

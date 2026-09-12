@@ -5,7 +5,7 @@ import Link from 'next/link';
 import "../landing.css";
 import LandingAnimations from "@/components/marketing/landing/LandingAnimations";
 import LandingHeader from "@/components/layout/LandingHeader";
-import HeroVisual from "@/components/marketing/landing/HeroVisual";
+import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";
 import Footer from "@/components/layout/Footer";
 import FaqSection from "@/components/marketing/landing/FaqSection";
 import FeaturesSection from "@/components/marketing/landing/FeaturesSection";
@@ -47,52 +47,8 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       <main className="bg-white dark:bg-[#080808] transition-colors duration-300">
         <section className="hero-section">
           
-          {/* --- Floating Assets Anchored to Hero Section Parent (1440px Canvas) --- */}
-          {/* Background Grid Line Frame (Top Right) */}
-          <img
-            src="/assets/frame.png"
-            alt="Grid Line Frame"
-            className="absolute top-[15%] lg:top-[175px] right-[0%] lg:right-0 w-[250px] md:w-[300px] lg:w-[389px] z-0 opacity-100 pointer-events-none h-auto object-contain"
-          />
-          {/* Background Grid Line Frame Reversed (Bottom Left) */}
-          <img
-            src="/assets/frame.png"
-            alt="Grid Line Frame Reversed"
-            className="absolute top-[45%] lg:top-[510px] left-[-8%] lg:left-[-6%] w-[250px] md:w-[300px] lg:w-[389px] z-0 opacity-100 pointer-events-none h-auto object-contain -scale-x-100"
-          />
-
-          <img
-            src="/assets/add-new.png"
-            alt="Add New Glass"
-            className="absolute top-[12%] lg:top-[131px] right-[0%] lg:right-[-6px] w-[280px] md:w-[400px] lg:w-[592px] z-50 pointer-events-none drop-shadow-2xl h-auto object-contain"
-          />
-          <img
-            src="/assets/calendar.png"
-            alt="Calendar Asset"
-            className="absolute top-[40%] lg:top-[400px] left-[-5%] lg:left-[-6%] w-[350px] md:w-[500px] lg:w-[680px] z-50 pointer-events-none drop-shadow-2xl h-auto object-contain -scale-x-100"
-          />
-          <img
-            src="/assets/random.png"
-            alt="Random Floating Cluster"
-            className="absolute top-[55%] lg:top-[500px] right-[-5%] lg:right-[-8%] w-[350px] md:w-[550px] lg:w-[850px] z-50 pointer-events-none drop-shadow-2xl h-auto object-contain"
-          />
-          <img
-            src="/assets/dashboard.png"
-            alt="iPad Mini Mockup"
-            className="absolute top-[70%] lg:top-[580px] left-[40%] lg:left-[35%] z-[60] w-[110%] lg:w-[120%] max-w-[1400px] h-auto object-contain pointer-events-none drop-shadow-2xl"
-            style={{ transform: 'translateX(-50%) rotate(25deg)' }}
-          />
-          <img
-            src="/assets/image-80.png"
-            alt="3D Decorative Element"
-            className="absolute top-[115%] lg:top-[1140px] right-[0%] lg:right-[5%] z-[55] w-[300px] md:w-[450px] lg:w-[600px] h-auto object-contain pointer-events-none"
-          />
-          <img
-            src="/assets/group-527.png"
-            alt="Decorative Element 527"
-            className="absolute top-[85%] lg:top-[820px] right-[2.5%] lg:right-[2.5%] z-10 w-[150px] md:w-[250px] lg:w-[350px] h-auto object-contain pointer-events-none drop-shadow-xl"
-          />
-          {/* -------------------------------------- */}
+          {/* Floating Hero Background and Foreground Assets */}
+          <FloatingHeroAssets />
 
           <div className="hero-content min-h-[calc(100vh-80px)] flex flex-col justify-center pb-12 w-full relative z-10">
             <div className="w-full max-w-[900px] mx-auto flex flex-col items-center">
@@ -111,12 +67,9 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
               <Link href="#" className="btn-discover shadow-lg shadow-blue-500/20 dark:shadow-blue-600/30 relative z-40">{l.hero.discover}</Link>
             </div>
           </div>
-
-          {/* Graphics Showcase Container */}
-          <HeroVisual />
           
           {/* Spacer to account for absolute dashboard image height */}
-          <div className="h-[500px] lg:h-[950px] w-full pointer-events-none"></div>
+          <div className="h-[500px] lg:h-[950px] w-full pointer-events-none" aria-hidden="true"></div>
         </section>
 
         {/* How It Works Section */}
@@ -282,7 +235,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       {/* News Section */}
       <NewsSection />
 
-      <Footer />
+      <Footer lang={lang} dict={(dict as any).footer} />
     </>
   );
 }

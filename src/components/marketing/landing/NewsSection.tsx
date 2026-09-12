@@ -6,7 +6,7 @@ export default function NewsSection() {
   const newsItems = [
     {
       id: 1,
-      image: '/assets/news-2.png', // Using the lit face image
+      image: '/assets/news-2.webp', // Using the lit face image
       title: 'Mastering UI Elements: A Practical Guide for Designers',
       date: 'Posted 2 days ago',
       readTime: '5 min read'

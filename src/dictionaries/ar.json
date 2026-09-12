@@ -484,6 +484,51 @@
     "inputPlaceholder": "أدخل البريد الإلكتروني",
     "button": "اشتراك"
   },
+  "footer": {
+    "slogan": "بسّط إعلاناتك، وعظّم وصولك.",
+    "poweredBy": "مشغل بواسطة",
+    "groupName": "مجموعة ديستين-جاي.",
+    "address": "طريق العليا - حي العليا،\nالرياض، المملكة العربية السعودية.",
+    "phone": "+966 00 000 0000",
+    "email": "info@di-wrapp.com",
+    "columns": {
+      "diWrapp": "دي-راب",
+      "support": "الدعم",
+      "joinIn": "انضم إلينا"
+    },
+    "links": {
+      "about": "عن المنصة",
+      "booking": "الحجز",
+      "blog": "المدونة",
+      "career": "الوظائف",
+      "contact": "تواصل معنا",
+      "investors": "المستثمرون",
+      "lifeAtDiWrapp": "الحياة في دي-راب",
+      "promocodes": "رموز الخصم",
+      "helpCenter": "مركز المساعدة",
+      "howItWorks": "كيف نعمل",
+      "cancellationOption": "خيارات الإلغاء",
+      "liveChat": "المحادثة المباشرة",
+      "collections": "المجموعات",
+      "ticket": "تذكرة دعم",
+      "modes": "الأنماط",
+      "faq": "الأسئلة الشائعة",
+      "vendor": "مزود الخدمة",
+      "eBranding": "الهوية الرقمية",
+      "getDiWrapped": "احصل على تغطيتك",
+      "responsibility": "المسؤولية",
+      "resources": "المصادر",
+      "elements": "العناصر",
+      "documentation": "التوثيق",
+      "community": "المجتمع"
+    },
+    "legal": {
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية",
+      "cookies": "سياسة ملفات تعريف الارتباط",
+      "allRightsReserved": "جميع الحقوق محفوظة"
+    }
+  },
   "stayTuned": {
     "tag": "#قريباً",
     "title": "ترقبوا تحديثات حصرية والوصول المبكر!",
@@ -491,5 +536,11 @@
     "button": "العودة للرئيسية",
     "screenLaunching": "قريباً جداً",
     "screenStayTuned": "ترقبونا!"
+  },
+  "notFound": {
+    "badge": "عفواً !",
+    "title": "لا يوجد شيء هنا...",
+    "description": "يبدو أن الصفحة التي تحاول الوصول إليها غير موجودة، دعنا نعيدك إلى الصفحة الرئيسية.",
+    "backHome": "العودة للرئيسية"
   }
 }

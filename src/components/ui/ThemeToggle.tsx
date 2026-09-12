@@ -3,98 +3,57 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
+import { SunLight, HalfMoon } from "iconoir-react";
 
-function Sun(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2" />
-      <path d="M12 20v2" />
-      <path d="m4.93 4.93 1.41 1.41" />
-      <path d="m17.66 17.66 1.41 1.41" />
-      <path d="M2 12h2" />
-      <path d="M20 12h2" />
-      <path d="m6.34 17.66-1.41 1.41" />
-      <path d="m19.07 4.93-1.41 1.41" />
-    </svg>
-  );
-}
+const emptySubscribe = () => () => {};
 
-function Moon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-    </svg>
-  );
-}
-
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className?: string } = {}) {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const mounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
-  // Avoid hydration mismatch by waiting until mounted
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const baseClasses =
+    className ||
+    "theme-toggle w-[60px] h-[40px] min-w-[60px] rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-200 flex items-center justify-center cursor-pointer transition-all duration-150 ease-out hover:-translate-y-[1px] hover:shadow-xs active:translate-y-0 active:scale-[0.99]";
 
   if (!mounted) {
-    return <div className="w-9 h-9" />;
+    return (
+      <div
+        className={baseClasses}
+        aria-hidden="true"
+      />
+    );
   }
 
-  const activeTheme = theme === 'system' ? resolvedTheme : theme;
+  const activeTheme = theme === "system" ? resolvedTheme : theme;
+  const isDark = activeTheme === "dark";
+  const currentTheme = isDark ? "dark" : "light";
 
   return (
     <button
-      onClick={() => setTheme(activeTheme === "dark" ? "light" : "dark")}
-      className="w-9 h-9 flex items-center justify-center rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors active:scale-[0.98]"
+      type="button"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={baseClasses}
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>
-        {activeTheme === "dark" ? (
-          <motion.div
-            key="moon"
-            initial={{ opacity: 0, rotate: -180, scale: 0.8 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: 180, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="flex items-center justify-center"
-          >
-            <Sun className="w-4 h-4 text-amber-400" />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="sun"
-            initial={{ opacity: 0, rotate: 180, scale: 0.8 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: -180, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="flex items-center justify-center"
-          >
-            <Moon className="w-4 h-4 text-slate-700 dark:text-zinc-300" />
-          </motion.div>
-        )}
+        <motion.div
+          key={currentTheme}
+          initial={{ opacity: 0, rotate: -45, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: 0, scale: 1 }}
+          exit={{ opacity: 0, rotate: 45, scale: 0.8 }}
+          transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+          className="flex items-center justify-center"
+        >
+          {isDark ? (
+            <SunLight width={18} height={18} strokeWidth={1.75} className="text-zinc-200" />
+          ) : (
+            <HalfMoon width={18} height={18} strokeWidth={1.75} className="text-slate-700" />
+          )}
+        </motion.div>
       </AnimatePresence>
     </button>
   );

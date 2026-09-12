@@ -468,7 +468,7 @@
       "namePlaceholder": "Enter name",
       "emailLabel": "Your email",
       "emailPlaceholder": "Enter email",
-      "phoneLabel": "Subject",
+      "phoneLabel": "Phone number",
       "phonePlaceholder": "+1 (000) 000 - 0000",
       "subjectLabel": "Subject",
       "subjectPlaceholder": "Enter Subject",
@@ -484,6 +484,51 @@
     "inputPlaceholder": "Enter email",
     "button": "Subscribe"
   },
+  "footer": {
+    "slogan": "Streamline Your Ads, Amplify Your Reach.",
+    "poweredBy": "Powered by",
+    "groupName": "Distin-Gui Group.",
+    "address": "Olaya Street - Olaya District,\nRiyadh, Saudi Arabia.",
+    "phone": "+966 00 000 0000",
+    "email": "info@di-wrapp.com",
+    "columns": {
+      "diWrapp": "Di-Wrapp",
+      "support": "Support",
+      "joinIn": "Join In"
+    },
+    "links": {
+      "about": "About",
+      "booking": "Booking",
+      "blog": "Blog",
+      "career": "Career",
+      "contact": "Contact",
+      "investors": "Investors",
+      "lifeAtDiWrapp": "Life At Di-Wrapp",
+      "promocodes": "Promocodes",
+      "helpCenter": "Help Center",
+      "howItWorks": "How It Works",
+      "cancellationOption": "Cancellation Option",
+      "liveChat": "Live Chat",
+      "collections": "Collections",
+      "ticket": "Ticket",
+      "modes": "Modes",
+      "faq": "FAQ",
+      "vendor": "Vendor",
+      "eBranding": "E-Branding",
+      "getDiWrapped": "Get Di-Wrapped",
+      "responsibility": "Responsibility",
+      "resources": "Resources",
+      "elements": "Elements",
+      "documentation": "Documentation",
+      "community": "Community"
+    },
+    "legal": {
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "allRightsReserved": "All rights reserved"
+    }
+  },
   "stayTuned": {
     "tag": "#Coming_Soon",
     "title": "Stay tuned for exclusive updates and early access!",
@@ -491,5 +536,11 @@
     "button": "Back To Homepage",
     "screenLaunching": "Launching Soon",
     "screenStayTuned": "Stay Tuned!"
+  },
+  "notFound": {
+    "badge": "Oops !",
+    "title": "Nothing To See Here...",
+    "description": "It seems like the page that you are trying to reach doesn't Exist, let's take you back to the home page.",
+    "backHome": "Back To Homepage"
   }
 }
