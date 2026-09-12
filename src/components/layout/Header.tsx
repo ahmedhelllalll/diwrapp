@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Menu, Xmark } from 'iconoir-react';
+import './header.css';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

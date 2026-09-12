@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import './header.css';
 
 interface LandingHeaderProps {
   lang: string;
@@ -115,7 +116,9 @@ export default function LandingHeader({
     if (isScrolled) {
       return 'sticky top-0 bg-white/80 dark:bg-[#080808]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80 shadow-xs';
     }
-    return 'sticky top-0 bg-transparent dark:bg-transparent border-b border-transparent shadow-none';
+    return isTransparent
+      ? 'sticky top-0 bg-transparent dark:bg-transparent border-b border-transparent shadow-none'
+      : 'sticky top-0 bg-white/80 dark:bg-[#080808]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80 shadow-none';
   };
 
   const normalizedPathname = (pathname || '').replace(/\/$/, '') || '/';
