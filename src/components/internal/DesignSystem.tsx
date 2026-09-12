@@ -12,6 +12,60 @@ import { DropdownMenu } from '@/components/ui/DropdownMenu';
 import { MobileTabDropdown } from '@/components/ui/MobileTabDropdown';
 import { DataTable, Pagination } from '@/components/ui/DataTable';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import {
+  ArrowRight, CloudUpload, Bookmark, Mail, Lock, Eye, EyeClosed,
+  Attachment, Link as LinkIcon, Bold, Italic, Underline, List, Undo, Redo,
+  MediaImage, Trash, Search, Plus, MoreVert, EditPencil, Copy, Pause,
+  NavArrowDown, Settings, CreditCard, Group, LogOut, ShieldCheck, Shop,
+  Megaphone, InfoCircle, User, Folder, CheckCircle, XmarkCircle, WarningTriangle,
+  Xmark, NavArrowRight
+} from 'iconoir-react';
+
+function DsIcon({ name, className = "w-4 h-4 inline-block" }: { name: string; className?: string }) {
+  const cleanName = name.replace(/^(fa-solid|fa-regular|fa-brands)\s+/, '').replace(/^fa-/, '');
+  switch (cleanName) {
+    case 'arrow-right': return <ArrowRight className={className} />;
+    case 'cloud-arrow-up': return <CloudUpload className={className} />;
+    case 'bookmark': return <Bookmark className={className} />;
+    case 'envelope': return <Mail className={className} />;
+    case 'lock': return <Lock className={className} />;
+    case 'eye': return <Eye className={className} />;
+    case 'eye-slash': return <EyeClosed className={className} />;
+    case 'paperclip': return <Attachment className={className} />;
+    case 'link': return <LinkIcon className={className} />;
+    case 'bold': return <Bold className={className} />;
+    case 'italic': return <Italic className={className} />;
+    case 'underline': return <Underline className={className} />;
+    case 'list-ul': return <List className={className} />;
+    case 'rotate-left': return <Undo className={className} />;
+    case 'rotate-right': return <Redo className={className} />;
+    case 'image': return <MediaImage className={className} />;
+    case 'trash-can': return <Trash className={className} />;
+    case 'magnifying-glass': return <Search className={className} />;
+    case 'plus': return <Plus className={className} />;
+    case 'ellipsis-vertical': return <MoreVert className={className} />;
+    case 'pen': return <EditPencil className={className} />;
+    case 'copy': return <Copy className={className} />;
+    case 'pause': return <Pause className={className} />;
+    case 'chevron-down': return <NavArrowDown className={className} />;
+    case 'gear': return <Settings className={className} />;
+    case 'credit-card': return <CreditCard className={className} />;
+    case 'users': return <Group className={className} />;
+    case 'arrow-right-from-bracket': return <LogOut className={className} />;
+    case 'shield-halved': return <ShieldCheck className={className} />;
+    case 'store': return <Shop className={className} />;
+    case 'bullhorn': return <Megaphone className={className} />;
+    case 'circle-info': return <InfoCircle className={className} />;
+    case 'user': return <User className={className} />;
+    case 'folder-open': return <Folder className={className} />;
+    case 'circle-check': return <CheckCircle className={className} />;
+    case 'circle-xmark': return <XmarkCircle className={className} />;
+    case 'triangle-exclamation': return <WarningTriangle className={className} />;
+    case 'xmark': return <Xmark className={className} />;
+    case 'angle-right': return <NavArrowRight className={className} />;
+    default: return <span className={`inline-block rounded-full bg-current ${className}`} style={{ width: '0.75em', height: '0.75em' }} />;
+  }
+}
 
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
 export interface Toast {
@@ -166,7 +220,7 @@ export default function DesignSystem() {
                         Primary Action
                       </button>
                       <button className="group px-6 py-3 rounded-[10px] bg-[#1665ff] text-white font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
-                        Continue <i className="fa-solid fa-arrow-right text-[12px] group-hover:translate-x-1 transition-transform duration-200"></i>
+                        Continue <DsIcon name="arrow-right" className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
                       </button>
                     </div>
                   </div>
@@ -177,7 +231,7 @@ export default function DesignSystem() {
                         Dark Action
                       </button>
                       <button className="group px-6 py-3 rounded-[10px] bg-white dark:bg-[#0a0a0a] border-2 border-[#e2e8f0] dark:border-zinc-800/80 text-[#0f172a] dark:text-zinc-100 font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:border-[#cbd5e1] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
-                        <i className="fa-solid fa-cloud-arrow-up text-[#64748b] dark:text-zinc-400 group-hover:text-[#1665ff] transition-colors duration-200"></i>
+                        <DsIcon name="cloud-arrow-up" className="w-4 h-4 text-[#64748b] dark:text-zinc-400 group-hover:text-[#1665ff] transition-colors duration-200" />
                         Outline Action
                       </button>
                     </div>
@@ -186,7 +240,7 @@ export default function DesignSystem() {
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Icon & Subtle Buttons</h3>
                     <div className="flex flex-wrap gap-4">
                       <button className="group w-11 h-11 rounded-[10px] bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 text-[#64748b] dark:text-zinc-400 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:text-[#1665ff] hover:border-[#cbd5e1] active:scale-[0.98] active:translate-y-0 flex items-center justify-center">
-                        <i className="fa-regular fa-bookmark text-[15px]"></i>
+                        <DsIcon name="bookmark" className="w-4 h-4" />
                       </button>
                       <button className="group px-5 py-2.5 rounded-[10px] text-[#64748b] dark:text-zinc-400 font-semibold text-[13px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800/80 hover:text-[#0f172a] dark:text-zinc-100 active:scale-[0.98] active:translate-y-0">
                         Cancel
@@ -213,17 +267,17 @@ export default function DesignSystem() {
                     <div>
                       <label className="block text-[12px] font-bold text-[#111827] dark:text-zinc-100 mb-2">Email Address</label>
                       <div className="relative flex items-center group">
-                        <i className="fa-regular fa-envelope absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#1665ff]"></i>
+                        <DsIcon name="envelope" className="w-3.5 h-3.5 absolute left-[14px] text-[#9ca3af] transition-colors group-focus-within:text-[#1665ff]" />
                         <input type="email" placeholder="Enter your email" className="w-full pl-[40px] pr-[14px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10 transition-all"/>
                       </div>
                     </div>
                     <div>
                       <label className="block text-[12px] font-bold text-[#111827] dark:text-zinc-100 mb-2">Password</label>
                       <div className="relative flex items-center group">
-                        <i className="fa-solid fa-lock absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#1665ff]"></i>
+                        <DsIcon name="lock" className="w-3.5 h-3.5 absolute left-[14px] text-[#9ca3af] transition-colors group-focus-within:text-[#1665ff]" />
                         <input type={passwordVisible ? "text" : "password"} placeholder="Enter your password" className="w-full pl-[40px] pr-[40px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10 transition-all"/>
                         <button onClick={() => setPasswordVisible(!passwordVisible)} className="absolute right-[14px] text-[#64748b] dark:text-zinc-400 hover:text-[#1665ff] transition-colors">
-                          <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} text-[13px]`}></i>
+                          <DsIcon name={passwordVisible ? 'eye' : 'eye-slash'} className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
@@ -239,16 +293,16 @@ export default function DesignSystem() {
                       <div className="flex-1 flex flex-col border border-[#e5e7eb] rounded-[10px] overflow-hidden focus-within:border-[#1665ff] focus-within:ring-4 focus-within:ring-[#1665ff]/10 transition-all">
                         <textarea placeholder="Describe your campaign..." className="w-full flex-1 p-[14px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none resize-none min-h-[120px]"></textarea>
                         <div className="bg-[#f8fafc] dark:bg-zinc-900/50 border-t border-[#e5e7eb] px-3 py-2 flex items-center gap-1 overflow-x-auto">
-                          <ToolbarBtn icon="fa-paperclip" />
-                          <ToolbarBtn icon="fa-link" />
+                          <ToolbarBtn icon="paperclip" />
+                          <ToolbarBtn icon="link" />
                           <div className="w-[1px] h-4 bg-[#e2e8f0] mx-1"></div>
-                          <ToolbarBtn icon="fa-bold" />
-                          <ToolbarBtn icon="fa-italic" />
-                          <ToolbarBtn icon="fa-underline" />
-                          <ToolbarBtn icon="fa-list-ul" />
+                          <ToolbarBtn icon="bold" />
+                          <ToolbarBtn icon="italic" />
+                          <ToolbarBtn icon="underline" />
+                          <ToolbarBtn icon="list-ul" />
                           <div className="w-[1px] h-4 bg-[#e2e8f0] mx-1"></div>
-                          <ToolbarBtn icon="fa-rotate-left" />
-                          <ToolbarBtn icon="fa-rotate-right" />
+                          <ToolbarBtn icon="rotate-left" />
+                          <ToolbarBtn icon="rotate-right" />
                         </div>
                       </div>
                     </div>
@@ -260,7 +314,7 @@ export default function DesignSystem() {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-xl bg-[#f8fafc] dark:bg-zinc-900/50">
                     <div className="flex items-center gap-4 flex-1 w-full">
                       <div className="w-14 h-14 bg-gradient-to-br from-[#1665ff]/20 to-[#8B5CF6]/20 rounded-lg flex items-center justify-center shrink-0 border border-[#1665ff]/10">
-                        <i className="fa-regular fa-image text-[#1665ff] text-xl"></i>
+                        <DsIcon name="image" className="w-6 h-6 text-[#1665ff]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-[13px] font-bold text-[#0f172a] dark:text-zinc-100 truncate">campaign-banner-final.png</h4>
@@ -272,7 +326,7 @@ export default function DesignSystem() {
                         Change Image
                       </button>
                       <button className="w-8 h-8 flex items-center justify-center bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-lg text-[#ef4444] transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:bg-[#fef2f2] hover:border-[#fecaca] active:scale-[0.98] active:translate-y-0">
-                        <i className="fa-regular fa-trash-can"></i>
+                        <DsIcon name="trash-can" className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -296,7 +350,7 @@ export default function DesignSystem() {
                     <div className="relative max-w-xl">
                       <input type="text" placeholder="Search campaigns, vendors, or keywords..." className="w-full pl-5 pr-14 py-4 bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-full text-[14px] text-[#0f172a] dark:text-zinc-100 placeholder:text-[#94a3b8] outline-none focus:border-[#1665ff] focus:bg-white dark:bg-[#0a0a0a] transition-all shadow-inner" />
                       <button className="absolute right-2 top-2 bottom-2 w-10 bg-[#111827] dark:bg-zinc-100 text-white dark:text-black rounded-full flex items-center justify-center transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-[0.98] active:translate-y-0">
-                        <i className="fa-solid fa-magnifying-glass text-[13px]"></i>
+                        <DsIcon name="magnifying-glass" className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>
@@ -323,7 +377,7 @@ export default function DesignSystem() {
                           <button onClick={() => setOpenFaq(openFaq === idx ? null : idx)} className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-[#f8fafc] dark:bg-zinc-900/50 transition-colors">
                             <span className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100">{faq.question}</span>
                             <motion.div animate={{ rotate: openFaq === idx ? 45 : 0 }} className="w-6 h-6 flex items-center justify-center rounded-full bg-[#f1f5f9] text-[#64748b] dark:text-zinc-400">
-                              <i className="fa-solid fa-plus text-[12px]"></i>
+                              <DsIcon name="plus" className="w-3 h-3" />
                             </motion.div>
                           </button>
                           <AnimatePresence>
@@ -398,26 +452,26 @@ export default function DesignSystem() {
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">Action Menu</h3>
                     <DropdownMenu 
                       align="left"
-                      trigger={<button className="w-9 h-9 rounded-lg hover:bg-slate-100 text-slate-500 flex items-center justify-center transition-colors"><i className="fa-solid fa-ellipsis-vertical"></i></button>}
+                      trigger={<button className="w-9 h-9 rounded-lg hover:bg-slate-100 text-slate-500 flex items-center justify-center transition-colors"><DsIcon name="ellipsis-vertical" className="w-4 h-4" /></button>}
                       items={[
-                        { label: 'Edit Campaign', icon: 'fa-pen' },
-                        { label: 'Duplicate', icon: 'fa-copy' },
-                        { label: 'Pause Campaign', icon: 'fa-pause' },
+                        { label: 'Edit Campaign', icon: <DsIcon name="pen" className="w-4 h-4" /> },
+                        { label: 'Duplicate', icon: <DsIcon name="copy" className="w-4 h-4" /> },
+                        { label: 'Pause Campaign', icon: <DsIcon name="pause" className="w-4 h-4" /> },
                         { divider: true, label: '' },
-                        { label: 'Delete Campaign', icon: 'fa-trash-can', danger: true }
+                        { label: 'Delete Campaign', icon: <DsIcon name="trash-can" className="w-4 h-4" />, danger: true }
                       ]}
                     />
                   </div>
                   <div>
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">User Profile Menu</h3>
                     <DropdownMenu 
-                      trigger={<button className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-colors"><div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden"><img src="https://ui-avatars.com/api/?name=John+Doe&background=1665ff&color=fff" alt="User" /></div><span className="text-[13px] font-bold text-slate-700">John Doe</span><i className="fa-solid fa-chevron-down text-[10px] text-slate-400"></i></button>}
+                      trigger={<button className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-colors"><div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden"><img src="https://ui-avatars.com/api/?name=John+Doe&background=1665ff&color=fff" alt="User" /></div><span className="text-[13px] font-bold text-slate-700">John Doe</span><DsIcon name="chevron-down" className="w-2.5 h-2.5 text-slate-400" /></button>}
                       items={[
-                        { label: 'Account Settings', icon: 'fa-gear' },
-                        { label: 'Billing & Plans', icon: 'fa-credit-card' },
-                        { label: 'Workspace Team', icon: 'fa-users' },
+                        { label: 'Account Settings', icon: <DsIcon name="gear" className="w-4 h-4" /> },
+                        { label: 'Billing & Plans', icon: <DsIcon name="credit-card" className="w-4 h-4" /> },
+                        { label: 'Workspace Team', icon: <DsIcon name="users" className="w-4 h-4" /> },
                         { divider: true, label: '' },
-                        { label: 'Sign Out', icon: 'fa-arrow-right-from-bracket' }
+                        { label: 'Sign Out', icon: <DsIcon name="arrow-right-from-bracket" className="w-4 h-4" /> }
                       ]}
                     />
                   </div>
@@ -438,7 +492,7 @@ export default function DesignSystem() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   <motion.div whileHover={{ y: -4 }} className="bg-white dark:bg-[#0a0a0a] border border-[#fee2e2] rounded-[16px] p-5 md:p-6 shadow-[0_4px_15px_rgba(239,68,68,0.05)] cursor-pointer flex flex-col">
                     <div className="w-10 h-10 rounded-xl bg-[#fef2f2] text-[#ef4444] flex items-center justify-center text-[16px] mb-4 md:mb-5 border border-[#fecaca]">
-                      <i className="fa-solid fa-shield-halved"></i>
+                      <DsIcon name="shield-halved" className="w-4 h-4" />
                     </div>
                     <h3 className="text-[15px] md:text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2">Action Required</h3>
                     <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-4 md:mb-5 flex-1">Your account is currently unverified. Please verify your identity to start listing assets.</p>
@@ -446,7 +500,7 @@ export default function DesignSystem() {
                   </motion.div>
                   <motion.div whileHover={{ y: -4 }} className="bg-white dark:bg-[#0a0a0a] border border-[#dbeafe] rounded-[16px] p-5 md:p-6 shadow-[0_4px_15px_rgba(59,130,246,0.05)] cursor-pointer flex flex-col">
                     <div className="w-10 h-10 rounded-xl bg-[#eff6ff] text-[#3b82f6] flex items-center justify-center text-[16px] mb-4 md:mb-5 border border-[#bfdbfe]">
-                      <i className="fa-solid fa-store"></i>
+                      <DsIcon name="store" className="w-4 h-4" />
                     </div>
                     <h3 className="text-[15px] md:text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2">Join as Supplier</h3>
                     <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-4 md:mb-5 flex-1">Turn your assets into revenue. Reach thousands of advertisers looking for spaces.</p>
@@ -454,7 +508,7 @@ export default function DesignSystem() {
                   </motion.div>
                   <motion.div whileHover={{ y: -4 }} className="bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-[16px] p-5 md:p-6 shadow-sm hover:shadow-[0_10px_25px_rgba(0,0,0,0.04)] cursor-pointer transition-shadow flex flex-col">
                     <div className="w-10 h-10 rounded-xl bg-[#f8fafc] dark:bg-zinc-900/50 text-[#64748b] dark:text-zinc-400 flex items-center justify-center text-[16px] mb-4 md:mb-5 border border-[#e2e8f0] dark:border-zinc-800/80">
-                      <i className="fa-solid fa-bullhorn"></i>
+                      <DsIcon name="bullhorn" className="w-4 h-4" />
                     </div>
                     <h3 className="text-[15px] md:text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2">Create Campaign</h3>
                     <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-4 md:mb-5 flex-1">Launch your next advertising campaign across our digital network.</p>
@@ -480,7 +534,7 @@ export default function DesignSystem() {
                       <h3 className="text-[18px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2.5 leading-snug">New Platform Features Released for Vendors</h3>
                       <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-5 flex-1">We've rolled out a suite of new tools to help you manage your listings, track impressions, and optimize your revenue streams.</p>
                       <div className="text-[#1665ff] text-[13px] font-bold flex items-center gap-1.5 group">
-                        Learn more <i className="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                        Learn more <DsIcon name="arrow-right" className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </motion.div>
@@ -504,8 +558,8 @@ export default function DesignSystem() {
                     <div>
                       <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Notification Pill</h3>
                       <motion.div whileHover={{ scale: 1.02 }} className="bg-white dark:bg-[#0a0a0a] rounded-xl p-2.5 flex items-center gap-3 shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-[#e2e8f0] dark:border-zinc-800/80 w-max cursor-pointer">
-                        <div className="w-8 h-8 rounded-lg bg-[#eff6ff] flex items-center justify-center shrink-0">
-                          <i className="fa-solid fa-bullhorn text-[#1665ff] text-[13px]"></i>
+                        <div className="w-8 h-8 rounded-lg bg-[#eff6ff] flex items-center justify-center shrink-0 text-[#1665ff]">
+                          <DsIcon name="bullhorn" className="w-3.5 h-3.5" />
                         </div>
                         <div className="flex flex-col pr-4">
                           <h5 className="text-[#0f172a] dark:text-zinc-100 text-[11.5px] font-bold">Publish New Listing</h5>
@@ -557,19 +611,19 @@ export default function DesignSystem() {
                   <div className="flex flex-wrap items-center gap-8 pl-8 pt-4 pb-4">
                     <Tooltip content="Settings & Preferences" position="top">
                       <button className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-center transition-colors">
-                        <i className="fa-solid fa-gear"></i>
+                        <DsIcon name="gear" className="w-4 h-4" />
                       </button>
                     </Tooltip>
                     
                     <Tooltip content="More information" position="bottom">
                       <button className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 text-[#1665ff] hover:bg-blue-50 flex items-center justify-center transition-colors">
-                        <i className="fa-solid fa-circle-info"></i>
+                        <DsIcon name="circle-info" className="w-4 h-4" />
                       </button>
                     </Tooltip>
 
                     <Tooltip content="Delete permanently" position="right">
                       <button className="w-10 h-10 rounded-xl bg-red-50 text-red-500 hover:bg-red-100 flex items-center justify-center transition-colors">
-                        <i className="fa-solid fa-trash-can"></i>
+                        <DsIcon name="trash-can" className="w-4 h-4" />
                       </button>
                     </Tooltip>
                   </div>
@@ -617,7 +671,7 @@ export default function DesignSystem() {
                       </div>
                     ) : (
                       <div className="w-full flex flex-col gap-4">
-                        <div className="w-full h-40 bg-[#f1f5f9] rounded-xl flex items-center justify-center text-[#94a3b8]"><i className="fa-regular fa-image text-3xl"></i></div>
+                        <div className="w-full h-40 bg-[#f1f5f9] rounded-xl flex items-center justify-center text-[#94a3b8]"><DsIcon name="image" className="w-8 h-8" /></div>
                         <h4 className="text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mt-2 leading-tight">Downtown Billboard Campaign</h4>
                         <p className="text-[13px] text-[#64748b] dark:text-zinc-400 leading-relaxed">This campaign will run for 30 days across our premium downtown digital screens targeting evening commuters.</p>
                         <button className="w-full h-10 bg-[#1665ff] text-white rounded-[10px] font-bold text-[13.5px] mt-4">View Details</button>
@@ -642,7 +696,7 @@ export default function DesignSystem() {
                             </>
                           ) : (
                             <>
-                              <div className="w-12 h-12 rounded-full bg-[#eff6ff] text-[#1665ff] flex items-center justify-center shrink-0"><i className="fa-regular fa-user"></i></div>
+                              <div className="w-12 h-12 rounded-full bg-[#eff6ff] text-[#1665ff] flex items-center justify-center shrink-0"><DsIcon name="user" className="w-5 h-5" /></div>
                               <div className="flex-1">
                                 <h5 className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100">Vendor User {i}</h5>
                                 <p className="text-[12px] text-[#64748b] dark:text-zinc-400">Joined recently</p>
@@ -718,7 +772,7 @@ export default function DesignSystem() {
                   <div className="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm">
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">Search Results Empty State</h3>
                     <EmptyState 
-                      icon="fa-magnifying-glass" 
+                      icon="magnifying-glass" 
                       title="No assets found" 
                       description="We couldn't find any assets matching your search criteria. Try adjusting your filters or keywords." 
                       action="Clear Filters"
@@ -727,7 +781,7 @@ export default function DesignSystem() {
                   <div className="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm">
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">Initial Empty State</h3>
                     <EmptyState 
-                      icon="fa-folder-open" 
+                      icon="folder-open" 
                       title="Create your first campaign" 
                       description="You don't have any active campaigns yet. Start creating one to reach thousands of potential customers." 
                       action="Create Campaign"
@@ -812,7 +866,7 @@ function ColorCard({ name, hex, className }: { name: string, hex: string, classN
 function ToolbarBtn({ icon }: { icon: string }) {
   return (
     <button className="w-8 h-8 rounded-md flex items-center justify-center text-[#64748b] dark:text-zinc-400 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:bg-zinc-800/80 hover:bg-[#e2e8f0] hover:text-[#0f172a] dark:text-zinc-100 shrink-0 active:scale-[0.98] active:translate-y-0">
-      <i className={`fa-solid ${icon} text-[13px]`}></i>
+      <DsIcon name={icon} className="w-3.5 h-3.5" />
     </button>
   );
 }
@@ -856,10 +910,12 @@ function CustomDropdown({ options, placeholder }: { options: string[], placehold
         <span className={selected ? 'text-[#111827] dark:text-zinc-100' : 'text-[#9ca3af]'}>
           {selected || placeholder}
         </span>
-        <motion.i 
+        <motion.div 
           animate={{ rotate: isOpen ? 180 : 0 }} 
-          className={`fa-solid fa-chevron-down text-[11px] ${isOpen ? 'text-[#1665ff]' : 'text-[#9ca3af]'}`}
-        ></motion.i>
+          className={`flex items-center justify-center ${isOpen ? 'text-[#1665ff]' : 'text-[#9ca3af]'}`}
+        >
+          <DsIcon name="chevron-down" className="w-3 h-3" />
+        </motion.div>
       </button>
 
       <AnimatePresence>
@@ -899,10 +955,10 @@ function ToastItem({ toast, onRemove }: { toast: Toast, onRemove: () => void }) 
   }, [onRemove]);
 
   const config = {
-    success: { icon: 'fa-circle-check', color: '#22c55e', bg: '#f0fdf4', border: '#bbf7d0' },
-    error: { icon: 'fa-circle-xmark', color: '#ef4444', bg: '#fef2f2', border: '#fecaca' },
-    warning: { icon: 'fa-triangle-exclamation', color: '#f59e0b', bg: '#fffbeb', border: '#fde68a' },
-    info: { icon: 'fa-circle-info', color: '#3b82f6', bg: '#eff6ff', border: '#bfdbfe' },
+    success: { icon: 'circle-check', color: '#22c55e', bg: '#f0fdf4', border: '#bbf7d0' },
+    error: { icon: 'circle-xmark', color: '#ef4444', bg: '#fef2f2', border: '#fecaca' },
+    warning: { icon: 'triangle-exclamation', color: '#f59e0b', bg: '#fffbeb', border: '#fde68a' },
+    info: { icon: 'circle-info', color: '#3b82f6', bg: '#eff6ff', border: '#bfdbfe' },
   }[toast.type];
 
   return (
@@ -919,7 +975,7 @@ function ToastItem({ toast, onRemove }: { toast: Toast, onRemove: () => void }) 
           className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5" 
           style={{ backgroundColor: config.bg, color: config.color, border: `1px solid ${config.border}` }}
         >
-          <i className={`fa-solid ${config.icon} text-[14px]`}></i>
+          <DsIcon name={config.icon} className="w-4 h-4" />
         </div>
         <div className="flex-1 pr-6">
           <h4 className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100 leading-tight">{toast.title}</h4>
@@ -929,7 +985,7 @@ function ToastItem({ toast, onRemove }: { toast: Toast, onRemove: () => void }) 
           onClick={onRemove}
           className="absolute top-3 right-3 w-6 h-6 rounded-md flex items-center justify-center text-[#94a3b8] hover:bg-[#f1f5f9] hover:text-[#0f172a] dark:text-zinc-100 transition-colors"
         >
-          <i className="fa-solid fa-xmark text-[13px]"></i>
+          <DsIcon name="xmark" className="w-3.5 h-3.5" />
         </button>
       </div>
       {/* Auto-dismiss progress bar */}
@@ -960,7 +1016,9 @@ function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
           return (
             <li key={idx} className="flex items-center">
               {idx > 0 && (
-                <i className="fa-solid fa-angle-right text-[12px] text-[#334155] dark:text-zinc-400 mx-3.5"></i>
+                <span className="text-[#334155] dark:text-zinc-400 mx-3.5 flex items-center">
+                  <DsIcon name="angle-right" className="w-3 h-3" />
+                </span>
               )}
               {isLast || !item.href ? (
                 <span className={`flex items-center gap-2 ${isLast ? 'text-[#0f172a] dark:text-zinc-100 font-bold' : 'text-[#334155] dark:text-zinc-400'}`}>
@@ -990,7 +1048,7 @@ function EmptyState({ icon, title, description, action }: { icon: string, title:
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 border border-dashed border-[#e2e8f0] dark:border-zinc-800 rounded-2xl bg-[#f8fafc] dark:bg-zinc-900/40">
       <div className="w-16 h-16 bg-white dark:bg-black shadow-sm border border-[#e2e8f0] dark:border-zinc-800 rounded-full flex items-center justify-center text-[#94a3b8] dark:text-zinc-500 mb-5">
-        <i className={`fa-solid ${icon} text-[22px]`}></i>
+        <DsIcon name={icon} className="w-6 h-6" />
       </div>
       <h3 className="text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2">{title}</h3>
       <p className="text-[13.5px] text-[#64748b] dark:text-zinc-400 text-center max-w-sm mb-6 leading-relaxed font-medium">

@@ -5,6 +5,7 @@ import ContactHero from "@/components/marketing/contact/ContactHero";
 import ContactCardsGrid from "@/components/marketing/contact/ContactCardsGrid";
 import ContactForm from "@/components/marketing/contact/ContactForm";
 import NewsletterSection from "@/components/marketing/contact/NewsletterSection";
+import "@/app/contact.css";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;

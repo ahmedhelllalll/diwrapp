@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import FaqSection from "@/components/marketing/landing/FaqSection";
 import FeaturesSection from "@/components/marketing/landing/FeaturesSection";
 import NewsSection from "@/components/marketing/landing/NewsSection";
+import { Star, Map, Calendar, GraphUp, Check, ArrowRightCircle } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -54,7 +55,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
             <div className="w-full max-w-[900px] mx-auto flex flex-col items-center">
 
               <div className="badge bg-slate-100/80 dark:bg-zinc-900/80 border border-slate-200 dark:border-zinc-800 text-slate-800 dark:text-zinc-300">
-                <i className="fa-regular fa-star" style={{ fontSize: '11px' }}></i>
+                <Star className="w-3 h-3 inline-block mr-1" />
                 {l.hero.badge}
               </div>
 
@@ -88,7 +89,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           <div className="works-cards-grid">
             <div className="work-card">
               <div className="card-icon">
-                <i className="fa-regular fa-map"></i>
+                <Map className="w-4 h-4" />
               </div>
               <h3 className="card-title text-slate-900 dark:text-white">{l.works.step1Title}</h3>
               <p className="card-desc text-slate-600 dark:text-zinc-400">
@@ -98,7 +99,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
 
             <div className="work-card">
               <div className="card-icon">
-                <i className="fa-regular fa-calendar"></i>
+                <Calendar className="w-4 h-4" />
               </div>
               <h3 className="card-title text-slate-900 dark:text-white">{l.works.step2Title}</h3>
               <p className="card-desc text-slate-600 dark:text-zinc-400">
@@ -108,7 +109,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
 
             <div className="work-card">
               <div className="card-icon">
-                <i className="fa-solid fa-chart-line"></i>
+                <GraphUp className="w-4 h-4" />
               </div>
               <h3 className="card-title text-slate-900 dark:text-white">{l.works.step3Title}</h3>
               <p className="card-desc text-slate-600 dark:text-zinc-400">
@@ -135,15 +136,15 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
 
             <ul className="feature-list text-slate-600 dark:text-zinc-400">
               <li>
-                <span className="check-circle"><i className="fa-solid fa-check"></i></span>
+                <span className="check-circle"><Check className="w-3 h-3 stroke-[2.5]" /></span>
                 {l.pioneering.feature1}
               </li>
               <li>
-                <span className="check-circle"><i className="fa-solid fa-check"></i></span>
+                <span className="check-circle"><Check className="w-3 h-3 stroke-[2.5]" /></span>
                 {l.pioneering.feature2}
               </li>
               <li>
-                <span className="check-circle"><i className="fa-solid fa-check"></i></span>
+                <span className="check-circle"><Check className="w-3 h-3 stroke-[2.5]" /></span>
                 {l.pioneering.feature3}
               </li>
             </ul>
@@ -203,7 +204,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
                   </div>
 
                   <button className="btn-book-channel">
-                    Book Channel <i className="fa-solid fa-circle-chevron-right"></i>
+                    Book Channel <ArrowRightCircle className="w-3 h-3" />
                   </button>
                 </div>
               </div>

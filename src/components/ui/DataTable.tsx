@@ -1,4 +1,5 @@
 import React from 'react';
+import { EditPencil, Trash, MoreVert } from 'iconoir-react';
 
 export function Pagination() {
   return (
@@ -60,8 +61,8 @@ export function DataTable() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-[13.5px] font-semibold text-[#334155] dark:text-zinc-300">{row.impressions}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-[13.5px] font-medium">
-                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#1665ff] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><i className="fa-solid fa-pen"></i></button>
-                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-red-600 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"><i className="fa-solid fa-trash-can"></i></button>
+                  <button aria-label="Edit" className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#1665ff] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><EditPencil width={15} height={15} strokeWidth={1.8} /></button>
+                  <button aria-label="Delete" className="text-[#94a3b8] dark:text-zinc-500 hover:text-red-600 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"><Trash width={15} height={15} strokeWidth={1.8} /></button>
                 </td>
               </tr>
             ))}
@@ -78,8 +79,8 @@ export function DataTable() {
                 <h4 className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100 mb-1.5">{row.name}</h4>
                 {renderStatus(row.status)}
               </div>
-              <button className="w-8 h-8 flex items-center justify-center text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 rounded-lg transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 -mt-1 -mr-1">
-                <i className="fa-solid fa-ellipsis-vertical"></i>
+              <button aria-label="More options" className="w-8 h-8 flex items-center justify-center text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 rounded-lg transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 -mt-1 -mr-1">
+                <MoreVert width={18} height={18} strokeWidth={1.8} />
               </button>
             </div>
             <div className="grid grid-cols-2 gap-2 text-sm pt-3 border-t border-[#e2e8f0] dark:border-zinc-800">

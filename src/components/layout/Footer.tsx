@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Phone, Mail, MapPin } from 'iconoir-react';
 
 interface FooterDict {
   slogan?: string;
@@ -133,7 +134,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
             <div className="space-y-3.5 pt-2">
               <div className="flex items-center gap-3 text-[#475569] dark:text-zinc-400 text-[13px] font-medium group">
-                <i className="fa-solid fa-phone text-[14px] text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0"></i>
+                <Phone width={15} height={15} strokeWidth={1.8} className="text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0" />
                 <a href="tel:+966000000000" className="group-hover:text-black dark:group-hover:text-zinc-100 transition-colors">
                   <span dir="ltr" className="inline-block font-sans">
                     {dict?.phone || '+966 00 000 0000'}
@@ -141,7 +142,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-[#475569] dark:text-zinc-400 text-[13px] font-medium group">
-                <i className="fa-regular fa-envelope text-[14px] text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0"></i>
+                <Mail width={15} height={15} strokeWidth={1.8} className="text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0" />
                 <a href="mailto:info@di-wrapp.com" className="group-hover:text-black dark:group-hover:text-zinc-100 transition-colors">
                   <span dir="ltr" className="inline-block font-sans">
                     {dict?.email || 'info@di-wrapp.com'}
@@ -149,7 +150,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
                 </a>
               </div>
               <div className="flex items-start gap-3 text-[#475569] dark:text-zinc-400 text-[13px] font-medium leading-relaxed max-w-[260px] group">
-                <i className="fa-solid fa-location-dot mt-0.5 text-[14px] text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0"></i>
+                <MapPin width={15} height={15} strokeWidth={1.8} className="mt-0.5 text-[#64748b] dark:text-zinc-500 group-hover:text-[#1665ff] dark:group-hover:text-blue-500 transition-colors shrink-0" />
                 <span className="group-hover:text-black dark:group-hover:text-zinc-100 transition-colors whitespace-pre-line">
                   {dict?.address || (isRtl ? 'طريق العليا - حي العليا،\nالرياض، المملكة العربية السعودية.' : 'Olaya Street - Olaya District,\nRiyadh, Saudi Arabia.')}
                 </span>
@@ -239,7 +240,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
           <div className="flex items-center gap-5 text-[#64748b] dark:text-zinc-500 order-1 md:order-3">
             <Link href="#" aria-label="Facebook" className="hover:text-[#1877F2] hover:-translate-y-0.5 transition-all">
-              <i className="fa-brands fa-facebook text-[18px]"></i>
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] inline-block">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
             </Link>
             <Link href="#" aria-label="X (Twitter)" className="hover:text-black dark:hover:text-zinc-100 hover:-translate-y-0.5 transition-all">
               <svg viewBox="0 0 1200 1227" fill="currentColor" className="w-[16px] h-[16px] inline-block">
@@ -247,10 +250,14 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
               </svg>
             </Link>
             <Link href="#" aria-label="Instagram" className="hover:text-[#E1306C] hover:-translate-y-0.5 transition-all">
-              <i className="fa-brands fa-instagram text-[18px]"></i>
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] inline-block">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
             </Link>
             <Link href="#" aria-label="LinkedIn" className="hover:text-[#0A66C2] hover:-translate-y-0.5 transition-all">
-              <i className="fa-brands fa-linkedin text-[18px]"></i>
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] inline-block">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
             </Link>
           </div>
         </div>

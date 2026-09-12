@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { NavArrowDown, Check } from 'iconoir-react';
 
 const languages = [
   {
@@ -53,7 +54,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
       >
         <img src={current.flagUrl} alt={current.name} className="w-[18px] h-[18px] rounded-full object-cover border border-[#e2e8f0] dark:border-zinc-700 bg-[#f0f0f0] dark:bg-zinc-800" />
         <span className="text-[13px] font-bold tracking-wide">{current.code.toUpperCase()}</span>
-        <i className={`fa-solid fa-chevron-down text-[9px] text-[#9ca3af] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <NavArrowDown width={14} height={14} strokeWidth={2} className={`text-[#9ca3af] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {/* Dropdown Menu - Minimal Design */}
@@ -72,7 +73,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
             </div>
             
             {currentLang === lang.code && (
-              <i className="fa-solid fa-check text-[11px] text-slate-900 dark:text-zinc-100 shrink-0 ml-3" />
+              <Check width={13} height={13} strokeWidth={2.5} className="text-slate-900 dark:text-zinc-100 shrink-0 ml-3" />
             )}
           </button>
         ))}

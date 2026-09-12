@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
-import "../landing.css";
-import "../about.css";
-import "../advertise.css";
-import "../contact.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
@@ -41,6 +37,7 @@ const lufgaFont = localFont({
   ],
   variable: '--font-lufga',
   display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({

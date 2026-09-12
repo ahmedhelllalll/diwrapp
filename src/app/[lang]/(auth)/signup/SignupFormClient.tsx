@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Input } from "@/components/ui/Input";
+import { Megaphone, CheckCircle, Tv } from "iconoir-react";
 
 type Dict = any; // You can type this better based on your setup
 
@@ -279,7 +280,7 @@ export default function SignupFormClient({ dict, lang }: { dict: Dict; lang: str
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${formData.role === 'advertiser' ? 'bg-orange-500 text-white' : 'bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-zinc-400'}`}>
-                      <i className="fa-solid fa-bullhorn text-sm"></i>
+                      <Megaphone width={16} height={16} strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className={`text-[15px] font-bold mb-1 transition-colors ${formData.role === 'advertiser' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-900 dark:text-zinc-100'}`}>
@@ -292,7 +293,7 @@ export default function SignupFormClient({ dict, lang }: { dict: Dict; lang: str
                   </div>
                   {formData.role === 'advertiser' && (
                     <div className="absolute top-4 end-4 text-orange-500">
-                      <i className="fa-solid fa-circle-check"></i>
+                      <CheckCircle width={18} height={18} strokeWidth={2} />
                     </div>
                   )}
                 </div>
@@ -307,7 +308,7 @@ export default function SignupFormClient({ dict, lang }: { dict: Dict; lang: str
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${formData.role === 'vendor' ? 'bg-orange-500 text-white' : 'bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-zinc-400'}`}>
-                      <i className="fa-solid fa-display text-sm"></i>
+                      <Tv width={16} height={16} strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className={`text-[15px] font-bold mb-1 transition-colors ${formData.role === 'vendor' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-900 dark:text-zinc-100'}`}>
@@ -320,7 +321,7 @@ export default function SignupFormClient({ dict, lang }: { dict: Dict; lang: str
                   </div>
                   {formData.role === 'vendor' && (
                     <div className="absolute top-4 end-4 text-orange-500">
-                      <i className="fa-solid fa-circle-check"></i>
+                      <CheckCircle width={18} height={18} strokeWidth={2} />
                     </div>
                   )}
                 </div>
