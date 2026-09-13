@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { Menu, Xmark } from 'iconoir-react';
-import './header.css';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,13 +66,8 @@ export default function Header() {
         <button 
           className="lg:hidden w-10 h-10 flex items-center justify-center text-[#0f172a] dark:text-zinc-100"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMobileMenuOpen ? (
-            <Xmark width={22} height={22} strokeWidth={2} />
-          ) : (
-            <Menu width={22} height={22} strokeWidth={2} />
-          )}
+          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-xmark' : 'fa-bars'} text-[20px]`}></i>
         </button>
       </div>
 

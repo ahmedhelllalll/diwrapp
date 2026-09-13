@@ -11,7 +11,7 @@ interface FeatureBadgeProps {
 
 export const FeatureBadge = ({ icon, text, className = '' }: FeatureBadgeProps) => (
   <div
-    className={`inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-[#222630] bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${className}`}
+    className={`inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-white/[0.08] bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${className}`}
   >
     <span className="w-3.5 h-3.5 flex items-center justify-center shrink-0">
       {icon}
@@ -164,7 +164,7 @@ export default function PlatformFeaturesSection({
         />
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 md:mb-14">
-          <div className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-[#222630] bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 mb-4 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+          <div className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-white/[0.08] bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 mb-4 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
             <span className="w-3.5 h-3.5 flex items-center justify-center shrink-0">
               <BrightStar className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />
             </span>
@@ -173,14 +173,14 @@ export default function PlatformFeaturesSection({
 
           <h2 className="text-[26px] sm:text-[28px] lg:text-[32px] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] leading-[1.3] text-center max-w-xl mx-auto">
             <span className="font-semibold text-[#101828] dark:text-white">{headingPrefix} </span>
-            <span className="font-normal text-[#101828] dark:text-zinc-200">{headingSuffix}</span>
+            <span className="font-normal text-[#101828] dark:text-zinc-400">{headingSuffix}</span>
           </h2>
         </div>
 
         {/* Bento Grid Architecture (3 Feature Cards) */}
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Card 1 (Left Tall Card — 6 Columns) */}
-          <div className="lg:col-span-6 bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible">
+          <div className="lg:col-span-6 bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-gray-300 hover:dark:border-white/20 transition-all duration-200">
             <div className="flex flex-col items-start w-full relative">
               {/* Top Badge */}
               <div className="self-start relative z-20">
@@ -224,7 +224,7 @@ export default function PlatformFeaturesSection({
           {/* Right Column (Cards 2 & 3 — 6 Columns) */}
           <div className="lg:col-span-6 flex flex-col gap-6 justify-between">
             {/* Card 2 (Top Right Card) */}
-            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] shadow-xs hover:border-gray-300 dark:hover:border-zinc-700 transition-colors min-h-[280px]">
+            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] shadow-xs hover:border-gray-300 hover:dark:border-white/20 transition-colors duration-200 min-h-[280px]">
               <div className="self-start">
                 <FeatureBadge
                   icon={<HardDrive className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />}
@@ -249,7 +249,7 @@ export default function PlatformFeaturesSection({
             </div>
 
             {/* Card 3 (Bottom Right Card) */}
-            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] shadow-xs hover:border-gray-300 dark:hover:border-zinc-700 transition-colors min-h-[280px]">
+            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] shadow-xs hover:border-gray-300 hover:dark:border-white/20 transition-colors duration-200 min-h-[280px]">
               <div className="self-start">
                 <FeatureBadge
                   icon={<Suitcase className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />}
@@ -271,7 +271,7 @@ export default function PlatformFeaturesSection({
         </div>
 
         {/* Bottom Banner Card (Full Width CTA Banner) */}
-        <div className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-[24px] py-10 px-8 lg:py-12 lg:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-gray-300 dark:hover:border-zinc-700 transition-colors">
+        <div className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0c0f17] border border-[#EAECF0] dark:border-white/[0.08] rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-gray-300 hover:dark:border-white/20 transition-colors duration-200">
           {/* Left Content */}
           <div>
             <div className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full bg-[#0066FF] text-white text-xs font-medium w-fit mb-4 shadow-xs font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
@@ -292,7 +292,7 @@ export default function PlatformFeaturesSection({
           <div className="flex items-center gap-3.5 shrink-0">
             <Link
               href={`/${lang}/contact`}
-              className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-700 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+              className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-white/20 bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-white/10 text-sm font-medium text-[#344054] dark:text-white inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
             >
               {ctaBanner.contactBtn}
             </Link>

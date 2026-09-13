@@ -34,6 +34,7 @@ export default function NotFoundView({ lang = 'en' }: NotFoundViewProps) {
         nextLang={nextLang}
         langLabel={langLabel}
         dictNav={dict.landing?.nav}
+        solidBackground={true}
       />
 
       {/* Hero Section */}

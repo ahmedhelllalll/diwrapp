@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import './header.css';
 
 interface LandingHeaderProps {
   lang: string;
@@ -15,6 +14,7 @@ interface LandingHeaderProps {
   dictNav: any;
   transparent?: boolean;
   countryCode?: string;
+  solidBackground?: boolean;
 }
 
 export default function LandingHeader({ 
@@ -23,7 +23,8 @@ export default function LandingHeader({
   langLabel, 
   dictNav, 
   transparent,
-  countryCode = "sa"
+  countryCode = "sa",
+  solidBackground,
 }: LandingHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,8 +32,13 @@ export default function LandingHeader({
   const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  const isJoinUs = pathname.includes('/join-us');
-  const isTransparent = transparent || isJoinUs;
+  const isComingSoon = Boolean(pathname && (pathname.includes('/coming-soon') || pathname.endsWith('/coming-soon')));
+  const isBlog = Boolean(pathname && (pathname.includes('/blog') || pathname.endsWith('/blog')));
+  const is404 = Boolean(solidBackground || (pathname && (pathname.includes('/404') || pathname.includes('/not-found'))));
+  const isSolidTheme = isComingSoon || isBlog || is404;
+
+  const isJoinUs = pathname ? pathname.includes('/join-us') : false;
+  const isTransparent = !isSolidTheme && (transparent || isJoinUs);
   
   const navItems = [
     { href: `/${lang}/about`, label: dictNav?.about || 'About us' },
@@ -110,15 +116,16 @@ export default function LandingHeader({
     if (isMenuOpen) {
       return 'bg-white/95 dark:bg-[#080808]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80';
     }
+    if (isSolidTheme) {
+      return 'sticky top-0 bg-white dark:bg-[#080808] border-b border-slate-200/80 dark:border-zinc-800/80 shadow-xs';
+    }
     if (isTransparent && !isScrolled) {
       return 'header-transparent absolute top-0 left-0 w-full bg-transparent border-b border-transparent backdrop-blur-none shadow-none';
     }
     if (isScrolled) {
       return 'sticky top-0 bg-white/80 dark:bg-[#080808]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80 shadow-xs';
     }
-    return isTransparent
-      ? 'sticky top-0 bg-transparent dark:bg-transparent border-b border-transparent shadow-none'
-      : 'sticky top-0 bg-white/80 dark:bg-[#080808]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80 shadow-none';
+    return 'sticky top-0 bg-transparent dark:bg-transparent border-b border-transparent shadow-none';
   };
 
   const normalizedPathname = (pathname || '').replace(/\/$/, '') || '/';

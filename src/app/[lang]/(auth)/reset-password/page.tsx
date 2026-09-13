@@ -6,7 +6,6 @@ import Image from 'next/image';
 import LanguageToggle from "@/components/common/LanguageToggle";
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Input } from "@/components/ui/Input";
-import { ArrowLeft } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -122,7 +121,7 @@ export default async function ResetPassword(props: { params: Promise<{ lang: str
                   href={`/${lang}/login`}
                   className="flex items-center gap-2 text-[13px] font-semibold text-[#6b7280] dark:text-zinc-400 hover:text-[#111827] dark:hover:text-zinc-100 transition-colors duration-200 group"
                 >
-                  <ArrowLeft width={14} height={14} strokeWidth={2} className="transition-transform duration-200 group-hover:-translate-x-1 rtl:rotate-180 rtl:group-hover:translate-x-1" />
+                  <i className="fa-solid fa-arrow-left transition-transform duration-200 group-hover:-translate-x-1"></i>
                   {dict.resetPassword.back}
                 </Link>
               </div>

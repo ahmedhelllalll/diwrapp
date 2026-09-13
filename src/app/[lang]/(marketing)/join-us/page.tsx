@@ -71,7 +71,7 @@ export default async function JoinUsPage(props: { params: Promise<{ lang: string
 
         {/* Divider between last section and Footer */}
         <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6">
-          <div className="w-full border-t border-[#EAECF0] dark:border-[#222630]" />
+          <div className="w-full border-t border-[#EAECF0] dark:border-white/[0.08]" />
         </div>
       </main>
   );

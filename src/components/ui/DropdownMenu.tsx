@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function DropdownMenu({ trigger, items, align = 'right' }: { 
   trigger: React.ReactNode, 
-  items: { label: string, icon?: React.ReactNode, onClick?: () => void, danger?: boolean, divider?: boolean }[],
+  items: { label: string, icon?: string, onClick?: () => void, danger?: boolean, divider?: boolean }[],
   align?: 'left' | 'right'
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +56,7 @@ export function DropdownMenu({ trigger, items, align = 'right' }: {
                     item.danger ? 'text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30' : 'text-[#334155] dark:text-zinc-300 hover:bg-[#f8fafc] dark:hover:bg-zinc-900/50'
                   }`}
                 >
-                  {item.icon && <span className={`w-4 flex items-center justify-center shrink-0 ${item.danger ? 'text-red-500' : 'text-[#94a3b8] dark:text-zinc-500'}`}>{item.icon}</span>}
+                  {item.icon && <i className={`fa-solid ${item.icon} w-4 text-center ${item.danger ? 'text-red-500' : 'text-[#94a3b8] dark:text-zinc-500'}`}></i>}
                   {item.label}
                 </button>
               );

@@ -32,7 +32,10 @@ export default function NewsletterSection({ dict, lang = "en" }: NewsletterSecti
   };
 
   return (
-    <section className="newsletter-section" aria-label="Newsletter Subscription">
+    <section 
+      className="newsletter-section border-t border-slate-200/80 bg-white/80 backdrop-blur-md shadow-[0_-2px_10px_-2px_rgba(0,0,0,0.03)] dark:bg-zinc-900/40 dark:backdrop-blur-xl dark:border-white/[0.08] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] transition-colors duration-300" 
+      aria-label="Newsletter Subscription"
+    >
       <div className="newsletter-container flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left rtl:lg:text-right">
         {/* Heading & Description */}
         <div className="newsletter-text-col text-center mx-auto max-w-md lg:mx-0 lg:text-left rtl:lg:text-right">
@@ -53,7 +56,7 @@ export default function NewsletterSection({ dict, lang = "en" }: NewsletterSecti
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={dict?.inputPlaceholder || "Enter email"}
-              className="newsletter-input w-full max-w-md mx-auto text-center md:text-left rtl:md:text-right rounded-xl border border-slate-300 dark:border dark:border-zinc-700/80 bg-white dark:bg-[#0c0f14] py-3 px-4 mb-3 lg:mb-0 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-400 focus:border-slate-400 focus:dark:border-zinc-400 focus:ring-1 focus:ring-slate-400 dark:focus:ring-zinc-400 outline-none"
+              className="newsletter-input w-full max-w-md mx-auto text-center md:text-left rtl:md:text-right rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] py-3 px-4 mb-3 lg:mb-0 text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 focus:border-slate-400 focus:dark:border-white/30 focus:ring-1 focus:ring-slate-400 dark:focus:ring-white/20 outline-none transition-all"
               aria-label="Email address for newsletter"
             />
             {status === "success" && (

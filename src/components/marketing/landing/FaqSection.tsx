@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, Minus, Plus } from 'iconoir-react';
 
 export default function FaqSection() {
   // Initialize with index 1 open (second item), just like the Figma screenshot
@@ -41,7 +40,7 @@ export default function FaqSection() {
         
         {/* Badge */}
         <div className="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm mb-6 text-[12px] font-bold text-slate-700 dark:text-zinc-300">
-          <ShieldCheck width={14} height={14} strokeWidth={2} />
+          <i className="fa-solid fa-shield-halved"></i>
           FAQ
         </div>
 
@@ -67,9 +66,9 @@ export default function FaqSection() {
                 </span>
                 <div className="flex items-center justify-center text-slate-900 dark:text-zinc-300 w-6 h-6 shrink-0">
                   {openFaq === idx ? (
-                    <Minus width={16} height={16} strokeWidth={2} />
+                    <i className="fa-solid fa-minus text-[15px]"></i>
                   ) : (
-                    <Plus width={16} height={16} strokeWidth={2} />
+                    <i className="fa-solid fa-plus text-[15px]"></i>
                   )}
                 </div>
               </button>

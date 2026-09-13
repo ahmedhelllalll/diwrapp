@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ViewGrid, NavArrowDown, Check } from 'iconoir-react';
 
 export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: string, tabs: string[], onChange: (tab: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +30,7 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
         >
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-[#1665ff] dark:text-blue-500 shadow-sm">
-              <ViewGrid width={15} height={15} strokeWidth={2} />
+              <i className="fa-solid fa-layer-group text-[13px]"></i>
             </div>
             <div className="flex flex-col">
               <span className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold uppercase tracking-wider leading-none mb-1">Viewing</span>
@@ -42,7 +41,7 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
             animate={{ rotate: isOpen ? 180 : 0 }} 
             className="w-6 h-6 flex items-center justify-center rounded-full bg-slate-200/50 dark:bg-zinc-800/50 text-slate-500 dark:text-zinc-400"
           >
-            <NavArrowDown width={12} height={12} strokeWidth={2} />
+            <i className="fa-solid fa-chevron-down text-[10px]" />
           </motion.div>
         </button>
 
@@ -68,7 +67,7 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
                     }`}
                   >
                     {tab}
-                    {isActive && <Check width={14} height={14} strokeWidth={2.5} className="text-[#1665ff] dark:text-blue-400" />}
+                    {isActive && <i className="fa-solid fa-check text-[13px] text-[#1665ff] dark:text-blue-400"></i>}
                   </button>
                 );
               })}

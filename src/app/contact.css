@@ -2,8 +2,7 @@
    Contact Page Styles (Diwrapp Design System)
    ========================================================================== */
 
-.contact-scope,
-.contact-page-container {
+.contact-scope {
   --contact-bg: var(--background);
   --contact-text: var(--foreground);
   background-color: var(--contact-bg);
@@ -64,7 +63,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #344054;
@@ -105,7 +104,7 @@
 
 /* Title & Subtitle */
 .contact-title {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
@@ -123,7 +122,7 @@
 }
 
 .contact-subtitle {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -228,11 +227,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
   will-change: transform;
   transition: transform 300ms ease-out, 
               box-shadow 300ms ease-out, 
@@ -240,23 +234,15 @@
               background-color 250ms ease;
 }
 
-@media (min-width: 768px) {
-  .contact-card {
-    padding: 28px;
-    border-radius: 24px;
-  }
-}
-
 @media (min-width: 1024px) {
   .contact-card {
     height: 100%;
-    min-height: 0;
+    min-height: 185px;
   }
 }
 
 .contact-card:hover {
   transform: translateY(-2px);
-  border-color: #CBD5E1;
   box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.06);
 }
 
@@ -264,19 +250,19 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  border: 1px solid #E2E8F0;
-  background-color: #F8FAFC;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #101828;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (min-width: 768px) {
   .contact-card-icon-box {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 }
 
@@ -291,7 +277,7 @@
 }
 
 .contact-card-label {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -300,19 +286,28 @@
   margin: 0;
 }
 
-.contact-card-value {
-  font-family: var(--font-lufga), sans-serif;
+.contact-card-value,
+.contact-card-value span,
+.contact-ltr-value,
+.contact-rtl-value {
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 700;
+  text-decoration: underline !important;
+  text-decoration-style: solid !important;
+  text-underline-offset: 4px !important;
+  text-decoration-thickness: 1px !important;
+  text-decoration-color: #0f172a !important;
+}
+
+.contact-card-value {
   font-size: 16px;
   line-height: 28px;
   letter-spacing: -0.01em; /* -1% */
-  text-decoration: underline;
-  text-decoration-style: solid;
   color: #101828;
   white-space: nowrap;
   word-break: normal;
   hyphens: none;
-  transition: color 0.15s ease;
+  transition: opacity 0.15s ease, color 0.15s ease;
 }
 
 @media (min-width: 1280px) {
@@ -354,7 +349,7 @@
 }
 
 .contact-label {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -375,7 +370,7 @@
   border: 1px solid #EAECF0;
   background-color: #FFFFFF;
   padding: 0 14px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   color: #101828;
   box-sizing: border-box;
@@ -467,7 +462,7 @@
   border: none;
   height: 100%;
   padding: 0 14px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   color: #101828;
   outline: none;
@@ -487,21 +482,20 @@
 }
 
 .contact-textarea {
-  min-height: 128px;
-  height: 128px;
-  max-height: 144px;
+  min-height: 144px;
+  height: 144px;
   width: 100%;
   border-radius: 12px;
   border: 1px solid #EAECF0;
   background-color: #FFFFFF;
   padding: 14px;
   padding-bottom: 32px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   color: #101828;
   box-sizing: border-box;
   outline: none;
-  resize: none;
+  resize: vertical;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -522,7 +516,7 @@
   position: absolute;
   bottom: 10px;
   right: 14px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 12px;
   color: #98A2B3;
   pointer-events: none;
@@ -538,17 +532,28 @@
 .contact-form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
-  width: 100%;
+  margin-top: 20px;
 }
 
-[dir="rtl"] .contact-form-actions {
-  justify-content: flex-start;
+@media (min-width: 1024px) {
+  .contact-form-actions {
+    grid-column: span 6 / span 6;
+    grid-column-start: 7;
+    grid-row-start: 2;
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  [dir="rtl"] .contact-form-actions {
+    justify-content: flex-start;
+  }
 }
 
-@media (max-width: 640px) {
-  .contact-form-actions .contact-btn-submit {
+@media (max-width: 1023px) {
+  .contact-form-actions {
     width: 100%;
+    justify-content: stretch;
   }
 }
 
@@ -561,13 +566,20 @@
   color: #FFFFFF;
   padding: 12px 28px;
   border-radius: 12px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+@media (max-width: 1023px) {
+  .contact-btn-submit {
+    width: 100%;
+    padding: 14px 24px;
+  }
 }
 
 .contact-btn-submit:hover {
@@ -597,10 +609,14 @@
    ========================================================================== */
 .newsletter-section {
   width: 100%;
-  background-color: #F8F9FA;
-  border-top: 1px solid #EAECF0;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 -2px 10px -2px rgba(0, 0, 0, 0.03);
   padding: 56px 0;
   margin-top: auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .newsletter-container {
@@ -640,7 +656,7 @@
 }
 
 .newsletter-title {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 600;
   font-size: 26px;
   line-height: 32px;
@@ -649,7 +665,7 @@
 }
 
 .newsletter-desc {
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -682,7 +698,7 @@
   border: 1px solid #EAECF0;
   border-radius: 12px;
   padding: 0 16px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   color: #101828;
   box-sizing: border-box;
@@ -716,7 +732,7 @@
   color: #FFFFFF;
   border-radius: 12px;
   padding: 0 24px;
-  font-family: var(--font-lufga), sans-serif;
+  font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -739,9 +755,20 @@
    ========================================================================== */
 .dark .contact-title,
 .dark .contact-breadcrumb-current,
-.dark .contact-card-value,
 .dark .newsletter-title {
   color: #FFFFFF;
+}
+
+.dark .contact-card-value,
+.dark .contact-card-value span,
+.dark .contact-ltr-value,
+.dark .contact-rtl-value {
+  color: #FFFFFF;
+  text-decoration-color: #FFFFFF !important;
+}
+
+.dark .contact-card-label {
+  color: #A1A1AA; /* zinc-400 */
 }
 
 .dark .contact-subtitle,
@@ -762,7 +789,7 @@
   background-color: rgba(24, 24, 27, 0.4); /* zinc-900/40 */
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
@@ -775,7 +802,7 @@
   background-color: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
   color: #E4E4E7; /* zinc-200 */
 }
 
@@ -799,9 +826,12 @@
 }
 
 .dark .newsletter-input {
-  background-color: #0c0f14;
-  border-color: rgba(63, 63, 70, 0.8); /* zinc-700/80 */
-  color: #FFFFFF;
+  background-color: rgba(24, 24, 27, 0.3); /* zinc-900/30 */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03);
+  color: #F4F4F5;
 }
 
 .dark .contact-input::placeholder,
@@ -879,8 +909,11 @@
 }
 
 .dark .newsletter-section {
-  background-color: #0b0d11;
-  border-top-color: #222630;
+  background-color: rgba(24, 24, 27, 0.4); /* zinc-900/40 */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================================================
@@ -888,19 +921,53 @@
    ========================================================================== */
 [dir="rtl"] .contact-scope,
 [lang="ar"] .contact-scope,
-[dir="rtl"] .contact-scope input,
-[lang="ar"] .contact-scope input,
-[dir="rtl"] .contact-scope textarea,
-[lang="ar"] .contact-scope textarea,
-[dir="rtl"] .contact-scope button,
-[lang="ar"] .contact-scope button,
-[dir="rtl"] .newsletter-section,
-[lang="ar"] .newsletter-section,
-[dir="rtl"] .newsletter-section input,
-[lang="ar"] .newsletter-section input,
-[dir="rtl"] .newsletter-section button,
-[lang="ar"] .newsletter-section button {
-  font-family: var(--font-cairo), var(--font-sans), sans-serif !important;
+[dir="rtl"] .contact-page-container,
+[lang="ar"] .contact-page-container,
+[dir="rtl"] .contact-title,
+[lang="ar"] .contact-title,
+[dir="rtl"] .contact-subtitle,
+[lang="ar"] .contact-subtitle,
+[dir="rtl"] .contact-breadcrumb,
+[lang="ar"] .contact-breadcrumb,
+[dir="rtl"] .contact-breadcrumb-current,
+[lang="ar"] .contact-breadcrumb-current,
+[dir="rtl"] .contact-card,
+[lang="ar"] .contact-card,
+[dir="rtl"] .contact-card-label,
+[lang="ar"] .contact-card-label,
+[dir="rtl"] .contact-card-value,
+[lang="ar"] .contact-card-value,
+[dir="rtl"] .contact-card-content span:not([dir="ltr"]),
+[lang="ar"] .contact-card-content span:not([dir="ltr"]),
+[dir="rtl"] .contact-rtl-value,
+[lang="ar"] .contact-rtl-value,
+[dir="rtl"] .contact-label,
+[lang="ar"] .contact-label,
+[dir="rtl"] .contact-input,
+[lang="ar"] .contact-input,
+[dir="rtl"] .contact-phone-input,
+[lang="ar"] .contact-phone-input,
+[dir="rtl"] .contact-textarea,
+[lang="ar"] .contact-textarea,
+[dir="rtl"] .contact-char-count,
+[lang="ar"] .contact-char-count,
+[dir="rtl"] .contact-form-container input,
+[lang="ar"] .contact-form-container input,
+[dir="rtl"] .contact-form-container textarea,
+[lang="ar"] .contact-form-container textarea,
+[dir="rtl"] .contact-form-container button,
+[lang="ar"] .contact-form-container button,
+[dir="rtl"] .contact-btn-submit,
+[lang="ar"] .contact-btn-submit,
+[dir="rtl"] .newsletter-title,
+[lang="ar"] .newsletter-title,
+[dir="rtl"] .newsletter-desc,
+[lang="ar"] .newsletter-desc,
+[dir="rtl"] .newsletter-input,
+[lang="ar"] .newsletter-input,
+[dir="rtl"] .newsletter-btn,
+[lang="ar"] .newsletter-btn {
+  font-family: var(--font-arabic, var(--font-cairo, var(--font-sans))), sans-serif !important;
 }
 
 /* Placeholders in Arabic mode */
@@ -910,7 +977,7 @@
 [lang="ar"] .contact-textarea::placeholder,
 [dir="rtl"] .newsletter-input::placeholder,
 [lang="ar"] .newsletter-input::placeholder {
-  font-family: var(--font-cairo), var(--font-sans), sans-serif !important;
+  font-family: var(--font-arabic, var(--font-cairo, var(--font-sans))), sans-serif !important;
 }
 
 /* Explicit LTR protection for English brand marks, phone numbers, and emails */

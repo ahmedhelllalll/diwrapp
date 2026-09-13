@@ -27,15 +27,26 @@ export default function JoinUsHero({
 
   return (
     <section className="relative w-full min-h-[720px] lg:min-h-[840px] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
-      {/* Background Graphic: Perspective Grid + 3D Cards */}
+      {/* Background Graphic: Perspective Grid + 3D Cards (Light Mode) */}
       <Image
-        src="/assets/join-background.jpg"
+        src="/assets/join-background.webp"
         alt="Join Us Background"
         fill
         priority
         quality={90}
         sizes="100vw"
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none dark:hidden"
+      />
+
+      {/* Background Graphic: Perspective Grid + 3D Cards (Dark Mode) */}
+      <Image
+        src="/assets/join-background-dark.webp"
+        alt="Join Us Background Dark"
+        fill
+        priority
+        quality={90}
+        sizes="100vw"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none hidden dark:block"
       />
 
       {/* Central Content Container */}

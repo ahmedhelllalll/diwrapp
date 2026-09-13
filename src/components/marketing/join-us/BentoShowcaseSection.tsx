@@ -47,7 +47,7 @@ export default function BentoShowcaseSection({
           {/* Row 1 (Top Row — 2 Equal Columns): Card 1 (Left) & Card 2 (Right) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-0">
             {/* Card 1 (Top Left): Higher Occupancy */}
-            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-gray-300 dark:hover:border-zinc-700 hover:shadow-xs transition-all duration-200">
+            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200">
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200">
                 {card1.label}
               </span>
@@ -66,7 +66,7 @@ export default function BentoShowcaseSection({
             </div>
 
             {/* Card 2 (Top Right): Real-Time Management (Constrained text width max-w-[240px] to prevent laptop overlap) */}
-            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-gray-300 dark:hover:border-zinc-700 hover:shadow-xs transition-all duration-200">
+            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200">
               <div className="max-w-[240px] relative z-10">
                 <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200 block">
                   {card2.label}
@@ -88,7 +88,7 @@ export default function BentoShowcaseSection({
           </div>
 
           {/* Row 2 (Bottom Row — Full Width Card with overflow-visible Stacking): Card 3 & Upward-Breaking Laptop */}
-          <div className="w-full bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-gray-300 dark:hover:border-zinc-700 hover:shadow-xs transition-all duration-200 z-10">
+          <div className="w-full bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200 z-10">
             {/* Card 3 Content (Left Side) */}
             <div className="max-w-[340px] relative z-10">
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200 block">

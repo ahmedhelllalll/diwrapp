@@ -1,7 +1,8 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
-/* Explicit @font-face declarations for legacy rules & utilities expecting 'Lufga' */
+/* Explicit @font-face declarations for Lufga */
 @font-face {
   font-family: 'Lufga';
   src: url('/fonts/Lufga-Light.otf') format('opentype');
@@ -45,7 +46,7 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --font-sans: var(--font-lufga), 'Lufga', sans-serif;
+  --font-sans: 'Lufga', var(--font-lufga), sans-serif;
   --Text-text-tertiary: #637083;
 }
 
@@ -53,9 +54,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-lufga), 'Lufga', sans-serif;
-  --font-lufga: var(--font-lufga), 'Lufga', sans-serif;
-  --font-cairo: var(--font-cairo), 'Cairo', sans-serif;
   --font-mono: var(--font-geist-mono);
+  --font-cairo: var(--font-cairo), sans-serif;
 }
 
 .dark {
@@ -64,7 +64,6 @@
   --Text-text-tertiary: #94a3b8;
 }
 
-/* Global Font Utilities & Inherited Defaults */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -74,28 +73,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.font-lufga {
-  font-family: var(--font-lufga), 'Lufga', sans-serif !important;
-}
-
-.font-cairo {
-  font-family: var(--font-cairo), 'Cairo', sans-serif !important;
-}
-
-[lang="ar"],
-[dir="rtl"],
 [dir="rtl"] body {
-  font-family: var(--font-cairo), 'Cairo', sans-serif;
-}
-
-[dir="rtl"] .font-sans {
-  font-family: var(--font-cairo), 'Cairo', sans-serif !important;
-}
-
-[lang="en"],
-[dir="ltr"],
-[dir="ltr"] body {
-  font-family: var(--font-lufga), 'Lufga', sans-serif;
+  font-family: var(--font-cairo);
 }
 
 

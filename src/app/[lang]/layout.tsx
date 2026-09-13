@@ -2,36 +2,39 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
-import "@/components/layout/header.css";
+import "../landing.css";
+import "../about.css";
+import "../advertise.css";
+import "../contact.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 
-const lufga = localFont({
+const lufgaFont = localFont({
   src: [
     {
-      path: '../../../public/fonts/Lufga-Light.otf',
+      path: '../../fonts/Lufga-Light.otf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/Lufga-Regular.otf',
+      path: '../../fonts/Lufga-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/Lufga-Medium.otf',
+      path: '../../fonts/Lufga-Medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/Lufga-SemiBold.otf',
+      path: '../../fonts/Lufga-SemiBold.otf',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/Lufga-Bold.otf',
+      path: '../../fonts/Lufga-Bold.otf',
       weight: '700',
       style: 'normal',
     },
@@ -47,9 +50,9 @@ const geistMono = Geist_Mono({
 });
 
 const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -90,11 +93,11 @@ export default async function RootLayout(
       <html
         lang={lang}
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-        className={`${lufga.variable} ${cairo.variable} ${geistMono.variable} h-full antialiased`}
+        className={`${lufgaFont.variable} ${geistMono.variable} ${cairo.variable} h-full antialiased`}
         suppressHydrationWarning
       >
 
-        <body className={`min-h-full flex flex-col ${lang === 'ar' ? 'font-cairo' : 'font-lufga'}`} suppressHydrationWarning>
+        <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

@@ -104,7 +104,7 @@ export default function OpportunitiesSection({
             {categoryCards.map(({ id, label, Icon }) => (
               <div
                 key={id}
-                className="bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-[#222630] rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-gray-300 dark:hover:border-zinc-700 hover:shadow-xs transition-all duration-200 cursor-pointer group hover:-translate-y-0.5"
+                className="bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200 cursor-pointer group hover:-translate-y-0.5"
               >
                 <Icon
                   className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors group-hover:text-[#0066FF]"

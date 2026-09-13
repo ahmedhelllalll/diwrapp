@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRightCircle } from 'iconoir-react';
 
 export default function NewsSection() {
   const newsItems = [
@@ -45,7 +44,7 @@ export default function NewsSection() {
               href="#" 
               className="flex items-center gap-2 text-[14px] font-bold text-slate-800 dark:text-zinc-200 hover:text-blue-600 dark:hover:text-blue-500 transition-colors pb-1"
             >
-              View More <ArrowRightCircle width={16} height={16} strokeWidth={1.8} className="inline-block" />
+              View More <i className="fa-regular fa-circle-right text-[15px]"></i>
             </Link>
           </div>
         </div>
