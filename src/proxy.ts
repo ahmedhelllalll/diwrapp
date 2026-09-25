@@ -147,7 +147,7 @@ export function proxy(request: NextRequest) {
   try {
     const geo = geolocation(request);
     if (geo?.country) {
-      countryCode = geo.country.toUpperCase();
+      countryCode = geo.country.toLowerCase();
       requestHeaders.set('x-country-code', countryCode);
     }
   } catch {

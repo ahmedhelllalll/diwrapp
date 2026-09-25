@@ -53,7 +53,20 @@ export default async function Signup(props: { params: Promise<{ lang: string }> 
               </div>
               <div className="flex items-baseline">
                 <span className="text-[14px] font-extrabold tracking-tight text-[#111827] dark:text-white transition-colors duration-300">Di-wrapp</span>
-                <span className="text-[7px] font-bold uppercase text-[#4b5563] dark:text-zinc-400 relative -top-[5px] ml-[2px] tracking-wide transition-colors duration-300">SD</span>
+                <span
+                  className="font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center lowercase text-[#4b5563] dark:text-zinc-400 relative -top-[5px] ml-[2px] transition-colors duration-300"
+                  style={{
+                    fontFamily: "'Lufga', sans-serif",
+                    fontWeight: 300,
+                    fontStyle: 'normal',
+                    fontSize: '10px',
+                    lineHeight: '20px',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                  }}
+                >
+                  sd
+                </span>
               </div>
             </div>
 

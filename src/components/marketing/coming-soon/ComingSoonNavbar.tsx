@@ -71,9 +71,7 @@ export default function ComingSoonNavbar({
           <span className="text-xl font-bold text-[#101828] dark:text-white tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
             Di-wrapp
           </span>
-          {countryBadge ?? (
-            <CountryBadgeSkeleton className="text-[10px] font-bold text-[#667085] dark:text-zinc-400 uppercase -mt-2 inline-block min-w-[14px] h-[10px] opacity-0 select-none pointer-events-none" />
-          )}
+          {countryBadge ?? <CountryBadgeSkeleton key="country-badge-skeleton" />}
         </Link>
 
         {/* Center: Navigation Links (System Design) */}

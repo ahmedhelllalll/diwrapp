@@ -77,8 +77,19 @@ export default function DesignSystem() {
                 <span className="text-[14px] font-extrabold tracking-tight text-[#0f172a] dark:text-zinc-100 leading-none whitespace-nowrap">
                   Di-wrapp
                 </span>
-                <span className="text-[8px] font-extrabold text-[#64748b] dark:text-zinc-400 ml-0.5 uppercase tracking-wider relative -top-1.5">
-                  SD
+                <span
+                  className="font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center lowercase text-[#64748b] dark:text-zinc-400 ml-0.5 relative -top-1.5"
+                  style={{
+                    fontFamily: "'Lufga', sans-serif",
+                    fontWeight: 300,
+                    fontStyle: 'normal',
+                    fontSize: '10px',
+                    lineHeight: '20px',
+                    letterSpacing: '0%',
+                    textAlign: 'center',
+                  }}
+                >
+                  sd
                 </span>
               </div>
               <span className="text-[#e2e8f0] font-light hidden sm:inline-block">|</span>
