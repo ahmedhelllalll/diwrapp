@@ -1,7 +1,10 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import LandingHeader from '@/components/layout/LandingHeader';
+import { usePathname } from 'next/navigation';
+import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import enDict from '@/dictionaries/en.json';
 import arDict from '@/dictionaries/ar.json';
@@ -15,9 +18,13 @@ import {
 
 interface NotFoundViewProps {
   lang?: Locale;
+  countryCode?: string;
 }
 
-export default function NotFoundView({ lang = 'en' }: NotFoundViewProps) {
+export default function NotFoundView({ lang: initialLang, countryCode }: NotFoundViewProps = {}) {
+  const pathname = usePathname() || '';
+  const detectedLang: Locale = pathname.startsWith('/ar') ? 'ar' : 'en';
+  const lang: Locale = initialLang || detectedLang;
   const isRtl = lang === 'ar';
   const dict = isRtl ? arDict : enDict;
   const nextLang = isRtl ? 'en' : 'ar';
@@ -29,12 +36,13 @@ export default function NotFoundView({ lang = 'en' }: NotFoundViewProps) {
       className="flex-1 flex flex-col min-h-screen bg-white dark:bg-[#080808] transition-colors duration-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
     >
       {/* Navigation Header */}
-      <LandingHeader
+      <Header
         lang={lang}
         nextLang={nextLang}
         langLabel={langLabel}
         dictNav={dict.landing?.nav}
-        solidBackground={true}
+        dict={dict}
+        countryCode={countryCode}
       />
 
       {/* Hero Section */}

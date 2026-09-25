@@ -21,13 +21,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 238px;
-  height: 28px;
+  width: auto;
+  min-height: 28px;
+  max-width: 100%;
   border-radius: 4px;
   /* radius-xs */
-  padding: 4px 10px 4px 8px;
-  /* padding-top: 4, padding-right: 10, padding-bottom: 4, padding-left: 8 */
-  gap: 4px;
+  padding: 4px 12px;
+  gap: 6px;
   border: 1px solid var(--Border-Colors-border-200, #E4E7EC);
   color: #344054;
   background-color: transparent;
@@ -42,7 +42,8 @@
 }
 
 [dir="rtl"] .about-badge {
-  padding: 4px 8px 4px 10px;
+  font-family: var(--font-cairo), sans-serif;
+  padding: 4px 12px;
 }
 
 .dark .about-badge {
@@ -67,6 +68,13 @@
   text-align: center;
   margin-bottom: 56px;
   color: #0f172a;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[dir="rtl"] .about-title {
+  font-family: var(--font-cairo), sans-serif;
 }
 
 .dark .about-title {
@@ -77,10 +85,15 @@
 .about-title strong {
   font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 500;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: inherit;
+  line-height: inherit;
   letter-spacing: -0.01em;
   text-align: center;
+}
+
+[dir="rtl"] .about-title b,
+[dir="rtl"] .about-title strong {
+  font-family: var(--font-cairo), sans-serif;
 }
 
 /* Grid Layout for the Cards */
@@ -143,7 +156,7 @@
   justify-content: center;
   align-items: center;
   height: 140px;
-  /* Fixed height */
+  /* Fixed height on desktop */
 }
 
 .dark .about-info-card {
@@ -163,6 +176,11 @@
   font-weight: 500;
   font-size: 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+}
+
+[dir="rtl"] .about-pill {
+  padding: 10px 10px 10px 32px;
 }
 
 .dark .about-pill {
@@ -172,11 +190,15 @@
 
 .about-pill span {
   font-family: 'Lufga', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
   font-size: 18px;
-  line-height: 32px;
+  line-height: 28px;
   letter-spacing: -0.01em;
+}
+
+[dir="rtl"] .about-pill span {
+  font-family: var(--font-cairo), sans-serif;
 }
 
 .pill-icon {
@@ -188,6 +210,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* Exact dimensions specified by user 33x17 */
@@ -265,6 +288,133 @@
   letter-spacing: 0;
   text-align: center;
   color: #ffffff;
+}
+
+[dir="rtl"] .tall-card-content p {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for About Hero & Cards Section
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .about-hero {
+    padding: 80px 1.5rem 0;
+  }
+
+  .about-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+
+  .about-cards-container {
+    padding: 0 24px 3.5rem;
+    gap: 20px;
+  }
+
+  .about-left-col {
+    gap: 20px;
+  }
+
+  .about-image-card {
+    min-height: 320px;
+  }
+
+  .about-tall-card {
+    min-height: 480px;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .about-hero {
+    padding: 72px 1rem 0;
+  }
+
+  .about-badge {
+    margin-bottom: 18px;
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .about-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 28px;
+  }
+
+  .about-cards-container {
+    padding: 0 16px 2.5rem;
+    gap: 16px;
+  }
+
+  .about-left-col {
+    gap: 16px;
+  }
+
+  .about-image-card {
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+  }
+
+  .about-info-card {
+    height: auto;
+    min-height: 84px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .about-pill {
+    width: 100%;
+    padding: 6px 14px 6px 6px;
+    gap: 10px;
+    box-sizing: border-box;
+    border-radius: 9999px;
+  }
+
+  [dir="rtl"] .about-pill {
+    padding: 6px 6px 6px 14px;
+  }
+
+  .pill-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pill-icon img {
+    width: 24px;
+    height: 13px;
+  }
+
+  .about-pill span {
+    font-size: 13.5px;
+    line-height: 18px;
+    white-space: normal;
+    text-align: start;
+    flex: 1;
+  }
+
+  .about-tall-card {
+    min-height: 360px;
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .tall-card-content {
+    gap: 12px;
+  }
+
+  .tall-card-content img {
+    width: 30px;
+    height: 15px;
+  }
+
+  .tall-card-content p {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 /* ==========================================================================
@@ -841,7 +991,6 @@
   width: 100%;
   overflow: hidden;
   border-top: 1px solid #E4E7EC;
-  border-bottom: 1px solid #E4E7EC;
   padding-bottom: 90px;
 }
 
@@ -853,7 +1002,6 @@
 
 .dark .testimonials-desktop-wrapper {
   border-top-color: #27272A;
-  border-bottom-color: #27272A;
 }
 
 .testimonials-arch-layout {
@@ -968,11 +1116,11 @@
 /* ==========================================================================
    Per-Column Opacity Progression (Organic Edge Fading)
    ========================================================================== */
-/* Outer-most columns (Cols 1 & 9): 20% - 25% opacity with crisp visible borders */
+/* Outer-most columns (Cols 1 & 9): 100% solid opacity */
 .testimonials-col-1 .testimonials-card,
 .testimonials-col-9 .testimonials-card {
-  opacity: 0.61;
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
 .testimonials-col-1 .testimonials-card:hover,
@@ -980,11 +1128,11 @@
   opacity: 1;
 }
 
-/* Second outer columns (Cols 2 & 8): 50% - 60% opacity */
+/* Second outer columns (Cols 2 & 8): 100% solid opacity */
 .testimonials-col-2 .testimonials-card,
 .testimonials-col-8 .testimonials-card {
-  opacity: 0.81;
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
 .testimonials-col-2 .testimonials-card:hover,
@@ -999,7 +1147,7 @@
 .testimonials-col-6 .testimonials-card,
 .testimonials-col-7 .testimonials-card {
   opacity: 1;
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
 /* Photo Card */
@@ -1014,12 +1162,14 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, opacity 0.35s ease;
   cursor: pointer;
+  opacity: 1;
 }
 
 .dark .testimonials-card {
   background-color: #18181B;
   border-color: #27272A;
   box-shadow: none;
+  opacity: 1;
 }
 
 .testimonials-card:hover {
@@ -1035,21 +1185,22 @@
   object-position: center;
   display: block;
   transition: transform 0.5s ease;
+  opacity: 1;
 }
 
 .testimonials-card:hover img {
   transform: scale(1.08);
 }
 
-/* Internal vertical card fades (organic fade within own rounded frame) */
+/* Internal vertical card fades disabled - solid opacity */
 .testimonials-card-fade-bottom {
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 
 .testimonials-card-fade-top {
-  mask-image: linear-gradient(to top, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 
 /* Overlay with client info on hover */
@@ -1250,7 +1401,6 @@
   position: relative;
   width: 100%;
   border-top: 1px solid #E4E7EC;
-  border-bottom: 1px solid #E4E7EC;
   padding: 40px 0 60px 0;
 }
 
@@ -1262,7 +1412,6 @@
 
 .dark .testimonials-mobile-wrapper {
   border-top-color: #27272A;
-  border-bottom-color: #27272A;
 }
 
 .testimonials-marquee-container {

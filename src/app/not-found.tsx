@@ -1,11 +1,9 @@
 import './globals.css';
 import './landing.css';
-import { headers } from 'next/headers';
 import localFont from 'next/font/local';
 import { Cairo } from 'next/font/google';
 import { ThemeProvider } from '@/components/common/ThemeProvider';
 import NotFoundView from '@/components/common/NotFoundView';
-import { Locale } from '@/i18n-config';
 
 const lufgaFont = localFont({
   src: [
@@ -36,15 +34,10 @@ const cairo = Cairo({
   display: 'swap',
 });
 
-export default async function RootNotFound() {
-  const headerList = await headers();
-  const pathname = headerList.get('x-pathname') || '';
-  const lang: Locale = pathname.startsWith('/ar') ? 'ar' : 'en';
-
+export default function RootNotFound() {
   return (
     <html
-      lang={lang}
-      dir={lang === 'ar' ? 'rtl' : 'ltr'}
+      lang="en"
       className={`${lufgaFont.variable} ${cairo.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -55,7 +48,7 @@ export default async function RootNotFound() {
           enableSystem={false}
           disableTransitionOnChange
         >
-          <NotFoundView lang={lang} />
+          <NotFoundView />
         </ThemeProvider>
       </body>
     </html>

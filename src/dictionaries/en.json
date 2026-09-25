@@ -157,6 +157,7 @@
     },
     "hero": {
       "badge": "Streamline Your Presence, Amplify Your Reach",
+      "eyebrow": "Streamline Your Presence, Amplify Your Reach",
       "title": "Welcome to the<br>largest media network",
       "subtitle": "Where at Di-Wrapp, we strive to create a memorable experience contributed by a smarter solution for your digital interface.",
       "discover": "Discover More"
@@ -167,6 +168,22 @@
       "subtitle": "Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence",
       "forBrands": "For Brands",
       "forVendors": "For Vendors",
+      "brands": {
+        "step1Title": "01. Choose Your Spot",
+        "step1Desc": "Discover a Diverse Range of Inventories Across Multiple Cities and Countries.",
+        "step2Title": "02. Schedule & Upload",
+        "step2Desc": "Select your preferred time slot and upload your media effortlessly.",
+        "step3Title": "03. Launch & Monitor",
+        "step3Desc": "Once approved, your campaigns go live. Easily track and manage them."
+      },
+      "vendors": {
+        "step1Title": "01. List Your Spaces",
+        "step1Desc": "Add your digital and physical billboards with custom pricing and availability.",
+        "step2Title": "02. Review & Accept Bookings",
+        "step2Desc": "Manage incoming campaign requests from leading global and regional brands.",
+        "step3Title": "03. Monetize & Grow",
+        "step3Desc": "Receive guaranteed timely payouts and monitor your inventory performance."
+      },
       "step1Title": "01. Choose Your Spot",
       "step1Desc": "Discover a Diverse Range of Inventories Across Multiple Cities and Countries.",
       "step2Title": "02. Schedule & Upload",
@@ -360,6 +377,10 @@
     "blog": {
       "title": "Blog",
       "description": "Stay tuned for exclusive updates, insights, and stories from Di-Wrapp."
+    },
+    "wallet": {
+      "title": "Wallet",
+      "description": "Secure, Flexible & Instant Transactions. The Di_Wrapp Wallet is your digital financial hub within the platform."
     }
   },
   "joinUs": {
@@ -509,16 +530,16 @@
       "howItWorks": "How It Works",
       "cancellationOption": "Cancellation Option",
       "liveChat": "Live Chat",
-      "collections": "Collections",
+      "wallet": "Wallet",
       "ticket": "Ticket",
-      "modes": "Modes",
+      "wrappAi": "Wrapp-AI",
       "faq": "FAQ",
       "vendor": "Vendor",
       "eBranding": "E-Branding",
       "getDiWrapped": "Get Di-Wrapped",
+      "creativePro": "CreativePro",
       "responsibility": "Responsibility",
       "resources": "Resources",
-      "elements": "Elements",
       "documentation": "Documentation",
       "community": "Community"
     },
@@ -542,5 +563,350 @@
     "title": "Nothing To See Here...",
     "description": "It seems like the page that you are trying to reach doesn't Exist, let's take you back to the home page.",
     "backHome": "Back To Homepage"
+  },
+  "wallet": {
+    "heroBadge": "Di_Wrapp Wallet",
+    "heroTitleLine1": "Secure, Flexible &",
+    "heroTitleLine2": "Instant Transactions",
+    "heroSubtitlePart1": "The Di_Wrapp Wallet is your digital financial hub within the platform. It gives advertisers and vendors full control over transactions, top-ups, and campaign payments — ",
+    "heroSubtitleLine1": "The Di_Wrapp Wallet is your digital financial hub within the platform.",
+    "heroSubtitleLine2": "It gives advertisers and vendors full control over transactions, top-",
+    "heroSubtitleLine3": "ups, and campaign payments — ",
+    "heroSubtitleHighlight": "all in one place.",
+    "ctaButton": "Top Up my Wallet",
+    "statementLight": "Whether you're running a single ad or managing hundreds of locations — ",
+    "statementMedium": "the Wallet keeps your operations smooth and traceable.",
+    "featuresBadge": "Features",
+    "featuresDesc": "Built for convenience, the Wallet keeps your funds organized and ready to use. Whether you're topping up, monitoring payouts, or reviewing your transaction history, it offers a smooth and transparent way to handle your campaign finances.",
+    "cards": {
+      "card1": {
+        "title": "Top-Up Any Time",
+        "description": "Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order \"only for verified Org.\")."
+      },
+      "card2": {
+        "title": "Real-Time Tracking",
+        "description": "View every wallet-related transaction in detail: top-ups, refunds, order payments, and status."
+      },
+      "card3": {
+        "title": "Secure & Audited",
+        "description": "Every wallet transaction is recorded, secured, and available for export and audit."
+      }
+    }
+  },
+  "culture": {
+    "badge": "Our Culture",
+    "titleLine1": "We believe in a work culture that",
+    "titleLine2": "feels as good as it performs.",
+    "subtitle": "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous.",
+    "values": {
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We move fast together, not alone."
+      },
+      "flexibility": {
+        "title": "Flexibility",
+        "description": "Hybrid and remote options that work for your lifestyle."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "Big ideas are always welcome here."
+      },
+      "diversity": {
+        "title": "Diversity",
+        "description": "Different perspectives make us smarter, stronger, and more human."
+      }
+    }
+  },
+  "lifeAtDiwrapp": {
+    "badge": "Life At Di_Wrapp",
+    "title": "Where Innovation Meets Impact",
+    "statementHighlight": "At Di_Wrapp, we're not just building a platform —",
+    "statementBody": "we're reshaping how brands connect with the world around them. Every day, our teams bring together creativity, technology, and purpose to turn ambitious ideas into industry-defining solutions."
+  },
+  "careersSection": {
+    "innovativeWork": {
+      "title": "Innovative Work",
+      "description": "You're part of creating real-world tech with real-world impact."
+    },
+    "aiTech": {
+      "title": "AI & Tech-First:",
+      "description": "Build and work with cutting-edge tools that redefine industries."
+    },
+    "globalVision": {
+      "title": "Global Vision:",
+      "description": "Join the big goals and a growing footprint. Where learning & leadership opportunities at every stage."
+    },
+    "cta": {
+      "badge": "Build With Us",
+      "title": "Ready to take your career to the next level?",
+      "description": "Explore our open roles or reach out to share your story — we're always looking for passionate, talented minds.",
+      "button": "View Careers"
+    }
+  },
+  "askDiHero": {
+    "badge": "Integrated Across the Platform",
+    "titleBold": "Just Ask_Di” — ",
+    "titleRegular": "and she’ll take care of the rest.",
+    "subtitleNormal": "Whether you're booking a single screen or managing a network, Ask_Di is always active — ",
+    "subtitleBold": "working alongside your team 24/7.",
+    "ctaButton": "Try Ask_Di",
+    "cards": {
+      "bookingAssistant": {
+        "title": "Smart Booking Assistant",
+        "description": "Ready to launch a campaign? Ask_Di handles the setup — you just confirm and go live."
+      },
+      "campaignResults": {
+        "title": "View Campaign Results",
+        "description": "Instantly access reports, screen activity, visual insights and performance metrics."
+      },
+      "startDesigning": {
+        "title": "Start Designing Ad",
+        "description": "Our AI-powered help you create your ad. Or get connected with a creative agency."
+      }
+    }
+  },
+  "askDiCarousel": {
+    "slide1": {
+      "badge": "Wrapp AI – Your Smart Advertising Companion",
+      "title": "Empowering Through intelligent, data-driven support.",
+      "description": "Ask_Di” is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —",
+      "highlight": "all through intuitive, AI-powered interactions.",
+      "cta": "Try Ask_Di"
+    },
+    "slide2": {
+      "badge": "Ad Creation Tools",
+      "title": "Don’t have a design team? No problem.",
+      "description": "Streamlines your advertising process by generating visual ad drafts, suggests messaging and tone, and recommends trending ad styles tailored to your product. —",
+      "highlight": "so you can build impactful campaigns, all in one place.",
+      "cta": "Create with Ask_Di"
+    }
+  },
+  "vendorPortalHero": {
+    "badge": "Vendor Portal",
+    "title": "Empower Your Inventory, Unlock\nNew Revenue.",
+    "subtitle": "Join Di_Wrapp's Smart Network",
+    "descriptionPrefix": "If you own a Inventory — ",
+    "descriptionHighlight": "Di_Wrapp gives you the tools to modernize, monetize, and manage with ease.",
+    "descriptionSuffix": " Our Vendor Portal connects your channel to a smart, automated platform where brands are actively looking to book spaces like yours.",
+    "readMoreBtn": "Read More",
+    "ctaBtn": "Let's Get Started"
+  },
+  "whyGetDiWrapped": {
+    "topBadge": "Why Get Di_Wrapped",
+    "heading": "Get Connected. Get Booked. Get Di_Wrapped.",
+    "features": {
+      "automated": {
+        "title": "Automated Booking",
+        "description": "Instantly receive bookings and reduce manual coordination."
+      },
+      "advanced": {
+        "title": "Advanced Scheduling",
+        "description": "Flexible Booking management based on availability and location."
+      },
+      "realTime": {
+        "title": "Real-Time Insights",
+        "description": "Track impressions, revenue, and performance in one powerful dashboard."
+      },
+      "smartTech": {
+        "title": "Smart Tech Integration",
+        "description": "Our system supports AI sensors and scheduling tech for better ROI and audience measurement."
+      },
+      "flexible": {
+        "title": "Flexible Monetization Modes",
+        "description": "Choose from Variaty models tailored to your setup and pricing needs."
+      },
+      "verified": {
+        "title": "Verified Profiles",
+        "description": "Get access to curated Bookings from vetted, professional brands."
+      }
+    },
+    "ctaBanner": {
+      "badge": "Join Di_Wrapp Vendor Network",
+      "title": "Ready to connect your Inventory and earn more?",
+      "description": "Join instantly, link your Space, set your prices, and start Monitoring Bookings",
+      "contactBtn": "Contact Us",
+      "getStartedBtn": "Let's Get Started"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "heading": "Frequently\nAsked Questions"
+    }
+  },
+  "vendorFaq": {
+    "badge": "FAQ",
+    "heading": "Frequently\nAsked Questions",
+    "items": [
+      {
+        "id": "setup-payout",
+        "question": "How to setup inventory and paid out",
+        "answer": "You can register your inventory by adding your screen specifications, location, and operating hours through the Vendor Dashboard. Once verified, payout details (bank transfer, digital wallet, or wire) are linked directly, and earnings are credited automatically following campaign completion."
+      },
+      {
+        "id": "pricing-hours",
+        "question": "Can i set prices and operating hours?",
+        "answer": "Yes, you have full control over your inventory pricing (CPM, hourly, or fixed packages) and daily operating schedules. You can also define surge pricing during peak hours or offer discounts for long-term campaigns."
+      },
+      {
+        "id": "review-bookings",
+        "question": "Can i manually review bookings ?",
+        "answer": "Absolutely. You can toggle between automatic approval for verified advertisers or manual review mode where every campaign creative and schedule requires your explicit approval before going live."
+      },
+      {
+        "id": "formats-supported",
+        "question": "Which Format are supported",
+        "answer": "Di_Wrapp supports static high-res images (JPEG, PNG, WebP), dynamic HTML5 creatives, and high-definition video formats (MP4, MOV up to 4K resolution) tailored to digital displays and billboards."
+      },
+      {
+        "id": "min-inventories",
+        "question": "Minimum Number of inventories ?",
+        "answer": "There is no minimum requirement. Whether you manage a single storefront screen or a nationwide network of hundreds of digital billboards, you can monetize your inventory seamlessly."
+      },
+      {
+        "id": "taxes-invoices",
+        "question": "Taxes & Invoices",
+        "answer": "All invoices, VAT receipts, and tax statements are generated automatically per campaign and are exportable anytime directly from your billing overview."
+      }
+    ],
+    "guideCard": {
+      "titlePrefix": "Can't Find your Question? ",
+      "titleHighlight": "Read The Vendor Guider"
+    }
+  },
+  "vendorOnboarding": {
+    "header": {
+      "userName": "Omar AL-Dimassi",
+      "cartAriaLabel": "Shopping cart",
+      "userBadgeAriaLabel": "User profile",
+      "switchLang": "عربي"
+    },
+    "step1": {
+      "stepBadge": "Step 1",
+      "title": "Tell us about your Organization",
+      "subtitle": "Enter essential information & details used to identify your organization",
+      "logoLabel": "Organization Logo",
+      "uploadTitle": "Drag & drop or choose files to upload",
+      "uploadFormats": "File Format - Jpeg, Jpg.",
+      "ownershipTypeLabel": "Business Ownership Type",
+      "ownershipTypePlaceholder": "Select Type",
+      "ownershipOptions": [
+        { "value": "sole_proprietorship", "label": "Sole Proprietorship" },
+        { "value": "partnership", "label": "Partnership" },
+        { "value": "corporation", "label": "Corporation" },
+        { "value": "llc", "label": "LLC (Limited Liability Company)" }
+      ],
+      "orgNameLabel": "Organization Name",
+      "orgNamePlaceholder": "Enter Company Name",
+      "websiteLabel": "Website",
+      "websitePlaceholder": "www.oculusmedia.com",
+      "websitePrefix": "https://",
+      "aboutLabel": "About your Organization",
+      "aboutPlaceholder": "Describe your organization",
+      "companyProfileLabel": "Upload Company Profile",
+      "saveAndExit": "Save & Exit",
+      "next": "Next"
+    },
+    "step2": {
+      "stepBadge": "Step 2",
+      "title": "What type of Inventory you own?",
+      "subtitle": "Enter your inventory information used to identify your organization",
+      "inventoryOverview": "Inventory Overview",
+      "numberOfInventories": "Number Of Inventories",
+      "inventoriesTag": "Inventories",
+      "inventoryType": "Inventory Type",
+      "types": {
+        "activationSpace": "Activation Space",
+        "advertisingDisplay": "Advertising Display",
+        "influencer": "Influencer",
+        "digitalChannels": "Digital Channels"
+      },
+      "operatingCountry": "Operating Country",
+      "countryLabel": "Country",
+      "countryPlaceholder": "Select Country",
+      "cityLabel": "City",
+      "cityPlaceholder": "Select City",
+      "addCountries": "+ Add Countries",
+      "previous": "Previous",
+      "saveAndExit": "Save & Exit",
+      "next": "Next",
+      "countries": [
+        { "value": "sa", "label": "Saudi Arabia" },
+        { "value": "ae", "label": "United Arab Emirates" },
+        { "value": "qa", "label": "Qatar" },
+        { "value": "kw", "label": "Kuwait" },
+        { "value": "bh", "label": "Bahrain" },
+        { "value": "om", "label": "Oman" },
+        { "value": "eg", "label": "Egypt" }
+      ],
+      "cities": {
+        "sa": [
+          { "value": "riyadh", "label": "Riyadh" },
+          { "value": "jeddah", "label": "Jeddah" },
+          { "value": "dammam", "label": "Dammam" },
+          { "value": "khobar", "label": "Khobar" },
+          { "value": "mecca", "label": "Mecca" },
+          { "value": "medina", "label": "Medina" }
+        ],
+        "ae": [
+          { "value": "dubai", "label": "Dubai" },
+          { "value": "abu_dhabi", "label": "Abu Dhabi" },
+          { "value": "sharjah", "label": "Sharjah" }
+        ],
+        "qa": [
+          { "value": "doha", "label": "Doha" },
+          { "value": "al_rayyan", "label": "Al Rayyan" }
+        ],
+        "kw": [
+          { "value": "kuwait_city", "label": "Kuwait City" },
+          { "value": "hawalli", "label": "Hawalli" }
+        ],
+        "bh": [
+          { "value": "manama", "label": "Manama" },
+          { "value": "riffa", "label": "Riffa" }
+        ],
+        "om": [
+          { "value": "muscat", "label": "Muscat" },
+          { "value": "salalah", "label": "Salalah" }
+        ],
+        "eg": [
+          { "value": "cairo", "label": "Cairo" },
+          { "value": "alexandria", "label": "Alexandria" },
+          { "value": "giza", "label": "Giza" }
+        ]
+      }
+    },
+    "step3": {
+      "stepBadge": "Step 3",
+      "title": "Contact Info",
+      "subtitle": "Enter your organization contact information to reach you out.",
+      "contactPersonLabel": "Contact Person Full name",
+      "contactPersonPlaceholder": "Enter Contact name",
+      "positionLabel": "Position",
+      "positionPlaceholder": "Enter Position",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "example@domain.com",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "00 000 0000",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Enter your comment",
+      "previous": "Previous",
+      "saveAndExit": "Save & Exit",
+      "submit": "Submit",
+      "successTitle": "Application Submitted Successfully!",
+      "successSubtitle": "Thank you for registering with Di-Wrapp. Our vendor onboarding team will review your application and get in touch within 24-48 business hours.",
+      "returnHome": "Back to Home"
+    },
+    "success": {
+      "title": "Your Application is Submitted Successfully For Review!",
+      "dear": "Dear",
+      "userName": "Omar AL-Dimassi",
+      "emailNotice": "an email will be sent to confirm the application process, and you can track your Submission through Di-Wrapp Dashboard.",
+      "supportNotice": "Our Support Team will have the pleasure to review your submission.",
+      "trackSubmission": "Track My Submission",
+      "backHome": "Back To Homepage"
+    }
   }
 }
+
+
+
+

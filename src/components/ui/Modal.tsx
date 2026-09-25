@@ -17,7 +17,7 @@ export function Modal({ isOpen, onClose, title, children, footer, type = 'standa
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[120] flex items-end sm:items-center justify-center p-0 sm:p-6">
+        <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-6">
            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
            <motion.div initial={{ opacity: 0, scale: 0.95, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 10 }} className="relative bg-white dark:bg-[#0a0a0a] rounded-t-3xl sm:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] w-full max-w-lg overflow-hidden flex flex-col mt-auto sm:mt-0 max-h-[90vh] border dark:border-zinc-800">
              <div className="px-6 py-5 border-b border-[#e2e8f0] dark:border-zinc-800 flex items-center justify-between bg-white dark:bg-[#0a0a0a]">

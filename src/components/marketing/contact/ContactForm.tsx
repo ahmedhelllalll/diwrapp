@@ -274,6 +274,8 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 {/* Country Dropdown Menu */}
                 {isCountryDropdownOpen && (
                   <div 
+                    data-lenis-prevent
+                    onWheel={(e) => e.stopPropagation()}
                     className="absolute top-full left-0 mt-1.5 w-52 bg-white/95 dark:bg-zinc-900/90 dark:backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] rounded-xl shadow-xl z-30 py-1.5 overflow-hidden"
                     role="listbox"
                     dir="ltr"

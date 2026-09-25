@@ -97,10 +97,10 @@ export default async function RootLayout(
         suppressHydrationWarning
       >
 
-        <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+        <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >

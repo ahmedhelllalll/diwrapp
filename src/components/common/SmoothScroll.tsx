@@ -15,6 +15,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       touchMultiplier: 2,
       infinite: false,
       syncTouch: false,
+      allowNestedScroll: true,
     });
 
     function raf(time: number) {

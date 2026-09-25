@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
+import { SunLight, HalfMoon } from 'iconoir-react';
+import { CountryBadgeSkeleton } from '@/components/common/CountryBadgeSkeleton';
 
 interface ComingSoonNavbarProps {
   lang: string;
@@ -17,12 +19,16 @@ interface ComingSoonNavbarProps {
     signIn?: string;
   };
   showNavLinks?: boolean;
+  countryCode?: string;
+  countryBadge?: React.ReactNode;
 }
 
 export default function ComingSoonNavbar({
   lang,
   dictNav,
   showNavLinks = true,
+  countryCode: _initialCountryCode,
+  countryBadge,
 }: ComingSoonNavbarProps) {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -51,7 +57,7 @@ export default function ComingSoonNavbar({
   ];
 
   return (
-    <header className="w-full bg-white dark:bg-[#080808] border-b border-gray-100 dark:border-zinc-800/60 transition-colors duration-300 relative z-30">
+    <header className="w-full bg-white dark:bg-[#080808] border-b border-gray-100 dark:border-zinc-800/60 transition-colors duration-300 relative z-[1000]">
       <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-5 sm:py-6 flex items-center justify-between">
         {/* Left: Di_wrapp Logo */}
         <Link href={`/${lang}`} className="inline-flex items-center gap-2 select-none group shrink-0">
@@ -65,9 +71,9 @@ export default function ComingSoonNavbar({
           <span className="text-xl font-bold text-[#101828] dark:text-white tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
             Di-wrapp
           </span>
-          <span className="text-[10px] font-bold text-[#667085] dark:text-zinc-400 uppercase -mt-2">
-            SO
-          </span>
+          {countryBadge ?? (
+            <CountryBadgeSkeleton className="text-[10px] font-bold text-[#667085] dark:text-zinc-400 uppercase -mt-2 inline-block min-w-[14px] h-[10px] opacity-0 select-none pointer-events-none" />
+          )}
         </Link>
 
         {/* Center: Navigation Links (System Design) */}
@@ -102,16 +108,9 @@ export default function ComingSoonNavbar({
           >
             {mounted ? (
               activeTheme === 'dark' ? (
-                /* Sun icon */
-                <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-                </svg>
+                <SunLight className="w-4 h-4 text-amber-400 stroke-[2]" />
               ) : (
-                /* Moon icon */
-                <svg className="w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-                </svg>
+                <HalfMoon className="w-4 h-4 text-gray-700 dark:text-zinc-300 stroke-[2]" />
               )
             ) : (
               <div className="w-4 h-4" />

@@ -20,6 +20,8 @@ import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { decodeSessionToken, isSessionExpired } from '@/lib/auth/session';
 import { AUTH_COOKIE_NAME } from '@/lib/auth/config';
+import { geolocation } from '@vercel/functions';
+import { COUNTRY_COOKIE_NAME } from '@/lib/geo';
 
 /**
  * Extensible list of protected path prefixes (without locale prefix).
@@ -140,11 +142,33 @@ export function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
 
+  // 5. Dynamic country code detection via Vercel Geolocation
+  let countryCode: string | undefined;
+  try {
+    const geo = geolocation(request);
+    if (geo?.country) {
+      countryCode = geo.country.toUpperCase();
+      requestHeaders.set('x-country-code', countryCode);
+    }
+  } catch {
+    // Geolocation unavailable or running outside of Vercel edge
+  }
+
   const response = NextResponse.next({
     request: {
       headers: requestHeaders,
     },
   });
+
+  if (countryCode) {
+    response.headers.set('x-country-code', countryCode);
+    response.cookies.set(COUNTRY_COOKIE_NAME, countryCode, {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7,
+      sameSite: 'lax',
+    });
+  }
+
   applySecurityHeaders(response);
   return response;
 }

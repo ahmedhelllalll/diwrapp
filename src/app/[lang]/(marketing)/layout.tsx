@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/dictionaries";
-import LandingHeader from "@/components/layout/LandingHeader";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CountryBadge, CountryBadgeSkeleton } from "@/components/common/CountryBadge";
 
 export default async function MarketingLayout(props: {
   children: React.ReactNode;
@@ -19,11 +20,17 @@ export default async function MarketingLayout(props: {
 
   return (
     <>
-      <LandingHeader
+      <Header
         lang={lang}
         nextLang={nextLang}
         langLabel={langLabel}
         dictNav={l.nav}
+        dict={dict}
+        countryBadge={
+          <Suspense key="country-badge" fallback={<CountryBadgeSkeleton />}>
+            <CountryBadge />
+          </Suspense>
+        }
       />
       {props.children}
       <Footer lang={lang} dict={(dict as any).footer} />
