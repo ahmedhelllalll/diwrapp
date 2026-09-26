@@ -51,6 +51,7 @@ export default function ComingSoonView({
                 width={716}
                 height={563}
                 priority
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 600px, 680px"
                 className="w-full h-auto object-contain select-none pointer-events-none block"
               />
 

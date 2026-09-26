@@ -105,7 +105,6 @@ export default function AiCarouselSection({
           src="/assets/background-ai.jpg"
           alt="Wrapp AI Background"
           fill
-          priority
           sizes="(max-width: 1380px) 100vw, 1380px"
           className="ai-carousel-bg"
         />

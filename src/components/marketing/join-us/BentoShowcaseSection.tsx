@@ -115,7 +115,7 @@ export default function BentoShowcaseSection({
                 alt="Di-wrapp Platform on Laptop"
                 width={1100}
                 height={850}
-                priority
+                sizes="(max-width: 768px) 100vw, 720px"
                 style={{ clipPath: 'polygon(0px 0px, 100% 0px, 100% 95%, 0px 95%)' }}
                 className="w-full h-auto object-contain drop-shadow-2xl translate-y-3 md:translate-y-5 lg:translate-y-6 translate-x-6 md:translate-x-14 lg:translate-x-20 rtl:translate-x-0 rtl:md:-translate-x-14 rtl:lg:-translate-x-20 transition-transform duration-500 ease-out"
               />

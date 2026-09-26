@@ -34,7 +34,7 @@ export default function FloatingHeroAssets() {
           alt="Grid Line Frame"
           width={392}
           height={707}
-          priority
+          sizes="392px"
           className="w-full h-auto object-contain select-none"
         />
       </motion.div>
@@ -49,6 +49,7 @@ export default function FloatingHeroAssets() {
           alt="Grid Line Frame Reversed"
           width={392}
           height={707}
+          sizes="392px"
           className="w-full h-auto object-contain -scale-x-100 select-none"
         />
       </motion.div>
@@ -63,7 +64,7 @@ export default function FloatingHeroAssets() {
           alt="Add New Glass"
           width={1310}
           height={734}
-          priority
+          sizes="(min-width: 1280px) 440px, 390px"
           className="dark:hidden block w-full h-auto object-contain select-none"
         />
         <Image
@@ -71,7 +72,7 @@ export default function FloatingHeroAssets() {
           alt="Add New Glass Dark"
           width={1310}
           height={734}
-          priority
+          sizes="(min-width: 1280px) 440px, 390px"
           className="hidden dark:block w-full h-auto object-contain select-none"
         />
       </motion.div>
@@ -86,7 +87,7 @@ export default function FloatingHeroAssets() {
           alt="Calendar Asset"
           width={1920}
           height={1080}
-          priority
+          sizes="(min-width: 1280px) 540px, 480px"
           className="w-full h-auto object-contain -scale-x-100 select-none"
         />
       </motion.div>
@@ -101,6 +102,7 @@ export default function FloatingHeroAssets() {
           alt="Random Floating Cluster"
           width={1920}
           height={1080}
+          sizes="(min-width: 1280px) 760px, 680px"
           className="dark:hidden block w-full h-auto object-contain select-none"
         />
         <Image
@@ -108,6 +110,7 @@ export default function FloatingHeroAssets() {
           alt="Random Floating Cluster Dark"
           width={1920}
           height={1080}
+          sizes="(min-width: 1280px) 760px, 680px"
           className="hidden dark:block w-full h-auto object-contain select-none"
         />
       </motion.div>
@@ -123,6 +126,7 @@ export default function FloatingHeroAssets() {
           width={3000}
           height={2250}
           priority
+          sizes="(min-width: 1280px) 1200px, (min-width: 1024px) 1080px, 100vw"
           className="w-full h-auto object-contain drop-shadow-2xl select-none"
           style={{ transform: "translateX(-50%) rotate(25deg)" }}
         />
@@ -170,7 +174,7 @@ export default function FloatingHeroAssets() {
           alt="3D Element"
           width={600}
           height={480}
-          priority
+          sizes="600px"
           className="w-full h-auto dark:hidden block select-none"
         />
         <Image
@@ -178,7 +182,7 @@ export default function FloatingHeroAssets() {
           alt="3D Element Dark"
           width={600}
           height={480}
-          priority
+          sizes="600px"
           className="w-full h-auto hidden dark:block select-none mix-blend-screen"
         />
       </motion.div>

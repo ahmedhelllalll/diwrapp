@@ -234,7 +234,7 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
                   src={currentSlide.bgImage}
                   alt={currentSlide.title}
                   fill
-                  priority
+                  sizes="100vw"
                   className={`object-cover object-right rtl:object-left rtl:scale-x-[-1] transition-transform duration-500 ${
                     lang === 'ar' ? 'scale-x-[-1] object-left' : ''
                   }`}

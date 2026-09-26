@@ -203,7 +203,7 @@ export default function PlatformFeaturesSection({
                     alt={card1.title || 'Platform Tablet'}
                     width={960}
                     height={720}
-                    priority
+                    sizes="(max-width: 768px) 100vw, 960px"
                     className="w-[140%] max-w-none h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-8 -translate-y-6 rtl:-translate-x-8"
                   />
                 </div>

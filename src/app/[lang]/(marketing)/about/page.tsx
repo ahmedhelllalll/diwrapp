@@ -51,6 +51,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   width={790}
                   height={460}
                   priority
+                  sizes="(max-width: 768px) 100vw, 790px"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -76,6 +77,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   width={1200}
                   height={900}
                   priority
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -153,6 +155,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       alt="Di_Wrapp Tablet Interface" 
                       width={960}
                       height={720}
+                      sizes="(max-width: 768px) 100vw, 960px"
                       className="features-tablet-img" 
                     />
                   </div>

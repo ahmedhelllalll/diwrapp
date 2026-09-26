@@ -48,8 +48,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             alt="Diwrapp Media Reach Vehicles and OOH" 
             className="object-contain object-bottom" 
             fill 
-            priority 
-            sizes="(max-width: 1280px) 100vw, 1280px"
+            sizes="(max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-light.webp"
           />
         </div>
@@ -60,8 +59,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             alt="Diwrapp Media Reach Vehicles and OOH" 
             className="object-contain object-bottom" 
             fill 
-            priority 
-            sizes="(max-width: 1280px) 100vw, 1280px"
+            sizes="(max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-dark.webp"
           />
         </div>
@@ -98,8 +96,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-light-ar.webp" : "/images/features/world-map-light-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 860px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 720px, 828px"
                     className="object-contain object-top opacity-90"
                   />
                 </div>
@@ -116,8 +113,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-dark-ar.webp" : "/images/features/world-map-dark-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 860px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 720px, 828px"
                     className="object-contain object-top opacity-80"
                   />
                 </div>
@@ -271,7 +267,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                   {/* 2. Developer Workspace Image Card */}
                   <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-[#121214]">
-                    <Image alt="Developer at workspace" className="object-cover" fill src="/images/features/developer-desk.webp" sizes="(max-width: 768px) 100vw, 260px" />
+                    <Image alt="Developer at workspace" className="object-cover" fill src="/images/features/developer-desk.webp" sizes="(max-width: 640px) 50vw, 260px" />
                     {/* Floating Pill Overlay at Bottom - INSIDE THE IMAGE */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-[#1c1c1f] rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10">
                       <div className="w-5 h-5 rounded-full bg-[#10B981] flex items-center justify-center text-white shrink-0 shadow-sm">
@@ -365,8 +361,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                         alt="Kingdom Tower"
                         width={549}
                         height={747}
-                        priority
-                        sizes="(max-width: 768px) 100vw, 260px"
+                        sizes="260px"
                         className="w-full h-auto object-contain block select-none"
                       />
                     </div>

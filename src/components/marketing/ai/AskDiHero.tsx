@@ -221,6 +221,7 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
               width={2420}
               height={1689}
               priority
+              sizes="(max-width: 640px) 88vw, (max-width: 1024px) 80vw, 720px"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
@@ -233,6 +234,7 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
               width={1386}
               height={1736}
               priority
+              sizes="(max-width: 640px) 34vw, (max-width: 1024px) 30vw, 340px"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>

@@ -259,6 +259,7 @@ export default function VendorOnboardingStep1({
                         src={logoPreview}
                         alt="Logo preview"
                         fill
+                        sizes="80px"
                         className="object-contain p-1"
                       />
                     </div>

@@ -43,8 +43,8 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
               alt="Di_Wrapp Tablet Booking Showcase"
               width={640}
               height={480}
+              sizes="(max-width: 768px) 100vw, 640px"
               className="bento-tablet-img"
-              priority
             />
           </div>
         </div>

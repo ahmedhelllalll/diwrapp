@@ -22,6 +22,7 @@ export default function MobileHeroMockup() {
         width={785}
         height={658}
         priority
+        sizes="(max-width: 640px) 100vw, 785px"
         className="w-full h-auto object-contain select-none mx-auto bg-transparent"
       />
     </motion.div>
