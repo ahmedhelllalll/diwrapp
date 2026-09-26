@@ -38,12 +38,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
   ];
 
   return (
-    <section id="media-reach-section" className="pioneering-section w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-24 lg:my-32 relative overflow-visible z-10">
+    <section id="media-reach-section" className="pioneering-section w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-24 lg:my-32 relative overflow-x-clip z-10">
       
       {/* Dynamic Panorama Banner (Light vs Dark) - Higher z-index than map */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-12 sm:mb-16 lg:mb-20">
+      <div className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20">
         {/* Light Mode Banner */}
-        <div className="block dark:hidden relative w-full h-[280px] sm:h-[380px] lg:h-[460px]">
+        <div className="block dark:hidden relative w-full aspect-[1920/620] lg:aspect-auto lg:h-[460px]">
           <Image 
             alt="Diwrapp Media Reach Vehicles and OOH" 
             className="object-contain object-bottom" 
@@ -55,7 +55,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
         </div>
 
         {/* Dark Mode Banner */}
-        <div className="hidden dark:block relative w-full h-[280px] sm:h-[380px] lg:h-[460px]">
+        <div className="hidden dark:block relative w-full aspect-[1920/620] lg:aspect-auto lg:h-[460px]">
           <Image 
             alt="Diwrapp Media Reach Vehicles and OOH" 
             className="object-contain object-bottom" 
@@ -80,7 +80,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
               <div 
-                className="absolute -top-32 sm:-top-48 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
+                className="absolute top-0 sm:top-2 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
                 style={{
                   maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
@@ -88,7 +88,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               >
                 {/* Light Mode Map */}
                 <div 
-                  className="block dark:hidden relative w-full sm:w-[820px] lg:w-[860px] max-w-[880px] h-[360px] sm:h-[400px] lg:h-[440px] shrink-0"
+                  className="block dark:hidden relative w-full sm:w-full md:w-[720px] lg:w-[860px] max-w-full lg:max-w-[880px] h-[360px] sm:h-[400px] lg:h-[440px] shrink-0"
                   style={{
                     maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
@@ -99,14 +99,14 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     alt="World Coverage Map"
                     fill
                     priority
-                    sizes="860px"
+                    sizes="(max-width: 1024px) 100vw, 860px"
                     className="object-contain object-top opacity-90"
                   />
                 </div>
 
                 {/* Dark Mode Map */}
                 <div 
-                  className="hidden dark:block relative w-full sm:w-[820px] lg:w-[860px] max-w-[880px] h-[360px] sm:h-[400px] lg:h-[440px] shrink-0"
+                  className="hidden dark:block relative w-full sm:w-full md:w-[720px] lg:w-[860px] max-w-full lg:max-w-[880px] h-[360px] sm:h-[400px] lg:h-[440px] shrink-0"
                   style={{
                     maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
@@ -117,7 +117,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     alt="World Coverage Map"
                     fill
                     priority
-                    sizes="860px"
+                    sizes="(max-width: 1024px) 100vw, 860px"
                     className="object-contain object-top opacity-80"
                   />
                 </div>
@@ -172,7 +172,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             <motion.ul variants={itemVariants} className="space-y-4 mb-8 w-full">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3.5 group">
-                  <div className="w-5 h-5 rounded-full bg-[#0066FF] flex items-center justify-center shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-[#0066FF] dark:bg-blue-500/90 flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
@@ -197,7 +197,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               {/* Primary Button */}
               <Link
                 href={`/${lang}/book`}
-                className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-[#0066FF] hover:bg-blue-600 text-sm font-bold text-white transition-all shadow-sm active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
+                className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-[#0066FF] hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-sm font-bold text-white transition-all shadow-sm dark:shadow-[0_4px_24px_rgba(37,99,235,0.28)] active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
                 {dict?.bookSpot || (isRtl ? "احجز مساحتك" : "Book Your Spot")}
               </Link>
@@ -288,15 +288,18 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                 </div>
 
-                {/* Bottom Row: 5x Productivity Pill with Frosted Glassmorphism in Dark Mode */}
-                <div className="relative w-full overflow-hidden bg-[#F4F7FD] dark:bg-[#0A101D]/60 dark:backdrop-blur-xl border border-[#E1EAF8] dark:border-white/10 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] rounded-[24px] sm:rounded-[28px] min-h-[105px] sm:min-h-[110px] py-6 sm:py-7 px-5 sm:px-6 flex items-center justify-between shadow-xs select-none isolate">
+                {/* Bottom Row: 5x Productivity Pill Matched to Calendar Card in Dark Mode */}
+                <div 
+                  className="relative w-full overflow-hidden bg-[#F4F7FD] dark:bg-[#18181B] border border-[#E1EAF8] dark:border-zinc-800 rounded-[24px] sm:rounded-[28px] min-h-[105px] sm:min-h-[110px] py-6 sm:py-7 px-5 sm:px-6 flex items-center justify-between shadow-xs select-none isolate"
+                  dir={isRtl ? "rtl" : "ltr"}
+                >
                   
-                  {/* Left Content (Text & Multiplier) */}
+                  {/* Content (Text & Multiplier) - Positioned on Left in LTR, Right in RTL */}
                   <div className="flex items-center gap-4 sm:gap-5 relative z-10" dir={isRtl ? "rtl" : "ltr"}>
                     <span className="text-3xl sm:text-4xl font-black text-[#0066FF] dark:text-blue-400 tracking-tight font-lufga shrink-0" dir="ltr">
                       5x
                     </span>
-                    <div className="space-y-1 max-w-[340px] text-left rtl:text-right">
+                    <div className={`space-y-1 max-w-[340px] ${isRtl ? "text-right" : "text-left"}`}>
                       <p className="text-xs sm:text-sm font-bold text-[#0B132B] dark:text-white leading-snug rtl:leading-normal font-lufga rtl:font-['Cairo',sans-serif]">
                         {isRtl ? "سرّع إنتاجية أعمالك" : "Fasten your Business Productivity"}
                       </p>
@@ -306,11 +309,15 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     </div>
                   </div>
 
-                  {/* Exact Hollow / Outlined Geometric Flash Graphic Anchored to Bottom Right */}
-                  <div className="absolute -right-8 sm:-right-12 -bottom-8 sm:-bottom-12 w-48 sm:w-56 h-48 sm:h-56 pointer-events-none select-none">
+                  {/* Geometric Flash Graphic - Anchored to Bottom-Right in LTR, Bottom-Left in RTL */}
+                  <div 
+                    className={`absolute -bottom-8 sm:-bottom-12 w-48 sm:w-56 h-48 sm:h-56 pointer-events-none select-none ${
+                      isRtl ? "-left-8 sm:-left-12" : "-right-8 sm:-right-12"
+                    }`}
+                  >
                     <svg
                       viewBox="0 0 120 120"
-                      className="w-full h-full text-[#0066FF] opacity-[0.10] dark:text-blue-400 dark:opacity-[0.08]"
+                      className="w-full h-full text-[#0066FF] opacity-[0.10] dark:opacity-100 dark:text-zinc-500/15"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="7"
@@ -335,10 +342,10 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
                 </div>
 
-                {/* 2. Floating Main White Card */}
-                <div className="relative w-full bg-white rounded-[13px] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col">
+                {/* 2. Floating Main Card with Floating Reach Badge */}
+                <div className="relative w-full">
                   
-                  {/* Floating Reach Badge */}
+                  {/* Floating Reach Badge (floats outside the clipped card boundary) */}
                   <div className="absolute top-[34px] -right-2.5 sm:-right-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-md px-2 py-1 shadow-lg border border-slate-100/80 dark:border-zinc-700/80 z-20 pointer-events-none">
                     <p className="text-[9px] font-bold text-slate-900 dark:text-white leading-tight font-lufga">Increase Reach</p>
                     <div className="flex items-center gap-1 mt-0.5 whitespace-nowrap">
@@ -348,30 +355,35 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     </div>
                   </div>
 
-                  {/* Uncropped Full Graphic Card Asset */}
-                  <div className="w-full overflow-hidden rounded-t-[13px]">
-                    <Image
-                      src="/images/features/kingdom-tower.webp"
-                      alt="Kingdom Tower"
-                      width={549}
-                      height={747}
-                      priority
-                      sizes="(max-width: 768px) 100vw, 260px"
-                      className="w-full h-auto object-contain block select-none"
-                    />
-                  </div>
+                  {/* Strictly Clipped Card Container: Prevents Any White Background Corner Leakage */}
+                  <div className="w-full bg-white dark:bg-[#18181B] rounded-[13px] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col overflow-hidden">
+                    
+                    {/* Uncropped Full Graphic Card Asset */}
+                    <div className="w-full">
+                      <Image
+                        src="/images/features/kingdom-tower.webp"
+                        alt="Kingdom Tower"
+                        width={549}
+                        height={747}
+                        priority
+                        sizes="(max-width: 768px) 100vw, 260px"
+                        className="w-full h-auto object-contain block select-none"
+                      />
+                    </div>
 
-                  {/* Bottom Flush CTA Button */}
-                  <button
-                    type="button"
-                    className="w-full bg-[#111827] hover:bg-black dark:bg-[#111827] dark:hover:bg-black text-white text-[11px] font-bold py-2.5 px-3 flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] font-lufga rounded-b-[13px]"
-                  >
-                    <span>Book Channel</span>
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 16l4-4-4-4m4 4H8" />
-                    </svg>
-                  </button>
+                    {/* Bottom Flush CTA Button: linked to advertise page */}
+                    <Link
+                      href={`/${lang}/advertise`}
+                      className="w-full bg-[#111827] hover:bg-black dark:bg-[#111827] dark:hover:bg-black text-white text-[11px] font-bold py-2.5 px-3 flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] font-lufga rounded-none cursor-pointer"
+                    >
+                      <span>Book Channel</span>
+                      <svg className="w-3.5 h-3.5 rtl:-scale-x-100" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 16l4-4-4-4m4 4H8" />
+                      </svg>
+                    </Link>
+
+                  </div>
 
                 </div>
 

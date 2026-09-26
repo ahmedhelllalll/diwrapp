@@ -102,6 +102,9 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
               >
                 <button
                   type="button"
+                  id={`faq-question-${faq.id}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${faq.id}`}
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
                   className="w-full py-4 sm:py-5 px-6 sm:px-7 flex items-center justify-between text-start gap-4 cursor-pointer"
                 >
@@ -110,7 +113,7 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                   </span>
                   
                   {/* Plus / Minus indicator matching Figma */}
-                  <span className="text-xl sm:text-2xl font-light text-slate-700 dark:text-neutral-300 shrink-0 w-6 h-6 flex items-center justify-center transition-colors">
+                  <span className="text-xl sm:text-2xl font-light text-slate-700 dark:text-neutral-300 shrink-0 w-6 h-6 flex items-center justify-center transition-colors" aria-hidden="true">
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
@@ -118,6 +121,9 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={`faq-answer-${faq.id}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${faq.id}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -157,12 +163,12 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
 
         {/* View More CTA Button */}
         <div className="mt-10 sm:mt-12">
-          <button
-            type="button"
-            className="px-8 py-3 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.05] hover:bg-slate-50 dark:hover:bg-white/[0.1] text-slate-900 dark:text-white text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] cursor-pointer"
+          <Link
+            href={`/${lang}/contact`}
+            className="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.05] hover:bg-slate-50 dark:hover:bg-white/[0.1] text-slate-900 dark:text-white text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] cursor-pointer"
           >
             {isRtl ? "عرض المزيد" : "View More"}
-          </button>
+          </Link>
         </div>
 
       </div>
