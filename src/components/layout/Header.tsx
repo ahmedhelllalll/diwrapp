@@ -209,7 +209,8 @@ export default function Header({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 8);
+      const scrolled = window.scrollY > 8;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });

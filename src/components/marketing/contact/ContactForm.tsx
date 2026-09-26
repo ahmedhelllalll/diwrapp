@@ -225,7 +225,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder={dict?.namePlaceholder || "Enter name"}
-                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
+                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-colors duration-200"
               />
             </div>
 
@@ -243,7 +243,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder={dict?.emailPlaceholder || "Enter email"}
-                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
+                className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-colors duration-200"
               />
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               <span>{dict?.phoneLabel || (isRtl ? "رقم الهاتف" : "Phone number")}</span>
             </label>
             <div 
-              className="contact-phone-group relative border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:dark:ring-1 focus-within:dark:ring-white/20 rounded-xl w-full transition-all"
+              className="contact-phone-group relative border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:dark:ring-1 focus-within:dark:ring-white/20 rounded-xl w-full transition-colors duration-200"
               dir="ltr"
             >
               <div className="relative h-full flex items-center shrink-0">
@@ -328,7 +328,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               value={formData.subject}
               onChange={handleInputChange}
               placeholder={dict?.subjectPlaceholder || "Enter Subject"}
-              className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
+              className="contact-input rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-colors duration-200"
             />
           </div>
 
@@ -345,7 +345,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder={dict?.messagePlaceholder || "Type here..."}
-                className="contact-textarea rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-all"
+                className="contact-textarea rounded-xl border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus:border-slate-400 focus:dark:border-white/30 focus:dark:ring-1 focus:dark:ring-white/20 outline-none w-full transition-colors duration-200"
               />
               <span className="contact-char-count text-slate-500 dark:text-zinc-400 text-xs font-mono select-none" aria-live="polite">
                 {formData.message.length}/{maxChars}

@@ -94,10 +94,10 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
             return (
               <div
                 key={faq.id}
-                className={`w-full rounded-2xl sm:rounded-[22px] border transition-all duration-300 ${
+                className={`w-full rounded-2xl sm:rounded-[22px] border transition-[border-color,background-color,box-shadow] duration-200 ${
                   isOpen
-                    ? "bg-white dark:bg-white/[0.05] backdrop-blur-md border-neutral-300 dark:border-white/[0.18] shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
-                    : "bg-white/80 dark:bg-white/[0.025] backdrop-blur-md border-neutral-200/80 dark:border-white/[0.07] hover:border-neutral-300 dark:hover:border-white/[0.14] dark:hover:bg-white/[0.04]"
+                    ? "bg-white dark:bg-[#18181B] border-neutral-300 dark:border-white/[0.18] shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                    : "bg-white dark:bg-[#121214] border-neutral-200/80 dark:border-white/[0.07] hover:border-neutral-300 dark:hover:border-white/[0.14] dark:hover:bg-[#18181B]"
                 }`}
               >
                 <button
