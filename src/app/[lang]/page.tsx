@@ -3,7 +3,6 @@ import { getDictionary } from "../../dictionaries";
 import { Locale } from "../../i18n-config";
 import Link from 'next/link';
 import "../landing.css";
-import LandingAnimations from "@/components/marketing/landing/LandingAnimations";
 import Header from "@/components/layout/Header";
 import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";
 import Footer from "@/components/layout/Footer";
@@ -53,11 +52,10 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       />
 
       <div className="landing-scope">
-        <LandingAnimations />
 
         {/* Hero Section */}
       <main className="bg-white dark:bg-[#080808] transition-colors duration-300">
-        <section id="hero-section" className="hero-section relative pt-20 sm:pt-24 lg:pt-28 overflow-visible">
+        <section id="hero-section" className="hero-section relative pt-[88px] sm:pt-24 lg:pt-28 overflow-hidden">
           
           {/* Floating Hero Background and Foreground Assets */}
           <FloatingHeroAssets />

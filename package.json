@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
-    "@gsap/react": "^2.1.2",
     "@vercel/functions": "^3.9.9",
     "es-toolkit": "^1.50.0",
     "framer-motion": "^13.0.0",
