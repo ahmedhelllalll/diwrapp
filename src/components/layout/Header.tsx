@@ -35,6 +35,66 @@ export interface HeaderProps {
   className?: string;
 }
 
+const menuDrawerVariants = {
+  hidden: {
+    opacity: 0,
+    y: -8,
+    transition: {
+      duration: 0.22,
+      ease: [0.32, 0, 0.67, 0] as const,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.32,
+      ease: [0.22, 1, 0.36, 1] as const,
+      when: "beforeChildren" as const,
+      staggerChildren: 0.04,
+    },
+  },
+};
+
+const menuItemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+    transition: {
+      duration: 0.15,
+      ease: "easeOut" as const,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  },
+};
+
+const menuFooterVariants = {
+  hidden: {
+    opacity: 0,
+    y: 8,
+    transition: {
+      duration: 0.15,
+      ease: "easeOut" as const,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.32,
+      ease: [0.22, 1, 0.36, 1] as const,
+      delay: 0.18,
+    },
+  },
+};
+
 export default function Header({
   lang,
   nextLang,
@@ -109,13 +169,16 @@ export default function Header({
     ? pathname.replace(new RegExp(`^/${currentLang}`), `/${derivedNextLang}`)
     : `/${derivedNextLang}`;
 
-  // Prevent background scrolling when mobile menu is open
+  // Prevent background scrolling when mobile menu is open without blocking the initial animation frame
   useEffect(() => {
+    let rafId: number;
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-      if (typeof window !== 'undefined' && (window as any).lenis) {
-        (window as any).lenis.stop();
-      }
+      rafId = requestAnimationFrame(() => {
+        document.body.style.overflow = 'hidden';
+        if (typeof window !== 'undefined' && (window as any).lenis) {
+          (window as any).lenis.stop();
+        }
+      });
     } else {
       document.body.style.overflow = '';
       if (typeof window !== 'undefined' && (window as any).lenis) {
@@ -123,6 +186,7 @@ export default function Header({
       }
     }
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       document.body.style.overflow = '';
       if (typeof window !== 'undefined' && (window as any).lenis) {
         (window as any).lenis.start();
@@ -160,12 +224,14 @@ export default function Header({
     <>
       <header
         dir="ltr"
-        className={`fixed top-0 inset-x-0 z-[1000] w-full transform-gpu backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+        className={`fixed top-0 inset-x-0 z-[1000] w-full transform-gpu ${
           isMobileMenuOpen
-            ? "bg-white dark:bg-[#080808]"
-            : isScrolled
-            ? "bg-white/85 dark:bg-[#080808]/85 border-b border-slate-200/60 dark:border-zinc-800/60 shadow-sm"
-            : "bg-white/95 dark:bg-[#080808]/95 border-b border-transparent"
+            ? "bg-white dark:bg-[#080808] border-b border-transparent"
+            : `backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+                isScrolled
+                  ? "bg-white/85 dark:bg-[#080808]/85 border-b border-slate-200/60 dark:border-zinc-800/60 shadow-sm"
+                  : "bg-white/95 dark:bg-[#080808]/95 border-b border-transparent"
+              }`
         } ${className || ""}`}
       >
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between relative" dir="ltr">
@@ -221,7 +287,7 @@ export default function Header({
             {/* Sign In Button or User Profile */}
             {user ? (
               <Link
-                href={`/${currentLang}/dashboard`}
+                href={`/${currentLang}/coming-soon?feature=Dashboard`}
                 className="inline-flex items-center justify-center h-[40px] px-4 rounded-[12px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900 text-[#101828] dark:text-white text-[14px] font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors gap-2 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
               >
                 <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">
@@ -279,33 +345,34 @@ export default function Header({
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-0 bottom-0 top-[72px] z-[999] bg-white dark:bg-[#080808] border-t border-slate-200/80 dark:border-zinc-800/80 lg:hidden flex flex-col justify-between overflow-y-auto px-6 py-8"
+            variants={menuDrawerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="fixed inset-x-0 bottom-0 top-[72px] z-[999] bg-white dark:bg-[#080808] lg:hidden flex flex-col justify-between overflow-y-auto px-6 py-8"
             dir={isRtl ? 'rtl' : 'ltr'}
           >
             {/* Centered navigation links */}
             <div className="flex-1 flex flex-col items-center justify-center gap-6 my-auto" dir={isRtl ? 'rtl' : 'ltr'}>
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-[17px] sm:text-[18px] font-medium tracking-normal text-center transition-colors font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${
-                    link.isActive 
-                      ? "text-slate-900 dark:text-white font-semibold" 
-                      : "text-slate-700 dark:text-zinc-300 font-medium hover:text-slate-900 dark:hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <motion.div key={link.href} variants={menuItemVariants} className="flex items-center justify-center">
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-[17px] sm:text-[18px] font-medium tracking-normal text-center transition-colors font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${
+                      link.isActive 
+                        ? "text-slate-900 dark:text-white font-semibold" 
+                        : "text-slate-700 dark:text-zinc-300 font-medium hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
 
             {/* Bottom utilities & CTA */}
-            <div className="w-full flex flex-col gap-4 pt-4" dir="ltr">
+            <motion.div variants={menuFooterVariants} className="w-full flex flex-col gap-4 pt-4" dir="ltr">
               <div className="flex items-center justify-center gap-5 text-sm font-bold text-slate-600 dark:text-zinc-400">
                 {/* Language Switcher */}
                 <Link
@@ -345,7 +412,7 @@ export default function Header({
               {/* Sign In Button or User Profile */}
               {user ? (
                 <Link
-                  href={`/${currentLang}/dashboard`}
+                  href={`/${currentLang}/coming-soon?feature=Dashboard`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full h-[48px] rounded-[14px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900 text-[#101828] dark:text-white text-[15px] font-semibold flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-xs font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
                 >
@@ -363,7 +430,7 @@ export default function Header({
                   {dictNav?.signIn || nav.signIn || "Sign In"}
                 </Link>
               )}
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

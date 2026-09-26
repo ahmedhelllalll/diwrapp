@@ -30,12 +30,19 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
 
     // Automatic Resize Observer to recalculate page height for dynamic tabs/components
+    let resizeTimer: NodeJS.Timeout | null = null;
     const resizeObserver = new ResizeObserver(() => {
-      lenis.resize();
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (!lenis.isStopped) {
+          lenis.resize();
+        }
+      }, 150);
     });
     resizeObserver.observe(document.body);
 
     return () => {
+      if (resizeTimer) clearTimeout(resizeTimer);
       if (typeof window !== 'undefined') {
         delete (window as any).lenis;
       }
