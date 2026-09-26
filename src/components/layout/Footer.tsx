@@ -207,9 +207,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
           {/* Column 2: Di-Wrapp Links */}
           <div>
-            <h4 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
+            <h3 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
               {dict?.columns?.diWrapp || 'Di-Wrapp'}
-            </h4>
+            </h3>
             <ul className="space-y-3.5 text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400">
               {diWrappLinks.map((item, idx) => (
                 <li key={idx}>
@@ -226,9 +226,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
           {/* Column 3: Support Links */}
           <div>
-            <h4 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
+            <h3 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
               {dict?.columns?.support || 'Support'}
-            </h4>
+            </h3>
             <ul className="space-y-3.5 text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400">
               {supportLinks.map((item, idx) => (
                 <li key={idx}>
@@ -245,9 +245,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
           {/* Column 4: Join In Links */}
           <div>
-            <h4 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
+            <h3 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
               {dict?.columns?.joinIn || 'Join In'}
-            </h4>
+            </h3>
             <ul className="space-y-3.5 text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400">
               {joinInLinks.map((item, idx) => (
                 <li key={idx}>
