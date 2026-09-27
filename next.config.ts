@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   transpilePackages: ['recharts', 'es-toolkit'],
   devIndicators: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   async redirects() {
     return [
       {

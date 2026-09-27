@@ -64,6 +64,7 @@ export default function FloatingHeroAssets() {
           alt="Add New Glass"
           width={1310}
           height={734}
+          priority
           sizes="(min-width: 1280px) 440px, 390px"
           className="dark:hidden block w-full h-auto object-contain select-none"
         />
@@ -72,6 +73,7 @@ export default function FloatingHeroAssets() {
           alt="Add New Glass Dark"
           width={1310}
           height={734}
+          priority
           sizes="(min-width: 1280px) 440px, 390px"
           className="hidden dark:block w-full h-auto object-contain select-none"
         />
@@ -87,6 +89,7 @@ export default function FloatingHeroAssets() {
           alt="Calendar Asset"
           width={1920}
           height={1080}
+          priority
           sizes="(min-width: 1280px) 540px, 480px"
           className="w-full h-auto object-contain -scale-x-100 select-none"
         />
@@ -102,6 +105,7 @@ export default function FloatingHeroAssets() {
           alt="Random Floating Cluster"
           width={1920}
           height={1080}
+          priority
           sizes="(min-width: 1280px) 760px, 680px"
           className="dark:hidden block w-full h-auto object-contain select-none"
         />
@@ -110,6 +114,7 @@ export default function FloatingHeroAssets() {
           alt="Random Floating Cluster Dark"
           width={1920}
           height={1080}
+          priority
           sizes="(min-width: 1280px) 760px, 680px"
           className="hidden dark:block w-full h-auto object-contain select-none"
         />

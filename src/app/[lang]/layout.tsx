@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
-import "../landing.css";
-import "../about.css";
-import "../advertise.css";
-import "../contact.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
@@ -62,15 +58,18 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const dict = await getDictionary(lang);
 
   return {
+    metadataBase: new URL('https://diwrapp.com'),
     title: {
       template: '%s | Diwrapp',
       default: dict.metadata.defaultTitle,
     },
     description: dict.metadata.defaultDescription,
     alternates: {
+      canonical: `/${lang}`,
       languages: {
-        en: '/en',
-        ar: '/ar',
+        en: 'https://diwrapp.com/en',
+        ar: 'https://diwrapp.com/ar',
+        'x-default': 'https://diwrapp.com/en',
       }
     }
   };
@@ -96,7 +95,22 @@ export default async function RootLayout(
         className={`${lufgaFont.variable} ${geistMono.variable} ${cairo.variable} h-full antialiased`}
         suppressHydrationWarning
       >
-
+        <head>
+          <link
+            rel="preload"
+            href="/fonts/Lufga-Bold.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Lufga-Regular.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin="anonymous"
+          />
+        </head>
         <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
           <ThemeProvider
             attribute="class"

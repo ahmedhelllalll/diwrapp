@@ -4,9 +4,8 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 
 const container: Variants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   show: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.08,
       delayChildren: 0.05,

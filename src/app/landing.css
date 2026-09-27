@@ -58,3 +58,27 @@ body {
     padding-top: 88px;
   }
 }
+
+/* Compositor-only entrance for LCP elements (preserves opacity: 1 for instant paint) */
+@keyframes heroLcpRise {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-lcp-title {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroLcpRise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform;
+}
+
+.hero-lcp-mockup {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroLcpRise 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+  will-change: transform;
+}

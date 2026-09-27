@@ -185,14 +185,16 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               {/* Secondary Button */}
               <Link
                 href={`/${lang}/about`}
+                aria-label={isRtl ? "اكتشف المزيد حول حلول دي راب الإعلانية" : "Learn more about Diwrapp advertising and media solutions"}
                 className="inline-flex items-center justify-center min-w-[130px] h-[48px] px-6 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm font-bold text-[#0B132B] dark:text-white hover:bg-slate-50 dark:hover:bg-zinc-800 hover:border-slate-300 transition-all active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
-                {dict?.learnMore || (isRtl ? "اكتشف المزيد" : "Learn More")}
+                <span>{dict?.learnMore || (isRtl ? "اكتشف المزيد" : "Learn More")}<span className="sr-only"> {isRtl ? "حول حلول دي راب الإعلانية" : "about Diwrapp media solutions"}</span></span>
               </Link>
 
               {/* Primary Button */}
               <Link
                 href={`/${lang}/book`}
+                aria-label={isRtl ? "احجز مساحتك الإعلانية على دي راب" : "Book your advertising spot on Diwrapp"}
                 className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-[#0066FF] hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-sm font-bold text-white transition-all shadow-sm dark:shadow-[0_4px_24px_rgba(37,99,235,0.28)] active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
                 {dict?.bookSpot || (isRtl ? "احجز مساحتك" : "Book Your Spot")}

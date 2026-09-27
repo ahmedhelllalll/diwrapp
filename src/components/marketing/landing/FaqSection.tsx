@@ -135,7 +135,11 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                           isRtl ? (
                             <>
                               يمكنك التسجيل بكل سهولة عبر زيارة{" "}
-                              <Link className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href={`/${lang}/signup`}>
+                              <Link 
+                                aria-label="التسجيل في منصة دي راب وإنشاء حساب جديد"
+                                className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
+                                href={`/${lang}/signup`}
+                              >
                                 رابط التسجيل
                               </Link>{" "}
                               واتباع الخطوات البسيطة.
@@ -143,7 +147,11 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                           ) : (
                             <>
                               You can sign up easily by visiting{" "}
-                              <Link className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href={`/${lang}/signup`}>
+                              <Link 
+                                aria-label="Sign up for a new Diwrapp account"
+                                className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
+                                href={`/${lang}/signup`}
+                              >
                                 Sign Up Link
                               </Link>{" "}
                               and following the instructions.
@@ -165,6 +173,7 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
         <div className="mt-10 sm:mt-12">
           <Link
             href={`/${lang}/contact`}
+            aria-label={isRtl ? "عرض المزيد من الأسئلة الشائعة أو التواصل معنا" : "View more frequently asked questions or contact us"}
             className="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.05] hover:bg-slate-50 dark:hover:bg-white/[0.1] text-slate-900 dark:text-white text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] cursor-pointer"
           >
             {isRtl ? "عرض المزيد" : "View More"}

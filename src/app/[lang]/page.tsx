@@ -4,14 +4,16 @@ import { Locale } from "../../i18n-config";
 import Link from 'next/link';
 import "../landing.css";
 import Header from "@/components/layout/Header";
-import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";
 import Footer from "@/components/layout/Footer";
-import FaqSection from "@/components/marketing/landing/FaqSection";
+import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";
+import dynamic from 'next/dynamic';
 import HeroEyebrowBadge from "@/components/marketing/landing/HeroEyebrowBadge";
-import HowItWorksSection from "@/components/marketing/landing/HowItWorksSection";
 import MobileHeroMockup from "@/components/marketing/landing/MobileHeroMockup";
-import PioneeringSection from "@/components/marketing/landing/PioneeringSection";
 import { HeroContentMotion, HeroMotionItem } from "@/components/marketing/landing/HeroContentMotion";
+
+const HowItWorksSection = dynamic(() => import("@/components/marketing/landing/HowItWorksSection"));
+const PioneeringSection = dynamic(() => import("@/components/marketing/landing/PioneeringSection"));
+const FaqSection = dynamic(() => import("@/components/marketing/landing/FaqSection"));
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -66,12 +68,12 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
                 <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />
               </HeroMotionItem>
 
-              <HeroMotionItem>
+              <div className="w-full flex justify-center">
                 <h1 
-                  className="hero-title text-[#101828] dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
+                  className="hero-title hero-lcp-title text-[#101828] dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
                   dangerouslySetInnerHTML={{ __html: l.hero.title }} 
                 />
-              </HeroMotionItem>
+              </div>
 
               <HeroMotionItem>
                 <p className="hero-subtitle text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[17px] leading-[1.65] rtl:leading-[1.8] max-w-[620px] mx-auto mb-8 relative z-40 text-center transition-colors">
