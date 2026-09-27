@@ -215,7 +215,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch min-h-[270px]">
                   
                   {/* 1. Calendar Card */}
-                  <div className="relative h-full w-full bg-[#FAFAFA] dark:bg-[#121214] border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm">
+                  <div className="relative h-full w-full bg-[#FAFAFA] dark:bg-[#121214] border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" aria-hidden="true">
                     {/* Inner White Calendar Window Docked to Bottom-Right */}
                     <div className="w-full bg-white dark:bg-[#1c1c1f] rounded-tl-xl shadow-sm border border-slate-200/80 dark:border-zinc-700/80 p-4 sm:p-5 border-r-0 border-b-0 relative z-10 translate-x-1 translate-y-1">
                       {/* Mac Dots */}
@@ -228,24 +228,24 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                       {/* Header */}
                       <div className="flex items-center justify-between text-xs font-bold text-slate-800 dark:text-white mb-3 font-['Lufga',sans-serif]">
                         <span>Calendar</span>
-                        <span className="text-[10px] text-slate-400 dark:text-zinc-400 font-semibold flex items-center gap-1">
+                        <span className="text-[10px] text-slate-600 dark:text-zinc-400 font-semibold flex items-center gap-1">
                           <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7" /></svg>
                           August 2025
                         </span>
                       </div>
 
                       {/* Day Headers */}
-                      <div className="grid grid-cols-7 text-[10px] font-semibold text-slate-400 dark:text-zinc-500 text-center mb-2 font-['Lufga',sans-serif]">
+                      <div className="grid grid-cols-7 text-[10px] font-semibold text-slate-600 dark:text-zinc-400 text-center mb-2 font-['Lufga',sans-serif]">
                         <span>Mo</span><span>Tu</span><span>We</span><span>Thu</span><span>Fr</span><span>Sa</span><span>Su</span>
                       </div>
 
                       {/* Days Grid */}
                       <div className="grid grid-cols-7 gap-y-2 text-center text-[11px] font-medium text-slate-700 dark:text-zinc-300">
-                        <span className="text-slate-300 dark:text-zinc-600">16</span>
-                        <span className="text-slate-300 dark:text-zinc-600">28</span>
-                        <span className="text-slate-300 dark:text-zinc-600">29</span>
-                        <span className="text-slate-300 dark:text-zinc-600">30</span>
-                        <span className="text-slate-300 dark:text-zinc-600">31</span>
+                        <span className="text-slate-500 dark:text-zinc-400">16</span>
+                        <span className="text-slate-500 dark:text-zinc-400">28</span>
+                        <span className="text-slate-500 dark:text-zinc-400">29</span>
+                        <span className="text-slate-500 dark:text-zinc-400">30</span>
+                        <span className="text-slate-500 dark:text-zinc-400">31</span>
                         <span>1</span>
                         <span>2</span>
 
@@ -259,9 +259,9 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                         <span className="flex items-center justify-center h-6">15</span>
                         <span className="flex items-center justify-center h-6">16</span>
                         
-                        <span className="text-slate-300 dark:text-zinc-600">17</span>
-                        <span className="text-slate-300 dark:text-zinc-600">18</span>
-                        <span className="text-slate-300 dark:text-zinc-600">19</span>
+                        <span className="text-slate-500 dark:text-zinc-400">17</span>
+                        <span className="text-slate-500 dark:text-zinc-400">18</span>
+                        <span className="text-slate-500 dark:text-zinc-400">19</span>
                         <span>20</span><span>21</span><span>22</span><span>23</span>
                       </div>
                     </div>
@@ -271,7 +271,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-[#121214]">
                     <Image alt="Developer at workspace" className="object-cover" fill src="/images/features/developer-desk.webp" sizes="(max-width: 640px) 50vw, 260px" />
                     {/* Floating Pill Overlay at Bottom - INSIDE THE IMAGE */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-[#1c1c1f] rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-[#1c1c1f] rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10" aria-hidden="true">
                       <div className="w-5 h-5 rounded-full bg-[#10B981] flex items-center justify-center text-white shrink-0 shadow-sm">
                         <svg className="w-3 h-3 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -279,7 +279,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                       </div>
                       <div className="whitespace-nowrap flex flex-col justify-center">
                         <p className="text-[11px] font-bold text-slate-900 dark:text-white leading-tight font-['Lufga',sans-serif]">Publish New Listing</p>
-                        <p className="text-[10px] text-slate-400 dark:text-zinc-400 font-medium leading-tight font-['Lufga',sans-serif]">Due Today</p>
+                        <p className="text-[10px] text-slate-600 dark:text-zinc-300 font-medium leading-tight font-['Lufga',sans-serif]">Due Today</p>
                       </div>
                     </div>
                   </div>
@@ -344,11 +344,11 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                 <div className="relative w-full">
                   
                   {/* Floating Reach Badge (floats outside the clipped card boundary) */}
-                  <div className="absolute top-[34px] -right-2.5 sm:-right-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-md px-2 py-1 shadow-lg border border-slate-100/80 dark:border-zinc-700/80 z-20 pointer-events-none">
+                  <div className="absolute top-[34px] -right-2.5 sm:-right-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-md px-2 py-1 shadow-lg border border-slate-100/80 dark:border-zinc-700/80 z-20 pointer-events-none" aria-hidden="true">
                     <p className="text-[9px] font-bold text-slate-900 dark:text-white leading-tight font-lufga">Increase Reach</p>
                     <div className="flex items-center gap-1 mt-0.5 whitespace-nowrap">
                       <span className="text-[11px] font-black text-slate-900 dark:text-white font-lufga">45%</span>
-                      <span className="text-[7.5px] text-slate-400 font-medium font-lufga">vs. last period</span>
+                      <span className="text-[7.5px] text-slate-600 dark:text-zinc-400 font-medium font-lufga">vs. last period</span>
                       <span className="text-[8.5px] font-bold text-emerald-500 flex items-center font-lufga">↑ 12%</span>
                     </div>
                   </div>
