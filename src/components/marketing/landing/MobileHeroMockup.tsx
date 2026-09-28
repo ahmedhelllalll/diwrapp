@@ -4,7 +4,8 @@ import Image from "next/image";
 export default function MobileHeroMockup() {
   return (
     <div
-      className="block lg:hidden w-[130%] max-w-[720px] sm:max-w-[840px] mx-auto mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 pointer-events-none select-none relative z-30 px-2 sm:px-4 translate-x-36 sm:translate-x-48 rtl:-translate-x-36 rtl:sm:-translate-x-48 bg-transparent"
+      dir="ltr"
+      className="block lg:hidden w-[130%] max-w-[720px] sm:max-w-[840px] mx-auto mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 pointer-events-none select-none relative z-30 px-2 sm:px-4 translate-x-36 sm:translate-x-48 bg-transparent"
     >
       <div className="hero-lcp-mockup w-full">
         <Image
