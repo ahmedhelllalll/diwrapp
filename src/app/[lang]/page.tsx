@@ -4,12 +4,11 @@ import { Locale } from "../../i18n-config";
 import Link from 'next/link';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";
 import dynamic from 'next/dynamic';
 import HeroEyebrowBadge from "@/components/marketing/landing/HeroEyebrowBadge";
 import MobileHeroMockup from "@/components/marketing/landing/MobileHeroMockup";
-import { HeroContentMotion, HeroMotionItem } from "@/components/marketing/landing/HeroContentMotion";
 
+const FloatingHeroAssets = dynamic(() => import("@/components/marketing/landing/FloatingHeroAssets"));
 const HowItWorksSection = dynamic(() => import("@/components/marketing/landing/HowItWorksSection"));
 const PioneeringSection = dynamic(() => import("@/components/marketing/landing/PioneeringSection"));
 const FaqSection = dynamic(() => import("@/components/marketing/landing/FaqSection"));
@@ -62,10 +61,10 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           <FloatingHeroAssets />
 
           <div className="hero-content min-h-0 lg:min-h-[calc(100vh-180px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10">
-            <HeroContentMotion>
-              <HeroMotionItem>
+            <div className="w-full max-w-[900px] mx-auto flex flex-col items-center text-center">
+              <div className="hero-anim-badge w-full flex justify-center">
                 <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />
-              </HeroMotionItem>
+              </div>
 
               <div className="w-full flex justify-center">
                 <h1 
@@ -74,21 +73,21 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
                 />
               </div>
 
-              <HeroMotionItem>
+              <div className="hero-anim-subtitle w-full flex justify-center">
                 <p className="hero-subtitle text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[17px] leading-[1.65] rtl:leading-[1.8] max-w-[620px] mx-auto mb-8 relative z-40 text-center transition-colors">
                   {l.hero.subtitle}
                 </p>
-              </HeroMotionItem>
+              </div>
 
-              <HeroMotionItem>
+              <div className="hero-anim-cta w-full flex justify-center">
                 <Link 
                   href={`/${lang}/advertise`} 
                   className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-40 transform-gpu"
                 >
                   {l.hero.discover || "Discover More"}
                 </Link>
-              </HeroMotionItem>
-            </HeroContentMotion>
+              </div>
+            </div>
 
             <MobileHeroMockup />
           </div>

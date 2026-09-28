@@ -209,26 +209,218 @@ html[lang="ar"] .landing-scope {
   }
 }
 
-/* Compositor-only entrance for LCP elements (preserves opacity: 1 for instant paint) */
+/* =========================================================================
+   Hero Entrance & Float Animation System (Pure CSS - Zero JS Dependency)
+   ========================================================================= */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes heroLcpRise {
   from {
-    transform: translateY(14px);
+    transform: translateY(16px);
   }
   to {
     transform: translateY(0);
   }
 }
 
+@keyframes heroRiseSubtitle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleCta {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-anim-badge {
+  opacity: 0;
+  animation: heroFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
 .hero-lcp-title {
   opacity: 1;
-  transform: translateY(0);
-  animation: heroLcpRise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
   will-change: transform;
 }
 
+.hero-anim-subtitle {
+  opacity: 0;
+  animation: heroRiseSubtitle 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+.hero-anim-cta {
+  opacity: 0;
+  animation: heroScaleCta 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}
+
+/* Static mockup preserves instant paint without entrance delay */
 .hero-lcp-mockup {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Desktop Floating Assets Entrance & Loops */
+@keyframes floatFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatEntryTopRight {
+  from {
+    opacity: 0;
+    transform: translate(20px, -15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatEntryMidLeft {
+  from {
+    opacity: 0;
+    transform: translate(-24px, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatEntryMidRight {
+  from {
+    opacity: 0;
+    transform: translate(24px, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatEntryCenterpiece {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatLoopA {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+}
+
+@keyframes floatLoopB {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-14px) rotate(-1deg);
+  }
+}
+
+@keyframes floatLoopC {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: translateY(-8px) translateX(6px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-float-grid {
+    animation: floatFade 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+
+  .hero-float-top-right {
+    animation: floatEntryTopRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+
+  .hero-float-mid-left {
+    animation: floatEntryMidLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  }
+
+  .hero-float-mid-right {
+    animation: floatEntryMidRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+  }
+
+  .hero-float-centerpiece {
+    animation: floatEntryCenterpiece 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+
+  .hero-float-3d {
+    animation: floatFade 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+  }
+
+  .float-loop-6s {
+    animation: floatLoopA 6s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .float-loop-7s {
+    animation: floatLoopB 7.5s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .float-loop-9s {
+    animation: floatLoopC 9s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-badge,
+  .hero-lcp-title,
+  .hero-anim-subtitle,
+  .hero-anim-cta,
+  .hero-float-grid,
+  .hero-float-top-right,
+  .hero-float-mid-left,
+  .hero-float-mid-right,
+  .hero-float-centerpiece,
+  .hero-float-3d,
+  .float-loop-6s,
+  .float-loop-7s,
+  .float-loop-9s {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 
 
