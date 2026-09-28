@@ -45,24 +45,24 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
       {/* Dynamic Panorama Banner (Light vs Dark) - Higher z-index than map */}
       <div className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20">
         {/* Light Mode Banner */}
-        <div className="block dark:hidden relative w-full aspect-[1920/620] lg:aspect-auto lg:h-[460px]">
+        <div className="block dark:hidden relative w-full h-[160px] sm:h-[220px] md:h-[280px] lg:h-[460px] lg:aspect-auto">
           <Image 
             alt="Diwrapp Media Reach Vehicles and OOH" 
-            className="object-contain object-bottom" 
+            className="object-cover sm:object-contain object-center lg:object-bottom" 
             fill 
-            sizes="(max-width: 1280px) 100vw, 1200px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-light.webp"
             loading="lazy"
           />
         </div>
 
         {/* Dark Mode Banner */}
-        <div className="hidden dark:block relative w-full aspect-[1920/620] lg:aspect-auto lg:h-[460px]">
+        <div className="hidden dark:block relative w-full h-[160px] sm:h-[220px] md:h-[280px] lg:h-[460px] lg:aspect-auto">
           <Image 
             alt="Diwrapp Media Reach Vehicles and OOH" 
-            className="object-contain object-bottom" 
+            className="object-cover sm:object-contain object-center lg:object-bottom" 
             fill 
-            sizes="(max-width: 1280px) 100vw, 1200px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-dark.webp"
             loading="lazy"
           />
@@ -77,12 +77,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             Completely locked in LTR coordinates, aligned to desktop right columns,
             never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="absolute -top-20 sm:-top-28 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="absolute -top-10 sm:-top-14 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
               <div 
-                className="absolute -top-16 sm:-top-24 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
+                className="absolute -top-8 sm:-top-12 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
                 style={{
                   maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
