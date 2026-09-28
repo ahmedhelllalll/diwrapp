@@ -1,47 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
-/* Explicit @font-face declarations for Lufga */
-@font-face {
-  font-family: 'Lufga';
-  src: url('/fonts/Lufga-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lufga';
-  src: url('/fonts/Lufga-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lufga';
-  src: url('/fonts/Lufga-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lufga';
-  src: url('/fonts/Lufga-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lufga';
-  src: url('/fonts/Lufga-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
@@ -50,10 +9,17 @@
   --surface-1: #080808;
   --surface-2: #121214;
   --surface-3: #18181B;
-  --font-sans: 'Lufga', sans-serif;
-  --font-lufga: 'Lufga', sans-serif;
+  --font-sans: var(--font-lufga), sans-serif;
+  --font-lufga: var(--font-lufga), sans-serif;
+  --font-cairo: var(--font-cairo), sans-serif;
   --Text-text-tertiary: #637083;
   --grid-line-color: #E4E7EC;
+}
+
+[dir="rtl"],
+html[dir="rtl"] {
+  --font-sans: var(--font-cairo), sans-serif;
+  --font-lufga: var(--font-cairo), sans-serif;
 }
 
 @theme inline {
@@ -64,10 +30,29 @@
   --color-surface-1: #080808;
   --color-surface-2: #121214;
   --color-surface-3: #18181B;
-  --font-sans: 'Lufga', sans-serif;
-  --font-lufga: 'Lufga', sans-serif;
+  --font-sans: var(--font-lufga), sans-serif;
+  --font-lufga: var(--font-lufga), sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-cairo: var(--font-cairo), 'Lufga', sans-serif;
+  --font-cairo: var(--font-cairo), sans-serif;
+}
+
+/* Route font-['Lufga',sans-serif] and .font-lufga to active locale font */
+[class*="font-['Lufga'"] {
+  font-family: var(--font-lufga), sans-serif;
+}
+
+[dir="rtl"] [class*="font-['Lufga'"],
+html[dir="rtl"] [class*="font-['Lufga'"] {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+.font-lufga {
+  font-family: var(--font-lufga), sans-serif;
+}
+
+[dir="rtl"] .font-lufga,
+html[dir="rtl"] .font-lufga {
+  font-family: var(--font-cairo), sans-serif;
 }
 
 .dark {

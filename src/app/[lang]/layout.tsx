@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Cairo } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
@@ -16,6 +17,33 @@ const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const lufga = localFont({
+  src: [
+    {
+      path: "../../fonts/Lufga-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/Lufga-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/Lufga-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/Lufga-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lufga",
   display: "swap",
   preload: false,
 });
@@ -55,47 +83,28 @@ export default async function RootLayout(
 ) {
   const params = await props.params;
   const lang = params.lang as Locale;
+  const isArabic = lang === 'ar';
+  const fontClasses = isArabic 
+    ? `${cairo.variable} ${cairo.className}` 
+    : `${lufga.variable} ${lufga.className}`;
 
   return (
-      <html
-        lang={lang}
-        dir={lang === 'ar' ? 'rtl' : 'ltr'}
-        className={`${geistMono.variable} ${lang === 'ar' ? cairo.variable : ''} h-full antialiased`}
-        suppressHydrationWarning
-      >
-        <head>
-          <link
-            rel="preload"
-            href="/fonts/Lufga-Regular.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/Lufga-Medium.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/Lufga-Bold.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-        </head>
-        <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
-          >
-            <SmoothScroll>{props.children}</SmoothScroll>
-          </ThemeProvider>
-        </body>
-      </html>
+    <html
+      lang={lang}
+      dir={isArabic ? 'rtl' : 'ltr'}
+      className={`${geistMono.variable} ${fontClasses} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <SmoothScroll>{props.children}</SmoothScroll>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
