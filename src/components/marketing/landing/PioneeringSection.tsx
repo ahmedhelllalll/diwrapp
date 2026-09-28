@@ -74,11 +74,10 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
         
         {/* =========================================================================
             DECOUPLED STATIC WORLD MAP BACKDROP:
-            Completely locked in LTR coordinates, perfectly aligned to desktop right columns,
-            never flipped, never mirrored, and never shifted to the left in RTL.
-            Hidden on mobile/tablet (< lg) to prevent offscreen rendering and paints.
+            Completely locked in LTR coordinates, aligned to desktop right columns,
+            never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="absolute inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
@@ -101,9 +100,9 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-light-ar.webp" : "/images/features/world-map-light-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    sizes="(max-width: 1023px) 0px, 828px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 720px, 880px"
                     loading="lazy"
-                    className="object-contain object-top opacity-90"
+                    className="object-contain object-top opacity-35 sm:opacity-55 lg:opacity-90 transition-opacity"
                   />
                 </div>
 
@@ -119,9 +118,9 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-dark-ar.webp" : "/images/features/world-map-dark-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    sizes="(max-width: 1023px) 0px, 828px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 720px, 880px"
                     loading="lazy"
-                    className="object-contain object-top opacity-80"
+                    className="object-contain object-top opacity-25 sm:opacity-45 lg:opacity-80 transition-opacity"
                   />
                 </div>
               </div>
