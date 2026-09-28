@@ -77,12 +77,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             Completely locked in LTR coordinates, aligned to desktop right columns,
             never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="absolute inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="absolute -top-6 sm:-top-8 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
               <div 
-                className="absolute top-0 sm:top-2 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
+                className="absolute -top-4 sm:-top-6 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
                 style={{
                   maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
@@ -102,7 +102,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 720px, 880px"
                     loading="lazy"
-                    className="object-contain object-top opacity-35 sm:opacity-55 lg:opacity-90 transition-opacity"
+                    className="object-contain object-top opacity-55 sm:opacity-70 lg:opacity-90 transition-opacity"
                   />
                 </div>
 
@@ -120,9 +120,15 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 720px, 880px"
                     loading="lazy"
-                    className="object-contain object-top opacity-25 sm:opacity-45 lg:opacity-80 transition-opacity"
+                    className="object-contain object-top opacity-45 sm:opacity-60 lg:opacity-80 transition-opacity"
                   />
                 </div>
+
+                {/* Mobile-only bottom fade gradient: dissolves bottom edge softly into background (< lg) */}
+                <div 
+                  className="lg:hidden absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-b from-transparent via-white/80 dark:via-surface-1/80 to-white dark:to-surface-1 pointer-events-none z-10" 
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
