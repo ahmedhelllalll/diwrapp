@@ -219,8 +219,6 @@ html[lang="ar"] .landing-scope {
 .hero-lcp-mockup {
   opacity: 1;
   transform: translateY(0);
-  animation: heroLcpRise 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
-  will-change: transform;
 }
 
 
