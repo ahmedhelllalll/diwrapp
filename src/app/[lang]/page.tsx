@@ -55,7 +55,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
 
         {/* Hero Section */}
       <main className="bg-white dark:bg-surface-1 transition-colors duration-300">
-        <section id="hero-section" className="hero-section relative pt-[88px] sm:pt-24 lg:pt-28 overflow-hidden">
+        <section id="hero-section" className="hero-section relative pt-[88px] sm:pt-24 lg:pt-28 overflow-visible">
           
           {/* Floating Hero Background and Foreground Assets */}
           <FloatingHeroAssets />

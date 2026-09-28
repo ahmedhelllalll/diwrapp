@@ -11,7 +11,7 @@ export default function FloatingHeroAssets() {
   if (!isDesktop) return null;
 
   return (
-    <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-hidden" dir="ltr">
+    <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-visible" dir="ltr">
       {/* Background Grid Line Frame (Top Right) */}
       <div
         className="hidden lg:block absolute top-[175px] right-0 w-[389px] z-0 pointer-events-none hero-float-grid"

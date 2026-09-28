@@ -59,7 +59,7 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
   ];
 
   return (
-    <section id="faq" className="w-full py-20 sm:py-28 px-4 sm:px-6 relative z-10 overflow-hidden">
+    <section id="faq" className="w-full py-20 sm:py-28 px-4 sm:px-6 relative z-10 overflow-visible">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         
         {/* Eyebrow Badge */}
