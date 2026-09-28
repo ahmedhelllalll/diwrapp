@@ -12,6 +12,7 @@ import { DropdownMenu } from '@/components/ui/DropdownMenu';
 import { MobileTabDropdown } from '@/components/ui/MobileTabDropdown';
 import { DataTable, Pagination } from '@/components/ui/DataTable';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { Badge } from '@/components/ui/Badge';
 
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
 export interface Toast {
@@ -202,6 +203,24 @@ export default function DesignSystem() {
                       <button className="group px-5 py-2.5 rounded-[10px] text-[#64748b] dark:text-zinc-400 font-semibold text-[13px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800/80 hover:text-[#0f172a] dark:text-zinc-100 active:scale-[0.98] active:translate-y-0">
                         Cancel
                       </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-8">
+                <SectionHeading title="3. Badges & Eyebrows" />
+                <div className="bg-white dark:bg-[#0a0a0a] p-8 rounded-2xl border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm space-y-6">
+                  <div>
+                    <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Standard Eyebrow Badges (10px Radius)</h3>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Badge>User Guide</Badge>
+                      <Badge variant="brand">Streamline Your Presence</Badge>
+                      <Badge variant="surface">Smart, Fast & Reliable</Badge>
+                      <Badge>
+                        <i className="fa-solid fa-sparkles text-[11px] text-[#475467] dark:text-neutral-400"></i>
+                        <span>With Icon</span>
+                      </Badge>
                     </div>
                   </div>
                 </div>
@@ -489,7 +508,7 @@ export default function DesignSystem() {
                         <span className="text-[10px] font-bold text-[#0066FF] bg-[#eff6ff] px-2 py-1 rounded-md uppercase tracking-wider">Update</span>
                       </div>
                       <h3 className="text-[18px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2.5 leading-snug">New Platform Features Released for Vendors</h3>
-                      <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-5 flex-1">We've rolled out a suite of new tools to help you manage your listings, track impressions, and optimize your revenue streams.</p>
+                      <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-5 flex-1">We&apos;ve rolled out a suite of new tools to help you manage your listings, track impressions, and optimize your revenue streams.</p>
                       <div className="text-[#0066FF] text-[13px] font-bold flex items-center gap-1.5 group">
                         Learn more <i className="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
                       </div>
@@ -773,7 +792,7 @@ export default function DesignSystem() {
           </>
         }
       >
-        <p className="mb-4">Enter the email address of the team member you'd like to invite to this workspace. They will receive an email with instructions to join.</p>
+        <p className="mb-4">Enter the email address of the team member you&apos;d like to invite to this workspace. They will receive an email with instructions to join.</p>
         <div className="relative">
           <input type="email" placeholder="colleague@company.com" className="w-full px-4 py-2.5 bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-lg text-[13.5px] outline-none focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/10" />
         </div>
