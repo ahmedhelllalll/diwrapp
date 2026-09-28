@@ -11,11 +11,11 @@ export async function CountryBadge({ className, style }: { className?: string; s
     <sup
       className={
         className ||
-        "font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center text-[#64748b] dark:text-neutral-400 lowercase select-none ml-0.5"
+        "font-['Lufga',sans-serif] font-normal text-[10px] leading-[20px] tracking-normal text-center text-[#64748b] dark:text-neutral-400 lowercase select-none ml-0.5"
       }
       style={{
         fontFamily: "'Lufga', sans-serif",
-        fontWeight: 300,
+        fontWeight: 400,
         fontStyle: 'normal',
         fontSize: '10px',
         lineHeight: '20px',
