@@ -1,13 +1,40 @@
 import React from "react";
 import Image from "next/image";
+import HeroMarqueeBackground, { MarqueeBadge } from "./HeroMarqueeBackground";
 
-export default function MobileHeroMockup() {
+interface MobileHeroMockupProps {
+  lang?: string;
+  dictMarquee?: {
+    row1?: MarqueeBadge[];
+    row2?: MarqueeBadge[];
+    row3?: MarqueeBadge[];
+  };
+}
+
+export default function MobileHeroMockup({
+  lang = "en",
+  dictMarquee,
+}: MobileHeroMockupProps) {
   return (
     <div
       dir="ltr"
       className="w-full flex justify-center lg:hidden pointer-events-none select-none relative z-30"
     >
-      <div className="w-[130%] max-w-[720px] sm:max-w-[840px] shrink-0 mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 px-2 sm:px-4 translate-x-36 sm:translate-x-48 bg-transparent relative">
+      {/* Ambient 3-Row Infinite Marquee Background (strictly behind phone mockup - z-10) */}
+      <div
+        className="absolute inset-0 pt-16 sm:pt-20 pb-24 sm:pb-36 left-1/2 -translate-x-1/2 w-screen max-w-[1440px] flex flex-col justify-between pointer-events-none select-none z-10 overflow-hidden"
+        style={{ contain: "paint layout" }}
+        aria-hidden="true"
+      >
+        <HeroMarqueeBackground
+          lang={lang}
+          badges={dictMarquee}
+          className="opacity-80 dark:opacity-70"
+        />
+      </div>
+
+      {/* Phone Mockup Foreground Layer (z-20) */}
+      <div className="w-[130%] max-w-[720px] sm:max-w-[840px] shrink-0 mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 px-2 sm:px-4 translate-x-36 sm:translate-x-48 bg-transparent relative z-20">
         <div className="hero-lcp-mockup w-full">
           <Image
             src="/images/hero/mobile-phone-mockup.webp"
@@ -23,7 +50,7 @@ export default function MobileHeroMockup() {
 
         {/* Performant bottom fade gradient overlay replacing expensive CSS maskImage */}
         <div
-          className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-white dark:from-surface-1 via-white/80 dark:via-surface-1/80 to-transparent pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-32 sm:h-44 bg-gradient-to-t from-white dark:from-surface-1 via-white/85 dark:via-surface-1/85 to-transparent pointer-events-none z-30"
           aria-hidden="true"
         />
       </div>

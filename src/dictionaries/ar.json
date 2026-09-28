@@ -162,6 +162,22 @@
       "subtitle": "في Di-Wrapp، نبتكر تجارب إعلانية استثنائية مدعومة بحلول ذكية ترتقي بواجهتك الرقمية نحو آفاق جديدة.",
       "discover": "اكتشف المزيد"
     },
+    "marquee": {
+      "row1": [
+        { "id": "realtime-booking", "label": "حجز فوري للشاشات الرقمية" },
+        { "id": "ai-campaigns", "label": "تحسين الحملات بالذكاء الاصطناعي" }
+      ],
+      "row2": [
+        { "id": "unified-marketplace", "label": "سوق إعلاني رقمي موحد" },
+        { "id": "smart-wallet", "label": "محفظة Di_Wrapp الذكية" },
+        { "id": "iot-hardware", "label": "أجهزة ذكية ومستشعرات AI" }
+      ],
+      "row3": [
+        { "id": "screen-monetization", "label": "تحقيق عوائد للشاشات 24/7" },
+        { "id": "timely-payouts", "label": "دفعات مالية مضمونة ومباشرة" },
+        { "id": "occupancy-optimization", "label": "تحسين معدلات الإشغال 99.8%" }
+      ]
+    },
     "works": {
       "badge": "دليل المستخدم",
       "title": "كيف تعمل المنصة",

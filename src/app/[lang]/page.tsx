@@ -89,7 +89,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
               </div>
             </div>
 
-            <MobileHeroMockup />
+            <MobileHeroMockup lang={lang} dictMarquee={l.marquee} />
           </div>
           
           {/* Spacer to account for absolute dashboard image height */}

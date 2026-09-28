@@ -398,6 +398,9 @@ html[lang="ar"] .landing-scope {
   .hero-float-mid-right,
   .hero-float-centerpiece,
   .hero-float-3d,
+  .animate-marquee-left-row1,
+  .animate-marquee-right-row2,
+  .animate-marquee-left-row3,
   .float-loop-6s,
   .float-loop-7s,
   .float-loop-9s {
@@ -405,6 +408,59 @@ html[lang="ar"] .landing-scope {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* =========================================================================
+   Hero Ambient 3-Row Infinite Marquee System (Pure GPU CSS Acceleration)
+   ========================================================================= */
+
+@keyframes marqueeFlowLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeFlowRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left-row1 {
+  animation: marqueeFlowLeft 85s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right-row2 {
+  animation: marqueeFlowRight 100s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left-row3 {
+  animation: marqueeFlowLeft 90s linear infinite;
+  will-change: transform;
+}
+
+/* RTL-aware vector mirroring */
+[dir="rtl"] .animate-marquee-left-row1,
+html[dir="rtl"] .animate-marquee-left-row1 {
+  animation-name: marqueeFlowRight;
+}
+
+[dir="rtl"] .animate-marquee-right-row2,
+html[dir="rtl"] .animate-marquee-right-row2 {
+  animation-name: marqueeFlowLeft;
+}
+
+[dir="rtl"] .animate-marquee-left-row3,
+html[dir="rtl"] .animate-marquee-left-row3 {
+  animation-name: marqueeFlowRight;
 }
 
 

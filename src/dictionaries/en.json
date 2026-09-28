@@ -162,6 +162,22 @@
       "subtitle": "Where at Di-Wrapp, we strive to create a memorable experience contributed by a smarter solution for your digital interface.",
       "discover": "Discover More"
     },
+    "marquee": {
+      "row1": [
+        { "id": "realtime-booking", "label": "Real-Time DOOH Booking" },
+        { "id": "ai-campaigns", "label": "AI Campaign Optimizer" }
+      ],
+      "row2": [
+        { "id": "unified-marketplace", "label": "Unified Ad Marketplace" },
+        { "id": "smart-wallet", "label": "Di_Wrapp Smart Wallet" },
+        { "id": "iot-hardware", "label": "Smart Hardware & AI Sensors" }
+      ],
+      "row3": [
+        { "id": "screen-monetization", "label": "24/7 Screen Monetization" },
+        { "id": "timely-payouts", "label": "Guaranteed Timely Payouts" },
+        { "id": "occupancy-optimization", "label": "99.8% Occupancy Optimization" }
+      ]
+    },
     "works": {
       "badge": "User Guide",
       "title": "How it Works",
