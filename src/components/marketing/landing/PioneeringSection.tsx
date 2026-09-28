@@ -52,6 +52,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             fill 
             sizes="(max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-light.webp"
+            loading="lazy"
           />
         </div>
 
@@ -63,6 +64,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             fill 
             sizes="(max-width: 1280px) 100vw, 1200px"
             src="/images/features/pioneering-banner-dark.webp"
+            loading="lazy"
           />
         </div>
       </div>
@@ -74,8 +76,9 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             DECOUPLED STATIC WORLD MAP BACKDROP:
             Completely locked in LTR coordinates, perfectly aligned to desktop right columns,
             never flipped, never mirrored, and never shifted to the left in RTL.
+            Hidden on mobile/tablet (< lg) to prevent offscreen rendering and paints.
            ========================================================================= */}
-        <div className="absolute inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="hidden lg:block absolute inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
@@ -98,7 +101,8 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-light-ar.webp" : "/images/features/world-map-light-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 720px, 828px"
+                    sizes="(max-width: 1023px) 0px, 828px"
+                    loading="lazy"
                     className="object-contain object-top opacity-90"
                   />
                 </div>
@@ -115,7 +119,8 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     src={lang === "ar" ? "/images/features/world-map-dark-ar.webp" : "/images/features/world-map-dark-en.webp"}
                     alt="World Coverage Map"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 720px, 828px"
+                    sizes="(max-width: 1023px) 0px, 828px"
+                    loading="lazy"
                     className="object-contain object-top opacity-80"
                   />
                 </div>
@@ -128,12 +133,13 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             TWO-COLUMN INTERACTIVE CONTENT GRID:
             In Arabic (RTL): Text Column on the RIGHT, Cards Showcase on the LEFT.
             In English (LTR): Text Column on the LEFT, Cards Showcase on the RIGHT.
+            On Mobile (< lg): Visual cards showcase is hidden (display: none).
            ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10" dir={isRtl ? "rtl" : "ltr"}>
           
           {/* PRIMARY TEXT COLUMN (Right in RTL, Left in LTR) */}
           <motion.div 
-            className="lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20"
+            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20"
             dir={isRtl ? "rtl" : "ltr"}
             initial="hidden"
             whileInView="visible"
@@ -158,13 +164,13 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             {/* Subtitle */}
             <motion.p 
               variants={itemVariants}
-              className="pioneering-desc font-lufga rtl:font-['Cairo',sans-serif] text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed max-w-lg mb-8 transition-colors"
+              className="pioneering-desc font-lufga rtl:font-['Cairo',sans-serif] text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed max-w-xl lg:max-w-lg mb-8 transition-colors"
             >
               {dict?.desc || (isRtl ? "تقود تقنية دي-راب ثورة في إمكانية الوصول إلى الوسائط، لضمان أن تكون كل مساحة في متناول الجميع." : "Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every Inventory is within reach for all.")}
             </motion.p>
 
             {/* Feature List Items with Clean White SVG Checkmarks */}
-            <motion.ul variants={itemVariants} className="space-y-4 mb-8 w-full">
+            <motion.ul variants={itemVariants} className="space-y-4 mb-8 w-full max-w-xl lg:max-w-none">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3.5 group">
                   <div className="w-5 h-5 rounded-full bg-brand dark:bg-blue-500/90 flex items-center justify-center shrink-0">
@@ -201,8 +207,8 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             </motion.div>
           </motion.div>
 
-          {/* VISUAL CARDS SHOWCASE (Left in RTL, Right in LTR) */}
-          <div className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] sm:min-h-[520px] w-full" dir="ltr">
+          {/* VISUAL CARDS SHOWCASE (Left in RTL, Right in LTR) - Hidden on mobile (< lg) for optimal performance */}
+          <div className="hidden lg:flex lg:col-span-7 relative items-center justify-center min-h-[460px] sm:min-h-[520px] w-full" dir="ltr">
             
             {/* Independent Floating Dashboard Cards Over the Map - Locked in LTR */}
             <div className="relative z-10 w-full max-w-[920px] mx-auto flex flex-col lg:flex-row items-center lg:items-end justify-center gap-5 select-none mt-8 sm:mt-12" dir="ltr">
@@ -268,7 +274,14 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                   {/* 2. Developer Workspace Image Card */}
                   <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-surface-2">
-                    <Image alt="Developer at workspace" className="object-cover" fill src="/images/features/developer-desk.webp" sizes="(max-width: 640px) 50vw, 260px" />
+                    <Image 
+                      alt="Developer at workspace" 
+                      className="object-cover" 
+                      fill 
+                      src="/images/features/developer-desk.webp" 
+                      sizes="(max-width: 1023px) 0px, 260px"
+                      loading="lazy"
+                    />
                     {/* Floating Pill Overlay at Bottom - INSIDE THE IMAGE */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-surface-3 rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10" aria-hidden="true">
                       <div className="w-5 h-5 rounded-full bg-[#10B981] flex items-center justify-center text-white shrink-0 shadow-sm">
@@ -362,7 +375,8 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                         alt="Kingdom Tower"
                         width={549}
                         height={747}
-                        sizes="260px"
+                        sizes="(max-width: 1023px) 0px, 260px"
+                        loading="lazy"
                         className="w-full h-auto object-contain block select-none"
                       />
                     </div>
