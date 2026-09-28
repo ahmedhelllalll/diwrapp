@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
-import '../../../landing.css';
 import JoinUsHero from '@/components/marketing/join-us/JoinUsHero';
 import OpportunitiesSection from '@/components/marketing/join-us/OpportunitiesSection';
 import BentoShowcaseSection from '@/components/marketing/join-us/BentoShowcaseSection';

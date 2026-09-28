@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
-import '../../../../app/landing.css';
 import WalletHero from '@/components/marketing/wallet/WalletHero';
 import WalletStatement from '@/components/marketing/wallet/WalletStatement';
 import WalletFeatures from '@/components/marketing/wallet/WalletFeatures';

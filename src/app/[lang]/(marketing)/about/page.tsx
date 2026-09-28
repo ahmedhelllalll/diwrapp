@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
-import "../../../landing.css";
 import "../../../about.css";
 import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";

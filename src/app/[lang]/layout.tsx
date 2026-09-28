@@ -1,43 +1,10 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';
 import { Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
 import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
-
-const lufgaFont = localFont({
-  src: [
-    {
-      path: '../../fonts/Lufga-Light.otf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/Lufga-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/Lufga-Medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/Lufga-SemiBold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/Lufga-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-lufga',
-  display: 'swap',
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -47,9 +14,10 @@ const geistMono = Geist_Mono({
 
 const cairo = Cairo({
   variable: "--font-cairo",
-  subsets: ["arabic", "latin"],
+  subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: false,
 });
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -92,20 +60,27 @@ export default async function RootLayout(
       <html
         lang={lang}
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
-        className={`${lufgaFont.variable} ${geistMono.variable} ${cairo.variable} h-full antialiased`}
+        className={`${geistMono.variable} ${lang === 'ar' ? cairo.variable : ''} h-full antialiased`}
         suppressHydrationWarning
       >
         <head>
           <link
             rel="preload"
-            href="/fonts/Lufga-Bold.otf"
+            href="/fonts/Lufga-Regular.otf"
             as="font"
             type="font/otf"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/fonts/Lufga-Regular.otf"
+            href="/fonts/Lufga-Medium.otf"
+            as="font"
+            type="font/otf"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/Lufga-Bold.otf"
             as="font"
             type="font/otf"
             crossOrigin="anonymous"

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getDictionary } from "../../dictionaries";
 import { Locale } from "../../i18n-config";
 import Link from 'next/link';
-import "../landing.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingHeroAssets from "@/components/marketing/landing/FloatingHeroAssets";

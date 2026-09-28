@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
-import "../../../landing.css";
 import "../../../advertise.css";
 import FeatureBentoGrid from "@/components/marketing/advertise/FeatureBentoGrid";
 import AiCarouselSection from "@/components/marketing/advertise/AiCarouselSection";
