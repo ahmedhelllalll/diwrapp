@@ -119,21 +119,21 @@ export default function Header({
     if (isMobileMenuOpen) {
       rafId = requestAnimationFrame(() => {
         document.body.style.overflow = 'hidden';
-        if (typeof window !== 'undefined' && (window as any).lenis) {
-          (window as any).lenis.stop();
+        if (typeof window !== 'undefined') {
+          (window as any).lenis?.stop();
         }
       });
     } else {
       document.body.style.overflow = '';
-      if (typeof window !== 'undefined' && (window as any).lenis) {
-        (window as any).lenis.start();
+      if (typeof window !== 'undefined') {
+        (window as any).lenis?.start();
       }
     }
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
       document.body.style.overflow = '';
-      if (typeof window !== 'undefined' && (window as any).lenis) {
-        (window as any).lenis.start();
+      if (typeof window !== 'undefined') {
+        (window as any).lenis?.start();
       }
     };
   }, [isMobileMenuOpen]);
