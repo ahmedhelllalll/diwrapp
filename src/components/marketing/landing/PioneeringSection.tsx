@@ -4,9 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
+import { Badge } from "@/components/ui/Badge";
 
 export interface PioneeringSectionProps {
-  dict: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dict?: any;
   lang?: string;
 }
 
@@ -139,19 +141,16 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             variants={containerVariants}
           >
             {/* Eyebrow Badge */}
-            <motion.div 
-              variants={itemVariants} 
-              className="inline-flex items-center bg-transparent border border-slate-200 dark:border-zinc-800 rounded-lg px-3.5 py-1.5 mb-6"
-            >
-              <span className="text-xs font-semibold text-slate-700 dark:text-zinc-300 tracking-tight font-lufga rtl:font-['Cairo',sans-serif]">
+            <motion.div variants={itemVariants} className="mb-6">
+              <Badge>
                 {dict?.badge || (isRtl ? "ذكي، سريع وموثوق – فقط لأجلك!" : "Smart, Fast & Reliable – Just for You!")}
-              </span>
+              </Badge>
             </motion.div>
 
             {/* Main Heading */}
             <motion.h2 
               variants={itemVariants}
-              className="pioneering-title font-lufga rtl:font-['Cairo',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B132B] dark:text-white tracking-tight leading-[1.15] mb-4"
+              className="pioneering-title font-lufga rtl:font-['Cairo',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading dark:text-white tracking-tight leading-[1.15] mb-4"
             >
               {dict?.title || (isRtl ? "ريادة مستقبل إمكانية الوصول للوسائط" : "Pioneering the Future of Media Accessibility")}
             </motion.h2>
@@ -168,12 +167,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             <motion.ul variants={itemVariants} className="space-y-4 mb-8 w-full">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3.5 group">
-                  <div className="w-5 h-5 rounded-full bg-[#0066FF] dark:bg-blue-500/90 flex items-center justify-center shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-brand dark:bg-blue-500/90 flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-xs sm:text-sm font-semibold text-[#0B132B] dark:text-zinc-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors font-lufga rtl:font-['Cairo',sans-serif]">
+                  <span className="text-xs sm:text-sm font-semibold text-heading dark:text-zinc-200 group-hover:text-brand dark:group-hover:text-blue-400 transition-colors font-lufga rtl:font-['Cairo',sans-serif]">
                     {feature}
                   </span>
                 </li>
@@ -186,7 +185,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               <Link
                 href={`/${lang}/about`}
                 aria-label={isRtl ? "اكتشف المزيد حول حلول دي راب الإعلانية" : "Learn more about Diwrapp advertising and media solutions"}
-                className="inline-flex items-center justify-center min-w-[130px] h-[48px] px-6 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm font-bold text-[#0B132B] dark:text-white hover:bg-slate-50 dark:hover:bg-zinc-800 hover:border-slate-300 transition-all active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
+                className="inline-flex items-center justify-center min-w-[130px] h-[48px] px-6 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm font-bold text-heading dark:text-white hover:bg-slate-50 dark:hover:bg-zinc-800 hover:border-slate-300 transition-all active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
                 <span>{dict?.learnMore || (isRtl ? "اكتشف المزيد" : "Learn More")}<span className="sr-only"> {isRtl ? "حول حلول دي راب الإعلانية" : "about Diwrapp media solutions"}</span></span>
               </Link>
@@ -195,7 +194,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               <Link
                 href={`/${lang}/book`}
                 aria-label={isRtl ? "احجز مساحتك الإعلانية على دي راب" : "Book your advertising spot on Diwrapp"}
-                className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-[#0066FF] hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-sm font-bold text-white transition-all shadow-sm dark:shadow-[0_4px_24px_rgba(37,99,235,0.28)] active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
+                className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-brand hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-sm font-bold text-white transition-all shadow-sm dark:shadow-[0_4px_24px_rgba(37,99,235,0.28)] active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
                 {dict?.bookSpot || (isRtl ? "احجز مساحتك" : "Book Your Spot")}
               </Link>
@@ -215,9 +214,9 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch min-h-[270px]">
                   
                   {/* 1. Calendar Card */}
-                  <div className="relative h-full w-full bg-[#FAFAFA] dark:bg-[#121214] border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" aria-hidden="true">
+                  <div className="relative h-full w-full bg-[#FAFAFA] dark:bg-surface-2 border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" aria-hidden="true">
                     {/* Inner White Calendar Window Docked to Bottom-Right */}
-                    <div className="w-full bg-white dark:bg-[#1c1c1f] rounded-tl-xl shadow-sm border border-slate-200/80 dark:border-zinc-700/80 p-4 sm:p-5 border-r-0 border-b-0 relative z-10 translate-x-1 translate-y-1">
+                    <div className="w-full bg-white dark:bg-surface-3 rounded-tl-xl shadow-sm border border-slate-200/80 dark:border-zinc-700/80 p-4 sm:p-5 border-r-0 border-b-0 relative z-10 translate-x-1 translate-y-1">
                       {/* Mac Dots */}
                       <div className="flex items-center gap-1.5 mb-4">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
@@ -268,10 +267,10 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   </div>
 
                   {/* 2. Developer Workspace Image Card */}
-                  <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-[#121214]">
+                  <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-surface-2">
                     <Image alt="Developer at workspace" className="object-cover" fill src="/images/features/developer-desk.webp" sizes="(max-width: 640px) 50vw, 260px" />
                     {/* Floating Pill Overlay at Bottom - INSIDE THE IMAGE */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-[#1c1c1f] rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10" aria-hidden="true">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[88%] bg-white dark:bg-surface-3 rounded-[14px] p-2.5 shadow-md border border-slate-100 dark:border-zinc-800 flex items-center gap-3 z-10" aria-hidden="true">
                       <div className="w-5 h-5 rounded-full bg-[#10B981] flex items-center justify-center text-white shrink-0 shadow-sm">
                         <svg className="w-3 h-3 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -288,17 +287,17 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                 {/* Bottom Row: 5x Productivity Pill Matched to Calendar Card in Dark Mode */}
                 <div 
-                  className="relative w-full overflow-hidden bg-[#F4F7FD] dark:bg-[#18181B] border border-[#E1EAF8] dark:border-zinc-800 rounded-[24px] sm:rounded-[28px] min-h-[105px] sm:min-h-[110px] py-6 sm:py-7 px-5 sm:px-6 flex items-center justify-between shadow-xs select-none isolate"
+                  className="relative w-full overflow-hidden bg-[#F4F7FD] dark:bg-surface-3 border border-[#E1EAF8] dark:border-zinc-800 rounded-[24px] sm:rounded-[28px] min-h-[105px] sm:min-h-[110px] py-6 sm:py-7 px-5 sm:px-6 flex items-center justify-between shadow-xs select-none isolate"
                   dir={isRtl ? "rtl" : "ltr"}
                 >
                   
                   {/* Content (Text & Multiplier) - Positioned on Left in LTR, Right in RTL */}
                   <div className="flex items-center gap-4 sm:gap-5 relative z-10" dir={isRtl ? "rtl" : "ltr"}>
-                    <span className="text-3xl sm:text-4xl font-black text-[#0066FF] dark:text-blue-400 tracking-tight font-lufga shrink-0" dir="ltr">
+                    <span className="text-3xl sm:text-4xl font-black text-brand dark:text-blue-400 tracking-tight font-lufga shrink-0" dir="ltr">
                       5x
                     </span>
                     <div className={`space-y-1 max-w-[340px] ${isRtl ? "text-right" : "text-left"}`}>
-                      <p className="text-xs sm:text-sm font-bold text-[#0B132B] dark:text-white leading-snug rtl:leading-normal font-lufga rtl:font-['Cairo',sans-serif]">
+                      <p className="text-xs sm:text-sm font-bold text-heading dark:text-white leading-snug rtl:leading-normal font-lufga rtl:font-['Cairo',sans-serif]">
                         {isRtl ? "سرّع إنتاجية أعمالك" : "Fasten your Business Productivity"}
                       </p>
                       <p className="text-xs font-normal text-slate-500 dark:text-zinc-400 leading-snug rtl:leading-normal font-lufga rtl:font-['Cairo',sans-serif]">
@@ -315,7 +314,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   >
                     <svg
                       viewBox="0 0 120 120"
-                      className="w-full h-full text-[#0066FF] opacity-[0.10] dark:opacity-100 dark:text-zinc-500/15"
+                      className="w-full h-full text-brand opacity-[0.10] dark:opacity-100 dark:text-zinc-500/15"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="7"
@@ -354,7 +353,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   </div>
 
                   {/* Strictly Clipped Card Container: Prevents Any White Background Corner Leakage */}
-                  <div className="w-full bg-white dark:bg-[#18181B] rounded-[13px] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col overflow-hidden">
+                  <div className="w-full bg-white dark:bg-surface-3 rounded-[13px] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col overflow-hidden">
                     
                     {/* Uncropped Full Graphic Card Asset */}
                     <div className="w-full">

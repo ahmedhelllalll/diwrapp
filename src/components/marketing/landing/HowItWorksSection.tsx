@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Map, OpenInWindow, SelectWindow, Tv, CheckCircle, Coins } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 export interface HowItWorksSectionProps {
-  dict: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dict?: any;
   lang?: string;
 }
 
@@ -54,14 +56,12 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
   return (
     <section className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 mt-6 sm:mt-12 lg:mt-20 mb-16 sm:mb-20 text-center flex flex-col items-center relative z-20">
       {/* 1. Eyebrow Badge (User Guide) */}
-      <div className="inline-flex items-center justify-center px-3.5 py-1 rounded-[10px] border border-[#EAECF0] dark:border-neutral-800 bg-transparent mb-4">
-        <span className="text-[13px] font-medium text-[#475467] dark:text-neutral-400 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-          {dict?.howItWorks?.badge || dict?.badge || (isRtl ? "دليل المستخدم" : "User Guide")}
-        </span>
-      </div>
+      <Badge className="mb-4">
+        {dict?.howItWorks?.badge || dict?.badge || (isRtl ? "دليل المستخدم" : "User Guide")}
+      </Badge>
 
       {/* Title & Subtitle */}
-      <h2 className="text-[36px] font-medium leading-[44px] tracking-[-0.01em] text-[#101828] dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+      <h2 className="text-[36px] font-medium leading-[44px] tracking-[-0.01em] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
         {dict?.howItWorks?.title || dict?.title || (isRtl ? "كيف تعمل المنصة" : "How it Works")}
       </h2>
       <p className="text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[1.65] rtl:leading-[1.8] max-w-[700px] mx-auto text-center mt-3 transition-colors">
@@ -79,8 +79,8 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
               onClick={() => setActiveTab(tab)}
               className={`relative z-10 px-5 py-2 text-[14px] font-semibold transition-colors duration-200 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${
                 isActive 
-                  ? "text-[#101828] dark:text-white" 
-                  : "text-[#667085] dark:text-neutral-400 hover:text-[#101828] dark:hover:text-white"
+                  ? "text-heading dark:text-white" 
+                  : "text-[#667085] dark:text-neutral-400 hover:text-heading dark:hover:text-white"
               }`}
             >
               {isActive && (

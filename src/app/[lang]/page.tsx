@@ -55,7 +55,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       <div className="landing-scope">
 
         {/* Hero Section */}
-      <main className="bg-white dark:bg-[#080808] transition-colors duration-300">
+      <main className="bg-white dark:bg-surface-1 transition-colors duration-300">
         <section id="hero-section" className="hero-section relative pt-[88px] sm:pt-24 lg:pt-28 overflow-hidden">
           
           {/* Floating Hero Background and Foreground Assets */}
@@ -69,7 +69,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
 
               <div className="w-full flex justify-center">
                 <h1 
-                  className="hero-title hero-lcp-title text-[#101828] dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
+                  className="hero-title hero-lcp-title text-heading dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
                   dangerouslySetInnerHTML={{ __html: l.hero.title }} 
                 />
               </div>
@@ -83,7 +83,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
               <HeroMotionItem>
                 <Link 
                   href={`/${lang}/advertise`} 
-                  className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-[#0066FF] text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-40 transform-gpu"
+                  className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-40 transform-gpu"
                 >
                   {l.hero.discover || "Discover More"}
                 </Link>
@@ -108,7 +108,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       </main>
       </div>
 
-      <Footer lang={lang} dict={(dict as any).footer} />
+      <Footer lang={lang} dict={(dict as unknown as { footer: React.ComponentProps<typeof Footer>["dict"] }).footer} />
     </>
   );
 }

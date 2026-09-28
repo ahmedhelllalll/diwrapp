@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Badge } from "@/components/ui/Badge";
 
 interface FaqItem {
   id: string;
@@ -59,19 +60,19 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         
         {/* Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/10 bg-transparent dark:bg-white/[0.02] mb-6">
+        <Badge className="gap-2 mb-6">
           <svg className="w-4 h-4 text-slate-700 dark:text-neutral-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-1.5 2-1.5 3" />
             <circle cx="12" cy="16" r="0.5" fill="currentColor" />
           </svg>
-          <span className="text-xs font-semibold text-slate-700 dark:text-neutral-300 tracking-wider font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+          <span className="tracking-wider">
             {isRtl ? "الأسئلة الشائعة" : "FAQ"}
           </span>
-        </div>
+        </Badge>
 
         {/* Dual Line Heading */}
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] dark:text-white text-center leading-[1.15] mb-12 tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-heading dark:text-white text-center leading-[1.15] mb-12 tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
           {isRtl ? (
             <>
               الأسئلة
@@ -96,8 +97,8 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                 key={faq.id}
                 className={`w-full rounded-2xl sm:rounded-[22px] border transition-[border-color,background-color,box-shadow] duration-200 ${
                   isOpen
-                    ? "bg-white dark:bg-[#18181B] border-neutral-300 dark:border-white/[0.18] shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
-                    : "bg-white dark:bg-[#121214] border-neutral-200/80 dark:border-white/[0.07] hover:border-neutral-300 dark:hover:border-white/[0.14] dark:hover:bg-[#18181B]"
+                    ? "bg-white dark:bg-surface-3 border-neutral-300 dark:border-white/[0.18] shadow-sm dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                    : "bg-white dark:bg-surface-2 border-neutral-200/80 dark:border-white/[0.07] hover:border-neutral-300 dark:hover:border-white/[0.14] dark:hover:bg-surface-3"
                 }`}
               >
                 <button
@@ -108,7 +109,7 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
                   className="w-full py-4 sm:py-5 px-6 sm:px-7 flex items-center justify-between text-start gap-4 cursor-pointer"
                 >
-                  <span className="text-sm sm:text-base font-bold text-[#0F172A] dark:text-white leading-snug font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+                  <span className="text-sm sm:text-base font-bold text-heading dark:text-white leading-snug font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
                     {faq.question}
                   </span>
                   

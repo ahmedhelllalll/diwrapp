@@ -21,7 +21,7 @@ export default function MobileHeroMockup() {
 
       {/* Performant bottom fade gradient overlay replacing expensive CSS maskImage */}
       <div
-        className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-white dark:from-[#080808] via-white/80 dark:via-[#080808]/80 to-transparent pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-white dark:from-surface-1 via-white/80 dark:via-surface-1/80 to-transparent pointer-events-none"
         aria-hidden="true"
       />
     </div>
