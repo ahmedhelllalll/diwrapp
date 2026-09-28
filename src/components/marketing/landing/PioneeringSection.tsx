@@ -77,12 +77,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             Completely locked in LTR coordinates, aligned to desktop right columns,
             never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="absolute -top-2 sm:-top-4 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="absolute -top-10 sm:-top-14 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
               <div 
-                className="absolute top-0 sm:top-0 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
+                className="absolute -top-8 sm:-top-12 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
                 style={{
                   maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
@@ -126,7 +126,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                 {/* Mobile-only bottom fade gradient: dissolves bottom edge softly into background (< lg) */}
                 <div 
-                  className="lg:hidden absolute inset-x-0 bottom-0 h-32 sm:h-40 bg-gradient-to-b from-transparent via-white/85 dark:via-surface-1/85 to-white dark:to-surface-1 pointer-events-none z-10" 
+                  className="lg:hidden absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-b from-transparent via-white/80 dark:via-surface-1/80 to-white dark:to-surface-1 pointer-events-none z-10" 
                   aria-hidden="true"
                 />
               </div>
@@ -144,7 +144,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
           
           {/* PRIMARY TEXT COLUMN (Right in RTL, Left in LTR) */}
           <motion.div 
-            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 pt-12 sm:pt-16 lg:pt-0"
+            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 mt-6 sm:mt-8 lg:mt-5"
             dir={isRtl ? "rtl" : "ltr"}
             initial="hidden"
             whileInView="visible"
