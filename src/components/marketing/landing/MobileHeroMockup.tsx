@@ -5,10 +5,6 @@ export default function MobileHeroMockup() {
   return (
     <div
       className="block lg:hidden w-[130%] max-w-[720px] sm:max-w-[840px] mx-auto mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 pointer-events-none select-none relative z-30 px-2 sm:px-4 translate-x-36 sm:translate-x-48 rtl:-translate-x-36 rtl:sm:-translate-x-48 bg-transparent"
-      style={{
-        maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 88%, rgba(0,0,0,0) 100%)",
-        WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.3) 88%, rgba(0,0,0,0) 100%)",
-      }}
     >
       <div className="hero-lcp-mockup w-full">
         <Image
@@ -22,6 +18,12 @@ export default function MobileHeroMockup() {
           className="w-full h-auto object-contain select-none mx-auto bg-transparent"
         />
       </div>
+
+      {/* Performant bottom fade gradient overlay replacing expensive CSS maskImage */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-28 sm:h-36 bg-gradient-to-t from-white dark:from-[#080808] via-white/80 dark:via-[#080808]/80 to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   );
 }
