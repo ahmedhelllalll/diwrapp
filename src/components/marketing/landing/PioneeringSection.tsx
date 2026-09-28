@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
 
 export interface PioneeringSectionProps {
@@ -12,26 +12,77 @@ export interface PioneeringSectionProps {
   lang?: string;
 }
 
+const appleEasing = [0.16, 1, 0.3, 1] as const;
+
 const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, staggerChildren: 0.1, ease: "easeOut" }
-  }
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
+const badgeVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.75, ease: appleEasing },
+  },
+};
+
+const titleVariants: Variants = {
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" }
-  }
+    transition: { duration: 0.85, ease: appleEasing },
+  },
+};
+
+const subtitleVariants: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: appleEasing },
+  },
+};
+
+const featureListVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const featureItemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: appleEasing },
+  },
+};
+
+const actionsVariants: Variants = {
+  hidden: { opacity: 0, y: 10, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.75, ease: appleEasing },
+  },
 };
 
 export default function PioneeringSection({ dict, lang = "en" }: PioneeringSectionProps) {
   const isRtl = lang === "ar";
+  const shouldReduceMotion = useReducedMotion();
 
   const features = [
     dict?.feature1 || (isRtl ? "وسّع نطاق وصولك عبر جميع الأسواق بسهولة" : "Expand Your Reach Across All Markets Easily"),
@@ -43,7 +94,13 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
     <section id="media-reach-section" className="pioneering-section w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-24 lg:my-32 relative overflow-x-clip z-10">
       
       {/* Dynamic Panorama Banner (Light vs Dark) - Higher z-index than map */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20">
+      <motion.div 
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 16, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.85, ease: appleEasing }}
+        className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20"
+      >
         {/* Light Mode Banner */}
         <div className="block dark:hidden relative w-full h-[160px] sm:h-[220px] md:h-[280px] lg:h-[460px] lg:aspect-auto">
           <Image 
@@ -67,7 +124,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             loading="lazy"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Lower Showcase Area (Decoupled Background Map + Interactive Two-Column Grid) */}
       <div className="relative z-10 w-full">
@@ -77,7 +134,14 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             Completely locked in LTR coordinates, aligned to desktop right columns,
             never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="absolute -top-10 sm:-top-14 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <motion.div 
+          initial={shouldReduceMotion ? false : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 1.0, delay: 0.15, ease: appleEasing }}
+          className="absolute -top-10 sm:-top-14 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" 
+          dir="ltr"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
@@ -132,7 +196,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* =========================================================================
             TWO-COLUMN INTERACTIVE CONTENT GRID:
@@ -146,13 +210,13 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
           <motion.div 
             className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 mt-6 sm:mt-8 lg:mt-5"
             dir={isRtl ? "rtl" : "ltr"}
-            initial="hidden"
+            initial={shouldReduceMotion ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
           >
             {/* Eyebrow Badge */}
-            <motion.div variants={itemVariants} className="mb-6">
+            <motion.div variants={badgeVariants} className="mb-6">
               <Badge>
                 {dict?.badge || (isRtl ? "ذكي، سريع وموثوق – فقط لأجلك!" : "Smart, Fast & Reliable – Just for You!")}
               </Badge>
@@ -160,7 +224,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
             {/* Main Heading */}
             <motion.h2 
-              variants={itemVariants}
+              variants={titleVariants}
               className="pioneering-title font-lufga rtl:font-['Cairo',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading dark:text-white tracking-tight leading-[1.15] mb-4"
             >
               {dict?.title || (isRtl ? "ريادة مستقبل إمكانية الوصول للوسائط" : "Pioneering the Future of Media Accessibility")}
@@ -168,16 +232,16 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
             {/* Subtitle */}
             <motion.p 
-              variants={itemVariants}
+              variants={subtitleVariants}
               className="pioneering-desc font-lufga rtl:font-['Cairo',sans-serif] text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed max-w-xl lg:max-w-lg mb-8 transition-colors"
             >
               {dict?.desc || (isRtl ? "تقود تقنية دي-راب ثورة في إمكانية الوصول إلى الوسائط، لضمان أن تكون كل مساحة في متناول الجميع." : "Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every Inventory is within reach for all.")}
             </motion.p>
 
             {/* Feature List Items with Clean White SVG Checkmarks */}
-            <motion.ul variants={itemVariants} className="space-y-4 mb-8 w-full max-w-xl lg:max-w-none">
+            <motion.ul variants={featureListVariants} className="space-y-4 mb-8 w-full max-w-xl lg:max-w-none">
               {features.map((feature, idx) => (
-                <li key={idx} className="flex items-center gap-3.5 group">
+                <motion.li key={idx} variants={featureItemVariants} className="flex items-center gap-3.5 group">
                   <div className="w-5 h-5 rounded-full bg-brand dark:bg-blue-500/90 flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -186,12 +250,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                   <span className="text-xs sm:text-sm font-semibold text-heading dark:text-zinc-200 group-hover:text-brand dark:group-hover:text-blue-400 transition-colors font-lufga rtl:font-['Cairo',sans-serif]">
                     {feature}
                   </span>
-                </li>
+                </motion.li>
               ))}
             </motion.ul>
 
             {/* CTA Buttons (Learn More & Book Your Spot) */}
-            <motion.div variants={itemVariants} className="pioneering-actions flex items-center gap-3.5 pt-2 flex-wrap">
+            <motion.div variants={actionsVariants} className="pioneering-actions flex items-center gap-3.5 pt-2 flex-wrap">
               {/* Secondary Button */}
               <Link
                 href={`/${lang}/about`}
@@ -203,7 +267,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
               {/* Primary Button */}
               <Link
-                href={`/${lang}/book`}
+                href={`/${lang}/advertise`}
                 aria-label={isRtl ? "احجز مساحتك الإعلانية على دي راب" : "Book your advertising spot on Diwrapp"}
                 className="inline-flex items-center justify-center min-w-[150px] h-[48px] px-6 rounded-xl bg-brand hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 text-sm font-bold text-white transition-all shadow-sm dark:shadow-[0_4px_24px_rgba(37,99,235,0.28)] active:scale-[0.98] font-lufga rtl:font-['Cairo',sans-serif]"
               >
@@ -225,7 +289,14 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch min-h-[270px]">
                   
                   {/* 1. Calendar Card */}
-                  <div className="relative h-full w-full bg-[#FAFAFA] dark:bg-surface-2 border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" aria-hidden="true">
+                  <motion.div 
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 18, scale: 0.96 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: appleEasing }}
+                    className="relative h-full w-full bg-[#FAFAFA] dark:bg-surface-2 border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" 
+                    aria-hidden="true"
+                  >
                     {/* Inner White Calendar Window Docked to Bottom-Right */}
                     <div className="w-full bg-white dark:bg-surface-3 rounded-tl-xl shadow-sm border border-slate-200/80 dark:border-zinc-700/80 p-4 sm:p-5 border-r-0 border-b-0 relative z-10 translate-x-1 translate-y-1">
                       {/* Mac Dots */}
@@ -275,10 +346,16 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                         <span>20</span><span>21</span><span>22</span><span>23</span>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* 2. Developer Workspace Image Card */}
-                  <div className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-surface-2">
+                  <motion.div 
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 18, scale: 0.96 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.28, ease: appleEasing }}
+                    className="relative h-full rounded-[24px] overflow-hidden shadow-sm border border-slate-200/80 dark:border-zinc-800 bg-[#FAFAFA] dark:bg-surface-2"
+                  >
                     <Image 
                       alt="Developer at workspace" 
                       className="object-cover" 
@@ -299,12 +376,16 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                         <p className="text-[10px] text-slate-600 dark:text-zinc-300 font-medium leading-tight font-['Lufga',sans-serif]">Due Today</p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
                 </div>
 
-                {/* Bottom Row: 5x Productivity Pill Matched to Calendar Card in Dark Mode */}
-                <div 
+                {/* Bottom Row: 5x Productivity Pill */}
+                <motion.div 
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 16, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.36, ease: appleEasing }}
                   className="relative w-full overflow-hidden bg-[#F4F7FD] dark:bg-surface-3 border border-[#E1EAF8] dark:border-zinc-800 rounded-[24px] sm:rounded-[28px] min-h-[105px] sm:min-h-[110px] py-6 sm:py-7 px-5 sm:px-6 flex items-center justify-between shadow-xs select-none isolate"
                   dir={isRtl ? "rtl" : "ltr"}
                 >
@@ -343,12 +424,18 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     </svg>
                   </div>
 
-                </div>
+                </motion.div>
 
               </div>
 
               {/* RIGHT COLUMN: Tablet Backdrop Frame */}
-              <div className="relative w-full max-w-[250px] sm:max-w-[260px] rounded-[20px] bg-[#F4F6F9] dark:bg-zinc-900/40 border border-slate-200/60 dark:border-zinc-800/80 p-3 sm:p-3.5 flex flex-col items-center select-none shadow-sm self-center lg:self-end">
+              <motion.div 
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.24, ease: appleEasing }}
+                className="relative w-full max-w-[250px] sm:max-w-[260px] rounded-[20px] bg-[#F4F6F9] dark:bg-zinc-900/40 border border-slate-200/60 dark:border-zinc-800/80 p-3 sm:p-3.5 flex flex-col items-center select-none shadow-sm self-center lg:self-end"
+              >
                 
                 {/* 1. Mac Window Control Dots */}
                 <div className="w-full flex items-center gap-1.5 mb-2.5 px-0.5">
@@ -361,14 +448,21 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                 <div className="relative w-full">
                   
                   {/* Floating Reach Badge (floats outside the clipped card boundary) */}
-                  <div className="absolute top-[34px] -right-2.5 sm:-right-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-md px-2 py-1 shadow-lg border border-slate-100/80 dark:border-zinc-700/80 z-20 pointer-events-none" aria-hidden="true">
+                  <motion.div 
+                    initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.85, y: 6 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : 0.48, ease: appleEasing }}
+                    className="absolute top-[34px] -right-2.5 sm:-right-3 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-md px-2 py-1 shadow-lg border border-slate-100/80 dark:border-zinc-700/80 z-20 pointer-events-none" 
+                    aria-hidden="true"
+                  >
                     <p className="text-[9px] font-bold text-slate-900 dark:text-white leading-tight font-lufga">Increase Reach</p>
                     <div className="flex items-center gap-1 mt-0.5 whitespace-nowrap">
                       <span className="text-[11px] font-black text-slate-900 dark:text-white font-lufga">45%</span>
                       <span className="text-[7.5px] text-slate-600 dark:text-zinc-400 font-medium font-lufga">vs. last period</span>
                       <span className="text-[8.5px] font-bold text-emerald-500 flex items-center font-lufga">↑ 12%</span>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Strictly Clipped Card Container: Prevents Any White Background Corner Leakage */}
                   <div className="w-full bg-white dark:bg-surface-3 rounded-[13px] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col overflow-hidden">
@@ -402,7 +496,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
 
                 </div>
 
-              </div>
+              </motion.div>
 
             </div>
 
