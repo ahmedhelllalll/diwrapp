@@ -77,12 +77,12 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
             Completely locked in LTR coordinates, aligned to desktop right columns,
             never flipped, never mirrored, and rendered as a subtle backdrop on mobile.
            ========================================================================= */}
-        <div className="absolute -top-6 sm:-top-8 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
+        <div className="absolute -top-20 sm:-top-28 lg:top-0 inset-x-0 bottom-0 lg:inset-0 pointer-events-none select-none z-0" dir="ltr">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 w-full h-full">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 relative flex items-start justify-center overflow-visible w-full">
               <div 
-                className="absolute -top-4 sm:-top-6 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
+                className="absolute -top-16 sm:-top-24 lg:-top-64 xl:-top-72 left-1/2 -translate-x-1/2 z-0 flex items-start justify-center pointer-events-none select-none overflow-visible w-full"
                 style={{
                   maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 96%)',
