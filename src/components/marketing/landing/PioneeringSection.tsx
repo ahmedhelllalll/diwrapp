@@ -144,7 +144,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
           
           {/* PRIMARY TEXT COLUMN (Right in RTL, Left in LTR) */}
           <motion.div 
-            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 mt-4 sm:mt-6 lg:mt-0"
+            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 pt-12 sm:pt-16 lg:pt-0"
             dir={isRtl ? "rtl" : "ltr"}
             initial="hidden"
             whileInView="visible"
