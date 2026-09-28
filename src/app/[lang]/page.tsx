@@ -88,9 +88,9 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
                   {l.hero.discover || "Discover More"}
                 </Link>
               </HeroMotionItem>
-
-              <MobileHeroMockup />
             </HeroContentMotion>
+
+            <MobileHeroMockup />
           </div>
           
           {/* Spacer to account for absolute dashboard image height */}
