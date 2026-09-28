@@ -60,7 +60,7 @@ export function DataTable() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-[13.5px] font-semibold text-[#334155] dark:text-zinc-300">{row.impressions}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-[13.5px] font-medium">
-                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#1665ff] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><i className="fa-solid fa-pen"></i></button>
+                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#0066FF] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><i className="fa-solid fa-pen"></i></button>
                   <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-red-600 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"><i className="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>

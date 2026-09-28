@@ -24,14 +24,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative flex items-center group">
           {iconLeft && (
-            <div className="absolute start-[14px] text-sm text-[#94a3b8] dark:text-zinc-500 group-focus-within:text-[#1665ff] dark:group-focus-within:text-blue-400 transition-colors pointer-events-none flex items-center justify-center">
+            <div className="absolute start-[14px] text-sm text-[#94a3b8] dark:text-zinc-500 group-focus-within:text-[#0066FF] dark:group-focus-within:text-blue-400 transition-colors pointer-events-none flex items-center justify-center">
               {iconLeft}
             </div>
           )}
           <input
             ref={ref}
             type={inputType}
-            className={`w-full h-[46px] bg-white dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800 rounded-xl text-sm text-[#111827] dark:text-zinc-100 placeholder-[#94a3b8] dark:placeholder-zinc-500 outline-none hover:border-gray-300 dark:hover:border-zinc-700 focus:border-[#1665ff] dark:focus:border-blue-500 focus:ring-2 focus:ring-[#1665ff]/10 dark:focus:ring-blue-500/15 transition-all duration-200 ${
+            className={`w-full h-[46px] bg-white dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800 rounded-xl text-sm text-[#111827] dark:text-zinc-100 placeholder-[#94a3b8] dark:placeholder-zinc-500 outline-none hover:border-gray-300 dark:hover:border-zinc-700 focus:border-[#0066FF] dark:focus:border-blue-500 focus:ring-2 focus:ring-[#0066FF]/10 dark:focus:ring-blue-500/15 transition-all duration-200 ${
               iconLeft ? "ps-[40px]" : "ps-[14px]"
             } ${iconRight || isPassword ? "pe-[42px]" : "pe-[14px]"} ${className}`}
             {...props}

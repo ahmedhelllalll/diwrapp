@@ -18,8 +18,8 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
     <div className="block md:hidden w-full mt-5" ref={menuRef}>
       <div className="flex items-center gap-2 mb-2 ml-1">
         <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1665ff] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1665ff]"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0066FF] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066FF]"></span>
         </span>
         <span className="text-[10px] font-extrabold text-slate-400 dark:text-zinc-500 tracking-wider uppercase">Categories / View Section</span>
       </div>
@@ -27,10 +27,10 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between bg-slate-50 dark:bg-[#0a0a0a] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3.5 text-left shadow-sm focus:outline-none focus:ring-4 focus:ring-[#1665ff]/10 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"
+          className="w-full flex items-center justify-between bg-slate-50 dark:bg-[#0a0a0a] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3.5 text-left shadow-sm focus:outline-none focus:ring-4 focus:ring-[#0066FF]/10 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-[#1665ff] dark:text-blue-500 shadow-sm">
+            <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 flex items-center justify-center text-[#0066FF] dark:text-blue-500 shadow-sm">
               <ViewGrid width={16} height={16} strokeWidth={2} />
             </div>
             <div className="flex flex-col">
@@ -63,12 +63,12 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
                     onClick={() => { onChange(tab); setIsOpen(false); }}
                     className={`w-full text-left px-4 py-3 text-[13.5px] rounded-xl flex items-center justify-between transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 ${
                       isActive 
-                        ? 'bg-[#eff6ff] dark:bg-blue-950/30 text-[#1665ff] dark:text-blue-400 font-bold' 
+                        ? 'bg-[#eff6ff] dark:bg-blue-950/30 text-[#0066FF] dark:text-blue-400 font-bold' 
                         : 'text-slate-600 dark:text-zinc-400 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
                     }`}
                   >
                     {tab}
-                    {isActive && <Check width={16} height={16} strokeWidth={2.5} className="text-[#1665ff] dark:text-blue-400" />}
+                    {isActive && <Check width={16} height={16} strokeWidth={2.5} className="text-[#0066FF] dark:text-blue-400" />}
                   </button>
                 );
               })}

@@ -150,7 +150,7 @@ export default function DesignSystem() {
                 <div className="space-y-6">
                   <h3 className="text-[15px] font-bold text-[#111827] dark:text-zinc-100">Primary Brand Palette</h3>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <ColorCard name="Primary Blue" hex="#1665FF" className="bg-[#1665ff] text-white shadow-[0_4px_14px_rgba(22,101,255,0.3)]" />
+                    <ColorCard name="Primary Blue" hex="#0066FF" className="bg-[#0066FF] text-white shadow-[0_4px_14px_rgba(0,102,255,0.3)]" />
                     <ColorCard name="Dark Zinc" hex="#18181b" className="bg-[#18181b] text-white" />
                     <ColorCard name="Black" hex="#000000" className="bg-[#000000] text-white" />
                     <ColorCard name="Zinc 500" hex="#71717A" className="bg-[#71717a] text-white" />
@@ -173,10 +173,10 @@ export default function DesignSystem() {
                   <div>
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Primary Buttons</h3>
                     <div className="flex flex-wrap gap-4">
-                      <button className="group px-6 py-3 rounded-[10px] bg-[#1665ff] text-white font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
+                      <button className="group px-6 py-3 rounded-[10px] bg-[#0066FF] text-white font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
                         Primary Action
                       </button>
-                      <button className="group px-6 py-3 rounded-[10px] bg-[#1665ff] text-white font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
+                      <button className="group px-6 py-3 rounded-[10px] bg-[#0066FF] text-white font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
                         Continue <i className="fa-solid fa-arrow-right text-[12px] group-hover:translate-x-1 transition-transform duration-200"></i>
                       </button>
                     </div>
@@ -188,7 +188,7 @@ export default function DesignSystem() {
                         Dark Action
                       </button>
                       <button className="group px-6 py-3 rounded-[10px] bg-white dark:bg-[#0a0a0a] border-2 border-[#e2e8f0] dark:border-zinc-800/80 text-[#0f172a] dark:text-zinc-100 font-bold text-[13.5px] transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:border-[#cbd5e1] active:scale-[0.98] active:translate-y-0 flex items-center gap-2">
-                        <i className="fa-solid fa-cloud-arrow-up text-[#64748b] dark:text-zinc-400 group-hover:text-[#1665ff] transition-colors duration-200"></i>
+                        <i className="fa-solid fa-cloud-arrow-up text-[#64748b] dark:text-zinc-400 group-hover:text-[#0066FF] transition-colors duration-200"></i>
                         Outline Action
                       </button>
                     </div>
@@ -196,7 +196,7 @@ export default function DesignSystem() {
                   <div>
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Icon & Subtle Buttons</h3>
                     <div className="flex flex-wrap gap-4">
-                      <button className="group w-11 h-11 rounded-[10px] bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 text-[#64748b] dark:text-zinc-400 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:text-[#1665ff] hover:border-[#cbd5e1] active:scale-[0.98] active:translate-y-0 flex items-center justify-center">
+                      <button className="group w-11 h-11 rounded-[10px] bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 text-[#64748b] dark:text-zinc-400 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:text-[#0066FF] hover:border-[#cbd5e1] active:scale-[0.98] active:translate-y-0 flex items-center justify-center">
                         <i className="fa-regular fa-bookmark text-[15px]"></i>
                       </button>
                       <button className="group px-5 py-2.5 rounded-[10px] text-[#64748b] dark:text-zinc-400 font-semibold text-[13px] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800/80 hover:text-[#0f172a] dark:text-zinc-100 active:scale-[0.98] active:translate-y-0">
@@ -224,16 +224,16 @@ export default function DesignSystem() {
                     <div>
                       <label className="block text-[12px] font-bold text-[#111827] dark:text-zinc-100 mb-2">Email Address</label>
                       <div className="relative flex items-center group">
-                        <i className="fa-regular fa-envelope absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#1665ff]"></i>
-                        <input type="email" placeholder="Enter your email" className="w-full pl-[40px] pr-[14px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10 transition-all"/>
+                        <i className="fa-regular fa-envelope absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#0066FF]"></i>
+                        <input type="email" placeholder="Enter your email" className="w-full pl-[40px] pr-[14px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/10 transition-all"/>
                       </div>
                     </div>
                     <div>
                       <label className="block text-[12px] font-bold text-[#111827] dark:text-zinc-100 mb-2">Password</label>
                       <div className="relative flex items-center group">
-                        <i className="fa-solid fa-lock absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#1665ff]"></i>
-                        <input type={passwordVisible ? "text" : "password"} placeholder="Enter your password" className="w-full pl-[40px] pr-[40px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10 transition-all"/>
-                        <button onClick={() => setPasswordVisible(!passwordVisible)} className="absolute right-[14px] text-[#64748b] dark:text-zinc-400 hover:text-[#1665ff] transition-colors">
+                        <i className="fa-solid fa-lock absolute left-[14px] text-[#9ca3af] text-[14px] transition-colors group-focus-within:text-[#0066FF]"></i>
+                        <input type={passwordVisible ? "text" : "password"} placeholder="Enter your password" className="w-full pl-[40px] pr-[40px] py-[12px] bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-[10px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/10 transition-all"/>
+                        <button onClick={() => setPasswordVisible(!passwordVisible)} className="absolute right-[14px] text-[#64748b] dark:text-zinc-400 hover:text-[#0066FF] transition-colors">
                           <i className={`fa-regular ${passwordVisible ? 'fa-eye' : 'fa-eye-slash'} text-[13px]`}></i>
                         </button>
                       </div>
@@ -247,7 +247,7 @@ export default function DesignSystem() {
                   <div className="space-y-6">
                     <div className="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm flex flex-col h-full">
                       <label className="block text-[12px] font-bold text-[#111827] dark:text-zinc-100 mb-2">Campaign Description</label>
-                      <div className="flex-1 flex flex-col border border-[#e5e7eb] rounded-[10px] overflow-hidden focus-within:border-[#1665ff] focus-within:ring-4 focus-within:ring-[#1665ff]/10 transition-all">
+                      <div className="flex-1 flex flex-col border border-[#e5e7eb] rounded-[10px] overflow-hidden focus-within:border-[#0066FF] focus-within:ring-4 focus-within:ring-[#0066FF]/10 transition-all">
                         <textarea placeholder="Describe your campaign..." className="w-full flex-1 p-[14px] text-[13.5px] text-[#111827] dark:text-zinc-100 placeholder:text-[#9ca3af] outline-none resize-none min-h-[120px]"></textarea>
                         <div className="bg-[#f8fafc] dark:bg-zinc-900/50 border-t border-[#e5e7eb] px-3 py-2 flex items-center gap-1 overflow-x-auto">
                           <ToolbarBtn icon="fa-paperclip" />
@@ -270,8 +270,8 @@ export default function DesignSystem() {
                   <h3 className="text-[15px] font-bold text-[#111827] dark:text-zinc-100 mb-4">File Upload & Attachment</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-xl bg-[#f8fafc] dark:bg-zinc-900/50">
                     <div className="flex items-center gap-4 flex-1 w-full">
-                      <div className="w-14 h-14 bg-gradient-to-br from-[#1665ff]/20 to-[#8B5CF6]/20 rounded-lg flex items-center justify-center shrink-0 border border-[#1665ff]/10">
-                        <i className="fa-regular fa-image text-[#1665ff] text-xl"></i>
+                      <div className="w-14 h-14 bg-gradient-to-br from-[#0066FF]/20 to-[#8B5CF6]/20 rounded-lg flex items-center justify-center shrink-0 border border-[#0066FF]/10">
+                        <i className="fa-regular fa-image text-[#0066FF] text-xl"></i>
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-[13px] font-bold text-[#0f172a] dark:text-zinc-100 truncate">campaign-banner-final.png</h4>
@@ -279,7 +279,7 @@ export default function DesignSystem() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto justify-end mt-2 sm:mt-0">
-                      <button className="text-[12.5px] font-semibold text-[#1665ff] bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-lg px-3 py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:bg-[#eff6ff] hover:border-[#bfdbfe] active:scale-[0.98] active:translate-y-0">
+                      <button className="text-[12.5px] font-semibold text-[#0066FF] bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-lg px-3 py-1.5 transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:bg-[#eff6ff] hover:border-[#bfdbfe] active:scale-[0.98] active:translate-y-0">
                         Change Image
                       </button>
                       <button className="w-8 h-8 flex items-center justify-center bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-lg text-[#ef4444] transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:bg-[#fef2f2] hover:border-[#fecaca] active:scale-[0.98] active:translate-y-0">
@@ -305,7 +305,7 @@ export default function DesignSystem() {
                   <div>
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Search Component</h3>
                     <div className="relative max-w-xl">
-                      <input type="text" placeholder="Search campaigns, vendors, or keywords..." className="w-full pl-5 pr-14 py-4 bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-full text-[14px] text-[#0f172a] dark:text-zinc-100 placeholder:text-[#94a3b8] outline-none focus:border-[#1665ff] focus:bg-white dark:bg-[#0a0a0a] transition-all shadow-inner" />
+                      <input type="text" placeholder="Search campaigns, vendors, or keywords..." className="w-full pl-5 pr-14 py-4 bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-full text-[14px] text-[#0f172a] dark:text-zinc-100 placeholder:text-[#94a3b8] outline-none focus:border-[#0066FF] focus:bg-white dark:bg-[#0a0a0a] transition-all shadow-inner" />
                       <button className="absolute right-2 top-2 bottom-2 w-10 bg-[#111827] dark:bg-zinc-100 text-white dark:text-black rounded-full flex items-center justify-center transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-[0.98] active:translate-y-0">
                         <i className="fa-solid fa-magnifying-glass text-[13px]"></i>
                       </button>
@@ -316,10 +316,10 @@ export default function DesignSystem() {
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Tab Navigation</h3>
                     <div className="flex items-center gap-8 border-b border-[#e2e8f0] dark:border-zinc-800/80 overflow-x-auto hide-scrollbar">
                       {tabs.map((tab) => (
-                        <button key={tab} onClick={() => setActiveTab(tab)} className={`relative pb-4 text-[13.5px] font-bold whitespace-nowrap transition-colors ${activeTab === tab ? 'text-[#1665ff]' : 'text-[#64748b] dark:text-zinc-400 hover:text-[#0f172a] dark:text-zinc-100'}`}>
+                        <button key={tab} onClick={() => setActiveTab(tab)} className={`relative pb-4 text-[13.5px] font-bold whitespace-nowrap transition-colors ${activeTab === tab ? 'text-[#0066FF]' : 'text-[#64748b] dark:text-zinc-400 hover:text-[#0f172a] dark:text-zinc-100'}`}>
                           {tab}
                           {activeTab === tab && (
-                            <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#1665ff] rounded-t-full" />
+                            <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0066FF] rounded-t-full" />
                           )}
                         </button>
                       ))}
@@ -422,7 +422,7 @@ export default function DesignSystem() {
                   <div>
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">User Profile Menu</h3>
                     <DropdownMenu 
-                      trigger={<button className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-colors"><div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden"><img src="https://ui-avatars.com/api/?name=John+Doe&background=1665ff&color=fff" alt="User" /></div><span className="text-[13px] font-bold text-slate-700">John Doe</span><i className="fa-solid fa-chevron-down text-[10px] text-slate-400"></i></button>}
+                      trigger={<button className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-colors"><div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden"><img src="https://ui-avatars.com/api/?name=John+Doe&background=0066ff&color=fff" alt="User" /></div><span className="text-[13px] font-bold text-slate-700">John Doe</span><i className="fa-solid fa-chevron-down text-[10px] text-slate-400"></i></button>}
                       items={[
                         { label: 'Account Settings', icon: 'fa-gear' },
                         { label: 'Billing & Plans', icon: 'fa-credit-card' },
@@ -461,7 +461,7 @@ export default function DesignSystem() {
                     </div>
                     <h3 className="text-[15px] md:text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2">Join as Supplier</h3>
                     <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-4 md:mb-5 flex-1">Turn your assets into revenue. Reach thousands of advertisers looking for spaces.</p>
-                    <button className="w-full min-h-[44px] py-2.5 rounded-[10px] bg-[#1665ff] text-white font-semibold text-[13px] shadow-[0_4px_12px_rgba(22,101,255,0.25)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0">Become a Supplier</button>
+                    <button className="w-full min-h-[44px] py-2.5 rounded-[10px] bg-[#0066FF] text-white font-semibold text-[13px] shadow-[0_4px_12px_rgba(0,102,255,0.25)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(59,130,246,0.25)] dark:hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] active:scale-[0.98] active:translate-y-0">Become a Supplier</button>
                   </motion.div>
                   <motion.div whileHover={{ y: -4 }} className="bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 rounded-[16px] p-5 md:p-6 shadow-sm hover:shadow-[0_10px_25px_rgba(0,0,0,0.04)] cursor-pointer transition-shadow flex flex-col">
                     <div className="w-10 h-10 rounded-xl bg-[#f8fafc] dark:bg-zinc-900/50 text-[#64748b] dark:text-zinc-400 flex items-center justify-center text-[16px] mb-4 md:mb-5 border border-[#e2e8f0] dark:border-zinc-800/80">
@@ -486,11 +486,11 @@ export default function DesignSystem() {
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex gap-2 mb-3">
-                        <span className="text-[10px] font-bold text-[#1665ff] bg-[#eff6ff] px-2 py-1 rounded-md uppercase tracking-wider">Update</span>
+                        <span className="text-[10px] font-bold text-[#0066FF] bg-[#eff6ff] px-2 py-1 rounded-md uppercase tracking-wider">Update</span>
                       </div>
                       <h3 className="text-[18px] font-bold text-[#0f172a] dark:text-zinc-100 mb-2.5 leading-snug">New Platform Features Released for Vendors</h3>
                       <p className="text-[#64748b] dark:text-zinc-400 text-[13px] font-medium leading-[1.6] mb-5 flex-1">We've rolled out a suite of new tools to help you manage your listings, track impressions, and optimize your revenue streams.</p>
-                      <div className="text-[#1665ff] text-[13px] font-bold flex items-center gap-1.5 group">
+                      <div className="text-[#0066FF] text-[13px] font-bold flex items-center gap-1.5 group">
                         Learn more <i className="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
                       </div>
                     </div>
@@ -516,7 +516,7 @@ export default function DesignSystem() {
                       <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">Notification Pill</h3>
                       <motion.div whileHover={{ scale: 1.02 }} className="bg-white dark:bg-[#0a0a0a] rounded-xl p-2.5 flex items-center gap-3 shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-[#e2e8f0] dark:border-zinc-800/80 w-max cursor-pointer">
                         <div className="w-8 h-8 rounded-lg bg-[#eff6ff] flex items-center justify-center shrink-0">
-                          <i className="fa-solid fa-bullhorn text-[#1665ff] text-[13px]"></i>
+                          <i className="fa-solid fa-bullhorn text-[#0066FF] text-[13px]"></i>
                         </div>
                         <div className="flex flex-col pr-4">
                           <h5 className="text-[#0f172a] dark:text-zinc-100 text-[11.5px] font-bold">Publish New Listing</h5>
@@ -573,7 +573,7 @@ export default function DesignSystem() {
                     </Tooltip>
                     
                     <Tooltip content="More information" position="bottom">
-                      <button className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 text-[#1665ff] hover:bg-blue-50 flex items-center justify-center transition-colors">
+                      <button className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 text-[#0066FF] hover:bg-blue-50 flex items-center justify-center transition-colors">
                         <i className="fa-solid fa-circle-info"></i>
                       </button>
                     </Tooltip>
@@ -603,7 +603,7 @@ export default function DesignSystem() {
                     <span className={`text-[13.5px] font-bold ${!showSkeleton ? 'text-[#0f172a] dark:text-zinc-100' : 'text-[#94a3b8]'}`}>Live Data</span>
                     <button 
                       onClick={() => setShowSkeleton(!showSkeleton)}
-                      className={`w-12 h-6 rounded-full relative transition-colors duration-300 shrink-0 ${showSkeleton ? 'bg-[#1665ff]' : 'bg-[#cbd5e1]'}`}
+                      className={`w-12 h-6 rounded-full relative transition-colors duration-300 shrink-0 ${showSkeleton ? 'bg-[#0066FF]' : 'bg-[#cbd5e1]'}`}
                     >
                       <motion.div 
                         animate={{ x: showSkeleton ? 24 : 2 }} 
@@ -631,7 +631,7 @@ export default function DesignSystem() {
                         <div className="w-full h-40 bg-[#f1f5f9] rounded-xl flex items-center justify-center text-[#94a3b8]"><i className="fa-regular fa-image text-3xl"></i></div>
                         <h4 className="text-[16px] font-bold text-[#0f172a] dark:text-zinc-100 mt-2 leading-tight">Downtown Billboard Campaign</h4>
                         <p className="text-[13px] text-[#64748b] dark:text-zinc-400 leading-relaxed">This campaign will run for 30 days across our premium downtown digital screens targeting evening commuters.</p>
-                        <button className="w-full h-10 bg-[#1665ff] text-white rounded-[10px] font-bold text-[13.5px] mt-4">View Details</button>
+                        <button className="w-full h-10 bg-[#0066FF] text-white rounded-[10px] font-bold text-[13.5px] mt-4">View Details</button>
                       </div>
                     )}
                   </div>
@@ -653,7 +653,7 @@ export default function DesignSystem() {
                             </>
                           ) : (
                             <>
-                              <div className="w-12 h-12 rounded-full bg-[#eff6ff] text-[#1665ff] flex items-center justify-center shrink-0"><i className="fa-regular fa-user"></i></div>
+                              <div className="w-12 h-12 rounded-full bg-[#eff6ff] text-[#0066FF] flex items-center justify-center shrink-0"><i className="fa-regular fa-user"></i></div>
                               <div className="flex-1">
                                 <h5 className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100">Vendor User {i}</h5>
                                 <p className="text-[12px] text-[#64748b] dark:text-zinc-400">Joined recently</p>
@@ -694,7 +694,7 @@ export default function DesignSystem() {
                   <div className="bg-white dark:bg-[#0a0a0a] p-6 rounded-2xl border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm">
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-6">Button Loading States</h3>
                     <div className="flex flex-col gap-4 items-start">
-                      <button className="px-6 py-3 rounded-[10px] bg-[#1665ff] text-white font-bold text-[13.5px] flex items-center gap-2 cursor-not-allowed opacity-90">
+                      <button className="px-6 py-3 rounded-[10px] bg-[#0066FF] text-white font-bold text-[13.5px] flex items-center gap-2 cursor-not-allowed opacity-90">
                         <svg className="animate-spin -ml-1 mr-1.5 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -769,13 +769,13 @@ export default function DesignSystem() {
         footer={
           <>
             <button onClick={() => setShowStandardModal(false)} className="px-4 py-2 text-slate-600 font-semibold text-[13px] hover:bg-slate-200/50 rounded-lg transition-colors">Cancel</button>
-            <button onClick={() => setShowStandardModal(false)} className="px-5 py-2 bg-[#1665ff] text-white font-bold text-[13px] rounded-lg shadow-sm hover:bg-blue-600 transition-colors">Send Invitation</button>
+            <button onClick={() => setShowStandardModal(false)} className="px-5 py-2 bg-[#0066FF] text-white font-bold text-[13px] rounded-lg shadow-sm hover:bg-blue-600 transition-colors">Send Invitation</button>
           </>
         }
       >
         <p className="mb-4">Enter the email address of the team member you'd like to invite to this workspace. They will receive an email with instructions to join.</p>
         <div className="relative">
-          <input type="email" placeholder="colleague@company.com" className="w-full px-4 py-2.5 bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-lg text-[13.5px] outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10" />
+          <input type="email" placeholder="colleague@company.com" className="w-full px-4 py-2.5 bg-white dark:bg-[#0a0a0a] border border-[#e5e7eb] rounded-lg text-[13.5px] outline-none focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/10" />
         </div>
       </Modal>
 
@@ -862,14 +862,14 @@ function CustomDropdown({ options, placeholder }: { options: string[], placehold
     <div className="relative w-full" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className={`w-full flex items-center justify-between px-[14px] py-[12px] bg-white dark:bg-[#0a0a0a] border ${isOpen ? 'border-[#1665ff] ring-4 ring-[#1665ff]/10' : 'border-[#e5e7eb]'} rounded-[10px] text-[13.5px] transition-all cursor-pointer outline-none focus:border-[#1665ff] focus:ring-4 focus:ring-[#1665ff]/10`}
+        className={`w-full flex items-center justify-between px-[14px] py-[12px] bg-white dark:bg-[#0a0a0a] border ${isOpen ? 'border-[#0066FF] ring-4 ring-[#0066FF]/10' : 'border-[#e5e7eb]'} rounded-[10px] text-[13.5px] transition-all cursor-pointer outline-none focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/10`}
       >
         <span className={selected ? 'text-[#111827] dark:text-zinc-100' : 'text-[#9ca3af]'}>
           {selected || placeholder}
         </span>
         <motion.i 
           animate={{ rotate: isOpen ? 180 : 0 }} 
-          className={`fa-solid fa-chevron-down text-[11px] ${isOpen ? 'text-[#1665ff]' : 'text-[#9ca3af]'}`}
+          className={`fa-solid fa-chevron-down text-[11px] ${isOpen ? 'text-[#0066FF]' : 'text-[#9ca3af]'}`}
         ></motion.i>
       </button>
 
@@ -889,7 +889,7 @@ function CustomDropdown({ options, placeholder }: { options: string[], placehold
                   setSelected(option);
                   setIsOpen(false);
                 }}
-                className={`px-[14px] py-[10px] text-[13.5px] cursor-pointer transition-colors ${selected === option ? 'bg-[#eff6ff] text-[#1665ff] font-bold' : 'text-[#0f172a] dark:text-zinc-100 hover:bg-[#f8fafc] dark:bg-zinc-900/50'}`}
+                className={`px-[14px] py-[10px] text-[13.5px] cursor-pointer transition-colors ${selected === option ? 'bg-[#eff6ff] text-[#0066FF] font-bold' : 'text-[#0f172a] dark:text-zinc-100 hover:bg-[#f8fafc] dark:bg-zinc-900/50'}`}
               >
                 {option}
               </div>
