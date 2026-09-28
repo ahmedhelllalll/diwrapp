@@ -34,7 +34,9 @@ export interface HeaderProps {
   className?: string;
 }
 
-const MobileMenuDrawer = dynamic(() => import('./MobileMenuDrawer'));
+const MobileMenuDrawer = dynamic(() => import('./MobileMenuDrawer'), {
+  ssr: false,
+});
 
 export default function Header({
   lang,
@@ -48,6 +50,7 @@ export default function Header({
   className,
 }: HeaderProps = {}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hasOpenedMenu, setHasOpenedMenu] = useState(false);
   const pathname = usePathname() || '';
   const { theme, setTheme, resolvedTheme } = useTheme();
   const activeTheme = theme === 'system' ? resolvedTheme : theme;
@@ -258,7 +261,10 @@ export default function Header({
           <div className="flex lg:hidden items-center" dir="ltr">
             <button
               type="button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                if (!hasOpenedMenu) setHasOpenedMenu(true);
+                setIsMobileMenuOpen((prev) => !prev);
+              }}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               className="relative w-9 h-9 flex flex-col items-center justify-center gap-1.5 focus:outline-none cursor-pointer"
             >
@@ -282,20 +288,22 @@ export default function Header({
         </div>
       </header>
 
-      {/* Mobile Menu Drawer (Code-Split) */}
-      <MobileMenuDrawer
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        isRtl={isRtl}
-        currentLang={currentLang}
-        targetLangHref={targetLangHref}
-        navLinks={navLinks}
-        toggleTheme={toggleTheme}
-        isDark={isDark}
-        user={user}
-        dictNav={dictNav}
-        nav={nav}
-      />
+      {/* Mobile Menu Drawer (Code-Split: loads only after interaction) */}
+      {hasOpenedMenu && (
+        <MobileMenuDrawer
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          isRtl={isRtl}
+          currentLang={currentLang}
+          targetLangHref={targetLangHref}
+          navLinks={navLinks}
+          toggleTheme={toggleTheme}
+          isDark={isDark}
+          user={user}
+          dictNav={dictNav}
+          nav={nav}
+        />
+      )}
     </>
   );
 }
