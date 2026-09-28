@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Map, OpenInWindow, SelectWindow, Tv, CheckCircle, Coins } from 'iconoir-react';
 import { Badge } from '@/components/ui/Badge';
 
@@ -11,9 +11,12 @@ export interface HowItWorksSectionProps {
   lang?: string;
 }
 
+const appleEasing = [0.16, 1, 0.3, 1] as const;
+
 export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSectionProps) {
   const [activeTab, setActiveTab] = useState<'brands' | 'vendors'>('brands');
   const isRtl = lang === 'ar';
+  const shouldReduceMotion = useReducedMotion();
 
   const brandsCards = [
     {
@@ -56,41 +59,79 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
   return (
     <section className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 mt-6 sm:mt-12 lg:mt-20 mb-16 sm:mb-20 text-center flex flex-col items-center relative z-20">
       {/* 1. Eyebrow Badge (User Guide) */}
-      <Badge className="mb-4">
-        {dict?.howItWorks?.badge || dict?.badge || (isRtl ? "دليل المستخدم" : "User Guide")}
-      </Badge>
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, ease: appleEasing }}
+        className="mb-4"
+      >
+        <Badge>
+          {dict?.howItWorks?.badge || dict?.badge || (isRtl ? "دليل المستخدم" : "User Guide")}
+        </Badge>
+      </motion.div>
 
       {/* Title & Subtitle */}
-      <h2 className="text-[36px] font-medium leading-[44px] tracking-[-0.01em] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+      <motion.h2
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+        className="text-[36px] font-medium leading-[44px] tracking-[-0.01em] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+      >
         {dict?.howItWorks?.title || dict?.title || (isRtl ? "كيف تعمل المنصة" : "How it Works")}
-      </h2>
-      <p className="text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[1.65] rtl:leading-[1.8] max-w-[700px] mx-auto text-center mt-3 transition-colors">
-        {dict?.howItWorks?.description || dict?.howItWorks?.subtitle || dict?.subtitle || (isRtl ? "تمكين العلامات التجارية وأصحاب وسائل الإعلام من خلال منصة ذكية واحدة للاكتشاف والتخطيط والحجز بثقة" : "Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence")}
-      </p>
+      </motion.h2>
 
-      {/* 2. Segmented Pill Tab Switcher with Smooth Sliding Indicator */}
-      <div className="inline-flex items-center p-1 rounded-[14px] bg-[#F2F4F7] dark:bg-neutral-900 border border-[#EAECF0] dark:border-neutral-800 relative mt-8 mb-12">
+      <motion.p
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.16, ease: appleEasing }}
+        className="text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[1.65] rtl:leading-[1.8] max-w-[700px] mx-auto text-center mt-3 transition-colors"
+      >
+        {dict?.howItWorks?.description || dict?.howItWorks?.subtitle || dict?.subtitle || (isRtl ? "تمكين العلامات التجارية وأصحاب وسائل الإعلام من خلال منصة ذكية واحدة للاكتشاف والتخطيط والحجز بثقة" : "Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence")}
+      </motion.p>
+
+      {/* 2. Segmented Pill Tab Switcher with Pure CSS Sliding Indicator */}
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.24, ease: appleEasing }}
+        className="relative inline-grid grid-cols-2 p-1 rounded-[14px] bg-[#F2F4F7] dark:bg-neutral-900 border border-[#EAECF0] dark:border-neutral-800 mt-8 mb-12 w-full max-w-[320px] sm:max-w-[360px] select-none"
+        role="tablist"
+        aria-label={dict?.howItWorks?.title || "How it Works Tabs"}
+      >
+        {/* Hardware-accelerated sliding background pill */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1 bottom-1 start-1 w-[calc(50%-4px)] rounded-[10px] bg-white dark:bg-neutral-800 shadow-[0_1px_3px_rgba(16,24,40,0.1),0_1px_2px_rgba(16,24,40,0.06)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none"
+          style={{
+            insetInlineStart: '4px',
+            transform:
+              activeTab === 'brands'
+                ? 'translateX(0)'
+                : isRtl
+                ? 'translateX(-100%)'
+                : 'translateX(100%)',
+          }}
+        />
+
         {(['brands', 'vendors'] as const).map((tab) => {
           const isActive = activeTab === tab;
           return (
             <button
               key={tab}
               type="button"
+              role="tab"
+              aria-selected={isActive}
               onClick={() => setActiveTab(tab)}
-              className={`relative z-10 px-5 py-2 text-[14px] font-semibold transition-colors duration-200 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${
+              className={`relative z-10 px-4 py-2 sm:py-2.5 text-[13px] sm:text-[14px] font-semibold transition-colors duration-200 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-center truncate ${
                 isActive 
                   ? "text-heading dark:text-white" 
                   : "text-[#667085] dark:text-neutral-400 hover:text-heading dark:hover:text-white"
               }`}
             >
-              {isActive && (
-                <motion.div
-                  layoutId="activeHowItWorksTab"
-                  className="absolute inset-0 bg-white dark:bg-neutral-800 rounded-[10px] shadow-[0_1px_3px_rgba(16,24,40,0.1),0_1px_2px_rgba(16,24,40,0.06)]"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  style={{ zIndex: -1 }}
-                />
-              )}
               <span>
                 {tab === 'brands' 
                   ? (dict?.howItWorks?.forBrands || dict?.forBrands || (isRtl ? "أعلن معنا" : "For Brands"))
@@ -100,23 +141,31 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
             </button>
           );
         })}
-      </div>
+      </motion.div>
 
-      {/* 3 & 4. Cards Structure with In-Place Content Fade and Minimalist Hover */}
+      {/* 3 & 4. Cards Structure with Staggered Entrance and Smooth In-Place Crossfade */}
       <div className="w-full max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {currentCards.map((card, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="group rounded-2xl p-7 text-left rtl:text-right flex flex-col justify-start bg-white/80 dark:bg-white/[0.03] backdrop-blur-md border border-neutral-200/80 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.18] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 ease-out hover:-translate-y-1"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.75,
+                delay: shouldReduceMotion ? 0 : 0.32 + idx * 0.08,
+                ease: appleEasing,
+              }}
+              className="group rounded-2xl p-7 text-left rtl:text-right flex flex-col justify-start bg-white/80 dark:bg-white/[0.03] backdrop-blur-md border border-neutral-200/80 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.18] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 ease-out hover:-translate-y-1 min-h-[200px]"
             >
               <AnimatePresence initial={false} mode="wait">
                 <motion.div
                   key={`${activeTab}-${idx}`}
-                  initial={{ opacity: 0, y: 4 }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.25, ease: appleEasing }}
                   className="flex flex-col h-full"
                 >
                   {/* Transparent Reacting Icon Container */}
@@ -133,7 +182,7 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
                   </p>
                 </motion.div>
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
