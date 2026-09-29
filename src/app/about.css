@@ -78,6 +78,8 @@
   margin-right: auto;
   text-wrap: balance;
   opacity: 1;
+  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
+  will-change: transform;
 }
 
 [dir="rtl"] .about-title {
