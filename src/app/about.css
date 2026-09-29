@@ -78,8 +78,6 @@
   margin-right: auto;
   text-wrap: balance;
   opacity: 1;
-  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
-  will-change: transform;
 }
 
 [dir="rtl"] .about-title {
@@ -117,7 +115,6 @@
   gap: 24px;
   position: relative;
   z-index: 10;
-  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s backwards;
 }
 
 @media (min-width: 1024px) {
@@ -158,8 +155,7 @@
 
 /* Info Pill Card */
 .about-info-card {
-  background-color: #F4F5F7;
-  border: 1px solid transparent;
+  background-color: #f1f5f9;
   border-radius: 24px;
   padding: 24px 32px;
   display: flex;
@@ -170,8 +166,7 @@
 }
 
 .dark .about-info-card {
-  background-color: var(--surface-3, #18181B);
-  border-color: #27272A;
+  background-color: #1e293b;
 }
 
 .about-pill {

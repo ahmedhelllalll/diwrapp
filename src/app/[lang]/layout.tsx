@@ -56,7 +56,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     metadataBase: new URL('https://diwrapp.com'),
     title: {
-      template: '%s | Diwrapp',
+      template: '%s | DiWrapp',
       default: dict.metadata.defaultTitle,
     },
     description: dict.metadata.defaultDescription,
