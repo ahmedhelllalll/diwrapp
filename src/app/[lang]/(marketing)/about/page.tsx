@@ -4,6 +4,7 @@ import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
 import "../../../about.css";
 import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
+import { Badge } from "@/components/ui/Badge";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -28,10 +29,10 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
       <main className="bg-white dark:bg-surface-1 transition-colors duration-300 flex-grow">
           
           <section className="about-hero">
-            <div className="about-badge">
+            <Badge variant="outline-sm" className="about-badge">
               <EmojiSingRight width={16} height={16} strokeWidth={1.5} className="about-badge-icon rtl:-scale-x-100" />
               <span>{about?.badge}</span>
-            </div>
+            </Badge>
 
             <h1 
               className="about-title text-slate-900 dark:text-white"
@@ -92,10 +93,10 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
           <section className="about-overview-section">
             <div className="about-overview-container">
               <div className="overview-divider" />
-              <div className="overview-badge">
+              <Badge variant="brand-solid" className="overview-badge">
                 <Planet width={16} height={16} strokeWidth={1.75} className="overview-badge-icon" />
                 <span>{about?.overview?.badge}</span>
-              </div>
+              </Badge>
 
               <div className="overview-grid">
                 <div className="overview-left">
@@ -129,10 +130,10 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
               {/* Top Header */}
               <div className="features-header">
                 <div className="features-header-left">
-                  <div className="features-badge">
+                  <Badge variant="pill" className="features-badge">
                     <Key width={16} height={16} strokeWidth={1.75} className="features-badge-icon" />
                     <span>{features?.badge}</span>
-                  </div>
+                  </Badge>
                 </div>
 
                 <div className="features-header-right">
