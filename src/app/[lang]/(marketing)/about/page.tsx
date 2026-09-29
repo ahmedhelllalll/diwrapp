@@ -6,6 +6,7 @@ import { Locale } from "@/i18n-config";
 import "../../../about.css";
 import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
 import { Badge } from "@/components/ui/Badge";
+import { OverviewMotion, FeaturesHeaderMotion, FeaturesCardMotion } from "@/components/marketing/about/AboutMotionSections";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -118,7 +119,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                 <span>{about?.overview?.badge}</span>
               </Badge>
 
-              <div className="overview-grid">
+              <OverviewMotion className="overview-grid">
                 <div className="overview-left">
                   <h2 
                     className="overview-heading"
@@ -138,7 +139,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                     <p className="overview-item-desc">{about?.overview?.missionText}</p>
                   </div>
                 </div>
-              </div>
+              </OverviewMotion>
 
               <div className="overview-divider overview-divider-bottom" />
             </div>
@@ -148,7 +149,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
           <section className="about-features-section">
             <div className="about-features-container">
               {/* Top Header */}
-              <div className="features-header">
+              <FeaturesHeaderMotion className="features-header">
                 <div className="features-header-left">
                   <Badge variant="pill" className="features-badge">
                     <Key width={16} height={16} strokeWidth={1.75} className="features-badge-icon" />
@@ -163,12 +164,12 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   />
                   <p className="features-subtitle">{features?.subtitle}</p>
                 </div>
-              </div>
+              </FeaturesHeaderMotion>
 
               {/* Cards Grid */}
               <div className="features-grid">
                 {/* Column 1: Tall Tablet Card */}
-                <div className="features-tall-card">
+                <FeaturesCardMotion delay={0} className="features-tall-card">
                   <div className="features-tablet-wrap">
                     <Image 
                       src="/assets/tablet-image.webp" 
@@ -195,14 +196,14 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       <span className="sr-only"> - {features?.card1Title}</span>
                     </Link>
                   </div>
-                </div>
+                </FeaturesCardMotion>
 
                 {/* Column 2 & 3: Right Column Grid */}
                 <div className="features-right-col">
                   {/* Top Row: Two Cards */}
                   <div className="features-right-top">
                     {/* Card 2: Enterprise Platform */}
-                    <div className="features-card">
+                    <FeaturesCardMotion delay={0.08} className="features-card">
                       <div className="features-icon-box">
                         <PlanetSat width={22} height={22} strokeWidth={1.5} />
                       </div>
@@ -210,10 +211,10 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <h3 className="features-card-title">{features?.card2Title}</h3>
                         <p className="features-card-desc">{features?.card2Desc}</p>
                       </div>
-                    </div>
+                    </FeaturesCardMotion>
 
                     {/* Card 3: Scalable Infrastructure */}
-                    <div className="features-card">
+                    <FeaturesCardMotion delay={0.16} className="features-card">
                       <div className="features-icon-box">
                         <ScaleFrameEnlarge width={22} height={22} strokeWidth={1.5} />
                       </div>
@@ -221,11 +222,11 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <h3 className="features-card-title">{features?.card3Title}</h3>
                         <p className="features-card-desc">{features?.card3Desc}</p>
                       </div>
-                    </div>
+                    </FeaturesCardMotion>
                   </div>
 
                   {/* Bottom Row: Wide Card */}
-                  <div className="features-card features-wide-card">
+                  <FeaturesCardMotion delay={0.24} className="features-card features-wide-card">
                     <div className="features-icon-box">
                       <SystemRestart width={22} height={22} strokeWidth={1.5} />
                     </div>
@@ -245,7 +246,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <span className="sr-only"> - {features?.card4Title}</span>
                       </Link>
                     </div>
-                  </div>
+                  </FeaturesCardMotion>
                 </div>
               </div>
             </div>

@@ -39,6 +39,7 @@
   box-sizing: border-box;
   opacity: 1;
   transition: all 0.2s ease;
+  animation: heroFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
 }
 
 [dir="rtl"] .about-badge {
@@ -76,6 +77,9 @@
   margin-left: auto;
   margin-right: auto;
   text-wrap: balance;
+  opacity: 1;
+  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
+  will-change: transform;
 }
 
 [dir="rtl"] .about-title {
@@ -113,6 +117,7 @@
   gap: 24px;
   position: relative;
   z-index: 10;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s backwards;
 }
 
 @media (min-width: 1024px) {
@@ -1519,3 +1524,13 @@
 [dir="rtl"] .testimonials-marquee-track {
   animation-direction: reverse;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-badge,
+  .about-title,
+  .about-cards-container {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
