@@ -29,7 +29,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
           
           <section className="about-hero">
             <div className="about-badge">
-              <EmojiSingRight width={16} height={16} strokeWidth={1.5} className="about-badge-icon" />
+              <EmojiSingRight width={16} height={16} strokeWidth={1.5} className="about-badge-icon rtl:-scale-x-100" />
               <span>{about?.badge}</span>
             </div>
 
