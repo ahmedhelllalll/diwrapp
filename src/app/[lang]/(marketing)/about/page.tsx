@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
 import "../../../about.css";
@@ -22,7 +23,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
   const dict = await getDictionary(lang);
   const about = dict.about;
   const features = about?.features;
-  const testimonials = (about as any)?.testimonials;
+  const testimonials = about?.testimonials;
 
   return (
     <div className="about-scope">
@@ -59,8 +60,13 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
               <div className="about-info-card">
                 <div className="about-pill">
                   <div className="pill-icon">
-                    {/* INSTRUCTION: Replace this with the actual logo icon if needed */}
-                    <img src="/assets/logo-icon-white.png" alt="Logo" className="w-6 h-6 object-contain" />
+                    <Image 
+                      src="/assets/logo-icon-white.png" 
+                      alt="Di-wrapp Logo" 
+                      width={24} 
+                      height={24} 
+                      className="w-6 h-6 object-contain" 
+                    />
                   </div>
                   <span>{about?.leftPill}</span>
                 </div>
@@ -83,7 +89,13 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
               </div>
 
               <div className="tall-card-content">
-                <img src="/assets/logo-icon-white.png" alt="Di-wrapp Logo" />
+                <Image 
+                  src="/assets/logo-icon-white.png" 
+                  alt="Di-wrapp Logo" 
+                  width={36} 
+                  height={18} 
+                  className="object-contain" 
+                />
                 <p dangerouslySetInnerHTML={{ __html: about?.rightText || '' }} />
               </div>
             </div>
@@ -166,9 +178,9 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       <p className="features-card-desc">{features?.card1Desc}</p>
                     </div>
 
-                    <a href={`/${lang}/marketplace`} className="features-card-btn">
+                    <Link href={`/${lang}/marketplace`} className="features-card-btn">
                       <span>{features?.card1Btn}</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -211,9 +223,9 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <p className="features-card-desc">{features?.card4Desc}</p>
                       </div>
 
-                      <a href={`/${lang}/commercial-models`} className="features-card-btn">
+                      <Link href={`/${lang}/commercial-models`} className="features-card-btn">
                         <span>{features?.card4Btn}</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
