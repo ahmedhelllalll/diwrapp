@@ -153,8 +153,8 @@
 
 /* Info Pill Card */
 .about-info-card {
-  background-color: #f1f5f9;
-  /* Slate 100 */
+  background-color: #F4F5F7;
+  border: 1px solid transparent;
   border-radius: 24px;
   padding: 24px 32px;
   display: flex;
@@ -165,8 +165,8 @@
 }
 
 .dark .about-info-card {
-  background-color: #1e293b;
-  /* Slate 800 */
+  background-color: var(--surface-3, #18181B);
+  border-color: #27272A;
 }
 
 .about-pill {
@@ -451,7 +451,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #0062FF;
+  background-color: var(--brand, #0066FF);
   color: #ffffff;
   border-radius: 9999px;
   padding-block: 4px;
@@ -711,7 +711,7 @@
 
 .dark .features-card,
 .dark .features-tall-card {
-  background-color: #18181B;
+  background-color: var(--surface-3, #18181B);
   border-color: #27272A;
 }
 

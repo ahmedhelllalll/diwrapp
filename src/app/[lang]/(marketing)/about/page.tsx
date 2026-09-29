@@ -25,7 +25,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
 
   return (
     <div className="about-scope">
-      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
+      <main className="bg-white dark:bg-surface-1 transition-colors duration-300 flex-grow">
           
           <section className="about-hero">
             <div className="about-badge">
