@@ -451,7 +451,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--brand, #0066FF);
+  background-color: var(--brand);
   color: #ffffff;
   border-radius: 9999px;
   padding-block: 4px;
@@ -1395,7 +1395,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 34px;
-  background-color: #0062FF;
+  background-color: var(--brand);
   color: #FFFFFF;
   font-family: 'Lufga', sans-serif;
   font-size: 15px;
