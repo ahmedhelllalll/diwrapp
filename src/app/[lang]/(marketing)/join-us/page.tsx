@@ -8,13 +8,22 @@ import PlatformFeaturesSection from '@/components/marketing/join-us/PlatformFeat
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   const meta = (dict as any)?.metadata;
   const joinMeta = meta?.joinUs;
 
   return {
-    title: `${joinMeta?.title || 'Join Us'} - Di-Wrapp`,
+    title: joinMeta?.title || 'Join Us',
     description: joinMeta?.description || 'Clone Yourself. Scale Your Expertise. Extend Your Reach. A Digital Marketplace that Operate Without Limits.',
+    alternates: {
+      canonical: `/${lang}/join-us`,
+      languages: {
+        en: '/en/join-us',
+        ar: '/ar/join-us',
+        'x-default': '/en/join-us',
+      },
+    },
   };
 }
 

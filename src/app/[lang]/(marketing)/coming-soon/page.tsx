@@ -9,8 +9,9 @@ export async function generateMetadata(props: {
   searchParams?: Promise<{ feature?: string; title?: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
+  const lang = params.lang as Locale;
   const searchParams = props.searchParams ? await props.searchParams : undefined;
-  const dict = await getDictionary(params.lang as Locale);
+  const dict = await getDictionary(lang);
   const stayTuned = (dict as any)?.stayTuned;
 
   const rawFeature = searchParams?.title || searchParams?.feature;
@@ -18,9 +19,17 @@ export async function generateMetadata(props: {
 
   return {
     title: featureLabel 
-      ? `${featureLabel} - ${stayTuned?.screenStayTuned || 'Coming Soon'} | Di-Wrapp`
-      : `${stayTuned?.screenStayTuned || 'Stay Tuned'} - Di-Wrapp`,
+      ? `${featureLabel} - ${stayTuned?.screenStayTuned || 'Coming Soon'}`
+      : `${stayTuned?.screenStayTuned || 'Stay Tuned'}`,
     description: stayTuned?.description || 'Stay tuned for exclusive updates and early access!',
+    alternates: {
+      canonical: `/${lang}/coming-soon`,
+      languages: {
+        en: '/en/coming-soon',
+        ar: '/ar/coming-soon',
+        'x-default': '/en/coming-soon',
+      },
+    },
   };
 }
 

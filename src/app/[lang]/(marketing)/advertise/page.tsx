@@ -9,13 +9,22 @@ import AiCarouselSection from "@/components/marketing/advertise/AiCarouselSectio
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   const adv = dict.advertise as any;
   const meta = dict.metadata as any;
 
   return {
-    title: `${meta?.advertise?.title || 'Advertise'} - Di-Wrapp`,
+    title: meta?.advertise?.title || 'Advertise',
     description: meta?.advertise?.description || `${adv?.heroTitleLight} ${adv?.heroTitleBold}`,
+    alternates: {
+      canonical: `/${lang}/advertise`,
+      languages: {
+        en: '/en/advertise',
+        ar: '/ar/advertise',
+        'x-default': '/en/advertise',
+      },
+    },
   };
 }
 

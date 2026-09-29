@@ -15,8 +15,16 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const contact = (dict as any).contact;
 
   return {
-    title: `${meta?.contact?.title || 'Contact Us'} - Di-Wrapp`,
+    title: meta?.contact?.title || 'Contact Us',
     description: meta?.contact?.description || contact?.hero?.subtitle || "Let’s Get Connected",
+    alternates: {
+      canonical: `/${lang}/contact`,
+      languages: {
+        en: '/en/contact',
+        ar: '/ar/contact',
+        'x-default': '/en/contact',
+      },
+    },
   };
 }
 

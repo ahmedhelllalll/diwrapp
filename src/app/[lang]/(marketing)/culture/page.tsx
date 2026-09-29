@@ -14,8 +14,16 @@ export async function generateMetadata(props: {
   const culture = (dict as any).culture;
 
   return {
-    title: `${culture?.badge || 'Our Culture'} - Di-Wrapp`,
+    title: culture?.badge || 'Our Culture',
     description: culture?.subtitle || 'We believe in a work culture that feels as good as it performs.',
+    alternates: {
+      canonical: `/${lang}/culture`,
+      languages: {
+        en: '/en/culture',
+        ar: '/ar/culture',
+        'x-default': '/en/culture',
+      },
+    },
   };
 }
 

@@ -14,8 +14,16 @@ export async function generateMetadata(props: {
   const vendorHero = (dict as any).vendorPortalHero;
 
   return {
-    title: `${vendorHero?.badge || 'Vendor Portal'} - Di-Wrapp`,
+    title: vendorHero?.badge || 'Vendor Portal',
     description: (vendorHero?.subtitle || 'Empower Your Inventory, Unlock New Revenue with Di_Wrapp.').trim(),
+    alternates: {
+      canonical: `/${lang}/vendor`,
+      languages: {
+        en: '/en/vendor',
+        ar: '/ar/vendor',
+        'x-default': '/en/vendor',
+      },
+    },
   };
 }
 

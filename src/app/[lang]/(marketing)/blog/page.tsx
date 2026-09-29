@@ -5,14 +5,23 @@ import ComingSoonView from '@/components/marketing/coming-soon/ComingSoonView';
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   const stayTuned = (dict as any)?.stayTuned;
   const blogMeta = (dict as any)?.metadata?.blog;
   const navBlog = dict.landing?.nav?.blog || 'Blog';
 
   return {
-    title: `${blogMeta?.title || `${navBlog} - Stay Tuned`} - Di-Wrapp`,
+    title: blogMeta?.title || `${navBlog} - Stay Tuned`,
     description: blogMeta?.description || stayTuned?.description || 'Stay tuned for exclusive updates and early access!',
+    alternates: {
+      canonical: `/${lang}/blog`,
+      languages: {
+        en: '/en/blog',
+        ar: '/ar/blog',
+        'x-default': '/en/blog',
+      },
+    },
   };
 }
 

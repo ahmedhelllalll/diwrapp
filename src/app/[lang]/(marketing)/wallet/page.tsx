@@ -15,10 +15,18 @@ export async function generateMetadata(props: {
   const wallet = (dict as any).wallet;
 
   return {
-    title: `${meta?.title || 'Wallet'} - Di-Wrapp`,
+    title: meta?.title || 'Wallet',
     description:
       meta?.description ||
       `${wallet?.heroTitleLine1 || 'Secure, Flexible &'} ${wallet?.heroTitleLine2 || 'Instant Transactions'}`,
+    alternates: {
+      canonical: `/${lang}/wallet`,
+      languages: {
+        en: '/en/wallet',
+        ar: '/ar/wallet',
+        'x-default': '/en/wallet',
+      },
+    },
   };
 }
 

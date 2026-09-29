@@ -13,8 +13,16 @@ export async function generateMetadata(props: {
   const askDi = (dict as any).askDiHero;
 
   return {
-    title: `${askDi?.badge || 'Ask_Di AI Assistant'} - Di-Wrapp`,
+    title: askDi?.badge || 'Ask_Di AI Assistant',
     description: `${askDi?.subtitleNormal || ''} ${askDi?.subtitleBold || ''}`.trim(),
+    alternates: {
+      canonical: `/${lang}/ask-di`,
+      languages: {
+        en: '/en/ask-di',
+        ar: '/ar/ask-di',
+        'x-default': '/en/ask-di',
+      },
+    },
   };
 }
 

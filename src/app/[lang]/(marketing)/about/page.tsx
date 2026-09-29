@@ -10,10 +10,19 @@ import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestar
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   return {
-    title: `${dict.about?.badge || 'About Us'} - Di-Wrapp`,
+    title: dict.about?.badge || 'About Us',
     description: dict.about?.title?.replace(/<[^>]*>?/gm, ''), // strip html tags for meta
+    alternates: {
+      canonical: `/${lang}/about`,
+      languages: {
+        en: '/en/about',
+        ar: '/ar/about',
+        'x-default': '/en/about',
+      },
+    },
   };
 }
 
@@ -178,8 +187,13 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       <p className="features-card-desc">{features?.card1Desc}</p>
                     </div>
 
-                    <Link href={`/${lang}/marketplace`} className="features-card-btn">
+                    <Link 
+                      href={`/${lang}/marketplace`} 
+                      className="features-card-btn"
+                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di_Wrapp Media Player'}`}
+                    >
                       <span>{features?.card1Btn}</span>
+                      <span className="sr-only"> - {features?.card1Title}</span>
                     </Link>
                   </div>
                 </div>
@@ -223,8 +237,13 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <p className="features-card-desc">{features?.card4Desc}</p>
                       </div>
 
-                      <Link href={`/${lang}/commercial-models`} className="features-card-btn">
+                      <Link 
+                        href={`/${lang}/commercial-models`} 
+                        className="features-card-btn"
+                        aria-label={`${features?.card4Btn || 'Read More'}: ${features?.card4Title || 'Flexible Commercial Models'}`}
+                      >
                         <span>{features?.card4Btn}</span>
+                        <span className="sr-only"> - {features?.card4Title}</span>
                       </Link>
                     </div>
                   </div>

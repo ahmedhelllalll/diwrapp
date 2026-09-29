@@ -9,10 +9,19 @@ import SignupFormClient from "./SignupFormClient";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   return {
     title: dict.metadata.signup.title,
     description: dict.metadata.signup.description,
+    alternates: {
+      canonical: `/${lang}/signup`,
+      languages: {
+        en: '/en/signup',
+        ar: '/ar/signup',
+        'x-default': '/en/signup',
+      },
+    },
   };
 }
 

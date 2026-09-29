@@ -23,8 +23,16 @@ export async function generateMetadata(props: {
       : onboarding?.step1;
 
   return {
-    title: `${stepInfo?.title || 'Vendor Onboarding'} - Di-Wrapp`,
+    title: stepInfo?.title || 'Vendor Onboarding',
     description: (stepInfo?.subtitle || stepInfo?.emailNotice || 'Tell us about your organization').trim(),
+    alternates: {
+      canonical: `/${lang}/vendor/onboarding`,
+      languages: {
+        en: '/en/vendor/onboarding',
+        ar: '/ar/vendor/onboarding',
+        'x-default': '/en/vendor/onboarding',
+      },
+    },
   };
 }
 

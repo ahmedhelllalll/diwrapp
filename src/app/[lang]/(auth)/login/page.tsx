@@ -9,10 +9,19 @@ import { Input } from "@/components/ui/Input";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   return {
     title: dict.metadata.login.title,
     description: dict.metadata.login.description,
+    alternates: {
+      canonical: `/${lang}/login`,
+      languages: {
+        en: '/en/login',
+        ar: '/ar/login',
+        'x-default': '/en/login',
+      },
+    },
   };
 }
 

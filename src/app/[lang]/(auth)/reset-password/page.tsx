@@ -9,10 +9,19 @@ import { Input } from "@/components/ui/Input";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const dict = await getDictionary(params.lang as Locale);
+  const lang = params.lang as Locale;
+  const dict = await getDictionary(lang);
   return {
     title: dict.metadata.resetPassword.title,
     description: dict.metadata.resetPassword.description,
+    alternates: {
+      canonical: `/${lang}/reset-password`,
+      languages: {
+        en: '/en/reset-password',
+        ar: '/ar/reset-password',
+        'x-default': '/en/reset-password',
+      },
+    },
   };
 }
 
