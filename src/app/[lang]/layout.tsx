@@ -6,6 +6,7 @@ import { Locale, i18n } from "../../i18n-config";
 import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
+import NavigationProgressBar from "@/components/common/NavigationProgressBar";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -102,6 +103,7 @@ export default async function RootLayout(
           enableSystem={false}
           disableTransitionOnChange
         >
+          <NavigationProgressBar />
           <SmoothScroll>{props.children}</SmoothScroll>
         </ThemeProvider>
       </body>

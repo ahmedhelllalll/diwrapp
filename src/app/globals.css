@@ -476,5 +476,33 @@ html[dir="rtl"] .animate-marquee-left-row3 {
   animation-name: marqueeFlowRight;
 }
 
+/* ==========================================================================
+   Page-Transition Progress Bar
+   ========================================================================== */
+.navigation-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: var(--brand);
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: left;
+  will-change: transform, opacity;
+}
+
+[dir="rtl"] .navigation-progress-bar {
+  transform-origin: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-progress-bar {
+    transition: none !important;
+    transform: scaleX(1) !important;
+  }
+}
+
+
 
 
