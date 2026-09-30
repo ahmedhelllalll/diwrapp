@@ -337,9 +337,15 @@
   }
 }
 
+@media (max-width: 767px) {
+  .about-hero {
+    padding-top: 96px;
+  }
+}
+
 @media (max-width: 639px) {
   .about-hero {
-    padding: 72px 1rem 0;
+    padding: 96px 1rem 0;
   }
 
   .about-badge {
@@ -541,8 +547,16 @@
   line-height: 25px;
   font-weight: 400;
   letter-spacing: 0;
-  text-align: justify;
+  text-align: start;
   color: var(--Text-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .overview-desc,
+  .overview-item-desc,
+  .about-overview-section p {
+    text-align: justify;
+  }
 }
 
 .dark .overview-desc,
@@ -1466,7 +1480,11 @@
   animation: testimonialsMarquee 32s linear infinite;
 }
 
-.testimonials-marquee-track:hover {
+.testimonials-marquee-track:hover,
+.testimonials-marquee-track:active,
+.testimonials-marquee-container:hover .testimonials-marquee-track,
+.testimonials-marquee-container:active .testimonials-marquee-track,
+.testimonials-marquee-track.is-paused {
   animation-play-state: paused;
 }
 
@@ -1479,6 +1497,13 @@
   flex-shrink: 0;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--card-border);
+}
+
+@media (max-width: 639px) {
+  .testimonials-marquee-card {
+    width: 96px;
+    border-radius: 12px;
+  }
 }
 
 .dark .testimonials-marquee-card {
@@ -1535,7 +1560,8 @@
 @media (prefers-reduced-motion: reduce) {
   .about-badge,
   .about-title,
-  .about-cards-container {
+  .about-cards-container,
+  .testimonials-marquee-track {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

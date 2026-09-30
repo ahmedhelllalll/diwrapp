@@ -150,7 +150,7 @@ function CardItem({
 
   return (
     <div
-      className={`testimonials-card bg-[#F9FAFB] rounded-2xl overflow-hidden opacity-100 ${className}`}
+      className={`testimonials-card rounded-2xl overflow-hidden opacity-100 ${className}`}
     >
       <img
         src={imgSrc}
@@ -186,6 +186,8 @@ export default function TestimonialsSection({
   ctaText = 'Book Your Spot Now',
   ctaHref = `/${lang}/booking`,
 }: TestimonialsSectionProps) {
+  const [isTouchPaused, setIsTouchPaused] = useState(false);
+
   return (
     <section className="about-testimonials-section">
       <div className="testimonials-container">
@@ -200,14 +202,14 @@ export default function TestimonialsSection({
             <div className="testimonials-flank testimonials-flank-left">
               {/* Column 1: Far Left */}
               <div className="testimonials-col testimonials-col-1">
-                <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                 <CardItem client={CLIENT_PROFILES[0]} />
                 <CardItem client={CLIENT_PROFILES[1]} />
               </div>
 
               {/* Column 2: Second Outer */}
               <div className="testimonials-col testimonials-col-2">
-                <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                 <CardItem client={CLIENT_PROFILES[2]} />
                 <CardItem client={CLIENT_PROFILES[3]} />
               </div>
@@ -218,23 +220,23 @@ export default function TestimonialsSection({
               {/* Arch Top (Columns 3, 4, 5, 6, 7: Inner / central 100% opacity) */}
               <div className="testimonials-arch-top">
                 <div className="testimonials-col testimonials-col-3">
-                  <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                  <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                   <CardItem client={CLIENT_PROFILES[4]} />
                 </div>
                 <div className="testimonials-col testimonials-col-4">
-                  <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                  <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                   <CardItem client={CLIENT_PROFILES[5]} />
                 </div>
                 <div className="testimonials-col testimonials-col-5">
-                  <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                  <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                   <CardItem client={CLIENT_PROFILES[6]} />
                 </div>
                 <div className="testimonials-col testimonials-col-6">
-                  <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                  <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                   <CardItem client={CLIENT_PROFILES[7]} />
                 </div>
                 <div className="testimonials-col testimonials-col-7">
-                  <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                  <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                   <CardItem client={CLIENT_PROFILES[8]} />
                 </div>
               </div>
@@ -265,14 +267,14 @@ export default function TestimonialsSection({
             <div className="testimonials-flank testimonials-flank-right">
               {/* Column 8: Second Outer */}
               <div className="testimonials-col testimonials-col-8">
-                <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                 <CardItem client={CLIENT_PROFILES[9]} />
                 <CardItem client={CLIENT_PROFILES[10]} />
               </div>
 
               {/* Column 9: Far Right */}
               <div className="testimonials-col testimonials-col-9">
-                <div className="testimonials-placeholder-card bg-[#F9FAFB] rounded-2xl overflow-hidden" />
+                <div className="testimonials-placeholder-card rounded-2xl overflow-hidden" />
                 <CardItem client={CLIENT_PROFILES[11]} />
                 <CardItem client={CLIENT_PROFILES[12]} />
               </div>
@@ -285,14 +287,36 @@ export default function TestimonialsSection({
             MOBILE & TABLET (< 1024px): Smooth Auto-Scrolling Ribbon + Content
             ========================================================================= */}
         <div className="testimonials-mobile-wrapper">
-          <div className="testimonials-marquee-container">
-            <div className="testimonials-marquee-track">
-              {[...CLIENT_PROFILES, ...CLIENT_PROFILES].map((client, idx) => (
-                <div key={`${client.id}-${idx}`} className="testimonials-marquee-card bg-[#F9FAFB]">
+          <div 
+            className="testimonials-marquee-container"
+            onTouchStart={() => setIsTouchPaused(true)}
+            onTouchEnd={() => setIsTouchPaused(false)}
+            onTouchCancel={() => setIsTouchPaused(false)}
+          >
+            <div className={`testimonials-marquee-track ${isTouchPaused ? 'is-paused' : ''}`}>
+              {CLIENT_PROFILES.map((client) => (
+                <div key={`client-primary-${client.id}`} className="testimonials-marquee-card">
                   <img
                     src={`/images/testimonials/${client.imageFileName}`}
                     alt={client.name}
+                    width={115}
+                    height={144}
+                    sizes="(max-width: 639px) 96px, 115px"
                     loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+              {CLIENT_PROFILES.map((client) => (
+                <div key={`client-dup-${client.id}`} className="testimonials-marquee-card" aria-hidden="true">
+                  <img
+                    src={`/images/testimonials/${client.imageFileName}`}
+                    alt=""
+                    width={115}
+                    height={144}
+                    sizes="(max-width: 639px) 96px, 115px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}
