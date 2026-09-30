@@ -750,6 +750,8 @@
   user-select: none;
   pointer-events: none;
   width: 190%;
+  min-width: 190%;
+  flex-shrink: 0;
   max-width: none;
   display: block;
   transform: translateX(-4%);
@@ -969,6 +971,8 @@
 
   .features-tablet-img {
     width: 100% !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
     max-width: 100% !important;
     transform: none !important;
   }
