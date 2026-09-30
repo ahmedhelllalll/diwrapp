@@ -13,19 +13,24 @@ const DESKTOP_IMAGES = [
   'client-12.png', 'client-13.png',
 ];
 
-// Reordered so the same face never sits directly above itself
+// Disjoint sets: Row 1 (7 photos, even indices), Row 2 (6 photos, odd indices)
 const ROW_1_IMAGES = [
-  'client-01.png', 'client-02.png', 'client-03.png', 'client-04.png',
-  'client-05.png', 'client-06.png', 'client-07.png', 'client-08.png',
-  'client-09.png', 'client-10.png', 'client-11.png', 'client-12.png',
+  'client-01.png',
+  'client-03.png',
+  'client-05.png',
+  'client-07.png',
+  'client-09.png',
+  'client-11.png',
   'client-13.png',
 ];
 
 const ROW_2_IMAGES = [
-  'client-08.png', 'client-03.png', 'client-11.png', 'client-05.png',
-  'client-13.png', 'client-02.png', 'client-09.png', 'client-04.png',
-  'client-12.png', 'client-07.png', 'client-01.png', 'client-10.png',
+  'client-02.png',
+  'client-04.png',
   'client-06.png',
+  'client-08.png',
+  'client-10.png',
+  'client-12.png',
 ];
 
 function DesktopCardItem({
