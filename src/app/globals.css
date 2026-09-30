@@ -9,10 +9,14 @@
   --surface-1: #080808;
   --surface-2: #121214;
   --surface-3: #18181B;
+  --card-surface: #ffffff;
+  --card-border: #e2e8f0;
   --font-sans: var(--font-lufga), sans-serif;
   --font-lufga: var(--font-lufga), sans-serif;
   --font-cairo: var(--font-cairo), sans-serif;
+  --Text-text-secondary: #344054;
   --Text-text-tertiary: #637083;
+  --Border-Colors-border-200: #E4E7EC;
   --grid-line-color: #E4E7EC;
 }
 
@@ -30,6 +34,10 @@ html[dir="rtl"] {
   --color-surface-1: #080808;
   --color-surface-2: #121214;
   --color-surface-3: #18181B;
+  --color-card-surface: var(--card-surface);
+  --color-card-border: var(--card-border);
+  --color-text-secondary: var(--Text-text-secondary);
+  --color-text-tertiary: var(--Text-text-tertiary);
   --font-sans: var(--font-lufga), sans-serif;
   --font-lufga: var(--font-lufga), sans-serif;
   --font-mono: var(--font-geist-mono);
@@ -58,7 +66,12 @@ html[dir="rtl"] .font-lufga {
 .dark {
   --background: #020617;
   --foreground: #f1f5f9;
+  --heading: #f8fafc;
+  --card-surface: #0a0a0a;
+  --card-border: #27272A;
+  --Text-text-secondary: #d4d4d8;
   --Text-text-tertiary: #94a3b8;
+  --Border-Colors-border-200: #27272A;
   --grid-line-color: rgba(255, 255, 255, 0.07);
 }
 

@@ -37,7 +37,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
 
   return (
     <div className="about-scope">
-      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
+      <main className="bg-[var(--background)] dark:bg-[var(--surface-1)] transition-colors duration-300 flex-grow">
           
           <section className="about-hero">
             <Badge variant="outline-sm" className="about-badge">
@@ -46,7 +46,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             </Badge>
 
             <h1 
-              className="about-title text-slate-900 dark:text-white"
+              className="about-title"
               dangerouslySetInnerHTML={{ __html: about?.title || '' }}
             />
           </section>
