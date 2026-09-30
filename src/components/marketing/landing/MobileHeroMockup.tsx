@@ -34,8 +34,8 @@ export default function MobileHeroMockup({
       </div>
 
       {/* Phone Mockup Foreground Layer (z-20) */}
-      <div className="w-[130%] max-w-[720px] sm:max-w-[840px] shrink-0 mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 px-2 sm:px-4 translate-x-36 sm:translate-x-48 bg-transparent relative z-20">
-        <div className="hero-lcp-mockup w-full">
+      <div className="w-full max-w-[480px] sm:max-w-[600px] shrink-0 mt-8 sm:mt-10 mb-0 -mb-4 sm:-mb-6 pb-0 px-4 bg-transparent relative z-20 mx-auto flex justify-center">
+        <div className="hero-lcp-mockup w-full flex justify-center">
           <Image
             src="/images/hero/mobile-phone-mockup.webp"
             alt="Di-wrapp Platform Mobile Mockup"
