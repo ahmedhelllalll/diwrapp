@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Link as LinkIcon } from 'iconoir-react';
+import AboutTestimonialsMarquee from '@/components/marketing/about/AboutTestimonialsMarquee';
 
 const DESKTOP_IMAGES = [
   'client-01.png', 'client-02.png',
@@ -11,26 +12,6 @@ const DESKTOP_IMAGES = [
   'client-05.png', 'client-06.png', 'client-07.png', 'client-08.png', 'client-09.png',
   'client-10.png', 'client-11.png',
   'client-12.png', 'client-13.png',
-];
-
-// Disjoint sets: Row 1 (7 photos, even indices), Row 2 (6 photos, odd indices)
-const ROW_1_IMAGES = [
-  'client-01.png',
-  'client-03.png',
-  'client-05.png',
-  'client-07.png',
-  'client-09.png',
-  'client-11.png',
-  'client-13.png',
-];
-
-const ROW_2_IMAGES = [
-  'client-02.png',
-  'client-04.png',
-  'client-06.png',
-  'client-08.png',
-  'client-10.png',
-  'client-12.png',
 ];
 
 function DesktopCardItem({
@@ -76,32 +57,8 @@ export default function TestimonialsSection({
   ctaText = 'Book Your Spot Now',
   ctaHref = `/${lang}/booking`,
 }: TestimonialsSectionProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const [isTouchPaused, setIsTouchPaused] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { rootMargin: '100px' }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const isPaused = !isInView || isTouchPaused;
-
   return (
-    <section ref={sectionRef} className="about-testimonials-section">
+    <section className="about-testimonials-section">
       <div className="testimonials-container">
         
         {/* =========================================================================
@@ -199,86 +156,7 @@ export default function TestimonialsSection({
             MOBILE (< 768px): Two-Row Smooth Wall of Faces + Content
             ========================================================================= */}
         <div className="testimonials-mobile-wrapper">
-          <div 
-            className="testimonials-marquee-container"
-            onTouchStart={() => setIsTouchPaused(true)}
-            onTouchEnd={() => setIsTouchPaused(false)}
-            onTouchCancel={() => setIsTouchPaused(false)}
-          >
-            {/* Row 1: Forward Direction (38s) */}
-            <div 
-              className={`testimonials-marquee-track testimonials-marquee-track-1 ${isPaused ? 'is-paused' : ''}`}
-              data-paused={isPaused}
-            >
-              {ROW_1_IMAGES.map((img, idx) => (
-                <div key={`r1-p-${idx}`} className="testimonials-marquee-card">
-                  <Image
-                    src={`/images/testimonials/${img}`}
-                    alt=""
-                    width={96}
-                    height={120}
-                    sizes="96px"
-                    quality={85}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-              ))}
-              {ROW_1_IMAGES.map((img, idx) => (
-                <div key={`r1-d-${idx}`} className="testimonials-marquee-card" aria-hidden="true">
-                  <Image
-                    src={`/images/testimonials/${img}`}
-                    alt=""
-                    width={96}
-                    height={120}
-                    sizes="96px"
-                    quality={85}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Row 2: Reverse Direction (44s), Offset */}
-            <div 
-              className={`testimonials-marquee-track testimonials-marquee-track-2 ${isPaused ? 'is-paused' : ''}`}
-              data-paused={isPaused}
-            >
-              {ROW_2_IMAGES.map((img, idx) => (
-                <div key={`r2-p-${idx}`} className="testimonials-marquee-card">
-                  <Image
-                    src={`/images/testimonials/${img}`}
-                    alt=""
-                    width={96}
-                    height={120}
-                    sizes="96px"
-                    quality={85}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-              ))}
-              {ROW_2_IMAGES.map((img, idx) => (
-                <div key={`r2-d-${idx}`} className="testimonials-marquee-card" aria-hidden="true">
-                  <Image
-                    src={`/images/testimonials/${img}`}
-                    alt=""
-                    width={96}
-                    height={120}
-                    sizes="96px"
-                    quality={85}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <AboutTestimonialsMarquee />
 
           <div className="testimonials-mobile-content">
             <div className="testimonials-badge">
