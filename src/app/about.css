@@ -1037,6 +1037,44 @@
   }
 }
 
+/* Mobile Phone Responsiveness for Feature Cards (< 768px) */
+@media (max-width: 767px) {
+  .features-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .features-card {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .features-card-body {
+    margin-top: 24px;
+  }
+
+  .features-wide-bottom {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .features-wide-card .features-card-btn {
+    align-self: flex-start;
+    width: fit-content;
+  }
+
+  [dir="rtl"] .features-wide-card .features-card-btn {
+    align-self: flex-start;
+  }
+
+  .features-tall-footer {
+    padding: 0 24px 24px 24px;
+  }
+}
+
 /* ==========================================================================
    Testimonials / Social Proof Section (Inverted Arch / U-Shape Grid)
    ========================================================================== */
