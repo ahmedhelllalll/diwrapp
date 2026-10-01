@@ -61,6 +61,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   alt="Bus Stop Advertisement" 
                   width={790}
                   height={460}
+                  priority
                   sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), 640px"
                   className="w-full h-full object-cover object-center"
                 />
@@ -224,7 +225,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       alt="Di_Wrapp Tablet Interface" 
                       width={960}
                       height={720}
-                      sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), 500px"
+                      unoptimized
                       className="features-tablet-img" 
                     />
                   </div>

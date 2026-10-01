@@ -989,42 +989,90 @@
 
 /* Mobile Responsiveness for Tablet Card */
 @media (max-width: 1023px) {
+  .about-features-section {
+    overflow-x: clip;
+  }
+
+  .about-features-container {
+    padding-inline: 24px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .features-header {
+    margin-bottom: 64px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .features-grid {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    justify-items: center;
+    box-sizing: border-box;
+  }
+
+  .features-tall-card,
+  .features-card {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
   .features-tall-card {
-    margin-top: 30px;
-    overflow: hidden;
+    margin-top: 0;
+    min-height: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 0;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
   }
 
   .features-tablet-wrap {
-    margin-top: 0;
+    margin-top: -60px;
     margin-bottom: 0;
-    margin-inline: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
     padding: 0;
     clip-path: none;
     width: 100%;
-    min-width: 0;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
   }
 
   [dir="rtl"] .features-tablet-wrap {
-    margin-inline: 0;
+    margin-inline: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     clip-path: none;
   }
 
   .features-tablet-img {
-    height: 300px;
+    max-width: 100%;
     width: auto;
-    min-width: 0;
-    max-width: none;
-    flex-shrink: 0;
+    height: auto;
+    max-height: 280px;
+    margin: 0 auto;
+    display: block;
     object-fit: contain;
-    transform: none;
+    transform: none !important;
   }
 
   [dir="rtl"] .features-tablet-img {
-    transform: none;
+    transform: none !important;
   }
 
   .features-tall-footer .features-card-desc {
@@ -1036,6 +1084,30 @@
     padding: 12px 24px;
   }
 }
+
+@media (max-width: 639px) {
+  .about-features-container {
+    padding-inline: 16px;
+  }
+
+  .features-tall-card,
+  .features-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .features-tablet-wrap {
+    margin-top: -50px;
+  }
+
+  .features-tablet-img {
+    max-width: 100%;
+    max-height: 240px;
+  }
+}
+
+
+
 
 /* Mobile Phone Responsiveness for Feature Cards (< 768px) */
 @media (max-width: 767px) {
@@ -1641,18 +1713,6 @@
   font-family: var(--font-cairo), 'Lufga', sans-serif;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .about-badge,
-  .about-title,
-  .about-cards-container,
-  .about-wall-track,
-  .about-wall-track-1,
-  .about-wall-track-2 {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
 /* ==========================================================================
    Below-the-fold Entrance Animations (CSS + Shared Observer System)
@@ -1744,9 +1804,16 @@
 
 /* Reduced motion preference: everything visible instantly, no transforms or transitions */
 @media (prefers-reduced-motion: reduce) {
+  .about-badge,
+  .about-title,
+  .about-cards-container,
+  .about-wall-track,
+  .about-wall-track-1,
+  .about-wall-track-2,
   [data-reveal],
   [data-reveal][data-reveal-state="pending"],
   [data-reveal][data-reveal-state="in"] {
+    animation: none !important;
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
