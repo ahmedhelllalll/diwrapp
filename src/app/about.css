@@ -1652,4 +1652,115 @@
     opacity: 1 !important;
     transform: none !important;
   }
-}
+}
+
+/* ==========================================================================
+   Below-the-fold Entrance Animations (CSS + Shared Observer System)
+   Single source of truth easing: cubic-bezier(0.16, 1, 0.3, 1)
+   Variants: reveal-up, reveal-fade, reveal-scale, reveal-pop, reveal-line
+   All selectors are strictly namespaced to [data-reveal]
+   ========================================================================== */
+
+/* Base SSR / No-JS state: 100% visible by default, 0 layout shift */
+[data-reveal] {
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-delay: calc(min(var(--i, 0), 4) * 70ms);
+  opacity: 1;
+  transform: none;
+}
+
+/* Pending state: applied ONLY after hydration to elements strictly below the viewport */
+[data-reveal="up"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+[data-reveal="fade"][data-reveal-state="pending"] {
+  opacity: 0;
+}
+
+[data-reveal="scale"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: scale(0.96);
+  transform-origin: center;
+}
+
+[data-reveal="pop"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(8px) scale(0.94);
+  transform-origin: center;
+}
+
+[data-reveal="line"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+/* Transform origin for reveal-line: mirrors inline-start in LTR and RTL */
+:root:not([dir="rtl"]) [data-reveal="line"],
+[dir="ltr"] [data-reveal="line"] {
+  transform-origin: left center;
+}
+
+[dir="rtl"] [data-reveal="line"] {
+  transform-origin: right center;
+}
+
+/* In state: triggered when element intersects the shared observer */
+[data-reveal="up"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 650ms var(--reveal-ease) var(--reveal-delay),
+              transform 650ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="fade"][data-reveal-state="in"] {
+  opacity: 1;
+  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="scale"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay),
+              transform 700ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="pop"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  transition: opacity 500ms var(--reveal-ease) var(--reveal-delay),
+              transform 500ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="line"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: opacity 800ms var(--reveal-ease) var(--reveal-delay),
+              transform 800ms var(--reveal-ease) var(--reveal-delay);
+}
+
+/* Reduced motion preference: everything visible instantly, no transforms or transitions */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal][data-reveal-state="pending"],
+  [data-reveal][data-reveal-state="in"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print styles: everything visible */
+@media print {
+  [data-reveal],
+  [data-reveal][data-reveal-state="pending"],
+  [data-reveal][data-reveal-state="in"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

@@ -59,3 +59,40 @@ export const staggerContainer = (
     },
   },
 });
+
+/**
+ * CSS cubic-bezier string matching appleEasing [0.16, 1, 0.3, 1]
+ * Used for all below-the-fold reveal animations.
+ */
+export const REVEAL_EASE_CSS = "cubic-bezier(0.16, 1, 0.3, 1)";
+export const REVEAL_STAGGER_STEP_MS = 70;
+export const REVEAL_MAX_STEPS = 5;
+export const REVEAL_MAX_DELAY_MS = 280;
+
+export const REVEAL_VARIANTS = {
+  up: {
+    duration: 650,
+    ease: REVEAL_EASE_CSS,
+    transform: "translateY(18px)",
+  },
+  fade: {
+    duration: 700,
+    ease: REVEAL_EASE_CSS,
+  },
+  scale: {
+    duration: 700,
+    ease: REVEAL_EASE_CSS,
+    transform: "scale(0.96)",
+  },
+  pop: {
+    duration: 500,
+    ease: REVEAL_EASE_CSS,
+    transform: "translateY(8px) scale(0.94)",
+  },
+  line: {
+    duration: 800,
+    ease: REVEAL_EASE_CSS,
+    transform: "scaleX(0)",
+  },
+} as const;
+

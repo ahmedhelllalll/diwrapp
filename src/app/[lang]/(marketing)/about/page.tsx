@@ -6,7 +6,7 @@ import { Locale } from "@/i18n-config";
 import "../../../about.css";
 import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
 import { Badge } from "@/components/ui/Badge";
-import { OverviewMotion, FeaturesHeaderMotion, FeaturesCardMotion } from "@/components/marketing/about/AboutMotionSections";
+import { RevealInit } from "@/components/common/Reveal";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -110,38 +110,69 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             </div>
           </section>
 
+          <RevealInit />
+
           {/* Overview Section */}
           <section className="about-overview-section">
             <div className="about-overview-container">
-              <div className="overview-divider" />
-              <Badge variant="brand-solid" className="overview-badge">
+              <div
+                className="overview-divider"
+                data-reveal="line"
+                style={{ '--i': 0 } as React.CSSProperties}
+              />
+              <Badge
+                variant="brand-solid"
+                className="overview-badge"
+                data-reveal="up"
+                style={{ '--i': 1 } as React.CSSProperties}
+              >
                 <Planet width={16} height={16} strokeWidth={1.75} className="overview-badge-icon" />
                 <span>{about?.overview?.badge}</span>
               </Badge>
 
-              <OverviewMotion className="overview-grid">
+              <div className="overview-grid">
                 <div className="overview-left">
                   <h2 
                     className="overview-heading"
+                    data-reveal="up"
+                    style={{ '--i': 2 } as React.CSSProperties}
                     dangerouslySetInnerHTML={{ __html: about?.overview?.heading || '' }}
                   />
-                  <p className="overview-desc">{about?.overview?.description}</p>
+                  <p
+                    className="overview-desc"
+                    data-reveal="up"
+                    style={{ '--i': 3 } as React.CSSProperties}
+                  >
+                    {about?.overview?.description}
+                  </p>
                 </div>
 
                 <div className="overview-right">
-                  <div className="overview-card-item">
+                  <div
+                    className="overview-card-item"
+                    data-reveal="up"
+                    style={{ '--i': 3 } as React.CSSProperties}
+                  >
                     <h3 className="overview-item-title">{about?.overview?.visionTitle}</h3>
                     <p className="overview-item-desc">{about?.overview?.visionText}</p>
                   </div>
 
-                  <div className="overview-card-item">
+                  <div
+                    className="overview-card-item"
+                    data-reveal="up"
+                    style={{ '--i': 4 } as React.CSSProperties}
+                  >
                     <h3 className="overview-item-title">{about?.overview?.missionTitle}</h3>
                     <p className="overview-item-desc">{about?.overview?.missionText}</p>
                   </div>
                 </div>
-              </OverviewMotion>
+              </div>
 
-              <div className="overview-divider overview-divider-bottom" />
+              <div
+                className="overview-divider overview-divider-bottom"
+                data-reveal="line"
+                style={{ '--i': 4 } as React.CSSProperties}
+              />
             </div>
           </section>
 
@@ -149,9 +180,14 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
           <section className="about-features-section">
             <div className="about-features-container">
               {/* Top Header */}
-              <FeaturesHeaderMotion className="features-header">
+              <div className="features-header">
                 <div className="features-header-left">
-                  <Badge variant="pill" className="features-badge">
+                  <Badge
+                    variant="pill"
+                    className="features-badge"
+                    data-reveal="up"
+                    style={{ '--i': 0 } as React.CSSProperties}
+                  >
                     <Key width={16} height={16} strokeWidth={1.75} className="features-badge-icon" />
                     <span>{features?.badge}</span>
                   </Badge>
@@ -160,16 +196,28 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                 <div className="features-header-right">
                   <h2 
                     className="features-title"
+                    data-reveal="up"
+                    style={{ '--i': 1 } as React.CSSProperties}
                     dangerouslySetInnerHTML={{ __html: features?.title || '' }}
                   />
-                  <p className="features-subtitle">{features?.subtitle}</p>
+                  <p
+                    className="features-subtitle"
+                    data-reveal="up"
+                    style={{ '--i': 2 } as React.CSSProperties}
+                  >
+                    {features?.subtitle}
+                  </p>
                 </div>
-              </FeaturesHeaderMotion>
+              </div>
 
               {/* Cards Grid */}
               <div className="features-grid">
                 {/* Column 1: Tall Tablet Card */}
-                <FeaturesCardMotion delay={0} className="features-tall-card">
+                <div
+                  className="features-tall-card"
+                  data-reveal="fade"
+                  style={{ '--i': 0 } as React.CSSProperties}
+                >
                   <div className="features-tablet-wrap">
                     <Image 
                       src="/assets/tablet-image.webp" 
@@ -196,14 +244,18 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       <span className="sr-only"> - {features?.card1Title}</span>
                     </Link>
                   </div>
-                </FeaturesCardMotion>
+                </div>
 
                 {/* Column 2 & 3: Right Column Grid */}
                 <div className="features-right-col">
                   {/* Top Row: Two Cards */}
                   <div className="features-right-top">
                     {/* Card 2: Enterprise Platform */}
-                    <FeaturesCardMotion delay={0.08} className="features-card">
+                    <div
+                      className="features-card"
+                      data-reveal="fade"
+                      style={{ '--i': 1 } as React.CSSProperties}
+                    >
                       <div className="features-icon-box">
                         <PlanetSat width={22} height={22} strokeWidth={1.5} />
                       </div>
@@ -211,10 +263,14 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <h3 className="features-card-title">{features?.card2Title}</h3>
                         <p className="features-card-desc">{features?.card2Desc}</p>
                       </div>
-                    </FeaturesCardMotion>
+                    </div>
 
                     {/* Card 3: Scalable Infrastructure */}
-                    <FeaturesCardMotion delay={0.16} className="features-card">
+                    <div
+                      className="features-card"
+                      data-reveal="fade"
+                      style={{ '--i': 2 } as React.CSSProperties}
+                    >
                       <div className="features-icon-box">
                         <ScaleFrameEnlarge width={22} height={22} strokeWidth={1.5} />
                       </div>
@@ -222,11 +278,15 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <h3 className="features-card-title">{features?.card3Title}</h3>
                         <p className="features-card-desc">{features?.card3Desc}</p>
                       </div>
-                    </FeaturesCardMotion>
+                    </div>
                   </div>
 
                   {/* Bottom Row: Wide Card */}
-                  <FeaturesCardMotion delay={0.24} className="features-card features-wide-card">
+                  <div
+                    className="features-card features-wide-card"
+                    data-reveal="fade"
+                    style={{ '--i': 3 } as React.CSSProperties}
+                  >
                     <div className="features-icon-box">
                       <SystemRestart width={22} height={22} strokeWidth={1.5} />
                     </div>
@@ -246,7 +306,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                         <span className="sr-only"> - {features?.card4Title}</span>
                       </Link>
                     </div>
-                  </FeaturesCardMotion>
+                  </div>
                 </div>
               </div>
             </div>

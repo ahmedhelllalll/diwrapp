@@ -1,139 +1,49 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { Reveal, RevealGroup, RevealVariant } from "@/components/common/Reveal";
 
 interface MotionSectionProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  delayIndex?: number;
+  variant?: RevealVariant;
 }
 
 export function OverviewMotion({ children, className = "" }: MotionSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "-40px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "none" : "translateY(16px)",
-        transition: "opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)",
-        willChange: isVisible ? "auto" : "opacity, transform",
-      }}
-      className={className}
-    >
+    <RevealGroup className={className}>
       {children}
-    </div>
+    </RevealGroup>
   );
 }
 
 export function FeaturesHeaderMotion({ children, className = "" }: MotionSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "-40px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "none" : "translateY(14px)",
-        transition: "opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)",
-        willChange: isVisible ? "auto" : "opacity, transform",
-      }}
-      className={className}
-    >
+    <RevealGroup className={className}>
       {children}
-    </div>
+    </RevealGroup>
   );
 }
 
 export function FeaturesCardMotion({
   children,
   className = "",
-  delay = 0,
+  delay,
+  delayIndex,
+  variant = "fade",
 }: MotionSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "-40px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "none" : "translateY(20px)",
-        transition: `opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
-        willChange: isVisible ? "auto" : "opacity, transform",
-      }}
+    <Reveal
+      variant={variant}
+      delayIndex={delayIndex}
+      delayMs={delay !== undefined ? Math.round(delay * 1000) : undefined}
       className={className}
     >
       {children}
-    </div>
+    </Reveal>
   );
 }
+
+export { Reveal, RevealGroup, RevealInit } from "@/components/common/Reveal";

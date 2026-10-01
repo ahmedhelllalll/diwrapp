@@ -112,23 +112,41 @@ export default function TestimonialsSection({
 
               {/* Central Content nestled right under the arch */}
               <div className="testimonials-center-content">
-                <div className="testimonials-badge">
+                <div
+                  className="testimonials-badge"
+                  data-reveal="pop"
+                  style={{ '--i': 0 } as React.CSSProperties}
+                >
                   <LinkIcon width={14} height={14} className="testimonials-badge-icon" />
                   <span>{badgeText}</span>
                 </div>
 
-                <h2 className="testimonials-heading">
+                <h2
+                  className="testimonials-heading"
+                  data-reveal="up"
+                  style={{ '--i': 1 } as React.CSSProperties}
+                >
                   <span>{headingLine1}</span>
                   <span className="subtitle-line">{headingLine2}</span>
                 </h2>
 
-                <p className="testimonials-subtitle">
+                <p
+                  className="testimonials-subtitle"
+                  data-reveal="up"
+                  style={{ '--i': 2 } as React.CSSProperties}
+                >
                   {subtitleText}
                 </p>
 
-                <Link href={ctaHref} className="testimonials-cta-btn">
-                  <span>{ctaText}</span>
-                </Link>
+                <div
+                  data-reveal="up"
+                  style={{ '--i': 3 } as React.CSSProperties}
+                  className="inline-flex"
+                >
+                  <Link href={ctaHref} className="testimonials-cta-btn">
+                    <span>{ctaText}</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -159,23 +177,41 @@ export default function TestimonialsSection({
           <AboutTestimonialsMarquee />
 
           <div className="testimonials-mobile-content">
-            <div className="testimonials-badge">
+            <div
+              className="testimonials-badge"
+              data-reveal="pop"
+              style={{ '--i': 0 } as React.CSSProperties}
+            >
               <LinkIcon width={14} height={14} className="testimonials-badge-icon" />
               <span>{badgeText}</span>
             </div>
 
-            <h2 className="testimonials-heading">
+            <h2
+              className="testimonials-heading"
+              data-reveal="up"
+              style={{ '--i': 1 } as React.CSSProperties}
+            >
               <span>{headingLine1}</span>
               <span className="subtitle-line">{headingLine2}</span>
             </h2>
 
-            <p className="testimonials-subtitle">
+            <p
+              className="testimonials-subtitle"
+              data-reveal="up"
+              style={{ '--i': 2 } as React.CSSProperties}
+            >
               {subtitleText}
             </p>
 
-            <Link href={ctaHref} className="testimonials-cta-btn">
-              <span>{ctaText}</span>
-            </Link>
+            <div
+              data-reveal="up"
+              style={{ '--i': 3 } as React.CSSProperties}
+              className="inline-flex"
+            >
+              <Link href={ctaHref} className="testimonials-cta-btn">
+                <span>{ctaText}</span>
+              </Link>
+            </div>
           </div>
         </div>
 
