@@ -1071,7 +1071,20 @@
   }
 
   .features-tall-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
     padding: 0 24px 24px 24px;
+  }
+
+  .features-tall-footer .features-card-btn {
+    align-self: flex-start;
+    width: fit-content;
+  }
+
+  [dir="rtl"] .features-tall-footer .features-card-btn {
+    align-self: flex-start;
   }
 }
 
