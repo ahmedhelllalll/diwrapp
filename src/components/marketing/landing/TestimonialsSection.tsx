@@ -47,7 +47,8 @@ function DesktopCardItem({
         alt=""
         width={160}
         height={200}
-        sizes="(max-width: 1023px) 90px, (max-width: 1279px) 130px, 160px"
+        sizes="(max-width: 768px) 68px, (max-width: 1024px) 94px, (max-width: 1280px) 120px, 130px"
+        quality={85}
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover opacity-100 block"
@@ -217,6 +218,7 @@ export default function TestimonialsSection({
                     width={96}
                     height={120}
                     sizes="96px"
+                    quality={85}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover block"
@@ -231,6 +233,7 @@ export default function TestimonialsSection({
                     width={96}
                     height={120}
                     sizes="96px"
+                    quality={85}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover block"
@@ -252,6 +255,7 @@ export default function TestimonialsSection({
                     width={96}
                     height={120}
                     sizes="96px"
+                    quality={85}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover block"
@@ -266,6 +270,7 @@ export default function TestimonialsSection({
                     width={96}
                     height={120}
                     sizes="96px"
+                    quality={85}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover block"
