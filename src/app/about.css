@@ -341,6 +341,29 @@
   .about-hero {
     padding-top: 96px;
   }
+
+  .about-cards-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-left-col,
+  .about-tall-card,
+  .about-image-card,
+  .about-info-card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-pill {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-pill span {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 639px) {
