@@ -225,7 +225,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       alt="Di_Wrapp Tablet Interface" 
                       width={960}
                       height={720}
-                      unoptimized
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
                       className="features-tablet-img" 
                     />
                   </div>

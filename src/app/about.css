@@ -195,7 +195,7 @@
 
 .dark .about-pill {
   background-color: #000;
-  border: 1px solid #333;
+  border: 1px solid var(--card-border);
 }
 
 .about-pill span {
@@ -214,8 +214,7 @@
 .pill-icon {
   width: 48px;
   height: 48px;
-  background-color: #3b82f6;
-  /* Blue 500 */
+  background-color: var(--brand);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -465,7 +464,19 @@
 .about-overview-container {
   max-width: 1380px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .about-overview-container {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-overview-container {
+    padding: 0 40px;
+  }
 }
 
 .overview-divider {
