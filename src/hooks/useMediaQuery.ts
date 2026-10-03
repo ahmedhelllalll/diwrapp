@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore, useCallback } from "react";
 
 /**
  * Custom hook to detect matching media queries with SSR safety.
@@ -8,23 +8,26 @@ import { useState, useEffect } from "react";
  * and avoid triggering mobile downloads.
  */
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState<boolean>(false);
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      const mediaQuery = window.matchMedia(query);
+      mediaQuery.addEventListener("change", callback);
+      return () => {
+        mediaQuery.removeEventListener("change", callback);
+      };
+    },
+    [query]
+  );
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(query);
-    setMatches(mediaQuery.matches);
+  const getSnapshot = () => {
+    return window.matchMedia(query).matches;
+  };
 
-    const handler = (event: MediaQueryListEvent) => {
-      setMatches(event.matches);
-    };
+  const getServerSnapshot = () => {
+    return false;
+  };
 
-    mediaQuery.addEventListener("change", handler);
-    return () => {
-      mediaQuery.removeEventListener("change", handler);
-    };
-  }, [query]);
-
-  return matches;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
 export default useMediaQuery;

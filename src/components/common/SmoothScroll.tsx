@@ -5,9 +5,13 @@ import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Disable Lenis smooth scroll on touch / mobile devices to restore native momentum scrolling
-    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
-      return;
+    // Disable Lenis smooth scroll on touch / mobile devices or if user prefers reduced motion
+    if (typeof window !== 'undefined') {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+      if (prefersReduced || isCoarse) {
+        return;
+      }
     }
 
     const lenis = new Lenis({
@@ -31,7 +35,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     // Attach lenis instance to window for global scroll control
     if (typeof window !== 'undefined') {
-      (window as any).lenis = lenis;
+      (window as unknown as { lenis?: Lenis }).lenis = lenis;
     }
 
     // Automatic Resize Observer to recalculate page height for dynamic tabs/components
@@ -49,7 +53,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => {
       if (resizeTimer) clearTimeout(resizeTimer);
       if (typeof window !== 'undefined') {
-        delete (window as any).lenis;
+        (window as unknown as { lenis?: Lenis | undefined }).lenis = undefined;
       }
       resizeObserver.disconnect();
       lenis.destroy();

@@ -78,15 +78,15 @@ export interface MobileMenuDrawerProps {
     name?: string;
     email?: string;
     image?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   } | null;
   dictNav?: {
     signIn?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
   nav: {
     signIn: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 

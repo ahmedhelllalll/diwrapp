@@ -20,14 +20,26 @@ export interface HeaderProps {
     join?: string;
     contact?: string;
     signIn?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
-  dict?: any;
+  dict?: {
+    landing?: {
+      nav?: {
+        about?: string;
+        advertise?: string;
+        blog?: string;
+        join?: string;
+        contact?: string;
+        signIn?: string;
+      };
+    };
+    [key: string]: unknown;
+  };
   user?: {
     name?: string;
     email?: string;
     image?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   } | null;
   countryCode?: string;
   countryBadge?: React.ReactNode;
@@ -45,7 +57,6 @@ export default function Header({
   dictNav,
   dict,
   user,
-  countryCode: _initialCountryCode,
   countryBadge,
   className,
 }: HeaderProps = {}) {
@@ -120,20 +131,20 @@ export default function Header({
       rafId = requestAnimationFrame(() => {
         document.body.style.overflow = 'hidden';
         if (typeof window !== 'undefined') {
-          (window as any).lenis?.stop();
+          (window as unknown as { lenis?: { stop: () => void } }).lenis?.stop();
         }
       });
     } else {
       document.body.style.overflow = '';
       if (typeof window !== 'undefined') {
-        (window as any).lenis?.start();
+        (window as unknown as { lenis?: { start: () => void } }).lenis?.start();
       }
     }
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
       document.body.style.overflow = '';
       if (typeof window !== 'undefined') {
-        (window as any).lenis?.start();
+        (window as unknown as { lenis?: { start: () => void } }).lenis?.start();
       }
     };
   }, [isMobileMenuOpen]);
