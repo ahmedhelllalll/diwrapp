@@ -237,7 +237,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                     </div>
 
                     <Link 
-                      href={`/${lang}/marketplace`} 
+                      href={`/${lang}/coming-soon?feature=marketplace`} 
                       className="features-card-btn"
                       aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di_Wrapp Media Player'}`}
                     >
@@ -299,7 +299,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                       </div>
 
                       <Link 
-                        href={`/${lang}/commercial-models`} 
+                        href={`/${lang}/coming-soon?feature=commercial-models`} 
                         className="features-card-btn"
                         aria-label={`${features?.card4Btn || 'Read More'}: ${features?.card4Title || 'Flexible Commercial Models'}`}
                       >
@@ -321,7 +321,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             headingLine2={testimonials?.headingLine2}
             subtitleText={testimonials?.subtitle}
             ctaText={testimonials?.cta}
-            ctaHref={`/${lang}/booking`}
+            ctaHref={`/${lang}/advertise`}
           />
 
         </main>

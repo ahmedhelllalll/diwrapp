@@ -55,7 +55,7 @@ export default function TestimonialsSection({
   headingLine2 = 'from various industries',
   subtitleText = 'Discover why they rely on Di_Wrapp to power every step of their Booking journey',
   ctaText = 'Book Your Spot Now',
-  ctaHref = `/${lang}/booking`,
+  ctaHref = `/${lang}/advertise`,
 }: TestimonialsSectionProps) {
   return (
     <section className="about-testimonials-section">
