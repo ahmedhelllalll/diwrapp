@@ -138,7 +138,7 @@ export default function MobileMenuDrawer({
             <div className="flex items-center justify-center gap-5 text-sm font-bold text-slate-600 dark:text-zinc-400">
               {/* Language Switcher */}
               <Link
-                className="inline-flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-white transition-colors font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+                className="min-h-[44px] px-2.5 inline-flex items-center gap-1.5 hover:text-slate-900 dark:hover:text-white transition-colors font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] rounded-lg focus-visible:ring-2 focus-visible:ring-brand"
                 href={targetLangHref}
                 onClick={onClose}
               >
@@ -152,7 +152,7 @@ export default function MobileMenuDrawer({
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="p-1 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center justify-center"
+                className="min-w-[44px] min-h-[44px] hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer flex items-center justify-center rounded-lg focus-visible:ring-2 focus-visible:ring-brand"
                 aria-label="Toggle Theme"
               >
                 <motion.div

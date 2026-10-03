@@ -277,7 +277,7 @@ export default function Header({
                 setIsMobileMenuOpen((prev) => !prev);
               }}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="relative w-9 h-9 flex flex-col items-center justify-center gap-1.5 focus:outline-none cursor-pointer"
+              className="relative w-11 h-11 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-lg cursor-pointer"
             >
               <span
                 className={`block h-0.5 w-6 bg-[#101828] dark:bg-white rounded-full transition-transform duration-300 ease-out origin-center ${

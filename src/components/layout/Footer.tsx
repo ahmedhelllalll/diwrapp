@@ -295,62 +295,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
             ))}
           </div>
 
-          {/* Right: Social Media Icons */}
-          <div className="order-1 md:order-3 justify-self-center md:justify-self-end flex items-center gap-4 text-[#64748B] dark:text-zinc-400">
-            {/* Facebook */}
-            <a 
-              href="https://facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label="Facebook" 
-              className="hover:text-[#1877F2] hover:-translate-y-0.5 transition-all p-1"
-            >
-              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
-              </svg>
-            </a>
-
-            {/* X (Twitter) */}
-            <a 
-              href="https://x.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label="X (Twitter)" 
-              className="hover:text-black dark:hover:text-white hover:-translate-y-0.5 transition-all p-1"
-            >
-              <svg viewBox="0 0 1200 1227" fill="currentColor" className="w-[15px] h-[15px]">
-                <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
-              </svg>
-            </a>
-
-            {/* Instagram */}
-            <a 
-              href="https://instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label="Instagram" 
-              className="hover:text-[#E1306C] hover:-translate-y-0.5 transition-all p-1"
-            >
-              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
-            </a>
-
-            {/* LinkedIn */}
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label="LinkedIn" 
-              className="hover:text-[#0A66C2] hover:-translate-y-0.5 transition-all p-1"
-            >
-              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-              </svg>
-            </a>
-          </div>
+          {/* Right: Social Media Icons (Hidden until official handles are established) */}
+          {/* TODO: Add official social media handles (Facebook, X, Instagram, LinkedIn) once configured */}
+          <div className="order-1 md:order-3 justify-self-center md:justify-self-end hidden" aria-hidden="true" />
         </div>
       </div>
     </footer>
