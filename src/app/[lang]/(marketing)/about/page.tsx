@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
 import "../../../about.css";
-import TestimonialsSection from "@/components/marketing/landing/TestimonialsSection";
+import TestimonialsSection from "@/components/marketing/about/TestimonialsSection";
 import { Badge } from "@/components/ui/Badge";
 import { RevealInit } from "@/components/common/Reveal";
 import { EmojiSingRight, Planet, Key, PlanetSat, ScaleFrameEnlarge, SystemRestart } from "iconoir-react";
