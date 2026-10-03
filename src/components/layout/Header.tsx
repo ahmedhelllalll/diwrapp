@@ -262,7 +262,7 @@ export default function Header({
             {/* Language Switcher */}
             <Link
               href={targetLangHref}
-              className="inline-flex items-center text-sm font-bold text-[#344054] dark:text-neutral-300 hover:text-[#101828] dark:hover:text-white transition-colors cursor-pointer whitespace-nowrap font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ml-1"
+              className="inline-flex items-center text-sm font-bold text-[#344054] dark:text-neutral-300 hover:text-[#101828] dark:hover:text-white transition-colors cursor-pointer whitespace-nowrap font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ms-1"
             >
               {derivedLangLabel}
             </Link>

@@ -208,7 +208,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
           
           {/* PRIMARY TEXT COLUMN (Right in RTL, Left in LTR) */}
           <motion.div 
-            className="w-full lg:col-span-5 flex flex-col items-start text-left rtl:text-right relative z-20 mt-6 sm:mt-8 lg:mt-5"
+            className="w-full lg:col-span-5 flex flex-col items-start text-start relative z-20 mt-6 sm:mt-8 lg:mt-5"
             dir={isRtl ? "rtl" : "ltr"}
             initial={shouldReduceMotion ? false : "hidden"}
             whileInView="visible"
@@ -294,7 +294,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: appleEasing }}
-                    className="relative h-full w-full bg-[#FAFAFA] dark:bg-surface-2 border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 pl-4 sm:pl-5 pr-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" 
+                    className="relative h-full w-full bg-[#FAFAFA] dark:bg-surface-2 border border-slate-200/80 dark:border-zinc-800 rounded-[24px] pt-5 ps-4 sm:ps-5 pe-0 pb-0 overflow-hidden flex flex-col justify-end items-end shadow-sm" 
                     aria-hidden="true"
                   >
                     {/* Inner White Calendar Window Docked to Bottom-Right */}
@@ -395,7 +395,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
                     <span className="text-3xl sm:text-4xl font-black text-brand dark:text-blue-400 tracking-tight font-lufga shrink-0" dir="ltr">
                       5x
                     </span>
-                    <div className={`space-y-1 max-w-[340px] ${isRtl ? "text-right" : "text-left"}`}>
+                    <div className="space-y-1 max-w-[340px] text-start">
                       <p className="text-xs sm:text-sm font-bold text-heading dark:text-white leading-snug rtl:leading-normal font-lufga rtl:font-['Cairo',sans-serif]">
                         {isRtl ? "سرّع إنتاجية أعمالك" : "Fasten your Business Productivity"}
                       </p>

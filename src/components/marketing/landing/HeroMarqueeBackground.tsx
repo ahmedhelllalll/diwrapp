@@ -106,7 +106,7 @@ function MarqueeRow({
     >
       <div className={`flex shrink-0 items-center transform-gpu ${animationClass}`}>
         {/* Track Segment 1 */}
-        <div className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8">
+        <div className="flex shrink-0 items-center gap-6 sm:gap-8 pe-6 sm:pe-8">
           {segmentBadges.map((badge, idx) => {
             const Icon = ICON_MAP[badge.id] || Spark;
             return (
@@ -128,7 +128,7 @@ function MarqueeRow({
 
         {/* Track Segment 2 (Exact duplicate for 100% seamless, mathematically stutter-free loop) */}
         <div
-          className="flex shrink-0 items-center gap-6 sm:gap-8 pr-6 sm:pr-8"
+          className="flex shrink-0 items-center gap-6 sm:gap-8 pe-6 sm:pe-8"
           aria-hidden="true"
         >
           {segmentBadges.map((badge, idx) => {

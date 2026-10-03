@@ -157,7 +157,7 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
                 delay: shouldReduceMotion ? 0 : 0.32 + idx * 0.08,
                 ease: appleEasing,
               }}
-              className="group rounded-2xl p-7 text-left rtl:text-right flex flex-col justify-start bg-white/80 dark:bg-white/[0.03] backdrop-blur-md border border-neutral-200/80 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.18] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 ease-out hover:-translate-y-1 min-h-[200px]"
+              className="group rounded-2xl p-7 text-start flex flex-col justify-start bg-white/80 dark:bg-white/[0.03] backdrop-blur-md border border-neutral-200/80 dark:border-white/[0.08] hover:border-neutral-300 dark:hover:border-white/[0.18] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300 ease-out hover:-translate-y-1 min-h-[200px]"
             >
               <AnimatePresence initial={false} mode="wait">
                 <motion.div
