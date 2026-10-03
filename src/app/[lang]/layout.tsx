@@ -68,7 +68,32 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         ar: 'https://diwrapp.com/ar',
         'x-default': 'https://diwrapp.com/en',
       }
-    }
+    },
+    openGraph: {
+      title: {
+        template: '%s | DiWrapp',
+        default: dict.metadata.defaultTitle,
+      },
+      description: dict.metadata.defaultDescription,
+      url: `https://diwrapp.com/${lang}`,
+      siteName: 'DiWrapp',
+      locale: lang === 'ar' ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1200,
+          height: 630,
+          alt: 'DiWrapp Media Network',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dict.metadata.defaultTitle,
+      description: dict.metadata.defaultDescription,
+      images: ['/images/og-banner.png'],
+    },
   };
 }
 
@@ -89,6 +114,30 @@ export default async function RootLayout(
     ? `${cairo.variable} ${cairo.className}` 
     : `${lufga.variable} ${lufga.className}`;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://diwrapp.com/#organization',
+        name: 'DiWrapp',
+        url: 'https://diwrapp.com',
+        logo: 'https://diwrapp.com/logo.png',
+        sameAs: ['https://distin-gui.com/'],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `https://diwrapp.com/${lang}/#website`,
+        url: `https://diwrapp.com/${lang}`,
+        name: 'DiWrapp',
+        inLanguage: lang,
+        publisher: {
+          '@id': 'https://diwrapp.com/#organization',
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang={lang}
@@ -96,6 +145,12 @@ export default async function RootLayout(
       className={`${geistMono.variable} ${fontClasses} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
