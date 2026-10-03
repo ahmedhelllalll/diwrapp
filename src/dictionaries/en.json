@@ -46,6 +46,7 @@
     "featureDescBold": "everything is built to save time, boost impact, and deliver measurable value.",
     "ctaButton": "Book Your Spot",
     "bento": {
+      "card1Alt": "Di_Wrapp Tablet Booking Showcase",
       "card2Title": "Instant Browse & Book",
       "card2Desc": "— no delays, no back-and-forth. Just select, schedule, and go live.",
       "card3Title": "Smart Dashboard",
@@ -54,6 +55,7 @@
       "card4Desc": "Get visual confirmation when your Booking goes live, along with detailed reports",
       "card5Title": "Wallet Top-Ups & Payouts",
       "card5Desc": "Securely Fund your account and track every transaction",
+      "card6Alt": "Di_Wrapp Illuminated Digital Doorway Visual",
       "card7Title": "Streamlined approval Workflows",
       "card7Desc": "— ensuring quality, compliance, and control across the board.",
       "card8Title": "Stay instantly updated",
@@ -68,7 +70,7 @@
           "description": "Ask_Di is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps brands, vendors, and support teams navigate booking, optimize campaigns, and even create content — all through intuitive, AI-powered interactions.",
           "highlightText": "all through intuitive, AI-powered interactions.",
           "ctaText": "Try Ask_Di",
-          "ctaLink": "#"
+          "ctaLink": "/ask-di"
         },
         {
           "id": 2,
@@ -77,7 +79,7 @@
           "description": "Analyze live engagement metrics and ad inventory in real-time. Ask_Di pinpoints high-converting billboard spaces and optimizes budget distribution — with zero manual guesswork.",
           "highlightText": "with zero manual guesswork.",
           "ctaText": "Explore Insights",
-          "ctaLink": "#"
+          "ctaLink": "/booking"
         }
       ]
     }
@@ -216,6 +218,44 @@
       "feature3": "Get instant notifications & important updates on Booking Reports",
       "learnMore": "Learn More",
       "bookSpot": "Book Your Spot"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "titleLine1": "Frequently",
+      "titleLine2": "Asked Questions",
+      "viewMore": "View More",
+      "viewMoreAria": "View more frequently asked questions or contact us",
+      "signUpAria": "Sign up for a new Diwrapp account",
+      "items": [
+        {
+          "id": "q1",
+          "question": "What is Di_Wrapp and how does it work?",
+          "answer": "Di_Wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
+        },
+        {
+          "id": "q2",
+          "question": "How do I create an account?",
+          "preLinkText": "You can sign up easily by visiting ",
+          "linkText": "Sign Up Link",
+          "postLinkText": " and following the instructions.",
+          "hasLink": true
+        },
+        {
+          "id": "q3",
+          "question": "How can I reset my password?",
+          "answer": "Click on 'Forgot Password' on the sign in page and follow the email verification instructions."
+        },
+        {
+          "id": "q4",
+          "question": "How do I update my payment details?",
+          "answer": "Navigate to your billing settings inside your dashboard to add or update your payment methods."
+        },
+        {
+          "id": "q5",
+          "question": "Can I integrate My Billboard With Di_Wrapp Sytem?",
+          "answer": "Yes, billboard owners can easily connect their inventories and launch smart programmatic booking."
+        }
+      ]
     }
   },
   "dashboard": {

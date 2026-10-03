@@ -103,7 +103,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
         <PioneeringSection dict={l.pioneering} lang={lang} />
 
         {/* FAQ Section */}
-        <FaqSection lang={lang as "en" | "ar"} />
+        <FaqSection lang={lang as "en" | "ar"} dict={l.faq} />
       </main>
       </div>
 

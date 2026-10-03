@@ -101,7 +101,7 @@ export default function NotFoundView({ lang: initialLang, countryCode }: NotFoun
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer lang={lang} dict={dict.footer as unknown as React.ComponentProps<typeof Footer>["dict"]} />
     </div>
   );
 }

@@ -5,21 +5,40 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
 
-interface FaqItem {
+export interface FaqDictItem {
   id: string;
   question: string;
-  answer: string;
+  answer?: string;
   hasLink?: boolean;
+  preLinkText?: string;
+  linkText?: string;
+  postLinkText?: string;
+}
+
+export interface FaqDict {
+  badge?: string;
+  titleLine1?: string;
+  titleLine2?: string;
+  viewMore?: string;
+  viewMoreAria?: string;
+  signUpAria?: string;
+  items?: FaqDictItem[];
 }
 
 const appleEasing = [0.16, 1, 0.3, 1] as const;
 
-export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
+export default function FaqSection({ 
+  lang,
+  dict,
+}: { 
+  lang: "en" | "ar";
+  dict?: FaqDict;
+}) {
   const isRtl = lang === "ar";
   const [openId, setOpenId] = useState<string | null>("q2"); // Default open second item matching Figma
   const shouldReduceMotion = useReducedMotion();
 
-  const faqs: FaqItem[] = [
+  const faqs: FaqDictItem[] = dict?.items && dict.items.length > 0 ? dict.items : [
     {
       id: "q1",
       question: isRtl ? "ما هو Di_Wrapp وكيف يعمل؟" : "What is Di_Wrapp and how does it work?",
@@ -30,9 +49,9 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
     {
       id: "q2",
       question: isRtl ? "كيف يمكنني إنشاء حساب؟" : "How do I create an account?",
-      answer: isRtl 
-        ? "يمكنك التسجيل بكل سهولة عبر زيارة رابط التسجيل واتباع الخطوات البسيطة."
-        : "You can sign up easily by visiting Sign Up Link and following the instructions.",
+      preLinkText: isRtl ? "يمكنك التسجيل بكل سهولة عبر زيارة " : "You can sign up easily by visiting ",
+      linkText: isRtl ? "رابط التسجيل" : "Sign Up Link",
+      postLinkText: isRtl ? " واتباع الخطوات البسيطة." : " and following the instructions.",
       hasLink: true
     },
     {
@@ -76,7 +95,7 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
               <circle cx="12" cy="16" r="0.5" fill="currentColor" />
             </svg>
             <span className="tracking-wider">
-              {isRtl ? "الأسئلة الشائعة" : "FAQ"}
+              {dict?.badge || (isRtl ? "الأسئلة الشائعة" : "FAQ")}
             </span>
           </Badge>
         </motion.div>
@@ -89,19 +108,9 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
           transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
           className="text-3xl sm:text-5xl font-extrabold text-heading dark:text-white text-center leading-[1.15] mb-12 tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
         >
-          {isRtl ? (
-            <>
-              الأسئلة
-              <br />
-              الأكثر شيوعاً
-            </>
-          ) : (
-            <>
-              Frequently
-              <br />
-              Asked Questions
-            </>
-          )}
+          {dict?.titleLine1 || (isRtl ? "الأسئلة" : "Frequently")}
+          <br />
+          {dict?.titleLine2 || (isRtl ? "الأكثر شيوعاً" : "Asked Questions")}
         </motion.h2>
 
         {/* Accordion List */}
@@ -176,31 +185,17 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
                       isOpen ? "opacity-100" : "opacity-0"
                     }`}>
                       {faq.hasLink ? (
-                        isRtl ? (
-                          <>
-                            يمكنك التسجيل بكل سهولة عبر زيارة{" "}
-                            <Link 
-                              aria-label="التسجيل في منصة دي راب وإنشاء حساب جديد"
-                              className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
-                              href={`/${lang}/signup`}
-                            >
-                              رابط التسجيل
-                            </Link>{" "}
-                            واتباع الخطوات البسيطة.
-                          </>
-                        ) : (
-                          <>
-                            You can sign up easily by visiting{" "}
-                            <Link 
-                              aria-label="Sign up for a new Diwrapp account"
-                              className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
-                              href={`/${lang}/signup`}
-                            >
-                              Sign Up Link
-                            </Link>{" "}
-                            and following the instructions.
-                          </>
-                        )
+                        <>
+                          {faq.preLinkText || (isRtl ? "يمكنك التسجيل بكل سهولة عبر زيارة " : "You can sign up easily by visiting ")}
+                          <Link 
+                            aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة دي راب وإنشاء حساب جديد" : "Sign up for a new Diwrapp account")}
+                            className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
+                            href={`/${lang}/signup`}
+                          >
+                            {faq.linkText || (isRtl ? "رابط التسجيل" : "Sign Up Link")}
+                          </Link>{" "}
+                          {faq.postLinkText || (isRtl ? " واتباع الخطوات البسيطة." : " and following the instructions.")}
+                        </>
                       ) : (
                         faq.answer
                       )}
@@ -222,10 +217,10 @@ export default function FaqSection({ lang }: { lang: "en" | "ar" }) {
         >
           <Link
             href={`/${lang}/contact`}
-            aria-label={isRtl ? "عرض المزيد من الأسئلة الشائعة أو التواصل معنا" : "View more frequently asked questions or contact us"}
+            aria-label={dict?.viewMoreAria || (isRtl ? "عرض المزيد من الأسئلة الشائعة أو التواصل معنا" : "View more frequently asked questions or contact us")}
             className="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-white/[0.05] hover:bg-slate-50 dark:hover:bg-white/[0.1] text-slate-900 dark:text-white text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] cursor-pointer"
           >
-            {isRtl ? "عرض المزيد" : "View More"}
+            {dict?.viewMore || (isRtl ? "عرض المزيد" : "View More")}
           </Link>
         </motion.div>
 
