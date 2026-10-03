@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/dictionaries";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Footer, { FooterDict } from "@/components/layout/Footer";
 import { CountryBadge, CountryBadgeSkeleton } from "@/components/common/CountryBadge";
 
 export default async function MarketingLayout(props: {
@@ -33,7 +33,7 @@ export default async function MarketingLayout(props: {
         }
       />
       {props.children}
-      <Footer lang={lang} dict={(dict as any).footer} />
+      <Footer lang={lang} dict={(dict as { footer?: FooterDict }).footer} />
     </>
   );
 }
