@@ -5,13 +5,15 @@ import { useTheme } from "next-themes";
 import { SunLight, HalfMoon } from "iconoir-react";
 
 const emptySubscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export function ThemeToggle({ className }: { className?: string } = {}) {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const mounted = useSyncExternalStore(
     emptySubscribe,
-    () => true,
-    () => false
+    getClientSnapshot,
+    getServerSnapshot
   );
 
   const baseClasses =

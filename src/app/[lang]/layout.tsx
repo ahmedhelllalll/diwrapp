@@ -82,8 +82,8 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       images: [
         {
           url: '/images/og-banner.png',
-          width: 1200,
-          height: 630,
+          width: 1920,
+          height: 620,
           alt: 'DiWrapp Media Network',
         },
       ],
@@ -145,13 +145,11 @@ export default async function RootLayout(
       className={`${geistMono.variable} ${fontClasses} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
+      <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col font-sans overflow-x-clip" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

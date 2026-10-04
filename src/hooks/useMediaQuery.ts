@@ -7,6 +7,8 @@ import { useSyncExternalStore, useCallback } from "react";
  * Defaults to false on initial render/server-side to prevent hydration mismatch
  * and avoid triggering mobile downloads.
  */
+const getServerSnapshot = () => false;
+
 export function useMediaQuery(query: string): boolean {
   const subscribe = useCallback(
     (callback: () => void) => {
@@ -19,13 +21,9 @@ export function useMediaQuery(query: string): boolean {
     [query]
   );
 
-  const getSnapshot = () => {
+  const getSnapshot = useCallback(() => {
     return window.matchMedia(query).matches;
-  };
-
-  const getServerSnapshot = () => {
-    return false;
-  };
+  }, [query]);
 
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
