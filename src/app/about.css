@@ -1505,17 +1505,22 @@
   align-items: center;
   justify-content: center;
   padding: 14px 34px;
-  background-color: var(--brand);
+  background-color: var(--brand-strong, #0055E6);
   color: #FFFFFF;
   font-family: 'Lufga', sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 8px 22px rgba(0, 98, 255, 0.28);
   transition: all 0.2s ease;
   cursor: pointer;
+}
+
+.testimonials-cta-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.45), 0 8px 22px rgba(0, 98, 255, 0.28);
 }
 
 .testimonials-cta-btn:hover {

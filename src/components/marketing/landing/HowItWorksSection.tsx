@@ -126,7 +126,7 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
               role="tab"
               aria-selected={isActive}
               onClick={() => setActiveTab(tab)}
-              className={`relative z-10 px-4 py-2 sm:py-2.5 text-[13px] sm:text-[14px] font-semibold transition-colors duration-200 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-center truncate ${
+              className={`relative z-10 px-4 py-2 sm:py-2.5 text-[13px] sm:text-[14px] font-semibold rounded-[10px] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-1 transition-colors duration-200 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-center truncate ${
                 isActive 
                   ? "text-heading dark:text-white" 
                   : "text-[#667085] dark:text-neutral-400 hover:text-heading dark:hover:text-white"

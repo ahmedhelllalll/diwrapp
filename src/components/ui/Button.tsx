@@ -8,9 +8,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className = "", variant = "primary", fullWidth, children, ...props }, ref) => {
     
-    let baseStyles = "inline-flex items-center justify-center font-bold text-[13.5px] rounded-lg h-[42px] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0";
-    
-    if (fullWidth) baseStyles += " w-full";
+    const baseStyles = `inline-flex items-center justify-center font-bold text-[13.5px] rounded-lg h-[42px] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+      fullWidth ? "w-full" : ""
+    }`;
 
     let variantStyles = "";
     if (variant === "primary") {

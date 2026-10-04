@@ -5,6 +5,7 @@
   --background: #ffffff;
   --foreground: #0f172a;
   --brand: #0066FF;
+  --brand-strong: #0055E6;
   --heading: #101828;
   --surface-1: #080808;
   --surface-2: #121214;
@@ -30,6 +31,7 @@ html[dir="rtl"] {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand: #0066FF;
+  --color-brand-strong: var(--brand-strong);
   --color-heading: #101828;
   --color-surface-1: #080808;
   --color-surface-2: #121214;
