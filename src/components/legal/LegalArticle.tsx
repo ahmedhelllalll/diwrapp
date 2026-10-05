@@ -27,7 +27,7 @@ function renderParagraphContent(content: string, isRtl: boolean) {
           return (
             <mark
               key={idx}
-              className="inline-block mx-1 my-0.5 px-2 py-0.5 rounded-md font-mono text-xs font-medium bg-amber-500/15 dark:bg-amber-500/20 text-amber-900 dark:text-amber-200 border border-amber-500/30 select-text"
+              className="inline-block mx-1 my-0.5 px-2 py-0.5 rounded-md font-mono text-xs font-medium bg-amber-500/10 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border border-amber-500/30 dark:border-amber-800/60 select-text"
               title={isRtl ? "بند مؤقت للمراجعة القانونية" : "Placeholder for legal review confirmation"}
             >
               {part}
@@ -44,10 +44,11 @@ function renderParagraphContent(content: string, isRtl: boolean) {
  * Pure React Server Component for rendering structured legal documents
  * (Privacy Policy, Terms & Conditions, Cookie Policy).
  *
- * Adheres strictly to:
- * - Help Center 2-column layout (content + sticky contact card)
- * - Design tokens from globals.css (zero hardcoded hex colors)
- * - Semantic HTML & accessibility (one H1, nav landmarks, 44px touch targets)
+ * Implements DiWrapp Design System:
+ * - Surfaces: bg-white dark:bg-[#080808], cards: bg-white dark:bg-[#0a0a0a]
+ * - Borders: border-[#EAECF0] dark:border-zinc-800/80
+ * - Typography: text-[#101828] dark:text-white / dark:text-zinc-100, body: text-[#475569] dark:text-zinc-400
+ * - Brand accents: text-[#0066FF] dark:text-blue-400, hover states
  * - CSS logical properties for bilingual LTR/RTL rendering
  * - Header clearance via scroll-mt-28 on anchor targets
  */
@@ -56,7 +57,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
   const { category, title, intro, effectiveDate, lastUpdated, tableOfContentsTitle, sections, sidebar, relatedDocsTitle, relatedDocs } = document;
 
   return (
-    <article className="w-full bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+    <article className="w-full bg-white dark:bg-[#080808] text-[#0f172a] dark:text-zinc-100 transition-colors duration-300 font-sans">
       {/* Top spacing to clear fixed header (h-[72px]) + breathing room */}
       <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-24">
         
@@ -65,27 +66,27 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
            ================================================================= */}
         <nav
           aria-label={isRtl ? 'مسار التنقل' : 'Breadcrumb'}
-          className="flex items-center gap-2 text-[13px] text-[var(--Text-text-tertiary)] flex-wrap mb-8"
+          className="flex items-center gap-2 text-[13px] text-[#64748b] dark:text-zinc-400 flex-wrap mb-8"
         >
           <Link
             href={`/${lang}`}
             aria-label={isRtl ? 'الصفحة الرئيسية' : 'Homepage'}
-            className="hover:text-[var(--foreground)] transition-colors inline-flex items-center justify-center p-1 rounded-sm focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+            className="hover:text-[#0f172a] dark:hover:text-white transition-colors inline-flex items-center justify-center p-1 rounded-sm focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
           >
             <HomeSimple className="w-4 h-4 shrink-0" />
           </Link>
-          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[var(--card-border)]" aria-hidden="true" />
+          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true" />
           <Link
             href={`/${lang}`}
-            className="hover:text-[var(--foreground)] transition-colors"
+            className="hover:text-[#0f172a] dark:hover:text-white transition-colors"
           >
             DiWrapp
           </Link>
-          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[var(--card-border)]" aria-hidden="true" />
-          <span className="text-[var(--Text-text-secondary)]">{category}</span>
-          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[var(--card-border)]" aria-hidden="true" />
+          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true" />
+          <span className="text-[#475569] dark:text-zinc-400">{category}</span>
+          <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true" />
           <span
-            className="font-semibold text-[var(--heading)] truncate max-w-[220px] sm:max-w-none"
+            className="font-semibold text-[#101828] dark:text-zinc-100 truncate max-w-[220px] sm:max-w-none"
             aria-current="page"
           >
             {title}
@@ -96,28 +97,31 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
             2. ARTICLE HEADER (Category Badge, H1, Intro, Dates)
            ================================================================= */}
         <header className="max-w-[840px] mb-10">
-          <Badge variant="outline-sm" className="mb-4">
+          <Badge
+            variant="default"
+            className="mb-4 rounded-[10px] border border-[#EAECF0] dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 text-[#344054] dark:text-zinc-300 shadow-2xs"
+          >
             {category}
           </Badge>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[var(--heading)] tracking-tight leading-[1.2] mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#101828] dark:text-white tracking-tight leading-[1.2] mb-4">
             {title}
           </h1>
 
-          <p className="text-base sm:text-lg text-[var(--Text-text-secondary)] leading-relaxed mb-6 text-start">
+          <p className="text-base sm:text-lg text-[#475569] dark:text-zinc-400 leading-relaxed mb-6 text-start">
             {intro}
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-[13px] text-[var(--Text-text-tertiary)] pb-6 border-b border-[var(--card-border)]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-[13px] text-[#64748b] dark:text-zinc-400 pb-6 border-b border-[#EAECF0] dark:border-zinc-800/80">
             <span className="inline-flex items-center gap-1.5">
-              <span className="font-medium text-[var(--Text-text-secondary)]">
+              <span className="font-medium text-[#101828] dark:text-zinc-200">
                 {isRtl ? 'تاريخ السريان:' : 'Effective Date:'}
               </span>
               <span>{effectiveDate}</span>
             </span>
-            <span className="hidden sm:inline text-[var(--card-border)]" aria-hidden="true">•</span>
+            <span className="hidden sm:inline text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true">•</span>
             <span className="inline-flex items-center gap-1.5">
-              <span className="font-medium text-[var(--Text-text-secondary)]">
+              <span className="font-medium text-[#101828] dark:text-zinc-200">
                 {isRtl ? 'آخر تحديث:' : 'Last Updated:'}
               </span>
               <span>{lastUpdated}</span>
@@ -138,9 +142,9 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
             {/* Table of Contents ("In this article") */}
             <nav
               aria-label={isRtl ? 'جدول محتويات الوثيقة' : 'Table of contents'}
-              className="mb-12 p-6 sm:p-7 rounded-[20px] bg-[var(--card-surface)] border border-[var(--card-border)] shadow-xs transition-colors"
+              className="mb-12 p-6 sm:p-7 rounded-[20px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800/80 shadow-xs dark:shadow-none transition-colors"
             >
-              <h2 className="text-sm font-bold uppercase tracking-wider text-[var(--heading)] mb-4">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-[#101828] dark:text-zinc-100 mb-4">
                 {tableOfContentsTitle}
               </h2>
               <ul className="space-y-2.5 text-[14.5px]">
@@ -148,7 +152,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                   <li key={sec.id}>
                     <a
                       href={`#${sec.id}`}
-                      className="inline-flex items-center text-[var(--brand)] hover:text-[var(--brand-strong)] underline underline-offset-4 font-medium transition-colors min-h-[44px] sm:min-h-0 py-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none rounded-sm"
+                      className="inline-flex items-center text-[#0066FF] dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 underline underline-offset-4 font-medium transition-colors min-h-[44px] sm:min-h-0 py-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none rounded-sm"
                     >
                       {sec.title}
                     </a>
@@ -167,17 +171,17 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                   aria-labelledby={`heading-${section.id}`}
                 >
                   {secIdx > 0 && (
-                    <hr className="border-t border-[var(--card-border)] mb-10" />
+                    <hr className="border-t border-[#EAECF0] dark:border-zinc-800/80 mb-10" />
                   )}
 
                   <h2
                     id={`heading-${section.id}`}
-                    className="text-xl sm:text-2xl font-bold text-[var(--heading)] tracking-tight mb-5"
+                    className="text-xl sm:text-2xl font-bold text-[#101828] dark:text-white tracking-tight mb-5"
                   >
                     {section.title}
                   </h2>
 
-                  <div className="space-y-4 text-[15px] sm:text-[16px] text-[var(--Text-text-secondary)] leading-relaxed text-start">
+                  <div className="space-y-4 text-[15px] sm:text-[16px] text-[#475569] dark:text-zinc-400 leading-relaxed text-start">
                     {section.paragraphs.map((p, pIdx) => {
                       if (typeof p === 'string') {
                         return (
@@ -192,7 +196,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                       return (
                         <div key={pIdx} className="space-y-3 pt-1">
                           {typedP.subheading && (
-                            <h3 className="text-base sm:text-[17px] font-semibold text-[var(--heading)] pt-2">
+                            <h3 className="text-base sm:text-[17px] font-semibold text-[#101828] dark:text-zinc-200 pt-2">
                               {typedP.subheading}
                             </h3>
                           )}
@@ -206,7 +210,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                           ))}
 
                           {typedP.list && typedP.list.length > 0 && (
-                            <ul className="list-disc ps-5 space-y-2.5 my-3 text-[14.5px] sm:text-[15.5px] marker:text-slate-400 dark:marker:text-zinc-600">
+                            <ul className="list-disc ps-5 space-y-2.5 my-3 text-[14.5px] sm:text-[15.5px] marker:text-[#94a3b8] dark:marker:text-zinc-600">
                               {typedP.list.map((item, itemIdx) => (
                                 <li key={itemIdx} className="leading-relaxed">
                                   {renderParagraphContent(item, isRtl)}
@@ -216,7 +220,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                           )}
 
                           {typedP.callout && (
-                            <div className="p-4 rounded-xl border border-[var(--card-border)] bg-[var(--surface-2)] dark:bg-[var(--surface-3)] text-xs sm:text-sm text-[var(--Text-text-secondary)]">
+                            <div className="p-4 rounded-xl border border-[#EAECF0] dark:border-zinc-800/80 bg-[#f8fafc] dark:bg-zinc-900/50 text-xs sm:text-sm text-[#475569] dark:text-zinc-300">
                               {typedP.callout.text}
                             </div>
                           )}
@@ -229,19 +233,19 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
             </div>
 
             {/* Mobile Contact Box (Only on small screens where sidebar collapses) */}
-            <div className="block lg:hidden mt-12 p-6 rounded-[20px] bg-[var(--card-surface)] border border-[var(--card-border)] shadow-xs">
-              <div className="w-10 h-10 rounded-full bg-blue-500/10 text-[var(--brand)] dark:text-blue-400 flex items-center justify-center shrink-0 mb-3">
+            <div className="block lg:hidden mt-12 p-6 sm:p-7 rounded-[20px] bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm dark:shadow-none transition-colors">
+              <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900/50 text-[#0066FF] dark:text-blue-400 flex items-center justify-center shrink-0 mb-3">
                 <InfoCircle className="w-5 h-5" aria-hidden="true" />
               </div>
-              <h3 className="text-base font-bold text-[var(--heading)] mb-2">
+              <h3 className="text-base font-bold text-[#101828] dark:text-zinc-100 mb-2">
                 {sidebar.title}
               </h3>
-              <p className="text-[13.5px] text-[var(--Text-text-secondary)] leading-relaxed mb-5">
+              <p className="text-[13.5px] text-[#475569] dark:text-zinc-400 leading-relaxed mb-5">
                 {sidebar.description}
               </p>
               <Link
                 href={`/${lang}${sidebar.buttonHref}`}
-                className="w-full inline-flex items-center justify-center font-bold text-[14px] rounded-xl h-[44px] border-2 border-[var(--card-border)] hover:border-slate-400 dark:hover:border-zinc-700 bg-transparent text-[var(--heading)] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+                className="w-full inline-flex items-center justify-center font-bold text-[14px] rounded-xl h-[44px] bg-white dark:bg-[#0a0a0a] border-2 border-[#e2e8f0] dark:border-zinc-800/80 text-[#0f172a] dark:text-zinc-100 hover:border-[#cbd5e1] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 active:scale-[0.98] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
               >
                 {sidebar.buttonText}
               </Link>
@@ -251,8 +255,8 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                 4. RELATED LEGAL DOCUMENTS
                ============================================================= */}
             {relatedDocs && relatedDocs.length > 0 && (
-              <div className="mt-16 pt-10 border-t border-[var(--card-border)]">
-                <h3 className="text-lg font-bold text-[var(--heading)] mb-6">
+              <div className="mt-16 pt-10 border-t border-[#EAECF0] dark:border-zinc-800/80">
+                <h3 className="text-lg font-bold text-[#101828] dark:text-zinc-100 mb-6">
                   {relatedDocsTitle}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -260,18 +264,18 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
                     <Link
                       key={rel.href}
                       href={`/${lang}${rel.href}`}
-                      className="p-5 rounded-2xl border border-[var(--card-border)] bg-[var(--card-surface)] hover:border-[var(--brand)] hover:shadow-xs transition-all duration-200 group flex flex-col justify-between"
+                      className="p-5 rounded-2xl border border-[#EAECF0] dark:border-zinc-800/80 bg-white dark:bg-[#0a0a0a] hover:border-[#0066FF] dark:hover:border-blue-500/60 hover:shadow-md dark:hover:shadow-[0_4px_20px_rgba(0,102,255,0.12)] hover:-translate-y-0.5 transition-all duration-200 group flex flex-col justify-between"
                     >
                       <div>
-                        <div className="font-bold text-[15px] text-[var(--heading)] group-hover:text-[var(--brand)] transition-colors flex items-center justify-between gap-2">
+                        <div className="font-bold text-[15px] text-[#101828] dark:text-zinc-100 group-hover:text-[#0066FF] dark:group-hover:text-blue-400 transition-colors flex items-center justify-between gap-2">
                           <span>{rel.title}</span>
-                          <NavArrowRight className="w-4 h-4 rtl:rotate-180 text-[var(--brand)] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                          <NavArrowRight className="w-4 h-4 rtl:rotate-180 text-[#0066FF] dark:text-blue-400 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                         </div>
-                        <p className="text-[13px] text-[var(--Text-text-secondary)] mt-2 leading-relaxed">
+                        <p className="text-[13px] text-[#475569] dark:text-zinc-400 mt-2 leading-relaxed">
                           {rel.description}
                         </p>
                       </div>
-                      <span className="text-xs font-semibold text-[var(--brand)] mt-4 inline-flex items-center gap-1">
+                      <span className="text-xs font-semibold text-[#0066FF] dark:text-blue-400 mt-4 inline-flex items-center gap-1 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform">
                         {isRtl ? 'عرض الوثيقة ←' : 'Read Document →'}
                       </span>
                     </Link>
@@ -286,19 +290,19 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
               RIGHT COLUMN: Sticky Contact Card (Desktop)
              ───────────────────────────────────────────────────────────── */}
           <aside className="hidden lg:block lg:col-span-4 lg:sticky lg:top-28 space-y-6">
-            <div className="p-7 rounded-[22px] bg-[var(--card-surface)] border border-[var(--card-border)] shadow-xs transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-500/10 text-[var(--brand)] dark:text-blue-400 flex items-center justify-center shrink-0 mb-4">
+            <div className="p-7 rounded-[22px] bg-white dark:bg-[#0a0a0a] border border-[#e2e8f0] dark:border-zinc-800/80 shadow-sm dark:shadow-none transition-colors">
+              <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900/50 text-[#0066FF] dark:text-blue-400 flex items-center justify-center shrink-0 mb-4">
                 <InfoCircle className="w-5 h-5" aria-hidden="true" />
               </div>
-              <h3 className="text-base font-bold text-[var(--heading)] mb-2">
+              <h3 className="text-base font-bold text-[#101828] dark:text-zinc-100 mb-2">
                 {sidebar.title}
               </h3>
-              <p className="text-[13.5px] text-[var(--Text-text-secondary)] leading-relaxed mb-6">
+              <p className="text-[13.5px] text-[#475569] dark:text-zinc-400 leading-relaxed mb-6">
                 {sidebar.description}
               </p>
               <Link
                 href={`/${lang}${sidebar.buttonHref}`}
-                className="w-full inline-flex items-center justify-center font-bold text-[13.5px] rounded-xl h-[44px] border-2 border-[var(--card-border)] hover:border-slate-400 dark:hover:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800/40 bg-transparent text-[var(--heading)] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
+                className="w-full inline-flex items-center justify-center font-bold text-[13.5px] rounded-xl h-[44px] bg-white dark:bg-[#0a0a0a] border-2 border-[#e2e8f0] dark:border-zinc-800/80 text-[#0f172a] dark:text-zinc-100 hover:border-[#cbd5e1] dark:hover:border-zinc-700 dark:hover:bg-zinc-800/80 hover:shadow-xs active:scale-[0.98] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-brand focus-visible:outline-none"
               >
                 {sidebar.buttonText}
               </Link>
