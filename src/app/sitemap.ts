@@ -12,18 +12,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/join-us',
     '/wallet',
     '/ask-di',
-    '/coming-soon',
+    '/privacy-policy',
+    '/terms-and-conditions',
+    '/cookie-policy',
   ];
 
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 
   for (const route of routes) {
+    const isLegal = route === '/privacy-policy' || route === '/terms-and-conditions' || route === '/cookie-policy';
+    const isHigh = route === '/about' || route === '/advertise';
+    const isHome = route === '';
+
     entries.push({
       url: `${baseUrl}/en${route}`,
       lastModified: now,
-      changeFrequency: route === '' ? 'daily' : 'weekly',
-      priority: route === '' ? 1.0 : route === '/about' || route === '/advertise' ? 0.8 : 0.6,
+      changeFrequency: isHome ? 'daily' : isLegal ? 'monthly' : 'weekly',
+      priority: isHome ? 1.0 : isHigh ? 0.8 : isLegal ? 0.5 : 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/en${route}`,
@@ -35,8 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url: `${baseUrl}/ar${route}`,
       lastModified: now,
-      changeFrequency: route === '' ? 'daily' : 'weekly',
-      priority: route === '' ? 1.0 : route === '/about' || route === '/advertise' ? 0.8 : 0.6,
+      changeFrequency: isHome ? 'daily' : isLegal ? 'monthly' : 'weekly',
+      priority: isHome ? 1.0 : isHigh ? 0.8 : isLegal ? 0.5 : 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/en${route}`,

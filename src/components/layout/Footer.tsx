@@ -90,9 +90,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
   ];
 
   const legalLinks = [
-    { label: dict?.legal?.terms || 'Terms & Conditions', href: `/${lang}/coming-soon?feature=Terms-and-Conditions` },
-    { label: dict?.legal?.privacy || 'Privacy Policy', href: `/${lang}/coming-soon?feature=Privacy-Policy` },
-    { label: dict?.legal?.cookies || 'Cookie Policy', href: `/${lang}/coming-soon?feature=Cookie-Policy` },
+    { label: dict?.legal?.terms || 'Terms & Conditions', href: `/${lang}/terms-and-conditions` },
+    { label: dict?.legal?.privacy || 'Privacy Policy', href: `/${lang}/privacy-policy` },
+    { label: dict?.legal?.cookies || 'Cookie Policy', href: `/${lang}/cookie-policy` },
   ];
 
   return (
@@ -276,8 +276,8 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
         <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-6">
           {/* Left: Copyright */}
           <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
-            <span>©2026</span>
-            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">Di-Wrapp.</span>
+            <span>©{new Date().getFullYear()}</span>
+            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
             <span>-</span>
             <span>{dict?.legal?.allRightsReserved || 'All rights reserved'}</span>
           </div>
