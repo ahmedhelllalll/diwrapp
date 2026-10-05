@@ -276,7 +276,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
         <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-6">
           {/* Left: Copyright */}
           <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
-            <span>©{new Date().getFullYear()}</span>
+            <span>©2026</span>
             <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
             <span>-</span>
             <span>{dict?.legal?.allRightsReserved || 'All rights reserved'}</span>
