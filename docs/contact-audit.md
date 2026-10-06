@@ -150,16 +150,18 @@ Tested across 3 runs on real mobile emulation (Moto G4 / 412x823 viewport, mobil
 
 ## 4. Verification and Before/After Lighthouse Results
 
-### Lighthouse Mobile Audit (Median of 3 Runs)
+### Lighthouse Mobile Audit (Median of 3 Alternating Runs)
 
-Emulated device: Moto G4, 412x823 viewport, mobile network & CPU throttling:
+Conducted as clean production builds (`next start`), alternating between a clean worktree of the pre-contact baseline (`02ee07a~1` / `31a3ad5`) and the current HEAD of `fix/contact-page` (`240578d`) on the exact same machine under identical hardware conditions:
 
-| Route | Timing | Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
+| Target | Variant | Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `/en/contact` | **Before** | 73 | **96** | 100 | 100 | 9.47s | 147ms | 0.000 |
-| `/en/contact` | **After** | **86** | **100** | **100** | **100** | **4.14s** | **29ms** | **0.000** |
-| `/ar/contact` | **Before** | 72 | **96** | 100 | 100 | 9.49s | 153ms | 0.000 |
-| `/ar/contact` | **After** | **84** | **100** | **100** | **100** | **4.44s** | **30ms** | **0.000** |
+| **/en/contact** | Baseline (`02ee07a~1`) | 71 | **96** | 100 | 100 | 5.49s | 401ms | 0.000 |
+| | **HEAD (`fix/contact-page`)** | **69** | **100** | **100** | **100** | **5.86s** | **352ms** | **0.000** |
+| **/ar/contact** | Baseline (`02ee07a~1`) | 70 | **96** | 100 | 100 | 5.51s | 362ms | 0.017 |
+| | **HEAD (`fix/contact-page`)** | **68** | **100** | **100** | **100** | **5.55s** | **416ms** | **0.017** |
+
+> **Performance note:** Performance scores are essentially at parity (within normal 1-2 point run-to-run variance on local test hardware). Accessibility reached a perfect **100/100**, and Best Practices and SEO were maintained at **100/100**.
 
 ### Viewport Emulation Matrix (Zero Horizontal Overflow Confirmed)
 
@@ -175,4 +177,31 @@ Tested across both EN and AR (LTR & RTL), Light and Dark themes, with real devic
 | **1280px** | Desktop Standard | Pass | Pass | None |
 | **1536px** | Large Desktop (2K) | Pass | Pass | None |
 | **200% Zoom** | Browser Accessibility Zoom | Pass | Pass | None |
+
+---
+
+## 5. Worktree Bisection & Regression Analysis
+
+### Bisection Matrix Across Branch Commits
+
+| Commit | Contact Body Font | Contact H1 Font | Contact Nav Font | Advertise Body Font | Dropdown Opens on Click | Dropdown Toggles on 2nd Click |
+| :--- | :--- | :--- | :--- | :--- | :---: | :---: |
+| `02ee07a~1` (`31a3ad5`) | `"Times New Roman"` | `"Times New Roman"` | `"Times New Roman"` | `lufga, "lufga Fallback"` | N/A (no trigger) | N/A |
+| `9c2aa53` | `"Times New Roman"` | `"Times New Roman"` | `"Times New Roman"` | `lufga, "lufga Fallback"` | Yes | Yes |
+| `19f2f04` | `"Times New Roman"` | `"Times New Roman"` | `"Times New Roman"` | `lufga, "lufga Fallback"` | Yes | Yes |
+| `650e77a` | `"Times New Roman"` | `"Times New Roman"` | `"Times New Roman"` | `lufga, "lufga Fallback"` | Yes | Yes |
+| `bd9ce1e` | `"Times New Roman"` | `"Times New Roman"` | `"Times New Roman"` | `lufga, "lufga Fallback"` | Yes | Yes |
+| `2127b29` (Font fix) | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | Yes | Yes |
+| `240578d` (Dropdown fix) | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | `lufga, "lufga Fallback"` | Yes | Yes |
+
+### Regression Root Causes & Fixes
+
+1. **Font Regression (`Times New Roman` serif fallback):**
+   - **Root Cause:** In `src/app/contact.css`, line 982 contained `[dir="ltr"],` in a selector list intended for LTR text inside RTL pages (`[dir="rtl"] [dir="ltr"]`). Because `[dir="ltr"]` has attribute specificity `(0, 1, 0)`, it matched `<html lang="en" dir="ltr">`, overriding `lufga.className` (`(0, 1, 0)`) in the cascade. It declared `font-family: var(--font-lufga), var(--font-sans), sans-serif`. In `globals.css`, `--font-lufga` had a cyclic self-reference in `:root` (`--font-lufga: var(--font-lufga), sans-serif`), rendering the custom property invalid at computed-value time, which caused the browser to reset `font-family` on `html` to its initial fallback: `Times New Roman`.
+   - **Fix (`2127b29`):** Removed `[dir="ltr"],` from line 982 of `contact.css`, restricted LTR protection strictly to `[dir="rtl"] [dir="ltr"]` and specific brand values, and replaced all redundant `'Lufga'` declarations with `font-family: inherit;` so elements cleanly inherit `font-sans` from `body`.
+
+2. **Country-Code Dropdown Interaction:**
+   - **Root Cause:** In `ContactForm.tsx`, `dropdownRef` was attached to the outer `contact-phone-group` wrapper rather than the dedicated country trigger/menu container. Tapping the phone number input did not close the menu. Furthermore, outside-click detection listened to `mousedown` without covering touch events (`pointerdown`), causing potential race conditions on mobile viewports.
+   - **Fix (`240578d`):** Attached `dropdownContainerRef` specifically to the trigger + listbox wrapper and `triggerRef` to the trigger button; upgraded outside-click handling to `pointerdown`; added Escape key listener that restores keyboard focus to `triggerRef.current`; and verified option selection, outside click, and mobile 360px / RTL operation.
+
 
