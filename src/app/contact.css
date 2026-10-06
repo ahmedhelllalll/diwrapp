@@ -62,7 +62,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 20px;
   color: #344054;
@@ -103,7 +103,7 @@
 
 /* Title & Subtitle */
 .contact-title {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
@@ -121,7 +121,7 @@
 }
 
 .contact-subtitle {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -276,7 +276,7 @@
 }
 
 .contact-card-label {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -289,7 +289,7 @@
 .contact-card-value span,
 .contact-ltr-value,
 .contact-rtl-value {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 700;
   text-decoration: underline;
   text-decoration-style: solid;
@@ -347,7 +347,7 @@
 }
 
 .contact-label {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -368,7 +368,7 @@
   border: 1px solid #EAECF0;
   background-color: #FFFFFF;
   padding: 0 14px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 16px;
   color: #101828;
   box-sizing: border-box;
@@ -460,7 +460,7 @@
   border: none;
   height: 100%;
   padding: 0 14px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 16px;
   color: #101828;
   outline: none;
@@ -488,7 +488,7 @@
   background-color: #FFFFFF;
   padding: 14px;
   padding-bottom: 32px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 16px;
   color: #101828;
   box-sizing: border-box;
@@ -514,7 +514,7 @@
   position: absolute;
   bottom: 10px;
   right: 14px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 12px;
   color: #475569;
   pointer-events: none;
@@ -564,7 +564,7 @@
   color: #FFFFFF;
   padding: 12px 28px;
   border-radius: 12px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -654,7 +654,7 @@
 }
 
 .newsletter-title {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 600;
   font-size: 26px;
   line-height: 32px;
@@ -663,7 +663,7 @@
 }
 
 .newsletter-desc {
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -696,7 +696,7 @@
   border: 1px solid #EAECF0;
   border-radius: 12px;
   padding: 0 16px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 14px;
   color: #101828;
   box-sizing: border-box;
@@ -730,7 +730,7 @@
   color: #FFFFFF;
   border-radius: 12px;
   padding: 0 24px;
-  font-family: 'Lufga', var(--font-sans), sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -965,7 +965,7 @@
 [lang="ar"] .newsletter-input,
 [dir="rtl"] .newsletter-btn,
 [lang="ar"] .newsletter-btn {
-  font-family: var(--font-arabic, var(--font-cairo, var(--font-sans))), sans-serif;
+  font-family: var(--font-cairo), sans-serif;
 }
 
 /* Placeholders in Arabic mode */
@@ -975,15 +975,14 @@
 [lang="ar"] .contact-textarea::placeholder,
 [dir="rtl"] .newsletter-input::placeholder,
 [lang="ar"] .newsletter-input::placeholder {
-  font-family: var(--font-arabic, var(--font-cairo, var(--font-sans))), sans-serif;
+  font-family: var(--font-cairo), sans-serif;
 }
 
 /* Explicit LTR protection for English brand marks, phone numbers, and emails */
-[dir="ltr"],
 [dir="rtl"] [dir="ltr"],
 [lang="ar"] [dir="ltr"],
 .contact-breadcrumb-brand,
 .brand-logo,
 .contact-ltr-value {
-  font-family: var(--font-lufga), var(--font-sans), sans-serif;
+  font-family: var(--font-lufga), sans-serif;
 }
