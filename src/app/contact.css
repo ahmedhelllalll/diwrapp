@@ -400,7 +400,6 @@
   background-color: #FFFFFF;
   box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -427,7 +426,8 @@
   transition: background-color 0.15s ease;
   outline: none;
   box-shadow: none;
-  border-radius: 0;
+  border-start-start-radius: 11px;
+  border-end-start-radius: 11px;
 }
 
 .contact-country-trigger:hover {

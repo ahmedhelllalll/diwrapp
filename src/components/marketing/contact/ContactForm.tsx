@@ -442,14 +442,13 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               <span>{dict?.phoneLabel || (isRtl ? "رقم الهاتف" : "Phone number")}</span>
             </label>
             <div 
-              className="contact-phone-group relative border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12"
-              dir="ltr"
+              className={`contact-phone-group relative ${isCountryDropdownOpen ? 'z-30' : 'z-0'} border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12`}
             >
-              <div ref={dropdownContainerRef} className="relative h-full flex items-center shrink-0">
+              <div ref={dropdownContainerRef} className="relative z-30 h-full flex items-center shrink-0">
                 <button
                   ref={triggerRef}
                   type="button"
-                  className="contact-country-trigger flex items-center gap-1.5 px-3 min-h-[44px] h-full border-e border-slate-300 dark:border-white/[0.09] bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] transition-colors cursor-pointer outline-none shrink-0 focus-visible:ring-2 focus-visible:ring-brand"
+                  className="contact-country-trigger flex items-center gap-1.5 px-3 min-h-[44px] h-full border-e border-slate-300 dark:border-white/[0.09] bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] transition-colors cursor-pointer outline-none shrink-0 focus-visible:ring-2 focus-visible:ring-brand rounded-s-[11px]"
                   onClick={() => setIsCountryDropdownOpen((prev) => !prev)}
                   aria-haspopup="listbox"
                   aria-expanded={isCountryDropdownOpen}
@@ -467,7 +466,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                     onWheel={(e) => e.stopPropagation()}
                     className="absolute top-full start-0 mt-1.5 w-60 bg-white/98 dark:bg-zinc-900/95 dark:backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] rounded-xl shadow-xl z-30 py-1 overflow-hidden"
                     role="listbox"
-                    dir="ltr"
+                    dir={isRtl ? "rtl" : "ltr"}
                     aria-label={dict?.selectCountryCode || (isRtl ? "اختر رمز الدولة" : "Select country code")}
                   >
                     {COUNTRIES.map((c) => {
@@ -486,7 +485,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                             <Flag className="w-5 h-5 rounded-full overflow-hidden shrink-0" />
                             <span className="font-medium text-slate-900 dark:text-zinc-100">{countryLabel}</span>
                           </span>
-                          <span className="text-slate-500 dark:text-zinc-400 font-sans font-medium">{c.code}</span>
+                          <span className="text-slate-500 dark:text-zinc-400 font-sans font-medium" dir="ltr">{c.code}</span>
                         </button>
                       );
                     })}
@@ -504,7 +503,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder={dict?.phonePlaceholder || "+1 (000) 000 - 0000"}
-                className="contact-phone-input text-base sm:text-sm px-3 placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none text-left w-full bg-transparent h-full"
+                className="contact-phone-input text-base sm:text-sm px-3 placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none text-start rtl:text-end w-full bg-transparent h-full rounded-e-[11px]"
               />
             </div>
           </div>
