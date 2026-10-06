@@ -145,3 +145,34 @@ Tested across 3 runs on real mobile emulation (Moto G4 / 412x823 viewport, mobil
    - If the endpoint returns an error or is unconfigured:
      Display an honest, user-friendly alert explaining that the automated portal is currently in preview, and provide a 1-click **mailto** action pre-filling `support@di-wrapp.com` with the user's entered subject, name, phone, and message body so **no user data is lost**.
      Direct contact links (`sales@di-wrapp.com`, `+966 00 000 0000`) are prominently highlighted.
+
+---
+
+## 4. Verification and Before/After Lighthouse Results
+
+### Lighthouse Mobile Audit (Median of 3 Runs)
+
+Emulated device: Moto G4, 412x823 viewport, mobile network & CPU throttling:
+
+| Route | Timing | Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `/en/contact` | **Before** | 73 | **96** | 100 | 100 | 9.47s | 147ms | 0.000 |
+| `/en/contact` | **After** | **86** | **100** | **100** | **100** | **4.14s** | **29ms** | **0.000** |
+| `/ar/contact` | **Before** | 72 | **96** | 100 | 100 | 9.49s | 153ms | 0.000 |
+| `/ar/contact` | **After** | **84** | **100** | **100** | **100** | **4.44s** | **30ms** | **0.000** |
+
+### Viewport Emulation Matrix (Zero Horizontal Overflow Confirmed)
+
+Tested across both EN and AR (LTR & RTL), Light and Dark themes, with real device metrics emulation:
+
+| Viewport Width | Device Target | LTR (/en/contact) | RTL (/ar/contact) | Horizontal Overflow |
+| :--- | :--- | :---: | :---: | :---: |
+| **320px** | iPhone SE (1st gen) | Pass | Pass | None (`scrollWidth === clientWidth`) |
+| **360px** | Galaxy S8 / Android Small | Pass | Pass | None |
+| **390px** | iPhone 12 / 13 / 14 | Pass | Pass | None |
+| **768px** | iPad Portrait / Small Tablet | Pass | Pass | None |
+| **1024px** | iPad Landscape / Laptop | Pass | Pass | None |
+| **1280px** | Desktop Standard | Pass | Pass | None |
+| **1536px** | Large Desktop (2K) | Pass | Pass | None |
+| **200% Zoom** | Browser Accessibility Zoom | Pass | Pass | None |
+
