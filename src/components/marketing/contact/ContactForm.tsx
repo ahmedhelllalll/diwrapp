@@ -182,29 +182,35 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownContainerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const messageInputRef = useRef<HTMLTextAreaElement>(null);
 
   // Close dropdown on click outside or Escape key
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    if (!isCountryDropdownOpen) return;
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target as Node | null;
+      if (dropdownContainerRef.current && target && !dropdownContainerRef.current.contains(target)) {
         setIsCountryDropdownOpen(false);
       }
     }
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setIsCountryDropdownOpen(false);
+        triggerRef.current?.focus();
       }
     }
-    if (isCountryDropdownOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("keydown", handleKeyDown);
-    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isCountryDropdownOpen]);
@@ -264,6 +270,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
     setSelectedCountry(country);
     setFormData((prev) => ({ ...prev, countryCode: country.code }));
     setIsCountryDropdownOpen(false);
+    triggerRef.current?.focus();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -435,15 +442,15 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               <span>{dict?.phoneLabel || (isRtl ? "رقم الهاتف" : "Phone number")}</span>
             </label>
             <div 
-              ref={dropdownRef}
               className="contact-phone-group relative border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12"
               dir="ltr"
             >
-              <div className="relative h-full flex items-center shrink-0">
+              <div ref={dropdownContainerRef} className="relative h-full flex items-center shrink-0">
                 <button
+                  ref={triggerRef}
                   type="button"
                   className="contact-country-trigger flex items-center gap-1.5 px-3 min-h-[44px] h-full border-e border-slate-300 dark:border-white/[0.09] bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] transition-colors cursor-pointer outline-none shrink-0 focus-visible:ring-2 focus-visible:ring-brand"
-                  onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                  onClick={() => setIsCountryDropdownOpen((prev) => !prev)}
                   aria-haspopup="listbox"
                   aria-expanded={isCountryDropdownOpen}
                   aria-label={`${dict?.selectCountryCode || (isRtl ? "اختر رمز الدولة" : "Select country code")}, ${currentCountryName} ${selectedCountry.code}`}
