@@ -11,12 +11,18 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata as any;
-  const contact = (dict as any).contact;
+  const contact = dict.contact;
+  const isAr = lang === 'ar';
+  const title = isAr ? 'تواصل معنا | DiWrapp' : 'Contact Us | DiWrapp';
+  const description =
+    contact?.hero?.subtitle ||
+    (isAr
+      ? 'تواصل مع فريق منصة دي-راب لأي استفسار أو شراكة إعلانية أو دعم فني.'
+      : 'Connect with the DiWrapp team for questions, support, or partnership inquiries.');
 
   return {
-    title: meta?.contact?.title || 'Contact Us',
-    description: meta?.contact?.description || contact?.hero?.subtitle || "Let’s Get Connected",
+    title,
+    description,
     alternates: {
       canonical: `/${lang}/contact`,
       languages: {
@@ -25,6 +31,19 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
         'x-default': '/en/contact',
       },
     },
+    openGraph: {
+      title,
+      description,
+      url: `https://diwrapp.com/${lang}/contact`,
+      siteName: 'DiWrapp',
+      locale: isAr ? 'ar_SA' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 
@@ -32,8 +51,8 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const contact = (dict as any).contact;
-  const newsletter = (dict as any).newsletter;
+  const contact = dict.contact;
+  const newsletter = dict.newsletter;
 
   return (
     <div className="contact-scope contact-page-container" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>

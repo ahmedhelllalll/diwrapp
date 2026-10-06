@@ -566,8 +566,27 @@
       "subjectPlaceholder": "أدخل الموضوع",
       "messageLabel": "الرسالة",
       "messagePlaceholder": "اكتب هنا...",
-      "charLimit": "0/250",
-      "submitButton": "إرسال"
+      "submitButton": "إرسال",
+      "sendingButton": "جاري الإرسال...",
+      "selectCountryCode": "اختر رمز الدولة",
+      "privacyNotice": {
+        "pre": "بإرسالك لهذا النموذج، فإنك تقر بأن دي-راب تعالج بياناتك الشخصية وفقاً لـ ",
+        "linkText": "سياسة الخصوصية",
+        "post": "."
+      },
+      "validation": {
+        "nameRequired": "يرجى إدخال اسمك",
+        "emailRequired": "يرجى إدخال بريدك الإلكتروني",
+        "emailInvalid": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+        "messageRequired": "يرجى كتابة رسالتك",
+        "messageMin": "يجب ألا تقل الرسالة عن 10 أحرف"
+      },
+      "successMessage": "تم استلام رسالتك بنجاح! سيتواصل فريقنا معك قريبًا.",
+      "fallback": {
+        "title": "خدمة الإرسال عبر النموذج في وضع المعاينة التجريبية",
+        "description": "لضمان متابعة استفسارك على الفور، يُرجى مراسلة فريقنا مباشرة عبر support@di-wrapp.com أو استخدام زر البريد الإلكتروني أدناه.",
+        "mailtoButton": "إرسال عبر البريد الإلكتروني"
+      }
     }
   },
   "newsletter": {

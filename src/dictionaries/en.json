@@ -552,7 +552,27 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Type here...",
       "charLimit": "0/250",
-      "submitButton": "Submit"
+      "submitButton": "Submit",
+      "sendingButton": "Sending...",
+      "selectCountryCode": "Select country code",
+      "privacyNotice": {
+        "pre": "By submitting this form, you acknowledge that DiWrapp processes your personal information in accordance with our ",
+        "linkText": "Privacy Policy",
+        "post": "."
+      },
+      "validation": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email address",
+        "emailInvalid": "Please enter a valid email address",
+        "messageRequired": "Please enter your message",
+        "messageMin": "Message must be at least 10 characters"
+      },
+      "successMessage": "Your message has been received! Our team will get back to you shortly.",
+      "fallback": {
+        "title": "Online submission is temporarily in preview mode",
+        "description": "To ensure your inquiry is answered immediately, please contact our team directly at support@di-wrapp.com or use the direct email button below.",
+        "mailtoButton": "Open Email Client (Pre-filled)"
+      }
     }
   },
   "newsletter": {
