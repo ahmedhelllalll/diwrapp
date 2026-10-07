@@ -57,6 +57,40 @@
   }
 }
 
+/* Hero Entrance Animations */
+@keyframes heroBadgeEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroTextFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBannerEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .advertise-badge {
   display: inline-flex;
   align-items: center;
@@ -80,7 +114,7 @@
   opacity: 1;
   transition: all 0.2s ease;
   user-select: none;
-  animation: heroFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
+  animation: heroBadgeEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.06s backwards;
 }
 
 [dir="rtl"] .advertise-badge {
@@ -111,8 +145,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
-  will-change: transform;
 }
 
 @media (min-width: 768px) {
@@ -131,6 +163,8 @@
   text-align: center;
   color: var(--heading);
   display: block;
+  animation: heroTextFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s backwards;
+  will-change: transform, opacity;
 }
 
 .dark .advertise-title-light {
@@ -149,6 +183,8 @@
   color: var(--heading);
   margin-top: 0;
   display: block;
+  animation: heroTextFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s backwards;
+  will-change: transform, opacity;
 }
 
 .dark .advertise-title-bold,
@@ -172,8 +208,9 @@
   position: relative;
   background-color: #2b1b88;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-  animation: heroRiseSubtitle 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  animation: heroBannerEntrance 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.30s backwards;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 @media (min-width: 640px) {
@@ -428,16 +465,16 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 250px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.25s ease;
   position: relative;
 }
 
 .bento-card:hover {
   border-color: #D0D5DD;
-  box-shadow: 0 12px 28px -6px rgba(16, 24, 40, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -8px rgba(16, 24, 40, 0.09);
+  transform: translateY(-4px);
 }
 
 /* Wide Card (col-span-2 on desktop and tablet) */
@@ -470,11 +507,13 @@
   justify-content: center;
   color: var(--Text-text-secondary);
   flex-shrink: 0;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .bento-card:hover .bento-icon-box {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-1px);
 }
 
 /* Text Content */
@@ -539,6 +578,11 @@
   transform: scale(1.50);
   user-select: none;
   pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card-tablet:hover .bento-tablet-img {
+  transform: scale(1.53) translateY(-2px);
 }
 
 /* Card 6: Digital Illuminated Doorway */
@@ -557,12 +601,12 @@
   object-position: center;
   width: 100%;
   height: 100%;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
 .bento-card-image:hover .bento-door-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 /* ==========================================================================
@@ -575,8 +619,8 @@
 
 .dark .bento-card:hover {
   border-color: #343B4B;
-  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
-  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
 }
 
 .dark .bento-icon-box {
@@ -687,15 +731,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 1;
   transform: translateY(0);
+  will-change: opacity, transform;
 }
 
 .ai-carousel-content.ai-carousel-fading {
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(8px);
 }
 
 /* 1. Badge (Top Tag) */
@@ -810,19 +855,21 @@
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.28);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease;
   cursor: pointer;
 }
 
 .ai-carousel-cta:hover {
   background-color: var(--brand-strong, #0055E6);
   box-shadow: 0 6px 20px rgba(0, 102, 255, 0.38);
-  transform: translateY(-1.5px);
+  transform: translateY(-2px);
   color: #FFFFFF;
 }
 
 .ai-carousel-cta:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
 }
 
 /* Pagination Dots */
@@ -842,15 +889,18 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.25s ease,
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ai-carousel-dot:hover {
   background-color: #98A2B3;
+  transform: scale(1.25);
 }
 
 .ai-carousel-dot-active {
   background-color: var(--heading);
+  transform: scale(1.15);
 }
 
 /* Section Divider */
@@ -912,7 +962,7 @@
 /* Base SSR / No-JS state: 100% visible by default, 0 layout shift */
 [data-reveal] {
   --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --reveal-delay: calc(min(var(--i, 0), 4) * 70ms);
+  --reveal-delay: calc(min(var(--i, 0), 6) * 80ms);
   opacity: 1;
   transform: none;
 }
@@ -920,7 +970,7 @@
 /* Pending state: applied ONLY after hydration to elements strictly below the viewport */
 [data-reveal="up"][data-reveal-state="pending"] {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(24px);
 }
 
 [data-reveal="fade"][data-reveal-state="pending"] {
@@ -935,7 +985,7 @@
 
 [data-reveal="pop"][data-reveal-state="pending"] {
   opacity: 0;
-  transform: translateY(8px) scale(0.94);
+  transform: translateY(12px) scale(0.96);
   transform-origin: center;
 }
 
@@ -958,44 +1008,53 @@
 [data-reveal="up"][data-reveal-state="in"] {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 650ms var(--reveal-ease) var(--reveal-delay),
-              transform 650ms var(--reveal-ease) var(--reveal-delay);
+  transition: opacity 820ms var(--reveal-ease) var(--reveal-delay),
+              transform 820ms var(--reveal-ease) var(--reveal-delay);
 }
 
 [data-reveal="fade"][data-reveal-state="in"] {
   opacity: 1;
-  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay);
+  transition: opacity 800ms var(--reveal-ease) var(--reveal-delay);
 }
 
 [data-reveal="scale"][data-reveal-state="in"] {
   opacity: 1;
   transform: scale(1);
   transform-origin: center;
-  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay),
-              transform 700ms var(--reveal-ease) var(--reveal-delay);
+  transition: opacity 800ms var(--reveal-ease) var(--reveal-delay),
+              transform 820ms var(--reveal-ease) var(--reveal-delay);
 }
 
 [data-reveal="pop"][data-reveal-state="in"] {
   opacity: 1;
   transform: translateY(0) scale(1);
   transform-origin: center;
-  transition: opacity 500ms var(--reveal-ease) var(--reveal-delay),
-              transform 500ms var(--reveal-ease) var(--reveal-delay);
+  transition: opacity 600ms var(--reveal-ease) var(--reveal-delay),
+              transform 650ms var(--reveal-ease) var(--reveal-delay);
 }
 
 [data-reveal="line"][data-reveal-state="in"] {
   opacity: 1;
   transform: scaleX(1);
   transition: opacity 800ms var(--reveal-ease) var(--reveal-delay),
-              transform 800ms var(--reveal-ease) var(--reveal-delay);
+              transform 900ms var(--reveal-ease) var(--reveal-delay);
 }
 
 /* Reduced motion preference: everything visible instantly, no transforms or transitions */
 @media (prefers-reduced-motion: reduce) {
   .advertise-badge,
   .advertise-title,
+  .advertise-title-light,
+  .advertise-title-bold,
   .advertise-image-wrapper,
+  .advertise-btn-primary,
   .bento-card,
+  .bento-icon-box,
+  .bento-tablet-img,
+  .bento-door-img,
+  .ai-carousel-content,
+  .ai-carousel-cta,
+  .ai-carousel-dot,
   [data-reveal],
   [data-reveal][data-reveal-state="pending"],
   [data-reveal][data-reveal-state="in"] {

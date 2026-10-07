@@ -73,11 +73,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
             </section>
 
             {/* Banner Image Section */}
-            <section
-              className="advertise-image-section"
-              data-reveal="up"
-              style={{ '--i': 0 } as React.CSSProperties}
-            >
+            <section className="advertise-image-section">
               <div className="advertise-image-wrapper">
                 <Image 
                   src="/assets/advertise-image.jpg" 

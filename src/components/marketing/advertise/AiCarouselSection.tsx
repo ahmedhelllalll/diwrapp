@@ -58,7 +58,7 @@ export default function AiCarouselSection({
     setTimeout(() => {
       setDisplayedIndex(nextIndex);
       setIsTransitioning(false);
-    }, 220);
+    }, 320);
   };
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function AiCarouselSection({
         setTimeout(() => {
           setDisplayedIndex(next);
           setIsTransitioning(false);
-        }, 220);
+        }, 320);
         return next;
       });
     }, 6500);
@@ -183,7 +183,11 @@ export default function AiCarouselSection({
       </div>
 
       {/* Bottom Section Divider */}
-      <div className="ai-carousel-divider" />
+      <div
+        className="ai-carousel-divider"
+        data-reveal="line"
+        style={{ '--i': 1 } as React.CSSProperties}
+      />
     </section>
   );
 }

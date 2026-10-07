@@ -38,7 +38,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 1: Tablet Showcase */}
         <div
           className="bento-card bento-card-tablet"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 0 } as React.CSSProperties}
         >
           <div className="bento-tablet-inner">
@@ -56,7 +56,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 2: Instant Browse & Book */}
         <div
           className="bento-card"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 1 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">
@@ -75,7 +75,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 3: Smart Dashboard */}
         <div
           className="bento-card"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 2 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">
@@ -97,7 +97,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 4: Booking Proof & Reporting */}
         <div
           className="bento-card"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 0 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">
@@ -116,7 +116,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 5: Wallet Top-Ups & Payouts */}
         <div
           className="bento-card"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 1 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">
@@ -135,7 +135,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 6: Illuminated Doorway Image Visual */}
         <div
           className="bento-card bento-card-image"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 2 } as React.CSSProperties}
         >
           <Image
@@ -153,7 +153,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 7: Streamlined approval Workflows (Wide Card, col-span-2) */}
         <div
           className="bento-card bento-card-wide"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 0 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">
@@ -172,7 +172,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         {/* Card 8: Stay instantly updated */}
         <div
           className="bento-card"
-          data-reveal="fade"
+          data-reveal="up"
           style={{ '--i': 1 } as React.CSSProperties}
         >
           <div className="bento-icon-box" aria-hidden="true">

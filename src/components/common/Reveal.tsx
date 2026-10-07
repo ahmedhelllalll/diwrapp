@@ -38,8 +38,8 @@ function getSharedObserver(): IntersectionObserver | null {
             };
 
             target.addEventListener("transitionend", onTransitionEnd);
-            // Safety timeout: max duration (800ms) + max delay (280ms) + buffer
-            setTimeout(cleanUp, 1400);
+            // Safety timeout: max duration (900ms) + max delay (480ms) + buffer
+            setTimeout(cleanUp, 1600);
 
             target.setAttribute("data-reveal-state", "in");
           }
