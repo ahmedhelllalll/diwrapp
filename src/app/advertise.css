@@ -9,6 +9,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
 }
 
 .dark .advertise-scope {
@@ -169,6 +170,7 @@
   position: relative;
   background-color: #2b1b88;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (min-width: 640px) {
@@ -182,6 +184,10 @@
     border-radius: 32px;
     box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.1);
   }
+
+  .advertise-image-wrapper:hover {
+    box-shadow: 0 28px 60px -18px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .advertise-hero-img {
@@ -190,6 +196,11 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.advertise-image-wrapper:hover .advertise-hero-img {
+  transform: scale(1.012);
 }
 
 /* ==========================================================================
@@ -346,23 +357,19 @@
   padding: 12px 24px;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(22, 101, 255, 0.35);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   width: fit-content;
   cursor: pointer;
   border: none;
   text-decoration: none;
   line-height: 20px;
+  will-change: transform;
 }
 
 .advertise-btn-primary:hover {
   background-color: #0d55e8;
-  box-shadow: 0 6px 20px rgba(22, 101, 255, 0.45);
-  transform: translateY(-1.5px);
+  box-shadow: 0 8px 22px rgba(22, 101, 255, 0.45);
   color: #ffffff;
-}
-
-.advertise-btn-primary:active {
-  transform: scale(0.98) translateY(0);
 }
 
 /* RTL Adjustments */
@@ -423,10 +430,11 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 250px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.25s ease;
+  transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
   position: relative;
+  will-change: transform;
 }
 
 .bento-card:hover {
@@ -803,19 +811,15 @@
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.28);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  will-change: transform;
 }
 
 .ai-carousel-cta:hover {
   background-color: var(--brand-strong, #0055E6);
-  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.38);
-  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.42);
   color: #FFFFFF;
-}
-
-.ai-carousel-cta:active {
-  transform: translateY(0);
 }
 
 /* Pagination Dots */
@@ -893,4 +897,25 @@
 
 [dir="rtl"] .ai-carousel-badge {
   padding: 4px 8px 4px 10px;
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .advertise-image-wrapper,
+  .advertise-hero-img,
+  .bento-card,
+  .bento-icon-box,
+  .bento-door-img,
+  .bento-tablet-img,
+  .advertise-btn-primary,
+  .ai-carousel-cta,
+  .ai-carousel-dot,
+  .advertise-badge,
+  .advertise-feature-badge {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
