@@ -30,17 +30,17 @@ export default function JoinUsHero({
 
   return (
     <section className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
-      {/* 3D Room Background Image - Completely Static & Stretched to Full Viewport */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none select-none">
+      {/* 3D Room Background Image - Preserves natural aspect ratio without stretching */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
         {/* Light Mode 3D Room Graphic */}
         <Image
           src="/assets/join-background.webp"
           alt="Join Us Background"
           fill
           priority
-          quality={75}
+          quality={85}
           sizes="100vw"
-          className="w-full h-full object-fill sm:object-cover object-center pointer-events-none select-none dark:hidden"
+          className="w-full h-full object-cover object-center pointer-events-none select-none dark:hidden"
         />
 
         {/* Dark Mode 3D Room Graphic */}
@@ -49,15 +49,21 @@ export default function JoinUsHero({
           alt="Join Us Background Dark"
           fill
           priority
-          quality={75}
+          quality={85}
           sizes="100vw"
-          className="w-full h-full object-fill sm:object-cover object-center pointer-events-none select-none hidden dark:block"
+          className="w-full h-full object-cover object-center pointer-events-none select-none hidden dark:block"
         />
       </div>
 
       {/* Soft Ambient Radial Vignette behind center text on mobile (zero flat gray film / zero blur) */}
       <div 
         className="sm:hidden absolute inset-0 w-full h-full pointer-events-none select-none bg-[radial-gradient(ellipse_65%_45%_at_50%_50%,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0)_100%)] dark:bg-[radial-gradient(ellipse_65%_45%_at_50%_50%,rgba(8,8,8,0.75)_0%,rgba(8,8,8,0)_100%)] z-[1]"
+        aria-hidden="true"
+      />
+
+      {/* Bottom Fade Gradient for Smooth Theme-Aware Transition into Next Section */}
+      <div 
+        className="absolute bottom-0 inset-x-0 w-full h-36 sm:h-48 md:h-60 lg:h-72 pointer-events-none select-none z-[4] bg-gradient-to-t from-white via-white/80 to-transparent dark:from-[#080808] dark:via-[#080808]/85 dark:to-transparent"
         aria-hidden="true"
       />
 
