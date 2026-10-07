@@ -442,13 +442,13 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               <span>{dict?.phoneLabel || (isRtl ? "رقم الهاتف" : "Phone number")}</span>
             </label>
             <div 
-              className={`contact-phone-group relative ${isCountryDropdownOpen ? 'z-30' : 'z-0'} border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12`}
+              className={`contact-phone-group relative ${isCountryDropdownOpen ? 'z-30 is-open' : 'z-0'} border border-slate-300 dark:border-white/[0.09] bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12`}
             >
-              <div ref={dropdownContainerRef} className="relative z-30 h-full flex items-center shrink-0">
+              <div ref={dropdownContainerRef} className="relative h-full flex items-center shrink-0">
                 <button
                   ref={triggerRef}
                   type="button"
-                  className="contact-country-trigger flex items-center gap-1.5 px-3 min-h-[44px] h-full border-e border-slate-300 dark:border-white/[0.09] bg-transparent hover:bg-slate-100/50 dark:hover:bg-white/[0.04] transition-colors cursor-pointer outline-none shrink-0 focus-visible:ring-2 focus-visible:ring-brand rounded-s-[11px]"
+                  className="contact-country-trigger flex items-center gap-1.5 px-3 h-full border-none bg-transparent hover:bg-transparent dark:hover:bg-transparent transition-colors cursor-pointer outline-none shrink-0 rounded-s-[11px]"
                   onClick={() => setIsCountryDropdownOpen((prev) => !prev)}
                   aria-haspopup="listbox"
                   aria-expanded={isCountryDropdownOpen}
@@ -456,7 +456,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 >
                   <SelectedFlag className="w-5 h-5 rounded-full overflow-hidden shrink-0" />
                   <span className="text-xs font-semibold text-slate-800 dark:text-zinc-200 font-sans" dir="ltr">{selectedCountry.code}</span>
-                  <NavArrowDown width={14} height={14} className="w-3.5 h-3.5 text-slate-800 dark:text-zinc-200 shrink-0" aria-hidden="true" />
+                  <NavArrowDown width={14} height={14} className={`contact-country-chevron w-3.5 h-3.5 text-slate-800 dark:text-zinc-200 shrink-0 transition-transform duration-200 ${isCountryDropdownOpen ? 'rotate-180' : 'rotate-0'}`} aria-hidden="true" />
                 </button>
 
                 {/* Country Dropdown Menu */}
