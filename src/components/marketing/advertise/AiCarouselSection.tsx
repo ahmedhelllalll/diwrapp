@@ -106,7 +106,7 @@ export default function AiCarouselSection({
           alt="Wrapp AI Background"
           fill
           priority
-          sizes="(max-width: 1380px) 100vw, 1380px"
+          unoptimized
           className="ai-carousel-bg dark:hidden"
         />
 
@@ -116,7 +116,7 @@ export default function AiCarouselSection({
           alt="Wrapp AI Background Dark"
           fill
           priority
-          sizes="(max-width: 1380px) 100vw, 1380px"
+          unoptimized
           className="ai-carousel-bg hidden dark:block"
         />
 
