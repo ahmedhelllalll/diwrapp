@@ -100,45 +100,24 @@ export default function AiCarouselSection({
     <section className={`ai-carousel-section ${className}`} aria-label="Wrapp AI Showcase">
       {/* Outer Card Container */}
       <div className="ai-carousel-card">
-        {/* Mobile Dedicated Art-Directed Visual (Phones & Tablets < 1024px) - never sits under text */}
-        <div className="ai-carousel-mobile-visual lg:hidden" aria-hidden="true">
-          {/* Light Mode Mobile Visual */}
-          <Image
-            src="/assets/background-ai-mobile.webp"
-            alt=""
-            width={640}
-            height={502}
-            sizes="(max-width: 1023px) 90vw, 420px"
-            className="ai-carousel-mobile-img dark:hidden"
-          />
-          {/* Dark Mode Mobile Visual */}
-          <Image
-            src="/assets/background-ai-dark-mobile.webp"
-            alt=""
-            width={640}
-            height={446}
-            sizes="(max-width: 1023px) 90vw, 420px"
-            className="ai-carousel-mobile-img hidden dark:block"
-          />
-        </div>
-
-        {/* Desktop Fixed Background Graphic (>= 1024px) */}
-        {/* Light Mode Desktop Graphic */}
+        {/* Fixed Background Image - Light Mode */}
         <Image
-          src="/assets/background-ai.jpg"
+          src="/assets/background-ai.webp"
           alt="Wrapp AI Background"
           fill
-          sizes="(min-width: 1024px) 1380px, 100vw"
-          className="ai-carousel-bg hidden lg:block dark:hidden"
+          priority
+          sizes="(max-width: 1380px) 100vw, 1380px"
+          className="ai-carousel-bg dark:hidden"
         />
 
-        {/* Dark Mode Desktop Graphic */}
+        {/* Fixed Background Image - Dark Mode */}
         <Image
           src="/assets/background-ai-dark.webp"
           alt="Wrapp AI Background Dark"
           fill
-          sizes="(min-width: 1024px) 1380px, 100vw"
-          className="ai-carousel-bg hidden dark:lg:block"
+          priority
+          sizes="(max-width: 1380px) 100vw, 1380px"
+          className="ai-carousel-bg hidden dark:block"
         />
 
         {/* Dynamic Carousel Content */}
