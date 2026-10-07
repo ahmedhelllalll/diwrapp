@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback, useId } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence, useReducedMotion, PanInfo } from "framer-motion";
 import { Sparks } from "iconoir-react";
 
 export interface CarouselSlide {
@@ -41,45 +42,66 @@ interface AiCarouselSectionProps {
   className?: string;
 }
 
+const appleEasing = [0.16, 1, 0.3, 1] as const;
+
 export default function AiCarouselSection({
   slides = defaultSlides,
   className = ""
 }: AiCarouselSectionProps) {
   const activeSlides = slides && slides.length > 0 ? slides : defaultSlides;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [displayedIndex, setDisplayedIndex] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const componentId = useId();
+
+  const totalSlides = activeSlides.length;
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
 
   const goToSlide = (nextIndex: number) => {
-    if (nextIndex === currentIndex || isTransitioning) return;
-    setIsTransitioning(true);
+    if (nextIndex === currentIndex) return;
     setCurrentIndex(nextIndex);
-    setTimeout(() => {
-      setDisplayedIndex(nextIndex);
-      setIsTransitioning(false);
-    }, 320);
   };
 
+  // Auto-play timer with pause on hover
   useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const next = (prev + 1) % activeSlides.length;
-        setIsTransitioning(true);
-        setTimeout(() => {
-          setDisplayedIndex(next);
-          setIsTransitioning(false);
-        }, 320);
-        return next;
-      });
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      nextSlide();
     }, 6500);
 
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [activeSlides.length]);
+    return () => clearInterval(timer);
+  }, [isHovered, nextSlide]);
 
-  const currentSlide = activeSlides[displayedIndex] || activeSlides[0];
+  // Swipe gesture handling
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const swipeThreshold = 40;
+    const offset = info.offset.x;
+    const velocity = info.velocity.x;
+
+    if (offset < -swipeThreshold || velocity < -350) {
+      nextSlide();
+    } else if (offset > swipeThreshold || velocity > 350) {
+      prevSlide();
+    }
+  };
+
+  // Keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
+    }
+  };
+
+  const currentSlide = activeSlides[currentIndex] || activeSlides[0];
 
   // Render description with bold highlight text
   const renderDescription = (desc: string, highlight?: string) => {
@@ -96,11 +118,48 @@ export default function AiCarouselSection({
     );
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.05,
+        delayChildren: shouldReduceMotion ? 0 : 0.04,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : -8,
+      transition: {
+        duration: 0.22,
+        ease: appleEasing,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.45,
+        ease: appleEasing,
+      },
+    },
+  };
+
   return (
     <section className={`ai-carousel-section ${className}`} aria-label="Wrapp AI Showcase">
       {/* Outer Card Container */}
       <div
-        className="ai-carousel-card"
+        tabIndex={0}
+        role="region"
+        aria-label="Wrapp AI Features"
+        onKeyDown={handleKeyDown}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="ai-carousel-card outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         data-reveal="up"
         style={{ '--i': 0 } as React.CSSProperties}
       >
@@ -124,38 +183,47 @@ export default function AiCarouselSection({
           className="ai-carousel-bg hidden dark:block"
         />
 
-        {/* Dynamic Carousel Content */}
-        <div
-          className={`ai-carousel-content ${
-            isTransitioning ? "ai-carousel-fading" : ""
-          }`}
-        >
-          {/* Badge (Top Tag) */}
-          <div className="ai-carousel-badge">
-            <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon" aria-hidden="true" />
-            <span>{currentSlide.badge}</span>
-          </div>
+        {/* Dynamic Carousel Content with buttery smooth AnimatePresence transition */}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={`${componentId}-slide-${currentIndex}`}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.12}
+            onDragEnd={handleDragEnd}
+            className="ai-carousel-content cursor-grab active:cursor-grabbing"
+          >
+            {/* Badge (Top Tag) */}
+            <motion.div variants={itemVariants} className="ai-carousel-badge">
+              <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon" aria-hidden="true" />
+              <span>{currentSlide.badge}</span>
+            </motion.div>
 
-          {/* Heading (Slide Title) */}
-          <h2 className="ai-carousel-title">
-            {currentSlide.title}
-          </h2>
+            {/* Heading (Slide Title) */}
+            <motion.h2 variants={itemVariants} className="ai-carousel-title">
+              {currentSlide.title}
+            </motion.h2>
 
-          {/* Body Description */}
-          <p className="ai-carousel-desc">
-            {renderDescription(currentSlide.description, currentSlide.highlightText)}
-          </p>
+            {/* Body Description */}
+            <motion.p variants={itemVariants} className="ai-carousel-desc">
+              {renderDescription(currentSlide.description, currentSlide.highlightText)}
+            </motion.p>
 
-          {/* Action Button (CTA) */}
-          <div>
-            <Link
-              href={currentSlide.ctaLink}
-              className="ai-carousel-cta"
-            >
-              {currentSlide.ctaText}
-            </Link>
-          </div>
-        </div>
+            {/* Action Button (CTA) */}
+            <motion.div variants={itemVariants}>
+              <Link
+                href={currentSlide.ctaLink}
+                className="ai-carousel-cta"
+              >
+                {currentSlide.ctaText}
+              </Link>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Pagination Indicator Dots */}
