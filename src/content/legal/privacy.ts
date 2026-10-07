@@ -6,7 +6,7 @@ export const privacyPolicyEn: LegalDocument = {
   category: 'Legal',
   title: 'Privacy Policy',
   intro:
-    'This Privacy Policy describes how DiWrapp, operated by Distin-Gui Group, collects, uses, stores, and protects personal data when you access our website, submit inquiries, register for an account, apply as a screen supplier, or interact with our digital out-of-home (DOOH) advertising marketplace.',
+    'This Privacy Policy describes how DiWrapp, operated by Distin-Gui Group, collects, uses, stores, and protects personal data when you access our website, submit inquiries, register for an account, apply as a Media Owner, or interact with our out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace.',
   effectiveDate: LEGAL_CONFIG.dates.effectiveDateEn,
   lastUpdated: LEGAL_CONFIG.dates.lastUpdatedEn,
   tableOfContentsTitle: 'In this article',
@@ -22,7 +22,7 @@ export const privacyPolicyEn: LegalDocument = {
       id: 'who-we-are',
       title: '1. Who We Are and Scope',
       paragraphs: [
-        'DiWrapp is a multi-country digital out-of-home (DOOH) advertising marketplace operated by Distin-Gui Group, headquartered in Riyadh, Kingdom of Saudi Arabia. We connect advertisers looking to book high-impact digital screens with media suppliers who own or operate digital display inventory.',
+        'DiWrapp is a multi-country out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace operated by Distin-Gui Group, headquartered in Riyadh, Kingdom of Saudi Arabia. We connect advertisers looking to book high-impact advertising spaces and digital screens with Media Owners who own or operate media inventory.',
         'This Privacy Policy applies to personal information collected through the DiWrapp website (diwrapp.com), partner and vendor onboarding portals, contact forms, and related online communication channels. This document serves as a draft for legal review prior to full commercial availability.',
       ],
     },
@@ -35,8 +35,8 @@ export const privacyPolicyEn: LegalDocument = {
           subheading: 'A. Data You Provide Directly to Us',
           list: [
             'Contact and Inquiry Information: When you fill out our contact form or request information, we collect your full name, email address, international country calling code, phone number, subject, and the contents of your message.',
-            'Vendor and Supplier Onboarding Data: When applying to list screens on our marketplace, we collect your organization name, legal ownership structure (e.g. corporate or individual), official website, company bio, uploaded brand logos and company profile documents, screen inventory specifications (quantities, formats, operating countries, and cities), primary contact person name, job title, work email, and direct phone number.',
-            'User Account Information: When registering an account, we collect your name, email address, password, and designated role (advertiser or media supplier). During our current pre-launch stage, account creation flows are stored locally in your browser session for preview purposes and redirect to platform launch notices.',
+            'Media Owner and Supplier Onboarding Data: When applying to list advertising inventory on our marketplace as a Media Owner, we collect your organization name, legal ownership structure (e.g. corporate or individual), official website, company bio, uploaded brand logos and company profile documents, advertising inventory specifications (quantities, formats, operating countries, and cities), primary contact person name, job title, work email, and direct phone number.',
+            'User Account Information: When registering an account, we collect your name, email address, password, and designated role (advertiser or Media Owner). During our current pre-launch stage, account creation flows are stored locally in your browser session for preview purposes and redirect to platform launch notices.',
             'Business and Billing Details (Forward-Looking): As commercial booking and wallet capabilities become live, we will collect authorized invoicing contacts, commercial registration copies, and transaction records required for billing compliance.',
           ],
         },
@@ -57,10 +57,10 @@ export const privacyPolicyEn: LegalDocument = {
         'We use the personal information collected on our website and marketplace strictly for legitimate operational purposes, including:',
         {
           list: [
-            'Processing and evaluating supplier screen onboarding applications and verifying media inventory eligibility.',
+            'Processing and evaluating Media Owner onboarding applications and verifying advertising inventory eligibility.',
             'Responding promptly to customer service requests, partnership inquiries, and platform feedback.',
             'Delivering localized marketplace content, regional currency indicators, and language preferences (English or Arabic).',
-            'Facilitating advertiser campaign bookings, screen reservations, and automated campaign proofs upon full platform rollout.',
+            'Facilitating advertiser campaign bookings, advertising inventory reservations, and automated campaign proofs upon full platform rollout.',
             'Ensuring platform security, investigating unauthorized activity, preventing fraudulent bookings, and maintaining system integrity.',
             'Fulfilling accounting, tax, and reporting obligations under applicable corporate laws.',
           ],
@@ -75,7 +75,7 @@ export const privacyPolicyEn: LegalDocument = {
         {
           list: [
             'Cloud Infrastructure & Hosting Providers: We host our web application on Vercel Inc. and deploy our API backend on secure enterprise cloud servers. These service providers act strictly as data processors under contractual confidentiality and data security obligations.',
-            'Advertisers and Media Suppliers: When an advertiser confirms a screen campaign booking, essential business contact and operational details may be shared with the screen supplier to ensure campaign execution, creative validation, and proof of display.',
+            'Advertisers and Media Owners: When an advertiser confirms a campaign booking, essential business contact and operational details may be shared with the Media Owner to ensure campaign execution, creative validation, and proof of display.',
             'Legal and Regulatory Authorities: We may disclose personal data if required by binding subpoena, court order, or official governmental directive issued by a competent court or regulatory body under applicable law.',
             'Corporate Reorganization: In the event of a merger, acquisition, corporate restructuring, or asset transfer involving Distin-Gui Group, customer information may be transferred as an operational business asset subject to this Privacy Policy.',
           ],
@@ -94,7 +94,7 @@ export const privacyPolicyEn: LegalDocument = {
       id: 'data-retention',
       title: '6. Data Retention',
       paragraphs: [
-        `We retain personal data only for as long as necessary to fulfill the purposes for which it was gathered, including responding to inquiries, reviewing supplier inventory, providing customer support, and complying with statutory record-keeping rules.`,
+        `We retain personal data only for as long as necessary to fulfill the purposes for which it was gathered, including responding to inquiries, reviewing Media Owner inventory, providing customer support, and complying with statutory record-keeping rules.`,
         `[TO CONFIRM: ${LEGAL_CONFIG.operational.standardDataRetentionPeriod}]. Once the applicable retention window expires, personal records are permanently deleted, overwritten, or irreversibly anonymized.`,
       ],
     },
@@ -167,7 +167,7 @@ export const privacyPolicyEn: LegalDocument = {
   relatedDocs: [
     {
       title: 'Terms & Conditions',
-      description: 'Review the contractual terms governing use of the DiWrapp DOOH marketplace, advertiser obligations, and supplier rules.',
+      description: 'Review the contractual terms governing use of the DiWrapp marketplace, advertiser obligations, and Media Owner standards.',
       href: '/terms-and-conditions',
     },
     {
@@ -183,7 +183,7 @@ export const privacyPolicyAr: LegalDocument = {
   category: 'وثيقة قانونية',
   title: 'سياسة الخصوصية',
   intro:
-    'توضح سياسة الخصوصية هذه كيفية قيام منصة دي-راب (DiWrapp)، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، بجمع بياناتك الشخصية واستخدامها وحفظها وحمايتها عند زيارة موقعنا الإلكتروني، أو إرسال استفسار، أو تسجيل حساب، أو تقديم طلب انضمام كمزوّد شاشات، أو التعامل مع سوق الإعلانات الرقمية خارج المنزل (DOOH).',
+    'توضح سياسة الخصوصية هذه كيفية قيام منصة دي-راب (DiWrapp)، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، بجمع بياناتك الشخصية واستخدامها وحفظها وحمايتها عند زيارة موقعنا الإلكتروني، أو إرسال استفسار، أو تسجيل حساب، أو تقديم طلب انضمام كمالك وسيلة إعلانية، أو التعامل مع سوق الإعلانات الرقمية خارج المنزل (DOOH).',
   effectiveDate: LEGAL_CONFIG.dates.effectiveDateAr,
   lastUpdated: LEGAL_CONFIG.dates.lastUpdatedAr,
   tableOfContentsTitle: 'في هذه الوثيقة',
@@ -199,21 +199,21 @@ export const privacyPolicyAr: LegalDocument = {
       id: 'who-we-are',
       title: '1. من نحن ونطاق التطبيق',
       paragraphs: [
-        'منصة دي-راب (DiWrapp) هي سوق رقمي إقليمي للإعلانات الرقمية خارج المنزل (DOOH)، تُشغلها وتملكها مجموعة ديستين-جاي الكائن مقرها في مدينة الرياض بالمملكة العربية السعودية. نوفر الربط التقني بين المُعلنين الراغبين في حجز مساحات إعلانية وشاشات رقمية، وبين مورّدي ومُلاك الشاشات الرقمية الراغبين في تسويق مساحاتهم.',
-        'تسري هذه السياسة على كافة البيانات الشخصية التي يتم جمعها عبر الموقع الإلكتروني (diwrapp.com)، ونماذج التواصل، وبوابات تسجيل المورّدين والمُعلنين، وقنوات الدعم المعتمدة. تُعد هذه الوثيقة مسودة موجهة للمراجعة والاعتماد القانوني قبل الإطلاق التجاري الشامل.',
+        'منصة دي-راب (DiWrapp) هي سوق رقمي إقليمي للإعلانات الرقمية خارج المنزل (DOOH)، تُشغلها وتملكها مجموعة ديستين-جاي الكائن مقرها في مدينة الرياض بالمملكة العربية السعودية. نوفر الربط التقني بين المُعلنين الراغبين في حجز مساحات إعلانية وشاشات رقمية، وبين مُلّاك الوسائل الإعلانية الراغبين في تسويق مساحاتهم ومخزونهم الإعلاني.',
+        'تسري هذه السياسة على كافة البيانات الشخصية التي يتم جمعها عبر الموقع الإلكتروني (diwrapp.com)، ونماذج التواصل، وبوابات تسجيل مُلّاك الوسائل الإعلانية والمُعلنين، وقنوات الدعم المعتمدة. تُعد هذه الوثيقة مسودة موجهة للمراجعة والاعتماد القانوني قبل الإطلاق التجاري الشامل.',
       ],
     },
     {
       id: 'data-we-collect',
       title: '2. البيانات الشخصية التي نجمعها',
       paragraphs: [
-        'نحرص على جمع البيانات الشخصية الضرورية فقط لتقديم خدمات السوق الرقمي، ومتابعة استفسارات العملاء، والتحقق من طلبات انضمام الشركاء. وتشمل فئات البيانات ما يلي:',
+        'نحرص على جمع البيانات الشخصية الضرورية فقط لتقديم خدمات السوق الرقمي، ومتابعة استفسارات العملاء، والتحقق من طلبات انضمام مُلّاك الوسائل الإعلانية. وتشمل فئات البيانات ما يلي:',
         {
           subheading: 'أ. بيانات تقدمها لنا مباشرة',
           list: [
             'بيانات التواصل والاستفسارات: عند تعبئة نموذج "تواصل معنا" أو مراسلتنا، نجمع الاسم الكامل، وعنوان البريد الإلكتروني، ورمز الدولة الهاتفي، ورقم الهاتف، وموضوع الرسالة، ومحتواها.',
-            'بيانات تسجيل مزودي الشاشات (المورّدين): عند تقديم طلب إدراج شاشات إعلانية، نجمع اسم المنشأة أو الشركة، ونوع الملكية (فردية أو شركة)، والموقع الإلكتروني الرسمي، والنبذة التعريفية، والشعار والملف التعريفي المرفوعين، وتفاصيل المخزون الإعلاني (أعداد الشاشات وأنواعها والدول والمدن التشغيلية)، بالإضافة إلى اسم مسؤول التواصل ومنصبه وبريده ورقم هاتفه.',
-            'بيانات الحساب الشخصي: عند التسجيل في المنصة، نجمع الاسم والبريد الإلكتروني وكلمة المرور ونوع الحساب المختار (مُعلن أو مُورّد). وخلال مرحلة الإطلاق التجريبي الحالية، تُحفظ بيانات التسجيل محلياً في متصفحك لغايات المعاينة وتوجيهك لصفحات التحديثات.',
+            'بيانات تسجيل مُلّاك الوسائل الإعلانية: عند تقديم طلب إدراج مساحات ومخزون إعلاني، نجمع اسم المنشأة أو الشركة، ونوع الملكية (فردية أو شركة)، والموقع الإلكتروني الرسمي، والنبذة التعريفية، والشعار والملف التعريفي المرفوعين، وتفاصيل المخزون الإعلاني (أعداد المساحات والشاشات وأنواعها والدول والمدن التشغيلية)، بالإضافة إلى اسم مسؤول التواصل ومنصبه وبريده ورقم هاتفه.',
+            'بيانات الحساب الشخصي: عند التسجيل في المنصة، نجمع الاسم والبريد الإلكتروني وكلمة المرور ونوع الحساب المختار (مُعلن أو مالك وسيلة إعلانية). وخلال مرحلة الإطلاق التجريبي الحالية، تُحفظ بيانات التسجيل محلياً في متصفحك لغايات المعاينة وتوجيهك لصفحات التحديثات.',
             'البيانات التجارية والمالية (أحكام مستقبلية): مع اكتمال تشغيل بوابات الحجز والمحفظة الرقمية، سنجمع بيانات السجل التجاري والبيانات الضريبية ومعلومات الدفع الضرورية لإصدار الفواتير النظامية.',
           ],
         },
@@ -234,7 +234,7 @@ export const privacyPolicyAr: LegalDocument = {
         'نستخدم البيانات الشخصية التي نجمعها للأغراض التشغيلية المشروعة حصراً، وتشمل:',
         {
           list: [
-            'دراسة وتقييم طلبات انضمام مورّدي الشاشات الرقمية والتأكد من مطابقتها للمعايير الفنية والجغرافية.',
+            'دراسة وتقييم طلبات انضمام مُلّاك الوسائل الإعلانية والتأكد من مطابقة مساحاتهم الإعلانية للمعايير الفنية والجغرافية.',
             'الرد على طلبات الدعم الفني، واستفسارات الأسعار، ومقترحات الشراكة التجارية.',
             'تخصيص تجربة تصفح المنصة وفقاً للغة المختارة (العربية أو الإنجليزية) والدولة الجغرافية والعملة المعمول بها.',
             'تمكين إجراءات حجز الحملات الإعلانية، وتأكيد جدولة العروض، وإرسال تقارير إثبات العرض الرقمي عند إتاحة النظام التشغيلي بالكامل.',
@@ -252,7 +252,7 @@ export const privacyPolicyAr: LegalDocument = {
         {
           list: [
             'مقدمو البنية التحتية والخدمات السحابية: نستضيف الموقع على شبكة Vercel وتطبيقات قواعد البيانات السحابية الموثوقة، وتعمل هذه الأطراف كمعالجي بيانات ملزمين تعاقدياً بأعلى معايير السرية والأمان الفني.',
-            'المُعلنون ومُلاك الشاشات الشركاء: عند إتمام حجز إعلاني، يتم تبادل بيانات التواصل التشغيلية الأساسية بين المُعلن والمورّد المعني لتنفيذ الحملة ومراجعة المحتوى الإعلاني والتأكد من البث.',
+            'المُعلنون ومُلّاك الوسائل الإعلانية: عند إتمام حجز إعلاني، يتم تبادل بيانات التواصل التشغيلية الأساسية بين المُعلن ومالك الوسيلة الإعلانية المعني لتنفيذ الحملة ومراجعة المحتوى الإعلاني والتأكد من البث.',
             'الجهات الرسمية والتنظيمية: يجوز الإفصاح عن البيانات متى كان ذلك مطلوباً بموجب أمر قضائي، أو خطاب رسمي ملزم صادر من جهة حكومية أو رقابية مختصة وفقاً للأنظمة المعمول بها.',
             'إعادة الهيكلة أو نقل الملكية: في حال اندماج مجموعة ديستين-جاي، أو الاستحواذ عليها، أو بيع جزء من أصولها، قد تنتقل بيانات العملاء كجزء من الأصول التشغيلية شريطة التزام الكيان الجديد بسياسة الخصوصية هذه.',
           ],
@@ -344,7 +344,7 @@ export const privacyPolicyAr: LegalDocument = {
   relatedDocs: [
     {
       title: 'الشروط والأحكام',
-      description: 'اطّلع على البنود التعاقدية المنظمة لاستخدام سوق دي-راب، والتزامات المعلنين، ومسؤوليات موردي الشاشات.',
+      description: 'اطّلع على البنود التعاقدية المنظمة لاستخدام سوق دي-راب، والتزامات المعلنين، ومسؤوليات مُلّاك الوسائل الإعلانية.',
       href: '/terms-and-conditions',
     },
     {

@@ -13,7 +13,7 @@ export const termsAndConditionsEn: LegalDocument = {
   sidebar: {
     title: 'Need to get in Touch?',
     description:
-      'Have questions regarding our terms of service, advertiser guidelines, or screen listing agreements? Our team is available to assist you.',
+      'Have questions regarding our terms of service, advertiser guidelines, or Media Owner listing agreements? Our team is available to assist you.',
     buttonText: 'Contact Us',
     buttonHref: '/contact',
   },
@@ -30,8 +30,8 @@ export const termsAndConditionsEn: LegalDocument = {
       id: 'marketplace-role',
       title: "2. The Service and DiWrapp's Role as a Marketplace",
       paragraphs: [
-        'DiWrapp operates a digital marketplace and technological facilitation platform that connects advertisers seeking digital out-of-home (DOOH) screen inventory with independent suppliers, media owners, and screen hosts who control digital billboards, transit screens, venue displays, and urban outdoor networks.',
-        'Unless expressly stated in a separate written agreement, DiWrapp acts as a technology intermediary and marketplace facilitator. DiWrapp does not own, lease, or physically maintain the third-party screens listed on the platform. The contractual delivery of the physical display time remains between the advertiser and the approved screen supplier, facilitated through the platform.',
+        'DiWrapp operates a digital marketplace and technological facilitation platform that connects advertisers seeking out-of-home (OOH) and digital out-of-home (DOOH) advertising inventory with independent suppliers and media owners ("Media Owners") who control digital screens, physical advertising spaces, billboards, transit media, venue displays, and urban outdoor networks.',
+        'Unless expressly stated in a separate written agreement, DiWrapp acts as a technology intermediary and marketplace facilitator. DiWrapp does not own, lease, or physically maintain the third-party screens, spaces, or advertising inventory listed on the platform. The contractual delivery of the advertising display time or media space remains between the advertiser and the approved Media Owner, facilitated through the platform.',
         'During our current pre-launch and onboarding phase, public features may be limited to marketing overviews, partner onboarding forms, contact inquiries, and previews of coming-soon capabilities.',
       ],
     },
@@ -55,7 +55,7 @@ export const termsAndConditionsEn: LegalDocument = {
             'Advertisers must strictly avoid submitting any advertising content that:',
           ],
           list: [
-            'Violates applicable laws, public order, social decencies, or religious sensibilities in the country or municipality where the display screen is situated.',
+            'Violates applicable laws, public order, social decencies, or religious sensibilities in the country or municipality where the advertising inventory or display space is situated.',
             'Promotes unlawful substances, unauthorized pharmaceuticals, narcotics, or unregulated gaming/gambling.',
             'Contains hate speech, defamation, harassment, violence, sexually explicit material, or political messaging not explicitly licensed by competent authorities.',
             'Infringes third-party intellectual property, patent, trademark, copyright, or publicity rights.',
@@ -67,22 +67,22 @@ export const termsAndConditionsEn: LegalDocument = {
           list: [
             'The advertiser bears full legal responsibility for securing all statutory media licenses, advertising permits, commercial registrations, and governmental approvals required by municipal and national authorities in the display country prior to campaign launch.',
             `In Saudi Arabia, advertisers must comply with all advertising standards established by the General Authority of Media Regulation (GAMR) and municipal authorities [TO CONFIRM: Specific regulatory approval upload requirements].`,
-            'DiWrapp and screen suppliers reserve the absolute right to reject, suspend, or cancel any advertisement that fails compliance review without liability.',
+            'DiWrapp and Media Owners reserve the absolute right to reject, suspend, or cancel any advertisement that fails compliance review without liability.',
           ],
         },
       ],
     },
     {
       id: 'supplier-obligations',
-      title: '5. Supplier Obligations and Screen Listings',
+      title: '5. Media Owner Obligations and Inventory Listings',
       paragraphs: [
-        'Entities applying to list digital screens ("Suppliers" or "Screen Hosts") must undergo an onboarding review and approval process by DiWrapp before any inventory goes live on the marketplace.',
+        'Entities applying to list digital screens, physical spaces, or advertising inventory ("Media Owners" or "Suppliers") must undergo an onboarding review and approval process by DiWrapp before any inventory goes live on the marketplace.',
         {
           list: [
-            'Accurate Inventory Information: Suppliers must provide truthful, verifiable specifications regarding screen location, dimensions, resolution, operating hours, audio capabilities, and daily traffic estimates.',
-            'Legal Authorization to Host: Suppliers warrant that they hold valid municipal permits, property lease agreements, commercial licenses, and rights to broadcast commercial advertisements on their screens.',
-            `Display Uptime & SLA: Suppliers agree to maintain their hardware, media players, and network connectivity in sound working order to fulfill booked campaigns [TO CONFIRM: ${LEGAL_CONFIG.operational.screenUptimeSlaTarget}].`,
-            'Proof of Play: Suppliers must furnish electronic logs, automated telemetry, or visual proof-of-performance confirming that scheduled advertiser campaigns aired in accordance with booking specifications.',
+            'Accurate Inventory Information: Media Owners must provide truthful, verifiable specifications regarding inventory location, format (such as digital screens, static displays, or physical spaces), dimensions, resolution where applicable, operating hours, audio capabilities, and daily traffic estimates.',
+            'Legal Authorization to Host: Media Owners warrant that they hold valid municipal permits, property lease agreements, commercial licenses, and rights to broadcast or display commercial advertisements on their advertising inventory.',
+            `Display Uptime & SLA: Media Owners agree to maintain their hardware, display spaces, media players, and network connectivity in sound working order to fulfill booked campaigns [TO CONFIRM: ${LEGAL_CONFIG.operational.screenUptimeSlaTarget}].`,
+            'Proof of Play: Media Owners must furnish electronic logs, automated telemetry, or visual proof-of-performance confirming that scheduled advertiser campaigns aired or displayed in accordance with booking specifications.',
           ],
         },
       ],
@@ -94,10 +94,10 @@ export const termsAndConditionsEn: LegalDocument = {
         'The following commercial terms govern campaign reservations and platform transactions:',
         {
           list: [
-            'Platform Fees and Pricing: Pricing for screen spots, loops, impressions, or day-parts is displayed on the marketplace or agreed in an official campaign order. Stated prices exclude statutory value-added tax (VAT) or local municipal fees unless explicitly noted.',
+            'Platform Fees and Pricing: Pricing for advertising spots, spaces, loops, impressions, or day-parts is displayed on the marketplace or agreed in an official campaign order. Stated prices exclude statutory value-added tax (VAT) or local municipal fees unless explicitly noted.',
             'Payment Processing (Forward-Looking): Payments may be executed via approved corporate payment gateways, wire transfers, or dedicated platform wallet balances. Charges are billed in the agreed transaction currency.',
             `Cancellations and Refunds: Campaign reservations require advance coordination. [TO CONFIRM: Notice required: ${LEGAL_CONFIG.operational.campaignCancellationNoticeHours} hours prior to scheduled launch for partial or full credit; campaigns already broadcast or within 24 hours of live launch are non-refundable].`,
-            'Disrupted Broadcasts: If an approved screen experiences technical failure, power outage, or municipal blackout, the supplier and DiWrapp will provide reasonable compensation through a rescheduled campaign make-good or pro-rata credit.',
+            'Disrupted Broadcasts: If an approved screen or advertising space experiences technical failure, physical obstruction, power outage, or municipal blackout, the Media Owner and DiWrapp will provide reasonable compensation through a rescheduled campaign make-good or pro-rata credit.',
           ],
         },
       ],
@@ -107,7 +107,7 @@ export const termsAndConditionsEn: LegalDocument = {
       title: '7. Content and Intellectual Property',
       paragraphs: [
         'All intellectual property rights in the DiWrapp platform, including website architecture, software code, graphic user interfaces, brand names, logos, algorithms, and design tokens, remain the exclusive property of Distin-Gui Group and its licensors.',
-        'By submitting advertising creative materials to DiWrapp, the advertiser grants DiWrapp and the designated screen supplier a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and transmit the materials solely for the purpose of executing the booked campaign and providing proof-of-performance.',
+        'By submitting advertising creative materials to DiWrapp, the advertiser grants DiWrapp and the designated Media Owner a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and transmit the materials solely for the purpose of executing the booked campaign and providing proof-of-performance.',
       ],
     },
     {
@@ -121,7 +121,7 @@ export const termsAndConditionsEn: LegalDocument = {
             'Decompile, reverse-engineer, disassemble, or attempt to derive the source code of the platform or its APIs.',
             'Introduce viruses, trojans, worms, or malicious code that impairs system performance or breaches data security.',
             'Circumvent, bypass, or tamper with security measures, edge proxies, rate-limiters, or authentication mechanisms.',
-            'Engage in fraudulent transactions, fictitious bookings, or unauthorized reselling of screen time.',
+            'Engage in fraudulent transactions, fictitious bookings, or unauthorized reselling of advertising inventory or media time.',
           ],
         },
       ],
@@ -217,14 +217,14 @@ export const termsAndConditionsAr: LegalDocument = {
   category: 'وثيقة قانونية',
   title: 'الشروط والأحكام',
   intro:
-    'تُشكل هذه الشروط والأحكام اتفاقاً قانونياً ملزماً بينك وبين منصة دي-راب (DiWrapp)، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group). وتُنظم هذه الشروط وصولك إلى المنصة واستخدامك لموقعها الإلكتروني وخدمات حجز الإعلانات وشبكة موردي الشاشات.',
+    'تُشكل هذه الشروط والأحكام اتفاقاً قانونياً ملزماً بينك وبين منصة دي-راب (DiWrapp)، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group). وتُنظم هذه الشروط وصولك إلى المنصة واستخدامك لموقعها الإلكتروني وخدمات حجز الإعلانات وشبكة مُلّاك الوسائل الإعلانية.',
   effectiveDate: LEGAL_CONFIG.dates.effectiveDateAr,
   lastUpdated: LEGAL_CONFIG.dates.lastUpdatedAr,
   tableOfContentsTitle: 'في هذه الوثيقة',
   sidebar: {
     title: 'هل تحتاج إلى مساعدة؟',
     description:
-      'هل لديك استفسار حول شروط الخدمة، أو معايير المحتوى الإعلاني، أو اتفاقيات إدراج الشاشات؟ فريقنا القانوني والدعم في خدمتك دائماً.',
+      'هل لديك استفسار حول شروط الخدمة، أو معايير المحتوى الإعلاني، أو اتفاقيات إدراج مساحات مُلّاك الوسائل الإعلانية؟ فريقنا القانوني والدعم في خدمتك دائماً.',
     buttonText: 'تواصل معنا',
     buttonHref: '/contact',
   },
@@ -241,8 +241,8 @@ export const termsAndConditionsAr: LegalDocument = {
       id: 'marketplace-role',
       title: '2. طبيعة الخدمة ودور دي-راب كوسيط وسوق رقمي',
       paragraphs: [
-        'تعمل دي-راب كسوق رقمي ومنصة وسيطة توفر الربط التقني بين المُعلنين الراغبين في حجز مساحات على الشاشات الرقمية خارج المنزل (DOOH)، وبين المورّدين وملاك ومُشغلي الشاشات الرقمية المستقلين في الميادين، وشبكات النقل، والمراكز التجارية، والأماكن العامة.',
-        'ما لم يُنص صراحة على خلاف ذلك في اتفاق خطي مستقل، فإن دور دي-راب ينحصر في الوساطة والربط التقني وأتمتة إجراءات الحجز. ولا تملك المنصة أو تدير الشاشات الفعلية المدرجة من قبل أطراف ثالثة، وتبقى مسؤولية بث المحتوى وسلامة الشاشة قائمة بين المعلن ومورد الشاشة المعني.',
+        'تعمل دي-راب كسوق رقمي ومنصة وسيطة توفر الربط التقني بين المُعلنين الراغبين في حجز المساحات الإعلانية والشاشات الرقمية خارج المنزل (DOOH)، وبين مُلّاك الوسائل الإعلانية المستقلين ("مالك الوسيلة الإعلانية (Media Owner)") الذين يمتلكون أو يديرون شاشات رقمية، ومساحات إعلانية، ولوحات طرقية، وشبكات نقل، ومراكز تجارية، وأماكن عامة.',
+        'ما لم يُنص صراحة على خلاف ذلك في اتفاق خطي مستقل، فإن دور دي-راب ينحصر في الوساطة والربط التقني وأتمتة إجراءات الحجز. ولا تملك المنصة أو تدير الشاشات أو المساحات الإعلانية الفعلية المدرجة من قبل أطراف ثالثة، وتبقى مسؤولية عرض المحتوى وسلامة الوسيلة الإعلانية قائمة بين المعلن ومالك الوسيلة الإعلانية المعني.',
         'خلال المرحلة الحالية، قد تقتصر ميزات الموقع المتاحة للعموم على التعريف بالخدمات، واستقبال طلبات التسجيل، ونماذج التواصل، واستعراض مزايا التحديثات القادمة.',
       ],
     },
@@ -250,7 +250,7 @@ export const termsAndConditionsAr: LegalDocument = {
       id: 'user-accounts',
       title: '3. الحسابات والتسجيل',
       paragraphs: [
-        'للوصول إلى ميزات الحجز المتقدمة وإدارة الحملات أو بوابات الشركاء، يتطلب النظام إنشاء حساب مستخدم. وتتعهد بتقديم معلومات صحيحة ودقيقة ومحدثة عند التسجيل وتحديثها كلما طرأ عليها أي تغيير.',
+        'للوصول إلى ميزات الحجز المتقدمة وإدارة الحملات أو بوابات مُلّاك الوسائل الإعلانية، يتطلب النظام إنشاء حساب مستخدم. وتتعهد بتقديم معلومات صحيحة ودقيقة ومحدثة عند التسجيل وتحديثها كلما طرأ عليها أي تغيير.',
         'تتحمل المسؤولية الكاملة عن سرية بيانات تسجيل الدخول وكلمات المرور الخاصة بحسابك، وعن كافة الأنشطة والعمليات التي تُجرى من خلاله. ويتعين إخطارنا فوراً عبر info@di-wrapp.com عند الاشتباه في أي اختراق أو استخدام غير مصرح به.',
         'تحتفظ المنصة بالحق الكامل في رفض أي طلب تسجيل أو تعليق الحسابات التي تقدم بيانات غير دقيقة أو مضللة دون أي مسؤولية.',
       ],
@@ -259,14 +259,14 @@ export const termsAndConditionsAr: LegalDocument = {
       id: 'advertiser-obligations',
       title: '4. التزامات المُعلن وضوابط المحتوى الإعلاني',
       paragraphs: [
-        'يتحمل المُعلن وحده المسؤولية القانونية الكاملة عن كافة المواد والتصاميم والنصوص ومقاطع الفيديو والعلامات التجارية المقدمة للبث عبر شاشات المنصة.',
+        'يتحمل المُعلن وحده المسؤولية القانونية الكاملة عن كافة المواد والتصاميم والنصوص ومقاطع الفيديو والعلامات التجارية المقدمة للعرض أو البث عبر المساحات والوسائل الإعلانية في المنصة.',
         {
           subheading: 'أ. فئات المحتوى المحظور',
           paragraphs: [
             'يحظر تماماً على المعلن تقديم أو بث أي محتوى إعلاني يشتمل على:',
           ],
           list: [
-            'ما يخالف النظام العام، أو الآداب العامة، أو القيم الدينية والاجتماعية في الدولة أو المدينة التي تقع بها الشاشة الإعلانية.',
+            'ما يخالف النظام العام، أو الآداب العامة، أو القيم الدينية والاجتماعية في الدولة أو المدينة التي تقع بها الوسيلة أو المساحة الإعلانية.',
             'الترويج للمواد المحظورة، أو العقاقير الطبية غير المرخصة، أو المؤثرات العقلية، أو أنشطة المراهنات والقمار غير المنظمة.',
             'خطاب الكراهية، أو التشهير، أو الإساءة، أو العنف، أو المحتوى الإباحي، أو الرسائل السياسية غير المرخصة من الجهات المختصة.',
             'التعدي على حقوق الملكية الفكرية، أو براءات الاختراع، أو العلامات التجارية، أو حقوق الطبع والنشر المملوكة للغير.',
@@ -278,22 +278,22 @@ export const termsAndConditionsAr: LegalDocument = {
           list: [
             'يلتزم المُعلن باستخراج كافة التراخيص الإعلانية والموافقات الرسمية المطلوبة من الهيئات الإعلامية والبلدية المختصة في الدولة محل البث قبل موعد إطلاق الحملة.',
             `في المملكة العربية السعودية، يلتزم المعلن بالمعايير والضوابط الصادرة عن الهيئة العامة لتنظيم الإعلام وأمانات المناطق [TO CONFIRM: متطلبات رفع التراخيص الإعلانية عبر المنصة].`,
-            'يحق للمنصة وموردي الشاشات رفض أو إلغاء أو إيقاف أي إعلان لا يستوفي الاشتراطات النظامية دون أي التزام بالتعويض.',
+            'يحق للمنصة ومُلّاك الوسائل الإعلانية رفض أو إلغاء أو إيقاف أي إعلان لا يستوفي الاشتراطات النظامية دون أي التزام بالتعويض.',
           ],
         },
       ],
     },
     {
       id: 'supplier-obligations',
-      title: '5. التزامات موردي وملاك الشاشات',
+      title: '5. التزامات مُلّاك الوسائل الإعلانية وإدراج المساحات الإعلانية',
       paragraphs: [
-        'تخضع المنشآت المتقدمة لإدراج شاشات إعلانية ("المورّدون" أو "الشركاء") لإجراءات تدقيق ومراجعة واعتماد من قبل دي-راب قبل تفعيل أي شاشة على المنصة.',
+        'تخضع المنشآت المتقدمة لإدراج شاشات رقمية أو مساحات إعلانية أو مخزون إعلاني ("مالك الوسيلة الإعلانية (Media Owner)") لإجراءات تدقيق ومراجعة واعتماد من قبل دي-راب قبل تفعيل أي مساحة أو وسيلة إعلانية على المنصة.',
         {
           list: [
-            'دقة مواصفات الشاشة: يلتزم المورد بتقديم بيانات حقيقية وموثقة بشأن موقع الشاشة، وأبعادها الهندسية، ودقتها، وساعات تشغيلها، وكثافة الحركة المرورية المحيطة بها.',
-            'التراخيص النظامية للتشغيل: يقر المورد بامتلاكه لكافة التراخيص البلدية وعقود الإيجار والتصاريح التجارية التي تخوله نظاماً بث الإعلانات التجارية على شاشاته.',
-            `الجاهزية ونسبة التشغيل (SLA): يلتزم المورد بضمان الصيانة الدورية للأجهزة ومشغلات الوسائط والاتصال الشبكي لضمان عرض الحملات في أوقاتها المحددة بنسبة تشغيل قياسية [TO CONFIRM: ${LEGAL_CONFIG.operational.screenUptimeSlaTarget}].`,
-            'إثبات البث والعرض: يلتزم المورد بتوفير سجلات البث الآلية والتقارير الرقمية التي تثبت إتمام بث الحملات وفق ما تم الاتفاق عليه في أمر الحجز.',
+            'دقة مواصفات المساحة والوسيلة الإعلانية: يلتزم مالك الوسيلة الإعلانية بتقديم بيانات حقيقية وموثقة بشأن موقع المساحة الإعلانية، ونوعها (شاشات رقمية أو مساحات ثابتة)، وأبعادها الهندسية، ودقتها، وساعات تشغيلها، وكثافة الحركة المرورية المحيطة بها.',
+            'التراخيص النظامية للتشغيل: يقر مالك الوسيلة الإعلانية بامتلاكه لكافة التراخيص البلدية وعقود الإيجار والتصاريح التجارية التي تخوله نظاماً عرض وبث الإعلانات التجارية عبر مساحاته ووسائله الإعلانية.',
+            `الجاهزية ونسبة التشغيل (SLA): يلتزم مالك الوسيلة الإعلانية بضمان الصيانة الدورية للأجهزة ومشغلات الوسائط والمساحات الإعلانية والاتصال الشبكي لضمان عرض الحملات في أوقاتها المحددة بنسبة تشغيل قياسية [TO CONFIRM: ${LEGAL_CONFIG.operational.screenUptimeSlaTarget}].`,
+            'إثبات العرض والبث: يلتزم مالك الوسيلة الإعلانية بتوفير سجلات البث الآلية أو الإثباتات الميدانية والتقارير الرقمية التي تثبت إتمام عرض الحملات وفق ما تم الاتفاق عليه في أمر الحجز.',
           ],
         },
       ],
@@ -308,7 +308,7 @@ export const termsAndConditionsAr: LegalDocument = {
             'الأسعار والرسوم: تُحدد أسعار المساحات الإعلانية والمرات التكرارية وفترات العرض عبر المنصة أو في عروض الأسعار المعتمدة، ولا تشمل الأسعار ضريبة القيمة المضافة ما لم يُذكر خلاف ذلك صراحة.',
             'بوابات الدفع (أحكام تشغيلية مستقبلية): تتم المدفوعات عبر بوابات الدفع الإلكترونية المعتمدة أو التحويلات المصرفية أو عبر رصيد المحفظة الرقمية للمنصة وفق العملة المتفق عليها.',
             `الإلغاء واسترداد المبالغ: يتطلب إلغاء الحجز إشعاراً مسبقاً. [TO CONFIRM: يلزم تقديم طلب الإلغاء قبل موعد البث بمدة لا تقل عن ${LEGAL_CONFIG.operational.campaignCancellationNoticeHours} ساعة للحصول على استرداد أو رصيد؛ ولا يمكن استرداد المبالغ بعد بدء بث الحملة أو خلال الـ 24 ساعة السابقة له].`,
-            'التعويض عن الأعطال: في حال حدوث عطل فني طارئ بالشاشة أو انقطاع في التيار الكهربائي، يلتزم المورد ودي-راب بتعويض المعلن عن طريق إعادة جدولة البث أو تقديم رصيد مالي متناسب مع ساعات الانقطاع.',
+            'التعويض عن الأعطال: في حال حدوث عطل فني طارئ بالشاشة أو تعذر العرض في المساحة الإعلانية أو انقطاع في التيار الكهربائي، يلتزم مالك الوسيلة الإعلانية ودي-راب بتعويض المعلن عن طريق إعادة جدولة البث أو تقديم رصيد مالي متناسب مع ساعات الانقطاع.',
           ],
         },
       ],
@@ -318,7 +318,7 @@ export const termsAndConditionsAr: LegalDocument = {
       title: '7. الملكية الفكرية وحقوق المحتوى',
       paragraphs: [
         'كافة حقوق الملكية الفكرية المرتبطة بمنصة دي-راب، بما يشمل الشفرة المصدرية، والواجهات البرمجية والتصميمية، والعلامات التجارية، والشعارات، والأنظمة الحسابية، تعود حصراً وملكية مطلقة لمجموعة ديستين-جاي ومرخصيها.',
-        'يمنح المُعلن منصة دي-راب ومورد الشاشة المعني ترخيصاً غير حصري وعالمياً ومجانياً لعرض واستخدام وإعادة إنتاج المحتوى الإعلاني ونقله لغرض وحيد ومحدد هو تنفيذ الحملة المحجوزة وإصدار تقارير الأداء وإثبات البث.',
+        'يمنح المُعلن منصة دي-راب ومالك الوسيلة الإعلانية المعني ترخيصاً غير حصري وعالمياً ومجانياً لعرض واستخدام وإعادة إنتاج المحتوى الإعلاني ونقله لغرض وحيد ومحدد هو تنفيذ الحملة المحجوزة وإصدار تقارير الأداء وإثبات العرض والبث.',
       ],
     },
     {

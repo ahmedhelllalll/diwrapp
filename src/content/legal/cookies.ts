@@ -107,7 +107,7 @@ export const cookiePolicyEn: LegalDocument = {
     },
     {
       title: 'Terms & Conditions',
-      description: 'Review the contractual terms governing use of the DiWrapp marketplace, advertiser duties, and supplier standards.',
+      description: 'Review the contractual terms governing use of the DiWrapp marketplace, advertiser duties, and Media Owner standards.',
       href: '/terms-and-conditions',
     },
   ],
@@ -219,7 +219,7 @@ export const cookiePolicyAr: LegalDocument = {
     },
     {
       title: 'الشروط والأحكام',
-      description: 'تعرّف على الشروط التعاقدية العامة التي تنظم حقوق ومسؤوليات المُعلنين ومزودي الشاشات.',
+      description: 'تعرّف على الشروط التعاقدية العامة التي تنظم حقوق ومسؤوليات المُعلنين ومُلّاك الوسائل الإعلانية.',
       href: '/terms-and-conditions',
     },
   ],
