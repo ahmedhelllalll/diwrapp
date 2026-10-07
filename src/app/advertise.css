@@ -9,7 +9,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: clip;
 }
 
 .dark .advertise-scope {
@@ -81,6 +80,7 @@
   opacity: 1;
   transition: all 0.2s ease;
   user-select: none;
+  animation: heroFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s backwards;
 }
 
 [dir="rtl"] .advertise-badge {
@@ -111,6 +111,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: heroLcpRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
+  will-change: transform;
 }
 
 @media (min-width: 768px) {
@@ -170,7 +172,8 @@
   position: relative;
   background-color: #2b1b88;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: heroRiseSubtitle 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (min-width: 640px) {
@@ -184,10 +187,6 @@
     border-radius: 32px;
     box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.1);
   }
-
-  .advertise-image-wrapper:hover {
-    box-shadow: 0 28px 60px -18px rgba(0, 0, 0, 0.16);
-  }
 }
 
 .advertise-hero-img {
@@ -196,11 +195,6 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.advertise-image-wrapper:hover .advertise-hero-img {
-  transform: scale(1.012);
 }
 
 /* ==========================================================================
@@ -357,19 +351,23 @@
   padding: 12px 24px;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(22, 101, 255, 0.35);
-  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   width: fit-content;
   cursor: pointer;
   border: none;
   text-decoration: none;
   line-height: 20px;
-  will-change: transform;
 }
 
 .advertise-btn-primary:hover {
   background-color: #0d55e8;
-  box-shadow: 0 8px 22px rgba(22, 101, 255, 0.45);
+  box-shadow: 0 6px 20px rgba(22, 101, 255, 0.45);
+  transform: translateY(-1.5px);
   color: #ffffff;
+}
+
+.advertise-btn-primary:active {
+  transform: scale(0.98) translateY(0);
 }
 
 /* RTL Adjustments */
@@ -430,16 +428,16 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 250px;
-  transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.25s ease,
-    background-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
   position: relative;
-  will-change: transform;
 }
 
 .bento-card:hover {
   border-color: #D0D5DD;
   box-shadow: 0 12px 28px -6px rgba(16, 24, 40, 0.08);
+  transform: translateY(-2px);
 }
 
 /* Wide Card (col-span-2 on desktop and tablet) */
@@ -578,6 +576,7 @@
 .dark .bento-card:hover {
   border-color: #343B4B;
   box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
 }
 
 .dark .bento-icon-box {
@@ -811,15 +810,19 @@
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.28);
-  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  will-change: transform;
 }
 
 .ai-carousel-cta:hover {
   background-color: var(--brand-strong, #0055E6);
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.42);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.38);
+  transform: translateY(-1.5px);
   color: #FFFFFF;
+}
+
+.ai-carousel-cta:active {
+  transform: translateY(0);
 }
 
 /* Pagination Dots */
@@ -900,22 +903,116 @@
 }
 
 /* ==========================================================================
-   Accessibility & Reduced Motion
+   Below-the-fold Entrance Animations (CSS + Shared Observer System)
+   Single source of truth easing: cubic-bezier(0.16, 1, 0.3, 1)
+   Variants: reveal-up, reveal-fade, reveal-scale, reveal-pop, reveal-line
+   All selectors are strictly namespaced to [data-reveal]
    ========================================================================== */
+
+/* Base SSR / No-JS state: 100% visible by default, 0 layout shift */
+[data-reveal] {
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-delay: calc(min(var(--i, 0), 4) * 70ms);
+  opacity: 1;
+  transform: none;
+}
+
+/* Pending state: applied ONLY after hydration to elements strictly below the viewport */
+[data-reveal="up"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+[data-reveal="fade"][data-reveal-state="pending"] {
+  opacity: 0;
+}
+
+[data-reveal="scale"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: scale(0.96);
+  transform-origin: center;
+}
+
+[data-reveal="pop"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(8px) scale(0.94);
+  transform-origin: center;
+}
+
+[data-reveal="line"][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+/* Transform origin for reveal-line: mirrors inline-start in LTR and RTL */
+:root:not([dir="rtl"]) [data-reveal="line"],
+[dir="ltr"] [data-reveal="line"] {
+  transform-origin: left center;
+}
+
+[dir="rtl"] [data-reveal="line"] {
+  transform-origin: right center;
+}
+
+/* In state: triggered when element intersects the shared observer */
+[data-reveal="up"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 650ms var(--reveal-ease) var(--reveal-delay),
+              transform 650ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="fade"][data-reveal-state="in"] {
+  opacity: 1;
+  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="scale"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity 700ms var(--reveal-ease) var(--reveal-delay),
+              transform 700ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="pop"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  transition: opacity 500ms var(--reveal-ease) var(--reveal-delay),
+              transform 500ms var(--reveal-ease) var(--reveal-delay);
+}
+
+[data-reveal="line"][data-reveal-state="in"] {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: opacity 800ms var(--reveal-ease) var(--reveal-delay),
+              transform 800ms var(--reveal-ease) var(--reveal-delay);
+}
+
+/* Reduced motion preference: everything visible instantly, no transforms or transitions */
 @media (prefers-reduced-motion: reduce) {
-  .advertise-image-wrapper,
-  .advertise-hero-img,
-  .bento-card,
-  .bento-icon-box,
-  .bento-door-img,
-  .bento-tablet-img,
-  .advertise-btn-primary,
-  .ai-carousel-cta,
-  .ai-carousel-dot,
   .advertise-badge,
-  .advertise-feature-badge {
-    transition: none !important;
-    transform: none !important;
+  .advertise-title,
+  .advertise-image-wrapper,
+  .bento-card,
+  [data-reveal],
+  [data-reveal][data-reveal-state="pending"],
+  [data-reveal][data-reveal-state="in"] {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print styles: everything visible */
+@media print {
+  [data-reveal],
+  [data-reveal][data-reveal-state="pending"],
+  [data-reveal][data-reveal-state="in"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

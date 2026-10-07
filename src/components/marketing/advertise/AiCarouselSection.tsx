@@ -4,8 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparks } from "iconoir-react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { appleEasing } from "@/lib/motion";
 
 export interface CarouselSlide {
   id: number;
@@ -49,17 +47,31 @@ export default function AiCarouselSection({
 }: AiCarouselSectionProps) {
   const activeSlides = slides && slides.length > 0 ? slides : defaultSlides;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [displayedIndex, setDisplayedIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const shouldReduceMotion = useReducedMotion();
 
   const goToSlide = (nextIndex: number) => {
-    if (nextIndex === currentIndex) return;
+    if (nextIndex === currentIndex || isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex(nextIndex);
+    setTimeout(() => {
+      setDisplayedIndex(nextIndex);
+      setIsTransitioning(false);
+    }, 220);
   };
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % activeSlides.length);
+      setCurrentIndex((prev) => {
+        const next = (prev + 1) % activeSlides.length;
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setDisplayedIndex(next);
+          setIsTransitioning(false);
+        }, 220);
+        return next;
+      });
     }, 6500);
 
     return () => {
@@ -67,7 +79,7 @@ export default function AiCarouselSection({
     };
   }, [activeSlides.length]);
 
-  const currentSlide = activeSlides[currentIndex] || activeSlides[0];
+  const currentSlide = activeSlides[displayedIndex] || activeSlides[0];
 
   // Render description with bold highlight text
   const renderDescription = (desc: string, highlight?: string) => {
@@ -86,13 +98,11 @@ export default function AiCarouselSection({
 
   return (
     <section className={`ai-carousel-section ${className}`} aria-label="Wrapp AI Showcase">
-      {/* Outer Card Container with Viewport In-View Reveal */}
-      <motion.div 
+      {/* Outer Card Container */}
+      <div
         className="ai-carousel-card"
-        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: shouldReduceMotion ? 0.01 : 0.75, ease: appleEasing }}
+        data-reveal="up"
+        style={{ '--i': 0 } as React.CSSProperties}
       >
         {/* Fixed Background Image - Light Mode */}
         <Image
@@ -114,58 +124,48 @@ export default function AiCarouselSection({
           className="ai-carousel-bg hidden dark:block"
         />
 
-        {/* Dynamic Carousel Content with High-End AnimatePresence Cross-Fade */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide.id || currentIndex}
-            className="ai-carousel-content"
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: shouldReduceMotion ? 0.01 : 0.35, ease: appleEasing }}
-          >
-            {/* Badge (Top Tag) */}
-            <motion.div 
-              className="ai-carousel-badge"
-              whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
-              transition={{ duration: 0.2, ease: appleEasing }}
+        {/* Dynamic Carousel Content */}
+        <div
+          className={`ai-carousel-content ${
+            isTransitioning ? "ai-carousel-fading" : ""
+          }`}
+        >
+          {/* Badge (Top Tag) */}
+          <div className="ai-carousel-badge">
+            <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon" aria-hidden="true" />
+            <span>{currentSlide.badge}</span>
+          </div>
+
+          {/* Heading (Slide Title) */}
+          <h2 className="ai-carousel-title">
+            {currentSlide.title}
+          </h2>
+
+          {/* Body Description */}
+          <p className="ai-carousel-desc">
+            {renderDescription(currentSlide.description, currentSlide.highlightText)}
+          </p>
+
+          {/* Action Button (CTA) */}
+          <div>
+            <Link
+              href={currentSlide.ctaLink}
+              className="ai-carousel-cta"
             >
-              <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon" aria-hidden="true" />
-              <span>{currentSlide.badge}</span>
-            </motion.div>
-
-            {/* Heading (Slide Title) */}
-            <h2 className="ai-carousel-title">
-              {currentSlide.title}
-            </h2>
-
-            {/* Body Description */}
-            <p className="ai-carousel-desc">
-              {renderDescription(currentSlide.description, currentSlide.highlightText)}
-            </p>
-
-            {/* Action Button (CTA) */}
-            <div>
-              <motion.div
-                className="inline-block"
-                whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
-                whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                transition={{ duration: 0.18, ease: appleEasing }}
-              >
-                <Link
-                  href={currentSlide.ctaLink}
-                  className="ai-carousel-cta"
-                >
-                  {currentSlide.ctaText}
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
+              {currentSlide.ctaText}
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Pagination Indicator Dots */}
-      <div className="ai-carousel-dots" role="tablist" aria-label="Carousel pagination">
+      <div
+        className="ai-carousel-dots"
+        role="tablist"
+        aria-label="Carousel pagination"
+        data-reveal="fade"
+        style={{ '--i': 1 } as React.CSSProperties}
+      >
         {activeSlides.map((slide, index) => {
           const isActive = index === currentIndex;
           return (
@@ -183,13 +183,7 @@ export default function AiCarouselSection({
       </div>
 
       {/* Bottom Section Divider */}
-      <motion.div 
-        className="ai-carousel-divider"
-        initial={shouldReduceMotion ? false : { opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: appleEasing }}
-      />
+      <div className="ai-carousel-divider" />
     </section>
   );
 }
