@@ -11,6 +11,10 @@
   flex-direction: column;
 }
 
+.dark .advertise-scope {
+  --advertise-bg: var(--surface-1);
+}
+
 .advertise-container {
   max-width: 1380px;
   margin: 0 auto;
@@ -64,8 +68,8 @@
   padding: 4px 10px 4px 8px;
   /* padding-top: 4, padding-right: 10, padding-bottom: 4, padding-left: 8 */
   gap: 4px;
-  border: 1px solid var(--Border-Colors-border-200, #E4E7EC);
-  color: #344054;
+  border: 1px solid var(--Border-Colors-border-200);
+  color: var(--Text-text-secondary);
   background-color: transparent;
   font-family: var(--font-sans), 'Lufga', sans-serif;
   font-size: 13px;
@@ -84,19 +88,19 @@
 
 .dark .advertise-badge {
   background-color: transparent;
-  border-color: #27272a;
-  color: #d4d4d8;
+  border-color: var(--Border-Colors-border-200);
+  color: var(--Text-text-secondary);
 }
 
 .advertise-badge-icon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: #344054;
+  color: currentColor;
 }
 
 .dark .advertise-badge-icon {
-  color: #d4d4d8;
+  color: currentColor;
 }
 
 .advertise-title {
@@ -122,12 +126,12 @@
   line-height: 45px;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #101828;
+  color: var(--heading);
   display: block;
 }
 
 .dark .advertise-title-light {
-  color: #ffffff;
+  color: var(--heading);
 }
 
 .advertise-title-bold,
@@ -139,14 +143,14 @@
   line-height: 45px;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #101828;
+  color: var(--heading);
   margin-top: 0;
   display: block;
 }
 
 .dark .advertise-title-bold,
 .dark .advertise-title-medium {
-  color: #ffffff;
+  color: var(--heading);
 }
 
 /* ==========================================================================
@@ -245,9 +249,9 @@
   gap: 10px;
   padding: 6px 16px;
   border-radius: 9999px;
-  border: 1px solid #E4E7EC;
-  background-color: #ffffff;
-  color: #344054;
+  border: 1px solid var(--Border-Colors-border-200);
+  background-color: var(--card-surface);
+  color: var(--Text-text-secondary);
   font-family: var(--font-sans), 'Lufga', sans-serif;
   font-size: 13.5px;
   font-weight: 500;
@@ -263,9 +267,9 @@
 }
 
 .dark .advertise-feature-badge {
-  border-color: #27272a;
-  background-color: #121214;
-  color: #d4d4d8;
+  border-color: var(--Border-Colors-border-200);
+  background-color: var(--surface-2);
+  color: var(--Text-text-secondary);
 }
 
 .dark .advertise-feature-badge:hover {
@@ -276,11 +280,11 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: #475467;
+  color: currentColor;
 }
 
 .dark .advertise-feature-badge-icon {
-  color: #94a3b8;
+  color: currentColor;
 }
 
 .advertise-feature-content {
@@ -294,12 +298,12 @@
   font-weight: 500;
   line-height: 32px;
   letter-spacing: -0.01em; /* -1% */
-  color: #101828;
+  color: var(--heading);
   margin: 0 0 16px 0;
 }
 
 .dark .advertise-feature-title {
-  color: #ffffff;
+  color: var(--heading);
 }
 
 .advertise-feature-desc {
@@ -308,13 +312,13 @@
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0;
-  color: #475467;
+  color: var(--Text-text-tertiary);
   max-width: 680px;
   margin: 0 0 32px 0;
 }
 
 .dark .advertise-feature-desc {
-  color: #94a3b8;
+  color: var(--Text-text-tertiary);
 }
 
 .advertise-feature-desc-bold {
@@ -323,11 +327,11 @@
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0;
-  color: #101828;
+  color: var(--heading);
 }
 
 .dark .advertise-feature-desc-bold {
-  color: #f1f5f9;
+  color: var(--heading);
 }
 
 .advertise-btn-primary {
@@ -410,8 +414,8 @@
 
 /* Bento Card Base */
 .bento-card {
-  background-color: #FFFFFF;
-  border: 1px solid #EAECF0;
+  background-color: var(--card-surface);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 24px;
   box-sizing: border-box;
@@ -452,13 +456,13 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background-color: #FFFFFF;
-  border: 1px solid #EAECF0;
+  background-color: var(--card-surface);
+  border: 1px solid var(--Border-Colors-border-200);
   box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #344054;
+  color: var(--Text-text-secondary);
   flex-shrink: 0;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -481,7 +485,7 @@
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0;
-  color: #101828;
+  color: var(--heading);
   margin: 0;
 }
 
@@ -491,7 +495,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
-  color: var(--Text-text-tertiary, #637083);
+  color: var(--Text-text-tertiary);
   margin: 0;
 }
 
@@ -559,8 +563,8 @@
    Dark Mode Support
    ========================================================================== */
 .dark .bento-card {
-  background-color: #111318;
-  border-color: #222630;
+  background-color: var(--surface-2);
+  border-color: var(--card-border);
 }
 
 .dark .bento-card:hover {
@@ -569,26 +573,26 @@
 }
 
 .dark .bento-icon-box {
-  background-color: #181B22;
-  border-color: #29303D;
-  color: #D0D5DD;
+  background-color: var(--surface-3);
+  border-color: var(--card-border);
+  color: var(--Text-text-secondary);
 }
 
 .dark .bento-card-title {
-  color: #F8FAFC;
+  color: var(--heading);
 }
 
 .dark .bento-card-desc {
-  color: #94A3B8;
+  color: var(--Text-text-tertiary);
 }
 
 .dark .bento-card-tablet {
-  background-color: #111318;
-  border-color: #222630;
+  background-color: var(--surface-2);
+  border-color: var(--card-border);
 }
 
 .dark .bento-card-image {
-  border-color: #222630;
+  border-color: var(--card-border);
 }
 
 /* ==========================================================================
@@ -623,33 +627,69 @@
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid #CED2DA;
+  border: 1px solid var(--Border-Colors-border-200);
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  padding: 40px 24px;
-  min-height: 420px;
-  background-color: transparent;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 24px;
+  min-height: auto;
+  background-color: var(--card-surface);
   box-shadow: 0 1px 3px rgba(16, 24, 40, 0.02);
 }
 
 @media (min-width: 640px) {
   .ai-carousel-card {
-    padding: 48px 40px;
+    padding: 40px 36px;
     border-radius: 28px;
-    min-height: 440px;
   }
 }
 
 @media (min-width: 1024px) {
   .ai-carousel-card {
+    flex-direction: row;
+    align-items: center;
     padding: 56px 64px;
     border-radius: 32px;
     min-height: 470px;
   }
 }
 
-/* Fixed Background Image */
+/* Mobile Art-Directed Visual Area (Dedicated visual above text, so logo never sits under text) */
+.ai-carousel-mobile-visual {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .ai-carousel-mobile-visual {
+    max-width: 400px;
+    margin-bottom: 24px;
+  }
+}
+
+.ai-carousel-mobile-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .ai-carousel-mobile-img {
+    max-height: 240px;
+  }
+}
+
+/* Fixed Background Image for Desktop (>= 1024px) */
 .ai-carousel-bg {
   object-fit: cover;
   object-position: center right;
@@ -660,6 +700,11 @@
   z-index: 1;
   pointer-events: none;
   user-select: none;
+}
+
+[dir="rtl"] .ai-carousel-bg {
+  transform: scaleX(-1);
+  object-position: center left;
 }
 
 /* Dynamic Carousel Content Area */
@@ -689,7 +734,7 @@
   width: 275px;
   height: 40px;
   border-radius: 12px;
-  border: 1px solid #CED2DA;
+  border: 1px solid var(--Border-Colors-border-200);
   background-color: transparent;
   padding: 4px 10px 4px 8px; /* padding-top: 4, padding-right: 10, padding-bottom: 4, padding-left: 8 */
   gap: 4px;
@@ -698,16 +743,25 @@
   font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #344054;
+  color: var(--Text-text-secondary);
   margin-bottom: 24px;
   user-select: none;
+}
+
+.dark .ai-carousel-badge {
+  border-color: var(--card-border);
+  color: var(--Text-text-secondary);
 }
 
 .ai-carousel-badge-icon {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  color: #475467;
+  color: currentColor;
+}
+
+.dark .ai-carousel-badge-icon {
+  color: currentColor;
 }
 
 /* 2. Heading (Slide Title) */
@@ -717,8 +771,12 @@
   font-size: 26px;
   line-height: 34px;
   letter-spacing: -0.01em;
-  color: #101828;
+  color: var(--heading);
   margin: 0 0 16px 0;
+}
+
+.dark .ai-carousel-title {
+  color: var(--heading);
 }
 
 @media (min-width: 640px) {
@@ -742,8 +800,12 @@
   font-size: 16px;
   line-height: 25px;
   letter-spacing: 0;
-  color: var(--Text-text-tertiary, #637083);
+  color: var(--Text-text-tertiary);
   margin: 0 0 28px 0;
+}
+
+.dark .ai-carousel-desc {
+  color: var(--Text-text-tertiary);
 }
 
 @media (min-width: 768px) {
@@ -756,7 +818,11 @@
 
 .ai-carousel-highlight {
   font-weight: 600;
-  color: #101828;
+  color: var(--heading);
+}
+
+.dark .ai-carousel-highlight {
+  color: var(--heading);
 }
 
 /* 4. Action Button (CTA) */
@@ -764,7 +830,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #0066FF;
+  background-color: var(--brand, #0066FF);
   color: #FFFFFF;
   font-family: 'Lufga', var(--font-sans), sans-serif;
   font-size: 15px;
@@ -778,7 +844,7 @@
 }
 
 .ai-carousel-cta:hover {
-  background-color: #0052cc;
+  background-color: var(--brand-strong, #0055E6);
   box-shadow: 0 6px 20px rgba(0, 102, 255, 0.38);
   transform: translateY(-1.5px);
   color: #FFFFFF;
@@ -801,7 +867,7 @@
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background-color: #D0D5DD;
+  background-color: var(--Border-Colors-border-200);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -813,14 +879,14 @@
 }
 
 .ai-carousel-dot-active {
-  background-color: #101828;
+  background-color: var(--heading);
 }
 
 /* Section Divider */
 .ai-carousel-divider {
   width: 100%;
   height: 1px;
-  background-color: #EAECF0;
+  background-color: var(--Border-Colors-border-200);
   margin-top: 48px;
 }
 
@@ -832,8 +898,8 @@
 
 /* Dark Mode */
 .dark .ai-carousel-card {
-  border-color: #222630;
-  background-color: #111318;
+  border-color: var(--card-border);
+  background-color: #0A1020;
 }
 
 .dark .ai-carousel-dot {
@@ -841,11 +907,11 @@
 }
 
 .dark .ai-carousel-dot-active {
-  background-color: #F8FAFC;
+  background-color: var(--heading);
 }
 
 .dark .ai-carousel-divider {
-  background-color: #222630;
+  background-color: var(--card-border);
 }
 
 /* RTL Support */

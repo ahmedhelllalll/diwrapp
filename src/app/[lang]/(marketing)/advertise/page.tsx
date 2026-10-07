@@ -36,7 +36,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
 
   return (
     <div className="advertise-scope">
-      <main className="bg-white dark:bg-[#080808] transition-colors duration-300 flex-grow">
+      <main className="bg-[var(--background)] dark:bg-[var(--surface-1)] transition-colors duration-300 flex-grow">
           <div className="advertise-container">
             
             {/* Hero Section */}
