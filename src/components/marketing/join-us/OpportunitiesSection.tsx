@@ -104,13 +104,13 @@ export default function OpportunitiesSection({
             {categoryCards.map(({ id, label, Icon }) => (
               <div
                 key={id}
-                className="bg-white dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200 cursor-pointer group hover:-translate-y-0.5"
+                className="bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 cursor-pointer group hover:-translate-y-0.5"
               >
                 <Icon
-                  className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors group-hover:text-[#0066FF]"
+                  className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400"
                   strokeWidth={1.5}
                 />
-                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[17px] sm:text-[18px] leading-[26px] tracking-normal text-center text-[#101828] dark:text-zinc-100 transition-colors group-hover:text-[#0066FF]">
+                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[17px] sm:text-[18px] leading-[26px] tracking-normal text-center text-[#101828] dark:text-white transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400">
                   {label}
                 </span>
               </div>
@@ -120,7 +120,7 @@ export default function OpportunitiesSection({
 
         {/* Supporting Description Paragraph (mt-10 mb-8 max-w-[620px]) */}
         <div className="max-w-[620px] mx-auto mt-10 mb-8">
-          <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[15px] sm:text-[16px] leading-[26px] tracking-normal text-center text-[#637083] dark:text-zinc-400 m-0">
+          <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[15px] sm:text-[16px] leading-[26px] tracking-normal text-center text-[#344054] dark:text-zinc-300 m-0">
             {description}
           </p>
         </div>

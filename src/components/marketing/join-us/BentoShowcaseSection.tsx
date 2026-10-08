@@ -47,39 +47,39 @@ export default function BentoShowcaseSection({
           {/* Row 1 (Top Row — 2 Equal Columns): Card 1 (Left) & Card 2 (Right) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-0">
             {/* Card 1 (Top Left): Higher Occupancy */}
-            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200">
-              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200">
+            <div className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200">
+              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300">
                 {card1.label}
               </span>
 
               <div className="mt-8">
-                <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] mt-6 mb-3">
+                <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] dark:text-blue-400 mt-6 mb-3">
                   {card1.stat}
                 </div>
                 <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-semibold text-[18px] leading-[26px] text-[#101828] dark:text-white mb-2">
                   {card1.title}
                 </h3>
-                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#637083] dark:text-zinc-400 m-0">
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#475467] dark:text-zinc-300 m-0">
                   {card1.description}
                 </p>
               </div>
             </div>
 
             {/* Card 2 (Top Right): Real-Time Management (Constrained text width max-w-[240px] to prevent laptop overlap) */}
-            <div className="bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200">
+            <div className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200">
               <div className="max-w-[240px] relative z-10">
-                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200 block">
+                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300 block">
                   {card2.label}
                 </span>
 
                 <div className="mt-8">
-                  <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] mt-6 mb-3">
+                  <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] dark:text-blue-400 mt-6 mb-3">
                     {card2.stat}
                   </div>
                   <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-semibold text-[18px] leading-[26px] text-[#101828] dark:text-white mb-2">
                     {card2.title}
                   </h3>
-                  <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#637083] dark:text-zinc-400 m-0">
+                  <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#475467] dark:text-zinc-300 m-0">
                     {card2.description}
                   </p>
                 </div>
@@ -88,21 +88,21 @@ export default function BentoShowcaseSection({
           </div>
 
           {/* Row 2 (Bottom Row — Full Width Card with overflow-visible Stacking): Card 3 & Upward-Breaking Laptop */}
-          <div className="w-full bg-[#F8F9FA] dark:bg-[#111318] border border-[#EAECF0] dark:border-white/[0.08] rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-gray-300 hover:dark:border-white/20 hover:shadow-xs transition-all duration-200 z-10">
+          <div className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 z-10">
             {/* Card 3 Content (Left Side) */}
             <div className="max-w-[340px] relative z-10">
-              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#101828] dark:text-zinc-200 block">
+              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300 block">
                 {card3.label}
               </span>
 
               <div className="mt-8">
-                <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] mt-6 mb-3">
+                <div className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[48px] leading-[44px] tracking-[-0.01em] text-[#0066FF] dark:text-blue-400 mt-6 mb-3">
                   {card3.stat}
                 </div>
                 <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-semibold text-[18px] leading-[26px] text-[#101828] dark:text-white mb-2">
                   {card3.title}
                 </h3>
-                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#637083] dark:text-zinc-400 m-0">
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[14px] leading-[22px] text-[#475467] dark:text-zinc-300 m-0">
                   {card3.description}
                 </p>
               </div>
