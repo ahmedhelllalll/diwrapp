@@ -29,7 +29,7 @@ export default function JoinUsHero({
   const targetHref = ctaHref || `/${lang}/signup`;
 
   const shouldReduceMotion = useReducedMotion();
-  const appleEasing = [0.16, 1, 0.3, 1] as const;
+  const appleEasing = [0.22, 1, 0.36, 1] as const;
 
   return (
     <section id="join-us-hero" className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
@@ -74,10 +74,10 @@ export default function JoinUsHero({
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full">
         {/* Top Badge Pill */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: -10, scale: 0.95 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: -8, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.08, ease: appleEasing }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-all"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-xs mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-colors"
         >
           <SystemRestart className="w-4 h-4 text-[#344054] dark:text-zinc-300 shrink-0" strokeWidth={1.75} />
           <span>{badgeText}</span>
@@ -85,9 +85,9 @@ export default function JoinUsHero({
 
         {/* Main Heading H1 */}
         <motion.h1
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.18, ease: appleEasing }}
+          transition={{ duration: 0.75, delay: 0.15, ease: appleEasing }}
           className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-[44px] tracking-[-0.01em] text-center text-[#101828] dark:text-white drop-shadow-md font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
           style={{
             letterSpacing: '-0.01em',
@@ -98,9 +98,9 @@ export default function JoinUsHero({
 
         {/* Subtitle / Body Content - High Contrast Drop Shadow */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.28, ease: appleEasing }}
+          transition={{ duration: 0.7, delay: 0.22, ease: appleEasing }}
           className="max-w-md mx-auto mt-4 mb-8 text-sm sm:text-base leading-relaxed text-center text-[#344054] dark:text-zinc-300 font-medium drop-shadow font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
         >
           <p className="m-0">
@@ -113,18 +113,15 @@ export default function JoinUsHero({
           </p>
         </motion.div>
 
-        {/* CTA Button with Hover & Tap Micro-interactions */}
+        {/* CTA Button */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.96 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.38, ease: appleEasing }}
-          whileHover={{ y: -2, scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          style={{ willChange: 'transform' }}
+          transition={{ duration: 0.65, delay: 0.3, ease: appleEasing }}
         >
           <Link
             href={targetHref}
-            className="inline-flex items-center gap-2.5 bg-[#0066FF] hover:bg-blue-600 text-white font-medium px-7 py-3 rounded-full text-base transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-[0.98] cursor-pointer group"
+            className="inline-flex items-center gap-2.5 bg-[#0066FF] hover:bg-blue-600 text-white font-medium px-7 py-3 rounded-full text-base transition-all duration-200 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/35 active:scale-[0.98] cursor-pointer group"
           >
             <span>{ctaText}</span>
             <ArrowRightCircle

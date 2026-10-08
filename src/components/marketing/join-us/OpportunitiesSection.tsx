@@ -20,7 +20,7 @@ interface OpportunitiesSectionProps {
   ctaHref?: string;
 }
 
-const appleEasing = [0.16, 1, 0.3, 1] as const;
+const appleEasing = [0.22, 1, 0.36, 1] as const;
 
 export default function OpportunitiesSection({
   lang,
@@ -68,7 +68,7 @@ export default function OpportunitiesSection({
       <div className="relative z-10 max-w-[1160px] mx-auto px-4 sm:px-6 text-center">
         {/* Top Heading H2 */}
         <motion.h2
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.75, ease: appleEasing }}
@@ -124,23 +124,22 @@ export default function OpportunitiesSection({
             {categoryCards.map(({ id, label, Icon }, idx) => (
               <motion.div
                 key={id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 20, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{
-                  duration: 0.7,
-                  delay: shouldReduceMotion ? 0 : 0.1 + idx * 0.08,
+                  duration: 0.75,
+                  delay: shouldReduceMotion ? 0 : 0.08 + idx * 0.06,
                   ease: appleEasing,
                 }}
-                whileHover={{ y: -3, scale: 1.015 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 cursor-pointer group"
+                className="bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out cursor-pointer group"
               >
                 <Icon
-                  className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400"
+                  className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors duration-200 group-hover:text-[#0066FF] dark:group-hover:text-blue-400"
                   strokeWidth={1.5}
                 />
-                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[17px] sm:text-[18px] leading-[26px] tracking-normal text-center text-[#101828] dark:text-white transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400">
+                <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[17px] sm:text-[18px] leading-[26px] tracking-normal text-center text-[#101828] dark:text-white transition-colors duration-200 group-hover:text-[#0066FF] dark:group-hover:text-blue-400">
                   {label}
                 </span>
               </motion.div>
@@ -150,10 +149,10 @@ export default function OpportunitiesSection({
 
         {/* Supporting Description Paragraph */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.42, ease: appleEasing }}
+          transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.35, ease: appleEasing }}
           className="max-w-[620px] mx-auto mt-10 mb-8"
         >
           <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[15px] sm:text-[16px] leading-[26px] tracking-normal text-center text-[#344054] dark:text-zinc-300 m-0">
@@ -163,11 +162,10 @@ export default function OpportunitiesSection({
 
         {/* Call to Action Button */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.96 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.65, delay: shouldReduceMotion ? 0 : 0.5, ease: appleEasing }}
-          whileHover={{ y: -2, scale: 1.02 }}
+          transition={{ duration: 0.65, delay: shouldReduceMotion ? 0 : 0.42, ease: appleEasing }}
           whileTap={{ scale: 0.98 }}
         >
           <Link

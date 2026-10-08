@@ -42,7 +42,7 @@ interface AiCarouselSectionProps {
   className?: string;
 }
 
-const appleEasing = [0.16, 1, 0.3, 1] as const;
+const appleEasing = [0.22, 1, 0.36, 1] as const;
 
 export default function AiCarouselSection({
   slides = defaultSlides,

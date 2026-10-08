@@ -53,7 +53,7 @@ interface PlatformFeaturesSectionProps {
   };
 }
 
-const appleEasing = [0.16, 1, 0.3, 1] as const;
+const appleEasing = [0.22, 1, 0.36, 1] as const;
 
 export default function PlatformFeaturesSection({
   lang,
@@ -215,12 +215,11 @@ export default function PlatformFeaturesSection({
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Card 1 (Left Tall Card — 6 Columns) */}
           <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.97 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.12, ease: appleEasing }}
-            whileHover={{ y: -3 }}
-            className="lg:col-span-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 transition-all duration-200"
+            transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+            className="lg:col-span-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
           >
             <div className="flex flex-col items-start w-full relative">
               {/* Top Badge */}
@@ -240,10 +239,10 @@ export default function PlatformFeaturesSection({
                   style={{ clipPath: 'inset(-300px -300px 0px -300px)' }}
                 >
                   <motion.div
-                    initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.93, y: 14 }}
+                    initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 10 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.28, ease: appleEasing }}
+                    transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.22, ease: appleEasing }}
                     className="w-[140%] max-w-none h-auto flex items-center justify-center"
                   >
                     <Image
@@ -274,12 +273,11 @@ export default function PlatformFeaturesSection({
           <div className="lg:col-span-6 flex flex-col gap-6 justify-between">
             {/* Card 2 (Top Right Card) */}
             <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.22, ease: appleEasing }}
-              whileHover={{ y: -3 }}
-              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]"
+              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.16, ease: appleEasing }}
+              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
                 <FeatureBadge
@@ -306,12 +304,11 @@ export default function PlatformFeaturesSection({
 
             {/* Card 3 (Bottom Right Card) */}
             <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.32, ease: appleEasing }}
-              whileHover={{ y: -3 }}
-              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]"
+              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.24, ease: appleEasing }}
+              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
                 <FeatureBadge
@@ -335,12 +332,11 @@ export default function PlatformFeaturesSection({
 
         {/* Bottom Banner Card (Full Width CTA Banner) */}
         <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: appleEasing }}
-          whileHover={{ y: -2 }}
-          className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200"
+          transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.15, ease: appleEasing }}
+          className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
         >
           {/* Left Content */}
           <div>
@@ -360,7 +356,7 @@ export default function PlatformFeaturesSection({
 
           {/* Right Actions (2 Buttons) */}
           <div className="flex items-center gap-3.5 shrink-0">
-            <motion.div whileHover={{ y: -1.5, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <motion.div whileTap={{ scale: 0.98 }}>
               <Link
                 href={`/${lang}/contact`}
                 className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-900/60 hover:bg-gray-50 dark:hover:bg-zinc-800 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
@@ -368,7 +364,7 @@ export default function PlatformFeaturesSection({
                 {ctaBanner.contactBtn}
               </Link>
             </motion.div>
-            <motion.div whileHover={{ y: -1.5, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <motion.div whileTap={{ scale: 0.98 }}>
               <Link
                 href={`/${lang}/signup`}
                 className="h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
