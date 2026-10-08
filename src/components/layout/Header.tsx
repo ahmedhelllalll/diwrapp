@@ -160,6 +160,7 @@ export default function Header({
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
 
+  const isJoinUs = normalizedPathname.endsWith('/join-us');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -170,7 +171,7 @@ export default function Header({
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   if (pathname.includes('/vendor/onboarding')) {
     return null;
@@ -183,6 +184,10 @@ export default function Header({
         className={`fixed top-0 inset-x-0 z-[1000] w-full transform-gpu ${
           isMobileMenuOpen
             ? "bg-white dark:bg-[#080808] border-b border-transparent"
+            : isJoinUs
+            ? isScrolled
+              ? "backdrop-blur-md bg-white/85 dark:bg-[#080808]/85 border-b border-slate-200/60 dark:border-zinc-800/60 shadow-sm transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out"
+              : "bg-transparent border-b border-transparent shadow-none backdrop-blur-none transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out"
             : `backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
                 isScrolled
                   ? "bg-white/85 dark:bg-[#080808]/85 border-b border-slate-200/60 dark:border-zinc-800/60 shadow-sm"

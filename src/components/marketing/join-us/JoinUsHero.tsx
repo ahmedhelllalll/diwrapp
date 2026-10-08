@@ -29,7 +29,7 @@ export default function JoinUsHero({
   const targetHref = ctaHref || `/${lang}/signup`;
 
   return (
-    <section className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
+    <section id="join-us-hero" className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
       {/* 3D Room Background Image - Preserves natural aspect ratio without stretching */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
         {/* Light Mode 3D Room Graphic */}
