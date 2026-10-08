@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 import { BrightStar, BoxIso, HardDrive, Suitcase, ArrowRightCircle } from 'iconoir-react';
 
 interface FeatureBadgeProps {
@@ -50,6 +53,8 @@ interface PlatformFeaturesSectionProps {
   };
 }
 
+const appleEasing = [0.16, 1, 0.3, 1] as const;
+
 export default function PlatformFeaturesSection({
   lang,
   badge = 'Platform Features',
@@ -85,14 +90,19 @@ export default function PlatformFeaturesSection({
   },
 }: PlatformFeaturesSectionProps) {
   const isRtl = lang === 'ar';
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="relative w-full overflow-hidden bg-white dark:bg-[#080808] transition-colors duration-300 py-16 md:py-24">
       {/* Main Content Container */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Subtle Top-Right Background Grid - Light Mode */}
-        <div
+        <motion.div
           aria-hidden="true"
+          initial={shouldReduceMotion ? false : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -top-12 -right-8 rtl:right-auto rtl:-left-8 w-[420px] h-[360px] pointer-events-none select-none -z-10 dark:hidden"
           style={{
             backgroundImage: `
@@ -109,8 +119,12 @@ export default function PlatformFeaturesSection({
           }}
         />
         {/* Subtle Top-Right Background Grid - Dark Mode */}
-        <div
+        <motion.div
           aria-hidden="true"
+          initial={shouldReduceMotion ? false : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -top-12 -right-8 rtl:right-auto rtl:-left-8 w-[420px] h-[360px] pointer-events-none select-none -z-10 hidden dark:block"
           style={{
             backgroundImage: `
@@ -127,8 +141,12 @@ export default function PlatformFeaturesSection({
           }}
         />
         {/* Subtle Bottom-Left Background Grid - Light Mode */}
-        <div
+        <motion.div
           aria-hidden="true"
+          initial={shouldReduceMotion ? false : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -bottom-10 -left-10 rtl:-left-auto rtl:-right-10 w-[420px] h-[360px] pointer-events-none select-none -z-10 dark:hidden"
           style={{
             backgroundImage: `
@@ -145,8 +163,12 @@ export default function PlatformFeaturesSection({
           }}
         />
         {/* Subtle Bottom-Left Background Grid - Dark Mode */}
-        <div
+        <motion.div
           aria-hidden="true"
+          initial={shouldReduceMotion ? false : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -bottom-10 -left-10 rtl:-left-auto rtl:-right-10 w-[420px] h-[360px] pointer-events-none select-none -z-10 hidden dark:block"
           style={{
             backgroundImage: `
@@ -164,23 +186,42 @@ export default function PlatformFeaturesSection({
         />
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 md:mb-14">
-          <div className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-zinc-800 bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 mb-4 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: -10, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.65, ease: appleEasing }}
+            className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-zinc-800 bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 mb-4 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+          >
             <span className="w-3.5 h-3.5 flex items-center justify-center shrink-0">
               <BrightStar className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />
             </span>
             <span className="leading-none">{badge}</span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-[26px] sm:text-[28px] lg:text-[32px] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] leading-[1.3] text-center max-w-xl mx-auto">
+          <motion.h2
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+            className="text-[26px] sm:text-[28px] lg:text-[32px] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] leading-[1.3] text-center max-w-xl mx-auto"
+          >
             <span className="font-semibold text-[#101828] dark:text-white">{headingPrefix} </span>
             <span className="font-normal text-[#475467] dark:text-zinc-400">{headingSuffix}</span>
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Bento Grid Architecture (3 Feature Cards) */}
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Card 1 (Left Tall Card — 6 Columns) */}
-          <div className="lg:col-span-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 transition-all duration-200">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.12, ease: appleEasing }}
+            whileHover={{ y: -3 }}
+            className="lg:col-span-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 transition-all duration-200"
+          >
             <div className="flex flex-col items-start w-full relative">
               {/* Top Badge */}
               <div className="self-start relative z-20">
@@ -193,19 +234,27 @@ export default function PlatformFeaturesSection({
 
               {/* Inner Grey Surface Box */}
               <div className="relative w-full rounded-2xl bg-[#F2F4F7]/70 dark:bg-zinc-900/60 min-h-[420px] lg:min-h-[460px] h-[420px] lg:h-[460px] my-4 overflow-visible flex items-center justify-center">
-                {/* Tablet Clipping Wrapper: clean straight horizontal cut at bottom edge, top/right unclipped for dramatic card breakout */}
+                {/* Tablet Clipping Wrapper */}
                 <div
                   className="relative w-full h-full flex items-center justify-center pointer-events-none select-none"
                   style={{ clipPath: 'inset(-300px -300px 0px -300px)' }}
                 >
-                  <Image
-                    src="/assets/join-tablet.webp"
-                    alt={card1.title || 'Platform Tablet'}
-                    width={960}
-                    height={720}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="w-[140%] max-w-none h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-8 -translate-y-6 rtl:-translate-x-8"
-                  />
+                  <motion.div
+                    initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.93, y: 14 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.28, ease: appleEasing }}
+                    className="w-[140%] max-w-none h-auto flex items-center justify-center"
+                  >
+                    <Image
+                      src="/assets/join-tablet.webp"
+                      alt={card1.title || 'Platform Tablet'}
+                      width={960}
+                      height={720}
+                      sizes="(max-width: 768px) 100vw, 960px"
+                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-8 -translate-y-6 rtl:-translate-x-8"
+                    />
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -219,12 +268,19 @@ export default function PlatformFeaturesSection({
                 {card1.description}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column (Cards 2 & 3 — 6 Columns) */}
           <div className="lg:col-span-6 flex flex-col gap-6 justify-between">
             {/* Card 2 (Top Right Card) */}
-            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.22, ease: appleEasing }}
+              whileHover={{ y: -3 }}
+              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]"
+            >
               <div className="self-start">
                 <FeatureBadge
                   icon={<HardDrive className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />}
@@ -246,10 +302,17 @@ export default function PlatformFeaturesSection({
                   )}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 (Bottom Right Card) */}
-            <div className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.32, ease: appleEasing }}
+              whileHover={{ y: -3 }}
+              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200 min-h-[280px]"
+            >
               <div className="self-start">
                 <FeatureBadge
                   icon={<Suitcase className="w-3.5 h-3.5 text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300" strokeWidth={1.5} />}
@@ -266,12 +329,19 @@ export default function PlatformFeaturesSection({
                   {card3.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* Bottom Banner Card (Full Width CTA Banner) */}
-        <div className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: appleEasing }}
+          whileHover={{ y: -2 }}
+          className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 transition-colors duration-200"
+        >
           {/* Left Content */}
           <div>
             <div className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full bg-[#0066FF] text-white text-xs font-medium w-fit mb-4 shadow-xs font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
@@ -290,21 +360,25 @@ export default function PlatformFeaturesSection({
 
           {/* Right Actions (2 Buttons) */}
           <div className="flex items-center gap-3.5 shrink-0">
-            <Link
-              href={`/${lang}/contact`}
-              className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-900/60 hover:bg-gray-50 dark:hover:bg-zinc-800 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.98] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
-            >
-              {ctaBanner.contactBtn}
-            </Link>
-            <Link
-              href={`/${lang}/signup`}
-              className="h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 active:scale-[0.98] cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
-            >
-              <span>{ctaBanner.getStartedBtn}</span>
-              <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" strokeWidth={1.75} />
-            </Link>
+            <motion.div whileHover={{ y: -1.5, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href={`/${lang}/contact`}
+                className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-900/60 hover:bg-gray-50 dark:hover:bg-zinc-800 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+              >
+                {ctaBanner.contactBtn}
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -1.5, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href={`/${lang}/signup`}
+                className="h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+              >
+                <span>{ctaBanner.getStartedBtn}</span>
+                <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" strokeWidth={1.75} />
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

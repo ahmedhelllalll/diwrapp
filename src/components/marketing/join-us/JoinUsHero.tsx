@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SystemRestart, ArrowRightCircle } from 'iconoir-react';
 
 interface JoinUsHeroProps {
@@ -27,6 +27,9 @@ export default function JoinUsHero({
 }: JoinUsHeroProps) {
   const isRtl = lang === 'ar';
   const targetHref = ctaHref || `/${lang}/signup`;
+
+  const shouldReduceMotion = useReducedMotion();
+  const appleEasing = [0.16, 1, 0.3, 1] as const;
 
   return (
     <section id="join-us-hero" className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
@@ -67,32 +70,39 @@ export default function JoinUsHero({
         aria-hidden="true"
       />
 
-      {/* Central Content Container with Crisp Entry Transition */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.96, y: 16 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        style={{ willChange: 'transform, opacity' }}
-        className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full"
-      >
+      {/* Central Content Container */}
+      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full">
         {/* Top Badge Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-all">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: -10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.65, delay: 0.08, ease: appleEasing }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-all"
+        >
           <SystemRestart className="w-4 h-4 text-[#344054] dark:text-zinc-300 shrink-0" strokeWidth={1.75} />
           <span>{badgeText}</span>
-        </div>
+        </motion.div>
 
         {/* Main Heading H1 */}
-        <h1
+        <motion.h1
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.18, ease: appleEasing }}
           className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-[44px] tracking-[-0.01em] text-center text-[#101828] dark:text-white drop-shadow-md font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
           style={{
             letterSpacing: '-0.01em',
           }}
         >
           {titleText}
-        </h1>
+        </motion.h1>
 
         {/* Subtitle / Body Content - High Contrast Drop Shadow */}
-        <div className="max-w-md mx-auto mt-4 mb-8 text-sm sm:text-base leading-relaxed text-center text-[#344054] dark:text-zinc-300 font-medium drop-shadow font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.28, ease: appleEasing }}
+          className="max-w-md mx-auto mt-4 mb-8 text-sm sm:text-base leading-relaxed text-center text-[#344054] dark:text-zinc-300 font-medium drop-shadow font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+        >
           <p className="m-0">
             {subtitleLine1}
             {subtitleLine2 && (
@@ -101,13 +111,15 @@ export default function JoinUsHero({
               </>
             )}
           </p>
-        </div>
+        </motion.div>
 
         {/* CTA Button with Hover & Tap Micro-interactions */}
         <motion.div
-          whileHover={{ y: -2 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.38, ease: appleEasing }}
+          whileHover={{ y: -2, scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           style={{ willChange: 'transform' }}
         >
           <Link
@@ -121,7 +133,7 @@ export default function JoinUsHero({
             />
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

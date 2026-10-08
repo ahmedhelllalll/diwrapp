@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Arcade, AppleImac2021, UserStar, Computer } from 'iconoir-react';
 
 interface OpportunitiesSectionProps {
@@ -17,6 +20,8 @@ interface OpportunitiesSectionProps {
   ctaHref?: string;
 }
 
+const appleEasing = [0.16, 1, 0.3, 1] as const;
+
 export default function OpportunitiesSection({
   lang,
   titleLine1 = 'Every Advertising Opportunity,',
@@ -32,6 +37,7 @@ export default function OpportunitiesSection({
   ctaHref,
 }: OpportunitiesSectionProps) {
   const targetHref = ctaHref || `/${lang}/contact`;
+  const shouldReduceMotion = useReducedMotion();
 
   const categoryCards = [
     {
@@ -61,7 +67,13 @@ export default function OpportunitiesSection({
       {/* Main Content Container */}
       <div className="relative z-10 max-w-[1160px] mx-auto px-4 sm:px-6 text-center">
         {/* Top Heading H2 */}
-        <h2 className="text-[22px] sm:text-[24px] font-medium leading-[32px] tracking-[-0.01em] text-center text-[#101828] dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+        <motion.h2
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.75, ease: appleEasing }}
+          className="text-[22px] sm:text-[24px] font-medium leading-[32px] tracking-[-0.01em] text-center text-[#101828] dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+        >
           {titleLine1}
           {titleLine2 && (
             <>
@@ -69,12 +81,16 @@ export default function OpportunitiesSection({
               {titleLine2}
             </>
           )}
-        </h2>
+        </motion.h2>
 
         {/* 4 Interactive Category Cards with Confined Background Grid */}
         <div className="relative max-w-[1100px] mx-auto mt-10">
           {/* Confined Background Grid - Light Mode */}
-          <div
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.9, ease: appleEasing }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1140px] h-[260px] pointer-events-none select-none z-0 dark:hidden"
             style={{
               backgroundImage:
@@ -87,7 +103,11 @@ export default function OpportunitiesSection({
             aria-hidden="true"
           />
           {/* Confined Background Grid - Dark Mode */}
-          <div
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.9, ease: appleEasing }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1140px] h-[260px] pointer-events-none select-none z-0 hidden dark:block"
             style={{
               backgroundImage:
@@ -101,10 +121,20 @@ export default function OpportunitiesSection({
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 relative z-10">
-            {categoryCards.map(({ id, label, Icon }) => (
-              <div
+            {categoryCards.map(({ id, label, Icon }, idx) => (
+              <motion.div
                 key={id}
-                className="bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 cursor-pointer group hover:-translate-y-0.5"
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 20, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: shouldReduceMotion ? 0 : 0.1 + idx * 0.08,
+                  ease: appleEasing,
+                }}
+                whileHover={{ y: -3, scale: 1.015 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl px-6 py-7 flex flex-col items-center justify-center h-[128px] min-h-[120px] gap-3 hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 cursor-pointer group"
               >
                 <Icon
                   className="w-6 h-6 text-[#344054] dark:text-zinc-300 transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400"
@@ -113,27 +143,40 @@ export default function OpportunitiesSection({
                 <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-medium text-[17px] sm:text-[18px] leading-[26px] tracking-normal text-center text-[#101828] dark:text-white transition-colors group-hover:text-[#0066FF] dark:group-hover:text-blue-400">
                   {label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Supporting Description Paragraph (mt-10 mb-8 max-w-[620px]) */}
-        <div className="max-w-[620px] mx-auto mt-10 mb-8">
+        {/* Supporting Description Paragraph */}
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.42, ease: appleEasing }}
+          className="max-w-[620px] mx-auto mt-10 mb-8"
+        >
           <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[15px] sm:text-[16px] leading-[26px] tracking-normal text-center text-[#344054] dark:text-zinc-300 m-0">
             {description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Call to Action Button (mt-6 px-6 py-2.5 rounded-full text-sm) */}
-        <div>
+        {/* Call to Action Button */}
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.65, delay: shouldReduceMotion ? 0 : 0.5, ease: appleEasing }}
+          whileHover={{ y: -2, scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
           <Link
             href={targetHref}
             className="inline-flex items-center justify-center bg-[#0066FF] hover:bg-blue-600 text-white font-medium px-6 py-2.5 rounded-full text-sm transition-all duration-200 shadow-sm hover:shadow-blue-500/25 active:scale-[0.98] cursor-pointer"
           >
             {ctaText}
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

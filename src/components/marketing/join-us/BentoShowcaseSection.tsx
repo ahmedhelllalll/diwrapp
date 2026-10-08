@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface BentoCardData {
   label?: string;
@@ -14,6 +17,8 @@ interface BentoShowcaseSectionProps {
   card2?: BentoCardData;
   card3?: BentoCardData;
 }
+
+const appleEasing = [0.16, 1, 0.3, 1] as const;
 
 export default function BentoShowcaseSection({
   lang,
@@ -39,6 +44,9 @@ export default function BentoShowcaseSection({
       'Reduce manual quotations, approvals, and bookings management through automated workflows.',
   },
 }: BentoShowcaseSectionProps) {
+  const isRtl = lang === 'ar';
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative w-full bg-white dark:bg-[#080808] transition-colors duration-300 py-12 md:py-16">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
@@ -47,7 +55,14 @@ export default function BentoShowcaseSection({
           {/* Row 1 (Top Row — 2 Equal Columns): Card 1 (Left) & Card 2 (Right) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-0">
             {/* Card 1 (Top Left): Higher Occupancy */}
-            <div className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.1, ease: appleEasing }}
+              whileHover={{ y: -3 }}
+              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200"
+            >
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300">
                 {card1.label}
               </span>
@@ -63,10 +78,17 @@ export default function BentoShowcaseSection({
                   {card1.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Card 2 (Top Right): Real-Time Management (Constrained text width max-w-[240px] to prevent laptop overlap) */}
-            <div className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200">
+            {/* Card 2 (Top Right): Real-Time Management */}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 22, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: appleEasing }}
+              whileHover={{ y: -3 }}
+              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200"
+            >
               <div className="max-w-[240px] relative z-10">
                 <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300 block">
                   {card2.label}
@@ -84,11 +106,18 @@ export default function BentoShowcaseSection({
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Row 2 (Bottom Row — Full Width Card with overflow-visible Stacking): Card 3 & Upward-Breaking Laptop */}
-          <div className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 z-10">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 24, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.15, ease: appleEasing }}
+            whileHover={{ y: -3 }}
+            className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-xs transition-all duration-200 z-10"
+          >
             {/* Card 3 Content (Left Side) */}
             <div className="max-w-[340px] relative z-10">
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300 block">
@@ -109,7 +138,13 @@ export default function BentoShowcaseSection({
             </div>
 
             {/* Laptop Image: Scaled down ~8-10%, shifted right, and clipped clean at the bottom */}
-            <div className="relative mt-8 md:mt-0 md:absolute md:right-[-8%] lg:right-[-9%] md:bottom-0 pointer-events-none select-none z-20 w-full sm:w-[85%] md:w-[65%] lg:w-[68%] max-w-[720px] rtl:md:right-auto rtl:md:left-[-8%] rtl:lg:left-[-9%]">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, x: isRtl ? -20 : 20, y: 14, scale: 0.96 }}
+              whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.9, delay: shouldReduceMotion ? 0 : 0.28, ease: appleEasing }}
+              className="relative mt-8 md:mt-0 md:absolute md:right-[-8%] lg:right-[-9%] md:bottom-0 pointer-events-none select-none z-20 w-full sm:w-[85%] md:w-[65%] lg:w-[68%] max-w-[720px] rtl:md:right-auto rtl:md:left-[-8%] rtl:lg:left-[-9%]"
+            >
               <Image
                 src="/assets/join-laptop.png"
                 alt="Di-wrapp Platform on Laptop"
@@ -119,8 +154,8 @@ export default function BentoShowcaseSection({
                 style={{ clipPath: 'polygon(0px 0px, 100% 0px, 100% 95%, 0px 95%)' }}
                 className="w-full h-auto object-contain drop-shadow-2xl translate-y-3 md:translate-y-5 lg:translate-y-6 translate-x-6 md:translate-x-14 lg:translate-x-20 rtl:translate-x-0 rtl:md:-translate-x-14 rtl:lg:-translate-x-20 transition-transform duration-500 ease-out"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
