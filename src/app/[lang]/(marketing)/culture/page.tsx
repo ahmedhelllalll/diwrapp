@@ -36,7 +36,7 @@ export default async function CulturePage(props: {
   const culture = (dict as any).culture;
 
   return (
-    <main className="flex-grow flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300">
+    <main className="flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
       <OurCultureSection lang={lang} culture={culture} />
       <LifeAtDiwrapp dict={dict} />
       <CareersBentoGrid dict={dict} lang={lang} />

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { UserPlus } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 export interface CareersSectionData {
   innovativeWork?: {
@@ -105,20 +106,11 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
         ease: [0.16, 1, 0.3, 1] as const,
       },
     },
-    hover: shouldReduceMotion
-      ? {}
-      : {
-          y: -4,
-          transition: {
-            duration: 0.25,
-            ease: 'easeOut' as const,
-          },
-        },
+    hover: {},
   };
 
-
   return (
-    <section className="w-full bg-white dark:bg-[#080808] transition-colors duration-300">
+    <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 py-12 lg:py-16">
         <motion.div
           initial="hidden"
@@ -135,12 +127,12 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group rounded-[28px] lg:rounded-[32px] bg-[#F9FAFB] border border-[#F2F4F7] dark:bg-[#111111] dark:border-neutral-800 p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
-            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-[#101828] dark:text-white text-center mb-2">
+            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-heading dark:text-white text-center mb-2">
               {data.innovativeWork?.title}
             </h3>
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-[#667085] dark:text-neutral-400 text-center max-w-[280px]">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-text-tertiary dark:text-neutral-400 text-center max-w-[280px]">
               {data.innovativeWork?.description}
             </p>
           </motion.div>
@@ -149,7 +141,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#F2F4F7] dark:border-neutral-800 bg-[#111111] min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             <Image
               src="/assets/culture-card-tech.webp"
@@ -164,12 +156,12 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group rounded-[28px] lg:rounded-[32px] bg-[#F9FAFB] border border-[#F2F4F7] dark:bg-[#111111] dark:border-neutral-800 p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
-            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-[#101828] dark:text-white text-center mb-2">
+            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-heading dark:text-white text-center mb-2">
               {data.aiTech?.title}
             </h3>
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-[#667085] dark:text-neutral-400 text-center max-w-[280px]">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-text-tertiary dark:text-neutral-400 text-center max-w-[280px]">
               {data.aiTech?.description}
             </p>
           </motion.div>
@@ -182,7 +174,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#F2F4F7] dark:border-neutral-800 bg-[#111111] min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             <Image
               src="/assets/culture-card-circle.webp"
@@ -197,12 +189,12 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group rounded-[28px] lg:rounded-[32px] bg-[#F9FAFB] border border-[#F2F4F7] dark:bg-[#111111] dark:border-neutral-800 p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
-            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-[#101828] dark:text-white text-center mb-2">
+            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[20px] font-medium leading-[28px] text-heading dark:text-white text-center mb-2">
               {data.globalVision?.title}
             </h3>
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-[#667085] dark:text-neutral-400 text-center max-w-[280px]">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-normal leading-[25px] text-text-tertiary dark:text-neutral-400 text-center max-w-[280px]">
               {data.globalVision?.description}
             </p>
           </motion.div>
@@ -211,7 +203,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#F2F4F7] dark:border-neutral-800 bg-[#111111] min-h-[300px] lg:min-h-[340px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             <Image
               src="/assets/culture-card-hand.webp"
@@ -230,7 +222,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="group md:col-span-2 lg:col-span-2 relative min-h-[360px] lg:min-h-[420px] rounded-[28px] lg:rounded-[32px] overflow-hidden border border-[#F2F4F7] dark:border-neutral-800 bg-[#F9FAFB] dark:bg-[#111111] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group md:col-span-2 lg:col-span-2 relative min-h-[360px] lg:min-h-[420px] rounded-[28px] lg:rounded-[32px] overflow-hidden border border-[#EAECF0] dark:border-[#27272A] bg-white dark:bg-surface-2 transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             <Image
               src="/assets/culture-office-interior.webp"
@@ -245,23 +237,23 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="md:col-span-2 lg:col-span-1 rounded-[28px] lg:rounded-[32px] bg-[#F9FAFB] border border-[#F2F4F7] dark:bg-[#111111] dark:border-neutral-800 p-8 sm:p-10 flex flex-col justify-center items-start text-left rtl:text-right min-h-[360px] lg:min-h-[420px] transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="md:col-span-2 lg:col-span-1 rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col justify-center items-start text-left rtl:text-right min-h-[360px] lg:min-h-[420px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-[#E4E7EC] dark:border-neutral-800 bg-transparent px-3 py-1 mb-5">
-              <UserPlus className="w-3.5 h-3.5 text-[#344054] dark:text-neutral-300 stroke-[1.8]" />
-              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[12px] font-medium text-[#344054] dark:text-neutral-300">
+            <Badge variant="pill" className="gap-1.5 px-3 py-1 mb-5">
+              <UserPlus className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 stroke-[1.8]" />
+              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[12px] font-medium text-text-secondary dark:text-neutral-300">
                 {data.cta?.badge}
               </span>
-            </div>
+            </Badge>
 
             {/* Title */}
-            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[26px] sm:text-[30px] lg:text-[32px] font-bold leading-[1.2] text-[#101828] dark:text-white mb-4">
+            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[26px] sm:text-[30px] lg:text-[32px] font-bold leading-[1.2] text-heading dark:text-white mb-4">
               {data.cta?.title}
             </h3>
 
             {/* Description */}
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[16px] leading-[24px] text-[#667085] dark:text-neutral-400 mb-6 max-w-[360px]">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[16px] leading-[24px] text-text-tertiary dark:text-neutral-400 mb-6 max-w-[360px]">
               {data.cta?.description}
             </p>
 

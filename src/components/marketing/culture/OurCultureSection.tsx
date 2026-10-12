@@ -10,6 +10,7 @@ import {
   BrainElectricity,
   Box3dThreePoints,
 } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 export interface CultureDictionary {
   badge?: string;
@@ -129,7 +130,7 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
   };
 
   return (
-    <section className="w-full bg-white dark:bg-[#080808] transition-colors duration-300 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
+    <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
       <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6">
         {/* A. Header & Typography Block */}
         <div className="flex flex-col items-center text-center max-w-[880px] mx-auto">
@@ -141,12 +142,12 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
             variants={fadeUpVariants}
             className="flex justify-center mb-6"
           >
-            <div className="inline-flex items-center gap-2 py-1 px-3.5 rounded-full border border-[#E4E7EC] dark:border-neutral-800 bg-white/80 dark:bg-neutral-800/80 shadow-xs backdrop-blur-xs text-[#344054] dark:text-neutral-300 select-none">
-              <Community className="w-4 h-4 text-[#344054] dark:text-neutral-300 shrink-0" strokeWidth={1.5} />
+            <Badge variant="pill" className="gap-2 bg-white/80 dark:bg-surface-2/80 backdrop-blur-xs">
+              <Community className="w-4 h-4 text-text-secondary dark:text-neutral-300 shrink-0" strokeWidth={1.5} />
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium">
                 {c.badge || 'Our Culture'}
               </span>
-            </div>
+            </Badge>
           </motion.div>
 
           {/* Title */}
@@ -155,7 +156,7 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUpVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[34px] sm:text-[44px] lg:text-[48px] font-bold text-[#101828] dark:text-white leading-[1.2] tracking-[-0.02em] text-center mb-4 sm:mb-5"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[34px] sm:text-[44px] lg:text-[48px] font-bold text-heading dark:text-white leading-[1.2] tracking-[-0.02em] text-center mb-4 sm:mb-5"
           >
             <span className="block">{c.titleLine1 || 'We believe in a work culture that'}</span>
             <span className="block">{c.titleLine2 || 'feels as good as it performs.'}</span>
@@ -167,7 +168,7 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={fadeUpVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[28px] text-[#667085] dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-12 sm:mb-16 lg:mb-20"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[28px] text-text-tertiary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-12 sm:mb-16 lg:mb-20"
           >
             {c.subtitle ||
               "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous."}
@@ -189,23 +190,23 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
                 key={item.key}
                 variants={gridItemVariants}
                 whileHover="hover"
-                className="group relative flex flex-col items-start text-start lg:border-e lg:border-[#EAECF0] dark:lg:border-neutral-800/80 lg:last:border-e-0 lg:pe-8 xl:pe-10 cursor-default"
+                className="group relative flex flex-col items-start text-start lg:border-e lg:border-[#EAECF0] dark:lg:border-[#27272A] lg:last:border-e-0 lg:pe-8 xl:pe-10 cursor-default"
               >
                 {/* Icon Container with snappy Framer Motion lift feedback */}
                 <motion.div
                   variants={iconContainerVariants}
-                  className="w-11 h-11 rounded-[10px] border border-[#EAECF0] dark:border-neutral-800 bg-transparent flex items-center justify-center mb-4 sm:mb-5 text-[#344054] dark:text-neutral-200 shrink-0"
+                  className="w-11 h-11 rounded-[10px] border border-[#EAECF0] dark:border-[#27272A] bg-transparent flex items-center justify-center mb-4 sm:mb-5 text-text-secondary dark:text-neutral-200 shrink-0"
                 >
-                  <IconComponent className="w-5 h-5 text-[#344054] dark:text-neutral-200" strokeWidth={1.5} />
+                  <IconComponent className="w-5 h-5 text-text-secondary dark:text-neutral-200" strokeWidth={1.5} />
                 </motion.div>
 
                 {/* Item Title */}
-                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] leading-[28px] font-medium text-[#101828] dark:text-white mb-1.5">
+                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] leading-[28px] font-medium text-heading dark:text-white mb-1.5">
                   {item.title}
                 </h3>
 
                 {/* Item Description */}
-                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-normal text-[#667085] dark:text-neutral-400">
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-normal text-text-tertiary dark:text-neutral-400">
                   {item.description}
                 </p>
               </motion.div>
@@ -221,7 +222,7 @@ export default function OurCultureSection({ lang, culture }: OurCultureSectionPr
           transition={snappyTransition}
           className="w-full"
         >
-          <div className="relative w-full aspect-[16/7] min-h-[260px] sm:min-h-[380px] lg:h-[480px] rounded-[28px] sm:rounded-[32px] overflow-hidden border border-black/5 dark:border-white/10 shadow-xs">
+          <div className="relative w-full aspect-[16/7] min-h-[260px] sm:min-h-[380px] lg:h-[480px] rounded-[28px] sm:rounded-[32px] overflow-hidden border border-[#EAECF0] dark:border-[#27272A] shadow-xs">
             <Image
               src="/assets/culture-hero-banner.webp"
               alt={c.badge || 'Our Culture Banner'}
