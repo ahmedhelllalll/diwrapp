@@ -193,25 +193,27 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                 variants={itemVariants}
                 className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 transition-all shadow-2xs"
               >
-                <button
-                  type="button"
-                  onClick={() => toggleItem(item.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${item.id}`}
-                  id={`faq-question-${item.id}`}
-                  className="w-full flex items-center justify-between text-start gap-4 cursor-pointer select-none group"
-                >
-                  <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[17px] font-medium text-heading dark:text-white group-hover:text-brand transition-colors">
-                    {renderBidiText(item.question)}
-                  </span>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    className="shrink-0 text-text-tertiary dark:text-neutral-400 group-hover:text-brand transition-colors"
+                <h3 className="w-full m-0 p-0">
+                  <button
+                    type="button"
+                    onClick={() => toggleItem(item.id)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${item.id}`}
+                    id={`faq-question-${item.id}`}
+                    className="w-full flex items-center justify-between text-start gap-4 cursor-pointer select-none group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900 rounded-lg"
                   >
-                    <Plus className="w-5 h-5 stroke-[2]" />
-                  </motion.span>
-                </button>
+                    <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[17px] font-medium text-heading dark:text-white group-hover:text-brand transition-colors">
+                      {renderBidiText(item.question)}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                      className="shrink-0 text-text-tertiary dark:text-neutral-400 group-hover:text-brand transition-colors"
+                    >
+                      <Plus className="w-5 h-5 stroke-[2]" />
+                    </motion.span>
+                  </button>
+                </h3>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
@@ -241,7 +243,8 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           <motion.div variants={itemVariants}>
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 flex items-center justify-between transition-colors group cursor-pointer shadow-2xs"
+              aria-label={`${data.guideCard.titlePrefix} ${data.guideCard.titleHighlight}`.trim()}
+              className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 flex items-center justify-between transition-colors group cursor-pointer shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               <div className="text-[16px] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
                 <span className="font-normal text-text-tertiary dark:text-neutral-400">

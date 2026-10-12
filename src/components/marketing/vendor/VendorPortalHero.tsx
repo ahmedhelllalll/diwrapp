@@ -156,7 +156,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
             {/* Read More Secondary Button */}
             <Link
               href={lang ? `/${lang}/about` : '/about'}
-              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               {renderBidiText(data.readMoreBtn)}
             </Link>
@@ -164,7 +164,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
             {/* Let's Get Started Primary Button */}
             <Link
               href={lang ? `/${lang}/join-us` : '/join-us'}
-              className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               <span>{renderBidiText(data.ctaBtn)}</span>
               <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" />
