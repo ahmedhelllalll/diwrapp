@@ -157,10 +157,10 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           {/* Pill Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#EAECF0] dark:border-neutral-800 bg-transparent mb-3 select-none"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent mb-3 select-none"
           >
-            <ShieldQuestion className="w-3.5 h-3.5 text-[#667085] dark:text-neutral-400 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-[#667085] dark:text-neutral-400">
+            <ShieldQuestion className="w-3.5 h-3.5 text-text-tertiary dark:text-neutral-400 stroke-[1.8]" />
+            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-text-tertiary dark:text-neutral-400">
               {renderBidiText(data.badge)}
             </span>
           </motion.div>
@@ -168,7 +168,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[32px] sm:text-[40px] font-semibold leading-[44px] text-[#101828] dark:text-white text-center whitespace-pre-line mt-3 mb-12"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[32px] sm:text-[40px] font-semibold leading-[44px] text-heading dark:text-white text-center whitespace-pre-line mt-3 mb-12"
           >
             {renderBidiText(data.heading)}
           </motion.h2>
@@ -191,7 +191,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="w-full rounded-[16px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900/40 px-6 sm:px-8 py-5 transition-all shadow-2xs hover:border-neutral-300 dark:hover:border-neutral-700"
+                className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 px-6 sm:px-8 py-5 transition-all shadow-2xs hover:border-neutral-300 dark:hover:border-neutral-700"
               >
                 <button
                   type="button"
@@ -201,13 +201,13 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                   id={`faq-question-${item.id}`}
                   className="w-full flex items-center justify-between text-left rtl:text-right gap-4 cursor-pointer select-none group"
                 >
-                  <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[17px] font-medium text-[#101828] dark:text-white group-hover:text-[#0066FF] transition-colors">
+                  <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[17px] font-medium text-heading dark:text-white group-hover:text-brand transition-colors">
                     {renderBidiText(item.question)}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    className="shrink-0 text-[#667085] dark:text-neutral-400 group-hover:text-[#0066FF] transition-colors"
+                    className="shrink-0 text-text-tertiary dark:text-neutral-400 group-hover:text-brand transition-colors"
                   >
                     <Plus className="w-5 h-5 stroke-[2]" />
                   </motion.span>
@@ -225,7 +225,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[24px] text-[#667085] dark:text-neutral-400 pt-3 pb-1 border-t border-[#F2F4F7] dark:border-neutral-800/80 mt-3">
+                      <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[24px] text-text-secondary dark:text-neutral-400 pt-3 pb-1 border-t border-border-200/80 dark:border-card-border mt-3">
                         {renderBidiText(item.answer)}
                       </p>
                     </motion.div>
@@ -241,18 +241,18 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           <motion.div variants={itemVariants}>
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="w-full rounded-[16px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900/40 px-6 sm:px-8 py-5 flex items-center justify-between hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group cursor-pointer shadow-2xs"
+              className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 px-6 sm:px-8 py-5 flex items-center justify-between hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group cursor-pointer shadow-2xs"
             >
-              <div className="text-[16px] text-[#101828] dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-                <span className="font-normal text-[#475467] dark:text-neutral-400">
+              <div className="text-[16px] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+                <span className="font-normal text-text-tertiary dark:text-neutral-400">
                   {renderBidiText(data.guideCard.titlePrefix)}
                 </span>
-                <span className="font-semibold text-[#101828] dark:text-white">
+                <span className="font-semibold text-heading dark:text-white">
                   {renderBidiText(data.guideCard.titleHighlight)}
                 </span>
               </div>
-              <div className="w-8 h-8 rounded-full border border-[#EAECF0] dark:border-neutral-700 flex items-center justify-center shrink-0 group-hover:border-[#0066FF] transition-colors">
-                <ArrowUpRight className="w-4 h-4 text-[#344054] dark:text-neutral-300 group-hover:text-[#0066FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all rtl:rotate-[-90deg]" />
+              <div className="w-8 h-8 rounded-full border border-border-200 dark:border-card-border flex items-center justify-center shrink-0 group-hover:border-brand transition-colors">
+                <ArrowUpRight className="w-4 h-4 text-text-secondary dark:text-neutral-300 group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all rtl:rotate-[-90deg]" />
               </div>
             </Link>
           </motion.div>

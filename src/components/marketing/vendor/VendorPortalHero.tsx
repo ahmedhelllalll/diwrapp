@@ -98,10 +98,10 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           {/* 1. Pill Badge (Strictly 100% Transparent) */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D0D5DD] dark:border-neutral-700 bg-transparent mb-5 select-none"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent mb-5 select-none"
           >
-            <Suitcase className="w-3.5 h-3.5 text-[#344054] dark:text-neutral-300 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium leading-[18px] text-[#344054] dark:text-neutral-300 bg-transparent">
+            <Suitcase className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 stroke-[1.8]" />
+            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium leading-[18px] text-text-secondary dark:text-neutral-300 bg-transparent">
               {renderBidiText(data.badge)}
             </span>
           </motion.div>
@@ -109,7 +109,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           {/* 2. Heading */}
           <motion.h1
             variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[28px] sm:text-[32px] lg:text-[36px] font-medium leading-[36px] sm:leading-[40px] lg:leading-[44px] tracking-[-1%] text-[#101828] dark:text-white max-w-[720px] whitespace-pre-line mb-3"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[28px] sm:text-[32px] lg:text-[36px] font-medium leading-[36px] sm:leading-[40px] lg:leading-[44px] tracking-[-1%] text-heading dark:text-white max-w-[720px] whitespace-pre-line mb-3"
           >
             {renderBidiText(data.title)}
           </motion.h1>
@@ -117,7 +117,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           {/* 3. Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-normal leading-[24px] text-[#667085] dark:text-neutral-400 mb-8"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-normal leading-[24px] text-text-tertiary dark:text-neutral-400 mb-8"
           >
             {renderBidiText(data.subtitle)}
           </motion.p>
@@ -130,7 +130,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           variants={itemVariants}
           className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 mb-10"
         >
-          <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-sm">
+          <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden border border-border-200/60 dark:border-card-border shadow-xs">
             <Image
               src="/assets/vendor-portal-billboard.webp"
               alt="Vendor Portal Billboard"
@@ -149,9 +149,9 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           {/* Paragraph */}
           <motion.p
             variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-light leading-[25px] text-[#475467] dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-8"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-light leading-[25px] text-text-secondary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-8"
           >
-            <span className="font-medium text-[#101828] dark:text-neutral-200">
+            <span className="font-medium text-heading dark:text-neutral-200">
               {renderBidiText(data.descriptionPrefix)}
             </span>
             <span>{renderBidiText(data.descriptionHighlight)}</span>
@@ -166,7 +166,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
             {/* Read More Secondary Button */}
             <Link
               href={lang ? `/${lang}/about` : '/about'}
-              className="h-[44px] px-6 rounded-[8px] border border-[#D0D5DD] dark:border-neutral-700 bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-900 text-[#344054] dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border border-border-200 dark:border-card-border bg-transparent hover:bg-neutral-50 dark:hover:bg-surface-2 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
             >
               {renderBidiText(data.readMoreBtn)}
             </Link>
@@ -174,7 +174,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
             {/* Let's Get Started Primary Button */}
             <Link
               href={lang ? `/${lang}/join-us` : '/join-us'}
-              className="h-[44px] px-6 rounded-[8px] bg-[#0066FF] hover:bg-blue-600 text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center gap-2 shadow-xs transition-colors cursor-pointer active:scale-[0.98]"
             >
               <span>{renderBidiText(data.ctaBtn)}</span>
               <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" />

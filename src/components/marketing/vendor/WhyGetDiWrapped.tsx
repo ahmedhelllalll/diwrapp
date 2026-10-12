@@ -240,10 +240,10 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           {/* Pill Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#EAECF0] dark:border-neutral-800 bg-transparent mb-5 select-none"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent mb-5 select-none"
           >
-            <ShieldQuestion className="w-3.5 h-3.5 text-[#667085] dark:text-neutral-400 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-[#667085] dark:text-neutral-400">
+            <ShieldQuestion className="w-3.5 h-3.5 text-text-tertiary dark:text-neutral-400 stroke-[1.8]" />
+            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-text-tertiary dark:text-neutral-400">
               {renderBidiText(data.topBadge)}
             </span>
           </motion.div>
@@ -251,7 +251,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[24px] sm:text-[30px] lg:text-[32px] font-medium leading-[1.2] tracking-[-0.01em] text-[#101828] dark:text-white max-w-[700px] mx-auto"
+            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[24px] sm:text-[30px] lg:text-[32px] font-medium leading-[1.2] tracking-[-0.01em] text-heading dark:text-white max-w-[700px] mx-auto"
           >
             {renderBidiText(data.heading)}
           </motion.h2>
@@ -275,15 +275,15 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
                 variants={cardVariants}
                 whileHover={shouldReduceMotion ? {} : { y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="w-full rounded-[16px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900/40 p-6 sm:p-7 flex flex-col justify-start items-start text-left rtl:text-right shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
+                className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 p-6 sm:p-7 flex flex-col justify-start items-start text-left rtl:text-right shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
               >
-                <div className="w-10 h-10 rounded-[10px] border border-[#EAECF0] dark:border-neutral-800 bg-white dark:bg-neutral-900 flex items-center justify-center mb-4 shrink-0">
-                  <IconComponent className="w-5 h-5 text-[#101828] dark:text-white stroke-[1.8]" />
+                <div className="w-10 h-10 rounded-[10px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2 flex items-center justify-center mb-4 shrink-0">
+                  <IconComponent className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />
                 </div>
-                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[17px] sm:text-[18px] font-medium leading-[26px] text-[#101828] dark:text-white mb-2">
+                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[17px] sm:text-[18px] font-medium leading-[26px] text-heading dark:text-white mb-2">
                   {renderBidiText(card.title)}
                 </h3>
-                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[22px] text-[#475467] dark:text-neutral-400">
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[22px] text-text-secondary dark:text-neutral-400">
                   {renderBidiText(card.description)}
                 </p>
               </motion.div>
@@ -299,12 +299,12 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-[1240px] mx-auto rounded-[16px] border border-[#EAECF0] dark:border-neutral-800 bg-white/80 dark:bg-[#121212]/80 backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
+          className="w-full max-w-[1240px] mx-auto rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface/80 dark:bg-surface-2/80 backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
         >
           {/* Content Stack (Left) */}
           <div className="flex flex-col items-start text-left rtl:text-right">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0066FF] mb-4 select-none">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand mb-4 select-none">
               <BrightStar className="w-3.5 h-3.5 text-white stroke-[1.8]" />
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[12px] font-medium text-white">
                 {renderBidiText(data.ctaBanner.badge)}
@@ -312,12 +312,12 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
             </div>
 
             {/* Title */}
-            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-medium leading-[28px] text-[#101828] dark:text-white mb-1.5">
+            <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-medium leading-[28px] text-heading dark:text-white mb-1.5">
               {renderBidiText(data.ctaBanner.title)}
             </h3>
 
             {/* Description */}
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-[#475467] dark:text-neutral-400 max-w-[620px]">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-text-secondary dark:text-neutral-400 max-w-[620px]">
               {renderBidiText(data.ctaBanner.description)}
             </p>
           </div>
@@ -327,7 +327,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
             {/* Contact Us */}
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="h-[40px] px-6 rounded-[8px] border border-[#EAECF0] dark:border-neutral-700 bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-800 text-[#344054] dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border border-border-200 dark:border-card-border bg-transparent hover:bg-neutral-50 dark:hover:bg-surface-3 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
             >
               {renderBidiText(data.ctaBanner.contactBtn)}
             </Link>
@@ -335,7 +335,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
             {/* Let's Get Started */}
             <Link
               href={lang ? `/${lang}/join-us` : '/join-us'}
-              className="h-[40px] px-6 rounded-[8px] bg-[#0066FF] hover:bg-blue-600 text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs active:scale-[0.98]"
             >
               <span>{renderBidiText(data.ctaBanner.getStartedBtn)}</span>
               <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" />

@@ -35,7 +35,7 @@ export default async function VendorPage(props: {
   const dict = await getDictionary(lang);
 
   return (
-    <main className="flex-grow flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300">
+    <main className="flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
       <VendorPortalHero dict={dict} lang={lang} />
       <WhyGetDiWrapped dict={dict} lang={lang} />
       <VendorFaq dict={dict} lang={lang} />
