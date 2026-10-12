@@ -13,7 +13,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const dict = await getDictionary(lang);
   const contact = dict.contact;
   const isAr = lang === 'ar';
-  const title = isAr ? 'تواصل معنا | DiWrapp' : 'Contact Us | DiWrapp';
+  const title = isAr ? 'تواصل معنا' : 'Contact Us';
   const description =
     contact?.hero?.subtitle ||
     (isAr
@@ -26,23 +26,32 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     alternates: {
       canonical: `/${lang}/contact`,
       languages: {
-        en: '/en/contact',
-        ar: '/ar/contact',
-        'x-default': '/en/contact',
+        en: 'https://diwrapp.com/en/contact',
+        ar: 'https://diwrapp.com/ar/contact',
+        'x-default': 'https://diwrapp.com/en/contact',
       },
     },
     openGraph: {
-      title,
+      title: `${title} | DiWrapp`,
       description,
       url: `https://diwrapp.com/${lang}/contact`,
       siteName: 'DiWrapp',
-      locale: isAr ? 'ar_SA' : 'en_US',
+      locale: isAr ? 'ar_AR' : 'en_US',
       type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: isAr ? 'دي-راب - تواصل معنا' : 'DiWrapp Contact',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${title} | DiWrapp`,
       description,
+      images: ['/images/og-banner.png'],
     },
   };
 }
