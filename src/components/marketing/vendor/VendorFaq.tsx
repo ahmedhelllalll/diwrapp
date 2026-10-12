@@ -22,31 +22,31 @@ const DEFAULT_DATA = {
   items: [
     {
       id: 'setup-payout',
-      question: 'How to setup inventory and paid out',
+      question: 'How to set up inventory and get paid',
       answer:
         'You can register your inventory by adding your screen specifications, location, and operating hours through the Vendor Dashboard. Once verified, payout details (bank transfer, digital wallet, or wire) are linked directly, and earnings are credited automatically following campaign completion.',
     },
     {
       id: 'pricing-hours',
-      question: 'Can i set prices and operating hours?',
+      question: 'Can I set prices and operating hours?',
       answer:
         'Yes, you have full control over your inventory pricing (CPM, hourly, or fixed packages) and daily operating schedules. You can also define surge pricing during peak hours or offer discounts for long-term campaigns.',
     },
     {
       id: 'review-bookings',
-      question: 'Can i manually review bookings ?',
+      question: 'Can I manually review bookings?',
       answer:
         'Absolutely. You can toggle between automatic approval for verified advertisers or manual review mode where every campaign creative and schedule requires your explicit approval before going live.',
     },
     {
       id: 'formats-supported',
-      question: 'Which Format are supported',
+      question: 'Which formats are supported?',
       answer:
         'Di_Wrapp supports static high-res images (JPEG, PNG, WebP), dynamic HTML5 creatives, and high-definition video formats (MP4, MOV up to 4K resolution) tailored to digital displays and billboards.',
     },
     {
       id: 'min-inventories',
-      question: 'Minimum Number of inventories ?',
+      question: 'Minimum number of inventories?',
       answer:
         'There is no minimum requirement. Whether you manage a single storefront screen or a nationwide network of hundreds of digital billboards, you can monetize your inventory seamlessly.',
     },
@@ -59,7 +59,7 @@ const DEFAULT_DATA = {
   ],
   guideCard: {
     titlePrefix: "Can't Find your Question? ",
-    titleHighlight: 'Read The Vendor Guider',
+    titleHighlight: 'Read the Vendor Guide',
   },
 };
 

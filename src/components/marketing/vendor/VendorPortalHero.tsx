@@ -15,7 +15,7 @@ const DEFAULT_DATA = {
   badge: 'Vendor Portal',
   title: 'Empower Your Inventory, Unlock\nNew Revenue.',
   subtitle: "Join Di_Wrapp's Smart Network",
-  descriptionPrefix: 'If you own a Inventory — ',
+  descriptionPrefix: 'If you own inventory — ',
   descriptionHighlight: 'Di_Wrapp gives you the tools to modernize, monetize, and manage with ease.',
   descriptionSuffix:
     ' Our Vendor Portal connects your channel to a smart, automated platform where brands are actively looking to book spaces like yours.',

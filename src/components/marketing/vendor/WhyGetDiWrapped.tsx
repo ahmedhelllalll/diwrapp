@@ -43,7 +43,7 @@ const DEFAULT_DATA = {
     },
     flexible: {
       title: 'Flexible Monetization Modes',
-      description: 'Choose from Variaty models tailored to your setup and pricing needs.',
+      description: 'Choose from a variety of models tailored to your setup and pricing needs.',
     },
     verified: {
       title: 'Verified Profiles',
@@ -53,7 +53,7 @@ const DEFAULT_DATA = {
   ctaBanner: {
     badge: 'Join Di_Wrapp Vendor Network',
     title: 'Ready to connect your Inventory and earn more?',
-    description: 'Join instantly, link your Space, set your prices, and start Monitoring Bookings',
+    description: 'Join instantly, link your space, set your prices, and start monitoring bookings.',
     contactBtn: 'Contact Us',
     getStartedBtn: "Let's Get Started",
   },
