@@ -12,17 +12,41 @@ export async function generateMetadata(props: {
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const culture = dict.culture;
+  const title = culture?.badge || 'Our Culture';
+  const description = culture?.subtitle || 'We believe in a work culture that feels as good as it performs.';
 
   return {
-    title: culture?.badge || 'Our Culture',
-    description: culture?.subtitle || 'We believe in a work culture that feels as good as it performs.',
+    title,
+    description,
     alternates: {
       canonical: `/${lang}/culture`,
       languages: {
-        en: '/en/culture',
-        ar: '/ar/culture',
-        'x-default': '/en/culture',
+        en: 'https://diwrapp.com/en/culture',
+        ar: 'https://diwrapp.com/ar/culture',
+        'x-default': 'https://diwrapp.com/en/culture',
       },
+    },
+    openGraph: {
+      title: `${title} | DiWrapp`,
+      description,
+      url: `https://diwrapp.com/${lang}/culture`,
+      siteName: 'DiWrapp',
+      locale: lang === 'ar' ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: 'DiWrapp Culture',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | DiWrapp`,
+      description,
+      images: ['/images/og-banner.png'],
     },
   };
 }
