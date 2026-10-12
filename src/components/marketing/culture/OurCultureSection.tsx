@@ -81,19 +81,6 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
     ease: [0.16, 1, 0.3, 1] as const,
   };
 
-  // Header & section motion variants
-  const fadeUpVariants = {
-    hidden: {
-      opacity: 0,
-      y: shouldReduceMotion ? 0 : 16,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: snappyTransition,
-    },
-  };
-
   // 4 Values Grid motion variants
   const gridContainerVariants = {
     hidden: {},
@@ -132,47 +119,33 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
   return (
     <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
       <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6">
-        {/* A. Header & Typography Block */}
+        {/* A. Header & Typography Block (Server-rendered CSS-only rise matching Landing/About) */}
         <div className="flex flex-col items-center text-center max-w-[880px] mx-auto">
           {/* Badge */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUpVariants}
-            className="flex justify-center mb-6"
-          >
+          <div className="hero-anim-badge flex justify-center mb-6">
             <Badge variant="pill" className="gap-2 bg-white/80 dark:bg-surface-2/80 backdrop-blur-xs">
               <Community className="w-4 h-4 text-text-secondary dark:text-neutral-300 shrink-0" strokeWidth={1.5} />
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium">
                 {c.badge || 'Our Culture'}
               </span>
             </Badge>
-          </motion.div>
+          </div>
 
-          {/* Title */}
-          <motion.h1
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUpVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[34px] sm:text-[44px] lg:text-[48px] font-bold text-heading dark:text-white leading-[1.2] tracking-[-0.02em] text-center mb-4 sm:mb-5"
-          >
-            <span className="block">{c.titleLine1 || 'We believe in a work culture that'}</span>
-            <span className="block">{c.titleLine2 || 'feels as good as it performs.'}</span>
-          </motion.h1>
+          {/* Title (LCP Element) */}
+          <div className="w-full flex justify-center">
+            <h1 className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[34px] sm:text-[44px] lg:text-[48px] font-bold text-heading dark:text-white leading-[1.2] tracking-[-0.02em] text-center mb-4 sm:mb-5">
+              <span className="block">{c.titleLine1 || 'We believe in a work culture that'}</span>
+              <span className="block">{c.titleLine2 || 'feels as good as it performs.'}</span>
+            </h1>
+          </div>
 
           {/* Subtitle */}
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            variants={fadeUpVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[28px] text-text-tertiary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-12 sm:mb-16 lg:mb-20"
-          >
-            {c.subtitle ||
-              "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous."}
-          </motion.p>
+          <div className="hero-anim-subtitle w-full flex justify-center">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[28px] text-text-tertiary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+              {c.subtitle ||
+                "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous."}
+            </p>
+          </div>
         </div>
 
         {/* B. Four Values Grid (4 Columns) */}
