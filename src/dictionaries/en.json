@@ -649,7 +649,7 @@
     "heroSubtitleLine2": "It gives advertisers and vendors full control over transactions,",
     "heroSubtitleLine3": "top-ups, and campaign payments — ",
     "heroSubtitleHighlight": "all in one place.",
-    "ctaButton": "Top Up my Wallet",
+    "ctaButton": "Top Up My Wallet",
     "heroImageAlt": "Di_Wrapp Wallet Visual",
     "statementLight": "Whether you're running a single ad or managing hundreds of locations — ",
     "statementMedium": "the Wallet keeps your operations smooth and traceable.",
@@ -658,7 +658,7 @@
     "cards": {
       "card1": {
         "title": "Top-Up Any Time",
-        "description": "Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order \"only for verified Org.\")."
+        "description": "Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order \"only for verified organizations\")."
       },
       "card2": {
         "title": "Real-Time Tracking",
