@@ -341,7 +341,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
 
             {/* Let's Get Started */}
             <Link
-              href={lang ? `/${lang}/join-us` : '/join-us'}
+              href={lang ? `/${lang}/vendor/onboarding` : '/vendor/onboarding'}
               className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] inline-flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-900"
             >
               <span>{renderBidiText(data.ctaBanner.getStartedBtn)}</span>
