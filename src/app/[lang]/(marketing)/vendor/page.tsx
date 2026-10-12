@@ -13,17 +13,48 @@ export async function generateMetadata(props: {
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const vendorHero = (dict as any).vendorPortalHero;
+  const isAr = lang === 'ar';
+  const title = vendorHero?.badge || (isAr ? 'بوابة أصحاب المساحات الإعلانية' : 'Vendor Portal');
+  const description = (
+    vendorHero?.subtitle ||
+    (isAr
+      ? 'انضم إلى شبكة Di_Wrapp الذكية، ومكّن مساحاتك الإعلانية لتحقيق عوائد مجزية.'
+      : "Join Di_Wrapp's Smart Network to empower your inventory and unlock new revenue.")
+  ).trim();
 
   return {
-    title: vendorHero?.badge || 'Vendor Portal',
-    description: (vendorHero?.subtitle || 'Empower Your Inventory, Unlock New Revenue with Di_Wrapp.').trim(),
+    metadataBase: new URL('https://diwrapp.com'),
+    title,
+    description,
     alternates: {
       canonical: `/${lang}/vendor`,
       languages: {
-        en: '/en/vendor',
-        ar: '/ar/vendor',
-        'x-default': '/en/vendor',
+        en: 'https://diwrapp.com/en/vendor',
+        ar: 'https://diwrapp.com/ar/vendor',
+        'x-default': 'https://diwrapp.com/en/vendor',
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://diwrapp.com/${lang}/vendor`,
+      siteName: 'DiWrapp',
+      locale: isAr ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: isAr ? 'دي-راب - بوابة أصحاب المساحات الإعلانية' : 'DiWrapp Vendor Portal',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/og-banner.png'],
     },
   };
 }

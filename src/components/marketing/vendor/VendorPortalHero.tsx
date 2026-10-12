@@ -21,6 +21,7 @@ const DEFAULT_DATA = {
     ' Our Vendor Portal connects your channel to a smart, automated platform where brands are actively looking to book spaces like yours.',
   readMoreBtn: 'Read More',
   ctaBtn: "Let's Get Started",
+  imageAlt: 'Di_Wrapp Vendor Portal Billboard Showcase',
 };
 
 const renderBidiText = (text?: string) => {
@@ -58,6 +59,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
     descriptionSuffix: d?.descriptionSuffix || DEFAULT_DATA.descriptionSuffix,
     readMoreBtn: d?.readMoreBtn || DEFAULT_DATA.readMoreBtn,
     ctaBtn: d?.ctaBtn || DEFAULT_DATA.ctaBtn,
+    imageAlt: d?.imageAlt || DEFAULT_DATA.imageAlt,
   };
 
   const containerVariants = {
@@ -84,68 +86,56 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
 
   return (
     <section className="w-full py-14 lg:py-20 bg-transparent flex flex-col items-center">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-40px' }}
-        variants={containerVariants}
-        className="w-full flex flex-col items-center"
-      >
+      <div className="w-full flex flex-col items-center">
         {/* ========================================================================= */}
-        {/* A. Header Stack                                                           */}
+        {/* A. Header Stack (Server-rendered CSS-only rise matching Culture/Contact)  */}
         {/* ========================================================================= */}
         <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-          {/* 1. Pill Badge (Strictly 100% Transparent) */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border vendor-badge-hero bg-transparent mb-5 select-none"
-          >
+          {/* 1. Pill Badge */}
+          <div className="hero-anim-badge inline-flex items-center gap-2 px-3.5 py-1 rounded-full border vendor-badge-hero bg-transparent mb-5 select-none">
             <Suitcase className="w-3.5 h-3.5 stroke-[1.8]" />
             <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium leading-[18px]">
               {renderBidiText(data.badge)}
             </span>
-          </motion.div>
+          </div>
 
-          {/* 2. Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[28px] sm:text-[32px] lg:text-[36px] font-medium leading-[36px] sm:leading-[40px] lg:leading-[44px] tracking-[-1%] text-heading dark:text-white max-w-[720px] whitespace-pre-line mb-3"
-          >
+          {/* 2. Heading (LCP element with CSS-only entrance rise) */}
+          <h1 className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[28px] sm:text-[32px] lg:text-[36px] font-medium leading-[36px] sm:leading-[40px] lg:leading-[44px] tracking-[-1%] text-heading dark:text-white max-w-[720px] whitespace-pre-line mb-3">
             {renderBidiText(data.title)}
-          </motion.h1>
+          </h1>
 
           {/* 3. Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-normal leading-[24px] text-text-tertiary dark:text-neutral-400 mb-8"
-          >
+          <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] font-normal leading-[24px] text-text-tertiary dark:text-neutral-400 mb-8">
             {renderBidiText(data.subtitle)}
-          </motion.p>
+          </p>
         </div>
 
         {/* ========================================================================= */}
-        {/* B. Visual Media Card                                                      */}
+        {/* B. Visual Media Card (LCP element with instant paint)                     */}
         {/* ========================================================================= */}
-        <motion.div
-          variants={itemVariants}
-          className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 mb-10"
-        >
+        <div className="hero-lcp-mockup w-full max-w-[1240px] mx-auto px-4 sm:px-6 mb-10">
           <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-sm">
             <Image
               src="/assets/vendor-portal-billboard.webp"
-              alt="Vendor Portal Billboard"
+              alt={data.imageAlt}
               fill
               priority
               className="object-cover object-center"
               sizes="(max-width: 1240px) 100vw, 1240px"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* ========================================================================= */}
-        {/* C. Bottom Description & CTA Stack                                         */}
+        {/* C. Bottom Description & CTA Stack (Staggered motion)                      */}
         {/* ========================================================================= */}
-        <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          variants={containerVariants}
+          className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center"
+        >
           {/* Paragraph */}
           <motion.p
             variants={itemVariants}
@@ -180,8 +170,8 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
               <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" />
             </Link>
           </motion.div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
