@@ -82,7 +82,7 @@ export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
             </span>
             <a
               href={item.href}
-              className="contact-card-value font-bold underline underline-offset-4 decoration-1 decoration-slate-900 dark:decoration-white hover:opacity-80 transition-opacity text-slate-900 dark:text-white text-sm sm:text-base md:text-[17px] tracking-tight break-all sm:break-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900 rounded-sm"
+              className="contact-card-value min-h-[44px] inline-flex items-center font-bold underline underline-offset-4 decoration-1 decoration-slate-900 dark:decoration-white hover:opacity-80 transition-opacity text-slate-900 dark:text-white text-sm sm:text-base md:text-[17px] tracking-tight break-all sm:break-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900 rounded-sm"
               target={item.isExternal ? "_blank" : undefined}
               rel={item.isExternal ? "noopener noreferrer" : undefined}
             >
