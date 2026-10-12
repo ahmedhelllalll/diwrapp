@@ -200,7 +200,7 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
               src="/assets/culture-hero-banner.webp"
               alt={c.badge || 'Our Culture Banner'}
               fill
-              sizes="(max-width: 1240px) 100vw, 1240px"
+              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1240px) calc(100vw - 48px), 1240px"
               className="object-cover object-center"
             />
           </div>
