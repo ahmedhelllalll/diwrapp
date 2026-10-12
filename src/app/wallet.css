@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Wallet Page Scoped Design System Tokens (DiWrapp Design System)
+   ========================================================================== */
+
+.wallet-scope {
+  /* Light Mode Card System Tokens */
+  --wallet-card-bg: #ffffff;
+  --wallet-card-border: #EAECF0;
+  --wallet-card-border-hover: #D0D5DD;
+  --wallet-card-icon-bg: #ffffff;
+  --wallet-card-icon-border: #EAECF0;
+  --wallet-card-icon-hover-bg: #F2F4F7;
+  --wallet-card-divider: #F2F4F7;
+  --wallet-btn-secondary-border: #EAECF0;
+  --wallet-btn-secondary-hover-bg: #F9FAFB;
+  --wallet-btn-secondary-text: #344054;
+  /* Pill Badge System Tokens */
+  --wallet-badge-border: #EAECF0;
+  --wallet-badge-text: #667085;
+  --wallet-badge-hero-bg: #ffffff;
+  --wallet-badge-hero-border: #D0D5DD;
+  --wallet-badge-hero-text: #344054;
+}
+
+.dark .wallet-scope {
+  /* Dark Mode Card System Tokens (Exact Vercel Fidelity) */
+  --wallet-card-bg: rgba(23, 23, 23, 0.4);              /* neutral-900/40 glassmorphic card */
+  --wallet-card-border: #262626;                        /* neutral-800 subtle card border */
+  --wallet-card-border-hover: #404040;                  /* neutral-700 card border hover */
+  --wallet-card-icon-bg: #171717;                      /* neutral-900 elevated icon surface */
+  --wallet-card-icon-border: #262626;                  /* neutral-800 icon border */
+  --wallet-card-icon-hover-bg: #262626;                /* neutral-800 hover */
+  --wallet-card-divider: rgba(38, 38, 38, 0.8);         /* neutral-800/80 subtle divider */
+  --wallet-btn-secondary-border: #404040;               /* neutral-700 */
+  --wallet-btn-secondary-hover-bg: #262626;            /* neutral-800 */
+  --wallet-btn-secondary-text: #f5f5f5;                /* neutral-100 high contrast */
+  /* Dark Mode Pill Badge Tokens */
+  --wallet-badge-border: #262626;                        /* neutral-800 */
+  --wallet-badge-text: #a3a3a3;                          /* neutral-400 */
+  --wallet-badge-hero-bg: rgba(255, 255, 255, 0.08);     /* elevated subtle surface on dark */
+  --wallet-badge-hero-border: rgba(255, 255, 255, 0.18); /* crisp visible border */
+  --wallet-badge-hero-text: #f5f5f5;                     /* neutral-100 high contrast */
+}
+
+/* Scoped Semantic Card Utilities */
+.wallet-card {
+  background-color: var(--wallet-card-bg);
+  border-color: var(--wallet-card-border);
+}
+
+.wallet-card:hover {
+  border-color: var(--wallet-card-border-hover);
+}
+
+.wallet-icon-box {
+  background-color: var(--wallet-card-icon-bg);
+  border-color: var(--wallet-card-icon-border);
+}
+
+.wallet-icon-box:hover,
+.group:hover .wallet-icon-box {
+  background-color: var(--wallet-card-icon-hover-bg);
+}
+
+.wallet-divider {
+  border-color: var(--wallet-card-divider);
+}
+
+.wallet-btn-secondary {
+  border-color: var(--wallet-btn-secondary-border);
+  color: var(--wallet-btn-secondary-text);
+}
+
+.wallet-btn-secondary:hover {
+  background-color: var(--wallet-btn-secondary-hover-bg);
+}
+
+/* Scoped Semantic Pill Badge Utilities */
+.wallet-badge {
+  border-color: var(--wallet-badge-border);
+  color: var(--wallet-badge-text);
+}
+
+.wallet-badge svg {
+  color: var(--wallet-badge-text);
+}
+
+.wallet-badge-hero {
+  background-color: var(--wallet-badge-hero-bg);
+  border-color: var(--wallet-badge-hero-border);
+  color: var(--wallet-badge-hero-text);
+}
+
+.wallet-badge-hero svg {
+  color: var(--wallet-badge-hero-text);
+}

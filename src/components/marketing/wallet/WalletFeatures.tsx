@@ -93,8 +93,8 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
         >
           {/* Badge Column (4 Cols) */}
           <div className="md:col-span-4 flex justify-start">
-            <div className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-[12px] font-medium text-text-secondary dark:text-neutral-300 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-              <Suitcase className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 shrink-0 stroke-[1.8]" />
+            <div className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge bg-transparent text-[12px] font-medium shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+              <Suitcase className="w-3.5 h-3.5 shrink-0 stroke-[1.8]" />
               <span>{renderBidiText(dict?.featuresBadge || 'Features')}</span>
             </div>
           </div>
@@ -132,10 +132,10 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
                 visible: { opacity: 1, y: 0 }
               }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="bg-card-surface dark:bg-surface-2 border border-border-200 dark:border-card-border rounded-[24px] p-8 flex flex-col justify-start items-start shadow-xs hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 group"
+              className="w-full rounded-[24px] border wallet-card p-8 flex flex-col justify-start items-start text-start shadow-xs hover:shadow-md transition-all duration-300 relative z-10 group"
             >
               {/* Icon Container */}
-              <div className="w-10 h-10 rounded-xl border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2 flex items-center justify-center mb-6 text-heading dark:text-white group-hover:scale-105 group-hover:bg-neutral-50 dark:group-hover:bg-surface-3 transition-all duration-200">
+              <div className="w-10 h-10 rounded-xl border wallet-icon-box flex items-center justify-center mb-6 text-heading dark:text-white group-hover:scale-105 transition-all duration-200 shrink-0">
                 {card.icon}
               </div>
 

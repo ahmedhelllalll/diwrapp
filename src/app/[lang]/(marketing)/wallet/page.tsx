@@ -4,6 +4,7 @@ import { Locale } from '@/i18n-config';
 import WalletHero from '@/components/marketing/wallet/WalletHero';
 import WalletStatement from '@/components/marketing/wallet/WalletStatement';
 import WalletFeatures from '@/components/marketing/wallet/WalletFeatures';
+import '../../../wallet.css';
 
 export async function generateMetadata(props: {
   params: Promise<{ lang: string }>;

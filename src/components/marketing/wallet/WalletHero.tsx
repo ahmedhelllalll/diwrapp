@@ -113,8 +113,8 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
       {/* Layer 3: Foreground Centered Content (relative z-10) */}
       <div className="relative z-10 w-full max-w-[800px] mx-auto px-6 flex flex-col items-center text-center pt-[180px] sm:pt-[200px] lg:pt-[240px]">
         {/* Badge */}
-        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-xs font-medium text-text-secondary dark:text-neutral-300 mb-5 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-          <CardWallet className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 stroke-[1.8]" />
+        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge-hero shadow-xs backdrop-blur-sm mb-5 select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-xs font-medium">
+          <CardWallet className="w-3.5 h-3.5 stroke-[1.8]" />
           <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
         </div>
 
