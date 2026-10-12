@@ -59,58 +59,113 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
 
   return (
     <section aria-labelledby="wallet-hero-heading" className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
-      {/* Unified Background Layer (Full Width Cover) */}
+      {/* Unified Background Layer (Full Width Cover & Responsive Dynamic Cards) */}
       <div 
         dir="ltr"
         className="absolute inset-0 pointer-events-none select-none overflow-hidden" 
         aria-hidden="true"
       >
-        
-        {/* Layer 1: Trajectory Curve (Synchronized coordinate context) */}
-        <div className="absolute inset-0 w-full h-full z-0 flex justify-center items-start">
-          <div className="relative min-w-full min-h-full aspect-[1440/810]">
-            <div 
-              className="absolute z-0 overflow-visible dark:invert dark:opacity-60"
-              style={{
-                width: '100.07%',
-                height: '57.41%',
-                top: '17.04%', // 138px / 810px
-                transform: 'rotate(-2deg)',
-                transformOrigin: 'center center',
-              }}
-            >
-              <div
-                className="absolute"
+        {/* Desktop Synchronized Presentation (>=1024px) - Exact canonical desktop preservation */}
+        <div className="hidden lg:block absolute inset-0 w-full h-full">
+          {/* Layer 1: Trajectory Curve (Synchronized coordinate context) */}
+          <div className="absolute inset-0 w-full h-full z-0 flex justify-center items-start">
+            <div className="relative min-w-full min-h-full aspect-[1440/810]">
+              <div 
+                className="absolute z-0 overflow-visible dark:invert dark:opacity-60"
                 style={{
-                  width: '110%',
-                  height: '222%',
-                  left: '-5.55%',
-                  top: '0px',
+                  width: '100.07%',
+                  height: '57.41%',
+                  top: '17.04%', // 138px / 810px
+                  transform: 'rotate(-2deg)',
+                  transformOrigin: 'center center',
                 }}
               >
-                <Image 
-                  src="/assets/wallet-trajectory-line.webp" 
-                  alt="" 
-                  aria-hidden="true"
-                  fill
-                  sizes="100vw"
-                  className="object-contain pointer-events-none select-none"
-                />
+                <div
+                  className="absolute"
+                  style={{
+                    width: '110%',
+                    height: '222%',
+                    left: '-5.55%',
+                    top: '0px',
+                  }}
+                >
+                  <Image 
+                    src="/assets/wallet-trajectory-line.webp" 
+                    alt="" 
+                    aria-hidden="true"
+                    fill
+                    sizes="100vw"
+                    className="object-contain pointer-events-none select-none"
+                  />
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Layer 2: 3D Cards Asset (wallet-hero-cards.webp) */}
+          <div className="absolute inset-0 w-full h-full z-[1]">
+            <Image
+              src="/assets/wallet-hero-cards.webp"
+              alt={w?.heroImageAlt || (lang === 'ar' ? 'عرض توضيحي لمحفظة دي-راب' : 'Di_Wrapp Wallet Visual')}
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="100vw"
+            />
+          </div>
         </div>
 
-        {/* Layer 2: 3D Cards Asset (wallet-hero-cards.webp) */}
-        <div className="absolute inset-0 w-full h-full z-[1]">
-          <Image
-            src="/assets/wallet-hero-cards.webp"
-            alt={w?.heroImageAlt || (lang === 'ar' ? 'عرض توضيحي لمحفظة دي-راب' : 'Di_Wrapp Wallet Visual')}
-            fill
-            priority
-            className="object-cover object-top"
-            sizes="100vw"
-          />
+        {/* Dynamic Responsive Multi-Screen & Mobile System (<1024px) */}
+        <div className="block lg:hidden absolute inset-0 w-full h-full z-0 pointer-events-none select-none">
+          {/* Mobile Dynamic Trajectory Line */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden dark:invert dark:opacity-60">
+            <div className="absolute bottom-[20px] sm:bottom-[35px] left-[-15%] sm:left-[-10%] w-[130%] sm:w-[120%] h-[320px] sm:h-[400px]">
+              <Image
+                src="/assets/wallet-trajectory-line.webp"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="100vw"
+                className="object-contain pointer-events-none select-none -rotate-[3deg]"
+              />
+            </div>
+          </div>
+
+          {/* Top-Left Card */}
+          <div className="absolute top-[75px] sm:top-[85px] left-[-28px] sm:left-[2%] w-[135px] sm:w-[195px] md:w-[245px] aspect-[360/240] z-[1]">
+            <Image
+              src="/assets/wallet-card-tl.webp"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(max-width: 640px) 135px, (max-width: 768px) 195px, 245px"
+              className="object-contain pointer-events-none select-none drop-shadow-md"
+            />
+          </div>
+
+          {/* Bottom-Left Magenta Card */}
+          <div className="absolute bottom-[25px] sm:bottom-[40px] left-[-30px] sm:left-[-10px] md:left-[2%] w-[185px] sm:w-[260px] md:w-[330px] aspect-[510/265] z-[2]">
+            <Image
+              src="/assets/wallet-card-bl.webp"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(max-width: 640px) 185px, (max-width: 768px) 260px, 330px"
+              className="object-contain pointer-events-none select-none drop-shadow-lg"
+            />
+          </div>
+
+          {/* Bottom-Right Champagne + Silver Cards */}
+          <div className="absolute bottom-[15px] sm:bottom-[28px] right-[-35px] sm:right-[-10px] md:right-[2%] w-[215px] sm:w-[315px] md:w-[405px] aspect-[720/355] z-[2]">
+            <Image
+              src="/assets/wallet-card-br.webp"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(max-width: 640px) 215px, (max-width: 768px) 315px, 405px"
+              className="object-contain pointer-events-none select-none drop-shadow-lg"
+            />
+          </div>
         </div>
       </div>
 
