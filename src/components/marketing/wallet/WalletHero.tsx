@@ -19,6 +19,7 @@ interface WalletHeroProps {
     heroSubtitleHighlight?: string;
     ctaButton?: string;
     heroImageAlt?: string;
+    wallet?: Record<string, string | undefined>;
   };
 }
 
@@ -52,7 +53,7 @@ const renderBidiText = (text?: string) => {
 };
 
 export default function WalletHero({ lang, dict }: WalletHeroProps) {
-  const w = (dict as any)?.wallet || dict || {};
+  const w = (dict.wallet as typeof dict | undefined) || dict;
 
   const shouldReduceMotion = useReducedMotion();
 
@@ -119,7 +120,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         </div>
 
         {/* Title: 2 lines (CSS-only entrance for immediate LCP paint) */}
-        <h1 id="wallet-hero-heading" className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
+        <h1 id="wallet-hero-heading" className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[32px] sm:text-[42px] lg:text-[48px] font-semibold leading-[40px] sm:leading-[52px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
           {renderBidiText(w?.heroTitleLine1 || 'Secure, Flexible &')}
           <br />
           {renderBidiText(w?.heroTitleLine2 || 'Instant Transactions')}
@@ -130,9 +131,9 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
           {w?.heroSubtitleLine1 ? (
             <>
               {renderBidiText(w.heroSubtitleLine1)}
-              <br />
+              <br className="hidden sm:inline" />{' '}
               {renderBidiText(w.heroSubtitleLine2)}
-              <br />
+              <br className="hidden sm:inline" />{' '}
               {renderBidiText(w.heroSubtitleLine3)}
               <span className="font-semibold text-heading dark:text-white">
                 {renderBidiText(w.heroSubtitleHighlight || 'all in one place.')}

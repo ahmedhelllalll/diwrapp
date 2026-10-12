@@ -132,7 +132,7 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
                 visible: { opacity: 1, y: 0 }
               }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="w-full rounded-[24px] border wallet-card p-8 flex flex-col justify-start items-start text-start shadow-xs hover:shadow-md transition-all duration-300 relative z-10 group"
+              className="w-full rounded-[24px] border wallet-card p-6 sm:p-8 flex flex-col justify-start items-start text-start shadow-xs hover:shadow-md transition-all duration-300 relative z-10 group"
             >
               {/* Icon Container */}
               <div className="w-10 h-10 rounded-xl border wallet-icon-box flex items-center justify-center mb-6 text-heading dark:text-white group-hover:scale-105 transition-all duration-200 shrink-0">
