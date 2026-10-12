@@ -803,10 +803,6 @@
       "description": "Join instantly, link your space, set your prices, and start monitoring bookings.",
       "contactBtn": "Contact Us",
       "getStartedBtn": "Let's Get Started"
-    },
-    "faq": {
-      "badge": "FAQ",
-      "heading": "Frequently\nAsked Questions"
     }
   },
   "vendorFaq": {

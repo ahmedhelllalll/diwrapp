@@ -191,7 +191,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 transition-all shadow-2xs hover:border-neutral-300 dark:hover:border-neutral-700"
+                className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 transition-all shadow-2xs"
               >
                 <button
                   type="button"
@@ -241,7 +241,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           <motion.div variants={itemVariants}>
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 flex items-center justify-between hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group cursor-pointer shadow-2xs"
+              className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 flex items-center justify-between transition-colors group cursor-pointer shadow-2xs"
             >
               <div className="text-[16px] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
                 <span className="font-normal text-text-tertiary dark:text-neutral-400">

@@ -334,7 +334,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
             {/* Contact Us */}
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-800 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
             >
               {renderBidiText(data.ctaBanner.contactBtn)}
             </Link>

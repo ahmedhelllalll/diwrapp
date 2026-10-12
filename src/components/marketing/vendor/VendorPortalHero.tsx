@@ -156,7 +156,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
             {/* Read More Secondary Button */}
             <Link
               href={lang ? `/${lang}/about` : '/about'}
-              className="h-[44px] px-6 rounded-lg border border-border-200 dark:border-card-border bg-transparent hover:bg-neutral-50 dark:hover:bg-surface-2 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
             >
               {renderBidiText(data.readMoreBtn)}
             </Link>
