@@ -117,15 +117,15 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
   };
 
   return (
-    <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
+    <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300 pt-[104px] sm:pt-28 lg:pt-28 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
       <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6">
         {/* A. Header & Typography Block (Server-rendered CSS-only rise matching Landing/About) */}
         <div className="flex flex-col items-center text-center max-w-[880px] mx-auto">
           {/* Badge */}
           <div className="hero-anim-badge flex justify-center mb-6">
-            <Badge variant="pill" className="gap-2 bg-white/80 dark:bg-surface-2/80 backdrop-blur-xs">
+            <Badge variant="pill" className="gap-2 bg-white dark:bg-surface-2 shadow-xs">
               <Community className="w-4 h-4 text-text-secondary dark:text-neutral-300 shrink-0" strokeWidth={1.5} />
-              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium">
+              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium text-heading dark:text-white">
                 {c.badge || 'Our Culture'}
               </span>
             </Badge>
