@@ -32,7 +32,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       },
     },
     openGraph: {
-      title: `${title} | DiWrapp`,
+      title,
       description,
       url: `https://diwrapp.com/${lang}/contact`,
       siteName: 'DiWrapp',
@@ -49,7 +49,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} | DiWrapp`,
+      title,
       description,
       images: ['/images/og-banner.png'],
     },
