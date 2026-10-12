@@ -43,7 +43,7 @@ export default function WalletStatement({ dict }: WalletStatementProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="w-full py-16 md:py-20 bg-white dark:bg-surface-1 transition-colors duration-300">
+    <section aria-labelledby="wallet-statement-heading" className="w-full py-16 md:py-20 bg-white dark:bg-surface-1 transition-colors duration-300">
       <motion.div 
         className="max-w-[840px] mx-auto text-center px-6"
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
@@ -51,7 +51,7 @@ export default function WalletStatement({ dict }: WalletStatementProps) {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[26px] sm:text-[32px] md:text-[36px] leading-[36px] sm:leading-[42px] md:leading-[46px] font-light text-heading dark:text-white">
+        <h2 id="wallet-statement-heading" className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[26px] sm:text-[32px] md:text-[36px] leading-[36px] sm:leading-[42px] md:leading-[46px] font-light text-heading dark:text-white">
           {renderBidiText(dict?.statementLight || "Whether you're running a single ad or managing hundreds of locations — ")}{' '}
           <span className="font-medium text-heading dark:text-white">
             {renderBidiText(dict?.statementMedium || 'the Wallet keeps your operations smooth and traceable.')}

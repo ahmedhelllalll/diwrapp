@@ -57,7 +57,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
+    <section aria-labelledby="wallet-hero-heading" className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
       {/* Unified Background Layer (Full Width Cover) */}
       <div 
         dir="ltr"
@@ -114,19 +114,19 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
       <div className="relative z-10 w-full max-w-[800px] mx-auto px-6 flex flex-col items-center text-center pt-[180px] sm:pt-[200px] lg:pt-[240px]">
         {/* Badge */}
         <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge-hero shadow-xs backdrop-blur-sm mb-5 select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-xs font-medium">
-          <CardWallet className="w-3.5 h-3.5 stroke-[1.8]" />
+          <CardWallet aria-hidden="true" className="w-3.5 h-3.5 stroke-[1.8]" />
           <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
         </div>
 
         {/* Title: 2 lines (CSS-only entrance for immediate LCP paint) */}
-        <h1 className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
+        <h1 id="wallet-hero-heading" className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
           {renderBidiText(w?.heroTitleLine1 || 'Secure, Flexible &')}
           <br />
           {renderBidiText(w?.heroTitleLine2 || 'Instant Transactions')}
         </h1>
 
         {/* Subtitle: 3 lines */}
-        <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-24 font-normal">
+        <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-10 sm:mb-14 lg:mb-24 font-normal">
           {w?.heroSubtitleLine1 ? (
             <>
               {renderBidiText(w.heroSubtitleLine1)}
@@ -159,9 +159,9 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         >
           <Link
             href={`/${lang}/signup?role=advertiser`}
-            className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white text-[14px] font-medium leading-[20px] transition-colors shadow-xs hover:shadow-[0_4px_14px_rgba(0,102,255,0.25)] inline-flex items-center justify-center cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] active:scale-[0.98]"
+            className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white text-[14px] font-medium leading-[20px] transition-colors shadow-xs hover:shadow-[0_4px_14px_rgba(0,102,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-surface-1 inline-flex items-center justify-center cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] active:scale-[0.98]"
           >
-            {renderBidiText(w?.ctaButton || 'Top Up my Wallet')}
+            {renderBidiText(w?.ctaButton || 'Top Up My Wallet')}
           </Link>
         </motion.div>
       </div>

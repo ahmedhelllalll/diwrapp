@@ -56,15 +56,15 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
   const cards = [
     {
       id: 'card1',
-      icon: <CardWallet className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
+      icon: <CardWallet aria-hidden="true" className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
       title: dict?.cards?.card1?.title || 'Top-Up Any Time',
       description:
         dict?.cards?.card1?.description ||
-        'Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order "only for verified Org.").',
+        'Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order "only for verified organizations").',
     },
     {
       id: 'card2',
-      icon: <Flare className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
+      icon: <Flare aria-hidden="true" className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
       title: dict?.cards?.card2?.title || 'Real-Time Tracking',
       description:
         dict?.cards?.card2?.description ||
@@ -72,7 +72,7 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
     },
     {
       id: 'card3',
-      icon: <HomeSecure className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
+      icon: <HomeSecure aria-hidden="true" className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />,
       title: dict?.cards?.card3?.title || 'Secure & Audited',
       description:
         dict?.cards?.card3?.description ||
@@ -81,7 +81,7 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
   ];
 
   return (
-    <section className="w-full pt-4 pb-28 md:pb-36 bg-white dark:bg-surface-1 transition-colors duration-300">
+    <section aria-labelledby="wallet-features-heading" className="w-full pt-4 pb-28 md:pb-36 bg-white dark:bg-surface-1 transition-colors duration-300">
       <div className="max-w-[1240px] mx-auto px-6">
         {/* Top Row: Intro & Badge */}
         <motion.div 
@@ -93,10 +93,10 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
         >
           {/* Badge Column (4 Cols) */}
           <div className="md:col-span-4 flex justify-start">
-            <div className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge bg-transparent text-[12px] font-medium shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-              <Suitcase className="w-3.5 h-3.5 shrink-0 stroke-[1.8]" />
+            <h2 id="wallet-features-heading" className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge bg-transparent text-[12px] font-medium shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+              <Suitcase aria-hidden="true" className="w-3.5 h-3.5 shrink-0 stroke-[1.8]" />
               <span>{renderBidiText(dict?.featuresBadge || 'Features')}</span>
-            </div>
+            </h2>
           </div>
 
           {/* Description Column (8 Cols) */}
