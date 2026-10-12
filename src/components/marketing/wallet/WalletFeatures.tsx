@@ -21,6 +21,35 @@ interface WalletFeaturesProps {
   };
 }
 
+const renderBidiText = (text?: string) => {
+  if (!text) return null;
+  const parts = text.split(/(Di_Wrapped|Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, index) => {
+    if (
+      part === 'Di_Wrapped' ||
+      part === 'Di_Wrapp' ||
+      part === 'Ask_Di' ||
+      part === 'Di' ||
+      part === '(24/7)' ||
+      part === '24/7' ||
+      part === 'Apple Pay' ||
+      part === 'Visa' ||
+      part === 'EGP' ||
+      part === 'USD' ||
+      part === 'SAR' ||
+      part === 'AED'
+    ) {
+      return (
+        <span key={index} dir="ltr" className="inline-block whitespace-nowrap">
+          {part}
+        </span>
+      );
+    }
+    return part;
+  });
+};
+
 export default function WalletFeatures({ dict }: WalletFeaturesProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -66,15 +95,17 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
           <div className="md:col-span-4 flex justify-start">
             <div className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-[12px] font-medium text-text-secondary dark:text-neutral-300 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
               <Suitcase className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 shrink-0 stroke-[1.8]" />
-              <span>{dict?.featuresBadge || 'Features'}</span>
+              <span>{renderBidiText(dict?.featuresBadge || 'Features')}</span>
             </div>
           </div>
 
           {/* Description Column (8 Cols) */}
           <div className="md:col-span-8">
             <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-normal text-text-secondary dark:text-neutral-300 max-w-2xl text-start">
-              {dict?.featuresDesc ||
-                "Built for convenience, the Wallet keeps your funds organized and ready to use. Whether you're topping up, monitoring payouts, or reviewing your transaction history, it offers a smooth and transparent way to handle your campaign finances."}
+              {renderBidiText(
+                dict?.featuresDesc ||
+                  "Built for convenience, the Wallet keeps your funds organized and ready to use. Whether you're topping up, monitoring payouts, or reviewing your transaction history, it offers a smooth and transparent way to handle your campaign finances."
+              )}
             </p>
           </div>
         </motion.div>
@@ -110,12 +141,12 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
 
               {/* Card Title */}
               <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-medium leading-[28px] text-heading dark:text-white mb-2 text-start w-full">
-                {card.title}
+                {renderBidiText(card.title)}
               </h3>
 
               {/* Card Body */}
               <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-text-secondary dark:text-neutral-400 text-start w-full">
-                {card.description}
+                {renderBidiText(card.description)}
               </p>
             </motion.div>
           ))}
