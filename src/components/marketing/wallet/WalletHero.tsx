@@ -56,25 +56,13 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
 
   const shouldReduceMotion = useReducedMotion();
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 14 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } 
-    }
-  };
-
   return (
     <section className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
       {/* Unified Background Layer (Full Width Cover) */}
-      <motion.div 
+      <div 
         dir="ltr"
         className="absolute inset-0 pointer-events-none select-none overflow-hidden" 
         aria-hidden="true"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         
         {/* Layer 1: Trajectory Curve (Synchronized coordinate context) */}
@@ -120,36 +108,25 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
             sizes="100vw"
           />
         </div>
-      </motion.div>
+      </div>
 
       {/* Layer 3: Foreground Centered Content (relative z-10) */}
-      <motion.div 
-        className="relative z-10 w-full max-w-[800px] mx-auto px-6 flex flex-col items-center text-center pt-[180px] sm:pt-[200px] lg:pt-[240px]"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          visible: {
-            transition: {
-              staggerChildren: 0.08,
-            }
-          }
-        }}
-      >
+      <div className="relative z-10 w-full max-w-[800px] mx-auto px-6 flex flex-col items-center text-center pt-[180px] sm:pt-[200px] lg:pt-[240px]">
         {/* Badge */}
-        <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-xs font-medium text-text-secondary dark:text-neutral-300 mb-5 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-xs font-medium text-text-secondary dark:text-neutral-300 mb-5 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
           <CardWallet className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 stroke-[1.8]" />
           <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
-        </motion.div>
+        </div>
 
-        {/* Title: 2 lines */}
-        <motion.h1 variants={itemVariants} className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
+        {/* Title: 2 lines (CSS-only entrance for immediate LCP paint) */}
+        <h1 className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
           {renderBidiText(w?.heroTitleLine1 || 'Secure, Flexible &')}
           <br />
           {renderBidiText(w?.heroTitleLine2 || 'Instant Transactions')}
-        </motion.h1>
+        </h1>
 
         {/* Subtitle: 3 lines */}
-        <motion.p variants={itemVariants} className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-24 font-normal">
+        <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-24 font-normal">
           {w?.heroSubtitleLine1 ? (
             <>
               {renderBidiText(w.heroSubtitleLine1)}
@@ -172,13 +149,13 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
               </span>
             </>
           )}
-        </motion.p>
+        </p>
 
         {/* CTA Button */}
         <motion.div
-          variants={itemVariants}
           whileHover={shouldReduceMotion ? {} : { y: -2 }}
           whileTap={{ scale: 0.98 }}
+          className="hero-anim-cta"
         >
           <Link
             href={`/${lang}/signup?role=advertiser`}
@@ -187,7 +164,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
             {renderBidiText(w?.ctaButton || 'Top Up my Wallet')}
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

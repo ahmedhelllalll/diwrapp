@@ -13,19 +13,46 @@ export async function generateMetadata(props: {
   const dict = await getDictionary(lang);
   const meta = (dict as any).metadata?.wallet;
   const wallet = (dict as any).wallet;
+  const isAr = lang === 'ar';
+  const title = meta?.title || (isAr ? 'المحفظة' : 'Wallet');
+  const description = (
+    meta?.description ||
+    `${wallet?.heroTitleLine1 || (isAr ? 'معاملات فورية وآمنة' : 'Secure, Flexible &')} ${wallet?.heroTitleLine2 || (isAr ? 'وبمنتهى المرونة' : 'Instant Transactions')}`
+  ).trim();
 
   return {
-    title: meta?.title || 'Wallet',
-    description:
-      meta?.description ||
-      `${wallet?.heroTitleLine1 || 'Secure, Flexible &'} ${wallet?.heroTitleLine2 || 'Instant Transactions'}`,
+    metadataBase: new URL('https://diwrapp.com'),
+    title,
+    description,
     alternates: {
       canonical: `/${lang}/wallet`,
       languages: {
-        en: '/en/wallet',
-        ar: '/ar/wallet',
-        'x-default': '/en/wallet',
+        en: 'https://diwrapp.com/en/wallet',
+        ar: 'https://diwrapp.com/ar/wallet',
+        'x-default': 'https://diwrapp.com/en/wallet',
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://diwrapp.com/${lang}/wallet`,
+      siteName: 'DiWrapp',
+      locale: isAr ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: isAr ? 'دي-راب - المحفظة الرقمية' : 'DiWrapp Wallet',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/og-banner.png'],
     },
   };
 }
