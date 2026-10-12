@@ -87,10 +87,10 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
         {/* Top Row: Intro & Badge */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start mb-12"
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: appleEasing }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: appleEasing }}
         >
           {/* Badge Column (4 Cols) */}
           <div className="md:col-span-4 flex justify-start">
@@ -120,7 +120,7 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.1,
+                staggerChildren: shouldReduceMotion ? 0 : 0.1,
               }
             }
           }}
@@ -129,10 +129,10 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
             <motion.div
               key={card.id}
               variants={{
-                hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+                hidden: { opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 20 },
                 visible: { opacity: 1, y: 0 }
               }}
-              transition={{ duration: 0.5, ease: appleEasing }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: appleEasing }}
               className="w-full rounded-[24px] border wallet-card p-6 sm:p-8 flex flex-col justify-start items-start text-start shadow-xs hover:shadow-md transition-all duration-300 relative z-10 group"
             >
               {/* Icon Container */}

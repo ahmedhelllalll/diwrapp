@@ -213,7 +213,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         {/* CTA Button */}
         <motion.div
           whileHover={shouldReduceMotion ? {} : { y: -2 }}
-          whileTap={{ scale: 0.98 }}
+          whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
           className="hero-anim-cta"
         >
           <Link

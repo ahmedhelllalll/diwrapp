@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { appleEasing } from '@/lib/motion';
 
 interface WalletStatementProps {
   dict: {
@@ -46,10 +47,10 @@ export default function WalletStatement({ dict }: WalletStatementProps) {
     <section aria-labelledby="wallet-statement-heading" className="w-full py-16 md:py-20 bg-white dark:bg-surface-1 transition-colors duration-300">
       <motion.div 
         className="max-w-[840px] mx-auto text-center px-6"
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
+        initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: appleEasing }}
       >
         <h2 id="wallet-statement-heading" className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[26px] sm:text-[32px] md:text-[36px] leading-[36px] sm:leading-[42px] md:leading-[46px] font-light text-heading dark:text-white">
           {renderBidiText(dict?.statementLight || "Whether you're running a single ad or managing hundreds of locations — ")}{' '}
