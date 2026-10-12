@@ -85,6 +85,8 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
     },
   };
 
+  const isRtl = lang === 'ar';
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -95,17 +97,56 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
     },
   };
 
-  const cardVariants = {
+  // 1. Text cards: subtle upward entrance
+  const textCardVariants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.45,
+        duration: 0.42,
         ease: [0.16, 1, 0.3, 1] as const,
       },
     },
-    hover: {},
+  };
+
+  // 2. Visual image cards: subtle scale bloom
+  const imageCardVariants = {
+    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.96 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.46,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
+  // 3. Wide office interior card: subtle horizontal slide from layout start (mirrored in RTL)
+  const officeCardVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : (isRtl ? 16 : -16) },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.48,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
+  // 4. CTA Action card: subtle horizontal slide from layout end (mirrored in RTL)
+  const ctaCardVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : (isRtl ? -16 : 16) },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.48,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
   };
 
   return (
@@ -124,7 +165,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 1: Text Card (Innovative Work) */}
           <motion.div
-            variants={cardVariants}
+            variants={textCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -138,7 +179,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 2: Image Card (Blue Neon Glasses Visual) */}
           <motion.div
-            variants={cardVariants}
+            variants={imageCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -153,7 +194,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 3: Text Card (AI & Tech-First) */}
           <motion.div
-            variants={cardVariants}
+            variants={textCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -171,7 +212,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 4: Image Card (Neon Cyan Circle Visual) */}
           <motion.div
-            variants={cardVariants}
+            variants={imageCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -186,7 +227,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 5: Text Card (Global Vision) */}
           <motion.div
-            variants={cardVariants}
+            variants={textCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col items-center justify-center text-center min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -200,7 +241,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Card 6: Image Card (Prism Hand Visual) */}
           <motion.div
-            variants={cardVariants}
+            variants={imageCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group relative overflow-hidden rounded-[28px] lg:rounded-[32px] border border-[#EAECF0] dark:border-[#27272A] bg-surface-2 min-h-[300px] lg:min-h-[340px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -219,7 +260,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* Office Visual (Spans 2 columns / ~66% width on desktop) */}
           <motion.div
-            variants={cardVariants}
+            variants={officeCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="group md:col-span-2 lg:col-span-2 relative min-h-[360px] lg:min-h-[420px] rounded-[28px] lg:rounded-[32px] overflow-hidden border border-[#EAECF0] dark:border-[#27272A] bg-white dark:bg-surface-2 transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
@@ -234,7 +275,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
           {/* CTA Action Card (Spans 1 column / ~33% width on desktop) */}
           <motion.div
-            variants={cardVariants}
+            variants={ctaCardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
             className="md:col-span-2 lg:col-span-1 rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col justify-center items-start text-start min-h-[360px] lg:min-h-[420px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >

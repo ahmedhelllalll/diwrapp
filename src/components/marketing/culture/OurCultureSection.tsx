@@ -81,27 +81,29 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
     ease: [0.16, 1, 0.3, 1] as const,
   };
 
-  // 4 Values Grid motion variants
+  // 4 Values Grid motion variants with staggered entrance variety
   const gridContainerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.06,
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
       },
     },
   };
 
-  const gridItemVariants = {
+  const getGridItemVariants = (index: number) => ({
     hidden: {
       opacity: 0,
-      y: shouldReduceMotion ? 0 : 16,
+      y: shouldReduceMotion ? 0 : (index % 2 === 0 ? 16 : 0),
+      scale: shouldReduceMotion ? 1 : (index % 2 === 1 ? 0.96 : 1),
     },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: snappyTransition,
     },
-  };
+  });
 
   const iconContainerVariants = {
     initial: {
@@ -156,12 +158,12 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
           variants={gridContainerVariants}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 lg:gap-10 mb-10 sm:mb-14 lg:mb-20"
         >
-          {valueItems.map((item) => {
+          {valueItems.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <motion.div
                 key={item.key}
-                variants={gridItemVariants}
+                variants={getGridItemVariants(index)}
                 whileHover="hover"
                 className="group relative flex flex-col items-start text-start pb-5 sm:pb-0 border-b border-[#EAECF0] dark:border-[#27272A] sm:border-b-0 last:border-b-0 last:pb-0 lg:border-e lg:border-[#EAECF0] dark:lg:border-[#27272A] lg:last:border-e-0 lg:pe-8 xl:pe-10 cursor-default"
               >
@@ -189,10 +191,10 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
 
         {/* C. Bottom Visual Banner */}
         <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.98, y: shouldReduceMotion ? 0 : 16 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
-          transition={snappyTransition}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] as const }}
           className="w-full"
         >
           <div className="relative w-full aspect-[16/7] min-h-[260px] sm:min-h-[380px] lg:h-[480px] rounded-[28px] sm:rounded-[32px] overflow-hidden border border-[#EAECF0] dark:border-[#27272A] shadow-xs">
