@@ -92,8 +92,8 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
         {/* ========================================================================= */}
         <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
           {/* 1. Pill Badge */}
-          <div className="hero-anim-badge inline-flex items-center gap-2 px-3.5 py-1 rounded-full border vendor-badge-hero bg-transparent mb-5 select-none">
-            <Suitcase className="w-3.5 h-3.5 stroke-[1.8]" />
+          <div className="hero-anim-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border vendor-badge-hero shadow-xs backdrop-blur-sm mb-5 select-none">
+            <Suitcase className="w-3.5 h-3.5 stroke-[2] shrink-0" />
             <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium leading-[18px]">
               {renderBidiText(data.badge)}
             </span>
