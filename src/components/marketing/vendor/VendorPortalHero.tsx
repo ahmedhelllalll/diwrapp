@@ -85,8 +85,8 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
   };
 
   return (
-    <section className="w-full py-14 lg:py-20 bg-transparent flex flex-col items-center">
-      <div className="w-full flex flex-col items-center">
+    <section className="w-full pt-28 sm:pt-32 lg:pt-36 pb-14 lg:pb-20 bg-transparent flex flex-col items-center overflow-visible">
+      <div className="w-full flex flex-col items-center overflow-visible">
         {/* ========================================================================= */}
         {/* A. Header Stack (Server-rendered CSS-only rise matching Culture/Contact)  */}
         {/* ========================================================================= */}
