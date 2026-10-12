@@ -275,9 +275,9 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
                 variants={cardVariants}
                 whileHover={shouldReduceMotion ? {} : { y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 p-6 sm:p-7 flex flex-col justify-start items-start text-left rtl:text-right shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
+                className="w-full rounded-[16px] border vendor-card p-6 sm:p-7 flex flex-col justify-start items-start text-left rtl:text-right shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
               >
-                <div className="w-10 h-10 rounded-[10px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2 flex items-center justify-center mb-4 shrink-0">
+                <div className="w-10 h-10 rounded-[10px] border vendor-icon-box flex items-center justify-center mb-4 shrink-0">
                   <IconComponent className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />
                 </div>
                 <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[17px] sm:text-[18px] font-medium leading-[26px] text-heading dark:text-white mb-2">
@@ -299,7 +299,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-[1240px] mx-auto rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface/80 dark:bg-surface-2/80 backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
+          className="w-full max-w-[1240px] mx-auto rounded-[16px] border vendor-banner-card backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
         >
           {/* Content Stack (Left) */}
           <div className="flex flex-col items-start text-left rtl:text-right">
@@ -327,7 +327,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
             {/* Contact Us */}
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="h-[44px] px-6 rounded-lg border border-border-200 dark:border-card-border bg-transparent hover:bg-neutral-50 dark:hover:bg-surface-3 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
+              className="h-[44px] px-6 rounded-lg border vendor-btn-secondary bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-800 text-text-secondary dark:text-neutral-200 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] transition-colors cursor-pointer inline-flex items-center justify-center active:scale-[0.98]"
             >
               {renderBidiText(data.ctaBanner.contactBtn)}
             </Link>

@@ -191,7 +191,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 px-6 sm:px-8 py-5 transition-all shadow-2xs hover:border-neutral-300 dark:hover:border-neutral-700"
+                className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 transition-all shadow-2xs hover:border-neutral-300 dark:hover:border-neutral-700"
               >
                 <button
                   type="button"
@@ -225,7 +225,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[24px] text-text-secondary dark:text-neutral-400 pt-3 pb-1 border-t border-border-200/80 dark:border-card-border mt-3">
+                      <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[24px] text-text-secondary dark:text-neutral-400 pt-3 pb-1 border-t vendor-divider mt-3">
                         {renderBidiText(item.answer)}
                       </p>
                     </motion.div>
@@ -241,7 +241,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           <motion.div variants={itemVariants}>
             <Link
               href={lang ? `/${lang}/contact` : '/contact'}
-              className="w-full rounded-[16px] border border-border-200 dark:border-card-border bg-card-surface dark:bg-surface-2/40 px-6 sm:px-8 py-5 flex items-center justify-between hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group cursor-pointer shadow-2xs"
+              className="w-full rounded-[16px] border vendor-card px-6 sm:px-8 py-5 flex items-center justify-between hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group cursor-pointer shadow-2xs"
             >
               <div className="text-[16px] text-heading dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
                 <span className="font-normal text-text-tertiary dark:text-neutral-400">
@@ -251,7 +251,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                   {renderBidiText(data.guideCard.titleHighlight)}
                 </span>
               </div>
-              <div className="w-8 h-8 rounded-full border border-border-200 dark:border-card-border flex items-center justify-center shrink-0 group-hover:border-brand transition-colors">
+              <div className="w-8 h-8 rounded-full border vendor-btn-secondary flex items-center justify-center shrink-0 group-hover:border-brand transition-colors">
                 <ArrowUpRight className="w-4 h-4 text-text-secondary dark:text-neutral-300 group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all rtl:rotate-[-90deg]" />
               </div>
             </Link>

@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Vendor Page Scoped Design System Tokens (DiWrapp Design System)
+   ========================================================================== */
+
+.vendor-scope {
+  /* Light Mode Card System Tokens */
+  --vendor-card-bg: #ffffff;
+  --vendor-card-border: #EAECF0;
+  --vendor-card-border-hover: #D0D5DD;
+  --vendor-card-icon-bg: #ffffff;
+  --vendor-card-divider: #F2F4F7;
+  --vendor-banner-bg: rgba(255, 255, 255, 0.8);
+  --vendor-btn-secondary-border: #EAECF0;
+  --vendor-btn-secondary-hover-bg: #F9FAFB;
+}
+
+.dark .vendor-scope {
+  /* Dark Mode Card System Tokens (Exact Vercel Fidelity) */
+  --vendor-card-bg: rgba(23, 23, 23, 0.4);              /* neutral-900/40 glassmorphic card */
+  --vendor-card-border: #262626;                        /* neutral-800 subtle card border */
+  --vendor-card-border-hover: #404040;                  /* neutral-700 card border hover */
+  --vendor-card-icon-bg: #171717;                      /* neutral-900 elevated icon surface */
+  --vendor-card-divider: rgba(38, 38, 38, 0.8);         /* neutral-800/80 subtle divider */
+  --vendor-banner-bg: rgba(18, 18, 18, 0.8);            /* #121212/80 CTA banner */
+  --vendor-btn-secondary-border: #404040;               /* neutral-700 */
+  --vendor-btn-secondary-hover-bg: #262626;            /* neutral-800 */
+}
+
+/* Scoped Semantic Card Utilities */
+.vendor-card {
+  background-color: var(--vendor-card-bg);
+  border-color: var(--vendor-card-border);
+}
+
+.vendor-card:hover {
+  border-color: var(--vendor-card-border-hover);
+}
+
+.vendor-icon-box {
+  background-color: var(--vendor-card-icon-bg);
+  border-color: var(--vendor-card-border);
+}
+
+.vendor-divider {
+  border-color: var(--vendor-card-divider);
+}
+
+.vendor-banner-card {
+  background-color: var(--vendor-banner-bg);
+  border-color: var(--vendor-card-border);
+}
+
+.vendor-btn-secondary {
+  border-color: var(--vendor-btn-secondary-border);
+}
+
+.vendor-btn-secondary:hover {
+  background-color: var(--vendor-btn-secondary-hover-bg);
+}

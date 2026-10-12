@@ -4,6 +4,7 @@ import { Locale } from '@/i18n-config';
 import VendorPortalHero from '@/components/marketing/vendor/VendorPortalHero';
 import WhyGetDiWrapped from '@/components/marketing/vendor/WhyGetDiWrapped';
 import VendorFaq from '@/components/marketing/vendor/VendorFaq';
+import '../../../vendor.css';
 
 export async function generateMetadata(props: {
   params: Promise<{ lang: string }>;
@@ -35,7 +36,7 @@ export default async function VendorPage(props: {
   const dict = await getDictionary(lang);
 
   return (
-    <main className="flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
+    <main className="vendor-scope flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
       <VendorPortalHero dict={dict} lang={lang} />
       <WhyGetDiWrapped dict={dict} lang={lang} />
       <VendorFaq dict={dict} lang={lang} />

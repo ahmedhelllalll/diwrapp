@@ -130,7 +130,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           variants={itemVariants}
           className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 mb-10"
         >
-          <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden border border-border-200/60 dark:border-card-border shadow-xs">
+          <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-sm">
             <Image
               src="/assets/vendor-portal-billboard.webp"
               alt="Vendor Portal Billboard"
