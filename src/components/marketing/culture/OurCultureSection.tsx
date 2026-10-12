@@ -141,7 +141,7 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
 
           {/* Subtitle */}
           <div className="hero-anim-subtitle w-full flex justify-center">
-            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[28px] text-text-tertiary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+            <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-tertiary dark:text-neutral-400 max-w-[760px] mx-auto text-center mb-8 sm:mb-12 lg:mb-16">
               {c.subtitle ||
                 "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous."}
             </p>
@@ -154,7 +154,7 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={gridContainerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12 sm:mb-16 lg:mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 lg:gap-10 mb-10 sm:mb-14 lg:mb-20"
         >
           {valueItems.map((item) => {
             const IconComponent = item.icon;
@@ -163,23 +163,23 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
                 key={item.key}
                 variants={gridItemVariants}
                 whileHover="hover"
-                className="group relative flex flex-col items-start text-start lg:border-e lg:border-[#EAECF0] dark:lg:border-[#27272A] lg:last:border-e-0 lg:pe-8 xl:pe-10 cursor-default"
+                className="group relative flex flex-col items-start text-start pb-5 sm:pb-0 border-b border-[#EAECF0] dark:border-[#27272A] sm:border-b-0 last:border-b-0 last:pb-0 lg:border-e lg:border-[#EAECF0] dark:lg:border-[#27272A] lg:last:border-e-0 lg:pe-8 xl:pe-10 cursor-default"
               >
                 {/* Icon Container with snappy Framer Motion lift feedback */}
                 <motion.div
                   variants={iconContainerVariants}
-                  className="w-11 h-11 rounded-[10px] border border-[#EAECF0] dark:border-[#27272A] bg-transparent flex items-center justify-center mb-4 sm:mb-5 text-text-secondary dark:text-neutral-200 shrink-0"
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-[10px] border border-[#EAECF0] dark:border-[#27272A] bg-transparent flex items-center justify-center mb-3 sm:mb-5 text-text-secondary dark:text-neutral-200 shrink-0"
                 >
                   <IconComponent className="w-5 h-5 text-text-secondary dark:text-neutral-200" strokeWidth={1.5} />
                 </motion.div>
 
                 {/* Item Title */}
-                <h2 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] leading-[28px] font-medium text-heading dark:text-white mb-1.5">
+                <h2 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[17px] sm:text-[18px] leading-[26px] sm:leading-[28px] font-medium text-heading dark:text-white mb-1 sm:mb-1.5 text-start">
                   {item.title}
                 </h2>
 
                 {/* Item Description */}
-                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-normal text-text-tertiary dark:text-neutral-400">
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-normal text-text-tertiary dark:text-neutral-400 text-start">
                   {item.description}
                 </p>
               </motion.div>
