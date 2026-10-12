@@ -201,9 +201,9 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
                 </motion.div>
 
                 {/* Item Title */}
-                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] leading-[28px] font-medium text-heading dark:text-white mb-1.5">
+                <h2 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] leading-[28px] font-medium text-heading dark:text-white mb-1.5">
                   {item.title}
-                </h3>
+                </h2>
 
                 {/* Item Description */}
                 <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-normal text-text-tertiary dark:text-neutral-400">
