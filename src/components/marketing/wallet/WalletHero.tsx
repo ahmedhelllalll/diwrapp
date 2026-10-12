@@ -58,7 +58,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section aria-labelledby="wallet-hero-heading" className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
+    <section aria-labelledby="wallet-hero-heading" className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[640px] sm:min-h-[720px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
       {/* Unified Background Layer (Full Width Cover & Responsive Dynamic Cards) */}
       <div 
         dir="ltr"
@@ -119,50 +119,50 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         <div className="block lg:hidden absolute inset-0 w-full h-full z-0 pointer-events-none select-none">
           {/* Mobile Dynamic Trajectory Line */}
           <div className="absolute inset-0 w-full h-full overflow-hidden dark:invert dark:opacity-60">
-            <div className="absolute bottom-[20px] sm:bottom-[35px] left-[-15%] sm:left-[-10%] w-[130%] sm:w-[120%] h-[320px] sm:h-[400px]">
+            <div className="absolute bottom-[10px] sm:bottom-[25px] left-[-10%] sm:left-[-5%] w-[120%] sm:w-[110%] h-[280px] sm:h-[360px]">
               <Image
                 src="/assets/wallet-trajectory-line.webp"
                 alt=""
                 aria-hidden="true"
                 fill
                 sizes="100vw"
-                className="object-contain pointer-events-none select-none -rotate-[3deg]"
+                className="object-contain pointer-events-none select-none -rotate-[2deg]"
               />
             </div>
           </div>
 
-          {/* Top-Left Card */}
-          <div className="absolute top-[75px] sm:top-[85px] left-[-28px] sm:left-[2%] w-[135px] sm:w-[195px] md:w-[245px] aspect-[360/240] z-[1]">
+          {/* Top-Left Card - Floating subtly in upper-left background */}
+          <div className="absolute top-[85px] sm:top-[95px] left-[-18px] sm:left-[1%] w-[125px] sm:w-[175px] md:w-[225px] aspect-[360/240] z-[1] opacity-90 sm:opacity-100">
             <Image
               src="/assets/wallet-card-tl.webp"
               alt=""
               aria-hidden="true"
               fill
-              sizes="(max-width: 640px) 135px, (max-width: 768px) 195px, 245px"
+              sizes="(max-width: 640px) 125px, (max-width: 768px) 175px, 225px"
               className="object-contain pointer-events-none select-none drop-shadow-md"
             />
           </div>
 
-          {/* Bottom-Left Magenta Card */}
-          <div className="absolute bottom-[25px] sm:bottom-[40px] left-[-30px] sm:left-[-10px] md:left-[2%] w-[185px] sm:w-[260px] md:w-[330px] aspect-[510/265] z-[2]">
+          {/* Bottom-Left Magenta Card - Vibrant gradient card framing lower-left */}
+          <div className="absolute bottom-[18px] sm:bottom-[32px] left-[-15px] sm:left-[0%] md:left-[2%] w-[175px] sm:w-[245px] md:w-[315px] aspect-[510/265] z-[2]">
             <Image
               src="/assets/wallet-card-bl.webp"
               alt=""
               aria-hidden="true"
               fill
-              sizes="(max-width: 640px) 185px, (max-width: 768px) 260px, 330px"
+              sizes="(max-width: 640px) 175px, (max-width: 768px) 245px, 315px"
               className="object-contain pointer-events-none select-none drop-shadow-lg"
             />
           </div>
 
-          {/* Bottom-Right Champagne + Silver Cards */}
-          <div className="absolute bottom-[15px] sm:bottom-[28px] right-[-35px] sm:right-[-10px] md:right-[2%] w-[215px] sm:w-[315px] md:w-[405px] aspect-[720/355] z-[2]">
+          {/* Bottom-Right Champagne + Silver Cards - Overlapping cards framing lower-right */}
+          <div className="absolute bottom-[12px] sm:bottom-[22px] right-[-18px] sm:right-[0%] md:right-[2%] w-[200px] sm:w-[290px] md:w-[380px] aspect-[720/355] z-[2]">
             <Image
               src="/assets/wallet-card-br.webp"
               alt=""
               aria-hidden="true"
               fill
-              sizes="(max-width: 640px) 215px, (max-width: 768px) 315px, 405px"
+              sizes="(max-width: 640px) 200px, (max-width: 768px) 290px, 380px"
               className="object-contain pointer-events-none select-none drop-shadow-lg"
             />
           </div>
@@ -170,22 +170,22 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
       </div>
 
       {/* Layer 3: Foreground Centered Content (relative z-10) */}
-      <div className="relative z-10 w-full max-w-[800px] mx-auto px-6 flex flex-col items-center text-center pt-[180px] sm:pt-[200px] lg:pt-[240px]">
+      <div className="relative z-10 w-full max-w-[800px] mx-auto px-5 sm:px-6 flex flex-col items-center text-center pt-[100px] sm:pt-[140px] lg:pt-[240px]">
         {/* Badge */}
-        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge-hero shadow-xs backdrop-blur-sm mb-5 select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-xs font-medium">
+        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge-hero shadow-xs backdrop-blur-sm mb-4 sm:mb-5 select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-xs font-medium">
           <CardWallet aria-hidden="true" className="w-3.5 h-3.5 stroke-[1.8]" />
           <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
         </div>
 
         {/* Title: 2 lines (CSS-only entrance for immediate LCP paint) */}
-        <h1 id="wallet-hero-heading" className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[32px] sm:text-[42px] lg:text-[48px] font-semibold leading-[40px] sm:leading-[52px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
+        <h1 id="wallet-hero-heading" className="hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[30px] sm:text-[40px] lg:text-[48px] font-semibold leading-[38px] sm:leading-[50px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-3 sm:mb-4 max-w-[650px]">
           {renderBidiText(w?.heroTitleLine1 || 'Secure, Flexible &')}
           <br />
           {renderBidiText(w?.heroTitleLine2 || 'Instant Transactions')}
         </h1>
 
         {/* Subtitle: 3 lines */}
-        <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-10 sm:mb-14 lg:mb-24 font-normal">
+        <p className="hero-anim-subtitle font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[17px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-7 sm:mb-10 lg:mb-24 font-normal">
           {w?.heroSubtitleLine1 ? (
             <>
               {renderBidiText(w.heroSubtitleLine1)}
