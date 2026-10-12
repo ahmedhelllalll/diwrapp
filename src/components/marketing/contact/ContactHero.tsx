@@ -1,8 +1,5 @@
-'use client';
-
 import React from "react";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import { NavArrowRight, HomeSimple } from "iconoir-react";
 
 interface ContactHeroProps {
@@ -21,7 +18,6 @@ export default function ContactHero({
   subtitle = "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help.",
 }: ContactHeroProps) {
   const isRtl = lang === "ar";
-  const shouldReduceMotion = useReducedMotion();
 
   return (
     <section className="contact-hero-section pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 text-center flex flex-col items-center" aria-labelledby="contact-heading">
@@ -49,21 +45,19 @@ export default function ContactHero({
         </span>
       </nav>
 
-      {/* Page Title & Subtitle with Entrance Animation */}
-      <motion.div
-        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
-        animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-2xl mx-auto"
-      >
-        <h1 id="contact-heading" className="contact-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-950 dark:text-white mb-4">
+      {/* Page Title & Subtitle with CSS-Only Entrance Rise (Preserves instant LCP paint) */}
+      <div className="max-w-2xl mx-auto">
+        <h1
+          id="contact-heading"
+          className="contact-title hero-lcp-title font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-950 dark:text-white mb-4"
+        >
           {title}
         </h1>
 
-        <p className="contact-subtitle text-base sm:text-lg text-slate-600 dark:text-zinc-300 font-normal leading-relaxed">
+        <p className="contact-subtitle hero-anim-subtitle text-base sm:text-lg text-slate-600 dark:text-zinc-300 font-normal leading-relaxed">
           {subtitle}
         </p>
-      </motion.div>
+      </div>
     </section>
   );
 }
