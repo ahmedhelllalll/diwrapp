@@ -38,11 +38,11 @@ export interface CultureDictionary {
 }
 
 interface OurCultureSectionProps {
-  lang: string;
+  lang?: string;
   culture?: CultureDictionary;
 }
 
-export default function OurCultureSection({ lang, culture }: OurCultureSectionProps) {
+export default function OurCultureSection({ culture }: OurCultureSectionProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const c = culture || {};

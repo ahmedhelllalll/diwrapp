@@ -31,7 +31,6 @@ export interface CareersSectionData {
 interface CareersBentoGridProps {
   dict?: {
     careersSection?: CareersSectionData;
-    [key: string]: any;
   };
   lang?: string;
 }
@@ -145,7 +144,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           >
             <Image
               src="/assets/culture-card-tech.webp"
-              alt="Innovative Tech Light Visual"
+              alt=""
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
@@ -178,7 +177,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           >
             <Image
               src="/assets/culture-card-circle.webp"
-              alt="Cyan Neon Circle Visual"
+              alt=""
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
@@ -207,7 +206,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           >
             <Image
               src="/assets/culture-card-hand.webp"
-              alt="Prism Hand Visual"
+              alt=""
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
@@ -226,7 +225,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           >
             <Image
               src="/assets/culture-office-interior.webp"
-              alt="Modern Office Interior"
+              alt={lang === 'ar' ? 'مساحة العمل الحديثة في Di_Wrapp' : 'Modern Di_Wrapp workspace'}
               fill
               sizes="(max-width: 1024px) 100vw, 66vw"
               className="object-cover object-[center_35%] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
@@ -237,7 +236,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : 'hover'}
-            className="md:col-span-2 lg:col-span-1 rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col justify-center items-start text-left rtl:text-right min-h-[360px] lg:min-h-[420px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
+            className="md:col-span-2 lg:col-span-1 rounded-[28px] lg:rounded-[32px] bg-white dark:bg-surface-2 border border-[#EAECF0] dark:border-[#27272A] p-8 sm:p-10 flex flex-col justify-center items-start text-start min-h-[360px] lg:min-h-[420px] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)]"
           >
             {/* Pill Badge */}
             <Badge variant="pill" className="gap-1.5 px-3 py-1 mb-5">

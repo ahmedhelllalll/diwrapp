@@ -11,7 +11,7 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const culture = (dict as any).culture;
+  const culture = dict.culture;
 
   return {
     title: culture?.badge || 'Our Culture',
@@ -33,11 +33,11 @@ export default async function CulturePage(props: {
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const culture = (dict as any).culture;
+  const culture = dict.culture;
 
   return (
     <main className="flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
-      <OurCultureSection lang={lang} culture={culture} />
+      <OurCultureSection culture={culture} />
       <LifeAtDiwrapp dict={dict} />
       <CareersBentoGrid dict={dict} lang={lang} />
     </main>
