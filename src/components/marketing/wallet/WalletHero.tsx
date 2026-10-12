@@ -79,21 +79,24 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
                 transformOrigin: 'center center',
               }}
             >
-              <img 
-                src="/assets/wallet-trajectory-line.webp" 
-                alt="" 
-                aria-hidden="true"
-                className="object-contain pointer-events-none select-none"
+              <div
+                className="absolute"
                 style={{
-                  position: 'absolute',
                   width: '110%',
                   height: '222%',
                   left: '-5.55%',
                   top: '0px',
-                  right: '0px',
-                  bottom: '0px',
                 }}
-              />
+              >
+                <Image 
+                  src="/assets/wallet-trajectory-line.webp" 
+                  alt="" 
+                  aria-hidden="true"
+                  fill
+                  sizes="100vw"
+                  className="object-contain pointer-events-none select-none"
+                />
+              </div>
             </div>
           </div>
         </div>
