@@ -83,6 +83,7 @@ const renderBidiText = (text?: string) => {
 };
 
 export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = 'en' }) => {
+  const isRtl = lang === 'ar';
   const shouldReduceMotion = useReducedMotion();
   const d = dict?.whyGetDiWrapped;
 
@@ -200,29 +201,37 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
   return (
     <section className="w-full relative overflow-hidden py-16 lg:py-24 bg-transparent">
       {/* ========================================================================= */}
-      {/* Background Grids (Top-Right & Bottom-Left)                                 */}
+      {/* Background Grids (Top-End & Bottom-Start)                                 */}
       {/* ========================================================================= */}
-      {/* Top-Right Architectural Grid (Aligned with Cards Top) */}
+      {/* Top Architectural Grid (Aligned with Cards Top) */}
       <div 
         aria-hidden="true"
-        className="absolute top-[180px] lg:top-[210px] right-0 w-[380px] lg:w-[440px] h-[340px] pointer-events-none select-none z-0 opacity-45 dark:opacity-20 hidden md:block"
+        className="absolute top-[180px] lg:top-[210px] end-0 w-[380px] lg:w-[440px] h-[340px] pointer-events-none select-none z-0 opacity-45 dark:opacity-20 hidden md:block"
         style={{
           backgroundImage: `linear-gradient(to right, var(--grid-line-color, #E4E7EC) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line-color, #E4E7EC) 1px, transparent 1px)`,
           backgroundSize: '32px 32px',
-          maskImage: 'radial-gradient(ellipse at top right, black 35%, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at top right, black 35%, transparent 75%)',
+          maskImage: isRtl
+            ? 'radial-gradient(ellipse at top left, black 35%, transparent 75%)'
+            : 'radial-gradient(ellipse at top right, black 35%, transparent 75%)',
+          WebkitMaskImage: isRtl
+            ? 'radial-gradient(ellipse at top left, black 35%, transparent 75%)'
+            : 'radial-gradient(ellipse at top right, black 35%, transparent 75%)',
         }}
       />
 
-      {/* Bottom-Left Architectural Grid (Aligned with Cards Bottom) */}
+      {/* Bottom Architectural Grid (Aligned with Cards Bottom) */}
       <div 
         aria-hidden="true"
-        className="absolute bottom-[200px] lg:bottom-[230px] left-0 w-[380px] lg:w-[440px] h-[340px] pointer-events-none select-none z-0 opacity-45 dark:opacity-20 hidden md:block"
+        className="absolute bottom-[200px] lg:bottom-[230px] start-0 w-[380px] lg:w-[440px] h-[340px] pointer-events-none select-none z-0 opacity-45 dark:opacity-20 hidden md:block"
         style={{
           backgroundImage: `linear-gradient(to right, var(--grid-line-color, #E4E7EC) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line-color, #E4E7EC) 1px, transparent 1px)`,
           backgroundSize: '32px 32px',
-          maskImage: 'radial-gradient(ellipse at bottom left, black 35%, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at bottom left, black 35%, transparent 75%)',
+          maskImage: isRtl
+            ? 'radial-gradient(ellipse at bottom right, black 35%, transparent 75%)'
+            : 'radial-gradient(ellipse at bottom left, black 35%, transparent 75%)',
+          WebkitMaskImage: isRtl
+            ? 'radial-gradient(ellipse at bottom right, black 35%, transparent 75%)'
+            : 'radial-gradient(ellipse at bottom left, black 35%, transparent 75%)',
         }}
       />
 
@@ -240,10 +249,10 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           {/* Pill Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent mb-5 select-none"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border vendor-badge bg-transparent mb-5 select-none"
           >
-            <ShieldQuestion className="w-3.5 h-3.5 text-text-tertiary dark:text-neutral-400 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-text-tertiary dark:text-neutral-400">
+            <ShieldQuestion className="w-3.5 h-3.5 stroke-[1.8]" />
+            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium">
               {renderBidiText(data.topBadge)}
             </span>
           </motion.div>
@@ -273,9 +282,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
               <motion.div
                 key={card.id}
                 variants={cardVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -4 }}
-                transition={{ duration: 0.2 }}
-                className="w-full rounded-[16px] border vendor-card p-6 sm:p-7 flex flex-col justify-start items-start text-left rtl:text-right shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
+                className="w-full rounded-[16px] border vendor-card p-6 sm:p-7 flex flex-col justify-start items-start text-start shadow-xs hover:shadow-md transition-all duration-300 relative z-10"
               >
                 <div className="w-10 h-10 rounded-[10px] border vendor-icon-box flex items-center justify-center mb-4 shrink-0">
                   <IconComponent className="w-5 h-5 text-heading dark:text-white stroke-[1.8]" />
@@ -302,7 +309,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           className="w-full max-w-[1240px] mx-auto rounded-[16px] border vendor-banner-card backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
         >
           {/* Content Stack (Left) */}
-          <div className="flex flex-col items-start text-left rtl:text-right">
+          <div className="flex flex-col items-start text-start">
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand mb-4 select-none">
               <BrightStar className="w-3.5 h-3.5 text-white stroke-[1.8]" />

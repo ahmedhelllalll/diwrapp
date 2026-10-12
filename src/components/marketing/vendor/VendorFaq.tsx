@@ -133,11 +133,11 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
     <section className="w-full relative overflow-hidden bg-transparent">
       <div className="w-full max-w-[1240px] mx-auto relative px-4 sm:px-6 py-16 lg:py-24">
         {/* ========================================================================= */}
-        {/* Top-Left Background Grid (Desktop Only)                                   */}
+        {/* Background Grid (Desktop Only)                                            */}
         {/* ========================================================================= */}
         <div
           aria-hidden="true"
-          className="hidden lg:block absolute top-0 left-[-60px] rtl:left-auto rtl:right-[-60px] w-[380px] h-[380px] opacity-35 dark:opacity-20 pointer-events-none select-none -z-10 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
+          className="hidden lg:block absolute top-0 start-[-60px] w-[380px] h-[380px] opacity-35 dark:opacity-20 pointer-events-none select-none -z-10 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23CBD5E1' stroke-width='1'/%3E%3C/svg%3E")`,
             backgroundSize: '40px 40px',
@@ -157,10 +157,10 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
           {/* Pill Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent mb-3 select-none"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border vendor-badge bg-transparent mb-3 select-none"
           >
-            <ShieldQuestion className="w-3.5 h-3.5 text-text-tertiary dark:text-neutral-400 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium text-text-tertiary dark:text-neutral-400">
+            <ShieldQuestion className="w-3.5 h-3.5 stroke-[1.8]" />
+            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium">
               {renderBidiText(data.badge)}
             </span>
           </motion.div>
@@ -199,7 +199,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${item.id}`}
                   id={`faq-question-${item.id}`}
-                  className="w-full flex items-center justify-between text-left rtl:text-right gap-4 cursor-pointer select-none group"
+                  className="w-full flex items-center justify-between text-start gap-4 cursor-pointer select-none group"
                 >
                   <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[17px] font-medium text-heading dark:text-white group-hover:text-brand transition-colors">
                     {renderBidiText(item.question)}
@@ -252,7 +252,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
                 </span>
               </div>
               <div className="w-8 h-8 rounded-full border vendor-btn-secondary flex items-center justify-center shrink-0 group-hover:border-brand transition-colors">
-                <ArrowUpRight className="w-4 h-4 text-text-secondary dark:text-neutral-300 group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all rtl:rotate-[-90deg]" />
+                <ArrowUpRight className="w-4 h-4 text-text-secondary dark:text-neutral-300 group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:group-hover:-translate-x-0.5 transition-all rtl:rotate-[-90deg]" />
               </div>
             </Link>
           </motion.div>
