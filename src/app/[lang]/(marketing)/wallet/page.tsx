@@ -39,7 +39,7 @@ export default async function WalletPage(props: {
   const wallet = (dict as any).wallet;
 
   return (
-    <main className="flex-grow flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300">
+    <main className="wallet-scope flex-grow flex flex-col bg-white dark:bg-surface-1 transition-colors duration-300">
       <WalletHero lang={lang} dict={wallet} />
       <WalletStatement dict={wallet} />
       <WalletFeatures dict={wallet} />

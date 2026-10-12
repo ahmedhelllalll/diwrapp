@@ -36,7 +36,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-[#080808] min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
+    <section className="relative w-full overflow-hidden bg-white dark:bg-surface-1 min-h-[780px] lg:h-[840px] flex flex-col justify-start transition-colors duration-300">
       {/* Unified Background Layer (Full Width Cover) */}
       <motion.div 
         dir="ltr"
@@ -106,20 +106,20 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         }}
       >
         {/* Badge */}
-        <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-[#E4E7EC] dark:border-neutral-800 bg-transparent text-xs font-medium text-[#344054] dark:text-neutral-300 mb-5 shadow-xs select-none">
-          <CardWallet className="w-3.5 h-3.5 text-[#344054] dark:text-neutral-300" strokeWidth={1.5} />
+        <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border border-border-200 dark:border-card-border bg-transparent text-xs font-medium text-text-secondary dark:text-neutral-300 mb-5 shadow-xs select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+          <CardWallet className="w-3.5 h-3.5 text-text-secondary dark:text-neutral-300 stroke-[1.8]" />
           <span>{w?.heroBadge || 'Di_Wrapp Wallet'}</span>
         </motion.div>
 
         {/* Title: 2 lines */}
-        <motion.h1 variants={itemVariants} className="text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-[#101828] dark:text-white mb-4 max-w-[650px]">
+        <motion.h1 variants={itemVariants} className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[40px] sm:text-[46px] lg:text-[48px] font-semibold leading-[52px] sm:leading-[58px] lg:leading-[60px] tracking-[-0.01em] text-heading dark:text-white mb-4 max-w-[650px]">
           {w?.heroTitleLine1 || 'Secure, Flexible &'}
           <br />
           {w?.heroTitleLine2 || 'Instant Transactions'}
         </motion.h1>
 
         {/* Subtitle: 3 lines */}
-        <motion.p variants={itemVariants} className="text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-[#667085] dark:text-neutral-400 max-w-[620px] mb-24 font-normal">
+        <motion.p variants={itemVariants} className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px] text-text-secondary dark:text-neutral-400 max-w-[620px] mb-24 font-normal">
           {w?.heroSubtitleLine1 ? (
             <>
               {w.heroSubtitleLine1}
@@ -127,7 +127,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
               {w.heroSubtitleLine2}
               <br />
               {w.heroSubtitleLine3}
-              <span className="font-semibold text-[#101828] dark:text-white">
+              <span className="font-semibold text-heading dark:text-white">
                 {w.heroSubtitleHighlight || 'all in one place.'}
               </span>
             </>
@@ -135,7 +135,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
             <>
               {w?.heroSubtitlePart1 ||
                 'The Di_Wrapp Wallet is your digital financial hub within the platform. It gives advertisers and vendors full control over transactions, top-ups, and campaign payments — '}
-              <span className="font-semibold text-[#101828] dark:text-white">
+              <span className="font-semibold text-heading dark:text-white">
                 {w?.heroSubtitleHighlight || 'all in one place.'}
               </span>
             </>
@@ -145,12 +145,12 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         {/* CTA Button */}
         <motion.div
           variants={itemVariants}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.97 }}
+          whileHover={shouldReduceMotion ? {} : { y: -2 }}
+          whileTap={{ scale: 0.98 }}
         >
           <Link
             href={`/${lang}/signup?role=advertiser`}
-            className="h-[44px] px-6 rounded-[8px] bg-[#0066FF] hover:bg-blue-600 text-white text-[14px] font-medium leading-[20px] transition-colors shadow-xs hover:shadow-[0_4px_14px_rgba(0,102,255,0.3)] inline-flex items-center justify-center cursor-pointer"
+            className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white text-[14px] font-medium leading-[20px] transition-colors shadow-xs hover:shadow-[0_4px_14px_rgba(0,102,255,0.25)] inline-flex items-center justify-center cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] active:scale-[0.98]"
           >
             {w?.ctaButton || 'Top Up my Wallet'}
           </Link>
