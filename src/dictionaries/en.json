@@ -564,6 +564,7 @@
         "nameRequired": "Please enter your name",
         "emailRequired": "Please enter your email address",
         "emailInvalid": "Please enter a valid email address",
+        "phoneInvalid": "Please enter a valid phone number",
         "messageRequired": "Please enter your message",
         "messageMin": "Message must be at least 10 characters"
       },

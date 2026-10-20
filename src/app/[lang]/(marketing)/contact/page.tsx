@@ -69,7 +69,8 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
         {/* Ambient Background Glow (Canvas Depth in Dark Mode) */}
         <div 
           aria-hidden="true"
-          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-gradient-to-b from-indigo-500/[0.07] via-slate-400/[0.03] to-transparent blur-3xl opacity-0 dark:opacity-100 transition-opacity duration-500" 
+          style={{ contain: 'strict' }}
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-gradient-to-b from-indigo-500/[0.07] via-slate-400/[0.03] to-transparent blur-3xl opacity-0 dark:opacity-100 transition-opacity duration-500 transform-gpu" 
         />
 
         {/* Main Content Container */}
