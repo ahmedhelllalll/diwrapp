@@ -624,10 +624,10 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "contact-name-error" : undefined}
                 placeholder={dict?.namePlaceholder || (isRtl ? "أدخل الاسم" : "Enter name")}
-                className={`contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border px-3.5 text-base sm:text-sm bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
+                className={`contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border px-3.5 text-base sm:text-sm bg-white dark:bg-[#0a0a0a] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
                   errors.name
                     ? "border-rose-500 dark:border-rose-500/80 focus-visible:ring-rose-500/20"
-                    : "border-slate-300 dark:border-white/[0.09] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-white/30"
+                    : "border-slate-300 dark:border-[#27272A] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-zinc-500"
                 }`}
               />
               {errors.name && (
@@ -662,10 +662,10 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "contact-email-error" : undefined}
                 placeholder={dict?.emailPlaceholder || (isRtl ? "أدخل البريد الإلكتروني" : "Enter email")}
-                className={`contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border px-3.5 text-base sm:text-sm bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
+                className={`contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border px-3.5 text-base sm:text-sm bg-white dark:bg-[#0a0a0a] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
                   errors.email
                     ? "border-rose-500 dark:border-rose-500/80 focus-visible:ring-rose-500/20"
-                    : "border-slate-300 dark:border-white/[0.09] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-white/30"
+                    : "border-slate-300 dark:border-[#27272A] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-zinc-500"
                 }`}
               />
               {errors.email && (
@@ -687,7 +687,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
             <div
               className={`contact-phone-group relative ${
                 isCountryDropdownOpen ? "z-30 is-open" : "z-0"
-              } ${errors.phone ? "has-error border-rose-500 dark:border-rose-500/80" : "border-slate-300 dark:border-white/[0.09]"} border bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] focus-within:border-slate-400 focus-within:dark:border-white/30 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-white/20 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12`}
+              } ${errors.phone ? "has-error border-rose-500 dark:border-rose-500/80" : "border-slate-300 dark:border-[#27272A]"} border bg-white dark:bg-[#0a0a0a] focus-within:border-slate-400 focus-within:dark:border-zinc-500 focus-within:ring-2 focus-within:ring-brand/20 dark:focus-within:ring-zinc-600 rounded-xl w-full transition-colors duration-200 flex items-center min-h-[44px] h-11 sm:h-12`}
             >
               <div ref={dropdownContainerRef} className="relative h-full flex items-center shrink-0">
                 <button
@@ -725,11 +725,11 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                   <div
                     data-lenis-prevent
                     onWheel={(e) => e.stopPropagation()}
-                    className="absolute top-full start-0 mt-1.5 w-64 sm:w-72 max-w-[calc(100vw-32px)] bg-white/98 dark:bg-zinc-900/95 dark:backdrop-blur-xl border border-slate-200 dark:border-white/[0.1] rounded-xl shadow-xl z-30 py-1 overflow-hidden flex flex-col"
+                    className="absolute top-full start-0 mt-1.5 w-64 sm:w-72 max-w-[calc(100vw-32px)] bg-white/98 dark:bg-[#0a0a0a] border border-slate-200 dark:border-[#27272A] rounded-xl shadow-xl z-30 py-1 overflow-hidden flex flex-col"
                     dir={isRtl ? "rtl" : "ltr"}
                   >
                     {/* Search Input matching dropdown style */}
-                    <div className="p-2 border-b border-slate-100 dark:border-white/[0.06] sticky top-0 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md z-10">
+                    <div className="p-2 border-b border-slate-100 dark:border-[#27272A] sticky top-0 bg-white/95 dark:bg-[#0a0a0a] backdrop-blur-md z-10">
                       <div className="relative flex items-center">
                         <Search
                           width={14}
@@ -747,7 +747,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                           }}
                           onKeyDown={handleSearchKeyDown}
                           placeholder={isRtl ? "ابحث عن الدولة أو الرمز..." : "Search country or code..."}
-                          className="w-full ps-8 pe-2.5 py-1.5 text-xs bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-white/[0.08] rounded-lg text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 outline-none focus:border-slate-400 dark:focus:border-white/30 transition-colors"
+                          className="w-full ps-8 pe-2.5 py-1.5 text-xs bg-slate-50 dark:bg-[#0a0a0a] border border-slate-200 dark:border-[#27272A] rounded-lg text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 outline-none focus:border-slate-400 dark:focus:border-zinc-500 transition-colors"
                           aria-label={isRtl ? "بحث عن دولة" : "Search country"}
                         />
                       </div>
@@ -812,7 +812,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                           {/* Subtle Separator (visible only when not actively searching) */}
                           {!searchQuery && filteredPriority.length > 0 && filteredOthers.length > 0 && (
                             <div
-                              className="my-1 border-t border-slate-200/80 dark:border-white/[0.08]"
+                              className="my-1 border-t border-slate-200/80 dark:border-[#27272A]"
                               role="separator"
                               aria-hidden="true"
                             />
@@ -898,7 +898,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
               value={formData.subject}
               onChange={handleInputChange}
               placeholder={dict?.subjectPlaceholder || (isRtl ? "أدخل الموضوع" : "Enter Subject")}
-              className="contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border border-slate-300 dark:border-white/[0.09] px-3.5 text-base sm:text-sm bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus-visible:border-slate-400 focus-visible:ring-2 focus-visible:ring-brand/20 dark:focus-visible:border-white/30 outline-none w-full transition-colors duration-200"
+              className="contact-input min-h-[44px] h-11 sm:h-12 rounded-xl border border-slate-300 dark:border-[#27272A] px-3.5 text-base sm:text-sm bg-white dark:bg-[#0a0a0a] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 focus-visible:border-slate-400 focus-visible:ring-2 focus-visible:ring-brand/20 dark:focus-visible:border-zinc-500 outline-none w-full transition-colors duration-200"
             />
           </div>
 
@@ -921,10 +921,10 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? "contact-message-error" : undefined}
                 placeholder={dict?.messagePlaceholder || (isRtl ? "اكتب هنا..." : "Type here...")}
-                className={`contact-textarea rounded-xl border p-3.5 pb-8 text-base sm:text-sm bg-white dark:bg-zinc-900/60 dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.03)] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 min-h-[144px] focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
+                className={`contact-textarea rounded-xl border p-3.5 pb-8 text-base sm:text-sm bg-white dark:bg-[#0a0a0a] placeholder:text-slate-400 dark:placeholder:text-zinc-500 text-slate-900 dark:text-zinc-100 outline-none w-full transition-colors duration-200 min-h-[144px] focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 ${
                   errors.message
                     ? "border-rose-500 dark:border-rose-500/80 focus-visible:ring-rose-500/20"
-                    : "border-slate-300 dark:border-white/[0.09] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-white/30"
+                    : "border-slate-300 dark:border-[#27272A] focus-visible:border-slate-400 focus-visible:ring-brand/20 dark:focus-visible:border-zinc-500"
                 }`}
               />
               <span className="contact-char-count absolute bottom-2.5 end-3 text-slate-600 dark:text-zinc-400 text-xs font-mono select-none" aria-live="polite">

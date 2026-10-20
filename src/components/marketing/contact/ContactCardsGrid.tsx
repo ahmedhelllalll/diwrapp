@@ -65,11 +65,11 @@ export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
       {contactItems.map((item) => (
         <div 
           key={item.id} 
-          className="contact-card h-full min-h-[170px] lg:min-h-[185px] rounded-2xl md:rounded-3xl border border-slate-200/80 bg-white md:bg-white/80 md:backdrop-blur-md shadow-[0_2px_10px_-2px_rgba(0,0,0,0.03)] dark:bg-zinc-900/90 dark:md:bg-zinc-900/40 dark:md:backdrop-blur-xl dark:border-white/[0.08] dark:hover:border-white/[0.18] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] p-5 lg:p-6 flex flex-col justify-between hover:-translate-y-[2px] transition-all duration-300 ease-out cursor-default"
+          className="contact-card h-full min-h-[170px] lg:min-h-[185px] rounded-2xl md:rounded-3xl border border-slate-200/80 bg-white md:bg-white/80 md:backdrop-blur-md shadow-[0_2px_10px_-2px_rgba(0,0,0,0.03)] dark:bg-[#0a0a0a] dark:border-[#27272A] dark:hover:border-zinc-700 p-5 lg:p-6 flex flex-col justify-between hover:-translate-y-[2px] transition-all duration-300 ease-out cursor-default"
         >
           {/* 40x40 Rounded-xl Icon Container */}
           <div 
-            className="contact-card-icon-box w-10 h-10 min-w-[40px] rounded-xl border border-slate-200/80 bg-slate-50/80 dark:bg-white/[0.04] dark:border-white/[0.1] dark:text-zinc-200 flex items-center justify-center text-slate-800 mb-5 lg:mb-6 self-start shrink-0" 
+            className="contact-card-icon-box w-10 h-10 min-w-[40px] rounded-xl border border-slate-200/80 bg-slate-50/80 dark:bg-[#0a0a0a] dark:border-[#27272A] dark:text-zinc-200 flex items-center justify-center text-slate-800 mb-5 lg:mb-6 self-start shrink-0" 
             aria-hidden="true"
           >
             {item.icon}

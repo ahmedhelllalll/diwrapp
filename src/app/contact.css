@@ -630,8 +630,8 @@
    ========================================================================== */
 .newsletter-section {
   width: 100%;
-  background-color: #FFFFFF;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  background-color: #F2F4F7;
+  border-top: 1px solid #EAECF0;
   box-shadow: 0 -2px 10px -2px rgba(0, 0, 0, 0.03);
   padding: 56px 0;
   margin-top: auto;
@@ -640,9 +640,9 @@
 
 @media (min-width: 768px) {
   .newsletter-section {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: #F2F4F7;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
@@ -684,9 +684,10 @@
 
 .newsletter-title {
   font-family: inherit;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 32px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.01em;
   color: #101828;
   margin: 0;
 }
@@ -694,19 +695,19 @@
 .newsletter-desc {
   font-family: inherit;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #637083;
-  margin: 4px 0 0 0;
+  font-size: 15px;
+  line-height: 22px;
+  color: #344054;
+  margin: 8px 0 0 0;
 }
 
 .newsletter-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   width: 100%;
-  max-width: 448px;
+  max-width: 380px;
   margin: 0 auto;
 }
 
@@ -716,17 +717,18 @@
     width: auto;
     max-width: none;
     margin: 0;
+    gap: 12px;
   }
 }
 
 .newsletter-input {
-  height: 46px;
+  height: 48px;
   background-color: #FFFFFF;
-  border: 1px solid #EAECF0;
+  border: 1px solid #D0D5DD;
   border-radius: 12px;
   padding: 0 16px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   color: #101828;
   box-sizing: border-box;
   outline: none;
@@ -734,9 +736,10 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .newsletter-input {
     width: 320px;
+    font-size: 14px;
   }
 }
 
@@ -745,7 +748,7 @@
 }
 
 .newsletter-input:hover {
-  border-color: #D0D5DD;
+  border-color: #98A2B3;
 }
 
 .newsletter-input:focus {
@@ -754,19 +757,30 @@
 }
 
 .newsletter-btn {
-  height: 46px;
+  height: 48px;
   background-color: #101828;
   color: #FFFFFF;
   border-radius: 12px;
   padding: 0 24px;
   font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.2s ease, transform 0.15s ease;
-  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .newsletter-btn {
+    width: auto;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
 }
 
 .newsletter-btn:hover {
@@ -813,34 +827,34 @@
 }
 
 .dark .contact-card {
-  background-color: #121214;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  background-color: var(--card-surface);
+  border-color: var(--card-border);
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {
   .dark .contact-card {
-    background-color: rgba(24, 24, 27, 0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background-color: var(--card-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
 .dark .contact-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+  border-color: #3F3F46;
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
 }
 
 .dark .contact-card-icon-box {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--card-surface);
+  border-color: var(--card-border);
   color: #E4E4E7; /* zinc-200 */
 }
 
 @media (min-width: 768px) {
   .dark .contact-card-icon-box {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
@@ -855,9 +869,9 @@
 .dark .contact-input,
 .dark .contact-textarea,
 .dark .contact-phone-group {
-  background-color: #121214;
-  border-color: rgba(255, 255, 255, 0.09);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03);
+  background-color: var(--card-surface);
+  border-color: var(--card-border);
+  box-shadow: none;
   color: #F4F4F5; /* zinc-100 */
 }
 
@@ -865,18 +879,18 @@
   .dark .contact-input,
   .dark .contact-textarea,
   .dark .contact-phone-group {
-    background-color: rgba(24, 24, 27, 0.3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: var(--card-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
 .dark .newsletter-input {
-  background-color: rgba(24, 24, 27, 0.3); /* zinc-900/30 */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-color: rgba(255, 255, 255, 0.09);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03);
+  background-color: var(--card-surface);
+  border-color: var(--card-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
   color: #F4F4F5;
 }
 
@@ -916,19 +930,19 @@
 .dark .contact-input:hover,
 .dark .contact-textarea:hover,
 .dark .contact-phone-group:hover {
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: #3F3F46;
 }
 
 .dark .newsletter-input:hover {
-  border-color: #71717A;
+  border-color: #3F3F46;
 }
 
 .dark .contact-input:focus,
 .dark .contact-textarea:focus,
 .dark .contact-phone-group:focus-within,
 .dark .contact-phone-group.is-open {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-color: #52525B;
+  box-shadow: 0 0 0 1px #52525B;
 }
 
 .dark .contact-phone-group.has-error {
@@ -938,12 +952,12 @@
 .dark .contact-phone-group.has-error:focus-within,
 .dark .contact-phone-group.has-error.is-open {
   border-color: rgba(251, 113, 133, 0.9) !important;
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.03), 0 0 0 1px rgba(251, 113, 133, 0.4) !important;
+  box-shadow: 0 0 0 1px rgba(251, 113, 133, 0.4) !important;
 }
 
 .dark .newsletter-input:focus {
-  border-color: #A1A1AA;
-  box-shadow: 0 0 0 1px #A1A1AA;
+  border-color: #52525B;
+  box-shadow: 0 0 0 1px #52525B;
 }
 
 .dark .contact-btn-submit {
@@ -965,16 +979,16 @@
 }
 
 .dark .newsletter-section {
-  background-color: #080808;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  background-color: var(--card-surface);
+  border-top: 1px solid var(--card-border);
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {
   .dark .newsletter-section {
-    background-color: rgba(24, 24, 27, 0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background-color: var(--card-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
