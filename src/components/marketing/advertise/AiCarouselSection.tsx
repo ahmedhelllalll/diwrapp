@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useId } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion, PanInfo } from "framer-motion";
 import { Sparks } from "iconoir-react";
@@ -164,24 +163,50 @@ export default function AiCarouselSection({
         style={{ '--i': 0 } as React.CSSProperties}
       >
         {/* Fixed Background Image - Light Mode */}
-        <Image
-          src="/assets/background-ai.webp"
-          alt="Wrapp AI Background"
-          fill
-          priority
-          unoptimized
-          className="ai-carousel-bg dark:hidden"
-        />
+        <picture className="ai-carousel-bg ai-carousel-bg-light dark:hidden">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/background-ai-light-mobile.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/assets/background-ai.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/background-ai.webp"
+            alt=""
+            aria-hidden="true"
+            className="ai-carousel-img"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
 
         {/* Fixed Background Image - Dark Mode */}
-        <Image
-          src="/assets/background-ai-dark.webp"
-          alt="Wrapp AI Background Dark"
-          fill
-          priority
-          unoptimized
-          className="ai-carousel-bg hidden dark:block"
-        />
+        <picture className="ai-carousel-bg ai-carousel-bg-dark hidden dark:block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/background-ai-dark-mobile.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/assets/background-ai-dark.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/background-ai-dark.webp"
+            alt=""
+            aria-hidden="true"
+            className="ai-carousel-img"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
 
         {/* Dynamic Carousel Content with buttery smooth AnimatePresence transition */}
         <AnimatePresence mode="wait" initial={false}>

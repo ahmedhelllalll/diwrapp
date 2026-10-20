@@ -678,18 +678,25 @@
   border: 1px solid var(--Border-Colors-border-200);
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  padding: 40px 24px;
-  min-height: 420px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 24px 20px 28px;
+  min-height: clamp(540px, 80vh, 600px);
+  max-height: 85vh;
   background-color: var(--card-surface);
   box-shadow: 0 1px 3px rgba(16, 24, 40, 0.02);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .ai-carousel-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     padding: 48px 40px;
     border-radius: 28px;
     min-height: 440px;
+    max-height: none;
   }
 }
 
@@ -701,22 +708,54 @@
   }
 }
 
-/* Fixed Background Image */
+/* Fixed Background Image / Picture Element */
 .ai-carousel-bg {
-  object-fit: cover;
-  object-position: center right;
-  width: 100%;
-  height: 100%;
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
   user-select: none;
+  overflow: hidden;
 }
 
-[dir="rtl"] .ai-carousel-bg {
-  transform: scaleX(-1);
-  object-position: center left;
+.ai-carousel-bg-light {
+  display: block;
+}
+
+.dark .ai-carousel-bg-light {
+  display: none !important;
+}
+
+.ai-carousel-bg-dark {
+  display: none !important;
+}
+
+.dark .ai-carousel-bg-dark {
+  display: block !important;
+}
+
+.ai-carousel-bg img,
+.ai-carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .ai-carousel-bg img,
+  .ai-carousel-img {
+    object-position: center right;
+  }
+
+  [dir="rtl"] .ai-carousel-bg img,
+  [dir="rtl"] .ai-carousel-img {
+    transform: scaleX(-1);
+    object-position: center left;
+  }
 }
 
 /* Dynamic Carousel Content Area */
@@ -728,32 +767,51 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .ai-carousel-content {
+    margin-top: 0;
+  }
 }
 
 /* 1. Badge (Top Tag) */
 .ai-carousel-badge {
   display: inline-flex;
   align-items: center;
-  width: 275px;
-  height: 40px;
+  width: auto;
+  max-width: 100%;
+  height: 36px;
   border-radius: 12px;
   border: 1px solid var(--Border-Colors-border-200);
   background-color: transparent;
-  padding: 4px 10px 4px 8px; /* padding-top: 4, padding-right: 10, padding-bottom: 4, padding-left: 8 */
-  gap: 4px;
+  padding: 4px 12px 4px 10px;
+  gap: 6px;
   box-sizing: border-box;
   opacity: 1;
   font-family: 'Lufga', var(--font-sans), sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--Text-text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   user-select: none;
 }
 
 .dark .ai-carousel-badge {
   border-color: var(--card-border);
   color: var(--Text-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .ai-carousel-badge {
+    width: 275px;
+    height: 40px;
+    padding: 4px 10px 4px 8px;
+    gap: 4px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
 }
 
 .ai-carousel-badge-icon {
@@ -771,11 +829,11 @@
 .ai-carousel-title {
   font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 500;
-  font-size: 26px;
-  line-height: 34px;
+  font-size: 22px;
+  line-height: 29px;
   letter-spacing: -0.01em;
   color: var(--heading);
-  margin: 0 0 16px 0;
+  margin: 0 0 10px 0;
 }
 
 .dark .ai-carousel-title {
@@ -784,8 +842,17 @@
 
 @media (min-width: 640px) {
   .ai-carousel-title {
+    font-size: 25px;
+    line-height: 33px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ai-carousel-title {
     font-size: 29px;
     line-height: 37px;
+    margin-bottom: 16px;
   }
 }
 
@@ -800,11 +867,11 @@
 .ai-carousel-desc {
   font-family: 'Lufga', var(--font-sans), sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 14px;
+  line-height: 22px;
   letter-spacing: 0;
   color: var(--Text-text-secondary);
-  margin: 0 0 28px 0;
+  margin: 0 0 20px 0;
 }
 
 .dark .ai-carousel-desc {
@@ -836,9 +903,9 @@
   background-color: var(--brand, #0066FF);
   color: #FFFFFF;
   font-family: 'Lufga', var(--font-sans), sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 12px 26px;
+  padding: 11px 24px;
   border-radius: 12px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.28);
@@ -846,6 +913,13 @@
               box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.2s ease;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .ai-carousel-cta {
+    font-size: 15px;
+    padding: 12px 26px;
+  }
 }
 
 .ai-carousel-cta:hover {
