@@ -144,6 +144,32 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
         transition: { duration: 0.2 },
       };
 
+  const [activeCard, setActiveCard] = React.useState(0);
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+
+  const handleCarouselScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) return;
+    const scrollPos = Math.abs(el.scrollLeft);
+    const ratio = scrollPos / maxScroll;
+    if (ratio < 0.33) setActiveCard(0);
+    else if (ratio < 0.67) setActiveCard(1);
+    else setActiveCard(2);
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!carouselRef.current) return;
+    const cards = carouselRef.current.children;
+    if (cards[index]) {
+      (cards[index] as HTMLElement).scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    }
+  };
+
   return (
     <section className="w-full bg-white dark:bg-[#080808] transition-colors duration-300 pt-24 pb-16 sm:pt-24 sm:pb-20 lg:py-24 overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center">
@@ -211,30 +237,30 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-[1200px] mx-auto mt-12 sm:mt-16 lg:mt-20 min-h-[460px] sm:min-h-[560px] lg:min-h-[640px] flex items-center justify-center"
+          className="relative w-full max-w-[1200px] mx-auto mt-8 sm:mt-16 lg:mt-20 min-h-0 sm:min-h-[560px] lg:min-h-[640px] flex items-center justify-center"
         >
           {/* 1. Center Tablet Mockup (Back Layer - z-[2]) */}
-          <div className="w-[88%] sm:w-[80%] lg:w-[55%] max-w-[720px] mx-auto relative z-[2] select-none pointer-events-none -translate-x-4 sm:-translate-x-8 lg:-translate-x-[70px] transition-transform duration-300">
+          <div className="w-[94%] sm:w-[80%] lg:w-[55%] max-w-[720px] mx-auto relative z-[2] select-none pointer-events-none -translate-x-2 sm:-translate-x-8 lg:-translate-x-[70px] transition-transform duration-300">
             <Image
               src="/assets/ask-di-tablet-mockup.webp"
               alt="Ask_Di Tablet Interface Mockup"
               width={2420}
               height={1689}
               priority
-              sizes="(max-width: 640px) 88vw, (max-width: 1024px) 80vw, 720px"
+              sizes="(max-width: 640px) 94vw, (max-width: 1024px) 80vw, 720px"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
 
           {/* 2. Angled Mobile Mockup (Front Overlap Layer - z-[4]) */}
-          <div className="absolute right-[14%] lg:right-[18%] bottom-[24px] sm:bottom-[48px] lg:bottom-[76px] w-[34%] sm:w-[30%] lg:w-[28%] max-w-[340px] z-[4] select-none pointer-events-none transition-all duration-300">
+          <div className="absolute right-[10%] sm:right-[14%] lg:right-[18%] bottom-[8px] sm:bottom-[48px] lg:bottom-[76px] w-[36%] sm:w-[30%] lg:w-[28%] max-w-[340px] z-[4] select-none pointer-events-none translate-x-4 sm:translate-x-0 transition-all duration-300">
             <Image
               src="/assets/ask-di-mobile-mockup.webp"
               alt="Ask_Di Mobile Interface Mockup"
               width={1386}
               height={1736}
               priority
-              sizes="(max-width: 640px) 34vw, (max-width: 1024px) 30vw, 340px"
+              sizes="(max-width: 640px) 36vw, (max-width: 1024px) 30vw, 340px"
               className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
@@ -297,9 +323,82 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
         </motion.div>
 
         {/* ========================================================================= */}
-        {/* Mobile / Tablet Responsive Grid (< lg screens)                            */}
+        {/* Mobile Feature Cards Horizontal Carousel (< sm screens only)              */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 w-full max-w-[1100px] lg:hidden">
+        <div className="sm:hidden w-full mt-6">
+          <div
+            ref={carouselRef}
+            onScroll={handleCarouselScroll}
+            className="flex gap-3 overflow-x-auto snap-x snap-mandatory px-4 -mx-4 pb-2 pt-1 scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {/* Carousel Card 1 */}
+            <div className="flex flex-col justify-between items-start w-[82vw] max-w-[340px] shrink-0 snap-start rounded-[20px] border-2 border-[#EAECF0] dark:border-neutral-800 bg-white/95 dark:bg-[#121212]/95 backdrop-blur-md p-5 shadow-[0_8px_24px_-4px_rgba(16,24,40,0.06)] text-left rtl:text-right gap-4">
+              <div className="w-10 h-10 rounded-[10px] border border-[#EAECF0] dark:border-neutral-700 bg-transparent flex items-center justify-center shrink-0">
+                <Flare className="w-5 h-5 text-[#101828] dark:text-white stroke-[1.8]" />
+              </div>
+              <div className="w-full">
+                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-semibold text-[#101828] dark:text-white mb-2">
+                  {renderBidiText(data.cards?.bookingAssistant?.title)}
+                </h3>
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-[#667085] dark:text-neutral-400">
+                  {renderBidiText(data.cards?.bookingAssistant?.description)}
+                </p>
+              </div>
+            </div>
+
+            {/* Carousel Card 2 */}
+            <div className="flex flex-col justify-between items-start w-[82vw] max-w-[340px] shrink-0 snap-start rounded-[20px] border-2 border-[#EAECF0] dark:border-neutral-800 bg-white/95 dark:bg-[#121212]/95 backdrop-blur-md p-5 shadow-[0_8px_24px_-4px_rgba(16,24,40,0.06)] text-left rtl:text-right gap-4">
+              <div className="w-10 h-10 rounded-[10px] border border-[#EAECF0] dark:border-neutral-700 bg-transparent flex items-center justify-center shrink-0">
+                <StatsUpSquare className="w-5 h-5 text-[#101828] dark:text-white stroke-[1.8]" />
+              </div>
+              <div className="w-full">
+                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-semibold text-[#101828] dark:text-white mb-2">
+                  {renderBidiText(data.cards?.campaignResults?.title)}
+                </h3>
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-[#667085] dark:text-neutral-400">
+                  {renderBidiText(data.cards?.campaignResults?.description)}
+                </p>
+              </div>
+            </div>
+
+            {/* Carousel Card 3 */}
+            <div className="flex flex-col justify-between items-start w-[82vw] max-w-[340px] shrink-0 snap-start rounded-[20px] border-2 border-[#EAECF0] dark:border-neutral-800 bg-white/95 dark:bg-[#121212]/95 backdrop-blur-md p-5 shadow-[0_8px_24px_-4px_rgba(16,24,40,0.06)] text-left rtl:text-right gap-4">
+              <div className="w-10 h-10 rounded-[10px] border border-[#EAECF0] dark:border-neutral-700 bg-transparent flex items-center justify-center shrink-0">
+                <DesignNib className="w-5 h-5 text-[#101828] dark:text-white stroke-[1.8]" />
+              </div>
+              <div className="w-full">
+                <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[18px] font-semibold text-[#101828] dark:text-white mb-2">
+                  {renderBidiText(data.cards?.startDesigning?.title)}
+                </h3>
+                <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-normal leading-[20px] text-[#667085] dark:text-neutral-400">
+                  {renderBidiText(data.cards?.startDesigning?.description)}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex items-center justify-center gap-1.5 mt-3">
+            {[0, 1, 2].map((i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollToIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeCard === i
+                    ? 'w-5 bg-[#0066FF]'
+                    : 'w-1.5 bg-[#D0D5DD] dark:bg-neutral-700'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* Tablet Responsive Grid (sm to lg screens only)                            */}
+        {/* ========================================================================= */}
+        <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 w-full max-w-[1100px] lg:hidden">
           {/* Mobile Card 1 */}
           <motion.div
             {...hoverCardAnimation}
