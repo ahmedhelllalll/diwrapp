@@ -263,7 +263,7 @@ export default function PlatformFeaturesSection({
             </div>
 
             {/* Bottom Copy */}
-            <div className="mt-6 mb-2">
+            <div className="mt-6 mb-2 px-1 sm:px-0">
               <h3 className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-semibold text-lg text-[#101828] dark:text-white mb-2">
                 {card1.title}
               </h3>
@@ -281,7 +281,7 @@ export default function PlatformFeaturesSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.75, delay: noDelay ? 0 : 0.16, ease: appleEasing }}
-              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
+              className="flex-1 flex flex-col justify-between items-start p-9 sm:p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
                 <FeatureBadge
@@ -312,7 +312,7 @@ export default function PlatformFeaturesSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.75, delay: noDelay ? 0 : 0.24, ease: appleEasing }}
-              className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
+              className="flex-1 flex flex-col justify-between items-start p-9 sm:p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
                 <FeatureBadge

@@ -64,7 +64,7 @@ export default function BentoShowcaseSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.75, delay: noDelay ? 0 : 0.08, ease: appleEasing }}
-              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
+              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-9 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
             >
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300">
                 {card1.label}
@@ -89,7 +89,7 @@ export default function BentoShowcaseSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.75, delay: noDelay ? 0 : 0.16, ease: appleEasing }}
-              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
+              className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-9 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
             >
               <div className="max-w-[240px] relative z-10">
                 <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300 block">
@@ -117,7 +117,7 @@ export default function BentoShowcaseSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: animMargin }}
             transition={{ duration: 0.8, delay: noDelay ? 0 : 0.12, ease: appleEasing }}
-            className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 relative overflow-hidden md:overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out z-10"
+            className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-9 sm:p-8 lg:p-10 relative overflow-hidden md:overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out z-10"
           >
             {/* Card 3 Content (Left Side) */}
             <div className="max-w-[340px] relative z-10">
@@ -144,7 +144,7 @@ export default function BentoShowcaseSection({
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.85, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
-              className="relative mt-8 -mb-8 md:mt-0 md:mb-0 md:absolute md:right-[-8%] lg:right-[-9%] md:bottom-0 pointer-events-none select-none z-20 w-full sm:w-[85%] md:w-[65%] lg:w-[68%] max-w-[720px] rtl:md:right-auto rtl:md:left-[-8%] rtl:lg:left-[-9%]"
+              className="relative mt-8 -mb-9 md:mt-0 md:mb-0 md:absolute md:right-[-8%] lg:right-[-9%] md:bottom-0 pointer-events-none select-none z-20 w-full sm:w-[85%] md:w-[65%] lg:w-[68%] max-w-[720px] rtl:md:right-auto rtl:md:left-[-8%] rtl:lg:left-[-9%]"
             >
               <Image
                 src="/assets/join-laptop.png"
