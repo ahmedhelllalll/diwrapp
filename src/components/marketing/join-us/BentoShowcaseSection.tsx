@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface BentoCardData {
   label?: string;
@@ -46,6 +47,9 @@ export default function BentoShowcaseSection({
 }: BentoShowcaseSectionProps) {
   const isRtl = lang === 'ar';
   const shouldReduceMotion = useReducedMotion();
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const animMargin = isDesktop ? '-40px' : '0px';
+  const noDelay = shouldReduceMotion || !isDesktop;
 
   return (
     <section className="relative w-full bg-white dark:bg-[#080808] transition-colors duration-300 py-12 md:py-16">
@@ -58,8 +62,8 @@ export default function BentoShowcaseSection({
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+              viewport={{ once: true, margin: animMargin }}
+              transition={{ duration: 0.75, delay: noDelay ? 0 : 0.08, ease: appleEasing }}
               className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
             >
               <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium leading-[20px] text-[#344054] dark:text-zinc-300">
@@ -83,8 +87,8 @@ export default function BentoShowcaseSection({
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.16, ease: appleEasing }}
+              viewport={{ once: true, margin: animMargin }}
+              transition={{ duration: 0.75, delay: noDelay ? 0 : 0.16, ease: appleEasing }}
               className="bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between min-h-[220px] relative overflow-hidden md:overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
             >
               <div className="max-w-[240px] relative z-10">
@@ -111,8 +115,8 @@ export default function BentoShowcaseSection({
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.12, ease: appleEasing }}
+            viewport={{ once: true, margin: animMargin }}
+            transition={{ duration: 0.8, delay: noDelay ? 0 : 0.12, ease: appleEasing }}
             className="w-full bg-[#FAFAFA] dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 relative overflow-visible flex flex-col justify-between min-h-[260px] hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out z-10"
           >
             {/* Card 3 Content (Left Side) */}
@@ -138,8 +142,8 @@ export default function BentoShowcaseSection({
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, x: isRtl ? -16 : 16, y: 10 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.85, delay: shouldReduceMotion ? 0 : 0.22, ease: appleEasing }}
+              viewport={{ once: true, margin: animMargin }}
+              transition={{ duration: 0.85, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
               className="relative mt-8 md:mt-0 md:absolute md:right-[-8%] lg:right-[-9%] md:bottom-0 pointer-events-none select-none z-20 w-full sm:w-[85%] md:w-[65%] lg:w-[68%] max-w-[720px] rtl:md:right-auto rtl:md:left-[-8%] rtl:lg:left-[-9%]"
             >
               <Image
@@ -149,7 +153,7 @@ export default function BentoShowcaseSection({
                 height={850}
                 sizes="(max-width: 768px) 100vw, 720px"
                 style={{ clipPath: 'polygon(0px 0px, 100% 0px, 100% 95%, 0px 95%)' }}
-                className="w-full h-auto object-contain drop-shadow-2xl translate-y-3 md:translate-y-5 lg:translate-y-6 translate-x-6 md:translate-x-14 lg:translate-x-20 rtl:translate-x-0 rtl:md:-translate-x-14 rtl:lg:-translate-x-20 transition-transform duration-500 ease-out"
+                className="w-full h-auto object-contain drop-shadow-2xl translate-y-10.5 md:translate-y-5 lg:translate-y-6 translate-x-6 md:translate-x-14 lg:translate-x-20 rtl:translate-x-0 rtl:md:-translate-x-14 rtl:lg:-translate-x-20"
               />
             </motion.div>
           </motion.div>

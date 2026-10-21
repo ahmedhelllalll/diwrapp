@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { BrightStar, BoxIso, HardDrive, Suitcase, ArrowRightCircle } from 'iconoir-react';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface FeatureBadgeProps {
   icon: React.ReactNode;
@@ -91,6 +92,9 @@ export default function PlatformFeaturesSection({
 }: PlatformFeaturesSectionProps) {
   const isRtl = lang === 'ar';
   const shouldReduceMotion = useReducedMotion();
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const animMargin = isDesktop ? '-40px' : '0px';
+  const noDelay = shouldReduceMotion || !isDesktop;
 
   return (
     <section className="relative w-full overflow-hidden bg-white dark:bg-[#080808] transition-colors duration-300 py-16 md:py-24">
@@ -101,7 +105,7 @@ export default function PlatformFeaturesSection({
           aria-hidden="true"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: animMargin }}
           transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -top-12 -right-8 rtl:right-auto rtl:-left-8 w-[420px] h-[360px] pointer-events-none select-none -z-10 dark:hidden"
           style={{
@@ -123,7 +127,7 @@ export default function PlatformFeaturesSection({
           aria-hidden="true"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: animMargin }}
           transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -top-12 -right-8 rtl:right-auto rtl:-left-8 w-[420px] h-[360px] pointer-events-none select-none -z-10 hidden dark:block"
           style={{
@@ -145,7 +149,7 @@ export default function PlatformFeaturesSection({
           aria-hidden="true"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: animMargin }}
           transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -bottom-10 -left-10 rtl:-left-auto rtl:-right-10 w-[420px] h-[360px] pointer-events-none select-none -z-10 dark:hidden"
           style={{
@@ -167,7 +171,7 @@ export default function PlatformFeaturesSection({
           aria-hidden="true"
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: animMargin }}
           transition={{ duration: 0.9, ease: appleEasing }}
           className="absolute -bottom-10 -left-10 rtl:-left-auto rtl:-right-10 w-[420px] h-[360px] pointer-events-none select-none -z-10 hidden dark:block"
           style={{
@@ -189,7 +193,7 @@ export default function PlatformFeaturesSection({
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: -10, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: animMargin }}
             transition={{ duration: 0.65, ease: appleEasing }}
             className="inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-zinc-800 bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 mb-4 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
           >
@@ -202,8 +206,8 @@ export default function PlatformFeaturesSection({
           <motion.h2
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+            viewport={{ once: true, margin: animMargin }}
+            transition={{ duration: 0.75, delay: noDelay ? 0 : 0.08, ease: appleEasing }}
             className="text-[26px] sm:text-[28px] lg:text-[32px] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] leading-[1.3] text-center max-w-xl mx-auto"
           >
             <span className="font-semibold text-[#101828] dark:text-white">{headingPrefix} </span>
@@ -217,8 +221,8 @@ export default function PlatformFeaturesSection({
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.08, ease: appleEasing }}
+            viewport={{ once: true, margin: animMargin }}
+            transition={{ duration: 0.75, delay: noDelay ? 0 : 0.08, ease: appleEasing }}
             className="lg:col-span-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-[24px] p-8 lg:p-10 flex flex-col justify-between shadow-xs relative overflow-visible hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
           >
             <div className="flex flex-col items-start w-full relative">
@@ -241,8 +245,8 @@ export default function PlatformFeaturesSection({
                   <motion.div
                     initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 10 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.22, ease: appleEasing }}
+                    viewport={{ once: true, margin: animMargin }}
+                    transition={{ duration: 0.8, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
                     className="w-[140%] max-w-none h-auto flex items-center justify-center"
                   >
                     <Image
@@ -275,8 +279,8 @@ export default function PlatformFeaturesSection({
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.16, ease: appleEasing }}
+              viewport={{ once: true, margin: animMargin }}
+              transition={{ duration: 0.75, delay: noDelay ? 0 : 0.16, ease: appleEasing }}
               className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
@@ -306,8 +310,8 @@ export default function PlatformFeaturesSection({
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.24, ease: appleEasing }}
+              viewport={{ once: true, margin: animMargin }}
+              transition={{ duration: 0.75, delay: noDelay ? 0 : 0.24, ease: appleEasing }}
               className="flex-1 flex flex-col justify-between items-start p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
@@ -334,8 +338,8 @@ export default function PlatformFeaturesSection({
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.75, delay: shouldReduceMotion ? 0 : 0.15, ease: appleEasing }}
+          viewport={{ once: true, margin: animMargin }}
+          transition={{ duration: 0.75, delay: noDelay ? 0 : 0.15, ease: appleEasing }}
           className="w-full max-w-[1240px] mx-auto mt-6 bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out"
         >
           {/* Left Content */}

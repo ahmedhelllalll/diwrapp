@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Arcade, AppleImac2021, UserStar, Computer } from 'iconoir-react';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface OpportunitiesSectionProps {
   lang: string;
@@ -38,6 +39,9 @@ export default function OpportunitiesSection({
 }: OpportunitiesSectionProps) {
   const targetHref = ctaHref || `/${lang}/contact`;
   const shouldReduceMotion = useReducedMotion();
+  const isDesktop = useMediaQuery('(min-width: 640px)');
+  const animMargin = isDesktop ? '-40px' : '0px';
+  const noDelay = shouldReduceMotion || !isDesktop;
 
   const categoryCards = [
     {
@@ -70,7 +74,7 @@ export default function OpportunitiesSection({
         <motion.h2
           initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: animMargin }}
           transition={{ duration: 0.75, ease: appleEasing }}
           className="text-[22px] sm:text-[24px] font-medium leading-[32px] tracking-[-0.01em] text-center text-[#101828] dark:text-white font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
         >
@@ -89,7 +93,7 @@ export default function OpportunitiesSection({
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: animMargin }}
             transition={{ duration: 0.9, ease: appleEasing }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1140px] h-[260px] pointer-events-none select-none z-0 dark:hidden"
             style={{
@@ -106,7 +110,7 @@ export default function OpportunitiesSection({
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: animMargin }}
             transition={{ duration: 0.9, ease: appleEasing }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1140px] h-[260px] pointer-events-none select-none z-0 hidden dark:block"
             style={{
@@ -126,10 +130,10 @@ export default function OpportunitiesSection({
                 key={id}
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: true, margin: animMargin }}
                 transition={{
                   duration: 0.75,
-                  delay: shouldReduceMotion ? 0 : 0.08 + idx * 0.06,
+                  delay: noDelay ? 0 : 0.08 + idx * 0.06,
                   ease: appleEasing,
                 }}
                 whileTap={{ scale: 0.98 }}
@@ -151,8 +155,8 @@ export default function OpportunitiesSection({
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.35, ease: appleEasing }}
+          viewport={{ once: true, margin: animMargin }}
+          transition={{ duration: 0.7, delay: noDelay ? 0 : 0.35, ease: appleEasing }}
           className="max-w-[620px] mx-auto mt-10 mb-8"
         >
           <p className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-normal text-[15px] sm:text-[16px] leading-[26px] tracking-normal text-center text-[#344054] dark:text-zinc-300 m-0">
@@ -164,8 +168,8 @@ export default function OpportunitiesSection({
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 10, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.65, delay: shouldReduceMotion ? 0 : 0.42, ease: appleEasing }}
+          viewport={{ once: true, margin: animMargin }}
+          transition={{ duration: 0.65, delay: noDelay ? 0 : 0.42, ease: appleEasing }}
           whileTap={{ scale: 0.98 }}
         >
           <Link
