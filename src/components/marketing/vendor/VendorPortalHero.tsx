@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Suitcase, ArrowRightCircle } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 interface VendorPortalHeroProps {
   dict?: any;
@@ -91,12 +92,12 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
         {/* A. Header Stack (Server-rendered CSS-only rise matching Culture/Contact)  */}
         {/* ========================================================================= */}
         <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-          {/* 1. Pill Badge */}
-          <div className="hero-anim-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border vendor-badge-hero shadow-xs backdrop-blur-sm mb-5 select-none">
-            <Suitcase className="w-3.5 h-3.5 stroke-[2] shrink-0" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[13px] font-medium leading-[18px]">
-              {renderBidiText(data.badge)}
-            </span>
+          {/* 1. Hero Badge */}
+          <div className="hero-anim-badge flex justify-center mb-5">
+            <Badge variant="outline-sm">
+              <Suitcase className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+              <span>{renderBidiText(data.badge)}</span>
+            </Badge>
           </div>
 
           {/* 2. Heading (LCP element with CSS-only entrance rise) */}

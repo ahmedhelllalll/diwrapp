@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { SystemRestart, ArrowRightCircle } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 interface JoinUsHeroProps {
   lang: string;
@@ -71,15 +72,17 @@ export default function JoinUsHero({
 
       {/* Central Content Container */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center w-full">
-        {/* Top Badge Pill */}
+        {/* Top Hero Badge */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: -8, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.08, ease: appleEasing }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-xs mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-colors max-w-full text-center"
+          className="mb-6 flex justify-center"
         >
-          <SystemRestart className="w-4 h-4 text-[#344054] dark:text-zinc-300 shrink-0" strokeWidth={1.75} />
-          <span>{badgeText}</span>
+          <Badge variant="outline-sm">
+            <SystemRestart className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] shrink-0" strokeWidth={1.5} />
+            <span>{badgeText}</span>
+          </Badge>
         </motion.div>
 
         {/* Main Heading H1 */}

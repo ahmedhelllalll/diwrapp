@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "brand" | "brand-solid" | "surface" | "pill" | "outline-sm";
+  variant?: "default" | "brand" | "brand-solid" | "surface" | "pill" | "outline-sm" | "hero";
   children: React.ReactNode;
 }
 
@@ -12,7 +12,7 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const baseStyles =
-    "inline-flex items-center justify-center gap-1.5 px-3.5 py-1 rounded-[10px] text-[13px] font-medium transition-colors select-none";
+    "inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-[4px] text-[13px] font-medium transition-colors select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]";
 
   let variantStyles = "";
   if (variant === "default") {
@@ -30,9 +30,9 @@ export function Badge({
   } else if (variant === "pill") {
     variantStyles =
       "border border-[#EAECF0] dark:border-[#27272A] bg-transparent text-[#101828] dark:text-[#F8FAFC] !rounded-full px-3.5 py-1.5 text-[14px]";
-  } else if (variant === "outline-sm") {
+  } else if (variant === "outline-sm" || variant === "hero") {
     variantStyles =
-      "border border-[#EAECF0] dark:border-[#27272A] bg-transparent text-[#344054] dark:text-[#D4D4D8] !rounded-[4px] px-3 py-1 text-[13px]";
+      "border border-[#EAECF0] dark:border-[#27272A] bg-transparent text-[#344054] dark:text-[#D4D4D8] !rounded-[4px] px-3 py-1 text-[13px] leading-[20px]";
   }
 
   return (

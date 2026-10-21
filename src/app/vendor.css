@@ -80,13 +80,3 @@
 .vendor-badge svg {
   color: var(--vendor-badge-text);
 }
-
-.vendor-badge-hero {
-  background-color: var(--vendor-badge-hero-bg);
-  border-color: var(--vendor-badge-hero-border);
-  color: var(--vendor-badge-hero-text);
-}
-
-.vendor-badge-hero svg {
-  color: var(--vendor-badge-hero-text);
-}

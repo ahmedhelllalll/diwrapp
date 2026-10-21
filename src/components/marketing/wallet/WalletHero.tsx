@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardWallet } from 'iconoir-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { Badge } from '@/components/ui/Badge';
 
 interface WalletHeroProps {
   lang: string;
@@ -171,10 +172,12 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
 
       {/* Layer 3: Foreground Centered Content (relative z-10) */}
       <div className="relative z-10 w-full max-w-[800px] mx-auto px-5 sm:px-6 flex flex-col items-center text-center pt-[100px] sm:pt-[140px] lg:pt-[240px]">
-        {/* Badge */}
-        <div className="hero-anim-badge inline-flex items-center gap-1.5 h-[28px] px-3.5 py-1 rounded-full border wallet-badge-hero shadow-xs backdrop-blur-sm mb-4 sm:mb-5 select-none font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-xs font-medium">
-          <CardWallet aria-hidden="true" className="w-3.5 h-3.5 stroke-[1.8]" />
-          <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
+        {/* Hero Badge */}
+        <div className="hero-anim-badge flex justify-center mb-4 sm:mb-5">
+          <Badge variant="outline-sm">
+            <CardWallet aria-hidden="true" className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+            <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
+          </Badge>
         </div>
 
         {/* Title: 2 lines (CSS-only entrance for immediate LCP paint) */}

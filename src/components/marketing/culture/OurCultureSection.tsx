@@ -125,11 +125,9 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
         <div className="flex flex-col items-center text-center max-w-[880px] mx-auto">
           {/* Badge */}
           <div className="hero-anim-badge flex justify-center mb-6">
-            <Badge variant="pill" className="gap-2 bg-white dark:bg-surface-2 shadow-xs">
-              <Community className="w-4 h-4 text-text-secondary dark:text-neutral-300 shrink-0" strokeWidth={1.5} />
-              <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium text-heading dark:text-white">
-                {c.badge || 'Our Culture'}
-              </span>
+            <Badge variant="outline-sm">
+              <Community className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] shrink-0" strokeWidth={1.5} />
+              <span>{c.badge || 'Our Culture'}</span>
             </Badge>
           </div>
 

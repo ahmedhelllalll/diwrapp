@@ -84,13 +84,3 @@
 .wallet-badge svg {
   color: var(--wallet-badge-text);
 }
-
-.wallet-badge-hero {
-  background-color: var(--wallet-badge-hero-bg);
-  border-color: var(--wallet-badge-hero-border);
-  color: var(--wallet-badge-hero-text);
-}
-
-.wallet-badge-hero svg {
-  color: var(--wallet-badge-hero-text);
-}

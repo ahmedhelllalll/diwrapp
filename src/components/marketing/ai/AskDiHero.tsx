@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Internet, Flare, StatsUpSquare, DesignNib } from 'iconoir-react';
+import { Badge } from '@/components/ui/Badge';
 
 export interface AskDiHeroDict {
   badge?: string;
@@ -183,15 +184,12 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
           variants={containerVariants}
           className="flex flex-col items-center text-center max-w-[840px] mx-auto"
         >
-          {/* Pill Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-1.5 rounded-full border border-[#E4E7EC] dark:border-neutral-800 bg-white dark:bg-neutral-900 px-3.5 py-1 mb-6 shadow-2xs select-none"
-          >
-            <Internet className="w-4 h-4 text-[#344054] dark:text-neutral-300 stroke-[1.8]" />
-            <span className="font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] leading-[20px] font-medium text-[#344054] dark:text-neutral-300">
-              {data.badge}
-            </span>
+          {/* Hero Badge */}
+          <motion.div variants={itemVariants} className="mb-6 flex justify-center">
+            <Badge variant="outline-sm">
+              <Internet className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+              <span>{data.badge}</span>
+            </Badge>
           </motion.div>
 
           {/* Heading */}

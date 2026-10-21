@@ -95,13 +95,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 263px;
-  height: 28px;
+  width: auto;
+  min-height: 28px;
+  max-width: 100%;
   border-radius: 4px;
   /* radius-xs */
-  padding: 4px 10px 4px 8px;
-  /* padding-top: 4, padding-right: 10, padding-bottom: 4, padding-left: 8 */
-  gap: 4px;
+  padding: 4px 12px;
+  gap: 6px;
   border: 1px solid var(--Border-Colors-border-200);
   color: var(--Text-text-secondary);
   background-color: transparent;
@@ -118,7 +118,8 @@
 }
 
 [dir="rtl"] .advertise-badge {
-  padding: 4px 8px 4px 10px;
+  font-family: var(--font-cairo), sans-serif;
+  padding: 4px 12px;
 }
 
 .dark .advertise-badge {

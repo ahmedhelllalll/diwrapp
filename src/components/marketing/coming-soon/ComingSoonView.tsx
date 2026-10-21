@@ -7,6 +7,7 @@ import {
   MotionBillboardContainer,
   MotionButtonWrapper,
 } from '@/components/common/MotionWrapper';
+import { Badge } from '@/components/ui/Badge';
 
 interface ComingSoonViewProps {
   lang: string;
@@ -78,11 +79,11 @@ export default function ComingSoonView({
 
           {/* Copy & Call to Action (Top on mobile, Right 5 Cols on desktop) */}
           <MotionContentContainer className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-start justify-center max-w-lg w-full pt-6 pb-2 lg:py-16 self-center text-start">
-            {/* Pill Badge */}
+            {/* Hero Badge */}
             <MotionContentItem>
-              <div className="inline-flex items-center px-3 py-1 rounded-full font-medium text-[14px] leading-[20px] tracking-normal bg-[#F2F4F7] dark:bg-zinc-800 text-[#344054] dark:text-zinc-300 border border-[#EAECF0] dark:border-zinc-700/60 mb-5 lg:mb-6 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
+              <Badge variant="outline-sm" className="mb-5 lg:mb-6">
                 <span>{dict.tag}</span>
-              </div>
+              </Badge>
             </MotionContentItem>
 
             {/* Main Heading */}

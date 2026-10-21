@@ -7,6 +7,7 @@ import "../../../advertise.css";
 import FeatureBentoGrid from "@/components/marketing/advertise/FeatureBentoGrid";
 import AiCarouselSection from "@/components/marketing/advertise/AiCarouselSection";
 import { RevealInit } from "@/components/common/Reveal";
+import { Badge } from "@/components/ui/Badge";
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -42,7 +43,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
             
             {/* Hero Section */}
             <section className="advertise-hero">
-              <div className="advertise-badge">
+              <Badge variant="outline-sm" className="advertise-badge">
                 <svg 
                   width="16" 
                   height="16" 
@@ -60,7 +61,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
                   <path d="M2 12h20" />
                 </svg>
                 <span>{adv?.heroBadge || "Bridging Vision with Functionality"}</span>
-              </div>
+              </Badge>
 
               <h1 className="advertise-title">
                 <span className="advertise-title-light">
