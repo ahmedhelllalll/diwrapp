@@ -220,7 +220,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
           className="hero-anim-cta"
         >
           <Link
-            href={`/${lang}/signup?role=advertiser`}
+            href={`/${lang}/coming-soon`}
             className="h-[44px] px-6 rounded-lg bg-brand hover:bg-brand-strong text-white text-[14px] font-medium leading-[20px] transition-colors shadow-xs hover:shadow-[0_4px_14px_rgba(0,102,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:focus-visible:ring-offset-surface-1 inline-flex items-center justify-center cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] active:scale-[0.98]"
           >
             {renderBidiText(w?.ctaButton || 'Top Up My Wallet')}

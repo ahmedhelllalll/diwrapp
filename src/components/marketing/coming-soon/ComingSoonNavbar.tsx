@@ -117,7 +117,7 @@ export default function ComingSoonNavbar({
 
           {/* Sign In Button */}
           <Link
-            href={`/${lang}/login`}
+            href={`/${lang}/coming-soon`}
             className="hidden sm:inline-flex h-[40px] px-5 rounded-lg bg-[#101828] hover:bg-[#1D2939] dark:bg-white dark:text-[#101828] dark:hover:bg-zinc-100 text-white text-sm font-medium transition-all shadow-xs items-center justify-center font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] active:scale-[0.98]"
           >
             {dictNav?.signIn || (lang === 'ar' ? 'تسجيل الدخول' : 'Sign In')}
@@ -172,7 +172,7 @@ export default function ComingSoonNavbar({
           })}
           <div className="pt-2">
             <Link
-              href={`/${lang}/login`}
+              href={`/${lang}/coming-soon`}
               onClick={() => setMobileMenuOpen(false)}
               className="w-full h-[42px] rounded-lg bg-[#101828] text-white text-sm font-medium flex items-center justify-center dark:bg-white dark:text-[#101828]"
             >

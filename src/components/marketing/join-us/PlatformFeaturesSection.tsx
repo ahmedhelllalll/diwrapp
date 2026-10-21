@@ -370,7 +370,7 @@ export default function PlatformFeaturesSection({
             </motion.div>
             <motion.div whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
               <Link
-                href={`/${lang}/signup`}
+                href={`/${lang}/coming-soon`}
                 className="w-full sm:w-auto whitespace-nowrap h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
               >
                 <span>{ctaBanner.getStartedBtn}</span>

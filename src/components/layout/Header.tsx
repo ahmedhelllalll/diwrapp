@@ -257,7 +257,7 @@ export default function Header({
               </Link>
             ) : (
               <Link
-                href={`/${currentLang}/login`}
+                href={`/${currentLang}/coming-soon`}
                 className="inline-flex items-center justify-center h-[40px] px-5 rounded-[12px] bg-[#101828] dark:bg-white text-white dark:text-[#101828] font-medium text-[14px] hover:bg-[#1f2a37] dark:hover:bg-neutral-100 transition-all duration-200 shadow-xs font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] whitespace-nowrap"
               >
                 {nav.signIn}

@@ -16,3 +16,9 @@ export const DEFAULT_SESSION_EXPIRY_SECONDS = 7 * 24 * 60 * 60; // 604,800 secon
  * Default session expiration duration in days.
  */
 export const DEFAULT_SESSION_EXPIRY_DAYS = 7;
+
+/**
+ * Central routing configuration for authentication entry points.
+ * All auth entry points dynamically redirect to coming-soon.
+ */
+export const getAuthRedirectUrl = (lang: string) => `/${lang}/coming-soon`;

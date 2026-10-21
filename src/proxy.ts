@@ -131,7 +131,7 @@ export function proxy(request: NextRequest) {
     const isExpired = isSessionExpired(session);
 
     if (!session || isExpired) {
-      const loginUrl = new URL(`/${currentLocale}/login`, request.url);
+      const loginUrl = new URL(`/${currentLocale}/coming-soon`, request.url);
       const response = NextResponse.redirect(loginUrl);
       applySecurityHeaders(response);
       return response;

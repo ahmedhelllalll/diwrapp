@@ -26,7 +26,7 @@ export default function JoinUsHero({
   ctaText = 'Join Us Now',
   ctaHref,
 }: JoinUsHeroProps) {
-  const targetHref = ctaHref || `/${lang}/signup`;
+  const targetHref = ctaHref || `/${lang}/coming-soon`;
 
   const shouldReduceMotion = useReducedMotion();
   const appleEasing = [0.22, 1, 0.36, 1] as const;

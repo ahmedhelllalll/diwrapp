@@ -143,7 +143,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
                     style={{ '--i': 3 } as React.CSSProperties}
                   >
                     <Link 
-                      href={`/${lang}/signup?role=advertiser`}
+                      href={`/${lang}/coming-soon`}
                       className="advertise-btn-primary"
                     >
                       {adv?.ctaButton || "Book Your Spot"}

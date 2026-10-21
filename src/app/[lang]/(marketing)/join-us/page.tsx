@@ -46,7 +46,7 @@ export default async function JoinUsPage(props: { params: Promise<{ lang: string
           subtitleLine1={joinHero?.subtitleLine1}
           subtitleLine2={joinHero?.subtitleLine2}
           ctaText={joinHero?.cta}
-          ctaHref={`/${lang}/signup`}
+          ctaHref={`/${lang}/coming-soon`}
         />
 
         <OpportunitiesSection

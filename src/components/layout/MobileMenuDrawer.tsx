@@ -186,7 +186,7 @@ export default function MobileMenuDrawer({
             ) : (
               <Link
                 className="w-full h-[48px] rounded-[14px] bg-[#101828] dark:bg-white text-white dark:text-[#101828] text-[15px] font-semibold flex items-center justify-center hover:bg-[#1D2939] dark:hover:bg-neutral-100 transition-colors shadow-xs font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
-                href={`/${currentLang}/login`}
+                href={`/${currentLang}/coming-soon`}
                 onClick={onClose}
               >
                 {dictNav?.signIn || nav.signIn || "Sign In"}

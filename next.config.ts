@@ -12,6 +12,56 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:lang/login',
+        destination: '/:lang/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/:lang/signin',
+        destination: '/:lang/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/:lang/signup',
+        destination: '/:lang/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/:lang/register',
+        destination: '/:lang/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/:lang/reset-password',
+        destination: '/:lang/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/login',
+        destination: '/en/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/signin',
+        destination: '/en/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/signup',
+        destination: '/en/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/register',
+        destination: '/en/coming-soon',
+        permanent: false,
+      },
+      {
+        source: '/reset-password',
+        destination: '/en/coming-soon',
+        permanent: false,
+      },
+      {
         source: '/:lang/ai',
         destination: '/:lang/ask-di',
         permanent: true,

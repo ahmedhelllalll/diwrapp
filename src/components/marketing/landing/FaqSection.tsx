@@ -190,7 +190,7 @@ export default function FaqSection({
                           <Link 
                             aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة دي راب وإنشاء حساب جديد" : "Sign up for a new Diwrapp account")}
                             className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
-                            href={`/${lang}/signup`}
+                            href={`/${lang}/coming-soon`}
                           >
                             {faq.linkText || (isRtl ? "رابط التسجيل" : "Sign Up Link")}
                           </Link>{" "}
