@@ -99,8 +99,10 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
 
   return (
     <footer className="w-full font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] bg-white dark:bg-[#080808] transition-colors duration-300">
-      {/* Top Full Divider Line */}
-      <div className="w-full h-[1px] bg-[#EAECF0] dark:bg-neutral-800" />
+      {/* Top Contained Divider (Matches inner container width & alignment) */}
+      <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full h-[1px] bg-[#EAECF0] dark:bg-neutral-800" />
+      </div>
 
       {/* Main Inner Constrained Container */}
       <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8">

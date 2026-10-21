@@ -40,7 +40,7 @@ export default function ComingSoonView({
       className="flex-1 flex flex-col bg-white dark:bg-[#080808] transition-colors duration-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
     >
       {/* Hero Section */}
-      <main className="flex-1 flex items-center justify-center w-full bg-[#F2F4F7] dark:bg-[#0B0D10] border-b border-[#EAECF0] dark:border-zinc-800/80 transition-colors duration-300 pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-hidden">
+      <main className="flex-1 flex items-center justify-center w-full bg-[#F2F4F7] dark:bg-[#0B0D10] transition-colors duration-300 pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-hidden">
         <div className="w-full max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-1">
           {/* Billboard Mockup (Bottom on mobile, Left 7 Cols on desktop) */}
           <MotionBillboardContainer className="order-2 lg:order-1 lg:col-span-7 relative flex items-end justify-center w-full self-end">

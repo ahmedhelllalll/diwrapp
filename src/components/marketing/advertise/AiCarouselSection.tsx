@@ -39,13 +39,15 @@ const defaultSlides: CarouselSlide[] = [
 interface AiCarouselSectionProps {
   slides?: CarouselSlide[];
   className?: string;
+  showDivider?: boolean;
 }
 
 const appleEasing = [0.22, 1, 0.36, 1] as const;
 
 export default function AiCarouselSection({
   slides = defaultSlides,
-  className = ""
+  className = "",
+  showDivider = false,
 }: AiCarouselSectionProps) {
   const activeSlides = slides && slides.length > 0 ? slides : defaultSlides;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -275,12 +277,14 @@ export default function AiCarouselSection({
         })}
       </div>
 
-      {/* Bottom Section Divider */}
-      <div
-        className="ai-carousel-divider"
-        data-reveal="line"
-        style={{ '--i': 1 } as React.CSSProperties}
-      />
+      {/* Bottom Section Divider (omitted by default when directly preceding Footer) */}
+      {showDivider && (
+        <div
+          className="ai-carousel-divider"
+          data-reveal="line"
+          style={{ '--i': 1 } as React.CSSProperties}
+        />
+      )}
     </section>
   );
 }
