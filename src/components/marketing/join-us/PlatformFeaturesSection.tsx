@@ -236,7 +236,7 @@ export default function PlatformFeaturesSection({
               </div>
 
               {/* Inner Grey Surface Box */}
-              <div className="relative w-full rounded-2xl bg-[#F2F4F7]/70 dark:bg-zinc-900/60 min-h-[420px] lg:min-h-[460px] h-[420px] lg:h-[460px] my-4 overflow-visible flex items-center justify-center">
+              <div className="relative w-full rounded-2xl bg-[#F2F4F7]/70 dark:bg-zinc-900/60 min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] h-[360px] sm:h-[420px] lg:h-[460px] my-4 overflow-visible flex items-center justify-center">
                 {/* Tablet Clipping Wrapper */}
                 <div
                   className="relative w-full h-full flex items-center justify-center pointer-events-none select-none"
@@ -247,7 +247,7 @@ export default function PlatformFeaturesSection({
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true, margin: animMargin }}
                     transition={{ duration: 0.8, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
-                    className="w-[140%] max-w-none h-auto flex items-center justify-center"
+                    className="w-[125%] shrink-0 sm:w-[140%] sm:shrink max-w-none h-auto flex items-center justify-center"
                   >
                     <Image
                       src="/assets/join-tablet.webp"
