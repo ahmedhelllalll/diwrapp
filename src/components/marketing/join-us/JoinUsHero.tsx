@@ -41,9 +41,9 @@ export default function JoinUsHero({
           alt="Join Us Background"
           fill
           priority
-          quality={85}
+          unoptimized
           sizes="100vw"
-          className="w-full h-full object-cover object-center pointer-events-none select-none dark:hidden"
+          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu [image-rendering:-webkit-optimize-contrast] dark:hidden"
         />
 
         {/* Dark Mode 3D Room Graphic */}
@@ -52,9 +52,9 @@ export default function JoinUsHero({
           alt="Join Us Background Dark"
           fill
           priority
-          quality={85}
+          unoptimized
           sizes="100vw"
-          className="w-full h-full object-cover object-center pointer-events-none select-none hidden dark:block"
+          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu [image-rendering:-webkit-optimize-contrast] hidden dark:block"
         />
       </div>
 
