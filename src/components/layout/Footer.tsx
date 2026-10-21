@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CONTACT_CONFIG } from '@/lib/config/contact';
+import CopyrightYear from '@/components/common/CopyrightYear';
 
 export interface FooterDict {
   slogan?: string;
@@ -158,11 +160,11 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
                 <a 
-                  href="tel:+966000000000" 
+                  href={`tel:${CONTACT_CONFIG.phone.tel}`} 
                   className="group-hover:text-black dark:group-hover:text-zinc-100 transition-colors font-sans"
                   dir="ltr"
                 >
-                  {dict?.phone || '+966 00 000 0000'}
+                  <span dir="ltr">{dict?.phone || CONTACT_CONFIG.phone.display}</span>
                 </a>
               </div>
 
@@ -276,7 +278,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
         <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-6">
           {/* Left: Copyright */}
           <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
-            <span>©2026</span>
+            <CopyrightYear />
             <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
             <span>-</span>
             <span>{dict?.legal?.allRightsReserved || 'All rights reserved'}</span>
@@ -295,9 +297,49 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
             ))}
           </div>
 
-          {/* Right: Social Media Icons (Hidden until official handles are established) */}
-          {/* TODO: Add official social media handles (Facebook, X, Instagram, LinkedIn) once configured */}
-          <div className="order-1 md:order-3 justify-self-center md:justify-self-end hidden" aria-hidden="true" />
+          {/* Right: Social Media Icons */}
+          <div className="order-1 md:order-3 justify-self-center md:justify-self-end flex items-center gap-4 text-[#64748B] dark:text-zinc-400">
+            {/* LinkedIn */}
+            <a 
+              href={CONTACT_CONFIG.socials.linkedin.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label={CONTACT_CONFIG.socials.linkedin.ariaLabel} 
+              className="hover:text-[#0A66C2] hover:-translate-y-0.5 transition-all p-1"
+            >
+              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+            </a>
+
+            {/* Instagram */}
+            <a 
+              href={CONTACT_CONFIG.socials.instagram.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label={CONTACT_CONFIG.socials.instagram.ariaLabel} 
+              className="hover:text-[#E1306C] hover:-translate-y-0.5 transition-all p-1"
+            >
+              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+
+            {/* TikTok */}
+            <a 
+              href={CONTACT_CONFIG.socials.tiktok.url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label={CONTACT_CONFIG.socials.tiktok.ariaLabel} 
+              className="hover:text-black dark:hover:text-white hover:-translate-y-0.5 transition-all p-1"
+            >
+              <svg className="w-[17px] h-[17px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.94-4.49V8.75a8.16 8.16 0 0 0 4.83 1.61V6.9a4.85 4.85 0 0 1-1-.21z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

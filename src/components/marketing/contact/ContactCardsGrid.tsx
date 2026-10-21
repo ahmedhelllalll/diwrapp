@@ -1,5 +1,6 @@
 import React from "react";
 import { Phone, MapPin, ChatLines, HelpCircle } from "iconoir-react";
+import { CONTACT_CONFIG } from "@/lib/config/contact";
 
 interface CardsDict {
   callUs?: { label: string; value: string };
@@ -13,7 +14,7 @@ interface ContactCardsGridProps {
 }
 
 export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
-  const callUs = cards?.callUs || { label: "Call Us", value: "+966 00 000 0000" };
+  const callUs = cards?.callUs || { label: "Call Us", value: CONTACT_CONFIG.phone.display };
   const visitUs = cards?.visitUs || { label: "Visit Us", value: "View Our Location" };
   const chatSales = cards?.chatSales || { label: "Chat To Sales", value: "sales@di-wrapp.com" };
   const chatSupport = cards?.chatSupport || { label: "Chat To Support", value: "support@di-wrapp.com" };
@@ -23,8 +24,8 @@ export default function ContactCardsGrid({ cards }: ContactCardsGridProps) {
       id: "call",
       icon: <Phone width={18} height={18} strokeWidth={1.75} />,
       label: callUs.label,
-      value: callUs.value,
-      href: `tel:${callUs.value.replace(/\s+/g, "")}`,
+      value: callUs.value || CONTACT_CONFIG.phone.display,
+      href: `tel:${CONTACT_CONFIG.phone.tel}`,
       isExternal: false,
       isLtr: true,
     },

@@ -7,6 +7,7 @@ import { getDictionary } from "../../dictionaries";
 import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import NavigationProgressBar from "@/components/common/NavigationProgressBar";
+import { CONTACT_CONFIG } from "@/lib/config/contact";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -123,7 +124,13 @@ export default async function RootLayout(
         name: 'DiWrapp',
         url: 'https://diwrapp.com',
         logo: 'https://diwrapp.com/logo.png',
-        sameAs: ['https://distin-gui.com/'],
+        sameAs: [
+          'https://distin-gui.com/',
+          CONTACT_CONFIG.socials.linkedin.url,
+          CONTACT_CONFIG.socials.instagram.url,
+          CONTACT_CONFIG.socials.tiktok.url,
+        ],
+        telephone: CONTACT_CONFIG.phone.tel,
       },
       {
         '@type': 'WebSite',

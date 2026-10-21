@@ -7,6 +7,8 @@
  * They must be confirmed by legal counsel and the project owner before production launch.
  */
 
+import { CONTACT_CONFIG } from "@/lib/config/contact";
+
 export interface LegalConfig {
   company: {
     legalName: string;
@@ -74,7 +76,7 @@ export const LEGAL_CONFIG: LegalConfig = {
     legalEmail: "[TO CONFIRM: legal@di-wrapp.com]",
     privacyEmail: "[TO CONFIRM: privacy@di-wrapp.com]",
     supportEmail: "[TO CONFIRM: support@di-wrapp.com]",
-    phone: "+966 00 000 0000",
+    phone: CONTACT_CONFIG.phone.display,
   },
   dates: {
     effectiveDateEn: "May 1, 2026",
