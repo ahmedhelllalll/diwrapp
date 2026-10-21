@@ -275,9 +275,9 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
         <div className="w-full h-[1px] bg-[#EAECF0] dark:bg-neutral-800 mt-14 sm:mt-16 mb-8" />
 
         {/* Bottom Bar: Copyright, Legal Links, Social Icons */}
-        <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-6">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-y-4 gap-x-4 md:gap-x-6">
           {/* Left: Copyright */}
-          <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
+          <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13px] md:text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
             <CopyrightYear />
             <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
             <span>-</span>
@@ -285,12 +285,12 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
           </div>
           
           {/* Center: Legal Links */}
-          <div className="order-2 justify-self-center flex flex-wrap justify-center items-center gap-6 sm:gap-7 text-[13.5px] font-normal text-[#475569] dark:text-zinc-400">
+          <div className="order-2 justify-self-center flex flex-wrap md:flex-nowrap justify-center items-center gap-x-3.5 gap-y-2 sm:gap-x-5 md:gap-x-6 lg:gap-x-7 text-[12px] sm:text-[13px] md:text-[13.5px] font-normal text-[#475569] dark:text-zinc-400 md:whitespace-nowrap">
             {legalLinks.map((legal, idx) => (
               <Link 
                 key={idx}
                 href={legal.href} 
-                className="hover:text-[#1665ff] dark:hover:text-blue-400 hover:underline underline-offset-4 transition-colors"
+                className="hover:text-[#1665ff] dark:hover:text-blue-400 hover:underline underline-offset-4 transition-colors shrink-0"
               >
                 {legal.label}
               </Link>
@@ -298,7 +298,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
           </div>
 
           {/* Right: Social Media Icons */}
-          <div className="order-1 md:order-3 justify-self-center md:justify-self-end flex items-center gap-4 text-[#64748B] dark:text-zinc-400">
+          <div className="order-1 md:order-3 justify-self-center md:justify-self-end flex items-center gap-4 text-[#64748B] dark:text-zinc-400 shrink-0">
             {/* LinkedIn */}
             <a 
               href={CONTACT_CONFIG.socials.linkedin.url} 
