@@ -255,7 +255,7 @@ export default function PlatformFeaturesSection({
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, 960px"
-                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-8 -translate-y-6 rtl:-translate-x-8"
+                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-0 rtl:translate-x-0 sm:translate-x-8 sm:rtl:-translate-x-8 -translate-y-6"
                     />
                   </motion.div>
                 </div>
