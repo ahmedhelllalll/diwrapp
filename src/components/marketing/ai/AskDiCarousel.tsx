@@ -293,7 +293,7 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
               </div>
 
               {/* Slide Content Stack */}
-              <div className="relative z-10 w-full h-full flex flex-col justify-end md:justify-center items-start rtl:items-start p-5 sm:p-10 lg:p-16 text-left rtl:text-right">
+              <div className="relative z-10 w-full h-full flex flex-col justify-end md:justify-center items-start rtl:items-start max-[359px]:px-3.5 max-[359px]:py-4 p-5 sm:p-10 lg:p-16 text-left rtl:text-right">
                 <motion.div
                   variants={contentContainerVariants}
                   initial="hidden"
@@ -303,19 +303,19 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
                   {/* Pill Badge */}
                   <motion.div variants={contentItemVariants} className="self-start">
                     <div
-                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3 py-1 sm:px-3.5 mb-3 sm:mb-5 lg:mb-6 shadow-2xs bg-transparent ${
+                      className={`inline-flex items-center whitespace-nowrap gap-1 sm:gap-2 rounded-full max-[359px]:px-1.5 px-2.5 py-0.5 sm:px-3.5 sm:py-1 mb-3 sm:mb-5 lg:mb-6 shadow-2xs bg-transparent ${
                         currentSlide.isDarkTheme
                           ? 'border border-white/20'
                           : 'border border-[#D0D5DD] dark:border-white/20'
                       }`}
                     >
                       <Sparks
-                        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 shrink-0 ${
                           currentSlide.isDarkTheme ? 'text-white/90' : 'text-[#344054] dark:text-white/90'
                         }`}
                       />
                       <span
-                        className={`font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[12.5px] sm:text-[14px] leading-[18px] sm:leading-[20px] font-medium ${
+                        className={`font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] whitespace-nowrap max-[359px]:text-[10px] text-[11px] sm:text-[14px] max-[359px]:leading-[15px] leading-[16px] sm:leading-[20px] font-medium ${
                           currentSlide.isDarkTheme ? 'text-white' : 'text-[#344054] dark:text-white'
                         }`}
                       >
