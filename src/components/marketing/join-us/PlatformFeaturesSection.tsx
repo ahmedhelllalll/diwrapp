@@ -359,19 +359,19 @@ export default function PlatformFeaturesSection({
           </div>
 
           {/* Right Actions (2 Buttons) */}
-          <div className="flex items-center gap-3.5 shrink-0">
-            <motion.div whileTap={{ scale: 0.98 }}>
+          <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto shrink-0">
+            <motion.div whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
               <Link
                 href={`/${lang}/contact`}
-                className="h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-900/60 hover:bg-gray-50 dark:hover:bg-zinc-800 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+                className="w-full sm:w-auto whitespace-nowrap h-[44px] px-5 rounded-full border border-[#D0D5DD] dark:border-zinc-700 bg-white dark:bg-zinc-900/60 hover:bg-gray-50 dark:hover:bg-zinc-800 text-sm font-medium text-[#344054] dark:text-zinc-200 inline-flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
               >
                 {ctaBanner.contactBtn}
               </Link>
             </motion.div>
-            <motion.div whileTap={{ scale: 0.98 }}>
+            <motion.div whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
               <Link
                 href={`/${lang}/signup`}
-                className="h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+                className="w-full sm:w-auto whitespace-nowrap h-[44px] px-5 rounded-full bg-[#0066FF] hover:bg-blue-600 text-sm font-medium text-white inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-blue-500/25 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
               >
                 <span>{ctaBanner.getStartedBtn}</span>
                 <ArrowRightCircle className="w-4 h-4 rtl:rotate-180" strokeWidth={1.75} />
