@@ -1,11 +1,11 @@
 import { ReadonlyHeaders } from 'next/dist/server/web/spec-extension/adapters/headers';
 
-export const DEFAULT_COUNTRY_CODE = 'sd';
+export const DEFAULT_COUNTRY_CODE = 'sa';
 export const COUNTRY_COOKIE_NAME = 'di_country';
 
 /**
  * Extracts the 2-letter lowercase country code from headers with safe fallback.
- * Deduplicates `headerList.get('x-country-code') || 'sd'` across all server components.
+ * Deduplicates `headerList.get('x-country-code') || 'sa'` across all server components.
  */
 export function getCountryCode(headerList?: Headers | ReadonlyHeaders | null): string {
   if (!headerList) return DEFAULT_COUNTRY_CODE;

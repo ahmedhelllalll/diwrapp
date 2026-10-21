@@ -303,7 +303,7 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
                   {/* Pill Badge */}
                   <motion.div variants={contentItemVariants} className="self-start">
                     <div
-                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3 py-1 sm:px-3.5 mb-3 sm:mb-5 lg:mb-6 shadow-2xs backdrop-blur-md bg-transparent ${
+                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-3 py-1 sm:px-3.5 mb-3 sm:mb-5 lg:mb-6 shadow-2xs bg-transparent ${
                         currentSlide.isDarkTheme
                           ? 'border border-white/20'
                           : 'border border-[#D0D5DD] dark:border-white/20'

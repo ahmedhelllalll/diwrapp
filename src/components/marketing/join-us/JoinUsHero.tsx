@@ -25,14 +25,13 @@ export default function JoinUsHero({
   ctaText = 'Join Us Now',
   ctaHref,
 }: JoinUsHeroProps) {
-  const isRtl = lang === 'ar';
   const targetHref = ctaHref || `/${lang}/signup`;
 
   const shouldReduceMotion = useReducedMotion();
   const appleEasing = [0.22, 1, 0.36, 1] as const;
 
   return (
-    <section id="join-us-hero" className="min-h-screen h-screen w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-28 pb-16 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
+    <section id="join-us-hero" className="min-h-[100dvh] w-full relative overflow-hidden flex flex-col justify-center items-center px-4 pt-24 pb-12 sm:px-6 lg:px-8 sm:pt-32 sm:pb-20 bg-white dark:bg-[#080808]">
       {/* 3D Room Background Image - Preserves natural aspect ratio without stretching */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
         {/* Light Mode 3D Room Graphic */}
@@ -77,7 +76,7 @@ export default function JoinUsHero({
           initial={shouldReduceMotion ? false : { opacity: 0, y: -8, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.08, ease: appleEasing }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-xs mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-colors"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 rounded-full border border-[#EAECF0] dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md shadow-xs mb-6 text-xs sm:text-sm font-medium text-[#344054] dark:text-zinc-300 select-none transition-colors max-w-full text-center"
         >
           <SystemRestart className="w-4 h-4 text-[#344054] dark:text-zinc-300 shrink-0" strokeWidth={1.75} />
           <span>{badgeText}</span>
@@ -88,7 +87,7 @@ export default function JoinUsHero({
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.15, ease: appleEasing }}
-          className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-[44px] tracking-[-0.01em] text-center text-[#101828] dark:text-white drop-shadow-md font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
+          className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight lg:leading-[1.15] tracking-[-0.01em] text-center text-[#101828] dark:text-white drop-shadow-md font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
           style={{
             letterSpacing: '-0.01em',
           }}

@@ -12,9 +12,10 @@ export default function FloatingHeroAssets() {
 
   return (
     <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-visible" dir="ltr" aria-hidden="true">
-      {/* Background Grid Line Frame (Top Right) */}
+      <div className="relative w-full max-w-[1440px] h-full mx-auto pointer-events-none overflow-visible">
+        {/* Background Grid Line Frame (Top Right) */}
       <div
-        className="hidden lg:block absolute top-[175px] right-0 w-[389px] z-0 pointer-events-none hero-float-grid"
+        className="hidden lg:block absolute top-[175px] right-[-6%] w-[389px] z-0 pointer-events-none hero-float-grid"
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -201,6 +202,7 @@ export default function FloatingHeroAssets() {
           </defs>
           <rect width="100%" height="100%" fill="url(#faded-hero-grid-pattern)" />
         </svg>
+      </div>
       </div>
     </div>
   );

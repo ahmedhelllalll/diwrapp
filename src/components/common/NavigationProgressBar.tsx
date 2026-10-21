@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function NavigationProgressBar() {
@@ -11,39 +11,51 @@ export default function NavigationProgressBar() {
   const delayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const completeTimerRef = useRef<NodeJS.Timeout | null>(null);
   const resetTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const failsafeTimerRef = useRef<NodeJS.Timeout | null>(null);
   const prevPathnameRef = useRef<string>(pathname);
 
-  const startPending = () => {
+  const completePending = useCallback(() => {
+    if (delayTimerRef.current) {
+      clearTimeout(delayTimerRef.current);
+      delayTimerRef.current = null;
+    }
+    if (failsafeTimerRef.current) {
+      clearTimeout(failsafeTimerRef.current);
+      failsafeTimerRef.current = null;
+    }
+
+    setStatus((prevStatus) => {
+      if (prevStatus === 'pending') {
+        completeTimerRef.current = setTimeout(() => {
+          setVisible(false);
+          resetTimerRef.current = setTimeout(() => {
+            setStatus('idle');
+          }, 130);
+        }, 120);
+        return 'completing';
+      }
+      setVisible(false);
+      return 'idle';
+    });
+  }, []);
+
+  const startPending = useCallback(() => {
     if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
     if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
     if (delayTimerRef.current) clearTimeout(delayTimerRef.current);
+    if (failsafeTimerRef.current) clearTimeout(failsafeTimerRef.current);
 
     // Show only if navigation takes longer than ~150ms
     delayTimerRef.current = setTimeout(() => {
       setVisible(true);
       setStatus('pending');
     }, 150);
-  };
 
-  const completePending = () => {
-    if (delayTimerRef.current) {
-      clearTimeout(delayTimerRef.current);
-      delayTimerRef.current = null;
-    }
-
-    if (visible || status === 'pending') {
-      setStatus('completing');
-      completeTimerRef.current = setTimeout(() => {
-        setVisible(false);
-        resetTimerRef.current = setTimeout(() => {
-          setStatus('idle');
-        }, 300);
-      }, 200);
-    } else {
-      setStatus('idle');
-      setVisible(false);
-    }
-  };
+    // Failsafe: complete/reset after 4 seconds if pathname never changes
+    failsafeTimerRef.current = setTimeout(() => {
+      completePending();
+    }, 4000);
+  }, [completePending]);
 
   // Intercept internal link clicks and popstate
   useEffect(() => {
@@ -70,8 +82,9 @@ export default function NavigationProgressBar() {
       try {
         const url = new URL(anchor.href, window.location.href);
         if (url.origin !== window.location.origin) return;
-        // Same page with same hash
-        if (url.pathname === window.location.pathname && url.search === window.location.search) {
+
+        // Don't start when pathname is identical (guards against search-param-only and hash navigations)
+        if (url.pathname === window.location.pathname) {
           return;
         }
 
@@ -82,6 +95,10 @@ export default function NavigationProgressBar() {
     };
 
     const handlePopState = () => {
+      // Guard popstate: don't start if pathname is unchanged (e.g. hash anchor back/forward)
+      if (window.location.pathname === prevPathnameRef.current) {
+        return;
+      }
       startPending();
     };
 
@@ -94,8 +111,9 @@ export default function NavigationProgressBar() {
       if (delayTimerRef.current) clearTimeout(delayTimerRef.current);
       if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
       if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+      if (failsafeTimerRef.current) clearTimeout(failsafeTimerRef.current);
     };
-  }, []);
+  }, [startPending]);
 
   // Complete when new pathname renders
   useEffect(() => {
@@ -103,7 +121,7 @@ export default function NavigationProgressBar() {
       completePending();
       prevPathnameRef.current = pathname;
     }
-  }, [pathname]);
+  }, [pathname, completePending]);
 
   if (!visible && status === 'idle') {
     return null;
@@ -119,7 +137,7 @@ export default function NavigationProgressBar() {
     opacity = 1;
   } else if (status === 'completing') {
     scale = 1;
-    transition = 'transform 0.2s ease-out, opacity 0.3s ease-out';
+    transition = 'transform 0.12s ease-out, opacity 0.13s ease-out';
     opacity = visible ? 1 : 0;
   }
 

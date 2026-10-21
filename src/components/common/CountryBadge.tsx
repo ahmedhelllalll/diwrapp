@@ -23,6 +23,7 @@ export async function CountryBadge({ className, style }: { className?: string; s
         textAlign: 'center',
         ...style,
       }}
+      suppressHydrationWarning
     >
       {countryCode.toLowerCase()}
     </sup>

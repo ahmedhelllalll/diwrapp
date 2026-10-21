@@ -21,7 +21,7 @@ import Negotiator from 'negotiator';
 import { decodeSessionToken, isSessionExpired } from '@/lib/auth/session';
 import { AUTH_COOKIE_NAME } from '@/lib/auth/config';
 import { geolocation } from '@vercel/functions';
-import { COUNTRY_COOKIE_NAME } from '@/lib/geo';
+import { COUNTRY_COOKIE_NAME, DEFAULT_COUNTRY_CODE } from '@/lib/geo';
 
 /**
  * Extensible list of protected path prefixes (without locale prefix).
@@ -142,17 +142,29 @@ export function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
 
-  // 5. Dynamic country code detection via Vercel Geolocation
-  let countryCode: string | undefined;
+  // 5. Dynamic country code detection via Vercel Geolocation, existing cookie, or IP headers
+  let countryCode: string | undefined = request.cookies.get(COUNTRY_COOKIE_NAME)?.value?.trim().toLowerCase();
   try {
     const geo = geolocation(request);
     if (geo?.country) {
       countryCode = geo.country.toLowerCase();
-      requestHeaders.set('x-country-code', countryCode);
     }
   } catch {
     // Geolocation unavailable or running outside of Vercel edge
   }
+
+  if (!countryCode) {
+    const headerCountry = request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry');
+    if (headerCountry) {
+      countryCode = headerCountry.trim().toLowerCase();
+    }
+  }
+
+  if (!countryCode) {
+    countryCode = DEFAULT_COUNTRY_CODE;
+  }
+
+  requestHeaders.set('x-country-code', countryCode);
 
   const response = NextResponse.next({
     request: {
@@ -160,14 +172,12 @@ export function proxy(request: NextRequest) {
     },
   });
 
-  if (countryCode) {
-    response.headers.set('x-country-code', countryCode);
-    response.cookies.set(COUNTRY_COOKIE_NAME, countryCode, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7,
-      sameSite: 'lax',
-    });
-  }
+  response.headers.set('x-country-code', countryCode);
+  response.cookies.set(COUNTRY_COOKIE_NAME, countryCode, {
+    path: '/',
+    maxAge: 60 * 60 * 24 * 7,
+    sameSite: 'lax',
+  });
 
   applySecurityHeaders(response);
   return response;

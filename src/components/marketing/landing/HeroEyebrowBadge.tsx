@@ -8,9 +8,9 @@ interface HeroEyebrowBadgeProps {
 
 export default function HeroEyebrowBadge({ text }: HeroEyebrowBadgeProps) {
   return (
-    <Badge className="mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none gap-1.5 sm:gap-2">
+    <Badge className="mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none !px-2.5 sm:!px-3.5 !gap-1 sm:!gap-2">
       <Sparks className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-neutral-300 stroke-[1.5] shrink-0" strokeWidth={1.5} />
-      <span>{text}</span>
+      <span className="text-[10.5px] sm:text-[13px] whitespace-nowrap">{text}</span>
     </Badge>
   );
 }
