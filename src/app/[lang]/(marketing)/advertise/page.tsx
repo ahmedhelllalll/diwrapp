@@ -60,7 +60,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
                   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
                   <path d="M2 12h20" />
                 </svg>
-                <span>{adv?.heroBadge || "Bridging Vision with Functionality"}</span>
+                <span className="whitespace-nowrap">{adv?.heroBadge || "Bridging Vision with Functionality"}</span>
               </Badge>
 
               <h1 className="advertise-title">

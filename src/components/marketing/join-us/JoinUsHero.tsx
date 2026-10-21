@@ -80,8 +80,8 @@ export default function JoinUsHero({
           className="mb-6 flex justify-center"
         >
           <Badge variant="outline-sm">
-            <SystemRestart className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] shrink-0" strokeWidth={1.5} />
-            <span>{badgeText}</span>
+            <SystemRestart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-[#D4D4D8] shrink-0" strokeWidth={1.5} />
+            <span className="whitespace-nowrap">{badgeText}</span>
           </Badge>
         </motion.div>
 

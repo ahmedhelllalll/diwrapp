@@ -95,8 +95,8 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           {/* 1. Hero Badge */}
           <div className="hero-anim-badge flex justify-center mb-5">
             <Badge variant="outline-sm">
-              <Suitcase className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
-              <span>{renderBidiText(data.badge)}</span>
+              <Suitcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+              <span className="whitespace-nowrap">{renderBidiText(data.badge)}</span>
             </Badge>
           </div>
 

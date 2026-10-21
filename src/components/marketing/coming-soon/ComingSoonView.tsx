@@ -82,7 +82,7 @@ export default function ComingSoonView({
             {/* Hero Badge */}
             <MotionContentItem>
               <Badge variant="outline-sm" className="mb-5 lg:mb-6">
-                <span>{dict.tag}</span>
+                <span className="whitespace-nowrap">{dict.tag}</span>
               </Badge>
             </MotionContentItem>
 

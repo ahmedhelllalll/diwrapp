@@ -175,8 +175,8 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         {/* Hero Badge */}
         <div className="hero-anim-badge flex justify-center mb-4 sm:mb-5">
           <Badge variant="outline-sm">
-            <CardWallet aria-hidden="true" className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
-            <span>{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
+            <CardWallet aria-hidden="true" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+            <span className="whitespace-nowrap">{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
           </Badge>
         </div>
 

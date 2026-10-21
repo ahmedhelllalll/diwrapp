@@ -187,8 +187,8 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
           {/* Hero Badge */}
           <motion.div variants={itemVariants} className="mb-6 flex justify-center">
             <Badge variant="outline-sm">
-              <Internet className="w-4 h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
-              <span>{data.badge}</span>
+              <Internet className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
+              <span className="whitespace-nowrap">{data.badge}</span>
             </Badge>
           </motion.div>
 
