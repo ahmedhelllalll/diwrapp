@@ -15,9 +15,9 @@ interface FeatureBadgeProps {
 
 export const FeatureBadge = ({ icon, text, className = '' }: FeatureBadgeProps) => (
   <div
-    className={`inline-flex items-center h-[28px] py-1 pl-2 pr-2.5 rtl:pl-2.5 rtl:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-zinc-800 bg-transparent text-xs font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${className}`}
+    className={`inline-flex items-center h-[26px] sm:h-[28px] py-0.5 sm:py-1 px-2 sm:pl-2 sm:pr-2.5 rtl:sm:pl-2.5 rtl:sm:pr-2 gap-1 rounded-full border border-[var(--Border-Colors-border-secondary,#E4E7EC)] dark:border-zinc-800 bg-transparent text-[11px] sm:text-xs whitespace-nowrap font-medium text-[var(--Text-text-secondary,#344054)] dark:text-zinc-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] ${className}`}
   >
-    <span className="w-3.5 h-3.5 flex items-center justify-center shrink-0">
+    <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex items-center justify-center shrink-0 [&>svg]:w-3 [&>svg]:h-3 sm:[&>svg]:w-3.5 sm:[&>svg]:h-3.5">
       {icon}
     </span>
     <span className="leading-none">{text}</span>
@@ -281,7 +281,7 @@ export default function PlatformFeaturesSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: animMargin }}
               transition={{ duration: 0.75, delay: noDelay ? 0 : 0.16, ease: appleEasing }}
-              className="flex-1 flex flex-col justify-between items-start p-9 sm:p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
+              className="flex-1 flex flex-col justify-between items-start p-6 min-[360px]:p-9 sm:p-8 lg:p-10 rounded-[24px] bg-white dark:bg-[#0a0a0a] border border-[#EAECF0] dark:border-zinc-800 shadow-xs hover:border-slate-300 hover:dark:border-zinc-700 hover:shadow-md dark:hover:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] transition-[border-color,box-shadow] duration-300 ease-out min-h-[280px]"
             >
               <div className="self-start">
                 <FeatureBadge
