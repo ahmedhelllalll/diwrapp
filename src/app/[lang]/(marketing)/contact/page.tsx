@@ -1,3 +1,4 @@
+import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries";
 import { Locale } from "@/i18n-config";
@@ -11,49 +12,17 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const contact = dict.contact;
-  const isAr = lang === 'ar';
-  const title = isAr ? 'تواصل معنا' : 'Contact Us';
-  const description =
-    contact?.hero?.subtitle ||
-    (isAr
-      ? 'تواصل مع فريق منصة Di-Wrapp لأي استفسار أو شراكة إعلانية أو دعم فني.'
-      : 'Connect with the Di-Wrapp team for questions, support, or partnership inquiries.');
+  const meta = dict.metadata?.contact;
+  const title = meta?.title || (lang === 'ar' ? 'تواصل معنا | استشارات الشاشات والحملات الإعلانية' : 'Contact Our Media Strategy & Support Team');
+  const description = meta?.description || "Get in touch with Di-Wrapp's enterprise DOOH media strategists.";
 
-  return {
+  return constructMetadata({
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/contact`,
-      languages: {
-        en: 'https://diwrapp.com/en/contact',
-        ar: 'https://diwrapp.com/ar/contact',
-        'x-default': 'https://diwrapp.com/en/contact',
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: `https://diwrapp.com/${lang}/contact`,
-      siteName: 'Di-Wrapp',
-      locale: isAr ? 'ar_AR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/images/og-banner.png',
-          width: 1920,
-          height: 620,
-          alt: isAr ? 'Di-Wrapp - تواصل معنا' : 'Di-Wrapp Contact',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['/images/og-banner.png'],
-    },
-  };
+    path: '/contact',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'تواصل مع فريق Di-Wrapp' : 'Contact the Di-Wrapp Team',
+  });
 }
 
 export default async function ContactPage(props: { params: Promise<{ lang: string }> }) {

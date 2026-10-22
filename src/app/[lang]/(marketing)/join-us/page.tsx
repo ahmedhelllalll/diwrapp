@@ -1,3 +1,4 @@
+import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
@@ -10,21 +11,17 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = (dict as any)?.metadata;
-  const joinMeta = meta?.joinUs;
+  const meta = dict.metadata?.joinUs;
+  const title = meta?.title || (lang === 'ar' ? 'شبكة الشركاء وملاك المساحات والشاشات الإعلانية' : 'Media Partner Network | Monetize DOOH Screens');
+  const description = meta?.description || 'Monetize your billboard inventory and commercial screens with Di-Wrapp.';
 
-  return {
-    title: joinMeta?.title || 'Join Us',
-    description: joinMeta?.description || 'Clone Yourself. Scale Your Expertise. Extend Your Reach. A Digital Marketplace that Operate Without Limits.',
-    alternates: {
-      canonical: `/${lang}/join-us`,
-      languages: {
-        en: '/en/join-us',
-        ar: '/ar/join-us',
-        'x-default': '/en/join-us',
-      },
-    },
-  };
+  return constructMetadata({
+    title,
+    description,
+    path: '/join-us',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'انضم لشبكة شركاء Di-Wrapp' : 'Join the Di-Wrapp Media Partner Network',
+  });
 }
 
 export default async function JoinUsPage(props: { params: Promise<{ lang: string }> }) {

@@ -93,9 +93,9 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       images: [
         {
           url: '/images/og-banner.png',
-          width: 1920,
-          height: 620,
-          alt: 'Di-Wrapp Media Network',
+          width: 1200,
+          height: 630,
+          alt: lang === 'ar' ? 'شبكة Di-Wrapp الإعلانية' : 'Di-Wrapp Media Network',
         },
       ],
     },

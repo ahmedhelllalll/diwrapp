@@ -416,51 +416,87 @@
     }
   },
   "metadata": {
-    "defaultTitle": "Di-Wrapp - Revolutionizing DOOH Advertising",
-    "defaultDescription": "Di-Wrapp connects advertisers and media owners in an intuitive digital out-of-home advertising marketplace.",
+    "defaultTitle": "Di-Wrapp - Revolutionizing DOOH & Outdoor Media Advertising",
+    "defaultDescription": "Di-Wrapp connects advertisers and media owners in an intelligent DOOH marketplace. Discover premier digital screens, book instantly, and track Proof of Play.",
     "landing": {
       "title": "Di-Wrapp | Unified Out-of-Home & Digital Media Network",
       "description": "Access premier digital out-of-home (DOOH) screens and dynamic media spaces. Discover, book, and launch high-impact campaigns seamlessly with Di-Wrapp."
     },
-    "login": {
-      "title": "Login",
-      "description": "Log in to your Di-Wrapp account to manage campaigns and listings."
-    },
-    "signup": {
-      "title": "Sign Up",
-      "description": "Create a new Di-Wrapp account and start your advertising journey."
-    },
-    "resetPassword": {
-      "title": "Reset Password",
-      "description": "Reset your Di-Wrapp account password."
-    },
-    "vendorDashboard": {
-      "title": "Vendor Dashboard",
-      "description": "Manage your advertising screens, slots, and revenue as a Di-Wrapp vendor."
-    },
-    "advertiserDashboard": {
-      "title": "Advertiser Dashboard",
-      "description": "Track your campaigns, discover new opportunities, and measure ROI as a Di-Wrapp advertiser."
+    "about": {
+      "title": "About Us | Revolutionizing Global DOOH Media",
+      "description": "Discover Di-Wrapp's mission to modernize outdoor advertising. We unite cutting-edge DOOH technology, media owners, and advertisers into one transparent ecosystem."
     },
     "advertise": {
-      "title": "Advertise",
-      "description": "Empowering brands through precision media execution. Plan, launch, and track high-impact DOOH campaigns with confidence."
-    },
-    "contact": {
-      "title": "Contact Us",
-      "description": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
+      "title": "Advertise on Digital Billboards & DOOH Screens",
+      "description": "Plan, launch, and track high-impact DOOH campaigns with Di-Wrapp. Access premium digital billboards, live analytics, and certified Proof of Play reporting."
     },
     "joinUs": {
-      "title": "Join Us",
-      "description": "Multiply your impact. Scale your media reach. A unified digital marketplace operating without limits."
+      "title": "Media Partner Network | Monetize DOOH Screens",
+      "description": "Monetize your billboard inventory and commercial screens with Di-Wrapp. Connect with enterprise media buyers, automate bookings, and maximize daily occupancy."
     },
-    "blog": {
-      "title": "Blog",
-      "description": "Stay tuned for exclusive updates, insights, and stories from Di-Wrapp."
+    "askDi": {
+      "title": "Ask Di | AI DOOH Campaign & Media Planning Co-Pilot",
+      "description": "Meet Ask Di, your AI advertising co-pilot. Plan multi-city DOOH campaigns, generate targeted ad placements, and optimize outdoor budgets with predictive analytics."
+    },
+    "vendor": {
+      "title": "Vendor Portal | Manage & Monetize DOOH Inventory",
+      "description": "Empower your advertising inventory with Di-Wrapp's Vendor Portal. Automate scheduling, manage live screen availability, and track verified revenue payouts."
+    },
+    "vendorOnboarding": {
+      "title": "Media Owner Onboarding | List Your DOOH Inventory",
+      "description": "Apply to list your digital screens and outdoor billboards on Di-Wrapp. Fast-track onboarding, verify your inventory, and start receiving enterprise bookings."
     },
     "wallet": {
-      "title": "Wallet",
-      "description": "Secure, flexible, and instant transactions. The Di-Wrapp Wallet is your digital financial hub within the platform."
+      "title": "Digital Wallet | Instant Payouts & Escrow Billing",
+      "description": "Manage campaign funds, escrow balances, and instant vendor payouts with the Di-Wrapp Wallet. Fully compliant with Saudi e-invoicing and enterprise security."
+    },
+    "culture": {
+      "title": "Life & Culture | Building the Future of DOOH Media",
+      "description": "Explore careers and life at Di-Wrapp. Join a world-class team of engineers, designers, and media innovators redefining the digital out-of-home landscape."
+    },
+    "contact": {
+      "title": "Contact Our Media Strategy & Support Team",
+      "description": "Get in touch with Di-Wrapp's enterprise DOOH media strategists and technical support team. We're here to accelerate your advertising and inventory monetization."
+    },
+    "comingSoon": {
+      "title": "Platform Expansion & Upcoming Features | Stay Tuned",
+      "description": "Exciting new programmatic DOOH features and advertising capabilities are launching soon on Di-Wrapp. Subscribe for early access and platform announcements."
+    },
+    "blog": {
+      "title": "DOOH Insights, Media Trends & Case Studies | Blog",
+      "description": "Stay ahead in digital out-of-home advertising. Read expert insights, programmatic media trends, and industry case studies from the team at Di-Wrapp."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy | Data Protection & User Privacy",
+      "description": "Review the Di-Wrapp Privacy Policy to understand how we collect, protect, and process personal data across our DOOH media platform and marketplace services."
+    },
+    "termsAndConditions": {
+      "title": "Terms & Conditions | Platform & Marketplace Rules",
+      "description": "Read the official Terms & Conditions governing your use of the Di-Wrapp marketplace, advertiser booking agreements, and Media Owner screen supply standards."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy | Transparent Tracking & Storage",
+      "description": "Learn how Di-Wrapp utilizes essential first-party cookies, edge country routing, and secure storage to deliver high-performance DOOH advertising services."
+    },
+    "login": {
+      "title": "Account Login | Access Your DOOH Portal",
+      "description": "Log in to your Di-Wrapp account to manage advertising campaigns, inspect screen occupancy, and monitor real-time media performance."
+    },
+    "signup": {
+      "title": "Create Account | Join the DOOH Media Network",
+      "description": "Create your Di-Wrapp account to start booking premium billboard inventory or monetizing commercial screens across the regional DOOH network."
+    },
+    "resetPassword": {
+      "title": "Reset Password | Secure Account Recovery",
+      "description": "Reset your Di-Wrapp account credentials securely. Enter your registered email to receive immediate password recovery instructions."
+    },
+    "vendorDashboard": {
+      "title": "Vendor Dashboard | Inventory & Revenue Analytics",
+      "description": "Manage your digital billboard network, schedule broadcast slots, and inspect real-time payout ledgers as an authorized Di-Wrapp media owner."
+    },
+    "advertiserDashboard": {
+      "title": "Advertiser Dashboard | Campaign Tracking & ROI",
+      "description": "Track live DOOH advertising campaigns, analyze Proof of Play metrics, and optimize multi-screen media budgets on Di-Wrapp."
     }
   },
   "joinUs": {

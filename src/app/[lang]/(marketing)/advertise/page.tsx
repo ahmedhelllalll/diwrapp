@@ -1,3 +1,4 @@
+import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,20 +15,17 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const adv = dict.advertise as any;
-  const meta = dict.metadata as any;
+  const meta = dict.metadata?.advertise;
+  const title = meta?.title || (lang === 'ar' ? 'إعلانات الشاشات واللوحات الخارجية الرقمية DOOH' : 'Advertise on Digital Billboards & DOOH Screens');
+  const description = meta?.description || `${adv?.heroTitleLight || ''} ${adv?.heroTitleBold || ''}`.trim();
 
-  return {
-    title: meta?.advertise?.title || 'Advertise',
-    description: meta?.advertise?.description || `${adv?.heroTitleLight} ${adv?.heroTitleBold}`,
-    alternates: {
-      canonical: `/${lang}/advertise`,
-      languages: {
-        en: '/en/advertise',
-        ar: '/ar/advertise',
-        'x-default': '/en/advertise',
-      },
-    },
-  };
+  return constructMetadata({
+    title,
+    description,
+    path: '/advertise',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'إعلانات الشاشات الخارجية - Di-Wrapp' : 'Advertise with Di-Wrapp DOOH Network',
+  });
 }
 
 export default async function AdvertisePage(props: { params: Promise<{ lang: string }> }) {

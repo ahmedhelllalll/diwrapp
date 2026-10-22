@@ -1,3 +1,4 @@
+import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,18 +14,17 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  return {
-    title: dict.about?.badge || 'About Us',
-    description: dict.about?.title?.replace(/<[^>]*>?/gm, ''), // strip html tags for meta
-    alternates: {
-      canonical: `/${lang}/about`,
-      languages: {
-        en: '/en/about',
-        ar: '/ar/about',
-        'x-default': '/en/about',
-      },
-    },
-  };
+  const meta = dict.metadata?.about;
+  const title = meta?.title || (lang === 'ar' ? 'عن Di-Wrapp | رؤيتنا ومستقبل الإعلانات الخارجية' : 'About Us | Revolutionizing Global DOOH Media');
+  const description = meta?.description || (dict.about?.title?.replace(/<[^>]*>?/gm, '') || '');
+
+  return constructMetadata({
+    title,
+    description,
+    path: '/about',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'عن Di-Wrapp - رؤيتنا ومنظومتنا الرقمية' : 'About Di-Wrapp - Our Platform & Mission',
+  });
 }
 
 export default async function AboutPage(props: { params: Promise<{ lang: string }> }) {
