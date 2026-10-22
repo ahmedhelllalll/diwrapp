@@ -14,14 +14,14 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.contact;
   const title = meta?.title || (lang === 'ar' ? 'تواصل معنا | استشارات الشاشات والحملات الإعلانية' : 'Contact Our Media Strategy & Support Team');
-  const description = meta?.description || "Get in touch with Di-Wrapp's enterprise DOOH media strategists.";
+  const description = meta?.description || "Get in touch with Di-wrapp's enterprise DOOH media strategists.";
 
   return constructMetadata({
     title,
     description,
     path: '/contact',
     lang,
-    ogImageAlt: lang === 'ar' ? 'تواصل مع فريق Di-Wrapp' : 'Contact the Di-Wrapp Team',
+    ogImageAlt: lang === 'ar' ? 'تواصل مع فريق Di-wrapp' : 'Contact the Di-wrapp Team',
   });
 }
 

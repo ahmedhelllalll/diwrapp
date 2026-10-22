@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description,
     path: '/blog',
     lang,
-    ogImageAlt: lang === 'ar' ? 'مدونة Di-Wrapp للأفكار الإعلامية' : 'Di-Wrapp Media & DOOH Blog',
+    ogImageAlt: lang === 'ar' ? 'مدونة Di-wrapp للأفكار الإعلامية' : 'Di-wrapp Media & DOOH Blog',
   });
 }
 

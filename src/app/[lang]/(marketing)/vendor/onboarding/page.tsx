@@ -25,14 +25,14 @@ export async function generateMetadata(props: {
       : onboarding?.step1;
 
   const title = meta?.title || stepInfo?.title || (lang === 'ar' ? 'تسجيل ملاك الشاشات | انضم لشبكة العرض الإعلاني' : 'Media Owner Onboarding | List Your DOOH Inventory');
-  const description = meta?.description || (stepInfo?.subtitle || stepInfo?.emailNotice || 'Apply to list your digital screens and outdoor billboards on Di-Wrapp.').trim();
+  const description = meta?.description || (stepInfo?.subtitle || stepInfo?.emailNotice || 'Apply to list your digital screens and outdoor billboards on Di-wrapp.').trim();
 
   return constructMetadata({
     title,
     description,
     path: '/vendor/onboarding',
     lang,
-    ogImageAlt: lang === 'ar' ? 'تسجيل مورد جديد في Di-Wrapp' : 'Di-Wrapp Media Owner Onboarding',
+    ogImageAlt: lang === 'ar' ? 'تسجيل مورد جديد في Di-wrapp' : 'Di-wrapp Media Owner Onboarding',
   });
 }
 

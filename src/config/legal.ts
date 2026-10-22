@@ -1,5 +1,5 @@
 /**
- * Legal Configuration & Corporate Constants for Di-Wrapp
+ * Legal Configuration & Corporate Constants for Di-wrapp
  *
  * NOTE FOR LEGAL REVIEW:
  * All values marked with `[TO CONFIRM: ...]` are provisional placeholders
@@ -57,8 +57,8 @@ export interface LegalConfig {
 
 export const LEGAL_CONFIG: LegalConfig = {
  company: {
- legalName: "[TO CONFIRM: Distin-Gui Information Technology Company / Di-Wrapp Co.]",
- tradeName: "Di-Wrapp",
+ legalName: "[TO CONFIRM: Distin-Gui Information Technology Company / Di-wrapp Co.]",
+ tradeName: "Di-wrapp",
  parentGroup: "Distin-Gui Group",
  commercialRegistrationNumber: "[TO CONFIRM: Saudi Commercial Registration (CR) Number]",
  taxIdentificationNumber: "[TO CONFIRM: ZATCA VAT / Tax ID Number]",

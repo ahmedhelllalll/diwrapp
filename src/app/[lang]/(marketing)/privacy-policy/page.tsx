@@ -17,7 +17,7 @@ export async function generateMetadata(props: {
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.privacyPolicy;
   const title = meta?.title || (lang === 'ar' ? 'سياسة الخصوصية | حماية وسرية البيانات الشخصية' : 'Privacy Policy | Data Protection & User Privacy');
-  const description = meta?.description || 'Review the Di-Wrapp Privacy Policy to understand how we collect, protect, and process personal data.';
+  const description = meta?.description || 'Review the Di-wrapp Privacy Policy to understand how we collect, protect, and process personal data.';
 
   return constructMetadata({
     title,
@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
     path: '/privacy-policy',
     lang,
     type: 'article',
-    ogImageAlt: lang === 'ar' ? 'سياسة الخصوصية لمنصة Di-Wrapp' : 'Di-Wrapp Privacy Policy',
+    ogImageAlt: lang === 'ar' ? 'سياسة الخصوصية لمنصة Di-wrapp' : 'Di-wrapp Privacy Policy',
   });
 }
 

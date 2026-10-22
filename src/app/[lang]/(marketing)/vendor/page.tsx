@@ -17,14 +17,14 @@ export async function generateMetadata(props: {
   const vendorHero = (dict as any).vendorPortalHero;
   const isAr = lang === 'ar';
   const title = meta?.title || (isAr ? 'بوابة الموردين | إدارة واستثمار الشاشات الإعلانية' : 'Vendor Portal | Manage & Monetize DOOH Inventory');
-  const description = meta?.description || vendorHero?.subtitle || "Join Di-Wrapp's Smart Network to empower your inventory.";
+  const description = meta?.description || vendorHero?.subtitle || "Join Di-wrapp's Smart Network to empower your inventory.";
 
   return constructMetadata({
     title,
     description,
     path: '/vendor',
     lang,
-    ogImageAlt: isAr ? 'بوابة ملاك الشاشات - Di-Wrapp' : 'Di-Wrapp Vendor Portal',
+    ogImageAlt: isAr ? 'بوابة ملاك الشاشات - Di-wrapp' : 'Di-wrapp Vendor Portal',
   });
 }
 

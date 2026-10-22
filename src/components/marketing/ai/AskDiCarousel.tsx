@@ -29,7 +29,7 @@ const DEFAULT_SLIDES: Record<string, SlideData> = {
     badge: 'Wrapp AI – Your Smart Advertising Companion',
     title: 'Empowering Through intelligent, data-driven support.',
     description:
-      'Ask Di is your smart, friendly AI assistant built into the Di-Wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —',
+      'Ask Di is your smart, friendly AI assistant built into the Di-wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —',
     highlight: 'all through intuitive, AI-powered interactions.',
     cta: 'Try Ask Di',
     bgImageDesktop: '/assets/ask-di-slide-white.webp',
@@ -53,12 +53,12 @@ const DEFAULT_SLIDES: Record<string, SlideData> = {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Ask Di|Di-Wrapp|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Ask Di|Di-wrapp|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
       part === 'Ask Di' ||
-      part === 'Di-Wrapp' ||
+      part === 'Di-wrapp' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7'

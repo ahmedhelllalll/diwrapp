@@ -13,14 +13,14 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.joinUs;
   const title = meta?.title || (lang === 'ar' ? 'شبكة الشركاء وملاك المساحات والشاشات الإعلانية' : 'Media Partner Network | Monetize DOOH Screens');
-  const description = meta?.description || 'Monetize your billboard inventory and commercial screens with Di-Wrapp.';
+  const description = meta?.description || 'Monetize your billboard inventory and commercial screens with Di-wrapp.';
 
   return constructMetadata({
     title,
     description,
     path: '/join-us',
     lang,
-    ogImageAlt: lang === 'ar' ? 'انضم لشبكة شركاء Di-Wrapp' : 'Join the Di-Wrapp Media Partner Network',
+    ogImageAlt: lang === 'ar' ? 'انضم لشبكة شركاء Di-wrapp' : 'Join the Di-wrapp Media Partner Network',
   });
 }
 

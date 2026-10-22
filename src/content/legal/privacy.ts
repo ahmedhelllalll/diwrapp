@@ -6,7 +6,7 @@ export const privacyPolicyEn: LegalDocument = {
  category: 'Legal',
  title: 'Privacy Policy',
  intro:
- 'This Privacy Policy describes how Di-Wrapp, operated by Distin-Gui Group, collects, uses, stores, and protects personal data when you access our website, submit inquiries, register for an account, apply as a Media Owner, or interact with our out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace.',
+ 'This Privacy Policy describes how Di-wrapp, operated by Distin-Gui Group, collects, uses, stores, and protects personal data when you access our website, submit inquiries, register for an account, apply as a Media Owner, or interact with our out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace.',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateEn,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedEn,
  tableOfContentsTitle: 'In this article',
@@ -22,8 +22,8 @@ export const privacyPolicyEn: LegalDocument = {
  id: 'who-we-are',
  title: '1. Who We Are and Scope',
  paragraphs: [
- 'Di-Wrapp is a multi-country out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace operated by Distin-Gui Group, headquartered in Riyadh, Kingdom of Saudi Arabia. We connect advertisers looking to book high-impact advertising spaces and digital screens with Media Owners who own or operate media inventory.',
- 'This Privacy Policy applies to personal information collected through the Di-Wrapp website (diwrapp.com), partner and vendor onboarding portals, contact forms, and related online communication channels. This document serves as a draft for legal review prior to full commercial availability.',
+ 'Di-wrapp is a multi-country out-of-home (OOH) and digital out-of-home (DOOH) advertising marketplace operated by Distin-Gui Group, headquartered in Riyadh, Kingdom of Saudi Arabia. We connect advertisers looking to book high-impact advertising spaces and digital screens with Media Owners who own or operate media inventory.',
+ 'This Privacy Policy applies to personal information collected through the Di-wrapp website (diwrapp.com), partner and vendor onboarding portals, contact forms, and related online communication channels. This document serves as a draft for legal review prior to full commercial availability.',
  ],
  },
  {
@@ -71,7 +71,7 @@ export const privacyPolicyEn: LegalDocument = {
  id: 'data-sharing',
  title: '4. Sharing and Disclosure of Information',
  paragraphs: [
- 'Di-Wrapp does not sell, rent, or trade your personal data to third parties for independent marketing purposes. We share your information solely under the following limited circumstances:',
+ 'Di-wrapp does not sell, rent, or trade your personal data to third parties for independent marketing purposes. We share your information solely under the following limited circumstances:',
  {
  list: [
  'Cloud Infrastructure & Hosting Providers: We host our web application on Vercel Inc. and deploy our API backend on secure enterprise cloud servers. These service providers act strictly as data processors under contractual confidentiality and data security obligations.',
@@ -86,7 +86,7 @@ export const privacyPolicyEn: LegalDocument = {
  id: 'international-transfers',
  title: '5. International Data Transfers',
  paragraphs: [
- 'Di-Wrapp operates as a regional and cross-border digital marketplace. While our operational headquarters is in Riyadh, Saudi Arabia, our cloud edge servers and technical infrastructure may process data across multiple geographic regions where our hosting providers maintain enterprise data centers.',
+ 'Di-wrapp operates as a regional and cross-border digital marketplace. While our operational headquarters is in Riyadh, Saudi Arabia, our cloud edge servers and technical infrastructure may process data across multiple geographic regions where our hosting providers maintain enterprise data centers.',
  'Whenever personal data is transferred across international borders, we ensure adequate contractual, organizational, and technical safeguards are maintained pursuant to applicable data protection laws.',
  ],
  },
@@ -127,7 +127,7 @@ export const privacyPolicyEn: LegalDocument = {
  id: 'children-privacy',
  title: "9. Children's Privacy",
  paragraphs: [
- `Di-Wrapp is a professional business-to-business (B2B) digital advertising marketplace intended solely for commercial entities and individuals who have reached the age of legal majority (${LEGAL_CONFIG.operational.minimumAge} years of age). We do not knowingly solicit or collect personal information from minors. If you believe a minor has submitted personal data to us, please notify us immediately so we can promptly delete the record.`,
+ `Di-wrapp is a professional business-to-business (B2B) digital advertising marketplace intended solely for commercial entities and individuals who have reached the age of legal majority (${LEGAL_CONFIG.operational.minimumAge} years of age). We do not knowingly solicit or collect personal information from minors. If you believe a minor has submitted personal data to us, please notify us immediately so we can promptly delete the record.`,
  ],
  },
  {
@@ -149,7 +149,7 @@ export const privacyPolicyEn: LegalDocument = {
  id: 'contact-us',
  title: '12. Contact Information',
  paragraphs: [
- 'If you have questions, comments, or formal requests regarding this Privacy Policy or Di-Wrapp’s data handling practices, please contact our legal and privacy team:',
+ 'If you have questions, comments, or formal requests regarding this Privacy Policy or Di-wrapp’s data handling practices, please contact our legal and privacy team:',
  {
  list: [
  `Company: ${LEGAL_CONFIG.company.legalName} (${LEGAL_CONFIG.company.parentGroup})`,
@@ -167,12 +167,12 @@ export const privacyPolicyEn: LegalDocument = {
  relatedDocs: [
  {
  title: 'Terms & Conditions',
- description: 'Review the contractual terms governing use of the Di-Wrapp marketplace, advertiser obligations, and Media Owner standards.',
+ description: 'Review the contractual terms governing use of the Di-wrapp marketplace, advertiser obligations, and Media Owner standards.',
  href: '/terms-and-conditions',
  },
  {
  title: 'Cookie Policy',
- description: 'Learn about the first-party cookies, local storage keys, and edge country detection tokens utilized by Di-Wrapp.',
+ description: 'Learn about the first-party cookies, local storage keys, and edge country detection tokens utilized by Di-wrapp.',
  href: '/cookie-policy',
  },
  ],
@@ -183,7 +183,7 @@ export const privacyPolicyAr: LegalDocument = {
  category: 'وثيقة قانونية',
  title: 'سياسة الخصوصية',
  intro:
- 'توضح سياسة الخصوصية هذه كيفية قيام منصة Di-Wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، بجمع بياناتك الشخصية واستخدامها وحفظها وحمايتها عند زيارة موقعنا الإلكتروني، أو إرسال استفسار، أو تسجيل حساب، أو تقديم طلب انضمام كمالك وسيلة إعلانية، أو التعامل مع سوق الإعلانات الرقمية خارج المنزل (DOOH).',
+ 'توضح سياسة الخصوصية هذه كيفية قيام منصة Di-wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، بجمع بياناتك الشخصية واستخدامها وحفظها وحمايتها عند زيارة موقعنا الإلكتروني، أو إرسال استفسار، أو تسجيل حساب، أو تقديم طلب انضمام كمالك وسيلة إعلانية، أو التعامل مع سوق الإعلانات الرقمية خارج المنزل (DOOH).',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateAr,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedAr,
  tableOfContentsTitle: 'في هذه الوثيقة',
@@ -199,7 +199,7 @@ export const privacyPolicyAr: LegalDocument = {
  id: 'who-we-are',
  title: '1. من نحن ونطاق التطبيق',
  paragraphs: [
- 'منصة Di-Wrapp هي سوق رقمي إقليمي للإعلانات الرقمية خارج المنزل (DOOH)، تُشغلها وتملكها مجموعة ديستين-جاي الكائن مقرها في مدينة الرياض بالمملكة العربية السعودية. نوفر الربط التقني بين المُعلنين الراغبين في حجز مساحات إعلانية وشاشات رقمية، وبين مُلّاك الوسائل الإعلانية الراغبين في تسويق مساحاتهم ومخزونهم الإعلاني.',
+ 'منصة Di-wrapp هي سوق رقمي إقليمي للإعلانات الرقمية خارج المنزل (DOOH)، تُشغلها وتملكها مجموعة ديستين-جاي الكائن مقرها في مدينة الرياض بالمملكة العربية السعودية. نوفر الربط التقني بين المُعلنين الراغبين في حجز مساحات إعلانية وشاشات رقمية، وبين مُلّاك الوسائل الإعلانية الراغبين في تسويق مساحاتهم ومخزونهم الإعلاني.',
  'تسري هذه السياسة على كافة البيانات الشخصية التي يتم جمعها عبر الموقع الإلكتروني (diwrapp.com)، ونماذج التواصل، وبوابات تسجيل مُلّاك الوسائل الإعلانية والمُعلنين، وقنوات الدعم المعتمدة. تُعد هذه الوثيقة مسودة موجهة للمراجعة والاعتماد القانوني قبل الإطلاق التجاري الشامل.',
  ],
  },
@@ -248,7 +248,7 @@ export const privacyPolicyAr: LegalDocument = {
  id: 'data-sharing',
  title: '4. مشاركة البيانات والإفصاح عنها',
  paragraphs: [
- 'تلتزم Di-Wrapp بعدم بيع أو تأجير أو المتاجرة ببياناتك الشخصية لأي طرف ثالث لأغراض التسويق المستقل. ونحن نشارك بياناتك فقط في الحالات المحددة التالية:',
+ 'تلتزم Di-wrapp بعدم بيع أو تأجير أو المتاجرة ببياناتك الشخصية لأي طرف ثالث لأغراض التسويق المستقل. ونحن نشارك بياناتك فقط في الحالات المحددة التالية:',
  {
  list: [
  'مقدمو البنية التحتية والخدمات السحابية: نستضيف الموقع على شبكة Vercel وتطبيقات قواعد البيانات السحابية الموثوقة، وتعمل هذه الأطراف كمعالجي بيانات ملزمين تعاقدياً بأعلى معايير السرية والأمان الفني.',
@@ -263,7 +263,7 @@ export const privacyPolicyAr: LegalDocument = {
  id: 'international-transfers',
  title: '5. نقل البيانات عبر الحدود',
  paragraphs: [
- 'تعمل Di-Wrapp كسوق رقمي إقليمي ودولي يربط أسواقاً متعددة. ورغم أن مقر الإدارة يقع في الرياض بالمملكة العربية السعودية، إلا أن بنيتنا السحابية وخوادم الحوسبة الطرفية قد تعالج البيانات عبر مراكز بيانات تابعة لمزودي الخدمة في مناطق دولية متعددة.',
+ 'تعمل Di-wrapp كسوق رقمي إقليمي ودولي يربط أسواقاً متعددة. ورغم أن مقر الإدارة يقع في الرياض بالمملكة العربية السعودية، إلا أن بنيتنا السحابية وخوادم الحوسبة الطرفية قد تعالج البيانات عبر مراكز بيانات تابعة لمزودي الخدمة في مناطق دولية متعددة.',
  'وفي كافة حالات نقل البيانات دولياً، نحرص على تطبيق ضمانات تعاقدية وفنية كافية تكفل استمرار توفير مستوى حماية لا يقل عن متطلبات الأنظمة واللوائح المعمول بها لحماية البيانات الشخصية.',
  ],
  },
@@ -304,7 +304,7 @@ export const privacyPolicyAr: LegalDocument = {
  id: 'children-privacy',
  title: '9. خصوصية القُصّر والأطفال',
  paragraphs: [
- `خدمات Di-Wrapp موجهة حصراً لقطاع الأعمال والمنشآت التجارية والأشخاص المؤهلين نظاماً ممن أتموا سن الرشد القانوني (${LEGAL_CONFIG.operational.minimumAge} عاماً). ولا نجمع عن عمد أي بيانات تخص القُصّر أو الأطفال. وإذا نمى إلى علمك قيام قاصر بتزويدنا ببياناته دون موافقة وليه الشرعي، يرجى إخطارنا فوراً لحذف السجلات ذات الصلة.`,
+ `خدمات Di-wrapp موجهة حصراً لقطاع الأعمال والمنشآت التجارية والأشخاص المؤهلين نظاماً ممن أتموا سن الرشد القانوني (${LEGAL_CONFIG.operational.minimumAge} عاماً). ولا نجمع عن عمد أي بيانات تخص القُصّر أو الأطفال. وإذا نمى إلى علمك قيام قاصر بتزويدنا ببياناته دون موافقة وليه الشرعي، يرجى إخطارنا فوراً لحذف السجلات ذات الصلة.`,
  ],
  },
  {
@@ -344,7 +344,7 @@ export const privacyPolicyAr: LegalDocument = {
  relatedDocs: [
  {
  title: 'الشروط والأحكام',
- description: 'اطّلع على البنود التعاقدية المنظمة لاستخدام سوق Di-Wrapp، والتزامات المعلنين، ومسؤوليات مُلّاك الوسائل الإعلانية.',
+ description: 'اطّلع على البنود التعاقدية المنظمة لاستخدام سوق Di-wrapp، والتزامات المعلنين، ومسؤوليات مُلّاك الوسائل الإعلانية.',
  href: '/terms-and-conditions',
  },
  {

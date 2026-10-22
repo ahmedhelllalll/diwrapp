@@ -20,7 +20,7 @@ const defaultSlides: CarouselSlide[] = [
     id: 1,
     badge: "Wrapp AI – Your Smart Companion",
     title: "Empowering Through intelligent, data-driven support.",
-    description: "Ask Di is your smart, friendly AI assistant built into the Di-Wrapp platform. It helps brands, vendors, and support teams navigate booking, optimize campaigns, and even create content — all through intuitive, AI-powered interactions.",
+    description: "Ask Di is your smart, friendly AI assistant built into the Di-wrapp platform. It helps brands, vendors, and support teams navigate booking, optimize campaigns, and even create content — all through intuitive, AI-powered interactions.",
     highlightText: "all through intuitive, AI-powered interactions.",
     ctaText: "Try Ask Di",
     ctaLink: "#"

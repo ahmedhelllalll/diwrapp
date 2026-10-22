@@ -79,7 +79,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
           <Link
             href={`/${lang}`}
             className="hover:text-[#0f172a] dark:hover:text-white transition-colors"
-          >Di-Wrapp</Link>
+          >Di-wrapp</Link>
           <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true" />
           <span className="text-[#475569] dark:text-zinc-400">{category}</span>
           <NavArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0 text-[#cbd5e1] dark:text-zinc-700" aria-hidden="true" />

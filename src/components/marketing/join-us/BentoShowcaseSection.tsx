@@ -148,7 +148,7 @@ export default function BentoShowcaseSection({
             >
               <Image
                 src="/assets/join-laptop.png"
-                alt="Di-Wrapp Platform on Laptop"
+                alt="Di-wrapp Platform on Laptop"
                 width={1100}
                 height={850}
                 sizes="(max-width: 768px) 100vw, 720px"

@@ -17,7 +17,7 @@ export async function generateMetadata(props: {
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.termsAndConditions;
   const title = meta?.title || (lang === 'ar' ? 'الشروط والأحكام | القواعد المنظمة لمنصة الإعلانات' : 'Terms & Conditions | Platform & Marketplace Rules');
-  const description = meta?.description || 'Read the official Terms & Conditions governing your use of the Di-Wrapp marketplace.';
+  const description = meta?.description || 'Read the official Terms & Conditions governing your use of the Di-wrapp marketplace.';
 
   return constructMetadata({
     title,
@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
     path: '/terms-and-conditions',
     lang,
     type: 'article',
-    ogImageAlt: lang === 'ar' ? 'الشروط والأحكام لمنصة Di-Wrapp' : 'Di-Wrapp Terms & Conditions',
+    ogImageAlt: lang === 'ar' ? 'الشروط والأحكام لمنصة Di-wrapp' : 'Di-wrapp Terms & Conditions',
   });
 }
 

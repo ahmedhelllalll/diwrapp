@@ -32,9 +32,9 @@ export const LifeAtDiwrapp: React.FC<LifeAtDiwrappProps> = ({ dict }) => {
   };
 
   const data = dict?.lifeAtDiwrapp || {
-    badge: 'Life At Di-Wrapp',
+    badge: 'Life At Di-wrapp',
     title: 'Where Innovation Meets Impact',
-    statementHighlight: "At Di-Wrapp, we're not just building a platform —",
+    statementHighlight: "At Di-wrapp, we're not just building a platform —",
     statementBody:
       "we're reshaping how brands connect with the world around them. Every day, our teams bring together creativity, technology, and purpose to turn ambitious ideas into industry-defining solutions.",
   };

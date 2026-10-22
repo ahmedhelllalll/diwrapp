@@ -17,7 +17,7 @@ export async function generateMetadata(props: {
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.cookiePolicy;
   const title = meta?.title || (lang === 'ar' ? 'سياسة ملفات تعريف الارتباط | الشفافية والتخزين' : 'Cookie Policy | Transparent Tracking & Storage');
-  const description = meta?.description || 'Learn how Di-Wrapp utilizes essential first-party cookies and edge routing.';
+  const description = meta?.description || 'Learn how Di-wrapp utilizes essential first-party cookies and edge routing.';
 
   return constructMetadata({
     title,
@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
     path: '/cookie-policy',
     lang,
     type: 'article',
-    ogImageAlt: lang === 'ar' ? 'سياسة ملفات تعريف الارتباط - Di-Wrapp' : 'Di-Wrapp Cookie Policy',
+    ogImageAlt: lang === 'ar' ? 'سياسة ملفات تعريف الارتباط - Di-wrapp' : 'Di-wrapp Cookie Policy',
   });
 }
 

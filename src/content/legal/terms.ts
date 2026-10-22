@@ -6,7 +6,7 @@ export const termsAndConditionsEn: LegalDocument = {
  category: 'Legal',
  title: 'Terms & Conditions',
  intro:
- 'These Terms & Conditions constitute a legally binding agreement between you and Di-Wrapp, operated by Distin-Gui Group. They govern your access to and use of the Di-Wrapp platform, website, advertising booking services, and supplier network.',
+ 'These Terms & Conditions constitute a legally binding agreement between you and Di-wrapp, operated by Distin-Gui Group. They govern your access to and use of the Di-wrapp platform, website, advertising booking services, and supplier network.',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateEn,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedEn,
  tableOfContentsTitle: 'In this article',
@@ -22,16 +22,16 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'acceptance-and-eligibility',
  title: '1. Acceptance and Eligibility',
  paragraphs: [
- 'By accessing, browsing, registering an account on, or submitting an application to Di-Wrapp (diwrapp.com), you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions, along with our Privacy Policy and Cookie Policy.',
- `To access or use Di-Wrapp, you must be at least ${LEGAL_CONFIG.operational.minimumAge} years of age and possess the full legal power, authority, and capacity to enter into binding commercial contracts. If you are entering into these Terms on behalf of a company, corporate brand, or media agency, you represent and warrant that you possess valid authority to legally bind that organization.`,
+ 'By accessing, browsing, registering an account on, or submitting an application to Di-wrapp (diwrapp.com), you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions, along with our Privacy Policy and Cookie Policy.',
+ `To access or use Di-wrapp, you must be at least ${LEGAL_CONFIG.operational.minimumAge} years of age and possess the full legal power, authority, and capacity to enter into binding commercial contracts. If you are entering into these Terms on behalf of a company, corporate brand, or media agency, you represent and warrant that you possess valid authority to legally bind that organization.`,
  ],
  },
  {
  id: 'marketplace-role',
- title: "2. The Service and Di-Wrapp's Role as a Marketplace",
+ title: "2. The Service and Di-wrapp's Role as a Marketplace",
  paragraphs: [
- 'Di-Wrapp operates a digital marketplace and technological facilitation platform that connects advertisers seeking out-of-home (OOH) and digital out-of-home (DOOH) advertising inventory with independent suppliers and media owners ("Media Owners") who control digital screens, physical advertising spaces, billboards, transit media, venue displays, and urban outdoor networks.',
- 'Unless expressly stated in a separate written agreement, Di-Wrapp acts as a technology intermediary and marketplace facilitator. Di-Wrapp does not own, lease, or physically maintain the third-party screens, spaces, or advertising inventory listed on the platform. The contractual delivery of the advertising display time or media space remains between the advertiser and the approved Media Owner, facilitated through the platform.',
+ 'Di-wrapp operates a digital marketplace and technological facilitation platform that connects advertisers seeking out-of-home (OOH) and digital out-of-home (DOOH) advertising inventory with independent suppliers and media owners ("Media Owners") who control digital screens, physical advertising spaces, billboards, transit media, venue displays, and urban outdoor networks.',
+ 'Unless expressly stated in a separate written agreement, Di-wrapp acts as a technology intermediary and marketplace facilitator. Di-wrapp does not own, lease, or physically maintain the third-party screens, spaces, or advertising inventory listed on the platform. The contractual delivery of the advertising display time or media space remains between the advertiser and the approved Media Owner, facilitated through the platform.',
  'During our current pre-launch and onboarding phase, public features may be limited to marketing overviews, partner onboarding forms, contact inquiries, and previews of coming-soon capabilities.',
  ],
  },
@@ -40,15 +40,15 @@ export const termsAndConditionsEn: LegalDocument = {
  title: '3. User Accounts and Registration',
  paragraphs: [
  'To access advanced marketplace features, campaign booking tools, or vendor portals, you must create a user account. You agree to provide accurate, current, and complete information during registration and keep your account details updated.',
- 'You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. You must notify Di-Wrapp immediately at info@di-wrapp.com of any known or suspected security compromise.',
- 'Di-Wrapp reserves the right, in its sole discretion, to reject any registration, refuse service, or disable accounts that provide deceptive, incomplete, or unauthorized information.',
+ 'You are solely responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account. You must notify Di-wrapp immediately at info@di-wrapp.com of any known or suspected security compromise.',
+ 'Di-wrapp reserves the right, in its sole discretion, to reject any registration, refuse service, or disable accounts that provide deceptive, incomplete, or unauthorized information.',
  ],
  },
  {
  id: 'advertiser-obligations',
  title: '4. Advertiser Obligations and Content Standards',
  paragraphs: [
- 'Advertisers are solely responsible for all creative materials, text, graphics, videos, trademarks, and messaging submitted for display on the Di-Wrapp marketplace.',
+ 'Advertisers are solely responsible for all creative materials, text, graphics, videos, trademarks, and messaging submitted for display on the Di-wrapp marketplace.',
  {
  subheading: 'A. Prohibited Content Categories',
  paragraphs: [
@@ -67,7 +67,7 @@ export const termsAndConditionsEn: LegalDocument = {
  list: [
  'The advertiser bears full legal responsibility for securing all statutory media licenses, advertising permits, commercial registrations, and governmental approvals required by municipal and national authorities in the display country prior to campaign launch.',
  `In Saudi Arabia, advertisers must comply with all advertising standards established by the General Authority of Media Regulation (GAMR) and municipal authorities [TO CONFIRM: Specific regulatory approval upload requirements].`,
- 'Di-Wrapp and Media Owners reserve the absolute right to reject, suspend, or cancel any advertisement that fails compliance review without liability.',
+ 'Di-wrapp and Media Owners reserve the absolute right to reject, suspend, or cancel any advertisement that fails compliance review without liability.',
  ],
  },
  ],
@@ -76,7 +76,7 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'supplier-obligations',
  title: '5. Media Owner Obligations and Inventory Listings',
  paragraphs: [
- 'Entities applying to list digital screens, physical spaces, or advertising inventory ("Media Owners" or "Suppliers") must undergo an onboarding review and approval process by Di-Wrapp before any inventory goes live on the marketplace.',
+ 'Entities applying to list digital screens, physical spaces, or advertising inventory ("Media Owners" or "Suppliers") must undergo an onboarding review and approval process by Di-wrapp before any inventory goes live on the marketplace.',
  {
  list: [
  'Accurate Inventory Information: Media Owners must provide truthful, verifiable specifications regarding inventory location, format (such as digital screens, static displays, or physical spaces), dimensions, resolution where applicable, operating hours, audio capabilities, and daily traffic estimates.',
@@ -97,7 +97,7 @@ export const termsAndConditionsEn: LegalDocument = {
  'Platform Fees and Pricing: Pricing for advertising spots, spaces, loops, impressions, or day-parts is displayed on the marketplace or agreed in an official campaign order. Stated prices exclude statutory value-added tax (VAT) or local municipal fees unless explicitly noted.',
  'Payment Processing (Forward-Looking): Payments may be executed via approved corporate payment gateways, wire transfers, or dedicated platform wallet balances. Charges are billed in the agreed transaction currency.',
  `Cancellations and Refunds: Campaign reservations require advance coordination. [TO CONFIRM: Notice required: ${LEGAL_CONFIG.operational.campaignCancellationNoticeHours} hours prior to scheduled launch for partial or full credit; campaigns already broadcast or within 24 hours of live launch are non-refundable].`,
- 'Disrupted Broadcasts: If an approved screen or advertising space experiences technical failure, physical obstruction, power outage, or municipal blackout, the Media Owner and Di-Wrapp will provide reasonable compensation through a rescheduled campaign make-good or pro-rata credit.',
+ 'Disrupted Broadcasts: If an approved screen or advertising space experiences technical failure, physical obstruction, power outage, or municipal blackout, the Media Owner and Di-wrapp will provide reasonable compensation through a rescheduled campaign make-good or pro-rata credit.',
  ],
  },
  ],
@@ -106,15 +106,15 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'intellectual-property',
  title: '7. Content and Intellectual Property',
  paragraphs: [
- 'All intellectual property rights in the Di-Wrapp platform, including website architecture, software code, graphic user interfaces, brand names, logos, algorithms, and design tokens, remain the exclusive property of Distin-Gui Group and its licensors.',
- 'By submitting advertising creative materials to Di-Wrapp, the advertiser grants Di-Wrapp and the designated Media Owner a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and transmit the materials solely for the purpose of executing the booked campaign and providing proof-of-performance.',
+ 'All intellectual property rights in the Di-wrapp platform, including website architecture, software code, graphic user interfaces, brand names, logos, algorithms, and design tokens, remain the exclusive property of Distin-Gui Group and its licensors.',
+ 'By submitting advertising creative materials to Di-wrapp, the advertiser grants Di-wrapp and the designated Media Owner a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and transmit the materials solely for the purpose of executing the booked campaign and providing proof-of-performance.',
  ],
  },
  {
  id: 'acceptable-use',
  title: '8. Acceptable Use Policy',
  paragraphs: [
- 'You agree not to use the Di-Wrapp platform to:',
+ 'You agree not to use the Di-wrapp platform to:',
  {
  list: [
  'Scrape, crawl, harvest, or extract data from our marketplace using automated scripts, bots, or unauthorized spiders.',
@@ -130,7 +130,7 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'availability-and-changes',
  title: '9. Platform Availability and Modifications',
  paragraphs: [
- 'Di-Wrapp strives to maintain high availability across its digital platforms. However, we do not warrant that our website, API, or marketplace tools will be uninterrupted, error-free, or continuously available. We reserve the right to perform scheduled maintenance, implement software updates, or suspend features without prior notice.',
+ 'Di-wrapp strives to maintain high availability across its digital platforms. However, we do not warrant that our website, API, or marketplace tools will be uninterrupted, error-free, or continuously available. We reserve the right to perform scheduled maintenance, implement software updates, or suspend features without prior notice.',
  ],
  },
  {
@@ -146,7 +146,7 @@ export const termsAndConditionsEn: LegalDocument = {
  title: '11. Limitation of Liability',
  paragraphs: [
  'TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL DISTIN-GUI GROUP, ITS DIRECTORS, EMPLOYEES, AFFILIATES, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING LOSS OF PROFITS, DATA, GOODWILL, OR BUSINESS INTERRUPTION, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE PLATFORM.',
- `[TO CONFIRM: In all circumstances, Di-Wrapp’s total aggregate liability arising out of or related to these Terms or any campaign booking shall be limited to the total amount paid by the advertiser to Di-Wrapp for the specific disputed campaign in the three (3) months preceding the event, or one hundred US dollars ($100), whichever is greater].`,
+ `[TO CONFIRM: In all circumstances, Di-wrapp’s total aggregate liability arising out of or related to these Terms or any campaign booking shall be limited to the total amount paid by the advertiser to Di-wrapp for the specific disputed campaign in the three (3) months preceding the event, or one hundred US dollars ($100), whichever is greater].`,
  ],
  },
  {
@@ -160,7 +160,7 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'suspension-and-termination',
  title: '13. Suspension and Termination',
  paragraphs: [
- 'Di-Wrapp may suspend or terminate your access to the platform immediately, without prior notice or liability, if you violate any provision of these Terms, engage in suspected fraudulent or unlawful activity, or fail to satisfy verification checks. Upon termination, your right to use the platform ceases immediately.',
+ 'Di-wrapp may suspend or terminate your access to the platform immediately, without prior notice or liability, if you violate any provision of these Terms, engage in suspected fraudulent or unlawful activity, or fail to satisfy verification checks. Upon termination, your right to use the platform ceases immediately.',
  ],
  },
  {
@@ -176,7 +176,7 @@ export const termsAndConditionsEn: LegalDocument = {
  id: 'changes-to-terms',
  title: '15. Changes to These Terms',
  paragraphs: [
- 'We reserve the right to revise or modify these Terms & Conditions at our discretion at any time. When modifications occur, we will update the "Last Updated" date at the top of this page. Your continued use of the Di-Wrapp platform following the publication of revised terms constitutes your binding acceptance of the changes.',
+ 'We reserve the right to revise or modify these Terms & Conditions at our discretion at any time. When modifications occur, we will update the "Last Updated" date at the top of this page. Your continued use of the Di-wrapp platform following the publication of revised terms constitutes your binding acceptance of the changes.',
  ],
  },
  {
@@ -201,7 +201,7 @@ export const termsAndConditionsEn: LegalDocument = {
  relatedDocs: [
  {
  title: 'Privacy Policy',
- description: 'Understand how Di-Wrapp gathers, uses, and protects personal data submitted through our marketplace and onboarding flows.',
+ description: 'Understand how Di-wrapp gathers, uses, and protects personal data submitted through our marketplace and onboarding flows.',
  href: '/privacy-policy',
  },
  {
@@ -217,7 +217,7 @@ export const termsAndConditionsAr: LegalDocument = {
  category: 'وثيقة قانونية',
  title: 'الشروط والأحكام',
  intro:
- 'تُشكل هذه الشروط والأحكام اتفاقاً قانونياً ملزماً بينك وبين منصة Di-Wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group). وتُنظم هذه الشروط وصولك إلى المنصة واستخدامك لموقعها الإلكتروني وخدمات حجز الإعلانات وشبكة مُلّاك الوسائل الإعلانية.',
+ 'تُشكل هذه الشروط والأحكام اتفاقاً قانونياً ملزماً بينك وبين منصة Di-wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group). وتُنظم هذه الشروط وصولك إلى المنصة واستخدامك لموقعها الإلكتروني وخدمات حجز الإعلانات وشبكة مُلّاك الوسائل الإعلانية.',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateAr,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedAr,
  tableOfContentsTitle: 'في هذه الوثيقة',
@@ -233,16 +233,16 @@ export const termsAndConditionsAr: LegalDocument = {
  id: 'acceptance-and-eligibility',
  title: '1. الموافقة والأهلية القانونية',
  paragraphs: [
- 'يُعد استخدامك لمنصة Di-Wrapp (diwrapp.com) أو تصفحها أو إنشاء حساب عليها أو تقديم طلب انضمام، إقراراً صريحاً بأنك قرأت وفهمت ووافقت على الالتزام التام بهذه الشروط والأحكام، إلى جانب سياسة الخصوصية وسياسة ملفات تعريف الارتباط.',
+ 'يُعد استخدامك لمنصة Di-wrapp (diwrapp.com) أو تصفحها أو إنشاء حساب عليها أو تقديم طلب انضمام، إقراراً صريحاً بأنك قرأت وفهمت ووافقت على الالتزام التام بهذه الشروط والأحكام، إلى جانب سياسة الخصوصية وسياسة ملفات تعريف الارتباط.',
  `يشترط لاستخدام المنصة ألا يقل عمر المستخدم عن ${LEGAL_CONFIG.operational.minimumAge} عاماً، وأن يتمتع بالأهلية القانونية الكاملة لإبرام العقود والالتزامات التجارية. وإذا كنت تمثل منشأة تجارية أو وكالة إعلانية، فإنك تقر وتضمن بأن لديك الصلاحية والتفويض القانوني اللازم لإلزام تلك المنشأة.`,
  ],
  },
  {
  id: 'marketplace-role',
- title: '2. طبيعة الخدمة ودور Di-Wrapp كوسيط وسوق رقمي',
+ title: '2. طبيعة الخدمة ودور Di-wrapp كوسيط وسوق رقمي',
  paragraphs: [
- 'تعمل Di-Wrapp كسوق رقمي ومنصة وسيطة توفر الربط التقني بين المُعلنين الراغبين في حجز المساحات الإعلانية والشاشات الرقمية خارج المنزل (DOOH)، وبين مُلّاك الوسائل الإعلانية المستقلين ("مالك الوسيلة الإعلانية (Media Owner)") الذين يمتلكون أو يديرون شاشات رقمية، ومساحات إعلانية، ولوحات طرقية، وشبكات نقل، ومراكز تجارية، وأماكن عامة.',
- 'ما لم يُنص صراحة على خلاف ذلك في اتفاق خطي مستقل، فإن دور Di-Wrapp ينحصر في الوساطة والربط التقني وأتمتة إجراءات الحجز. ولا تملك المنصة أو تدير الشاشات أو المساحات الإعلانية الفعلية المدرجة من قبل أطراف ثالثة، وتبقى مسؤولية عرض المحتوى وسلامة الوسيلة الإعلانية قائمة بين المعلن ومالك الوسيلة الإعلانية المعني.',
+ 'تعمل Di-wrapp كسوق رقمي ومنصة وسيطة توفر الربط التقني بين المُعلنين الراغبين في حجز المساحات الإعلانية والشاشات الرقمية خارج المنزل (DOOH)، وبين مُلّاك الوسائل الإعلانية المستقلين ("مالك الوسيلة الإعلانية (Media Owner)") الذين يمتلكون أو يديرون شاشات رقمية، ومساحات إعلانية، ولوحات طرقية، وشبكات نقل، ومراكز تجارية، وأماكن عامة.',
+ 'ما لم يُنص صراحة على خلاف ذلك في اتفاق خطي مستقل، فإن دور Di-wrapp ينحصر في الوساطة والربط التقني وأتمتة إجراءات الحجز. ولا تملك المنصة أو تدير الشاشات أو المساحات الإعلانية الفعلية المدرجة من قبل أطراف ثالثة، وتبقى مسؤولية عرض المحتوى وسلامة الوسيلة الإعلانية قائمة بين المعلن ومالك الوسيلة الإعلانية المعني.',
  'خلال المرحلة الحالية، قد تقتصر ميزات الموقع المتاحة للعموم على التعريف بالخدمات، واستقبال طلبات التسجيل، ونماذج التواصل، واستعراض مزايا التحديثات القادمة.',
  ],
  },
@@ -287,7 +287,7 @@ export const termsAndConditionsAr: LegalDocument = {
  id: 'supplier-obligations',
  title: '5. التزامات مُلّاك الوسائل الإعلانية وإدراج المساحات الإعلانية',
  paragraphs: [
- 'تخضع المنشآت المتقدمة لإدراج شاشات رقمية أو مساحات إعلانية أو مخزون إعلاني ("مالك الوسيلة الإعلانية (Media Owner)") لإجراءات تدقيق ومراجعة واعتماد من قبل Di-Wrapp قبل تفعيل أي مساحة أو وسيلة إعلانية على المنصة.',
+ 'تخضع المنشآت المتقدمة لإدراج شاشات رقمية أو مساحات إعلانية أو مخزون إعلاني ("مالك الوسيلة الإعلانية (Media Owner)") لإجراءات تدقيق ومراجعة واعتماد من قبل Di-wrapp قبل تفعيل أي مساحة أو وسيلة إعلانية على المنصة.',
  {
  list: [
  'دقة مواصفات المساحة والوسيلة الإعلانية: يلتزم مالك الوسيلة الإعلانية بتقديم بيانات حقيقية وموثقة بشأن موقع المساحة الإعلانية، ونوعها (شاشات رقمية أو مساحات ثابتة)، وأبعادها الهندسية، ودقتها، وساعات تشغيلها، وكثافة الحركة المرورية المحيطة بها.',
@@ -308,7 +308,7 @@ export const termsAndConditionsAr: LegalDocument = {
  'الأسعار والرسوم: تُحدد أسعار المساحات الإعلانية والمرات التكرارية وفترات العرض عبر المنصة أو في عروض الأسعار المعتمدة، ولا تشمل الأسعار ضريبة القيمة المضافة ما لم يُذكر خلاف ذلك صراحة.',
  'بوابات الدفع (أحكام تشغيلية مستقبلية): تتم المدفوعات عبر بوابات الدفع الإلكترونية المعتمدة أو التحويلات المصرفية أو عبر رصيد المحفظة الرقمية للمنصة وفق العملة المتفق عليها.',
  `الإلغاء واسترداد المبالغ: يتطلب إلغاء الحجز إشعاراً مسبقاً. [TO CONFIRM: يلزم تقديم طلب الإلغاء قبل موعد البث بمدة لا تقل عن ${LEGAL_CONFIG.operational.campaignCancellationNoticeHours} ساعة للحصول على استرداد أو رصيد؛ ولا يمكن استرداد المبالغ بعد بدء بث الحملة أو خلال الـ 24 ساعة السابقة له].`,
- 'التعويض عن الأعطال: في حال حدوث عطل فني طارئ بالشاشة أو تعذر العرض في المساحة الإعلانية أو انقطاع في التيار الكهربائي، يلتزم مالك الوسيلة الإعلانية وDi-Wrapp بتعويض المعلن عن طريق إعادة جدولة البث أو تقديم رصيد مالي متناسب مع ساعات الانقطاع.',
+ 'التعويض عن الأعطال: في حال حدوث عطل فني طارئ بالشاشة أو تعذر العرض في المساحة الإعلانية أو انقطاع في التيار الكهربائي، يلتزم مالك الوسيلة الإعلانية وDi-wrapp بتعويض المعلن عن طريق إعادة جدولة البث أو تقديم رصيد مالي متناسب مع ساعات الانقطاع.',
  ],
  },
  ],
@@ -317,8 +317,8 @@ export const termsAndConditionsAr: LegalDocument = {
  id: 'intellectual-property',
  title: '7. الملكية الفكرية وحقوق المحتوى',
  paragraphs: [
- 'كافة حقوق الملكية الفكرية المرتبطة بمنصة Di-Wrapp، بما يشمل الشفرة المصدرية، والواجهات البرمجية والتصميمية، والعلامات التجارية، والشعارات، والأنظمة الحسابية، تعود حصراً وملكية مطلقة لمجموعة ديستين-جاي ومرخصيها.',
- 'يمنح المُعلن منصة Di-Wrapp ومالك الوسيلة الإعلانية المعني ترخيصاً غير حصري وعالمياً ومجانياً لعرض واستخدام وإعادة إنتاج المحتوى الإعلاني ونقله لغرض وحيد ومحدد هو تنفيذ الحملة المحجوزة وإصدار تقارير الأداء وإثبات العرض والبث.',
+ 'كافة حقوق الملكية الفكرية المرتبطة بمنصة Di-wrapp، بما يشمل الشفرة المصدرية، والواجهات البرمجية والتصميمية، والعلامات التجارية، والشعارات، والأنظمة الحسابية، تعود حصراً وملكية مطلقة لمجموعة ديستين-جاي ومرخصيها.',
+ 'يمنح المُعلن منصة Di-wrapp ومالك الوسيلة الإعلانية المعني ترخيصاً غير حصري وعالمياً ومجانياً لعرض واستخدام وإعادة إنتاج المحتوى الإعلاني ونقله لغرض وحيد ومحدد هو تنفيذ الحملة المحجوزة وإصدار تقارير الأداء وإثبات العرض والبث.',
  ],
  },
  {
@@ -341,14 +341,14 @@ export const termsAndConditionsAr: LegalDocument = {
  id: 'availability-and-changes',
  title: '9. استمرارية المنصة والتعديلات التقنية',
  paragraphs: [
- 'تسعى Di-Wrapp لتوفير المنصة بأعلى مستويات الاعتمادية والأمان. ومع ذلك، فإننا لا نضمن خلو الموقع والخدمات من الانقطاعات أو الأخطاء الفنية الناتجة عن الصيانة الدورية أو التحديثات البرمجية أو المشكلات الخارجة عن الإرادة.',
+ 'تسعى Di-wrapp لتوفير المنصة بأعلى مستويات الاعتمادية والأمان. ومع ذلك، فإننا لا نضمن خلو الموقع والخدمات من الانقطاعات أو الأخطاء الفنية الناتجة عن الصيانة الدورية أو التحديثات البرمجية أو المشكلات الخارجة عن الإرادة.',
  ],
  },
  {
  id: 'disclaimers',
  title: '10. إخلاء المسؤولية عن الضمانات',
  paragraphs: [
- 'إلى الحد الأقصى المسموح به نظاماً، تُقدم منصة Di-Wrapp وكافة خدمات الحجز "كما هي" و"بحسب توافرها"، دون أي إقرارات أو ضمانات من أي نوع، سواء كانت صريحة أو ضمنية.',
+ 'إلى الحد الأقصى المسموح به نظاماً، تُقدم منصة Di-wrapp وكافة خدمات الحجز "كما هي" و"بحسب توافرها"، دون أي إقرارات أو ضمانات من أي نوع، سواء كانت صريحة أو ضمنية.',
  'وتخلي مجموعة ديستين-جاي مسؤوليتها عن أي ضمانات ضمنية تتعلق بالملاءمة لغرض معين، أو القابلية للتسويق، أو ضمان تحقيق نسب وصول أو مبيعات أو عوائد تجارية محددة من الحملات الإعلانية.',
  ],
  },
@@ -357,7 +357,7 @@ export const termsAndConditionsAr: LegalDocument = {
  title: '11. تحديد المسؤولية القانونية',
  paragraphs: [
  'إلى أقصى حد تجيزه الأنظمة السارية، لا تتحمل مجموعة ديستين-جاي أو مسؤولوها أو موظفوها أي مسؤولية عن أي أضرار غير مباشرة، أو تبعية، أو خاصة، أو تأديبية، بما في ذلك خسارة الأرباح، أو توقف الأعمال، أو فقدان البيانات، الناشئة عن استخدام المنصة أو تعذر استخدامها.',
- `[TO CONFIRM: في جميع الأحوال، تنحصر المسؤولية الكلية للمنصة عن أي دعوى ناتجة عن هذه الشروط أو حجز إعلاني في حدود المبلغ الإجمالي الذي دفعه المعلن لDi-Wrapp عن الحملة موضوع النزاع خلال الأشهر الثلاثة (3) السابقة للواقعة، أو ما يعادل 100 دولار أمريكي، أيهما أكبر].`,
+ `[TO CONFIRM: في جميع الأحوال، تنحصر المسؤولية الكلية للمنصة عن أي دعوى ناتجة عن هذه الشروط أو حجز إعلاني في حدود المبلغ الإجمالي الذي دفعه المعلن لDi-wrapp عن الحملة موضوع النزاع خلال الأشهر الثلاثة (3) السابقة للواقعة، أو ما يعادل 100 دولار أمريكي، أيهما أكبر].`,
  ],
  },
  {
@@ -371,7 +371,7 @@ export const termsAndConditionsAr: LegalDocument = {
  id: 'suspension-and-termination',
  title: '13. تعليق الخدمات وإنهاء الحساب',
  paragraphs: [
- 'يحق لDi-Wrapp تعليق أو إنهاء وصولك إلى المنصة فوراً ودون إشعار مسبق في حال ارتكابك أي مخالفة جوهرية لهذه الشروط، أو الاشتباه في قيامك بأنشطة احتيالية أو غير مشروعة، أو عدم اجتياز تدقيق الأهلية.',
+ 'يحق لDi-wrapp تعليق أو إنهاء وصولك إلى المنصة فوراً ودون إشعار مسبق في حال ارتكابك أي مخالفة جوهرية لهذه الشروط، أو الاشتباه في قيامك بأنشطة احتيالية أو غير مشروعة، أو عدم اجتياز تدقيق الأهلية.',
  ],
  },
  {
@@ -412,7 +412,7 @@ export const termsAndConditionsAr: LegalDocument = {
  relatedDocs: [
  {
  title: 'سياسة الخصوصية',
- description: 'تعرّف على كيفية جمع بياناتك الشخصية واستخدامها وحمايتها في منصة Di-Wrapp.',
+ description: 'تعرّف على كيفية جمع بياناتك الشخصية واستخدامها وحمايتها في منصة Di-wrapp.',
  href: '/privacy-policy',
  },
  {

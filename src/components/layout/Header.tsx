@@ -206,14 +206,14 @@ export default function Header({
               <div className="!w-8 !h-8 !shrink-0 !m-0 !p-0 flex items-center justify-center">
                 <Image
                   src="/logo.png"
-                  alt="Di-Wrapp Logo"
+                  alt="Di-wrapp Logo"
                   width={32}
                   height={32}
                   className="!m-0 !p-0 !block object-contain w-full h-full"
                 />
               </div>
               <span className="!font-semibold !text-xl !tracking-tight !leading-none text-[#101828] dark:text-white flex items-center !m-0 font-['Lufga',sans-serif]">
-                Di-Wrapp
+                Di-wrapp
                 {countryBadge ?? <CountryBadgeSkeleton key="country-badge-skeleton" />}
               </span>
             </Link>

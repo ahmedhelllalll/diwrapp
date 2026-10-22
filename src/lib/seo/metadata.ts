@@ -28,10 +28,10 @@ export function constructMetadata({
   const isAr = lang === 'ar';
   const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
   const canonicalUrl = `${BASE_URL}/${lang}${cleanPath}`;
-  const localizedTitle = `${title} | Di-Wrapp`;
+  const localizedTitle = `${title} | Di-wrapp`;
   const defaultOgAlt = isAr
-    ? `${title} - شبكة Di-Wrapp الإعلانية`
-    : `${title} | Di-Wrapp Media Network`;
+    ? `${title} - شبكة Di-wrapp الإعلانية`
+    : `${title} | Di-wrapp Media Network`;
 
   return {
     title,
@@ -48,7 +48,7 @@ export function constructMetadata({
       title: localizedTitle,
       description,
       url: canonicalUrl,
-      siteName: 'Di-Wrapp',
+      siteName: 'Di-wrapp',
       locale: isAr ? 'ar_AR' : 'en_US',
       type,
       images: [

@@ -20,14 +20,14 @@ export async function generateMetadata(props: {
   const title = featureLabel 
     ? `${featureLabel} | ${meta?.title || 'Coming Soon'}`
     : (meta?.title || (lang === 'ar' ? 'ترقبوا جديدنا | ميزات متطورة ومنظومة إعلانية متكاملة' : 'Platform Expansion & Upcoming Features | Stay Tuned'));
-  const description = meta?.description || 'Exciting new programmatic DOOH features and advertising capabilities are launching soon on Di-Wrapp.';
+  const description = meta?.description || 'Exciting new programmatic DOOH features and advertising capabilities are launching soon on Di-wrapp.';
 
   return constructMetadata({
     title,
     description,
     path: '/coming-soon',
     lang,
-    ogImageAlt: lang === 'ar' ? 'ترقبوا جديد منصة Di-Wrapp' : 'Stay Tuned for Di-Wrapp New Capabilities',
+    ogImageAlt: lang === 'ar' ? 'ترقبوا جديد منصة Di-wrapp' : 'Stay Tuned for Di-wrapp New Capabilities',
   });
 }
 

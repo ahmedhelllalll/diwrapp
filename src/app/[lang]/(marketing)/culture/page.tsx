@@ -15,14 +15,14 @@ export async function generateMetadata(props: {
   const meta = dict.metadata?.culture;
   const culture = dict.culture;
   const title = meta?.title || (lang === 'ar' ? 'بيئة العمل وثقافتنا | ابتكار مستقبل وسائط DOOH' : 'Life & Culture | Building the Future of DOOH Media');
-  const description = meta?.description || culture?.subtitle || 'Explore careers and life at Di-Wrapp.';
+  const description = meta?.description || culture?.subtitle || 'Explore careers and life at Di-wrapp.';
 
   return constructMetadata({
     title,
     description,
     path: '/culture',
     lang,
-    ogImageAlt: lang === 'ar' ? 'ثقافتنا وبيئة العمل - Di-Wrapp' : 'Di-Wrapp Culture & Careers',
+    ogImageAlt: lang === 'ar' ? 'ثقافتنا وبيئة العمل - Di-wrapp' : 'Di-wrapp Culture & Careers',
   });
 }
 

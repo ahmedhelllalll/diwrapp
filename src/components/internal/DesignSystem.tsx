@@ -49,10 +49,10 @@ export default function DesignSystem() {
     'Data & Loaders'
   ];
 
-  const tabs = ['Advertiser', 'Vendor', 'Get Di-Wrapped', 'E-Branding', 'Wrapp-AI'];
+  const tabs = ['Advertiser', 'Vendor', 'Get Di-wrapped', 'E-Branding', 'Wrapp-AI'];
   
   const faqs = [
-    { question: 'What is Di-Wrapp SD?', answer: 'Di-Wrapp SD is an advanced platform bridging advertisers with vendors for high-impact branding.' },
+    { question: 'What is Di-wrapp SD?', answer: 'Di-wrapp SD is an advanced platform bridging advertisers with vendors for high-impact branding.' },
     { question: 'How do I become a supplier?', answer: 'You can easily sign up through our vendor portal and list your assets within minutes.' },
   ];
 
@@ -68,7 +68,7 @@ export default function DesignSystem() {
               <div className="w-8 h-8 flex items-center justify-center">
                 <Image 
                   src="/logo.png" 
-                  alt="Di-Wrapp Logo" 
+                  alt="Di-wrapp Logo" 
                   width={32} 
                   height={32} 
                   className="object-contain w-full h-full"
@@ -76,7 +76,7 @@ export default function DesignSystem() {
               </div>
               <div className="flex items-center mr-1">
                 <span className="text-[14px] font-extrabold tracking-tight text-[#0f172a] dark:text-zinc-100 leading-none whitespace-nowrap">
-                  Di-Wrapp
+                  Di-wrapp
                 </span>
                 <span
                   className="font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center lowercase text-[#64748b] dark:text-zinc-400 ml-0.5 relative -top-1.5"
@@ -385,7 +385,7 @@ export default function DesignSystem() {
                     <h3 className="text-[14px] font-bold text-[#111827] dark:text-zinc-100 mb-4">With Leading Icons</h3>
                     <div className="p-4 bg-[#f8fafc] dark:bg-zinc-900/50 border border-[#e2e8f0] dark:border-zinc-800/80 rounded-xl flex items-center">
                       <Breadcrumb items={[
-                        { label: 'Di-Wrapp', href: '#', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#334155] dark:text-zinc-400"><path d="M3 10.5L12 4l9 6.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8.5z" /><line x1="9" y1="17" x2="15" y2="17" /></svg> },
+                        { label: 'Di-wrapp', href: '#', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#334155] dark:text-zinc-400"><path d="M3 10.5L12 4l9 6.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8.5z" /><line x1="9" y1="17" x2="15" y2="17" /></svg> },
                         { label: 'Help Center' }
                       ]} />
                     </div>

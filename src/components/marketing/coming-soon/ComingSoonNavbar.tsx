@@ -49,7 +49,7 @@ export default function ComingSoonNavbar({
   const toggleTheme = () => setTheme(activeTheme === 'dark' ? 'light' : 'dark');
 
   const navLinks = [
-    { name: dictNav?.about || (lang === 'ar' ? 'من نحن' : 'About us'), href: `/${lang}/about` },
+    { name: dictNav?.about || (lang === 'ar' ? 'معلومات عنا' : 'About us'), href: `/${lang}/about` },
     { name: dictNav?.advertise || (lang === 'ar' ? 'أعلن معنا' : 'Advertise'), href: `/${lang}/advertise` },
     { name: dictNav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog'), href: `/${lang}/blog` },
     { name: dictNav?.join || (lang === 'ar' ? 'انضم إلينا' : 'Join us'), href: `/${lang}/join-us` },
@@ -63,13 +63,13 @@ export default function ComingSoonNavbar({
         <Link href={`/${lang}`} className="inline-flex items-center gap-2 select-none group shrink-0">
           <Image
             src="/logo.png"
-            alt="Di-Wrapp Logo"
+            alt="Di-wrapp Logo"
             width={34}
             height={34}
             className="object-contain"
           />
           <span className="text-xl font-bold text-[#101828] dark:text-white tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-            Di-Wrapp
+            Di-wrapp
           </span>
           {countryBadge ?? <CountryBadgeSkeleton key="country-badge-skeleton" />}
         </Link>

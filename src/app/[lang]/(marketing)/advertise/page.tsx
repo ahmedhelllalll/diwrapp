@@ -24,7 +24,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description,
     path: '/advertise',
     lang,
-    ogImageAlt: lang === 'ar' ? 'إعلانات الشاشات الخارجية - Di-Wrapp' : 'Advertise with Di-Wrapp DOOH Network',
+    ogImageAlt: lang === 'ar' ? 'إعلانات الشاشات الخارجية - Di-wrapp' : 'Advertise with Di-wrapp DOOH Network',
   });
 }
 

@@ -6,7 +6,7 @@ export const cookiePolicyEn: LegalDocument = {
  category: 'Legal',
  title: 'Cookie Policy',
  intro:
- 'This Cookie Policy explains how Di-Wrapp, operated by Distin-Gui Group, uses cookies, local browser storage, and related edge technologies on our website (diwrapp.com). We explain what these technologies are, why we use them, and your choices regarding their management.',
+ 'This Cookie Policy explains how Di-wrapp, operated by Distin-Gui Group, uses cookies, local browser storage, and related edge technologies on our website (diwrapp.com). We explain what these technologies are, why we use them, and your choices regarding their management.',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateEn,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedEn,
  tableOfContentsTitle: 'In this article',
@@ -28,9 +28,9 @@ export const cookiePolicyEn: LegalDocument = {
  },
  {
  id: 'how-we-use-cookies',
- title: '2. How Di-Wrapp Uses Cookies and Storage',
+ title: '2. How Di-wrapp Uses Cookies and Storage',
  paragraphs: [
- 'Di-Wrapp uses a minimal and privacy-focused storage footprint. We categorize our storage mechanisms into the following groups:',
+ 'Di-wrapp uses a minimal and privacy-focused storage footprint. We categorize our storage mechanisms into the following groups:',
  {
  subheading: 'A. Strictly Necessary First-Party Cookies',
  paragraphs: [
@@ -54,7 +54,7 @@ export const cookiePolicyEn: LegalDocument = {
  {
  subheading: 'C. Performance and Analytics',
  paragraphs: [
- 'Di-Wrapp currently does not load third-party analytics cookies, advertising tracking pixels, or cross-site tracking beacons (such as Google Analytics or Meta Pixel). Any future integration of telemetry tools will be strictly vetted and updated in this policy.',
+ 'Di-wrapp currently does not load third-party analytics cookies, advertising tracking pixels, or cross-site tracking beacons (such as Google Analytics or Meta Pixel). Any future integration of telemetry tools will be strictly vetted and updated in this policy.',
  ],
  },
  ],
@@ -63,7 +63,7 @@ export const cookiePolicyEn: LegalDocument = {
  id: 'third-party-services',
  title: '3. Third-Party Services and Edge Infrastructure',
  paragraphs: [
- 'Our web application is deployed on the global cloud infrastructure provided by Vercel Inc. When your browser requests our website, Vercel inspects network IP routing in transient memory at the edge server closest to you to determine the approximate country of origin, setting the di_country cookie accordingly. Raw IP addresses are not stored or commercialized by Di-Wrapp.',
+ 'Our web application is deployed on the global cloud infrastructure provided by Vercel Inc. When your browser requests our website, Vercel inspects network IP routing in transient memory at the edge server closest to you to determine the approximate country of origin, setting the di_country cookie accordingly. Raw IP addresses are not stored or commercialized by Di-wrapp.',
  ],
  },
  {
@@ -102,12 +102,12 @@ export const cookiePolicyEn: LegalDocument = {
  relatedDocs: [
  {
  title: 'Privacy Policy',
- description: 'Learn how Di-Wrapp collects, stores, and protects personal data across all marketing, inquiry, and onboarding services.',
+ description: 'Learn how Di-wrapp collects, stores, and protects personal data across all marketing, inquiry, and onboarding services.',
  href: '/privacy-policy',
  },
  {
  title: 'Terms & Conditions',
- description: 'Review the contractual terms governing use of the Di-Wrapp marketplace, advertiser duties, and Media Owner standards.',
+ description: 'Review the contractual terms governing use of the Di-wrapp marketplace, advertiser duties, and Media Owner standards.',
  href: '/terms-and-conditions',
  },
  ],
@@ -118,7 +118,7 @@ export const cookiePolicyAr: LegalDocument = {
  category: 'وثيقة قانونية',
  title: 'سياسة ملفات تعريف الارتباط',
  intro:
- 'توضح سياسة ملفات تعريف الارتباط هذه كيفية استخدام منصة Di-Wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، لملفات تعريف الارتباط ووحدات التخزين المحلي في متصفحك عبر الموقع الإلكتروني (diwrapp.com). ونبين هنا ماهية هذه التقنيات، وأسباب استخدامها، وخياراتك في إدارتها.',
+ 'توضح سياسة ملفات تعريف الارتباط هذه كيفية استخدام منصة Di-wrapp ، المشغلة من قبل مجموعة ديستين-جاي (Distin-Gui Group)، لملفات تعريف الارتباط ووحدات التخزين المحلي في متصفحك عبر الموقع الإلكتروني (diwrapp.com). ونبين هنا ماهية هذه التقنيات، وأسباب استخدامها، وخياراتك في إدارتها.',
  effectiveDate: LEGAL_CONFIG.dates.effectiveDateAr,
  lastUpdated: LEGAL_CONFIG.dates.lastUpdatedAr,
  tableOfContentsTitle: 'في هذه الوثيقة',
@@ -140,9 +140,9 @@ export const cookiePolicyAr: LegalDocument = {
  },
  {
  id: 'how-we-use-cookies',
- title: '2. استخدامات ملفات الارتباط في Di-Wrapp',
+ title: '2. استخدامات ملفات الارتباط في Di-wrapp',
  paragraphs: [
- 'تلتزم Di-Wrapp بنهج تقني يحترم الخصوصية ويقتصر على الملفات الضرورية للغاية لتشغيل النظام. ونقسم هذه الملفات إلى الفئات التالية:',
+ 'تلتزم Di-wrapp بنهج تقني يحترم الخصوصية ويقتصر على الملفات الضرورية للغاية لتشغيل النظام. ونقسم هذه الملفات إلى الفئات التالية:',
  {
  subheading: 'أ. ملفات تعريف ارتباط أولية وضرورية للغاية',
  paragraphs: [
@@ -166,7 +166,7 @@ export const cookiePolicyAr: LegalDocument = {
  {
  subheading: 'ج. التحليلات والتتبع الإعلاني',
  paragraphs: [
- 'لا يحتوي موقع Di-Wrapp حالياً على أي ملفات ارتباط تابعة لأطراف ثالثة لأغراض التتبع الإعلاني أو إعادة الاستهداف التجاري (مثل Google Analytics أو Meta Pixel). وسيتم الإفصاح عن أي أدوات تحليلية يتم اعتمادها مستقبلاً في هذه السياسة.',
+ 'لا يحتوي موقع Di-wrapp حالياً على أي ملفات ارتباط تابعة لأطراف ثالثة لأغراض التتبع الإعلاني أو إعادة الاستهداف التجاري (مثل Google Analytics أو Meta Pixel). وسيتم الإفصاح عن أي أدوات تحليلية يتم اعتمادها مستقبلاً في هذه السياسة.',
  ],
  },
  ],
@@ -214,7 +214,7 @@ export const cookiePolicyAr: LegalDocument = {
  relatedDocs: [
  {
  title: 'سياسة الخصوصية',
- description: 'اطّلع على المبادئ الشاملة لجمع وحماية البيانات الشخصية المطبقة في منصة Di-Wrapp.',
+ description: 'اطّلع على المبادئ الشاملة لجمع وحماية البيانات الشخصية المطبقة في منصة Di-wrapp.',
  href: '/privacy-policy',
  },
  {

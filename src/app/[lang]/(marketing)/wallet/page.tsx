@@ -59,7 +59,7 @@ export async function generateMetadata(props: {
     description,
     path: '/wallet',
     lang,
-    ogImageAlt: isAr ? 'محفظة Di-Wrapp الرقمية' : 'Di-Wrapp Digital Wallet',
+    ogImageAlt: isAr ? 'محفظة Di-wrapp الرقمية' : 'Di-wrapp Digital Wallet',
   });
 }
 

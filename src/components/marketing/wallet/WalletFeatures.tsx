@@ -24,12 +24,12 @@ interface WalletFeaturesProps {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di-Wrapped|Di-Wrapp|Ask Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
+  const parts = text.split(/(Di-wrapped|Di-wrapp|Ask Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di-Wrapped' ||
-      part === 'Di-Wrapp' ||
+      part === 'Di-wrapped' ||
+      part === 'Di-wrapp' ||
       part === 'Ask Di' ||
       part === 'Di' ||
       part === '(24/7)' ||

@@ -15,7 +15,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
   const meta = dict.metadata?.about;
-  const title = meta?.title || (lang === 'ar' ? 'عن Di-Wrapp | رؤيتنا ومستقبل الإعلانات الخارجية' : 'About Us | Revolutionizing Global DOOH Media');
+  const title = meta?.title || (lang === 'ar' ? 'عن Di-wrapp | رؤيتنا ومستقبل الإعلانات الخارجية' : 'About Us | Revolutionizing Global DOOH Media');
   const description = meta?.description || (dict.about?.title?.replace(/<[^>]*>?/gm, '') || '');
 
   return constructMetadata({
@@ -23,7 +23,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     description,
     path: '/about',
     lang,
-    ogImageAlt: lang === 'ar' ? 'عن Di-Wrapp - رؤيتنا ومنظومتنا الرقمية' : 'About Di-Wrapp - Our Platform & Mission',
+    ogImageAlt: lang === 'ar' ? 'عن Di-wrapp - رؤيتنا ومنظومتنا الرقمية' : 'About Di-wrapp - Our Platform & Mission',
   });
 }
 
@@ -72,7 +72,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   <div className="pill-icon">
                     <Image 
                       src="/assets/logo-icon-white.png" 
-                      alt="Di-Wrapp Logo" 
+                      alt="Di-wrapp Logo" 
                       width={24} 
                       height={24} 
                       className="w-6 h-6 object-contain" 
@@ -101,7 +101,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
               <div className="tall-card-content">
                 <Image 
                   src="/assets/logo-icon-white.png" 
-                  alt="Di-Wrapp Logo" 
+                  alt="Di-wrapp Logo" 
                   width={36} 
                   height={18} 
                   className="object-contain" 
@@ -177,7 +177,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             </div>
           </section>
 
-          {/* Key Features / What Makes Di-Wrapp Different Section */}
+          {/* Key Features / What Makes Di-wrapp Different Section */}
           <section className="about-features-section">
             <div className="about-features-container">
               {/* Top Header */}
@@ -222,7 +222,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   <div className="features-tablet-wrap">
                     <Image 
                       src="/assets/tablet-image.webp" 
-                      alt="Di-Wrapp Tablet Interface" 
+                      alt="Di-wrapp Tablet Interface" 
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
@@ -239,7 +239,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                     <Link 
                       href={`/${lang}/coming-soon?feature=marketplace`} 
                       className="features-card-btn"
-                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di-Wrapp Media Player'}`}
+                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di-wrapp Media Player'}`}
                     >
                       <span>{features?.card1Btn}</span>
                       <span className="sr-only"> - {features?.card1Title}</span>

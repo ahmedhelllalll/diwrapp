@@ -37,7 +37,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       title,
       description,
       url: `https://diwrapp.com/${lang}`,
-      siteName: 'Di-Wrapp',
+      siteName: 'Di-wrapp',
       locale: isAr ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -45,7 +45,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
           url: '/images/og-banner.png',
           width: 1200,
           height: 630,
-          alt: isAr ? 'شبكة Di-Wrapp الإعلانية الموحدة' : 'Di-Wrapp Unified DOOH Media Network',
+          alt: isAr ? 'شبكة Di-wrapp الإعلانية الموحدة' : 'Di-wrapp Unified DOOH Media Network',
         },
       ],
     },

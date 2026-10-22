@@ -58,8 +58,8 @@ export default function VendorOnboardingSuccess({
               <p>
                 {dict?.emailNotice ||
                   (isRtl
-                    ? "سيتم إرسال بريد إلكتروني لتأكيد عملية التقديم، ويمكنك متابعة طلبك من خلال لوحة تحكم Di-Wrapp."
-                    : "an email will be sent to confirm the application process, and you can track your Submission through Di-Wrapp Dashboard.")}
+                    ? "سيتم إرسال بريد إلكتروني لتأكيد عملية التقديم، ويمكنك متابعة طلبك من خلال لوحة تحكم Di-wrapp."
+                    : "an email will be sent to confirm the application process, and you can track your Submission through Di-wrapp Dashboard.")}
               </p>
               <p>
                 {dict?.supportNotice ||
