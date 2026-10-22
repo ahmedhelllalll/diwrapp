@@ -561,7 +561,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
 
   const mailtoBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${mailtoPhoneFormatted}\n\nMessage:\n${formData.message}`;
   const mailtoHref = `mailto:support@di-wrapp.com?subject=${encodeURIComponent(
-    formData.subject || (isRtl ? "استفسار عبر موقع دي-راب" : "DiWrapp Contact Inquiry")
+    formData.subject || (isRtl ? "استفسار عبر موقع Di-Wrapp" : "DiWrapp Contact Inquiry")
   )}&body=${encodeURIComponent(mailtoBody)}`;
 
   // Slice others if not searching to maintain smooth initial render
@@ -942,7 +942,7 @@ export default function ContactForm({ lang, dict, cardsSlot }: ContactFormProps)
           <p className="text-xs text-slate-500 dark:text-zinc-400 text-start leading-relaxed mt-1">
             {dict?.privacyNotice?.pre ||
               (isRtl
-                ? "بإرسالك لهذا النموذج، فإنك تقر بأن دي-راب تعالج بياناتك الشخصية وفقاً لـ "
+                ? "بإرسالك لهذا النموذج، فإنك تقر بأن Di-Wrapp تعالج بياناتك الشخصية وفقاً لـ "
                 : "By submitting this form, you acknowledge that DiWrapp processes your personal information in accordance with our ")}
             <Link
               href={`/${lang}/privacy-policy`}

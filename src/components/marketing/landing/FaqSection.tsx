@@ -188,7 +188,7 @@ export default function FaqSection({
                         <>
                           {faq.preLinkText || (isRtl ? "يمكنك التسجيل بكل سهولة عبر زيارة " : "You can sign up easily by visiting ")}
                           <Link 
-                            aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة دي راب وإنشاء حساب جديد" : "Sign up for a new Diwrapp account")}
+                            aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة Di-Wrapp وإنشاء حساب جديد" : "Sign up for a new Di-Wrapp account")}
                             className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
                             href={`/${lang}/coming-soon`}
                           >

@@ -77,7 +77,7 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: isAr ? 'دي-راب - المحفظة الرقمية' : 'DiWrapp Wallet',
+          alt: isAr ? 'Di-Wrapp - المحفظة الذكية' : 'DiWrapp Wallet',
         },
       ],
     },

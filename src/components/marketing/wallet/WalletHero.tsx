@@ -107,7 +107,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
           <div className="absolute inset-0 w-full h-full z-[1]">
             <Image
               src="/assets/wallet-hero-cards.webp"
-              alt={w?.heroImageAlt || (lang === 'ar' ? 'عرض توضيحي لمحفظة دي-راب' : 'Di_Wrapp Wallet Visual')}
+              alt={w?.heroImageAlt || (lang === 'ar' ? 'واجهة محفظة Di-Wrapp الرقمية' : 'Di_Wrapp Wallet Visual')}
               fill
               priority
               className="object-cover object-top"

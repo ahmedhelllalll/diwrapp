@@ -46,7 +46,7 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: isAr ? 'دي-راب - بوابة أصحاب المساحات الإعلانية' : 'DiWrapp Vendor Portal',
+          alt: isAr ? 'Di-Wrapp - بوابة الشركاء وملاك الشاشات' : 'DiWrapp Vendor Portal',
         },
       ],
     },
