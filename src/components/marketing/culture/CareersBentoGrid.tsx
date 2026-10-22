@@ -266,7 +266,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
           >
             <Image
               src="/assets/culture-office-interior.webp"
-              alt={lang === 'ar' ? 'مساحة العمل الحديثة في Di_Wrapp' : 'Modern Di_Wrapp workspace'}
+              alt={lang === 'ar' ? 'مساحة العمل الحديثة في Di-Wrapp' : 'Modern Di-Wrapp workspace'}
               fill
               sizes="(max-width: 1024px) 100vw, 66vw"
               className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"

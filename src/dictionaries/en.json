@@ -8,9 +8,9 @@
       "badge": "Overview",
       "heading": "Di-Wrapp enables instant booking, tracking, and data-backed performance <b>insights — all from one unified system.</b>",
       "description": "Redefining how out-of-home advertising is discovered, managed, and commercialized by connecting brands, agencies, and media owners through one intelligent digital ecosystem. Built on cloud-native infrastructure, our architecture combines an intuitive booking experience with real-time analytics and enterprise data pipelines.",
-      "visionTitle": "Vision:",
+      "visionTitle": "Vision",
       "visionText": "To be the premier digital operating system for out-of-home media across the MENA region and globally.",
-      "missionTitle": "Mission:",
+      "missionTitle": "Mission",
       "missionText": "To digitize, standardize, and democratize media buying, making outdoor advertising transparent, accessible, and data-driven for all stakeholders."
     },
     "features": {
@@ -443,7 +443,7 @@
       "description": "Track your campaigns, discover new opportunities, and measure ROI as a Di-Wrapp advertiser."
     },
     "advertise": {
-      "title": "Advertise | Di-Wrapp",
+      "title": "Advertise",
       "description": "Empowering brands through precision media execution. Plan, launch, and track high-impact DOOH campaigns with confidence."
     },
     "contact": {
@@ -451,15 +451,15 @@
       "description": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
     },
     "joinUs": {
-      "title": "Join Us | Di-Wrapp",
+      "title": "Join Us",
       "description": "Multiply your impact. Scale your media reach. A unified digital marketplace operating without limits."
     },
     "blog": {
-      "title": "Blog | Di-Wrapp",
+      "title": "Blog",
       "description": "Stay tuned for exclusive updates, insights, and stories from Di-Wrapp."
     },
     "wallet": {
-      "title": "Wallet | Di-Wrapp",
+      "title": "Wallet",
       "description": "Secure, flexible, and instant transactions. The Di-Wrapp Wallet is your digital financial hub within the platform."
     }
   },

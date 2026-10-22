@@ -289,7 +289,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
           {/* Left: Copyright */}
           <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13px] md:text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
             <CopyrightYear />
-            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
+            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">Di-Wrapp.</span>
             <span>-</span>
             <span>{dict?.legal?.allRightsReserved || 'All rights reserved'}</span>
           </div>

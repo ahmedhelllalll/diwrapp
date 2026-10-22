@@ -13,7 +13,7 @@ export async function generateMetadata(props: {
   const askDi = (dict as any).askDiHero;
 
   return {
-    title: askDi?.badge || 'Ask_Di AI Assistant',
+    title: askDi?.badge || 'Ask Di — AI Media Assistant',
     description: `${askDi?.subtitleNormal || ''} ${askDi?.subtitleBold || ''}`.trim(),
     alternates: {
       canonical: `/${lang}/ask-di`,

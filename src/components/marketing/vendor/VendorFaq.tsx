@@ -42,7 +42,7 @@ const DEFAULT_DATA = {
       id: 'formats-supported',
       question: 'Which formats are supported?',
       answer:
-        'Di_Wrapp supports static high-res images (JPEG, PNG, WebP), dynamic HTML5 creatives, and high-definition video formats (MP4, MOV up to 4K resolution) tailored to digital displays and billboards.',
+        'Di-Wrapp supports static high-res images (JPEG, PNG, WebP), dynamic HTML5 creatives, and high-definition video formats (MP4, MOV up to 4K resolution) tailored to digital displays and billboards.',
     },
     {
       id: 'min-inventories',
@@ -65,13 +65,13 @@ const DEFAULT_DATA = {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di_Wrapped|Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Di-Wrapped|Di-Wrapp|Ask Di|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di_Wrapped' ||
-      part === 'Di_Wrapp' ||
-      part === 'Ask_Di' ||
+      part === 'Di-Wrapped' ||
+      part === 'Di-Wrapp' ||
+      part === 'Ask Di' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7'

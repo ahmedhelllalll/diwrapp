@@ -18,7 +18,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     contact?.hero?.subtitle ||
     (isAr
       ? 'تواصل مع فريق منصة Di-Wrapp لأي استفسار أو شراكة إعلانية أو دعم فني.'
-      : 'Connect with the DiWrapp team for questions, support, or partnership inquiries.');
+      : 'Connect with the Di-Wrapp team for questions, support, or partnership inquiries.');
 
   return {
     title,
@@ -35,7 +35,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
       title,
       description,
       url: `https://diwrapp.com/${lang}/contact`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: isAr ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -43,7 +43,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: isAr ? 'Di-Wrapp - تواصل معنا' : 'DiWrapp Contact',
+          alt: isAr ? 'Di-Wrapp - تواصل معنا' : 'Di-Wrapp Contact',
         },
       ],
     },

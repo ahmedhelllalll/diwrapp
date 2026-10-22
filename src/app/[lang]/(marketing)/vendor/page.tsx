@@ -18,8 +18,8 @@ export async function generateMetadata(props: {
   const description = (
     vendorHero?.subtitle ||
     (isAr
-      ? 'انضم إلى شبكة Di_Wrapp الذكية، ومكّن مساحاتك الإعلانية لتحقيق عوائد مجزية.'
-      : "Join Di_Wrapp's Smart Network to empower your inventory and unlock new revenue.")
+      ? 'انضم إلى شبكة Di-Wrapp الذكية، ومكّن مساحاتك الإعلانية لتحقيق عوائد مجزية.'
+      : "Join Di-Wrapp's Smart Network to empower your inventory and unlock new revenue.")
   ).trim();
 
   return {
@@ -38,7 +38,7 @@ export async function generateMetadata(props: {
       title,
       description,
       url: `https://diwrapp.com/${lang}/vendor`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: isAr ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -46,7 +46,7 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: isAr ? 'Di-Wrapp - بوابة الشركاء وملاك الشاشات' : 'DiWrapp Vendor Portal',
+          alt: isAr ? 'Di-Wrapp - بوابة الشركاء وملاك الشاشات' : 'Di-Wrapp Vendor Portal',
         },
       ],
     },

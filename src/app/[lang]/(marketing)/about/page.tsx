@@ -177,7 +177,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             </div>
           </section>
 
-          {/* Key Features / What Makes Di_Wrapp Different Section */}
+          {/* Key Features / What Makes Di-Wrapp Different Section */}
           <section className="about-features-section">
             <div className="about-features-container">
               {/* Top Header */}
@@ -222,7 +222,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   <div className="features-tablet-wrap">
                     <Image 
                       src="/assets/tablet-image.webp" 
-                      alt="Di_Wrapp Tablet Interface" 
+                      alt="Di-Wrapp Tablet Interface" 
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
@@ -239,7 +239,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                     <Link 
                       href={`/${lang}/coming-soon?feature=marketplace`} 
                       className="features-card-btn"
-                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di_Wrapp Media Player'}`}
+                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di-Wrapp Media Player'}`}
                     >
                       <span>{features?.card1Btn}</span>
                       <span className="sr-only"> - {features?.card1Title}</span>

@@ -68,7 +68,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   return {
     metadataBase: new URL('https://diwrapp.com'),
     title: {
-      template: '%s | DiWrapp',
+      template: '%s | Di-Wrapp',
       default: dict.metadata.defaultTitle,
     },
     description: dict.metadata.defaultDescription,
@@ -82,12 +82,12 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
     },
     openGraph: {
       title: {
-        template: '%s | DiWrapp',
+        template: '%s | Di-Wrapp',
         default: dict.metadata.defaultTitle,
       },
       description: dict.metadata.defaultDescription,
       url: `https://diwrapp.com/${lang}`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: lang === 'ar' ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -95,7 +95,7 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: 'DiWrapp Media Network',
+          alt: 'Di-Wrapp Media Network',
         },
       ],
     },
@@ -131,7 +131,7 @@ export default async function RootLayout(
       {
         '@type': 'Organization',
         '@id': 'https://diwrapp.com/#organization',
-        name: 'DiWrapp',
+        name: 'Di-Wrapp',
         url: 'https://diwrapp.com',
         logo: 'https://diwrapp.com/logo.png',
         sameAs: [
@@ -146,7 +146,7 @@ export default async function RootLayout(
         '@type': 'WebSite',
         '@id': `https://diwrapp.com/${lang}/#website`,
         url: `https://diwrapp.com/${lang}`,
-        name: 'DiWrapp',
+        name: 'Di-Wrapp',
         inLanguage: lang,
         publisher: {
           '@id': 'https://diwrapp.com/#organization',

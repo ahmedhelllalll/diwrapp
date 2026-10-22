@@ -27,10 +27,10 @@ export async function generateMetadata(props: {
       },
     },
     openGraph: {
-      title: `${title} | DiWrapp`,
+      title: `${title} | Di-Wrapp`,
       description,
       url: `https://diwrapp.com/${lang}/culture`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: lang === 'ar' ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -38,13 +38,13 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: 'DiWrapp Culture',
+          alt: 'Di-Wrapp Culture',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} | DiWrapp`,
+      title: `${title} | Di-Wrapp`,
       description,
       images: ['/images/og-banner.png'],
     },

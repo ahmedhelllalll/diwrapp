@@ -26,13 +26,13 @@ interface WalletHeroProps {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di_Wrapped|Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
+  const parts = text.split(/(Di-Wrapped|Di-Wrapp|Ask Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di_Wrapped' ||
-      part === 'Di_Wrapp' ||
-      part === 'Ask_Di' ||
+      part === 'Di-Wrapped' ||
+      part === 'Di-Wrapp' ||
+      part === 'Ask Di' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7' ||
@@ -107,7 +107,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
           <div className="absolute inset-0 w-full h-full z-[1]">
             <Image
               src="/assets/wallet-hero-cards.webp"
-              alt={w?.heroImageAlt || (lang === 'ar' ? 'واجهة محفظة Di-Wrapp الرقمية' : 'Di_Wrapp Wallet Visual')}
+              alt={w?.heroImageAlt || (lang === 'ar' ? 'واجهة محفظة Di-Wrapp الرقمية' : 'Di-Wrapp Wallet Visual')}
               fill
               priority
               className="object-cover object-top"
@@ -176,7 +176,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
         <div className="hero-anim-badge flex justify-center mb-4 sm:mb-5">
           <Badge variant="outline-sm">
             <CardWallet aria-hidden="true" className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#344054] dark:text-[#D4D4D8] stroke-[1.5] shrink-0" />
-            <span className="whitespace-nowrap">{renderBidiText(w?.heroBadge || 'Di_Wrapp Wallet')}</span>
+            <span className="whitespace-nowrap">{renderBidiText(w?.heroBadge || 'Di-Wrapp Wallet')}</span>
           </Badge>
         </div>
 
@@ -204,7 +204,7 @@ export default function WalletHero({ lang, dict }: WalletHeroProps) {
             <>
               {renderBidiText(
                 w?.heroSubtitlePart1 ||
-                  'The Di_Wrapp Wallet is your digital financial hub within the platform. It gives advertisers and vendors full control over transactions, top-ups, and campaign payments — '
+                  'The Di-Wrapp Wallet is your digital financial hub within the platform. It gives advertisers and vendors full control over transactions, top-ups, and campaign payments — '
               )}
               <span className="font-semibold text-heading dark:text-white">
                 {renderBidiText(w?.heroSubtitleHighlight || 'all in one place.')}

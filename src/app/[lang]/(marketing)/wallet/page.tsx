@@ -69,7 +69,7 @@ export async function generateMetadata(props: {
       title,
       description,
       url: `https://diwrapp.com/${lang}/wallet`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: isAr ? 'ar_AR' : 'en_US',
       type: 'website',
       images: [
@@ -77,7 +77,7 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: isAr ? 'Di-Wrapp - المحفظة الذكية' : 'DiWrapp Wallet',
+          alt: isAr ? 'Di-Wrapp - المحفظة الذكية' : 'Di-Wrapp Wallet',
         },
       ],
     },

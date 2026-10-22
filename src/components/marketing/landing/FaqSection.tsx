@@ -41,10 +41,10 @@ export default function FaqSection({
   const faqs: FaqDictItem[] = dict?.items && dict.items.length > 0 ? dict.items : [
     {
       id: "q1",
-      question: isRtl ? "ما هو Di_Wrapp وكيف يعمل؟" : "What is Di_Wrapp and how does it work?",
+      question: isRtl ? "ما هو Di-Wrapp وكيف يعمل؟" : "What is Di-Wrapp and how does it work?",
       answer: isRtl 
-        ? "منصة Di_Wrapp هي شبكة وسائط ذكية تربط بين مساحات الإعلانات والمعلنين بكل سلاسة وسرعة."
-        : "Di_Wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
+        ? "منصة Di-Wrapp هي شبكة وسائط ذكية تربط بين مساحات الإعلانات والمعلنين بكل سلاسة وسرعة."
+        : "Di-Wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
     },
     {
       id: "q2",
@@ -70,7 +70,7 @@ export default function FaqSection({
     },
     {
       id: "q5",
-      question: isRtl ? "هل يمكنني دمج لوحتي الإعلانية بنظام Di_Wrapp؟" : "Can I integrate My Billboard With Di_Wrapp Sytem?",
+      question: isRtl ? "هل يمكنني دمج لوحتي الإعلانية بنظام Di-Wrapp؟" : "Can I integrate My Billboard With Di-Wrapp Sytem?",
       answer: isRtl 
         ? "نعم، يمكنك تقديم طلب انضمام الشركاء وربط لوحاتك بالنظام الذكي بسهولة."
         : "Yes, billboard owners can easily connect their inventories and launch smart programmatic booking."

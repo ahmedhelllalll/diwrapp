@@ -235,7 +235,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
               variants={subtitleVariants}
               className="pioneering-desc font-lufga rtl:font-['Cairo',sans-serif] text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed max-w-xl lg:max-w-lg mb-8 transition-colors"
             >
-              {dict?.desc || (isRtl ? "تُعيد تقنية Di-Wrapp ابتكار منظومة الوسائط الإعلانية، لتمنحك وصولاً مباشراً لأرقى الشاشات والمواقع الإعلانية." : "Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every Inventory is within reach for all.")}
+              {dict?.desc || (isRtl ? "تُعيد تقنية Di-Wrapp ابتكار منظومة الوسائط الإعلانية، لتمنحك وصولاً مباشراً لأرقى الشاشات والمواقع الإعلانية." : "Di-Wrapp Technology is leading the revolution in media accessibility, ensuring every Inventory is within reach for all.")}
             </motion.p>
 
             {/* Feature List Items with Clean White SVG Checkmarks */}

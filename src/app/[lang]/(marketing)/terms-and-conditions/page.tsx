@@ -29,10 +29,10 @@ export async function generateMetadata(props: {
       },
     },
     openGraph: {
-      title: `${title} | DiWrapp`,
+      title: `${title} | Di-Wrapp`,
       description,
       url: `https://diwrapp.com/${lang}/terms-and-conditions`,
-      siteName: 'DiWrapp',
+      siteName: 'Di-Wrapp',
       locale: lang === 'ar' ? 'ar_AR' : 'en_US',
       type: 'article',
       images: [
@@ -40,13 +40,13 @@ export async function generateMetadata(props: {
           url: '/images/og-banner.png',
           width: 1920,
           height: 620,
-          alt: `${title} - DiWrapp Media Network`,
+          alt: `${title} - Di-Wrapp Media Network`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} | DiWrapp`,
+      title: `${title} | Di-Wrapp`,
       description,
       images: ['/images/og-banner.png'],
     },

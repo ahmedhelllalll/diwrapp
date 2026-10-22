@@ -44,7 +44,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
           <div className="bento-tablet-inner">
             <Image
               src="/assets/table.webp"
-              alt="Di_Wrapp Tablet Booking Showcase"
+              alt="Di-Wrapp Tablet Booking Showcase"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 640px"
@@ -140,7 +140,7 @@ export default function FeatureBentoGrid({ dict, className = "" }: FeatureBentoG
         >
           <Image
             src="/assets/digital-door.png"
-            alt="Di_Wrapp Illuminated Digital Doorway Visual"
+            alt="Di-Wrapp Illuminated Digital Doorway Visual"
             fill
             className="bento-door-img"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
