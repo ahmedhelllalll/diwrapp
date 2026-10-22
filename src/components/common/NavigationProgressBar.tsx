@@ -3,29 +3,61 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 
+// Module-level singleton state to survive component unmounts across dynamic root layouts (e.g. /[lang])
+let isGlobalNavigating = false;
+let isGlobalBarShown = false;
+let globalDelayTimer: ReturnType<typeof setTimeout> | null = null;
+let globalFailsafeTimer: ReturnType<typeof setTimeout> | null = null;
+let activeCompletePending: (() => void) | null = null;
+
+function clearGlobalNavigation() {
+  isGlobalNavigating = false;
+  isGlobalBarShown = false;
+  if (globalDelayTimer) {
+    clearTimeout(globalDelayTimer);
+    globalDelayTimer = null;
+  }
+  if (globalFailsafeTimer) {
+    clearTimeout(globalFailsafeTimer);
+    globalFailsafeTimer = null;
+  }
+}
+
 export default function NavigationProgressBar() {
   const pathname = usePathname();
-  const [status, setStatus] = useState<'idle' | 'pending' | 'completing'>('idle');
-  const [visible, setVisible] = useState(false);
 
-  const delayTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const completeTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const resetTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const failsafeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  // If a global navigation already showed the progress bar before this layout mounted,
+  // initialize immediately in 'completing' state to seamlessly finish without visual glitch
+  const [status, setStatus] = useState<'idle' | 'pending' | 'completing'>(() => {
+    if (typeof window !== 'undefined' && isGlobalNavigating && isGlobalBarShown) {
+      return 'completing';
+    }
+    return 'idle';
+  });
+
+  const [visible, setVisible] = useState<boolean>(() => {
+    if (typeof window !== 'undefined' && isGlobalNavigating && isGlobalBarShown) {
+      return true;
+    }
+    return false;
+  });
+
+  const completeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const prevPathnameRef = useRef<string>(pathname);
 
   const completePending = useCallback(() => {
-    if (delayTimerRef.current) {
-      clearTimeout(delayTimerRef.current);
-      delayTimerRef.current = null;
+    if (globalDelayTimer) {
+      clearTimeout(globalDelayTimer);
+      globalDelayTimer = null;
     }
-    if (failsafeTimerRef.current) {
-      clearTimeout(failsafeTimerRef.current);
-      failsafeTimerRef.current = null;
-    }
+    clearGlobalNavigation();
 
     setStatus((prevStatus) => {
-      if (prevStatus === 'pending') {
+      if (prevStatus === 'pending' || prevStatus === 'completing') {
+        if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
+        if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+
         completeTimerRef.current = setTimeout(() => {
           setVisible(false);
           resetTimerRef.current = setTimeout(() => {
@@ -42,20 +74,53 @@ export default function NavigationProgressBar() {
   const startPending = useCallback(() => {
     if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
     if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
-    if (delayTimerRef.current) clearTimeout(delayTimerRef.current);
-    if (failsafeTimerRef.current) clearTimeout(failsafeTimerRef.current);
+    clearGlobalNavigation();
+
+    isGlobalNavigating = true;
+    isGlobalBarShown = false;
 
     // Show only if navigation takes longer than ~150ms
-    delayTimerRef.current = setTimeout(() => {
+    globalDelayTimer = setTimeout(() => {
+      isGlobalBarShown = true;
       setVisible(true);
       setStatus('pending');
     }, 150);
 
-    // Failsafe: complete/reset after 4 seconds if pathname never changes
-    failsafeTimerRef.current = setTimeout(() => {
-      completePending();
+    // Failsafe: complete/reset after 4 seconds if navigation never completes
+    globalFailsafeTimer = setTimeout(() => {
+      if (activeCompletePending) {
+        activeCompletePending();
+      } else {
+        clearGlobalNavigation();
+      }
     }, 4000);
+  }, []);
+
+  // Register active completer for failsafe timer
+  useEffect(() => {
+    activeCompletePending = completePending;
+    return () => {
+      if (activeCompletePending === completePending) {
+        activeCompletePending = null;
+      }
+    };
   }, [completePending]);
+
+  // Handle cross-locale / cross-segment remount on component mount
+  useEffect(() => {
+    if (isGlobalNavigating) {
+      if (isGlobalBarShown) {
+        // Complete the bar that was already displayed by the preceding layout
+        completeTimerRef.current = setTimeout(() => {
+          setVisible(false);
+          resetTimerRef.current = setTimeout(() => {
+            setStatus('idle');
+          }, 130);
+        }, 120);
+      }
+      clearGlobalNavigation();
+    }
+  }, []);
 
   // Intercept internal link clicks and popstate
   useEffect(() => {
@@ -108,14 +173,12 @@ export default function NavigationProgressBar() {
     return () => {
       document.removeEventListener('click', handleClick, { capture: true });
       window.removeEventListener('popstate', handlePopState);
-      if (delayTimerRef.current) clearTimeout(delayTimerRef.current);
       if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
       if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
-      if (failsafeTimerRef.current) clearTimeout(failsafeTimerRef.current);
     };
   }, [startPending]);
 
-  // Complete when new pathname renders
+  // Complete when new pathname renders in the same layout instance
   useEffect(() => {
     if (prevPathnameRef.current !== pathname) {
       completePending();
@@ -153,3 +216,4 @@ export default function NavigationProgressBar() {
     />
   );
 }
+
