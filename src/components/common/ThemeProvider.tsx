@@ -19,40 +19,107 @@ const useIsomorphicLayoutEffect =
 
 function ThemeSynchronizer() {
   const pathname = usePathname();
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
+  // Synchronously maintain class & colorScheme on documentElement before paint
   useIsomorphicLayoutEffect(() => {
     try {
       const stored = localStorage.getItem('theme');
       const root = document.documentElement;
 
-      // Synchronously maintain class on documentElement before paint
-      if (stored === 'dark') {
+      let effectiveTheme: 'dark' | 'light';
+      if (stored === 'dark' || stored === 'light') {
+        effectiveTheme = stored;
+      } else {
+        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      if (effectiveTheme === 'dark') {
         if (!root.classList.contains('dark')) {
           root.classList.add('dark');
         }
-      } else if (stored === 'light') {
+      } else {
         if (root.classList.contains('dark')) {
           root.classList.remove('dark');
         }
       }
+      root.style.colorScheme = effectiveTheme;
 
-      // Keep next-themes internal state in sync with localStorage across route navigations
-      const currentActive = theme === 'system' ? resolvedTheme : theme;
-      if (stored && stored !== currentActive) {
-        setTheme(stored);
+      // Keep next-themes internal state in sync across route navigations
+      if (stored === 'dark' || stored === 'light') {
+        if (theme !== stored) {
+          setTheme(stored);
+        }
+      } else {
+        if (theme !== 'system') {
+          setTheme('system');
+        }
       }
     } catch {
       // Ignore storage access errors
     }
-  }, [pathname, theme, resolvedTheme, setTheme]);
+  }, [pathname, theme, setTheme]);
+
+  // Real-time OS appearance listener (matchMedia 'change' event)
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      try {
+        const stored = localStorage.getItem('theme');
+        // Only react to OS changes dynamically if user hasn't set an explicit manual override
+        if (!stored || stored === 'system') {
+          const root = document.documentElement;
+          const isDark = 'matches' in e ? e.matches : mediaQuery.matches;
+
+          if (isDark) {
+            root.classList.add('dark');
+          } else {
+            root.classList.remove('dark');
+          }
+          root.style.colorScheme = isDark ? 'dark' : 'light';
+
+          if (theme !== 'system') {
+            setTheme('system');
+          }
+        }
+      } catch {
+        // Ignore storage access errors
+      }
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else if ('addListener' in mediaQuery) {
+      (mediaQuery as MediaQueryList).addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else if ('removeListener' in mediaQuery) {
+        (mediaQuery as MediaQueryList).removeListener(handleChange);
+      }
+    };
+  }, [theme, setTheme]);
 
   return null;
 }
 
-export function ThemeProvider({ children, ...props }: React.ComponentProps<typeof NextThemesProvider>) {
+export function ThemeProvider({
+  children,
+  defaultTheme = 'system',
+  enableSystem = true,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
   return (
-    <NextThemesProvider {...props}>
+    <NextThemesProvider
+      defaultTheme={defaultTheme}
+      enableSystem={enableSystem}
+      {...props}
+    >
       <ThemeSynchronizer />
       {children}
     </NextThemesProvider>

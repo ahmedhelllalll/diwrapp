@@ -46,8 +46,19 @@ export function ThemeToggle({ className }: { className?: string } = {}) {
   return (
     <motion.button
       type="button"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={(e) => {
+        if (e.altKey || e.shiftKey) {
+          setTheme("system");
+          return;
+        }
+        setTheme(isDark ? "light" : "dark");
+      }}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      title={
+        theme === "system"
+          ? `System mode (${isDark ? "Dark" : "Light"}). Click to toggle, Alt+Click to reset.`
+          : `Theme: ${theme}. Click to toggle, Alt+Click to reset to system.`
+      }
       whileTap={{ scale: 0.92 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={baseClasses}

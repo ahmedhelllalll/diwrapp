@@ -13,7 +13,7 @@ export default function RootNotFound() {
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem={false}
+          enableSystem={true}
           disableTransitionOnChange
         >
           <NotFoundView />
