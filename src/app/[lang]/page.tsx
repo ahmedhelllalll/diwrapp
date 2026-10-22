@@ -60,7 +60,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           {/* Floating Hero Background and Foreground Assets */}
           <FloatingHeroAssets />
 
-          <div className="hero-content min-h-0 lg:min-h-[clamp(620px,calc(100vh-180px),780px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10">
+          <div className="hero-content min-h-0 lg:min-h-[clamp(620px,calc(100dvh-180px),780px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10">
             <div className="w-full max-w-[900px] mx-auto flex flex-col items-center text-center">
               <div className="hero-anim-badge w-full flex justify-center">
                 <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />

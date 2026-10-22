@@ -7,6 +7,7 @@
   --advertise-text: var(--foreground);
   background-color: var(--advertise-bg);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -702,7 +703,9 @@
   align-items: stretch;
   padding: 24px 20px 28px;
   min-height: clamp(540px, 80vh, 600px);
+  min-height: clamp(540px, 80dvh, 600px);
   max-height: 85vh;
+  max-height: 85dvh;
   background-color: var(--card-surface);
   box-shadow: 0 1px 3px rgba(16, 24, 40, 0.02);
 }

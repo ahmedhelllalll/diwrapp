@@ -43,7 +43,7 @@ export default function JoinUsHero({
           priority
           unoptimized
           sizes="100vw"
-          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu [image-rendering:-webkit-optimize-contrast] dark:hidden"
+          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu crisp-image dark:hidden"
         />
 
         {/* Dark Mode 3D Room Graphic */}
@@ -54,7 +54,7 @@ export default function JoinUsHero({
           priority
           unoptimized
           sizes="100vw"
-          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu [image-rendering:-webkit-optimize-contrast] hidden dark:block"
+          className="w-full h-full object-cover object-center pointer-events-none select-none transform-gpu crisp-image hidden dark:block"
         />
       </div>
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Cairo } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
@@ -8,6 +8,16 @@ import SmoothScroll from "@/components/common/SmoothScroll";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import NavigationProgressBar from "@/components/common/NavigationProgressBar";
 import { CONTACT_CONFIG } from "@/lib/config/contact";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#080808" },
+  ],
+};
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

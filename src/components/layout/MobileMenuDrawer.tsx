@@ -111,7 +111,7 @@ export default function MobileMenuDrawer({
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="fixed inset-x-0 bottom-0 top-[72px] z-[999] bg-white dark:bg-[#080808] lg:hidden flex flex-col justify-between overflow-y-auto px-6 py-8"
+          className="fixed inset-x-0 bottom-0 top-[calc(72px+env(safe-area-inset-top,0px))] z-[999] bg-white dark:bg-[#080808] lg:hidden flex flex-col justify-between overflow-y-auto overscroll-contain px-6 pt-6 pb-[calc(2rem+env(safe-area-inset-bottom,0px))]"
           dir={isRtl ? 'rtl' : 'ltr'}
         >
           {/* Centered navigation links */}

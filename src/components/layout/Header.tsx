@@ -181,7 +181,7 @@ export default function Header({
     <>
       <header
         dir="ltr"
-        className={`fixed top-0 inset-x-0 z-[1000] w-full transform-gpu ${
+        className={`fixed top-0 inset-x-0 z-[1000] w-full transform-gpu pt-safe ${
           isMobileMenuOpen
             ? "bg-white dark:bg-[#080808] border-b border-transparent"
             : isJoinUs
