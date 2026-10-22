@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRight } from 'iconoir-react';
 import { CONTACT_CONFIG } from '@/lib/config/contact';
 import CopyrightYear from '@/components/common/CopyrightYear';
 
@@ -57,6 +58,8 @@ export interface FooterProps {
 
 export default function Footer({ lang = 'en', dict }: FooterProps) {
   const isRtl = lang === 'ar';
+  const rawGroupName = dict?.groupName || (isRtl ? 'مجموعة ديستين-جاي' : 'Distin-Gui Group');
+  const cleanGroupName = rawGroupName.replace(/\.+$/, '').trim();
 
   const diWrappLinks = [
     { label: dict?.links?.about || 'About', href: `/${lang}/about` },
@@ -133,16 +136,21 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
             
             {/* Brand Slogan & Subtext */}
             <p className="text-[#475569] dark:text-zinc-400 text-[13.5px] leading-relaxed max-w-[320px] font-normal">
-              {dict?.slogan || 'Streamline Your Ads, Amplify Your Reach.'}
+              {dict?.slogan || (isRtl ? 'بسّط إعلاناتك، وعظّم وصولك.' : 'Streamline Your Ads, Amplify Your Reach.')}
               <br />
-              {dict?.poweredBy || 'Powered by'}{' '}
+              <span>{dict?.poweredBy || (isRtl ? 'مشغل بواسطة' : 'Powered by')}{' '}</span>
               <a
                 href="https://distin-gui.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-[#0F172A] dark:text-zinc-100 hover:text-[#1665ff] dark:hover:text-blue-400 transition-colors"
+                aria-label={`${dict?.poweredBy || (isRtl ? 'مشغل بواسطة' : 'Powered by')} ${cleanGroupName}`}
+                className="group/brand inline-flex items-center gap-1 font-semibold text-[#0F172A] dark:text-zinc-100 hover:text-brand dark:hover:text-blue-400 underline underline-offset-4 decoration-[#CBD5E1] dark:decoration-neutral-700 hover:decoration-brand dark:hover:decoration-blue-400 transition-all duration-200 cursor-pointer"
               >
-                {dict?.groupName || 'Distin-Gui Group.'}
+                <span>{cleanGroupName}</span>
+                <ArrowUpRight 
+                  className="w-3.5 h-3.5 shrink-0 text-text-tertiary dark:text-neutral-400 group-hover/brand:text-brand dark:group-hover/brand:text-blue-400 group-hover/brand:translate-x-0.5 group-hover/brand:-translate-y-0.5 rtl:group-hover/brand:-translate-x-0.5 transition-all duration-200 rtl:rotate-[-90deg]" 
+                  aria-hidden="true"
+                />
               </a>
             </p>
 
