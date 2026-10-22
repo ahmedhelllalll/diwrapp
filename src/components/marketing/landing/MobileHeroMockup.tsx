@@ -38,7 +38,7 @@ export default function MobileHeroMockup({
         <div className="hero-lcp-mockup w-full">
           <Image
             src="/images/hero/mobile-phone-mockup.webp"
-            alt="Di-wrapp Platform Mobile Mockup"
+            alt="Di-Wrapp Platform Mobile Mockup"
             width={785}
             height={658}
             priority

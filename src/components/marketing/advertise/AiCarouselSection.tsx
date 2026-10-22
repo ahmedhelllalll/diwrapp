@@ -40,6 +40,7 @@ interface AiCarouselSectionProps {
   slides?: CarouselSlide[];
   className?: string;
   showDivider?: boolean;
+  lang?: string;
 }
 
 const appleEasing = [0.22, 1, 0.36, 1] as const;
@@ -48,6 +49,7 @@ export default function AiCarouselSection({
   slides = defaultSlides,
   className = "",
   showDivider = false,
+  lang,
 }: AiCarouselSectionProps) {
   const activeSlides = slides && slides.length > 0 ? slides : defaultSlides;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -242,12 +244,26 @@ export default function AiCarouselSection({
 
             {/* Action Button (CTA) */}
             <motion.div variants={itemVariants}>
-              <Link
-                href={currentSlide.ctaLink}
-                className="ai-carousel-cta"
-              >
-                {currentSlide.ctaText}
-              </Link>
+              {(() => {
+                let resolvedHref = currentSlide.ctaLink || "#";
+                if (resolvedHref === "/booking") {
+                  resolvedHref = lang ? `/${lang}/coming-soon` : "/coming-soon";
+                } else if (
+                  lang &&
+                  resolvedHref.startsWith("/") &&
+                  !resolvedHref.startsWith(`/${lang}`)
+                ) {
+                  resolvedHref = `/${lang}${resolvedHref}`;
+                }
+                return (
+                  <Link
+                    href={resolvedHref}
+                    className="ai-carousel-cta"
+                  >
+                    {currentSlide.ctaText}
+                  </Link>
+                );
+              })()}
             </motion.div>
           </motion.div>
         </AnimatePresence>

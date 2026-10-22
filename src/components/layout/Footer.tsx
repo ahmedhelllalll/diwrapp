@@ -123,14 +123,14 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
               <div className="w-[34px] h-[34px] flex items-center justify-center shrink-0">
                 <Image 
                   src="/logo.png" 
-                  alt="Di-wrapp Logo" 
+                  alt="Di-Wrapp Logo" 
                   width={34} 
                   height={34} 
                   className="object-contain w-full h-full"
                 />
               </div>
               <span className="font-bold text-[20px] tracking-tight text-[#0F172A] dark:text-zinc-100 group-hover:text-[#1665ff] dark:group-hover:text-blue-400 transition-colors">
-                Di-wrapp
+                Di-Wrapp
               </span>
             </Link>
             

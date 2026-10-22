@@ -52,7 +52,7 @@ export default function DesignSystem() {
   const tabs = ['Advertiser', 'Vendor', 'Get Di-Wrapped', 'E-Branding', 'Wrapp-AI'];
   
   const faqs = [
-    { question: 'What is Di-wrapp SD?', answer: 'Di-wrapp SD is an advanced platform bridging advertisers with vendors for high-impact branding.' },
+    { question: 'What is Di-Wrapp SD?', answer: 'Di-Wrapp SD is an advanced platform bridging advertisers with vendors for high-impact branding.' },
     { question: 'How do I become a supplier?', answer: 'You can easily sign up through our vendor portal and list your assets within minutes.' },
   ];
 
@@ -68,7 +68,7 @@ export default function DesignSystem() {
               <div className="w-8 h-8 flex items-center justify-center">
                 <Image 
                   src="/logo.png" 
-                  alt="Di-wrapp Logo" 
+                  alt="Di-Wrapp Logo" 
                   width={32} 
                   height={32} 
                   className="object-contain w-full h-full"
@@ -76,7 +76,7 @@ export default function DesignSystem() {
               </div>
               <div className="flex items-center mr-1">
                 <span className="text-[14px] font-extrabold tracking-tight text-[#0f172a] dark:text-zinc-100 leading-none whitespace-nowrap">
-                  Di-wrapp
+                  Di-Wrapp
                 </span>
                 <span
                   className="font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center lowercase text-[#64748b] dark:text-zinc-400 ml-0.5 relative -top-1.5"

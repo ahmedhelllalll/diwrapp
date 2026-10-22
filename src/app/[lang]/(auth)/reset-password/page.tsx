@@ -55,10 +55,10 @@ export default async function ResetPassword(props: { params: Promise<{ lang: str
               <div
                 className="w-[32px] h-[32px] flex items-center justify-center shrink-0"
               >
-                <Image src="/logo.png" alt="Di-wrapp" width={22} height={22} className="object-contain" />
+                <Image src="/logo.png" alt="Di-Wrapp" width={22} height={22} className="object-contain" />
               </div>
               <div className="flex items-baseline">
-                <span className="text-[14px] font-extrabold tracking-tight text-[#111827] dark:text-white transition-colors duration-300">Di-wrapp</span>
+                <span className="text-[14px] font-extrabold tracking-tight text-[#111827] dark:text-white transition-colors duration-300">Di-Wrapp</span>
                 <span
                   className="font-['Lufga',sans-serif] font-light text-[10px] leading-[20px] tracking-normal text-center lowercase text-[#4b5563] dark:text-zinc-400 relative -top-[5px] ml-[2px] transition-colors duration-300"
                   style={{
@@ -102,7 +102,7 @@ export default async function ResetPassword(props: { params: Promise<{ lang: str
             
             {/* Logo icon */}
             <div className="flex items-center justify-center mb-5">
-              <Image src="/logo.png" alt="Di-wrapp" width={44} height={44} className="object-contain" />
+              <Image src="/logo.png" alt="Di-Wrapp" width={44} height={44} className="object-contain" />
             </div>
 
             {/* Welcome heading */}

@@ -155,7 +155,7 @@ export default async function AdvertisePage(props: { params: Promise<{ lang: str
               <FeatureBentoGrid dict={adv?.bento} />
 
               {/* Wrapp AI Carousel Section */}
-              <AiCarouselSection slides={adv?.aiCarousel?.slides} />
+              <AiCarouselSection slides={adv?.aiCarousel?.slides} lang={lang} />
             </section>
 
           </div>

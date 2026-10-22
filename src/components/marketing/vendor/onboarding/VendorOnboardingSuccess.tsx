@@ -73,7 +73,7 @@ export default function VendorOnboardingSuccess({
             <div className="mt-10 flex flex-wrap items-center gap-6">
               {/* Track My Submission Button */}
               <Link
-                href={`/${lang}/dashboard`}
+                href={`/${lang}/coming-soon?feature=Dashboard`}
                 className="h-[46px] px-6 rounded-[12px] bg-[#101828] hover:bg-[#1D2939] dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-[#101828] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium inline-flex items-center gap-2.5 transition-all shadow-xs cursor-pointer select-none"
               >
                 <span>{dict?.trackSubmission || (isRtl ? "متابعة طلبي" : "Track My Submission")}</span>

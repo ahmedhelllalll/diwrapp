@@ -47,12 +47,12 @@ export default function VendorOnboardingHeader({
         <Link
           href={`/${lang}`}
           className="brand-logo inline-flex items-center gap-2 shrink-0 select-none group"
-          aria-label="Di-wrapp Home"
+          aria-label="Di-Wrapp Home"
         >
           <div className="w-8 h-8 shrink-0 flex items-center justify-center">
             <Image
               src="/logo.png"
-              alt="Di-wrapp Logo"
+              alt="Di-Wrapp Logo"
               width={32}
               height={32}
               priority
@@ -60,7 +60,7 @@ export default function VendorOnboardingHeader({
             />
           </div>
           <span className="font-semibold text-xl tracking-tight leading-none text-[#101828] dark:text-white flex items-center">
-            Di-wrapp
+            Di-Wrapp
             {countryBadge ?? <CountryBadgeSkeleton key="country-badge-skeleton" />}
           </span>
         </Link>

@@ -72,7 +72,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   <div className="pill-icon">
                     <Image 
                       src="/assets/logo-icon-white.png" 
-                      alt="Di-wrapp Logo" 
+                      alt="Di-Wrapp Logo" 
                       width={24} 
                       height={24} 
                       className="w-6 h-6 object-contain" 
@@ -101,7 +101,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
               <div className="tall-card-content">
                 <Image 
                   src="/assets/logo-icon-white.png" 
-                  alt="Di-wrapp Logo" 
+                  alt="Di-Wrapp Logo" 
                   width={36} 
                   height={18} 
                   className="object-contain" 

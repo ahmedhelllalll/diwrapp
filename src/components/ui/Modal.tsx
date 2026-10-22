@@ -30,7 +30,12 @@ export function Modal({ isOpen, onClose, title, children, footer, type = 'standa
                   )}
                   <h3 className="text-[17px] font-bold text-[#0f172a] dark:text-zinc-100">{title}</h3>
                 </div>
-                <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">
+                <button 
+                  type="button" 
+                  onClick={onClose} 
+                  aria-label="Close dialog"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"
+                >
                   <Xmark width={18} height={18} strokeWidth={2} />
                 </button>
              </div>

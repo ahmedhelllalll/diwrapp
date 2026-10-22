@@ -63,13 +63,13 @@ export default function ComingSoonNavbar({
         <Link href={`/${lang}`} className="inline-flex items-center gap-2 select-none group shrink-0">
           <Image
             src="/logo.png"
-            alt="Di-wrapp Logo"
+            alt="Di-Wrapp Logo"
             width={34}
             height={34}
             className="object-contain"
           />
           <span className="text-xl font-bold text-[#101828] dark:text-white tracking-tight font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]">
-            Di-wrapp
+            Di-Wrapp
           </span>
           {countryBadge ?? <CountryBadgeSkeleton key="country-badge-skeleton" />}
         </Link>
@@ -100,6 +100,7 @@ export default function ComingSoonNavbar({
         <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           {/* Theme Toggle Button */}
           <button
+            type="button"
             onClick={toggleTheme}
             className="w-10 h-10 rounded-full border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-gray-700 dark:text-zinc-300 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors shadow-xs active:scale-[0.98]"
             aria-label="Toggle theme"
@@ -134,9 +135,11 @@ export default function ComingSoonNavbar({
           {/* Mobile Hamburger Menu Button */}
           {showNavLinks && (
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden w-10 h-10 rounded-lg border border-gray-200 dark:border-zinc-800 flex items-center justify-center text-[#101828] dark:text-white"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
