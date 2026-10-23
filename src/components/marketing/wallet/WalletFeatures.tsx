@@ -24,13 +24,13 @@ interface WalletFeaturesProps {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di-wrapped|Di-wrapp|Ask Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
+  const parts = text.split(/(Di_Wrapped|Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|Apple Pay|Visa|EGP|USD|SAR|AED|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di-wrapped' ||
-      part === 'Di-wrapp' ||
-      part === 'Ask Di' ||
+      part === 'Di_Wrapped' ||
+      part === 'Di_Wrapp' ||
+      part === 'Ask_Di' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7' ||

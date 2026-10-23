@@ -7,14 +7,14 @@ export function Pagination() {
         Showing <span className="font-bold text-[#0f172a] dark:text-zinc-100">1</span> to <span className="font-bold text-[#0f172a] dark:text-zinc-100">10</span> of <span className="font-bold text-[#0f172a] dark:text-zinc-100">42</span> results
       </div>
       <div className="flex items-center gap-1 w-full sm:w-auto justify-between sm:justify-end">
-        <button type="button" aria-label="Previous page" className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-zinc-800 text-[#94a3b8] dark:text-zinc-500 text-[13px] font-semibold cursor-not-allowed">Previous</button>
+        <button className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-zinc-800 text-[#94a3b8] dark:text-zinc-500 text-[13px] font-semibold cursor-not-allowed">Previous</button>
         <div className="flex items-center gap-1">
-          <button type="button" aria-label="Page 1" aria-current="page" className="w-8 h-8 rounded-lg bg-[#0f172a] dark:bg-zinc-100 text-white dark:text-black flex items-center justify-center text-[13px] font-bold shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-[0.98] active:translate-y-0">1</button>
-          <button type="button" aria-label="Page 2" className="w-8 h-8 rounded-lg text-[#475569] dark:text-zinc-400 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 flex items-center justify-center text-[13px] font-semibold hidden sm:flex transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">2</button>
-          <button type="button" aria-label="Page 3" className="w-8 h-8 rounded-lg text-[#475569] dark:text-zinc-400 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 flex items-center justify-center text-[13px] font-semibold hidden sm:flex transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">3</button>
+          <button className="w-8 h-8 rounded-lg bg-[#0f172a] dark:bg-zinc-100 text-white dark:text-black flex items-center justify-center text-[13px] font-bold shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-[0.98] active:translate-y-0">1</button>
+          <button className="w-8 h-8 rounded-lg text-[#475569] dark:text-zinc-400 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 flex items-center justify-center text-[13px] font-semibold hidden sm:flex transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">2</button>
+          <button className="w-8 h-8 rounded-lg text-[#475569] dark:text-zinc-400 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 flex items-center justify-center text-[13px] font-semibold hidden sm:flex transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">3</button>
           <span className="text-[#94a3b8] dark:text-zinc-500 mx-1 hidden sm:inline-block">...</span>
         </div>
-        <button type="button" aria-label="Next page" className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-zinc-800 text-[#334155] dark:text-zinc-300 text-[13px] font-semibold hover:bg-[#f8fafc] dark:hover:bg-zinc-900/50 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">Next</button>
+        <button className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] dark:border-zinc-800 text-[#334155] dark:text-zinc-300 text-[13px] font-semibold hover:bg-[#f8fafc] dark:hover:bg-zinc-900/50 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0">Next</button>
       </div>
     </div>
   );
@@ -60,8 +60,8 @@ export function DataTable() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-[13.5px] font-semibold text-[#334155] dark:text-zinc-300">{row.impressions}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-[13.5px] font-medium">
-                  <button type="button" aria-label={`Edit ${row.name}`} className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#0066FF] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><i className="fa-solid fa-pen"></i></button>
-                  <button type="button" aria-label={`Delete ${row.name}`} className="text-[#94a3b8] dark:text-zinc-500 hover:text-red-600 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"><i className="fa-solid fa-trash-can"></i></button>
+                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-[#0066FF] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 mr-4"><i className="fa-solid fa-pen"></i></button>
+                  <button className="text-[#94a3b8] dark:text-zinc-500 hover:text-red-600 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"><i className="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
             ))}
@@ -78,7 +78,7 @@ export function DataTable() {
                 <h4 className="text-[14px] font-bold text-[#0f172a] dark:text-zinc-100 mb-1.5">{row.name}</h4>
                 {renderStatus(row.status)}
               </div>
-              <button type="button" aria-label={`More options for ${row.name}`} className="w-8 h-8 flex items-center justify-center text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 rounded-lg transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 -mt-1 -mr-1">
+              <button className="w-8 h-8 flex items-center justify-center text-[#94a3b8] dark:text-zinc-500 hover:text-[#475569] dark:hover:text-zinc-300 hover:bg-[#f1f5f9] dark:hover:bg-zinc-800 rounded-lg transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 -mt-1 -mr-1">
                 <i className="fa-solid fa-ellipsis-vertical"></i>
               </button>
             </div>

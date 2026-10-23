@@ -29,9 +29,9 @@ const DEFAULT_SLIDES: Record<string, SlideData> = {
     badge: 'Wrapp AI – Your Smart Advertising Companion',
     title: 'Empowering Through intelligent, data-driven support.',
     description:
-      'Ask Di is your smart, friendly AI assistant built into the Di-wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —',
+      'Ask_Di” is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —',
     highlight: 'all through intuitive, AI-powered interactions.',
-    cta: 'Try Ask Di',
+    cta: 'Try Ask_Di',
     bgImageDesktop: '/assets/ask-di-slide-white.webp',
     bgImageMobile: '/assets/background-ai-light-mobile.webp',
     bgDarkDesktop: '/assets/background-ai-dark.webp',
@@ -44,7 +44,7 @@ const DEFAULT_SLIDES: Record<string, SlideData> = {
     description:
       'Streamlines your advertising process by generating visual ad drafts, suggests messaging and tone, and recommends trending ad styles tailored to your product. —',
     highlight: 'so you can build impactful campaigns, all in one place.',
-    cta: 'Create with Ask Di',
+    cta: 'Create with Ask_Di',
     bgImageDesktop: '/assets/ask-di-slide-purple.webp',
     bgImageMobile: '/assets/ask-di-slide-purple-mobile.webp',
     isDarkTheme: true,
@@ -53,12 +53,12 @@ const DEFAULT_SLIDES: Record<string, SlideData> = {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Ask Di|Di-wrapp|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Ask_Di|Di_Wrapp|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Ask Di' ||
-      part === 'Di-wrapp' ||
+      part === 'Ask_Di' ||
+      part === 'Di_Wrapp' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7'
@@ -212,7 +212,7 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
   return (
     <section
       aria-roledescription="carousel"
-      aria-label="Ask Di Features Carousel"
+      aria-label="Ask_Di Features Carousel"
       className="w-full py-10 sm:py-16 lg:py-24 bg-transparent"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">

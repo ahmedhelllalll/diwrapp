@@ -26,11 +26,7 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
       
       <div className="relative">
         <button
-          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          aria-haspopup="listbox"
-          aria-expanded={isOpen}
-          aria-label={`Select category: Currently viewing ${activeTab}`}
           className="w-full flex items-center justify-between bg-slate-50 dark:bg-[#0a0a0a] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-zinc-800 rounded-xl px-4 py-3.5 text-left shadow-sm focus:outline-none focus:ring-4 focus:ring-[#0066FF]/10 transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0"
         >
           <div className="flex items-center gap-3">
@@ -53,7 +49,6 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              role="listbox"
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -65,9 +60,6 @@ export function MobileTabDropdown({ activeTab, tabs, onChange }: { activeTab: st
                 return (
                   <button
                     key={tab}
-                    type="button"
-                    role="option"
-                    aria-selected={isActive}
                     onClick={() => { onChange(tab); setIsOpen(false); }}
                     className={`w-full text-left px-4 py-3 text-[13.5px] rounded-xl flex items-center justify-between transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 ${
                       isActive 

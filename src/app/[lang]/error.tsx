@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 
 export default function RouteError({
   error,
@@ -11,20 +10,13 @@ export default function RouteError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const params = useParams();
-  const lang = (params?.lang as string) === 'ar' ? 'ar' : 'en';
-  const isRtl = lang === 'ar';
-
   useEffect(() => {
     // Log unexpected errors
     console.error('Route error caught by boundary:', error);
   }, [error]);
 
   return (
-    <div 
-      dir={isRtl ? 'rtl' : 'ltr'} 
-      className="min-h-[70vh] min-h-[70dvh] flex flex-col items-center justify-center px-6 py-20 text-center font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif]"
-    >
+    <div className="min-h-[70vh] min-h-[70dvh] flex flex-col items-center justify-center px-6 py-20 text-center font-['Lufga',sans-serif]">
       <div className="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-950/30 flex items-center justify-center mb-6 text-red-600 dark:text-red-400">
         <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -32,12 +24,10 @@ export default function RouteError({
       </div>
 
       <h1 className="text-2xl sm:text-3xl font-bold text-[#101828] dark:text-white mb-3">
-        {isRtl ? 'حدث خطأ غير متوقع' : 'Something went wrong'}
+        Something went wrong
       </h1>
       <p className="text-sm sm:text-base text-slate-600 dark:text-neutral-400 max-w-md mb-8">
-        {isRtl 
-          ? 'واجهنا خطأ أثناء تحميل هذه الصفحة. يُرجى إعادة المحاولة أو العودة إلى الصفحة الرئيسية.' 
-          : 'We encountered an unexpected error while loading this page. Please try again or return to the homepage.'}
+        We encountered an unexpected error while loading this page. Please try again or return to the homepage.
       </p>
 
       <div className="flex items-center gap-4 flex-wrap justify-center">
@@ -46,13 +36,13 @@ export default function RouteError({
           onClick={() => reset()}
           className="h-11 px-6 rounded-xl bg-brand text-white font-medium text-sm hover:opacity-90 transition-opacity cursor-pointer focus-visible:ring-2 focus-visible:ring-brand"
         >
-          {isRtl ? 'إعادة المحاولة' : 'Try again'}
+          Try again
         </button>
         <Link
-          href={`/${lang}`}
+          href="/"
           className="h-11 px-6 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-[#101828] dark:text-white font-medium text-sm hover:bg-slate-50 dark:hover:bg-neutral-800 transition-colors inline-flex items-center justify-center focus-visible:ring-2 focus-visible:ring-brand"
         >
-          {isRtl ? 'العودة إلى الرئيسية' : 'Back to Home'}
+          Back to Home
         </Link>
       </div>
     </div>

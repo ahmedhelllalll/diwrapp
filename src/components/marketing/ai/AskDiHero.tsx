@@ -40,17 +40,17 @@ interface AskDiHeroProps {
 
 const DEFAULT_DATA: AskDiHeroDict = {
   badge: 'Integrated Across the Platform',
-  titleBold: 'Just Ask Di — ',
+  titleBold: 'Just Ask_Di” — ',
   titleRegular: 'and she’ll take care of the rest.',
   subtitleNormal:
-    "Whether you're booking a single screen or managing a network, Ask Di is always active — ",
+    "Whether you're booking a single screen or managing a network, Ask_Di is always active — ",
   subtitleBold: 'working alongside your team 24/7.',
-  ctaButton: 'Try Ask Di',
+  ctaButton: 'Try Ask_Di',
   cards: {
     bookingAssistant: {
       title: 'Smart Booking Assistant',
       description:
-        'Ready to launch a campaign? Ask Di handles the setup — you just confirm and go live.',
+        'Ready to launch a campaign? Ask_Di handles the setup — you just confirm and go live.',
     },
     campaignResults: {
       title: 'View Campaign Results',
@@ -67,10 +67,10 @@ const DEFAULT_DATA: AskDiHeroDict = {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Ask Di|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Ask_Di|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
-    if (part === 'Ask Di' || part === 'Di' || part === '(24/7)' || part === '24/7') {
+    if (part === 'Ask_Di' || part === 'Di' || part === '(24/7)' || part === '24/7') {
       return (
         <span key={index} dir="ltr" className="inline-block whitespace-nowrap">
           {part}
@@ -241,7 +241,7 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
           <div className="w-[94%] sm:w-[80%] lg:w-[55%] max-w-[720px] mx-auto relative z-[2] select-none pointer-events-none -translate-x-2 sm:-translate-x-8 lg:-translate-x-[70px] transition-transform duration-300">
             <Image
               src="/assets/ask-di-tablet-mockup.webp"
-              alt="Ask Di Tablet Interface Mockup"
+              alt="Ask_Di Tablet Interface Mockup"
               width={2420}
               height={1689}
               priority
@@ -254,7 +254,7 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
           <div className="absolute right-[10%] sm:right-[14%] lg:right-[18%] bottom-[8px] sm:bottom-[48px] lg:bottom-[76px] w-[36%] sm:w-[30%] lg:w-[28%] max-w-[340px] z-[4] select-none pointer-events-none translate-x-4 sm:translate-x-0 transition-all duration-300">
             <Image
               src="/assets/ask-di-mobile-mockup.webp"
-              alt="Ask Di Mobile Interface Mockup"
+              alt="Ask_Di Mobile Interface Mockup"
               width={1386}
               height={1736}
               priority

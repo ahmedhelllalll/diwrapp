@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
-import { constructMetadata } from '@/lib/seo/metadata';
 import OurCultureSection from '@/components/marketing/culture/OurCultureSection';
 import LifeAtDiwrapp from '@/components/marketing/culture/LifeAtDiwrapp';
 import CareersBentoGrid from '@/components/marketing/culture/CareersBentoGrid';
@@ -12,18 +11,44 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata?.culture;
   const culture = dict.culture;
-  const title = meta?.title || (lang === 'ar' ? 'بيئة العمل وثقافتنا | ابتكار مستقبل وسائط DOOH' : 'Life & Culture | Building the Future of DOOH Media');
-  const description = meta?.description || culture?.subtitle || 'Explore careers and life at Di-wrapp.';
+  const title = culture?.badge || 'Our Culture';
+  const description = culture?.subtitle || 'We believe in a work culture that feels as good as it performs.';
 
-  return constructMetadata({
+  return {
     title,
     description,
-    path: '/culture',
-    lang,
-    ogImageAlt: lang === 'ar' ? 'ثقافتنا وبيئة العمل - Di-wrapp' : 'Di-wrapp Culture & Careers',
-  });
+    alternates: {
+      canonical: `/${lang}/culture`,
+      languages: {
+        en: 'https://diwrapp.com/en/culture',
+        ar: 'https://diwrapp.com/ar/culture',
+        'x-default': 'https://diwrapp.com/en/culture',
+      },
+    },
+    openGraph: {
+      title: `${title} | DiWrapp`,
+      description,
+      url: `https://diwrapp.com/${lang}/culture`,
+      siteName: 'DiWrapp',
+      locale: lang === 'ar' ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: 'DiWrapp Culture',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | DiWrapp`,
+      description,
+      images: ['/images/og-banner.png'],
+    },
+  };
 }
 
 export default async function CulturePage(props: {

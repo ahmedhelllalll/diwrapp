@@ -21,8 +21,8 @@ interface WhyGetDiWrappedProps {
 }
 
 const DEFAULT_DATA = {
-  topBadge: 'Why Get Di-wrapped',
-  heading: 'Get Connected. Get Booked. Get Di-wrapped.',
+  topBadge: 'Why Get Di_Wrapped',
+  heading: 'Get Connected. Get Booked. Get Di_Wrapped.',
   features: {
     automated: {
       title: 'Automated Booking',
@@ -51,7 +51,7 @@ const DEFAULT_DATA = {
     },
   },
   ctaBanner: {
-    badge: 'Join Di-wrapp Vendor Network',
+    badge: 'Join Di_Wrapp Vendor Network',
     title: 'Ready to connect your Inventory and earn more?',
     description: 'Join instantly, link your space, set your prices, and start monitoring bookings.',
     contactBtn: 'Contact Us',
@@ -61,13 +61,13 @@ const DEFAULT_DATA = {
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di-wrapped|Di-wrapp|Ask Di|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Di_Wrapped|Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di-wrapped' ||
-      part === 'Di-wrapp' ||
-      part === 'Ask Di' ||
+      part === 'Di_Wrapped' ||
+      part === 'Di_Wrapp' ||
+      part === 'Ask_Di' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7'

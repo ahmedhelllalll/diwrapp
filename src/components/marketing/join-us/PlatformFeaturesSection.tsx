@@ -71,7 +71,7 @@ export default function PlatformFeaturesSection({
     badge: 'Smart Hardware Integration "Ai-Powered"',
     title: 'Empowering vendors to seamlessly upgrade their Inventories',
     description:
-      'Powered by advanced hardware and AI-integrated sensors, Di-wrapp empowers with an embedded system that allows automated booking, scheduling, and content capabilities —',
+      'Powered by advanced hardware and AI-integrated sensors, Di_Wrapp empowers with an embedded system that allows automated booking, scheduling, and content capabilities —',
     descriptionHighlight:
       'eliminating manual intervention and reducing the risk of human error.',
   },
@@ -82,7 +82,7 @@ export default function PlatformFeaturesSection({
       'Assigning a unique operational mode to each media asset, Allows a tailored scheduling, dynamic availability settings, and optimized utilization based on the specific objectives of each bookings',
   },
   ctaBanner = {
-    badge: 'Join Di-wrapp Vendor Network',
+    badge: 'Join Di_Wrapp Vendor Network',
     title: 'Ready to connect your Inventory and earn more?',
     description:
       'Join instantly, link your Space, set your prices, and start Monitoring Bookings',

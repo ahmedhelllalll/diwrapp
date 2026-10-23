@@ -1,85 +1,85 @@
 {
   "about": {
-    "badge": "Our Platform & Mission",
-    "title": "Transforming Out-of-Home Media<br/><b>Through Unified Technology</b>",
+    "badge": "More things to know about us",
+    "title": "Revolutionizing the industry<br/><b>by bridging the gaps</b>",
     "leftPill": "Your On-the-Go Booking Platform.",
     "rightText": "Smart tools, transparent pricing,<br/>and real-time management.",
     "overview": {
       "badge": "Overview",
-      "heading": "Di-wrapp enables instant booking, tracking, and data-backed performance <b>insights — all from one unified system.</b>",
-      "description": "Redefining how out-of-home advertising is discovered, managed, and commercialized by connecting brands, agencies, and media owners through one intelligent digital ecosystem. Built on cloud-native infrastructure, our architecture combines an intuitive booking experience with real-time analytics and enterprise data pipelines.",
-      "visionTitle": "Vision",
-      "visionText": "To be the premier digital operating system for out-of-home media across the MENA region and globally.",
-      "missionTitle": "Mission",
-      "missionText": "To digitize, standardize, and democratize media buying, making outdoor advertising transparent, accessible, and data-driven for all stakeholders."
+      "heading": "Di_Wrapp enables instant booking, tracking, and data-backed performance <b>insights — all from one unified system.</b>",
+      "description": "Redefining how the industry is discovered, managed, and commercialized by connecting brands, agencies, and media owners through one intelligent digital ecosystem. Using a scalable architecture and cloud based infrastructure, we ensure a reliable and high-performing platform. Where Our UX/UI is designed for ease of use, and our backend supports real-time reporting and vendor analytics.",
+      "visionTitle": "Vision:",
+      "visionText": "Leading the industry through a platform for managing and monetizing media mediums in the region and beyond.",
+      "missionTitle": "Mission:",
+      "missionText": "To simplify, digitize, and democratize the industry for all stakeholders."
     },
     "features": {
       "badge": "Key Features",
-      "title": "What Sets<br/>Di-wrapp Apart",
-      "subtitle": "Whether you're an enterprise brand or managing a media network, Di-wrapp equips you to operate with confidence and scale.",
+      "title": "What Makes<br/>Di_Wrapp Different",
+      "subtitle": "Whether you're a brand or managing media inventory, DiWrapp gives you the tools to operate with confidence and scale.",
       "card1Title": "Unified Marketplace",
-      "card1Desc": "Access Every Advertising Opportunity in One Unified Platform.",
-      "card1Btn": "Explore Inventory",
-      "card2Title": "Enterprise Operations Portal",
-      "card2Desc": "Manage inventory, slots, bookings, creative compliance, financial settlement, and customer relationships from one command center.",
-      "card3Title": "Cloud-Native Infrastructure",
-      "card3Desc": "Architected to power local campaigns, regional media networks, and cross-border enterprise advertising ecosystems.",
+      "card1Desc": "Access Every Advertising Opportunity in One Platform.",
+      "card1Btn": "Read More",
+      "card2Title": "Enterprise Platform",
+      "card2Desc": "Manage inventory, bookings, campaigns, analytics, financial operations, and customer relationships from one centralized workspace.",
+      "card3Title": "Scalable Infrastructure",
+      "card3Desc": "Designed to support local businesses, regional media networks, and enterprise advertising ecosystems.",
       "card4Title": "Intelligent Commercial Models",
-      "card4Desc": "Support diverse inventory categories with dynamic pricing algorithms engineered around real-world market demand.",
-      "card4Btn": "Learn More"
+      "card4Desc": "Support diverse inventory structures with flexible operating models designed around real business needs.",
+      "card4Btn": "Read More"
     },
     "testimonials": {
       "badge": "Testimonials",
       "headingLine1": "Trusted by leaders",
-      "headingLine2": "across premier industries",
-      "subtitle": "Discover how leading advertisers and media owners rely on Di-wrapp to power their campaigns with precision.",
+      "headingLine2": "from various industries",
+      "subtitle": "Discover why they rely on Di_Wrapp to power every step of their Booking journey",
       "cta": "Book Your Spot Now"
     }
   },
   "advertise": {
-    "heroBadge": "Strategic Media Buying, Redefined",
+    "heroBadge": "Bridging Vision with Functionality",
     "heroTitleLight": "Empowering Brands Through",
-    "heroTitleBold": "Precision Media Execution",
+    "heroTitleBold": "Smart, Seamless Experiences",
     "featureBadge": "Plan, Launch, and Track With Confidence",
-    "featureHeading": "All in One Unified Platform.",
-    "featureDescLight": "From discovering premium media spaces to managing budgets and accessing live analytics — ",
-    "featureDescBold": "every workflow is engineered to save time, maximize impact, and deliver verifiable ROI.",
+    "featureHeading": "All in One Place.",
+    "featureDescLight": "From discovering media spaces to managing budgets and accessing reports — ",
+    "featureDescBold": "everything is built to save time, boost impact, and deliver measurable value.",
     "ctaButton": "Book Your Spot",
     "bento": {
-      "card1Alt": "Di-wrapp Tablet Booking Showcase",
-      "card2Title": "Instant Discovery & Booking",
-      "card2Desc": "— zero delays, zero back-and-forth. Simply select your slot, schedule dates, and launch.",
-      "card3Title": "Intelligent Performance Dashboard",
-      "card3Desc": "A customizable command center highlighting reach metrics, impression delivery, and budget utilization.",
-      "card4Title": "Proof of Play & Live Reports",
-      "card4Desc": "Receive visual and digital verification the moment your ad displays, alongside granular performance telemetry.",
-      "card5Title": "Di-wrapp Smart Wallet",
-      "card5Desc": "Securely fund campaigns, hold disbursements in escrow, and download unified tax-compliant VAT invoices.",
-      "card6Alt": "Di-wrapp Digital Gateway Interface",
-      "card7Title": "Streamlined Approval Workflows",
-      "card7Desc": "— ensuring rigorous creative quality, regulatory compliance, and total brand safety.",
-      "card8Title": "Instant Event & Milestone Alerts",
-      "card8Desc": "— delivered in real time across web and mobile notifications."
+      "card1Alt": "Di_Wrapp Tablet Booking Showcase",
+      "card2Title": "Instant Browse & Book",
+      "card2Desc": "— no delays, no back-and-forth. Just select, schedule, and go live.",
+      "card3Title": "Smart Dashboard",
+      "card3Desc": "A fully customizable dashboard that highlights the data that matters most",
+      "card4Title": "Booking Proof & Reporting",
+      "card4Desc": "Get visual confirmation when your Booking goes live, along with detailed reports",
+      "card5Title": "Wallet Top-Ups & Payouts",
+      "card5Desc": "Securely Fund your account and track every transaction",
+      "card6Alt": "Di_Wrapp Illuminated Digital Doorway Visual",
+      "card7Title": "Streamlined approval Workflows",
+      "card7Desc": "— ensuring quality, compliance, and control across the board.",
+      "card8Title": "Stay instantly updated",
+      "card8Desc": "— right when it happens."
     },
     "aiCarousel": {
       "slides": [
         {
           "id": 1,
-          "badge": "Ask Di — Your AI Advertising Co-Pilot",
-          "title": "Empower your campaign strategy with intelligent, data-driven support.",
-          "description": "Ask Di is the intelligent co-pilot integrated directly into Di-wrapp. It guides advertisers and media owners through space discovery, slot optimization, and automated creative generation — all through intuitive, AI-powered interactions.",
+          "badge": "Wrapp AI – Your Smart Companion",
+          "title": "Empowering Through intelligent, data-driven support.",
+          "description": "Ask_Di is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps brands, vendors, and support teams navigate booking, optimize campaigns, and even create content — all through intuitive, AI-powered interactions.",
           "highlightText": "all through intuitive, AI-powered interactions.",
-          "ctaText": "Try Ask Di",
+          "ctaText": "Try Ask_Di",
           "ctaLink": "/ask-di"
         },
         {
           "id": 2,
-          "badge": "Ask Di — Predictive DOOH Analytics",
-          "title": "Instant audience telemetry and predictive yield forecasting.",
-          "description": "Analyze live footfall density and available media slots in real time. Ask Di pinpoints prime, high-converting billboards and recommends dynamic budget allocations — with zero manual guesswork.",
+          "badge": "Wrapp AI – Automated Insights",
+          "title": "Instant campaign analytics and predictive forecasting.",
+          "description": "Analyze live engagement metrics and ad inventory in real-time. Ask_Di pinpoints high-converting billboard spaces and optimizes budget distribution — with zero manual guesswork.",
           "highlightText": "with zero manual guesswork.",
-          "ctaText": "Explore Inventory",
-          "ctaLink": "/coming-soon"
+          "ctaText": "Explore Insights",
+          "ctaLink": "/booking"
         }
       ]
     }
@@ -150,97 +150,73 @@
   },
   "landing": {
     "nav": {
-      "about": "About Us",
+      "about": "About us",
       "advertise": "Advertise",
       "blog": "Blog",
       "join": "Join us",
-      "contact": "Contact Us",
+      "contact": "Contact us",
       "signIn": "Sign In"
     },
     "hero": {
       "badge": "Streamline Your Presence, Amplify Your Reach",
       "eyebrow": "Streamline Your Presence, Amplify Your Reach",
-      "title": "The unified network for<br>high-impact media",
-      "subtitle": "Di-wrapp connects brands and media owners on a single intelligent platform—enabling programmatic discovery, instant booking, and measurable real-world reach.",
-      "discover": "Explore Media Inventory"
+      "title": "Welcome to the<br>largest media network",
+      "subtitle": "Where at Di-Wrapp, we strive to create a memorable experience contributed by a smarter solution for your digital interface.",
+      "discover": "Discover More"
     },
     "marquee": {
       "row1": [
-        {
-          "id": "realtime-booking",
-          "label": "Real-Time DOOH Booking"
-        },
-        {
-          "id": "ai-campaigns",
-          "label": "AI Campaign Optimizer"
-        }
+        { "id": "realtime-booking", "label": "Real-Time DOOH Booking" },
+        { "id": "ai-campaigns", "label": "AI Campaign Optimizer" }
       ],
       "row2": [
-        {
-          "id": "unified-marketplace",
-          "label": "Unified Ad Marketplace"
-        },
-        {
-          "id": "smart-wallet",
-          "label": "Di-wrapp Smart Wallet"
-        },
-        {
-          "id": "iot-hardware",
-          "label": "Smart Hardware & AI Sensors"
-        }
+        { "id": "unified-marketplace", "label": "Unified Ad Marketplace" },
+        { "id": "smart-wallet", "label": "Di_Wrapp Smart Wallet" },
+        { "id": "iot-hardware", "label": "Smart Hardware & AI Sensors" }
       ],
       "row3": [
-        {
-          "id": "screen-monetization",
-          "label": "24/7 Screen Monetization"
-        },
-        {
-          "id": "timely-payouts",
-          "label": "Guaranteed Timely Payouts"
-        },
-        {
-          "id": "occupancy-optimization",
-          "label": "99.8% Occupancy Optimization"
-        }
+        { "id": "screen-monetization", "label": "24/7 Screen Monetization" },
+        { "id": "timely-payouts", "label": "Guaranteed Timely Payouts" },
+        { "id": "occupancy-optimization", "label": "99.8% Occupancy Optimization" }
       ]
     },
     "works": {
-      "badge": "How It Works",
-      "title": "How Di-wrapp Works",
-      "subtitle": "Empowering brands and media owners through one intelligent platform to discover, plan, and book with confidence.",
-      "forBrands": "For Advertisers & Brands",
-      "forVendors": "For Media Owners & Vendors",
+      "badge": "User Guide",
+      "title": "How it Works",
+      "subtitle": "Empowering Brands and Media Owners Through One Intelligent Platform to Discover, Plan and Book with Confidence",
+      "forBrands": "For Brands",
+      "forVendors": "For Vendors",
       "brands": {
-        "step1Title": "01. Choose Your Media Space",
-        "step1Desc": "Discover a diverse range of premium advertising inventories across prime cities and locations.",
+        "step1Title": "01. Choose Your Spot",
+        "step1Desc": "Discover a Diverse Range of Inventories Across Multiple Cities and Countries.",
         "step2Title": "02. Schedule & Upload",
-        "step2Desc": "Select your campaign schedule and upload your high-resolution creatives effortlessly.",
+        "step2Desc": "Select your preferred time slot and upload your media effortlessly.",
         "step3Title": "03. Launch & Monitor",
-        "step3Desc": "Once approved, your campaign goes live with real-time impression tracking and proof of play."
+        "step3Desc": "Once approved, your campaigns go live. Easily track and manage them."
       },
       "vendors": {
         "step1Title": "01. List Your Spaces",
-        "step1Desc": "Add your digital displays and physical billboards with flexible pricing and dynamic availability.",
+        "step1Desc": "Add your digital and physical billboards with custom pricing and availability.",
         "step2Title": "02. Review & Accept Bookings",
-        "step2Desc": "Receive programmatic campaign requests and approve creatives with single-click simplicity.",
+        "step2Desc": "Manage incoming campaign requests from leading global and regional brands.",
         "step3Title": "03. Monetize & Grow",
-        "step3Desc": "Receive guaranteed timely escrow payouts alongside real-time occupancy and performance analytics."
+        "step3Desc": "Receive guaranteed timely payouts and monitor your inventory performance."
       },
-      "step1Title": "01. Choose Your Media Space",
-      "step1Desc": "Discover a diverse range of premium advertising inventories across prime cities and locations.",
+      "step1Title": "01. Choose Your Spot",
+      "step1Desc": "Discover a Diverse Range of Inventories Across Multiple Cities and Countries.",
       "step2Title": "02. Schedule & Upload",
-      "step2Desc": "Select your campaign schedule and upload your high-resolution creatives effortlessly.",
+      "step2Desc": "Select your preferred time slot and upload your media effortlessly.",
       "step3Title": "03. Launch & Monitor",
-      "step3Desc": "Once approved, your campaign goes live with real-time impression tracking and proof of play."
+      "step3Desc": "Once approved, your campaigns go live. Easily track and manage them."
     },
     "pioneering": {
-      "badge": "Intelligent, Scalable DOOH Infrastructure",
-      "title": "Pioneering the Future of Programmatic Media",
-      "desc": "Di-wrapp transforms physical advertising into an agile digital channel—making premium inventory instantly discoverable and bookable for businesses of every scale.",
-      "feature1": "Expand your reach across all target markets seamlessly",
-      "feature2": "Manage inventory and slots anytime with deep operational insights",
-      "feature3": "Receive instant notifications and comprehensive proof-of-play reports",
-      "learnMore": "Explore Platform",
+      "badge": "Smart, Fast & Reliable - Just for You!",
+      "title": "Pioneering the Future of Media Accessibility",
+      "desc": "Di_Wrapp Technology is leading the revolution in media accessibility, ensuring every inventory is within reach for all.",
+      "feature1": "Expand Your Reach Across All Markets Easily",
+      "feature2": "Manage your Listings anytime, anywhere and highlight key insights",
+      "feature3": "Get instant notifications & important updates on Booking Reports",
+      "learnMore": "Learn More",
       "bookSpot": "Book Your Spot"
     },
     "faq": {
@@ -249,12 +225,12 @@
       "titleLine2": "Asked Questions",
       "viewMore": "View More",
       "viewMoreAria": "View more frequently asked questions or contact us",
-      "signUpAria": "Sign up for a new Di-wrapp account",
+      "signUpAria": "Sign up for a new Diwrapp account",
       "items": [
         {
           "id": "q1",
-          "question": "What is Di-wrapp and how does it work?",
-          "answer": "Di-wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels through automated discovery and booking."
+          "question": "What is Di_Wrapp and how does it work?",
+          "answer": "Di_Wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
         },
         {
           "id": "q2",
@@ -267,17 +243,17 @@
         {
           "id": "q3",
           "question": "How can I reset my password?",
-          "answer": "Click on 'Forgot Password' on the sign-in page and follow the secure email verification instructions."
+          "answer": "Click on 'Forgot Password' on the sign in page and follow the email verification instructions."
         },
         {
           "id": "q4",
           "question": "How do I update my payment details?",
-          "answer": "Navigate to billing settings inside your dashboard to add, remove, or update your preferred payment methods."
+          "answer": "Navigate to your billing settings inside your dashboard to add or update your payment methods."
         },
         {
           "id": "q5",
-          "question": "Can I integrate my billboard network with the Di-wrapp platform?",
-          "answer": "Yes. Billboard owners and network operators can connect their inventory via our programmatic API or Vendor Dashboard to automate bookings and optimize fill rates."
+          "question": "Can I integrate My Billboard With Di_Wrapp Sytem?",
+          "answer": "Yes, billboard owners can easily connect their inventories and launch smart programmatic booking."
         }
       ]
     }
@@ -416,204 +392,153 @@
     }
   },
   "metadata": {
-    "defaultTitle": "Di-wrapp - Revolutionizing DOOH & Outdoor Media Advertising",
-    "defaultDescription": "Di-wrapp connects advertisers and media owners in an intelligent DOOH marketplace. Discover premier digital screens, book instantly, and track Proof of Play.",
+    "defaultTitle": "DiWrapp - Revolutionizing DOOH Advertising",
+    "defaultDescription": "Diwrapp connects advertisers and vendors in an intuitive digital out-of-home advertising marketplace.",
     "landing": {
-      "title": "Di-wrapp | Unified Out-of-Home & Digital Media Network",
-      "description": "Access premier digital out-of-home (DOOH) screens and dynamic media spaces. Discover, book, and launch high-impact campaigns seamlessly with Di-wrapp."
-    },
-    "about": {
-      "title": "About Us | Revolutionizing Global DOOH Media",
-      "description": "Discover Di-wrapp's mission to modernize outdoor advertising. We unite cutting-edge DOOH technology, media owners, and advertisers into one transparent ecosystem."
-    },
-    "advertise": {
-      "title": "Advertise on Digital Billboards & DOOH Screens",
-      "description": "Plan, launch, and track high-impact DOOH campaigns with Di-wrapp. Access premium digital billboards, live analytics, and certified Proof of Play reporting."
-    },
-    "joinUs": {
-      "title": "Media Partner Network | Monetize DOOH Screens",
-      "description": "Monetize your billboard inventory and commercial screens with Di-wrapp. Connect with enterprise media buyers, automate bookings, and maximize daily occupancy."
-    },
-    "askDi": {
-      "title": "Ask Di | AI DOOH Campaign & Media Planning Co-Pilot",
-      "description": "Meet Ask Di, your AI advertising co-pilot. Plan multi-city DOOH campaigns, generate targeted ad placements, and optimize outdoor budgets with predictive analytics."
-    },
-    "vendor": {
-      "title": "Vendor Portal | Manage & Monetize DOOH Inventory",
-      "description": "Empower your advertising inventory with Di-wrapp's Vendor Portal. Automate scheduling, manage live screen availability, and track verified revenue payouts."
-    },
-    "vendorOnboarding": {
-      "title": "Media Owner Onboarding | List Your DOOH Inventory",
-      "description": "Apply to list your digital screens and outdoor billboards on Di-wrapp. Fast-track onboarding, verify your inventory, and start receiving enterprise bookings."
-    },
-    "wallet": {
-      "title": "Digital Wallet | Instant Payouts & Escrow Billing",
-      "description": "Manage campaign funds, escrow balances, and instant vendor payouts with the Di-wrapp Wallet. Fully compliant with Saudi e-invoicing and enterprise security."
-    },
-    "culture": {
-      "title": "Life & Culture | Building the Future of DOOH Media",
-      "description": "Explore careers and life at Di-wrapp. Join a world-class team of engineers, designers, and media innovators redefining the digital out-of-home landscape."
-    },
-    "contact": {
-      "title": "Contact Our Media Strategy & Support Team",
-      "description": "Get in touch with Di-wrapp's enterprise DOOH media strategists and technical support team. We're here to accelerate your advertising and inventory monetization."
-    },
-    "comingSoon": {
-      "title": "Platform Expansion & Upcoming Features | Stay Tuned",
-      "description": "Exciting new programmatic DOOH features and advertising capabilities are launching soon on Di-wrapp. Subscribe for early access and platform announcements."
-    },
-    "blog": {
-      "title": "DOOH Insights, Media Trends & Case Studies | Blog",
-      "description": "Stay ahead in digital out-of-home advertising. Read expert insights, programmatic media trends, and industry case studies from the team at Di-wrapp."
-    },
-    "privacyPolicy": {
-      "title": "Privacy Policy | Data Protection & User Privacy",
-      "description": "Review the Di-wrapp Privacy Policy to understand how we collect, protect, and process personal data across our DOOH media platform and marketplace services."
-    },
-    "termsAndConditions": {
-      "title": "Terms & Conditions | Platform & Marketplace Rules",
-      "description": "Read the official Terms & Conditions governing your use of the Di-wrapp marketplace, advertiser booking agreements, and Media Owner screen supply standards."
-    },
-    "cookiePolicy": {
-      "title": "Cookie Policy | Transparent Tracking & Storage",
-      "description": "Learn how Di-wrapp utilizes essential first-party cookies, edge country routing, and secure storage to deliver high-performance DOOH advertising services."
+      "title": "Home",
+      "description": "Welcome to Diwrapp, the unified marketplace platform for advertising opportunities."
     },
     "login": {
-      "title": "Account Login | Access Your DOOH Portal",
-      "description": "Log in to your Di-wrapp account to manage advertising campaigns, inspect screen occupancy, and monitor real-time media performance."
+      "title": "Login",
+      "description": "Log in to your Diwrapp account to manage campaigns and listings."
     },
     "signup": {
-      "title": "Create Account | Join the DOOH Media Network",
-      "description": "Create your Di-wrapp account to start booking premium billboard inventory or monetizing commercial screens across the regional DOOH network."
+      "title": "Sign Up",
+      "description": "Create a new Diwrapp account and start your advertising journey."
     },
     "resetPassword": {
-      "title": "Reset Password | Secure Account Recovery",
-      "description": "Reset your Di-wrapp account credentials securely. Enter your registered email to receive immediate password recovery instructions."
+      "title": "Reset Password",
+      "description": "Reset your Diwrapp account password."
     },
     "vendorDashboard": {
-      "title": "Vendor Dashboard | Inventory & Revenue Analytics",
-      "description": "Manage your digital billboard network, schedule broadcast slots, and inspect real-time payout ledgers as an authorized Di-wrapp media owner."
+      "title": "Vendor Dashboard",
+      "description": "Manage your advertising screens, slots, and revenue as a Diwrapp vendor."
     },
     "advertiserDashboard": {
-      "title": "Advertiser Dashboard | Campaign Tracking & ROI",
-      "description": "Track live DOOH advertising campaigns, analyze Proof of Play metrics, and optimize multi-screen media budgets on Di-wrapp."
+      "title": "Advertiser Dashboard",
+      "description": "Track your campaigns, discover new opportunities, and measure ROI as a Diwrapp advertiser."
+    },
+    "advertise": {
+      "title": "Advertise",
+      "description": "Empowering Brands Through Smart, Seamless Experiences. Plan, Launch, and Track With Confidence."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
+    },
+    "joinUs": {
+      "title": "Join Us",
+      "description": "Clone Yourself. Scale Your Expertise. Extend Your Reach. A Digital Marketplace that Operate Without Limits."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Stay tuned for exclusive updates, insights, and stories from Di-Wrapp."
+    },
+    "wallet": {
+      "title": "Wallet",
+      "description": "Secure, Flexible & Instant Transactions. The Di_Wrapp Wallet is your digital financial hub within the platform."
     }
   },
   "joinUs": {
     "hero": {
       "badge": "Designed for Control, Simplicity & Scale",
-      "title": "Multiply Your Presence.",
+      "title": "Clone Yourself.",
       "subtitleLine1": "Scale Your Expertise. Extend Your Reach.",
-      "subtitleLine2": "A Digital Marketplace that Operates Without Limits.",
-      "cta": "Join the Network"
+      "subtitleLine2": "A Digital Marketplace that Operate Without Limits.",
+      "cta": "Join Us Now"
     },
     "opportunities": {
       "titleLine1": "Every Advertising Opportunity,",
-      "titleLine2": "One Unified Platform",
+      "titleLine2": "One Digital Platform",
       "cards": {
-        "activation": "Experiential & Activation Spaces",
-        "displays": "Digital & Physical Displays",
-        "influencers": "Influencer Partnerships",
-        "digital": "Digital Media Channels"
+        "activation": "Activation Spaces",
+        "displays": "Advertising Displays",
+        "influencers": "Influencers",
+        "digital": "Digital Channels"
       },
-      "description": "Di-wrapp centralizes the booking process, making outdoor and dynamic media as seamless as running a digital ad campaign. Discover spaces, book instantly, and monitor verified proof of play — all from one place.",
-      "cta": "Partner With Us"
+      "description": "Di_Wrapp simplifies operations, automates scheduling, and maximizes monetization — all while giving media owners complete visibility and control over their media assets.",
+      "cta": "Book A Demo"
     },
     "metrics": {
       "card1": {
         "label": "Higher Occupancy",
         "stat": "24/7",
-        "title": "Monetize Your Inventory Around the Clock",
-        "description": "Transform your media assets into a continuously bookable digital storefront with real-time availability and automated reservations."
+        "title": "Sell Your Inventory Around The Clock",
+        "description": "Turn your advertising assets into a continuously bookable digital marketplace with real-time availability and automated reservations."
       },
       "card2": {
         "label": "Real-Time Management",
         "stat": "Live",
-        "title": "Inventory Always Synchronized",
-        "description": "Pricing, slot availability, scheduling rules, and confirmed bookings update instantly across your entire network."
+        "title": "Inventory Always Available",
+        "description": "Pricing, availability, scheduling, and bookings update instantly across your entire media network."
       },
       "card3": {
-        "label": "Automation-First",
+        "label": "Automation First",
         "stat": "100%",
-        "title": "Frictionless Booking Workflow",
-        "description": "Eliminate manual quotations, phone negotiations, and contract delays through standardized digital workflows."
+        "title": "Digital Booking Workflow",
+        "description": "Reduce manual quotations, approvals, and bookings management through automated workflows."
       }
     },
     "metricsBento": {
       "card1": {
         "label": "Higher Occupancy",
         "stat": "24/7",
-        "title": "Monetize Your Inventory Around the Clock",
-        "description": "Transform your media assets into a continuously bookable digital storefront with real-time availability and automated reservations."
+        "title": "Sell Your Inventory Around The Clock",
+        "description": "Turn your advertising assets into a continuously bookable digital marketplace with real-time availability and automated reservations."
       },
       "card2": {
         "label": "Real-Time Management",
         "stat": "Live",
-        "title": "Inventory Always Synchronized",
-        "description": "Pricing, slot availability, scheduling rules, and confirmed bookings update instantly across your entire network."
+        "title": "Inventory Always Available",
+        "description": "Pricing, availability, scheduling, and bookings update instantly across your entire media network."
       },
       "card3": {
-        "label": "Automation-First",
+        "label": "Automation First",
         "stat": "100%",
-        "title": "Frictionless Booking Workflow",
-        "description": "Eliminate manual quotations, phone negotiations, and contract delays through standardized digital workflows."
+        "title": "Digital Booking Workflow",
+        "description": "Reduce manual quotations, approvals, and bookings management through automated workflows."
       }
     },
     "platformFeatures": {
       "badge": "Platform Features",
       "headingPrefix": "Empowering Media Owners",
-      "headingSuffix": "with an enterprise toolset engineered to maximize inventory yield.",
+      "headingSuffix": "with a robust toolset that transforms their inventory.",
       "card1": {
         "badge": "Inventory Listing & Categorization",
-        "title": "Manage your media inventory with precision.",
-        "description": "Categorize your spaces by geo-location, format, programmatic tier, and availability windows, making them effortlessly discoverable to verified advertisers."
+        "title": "Manage your inventory efficiently.",
+        "description": "List and manage your inventory by categorizing them based on location, format, automation level, and availability, making it easier for brands to discover & book."
       },
       "card2": {
-        "badge": "AI & Smart Sensor Integration",
-        "title": "Transform static assets into smart programmatic screens.",
-        "description": "Powered by connected IoT hardware and audience verification sensors, Di-wrapp provides an embedded system that automates scheduling, verifies playback, and validates impressions —",
-        "descriptionHighlight": "eliminating manual oversight while ensuring verifiable brand safety."
+        "badge": "Smart Hardware Integration \"Ai-Powered\"",
+        "title": "Empowering vendors to seamlessly upgrade their Inventories",
+        "description": "Powered by advanced hardware and AI-integrated sensors, Di_Wrapp empowers with an embedded system that allows automated booking, scheduling, and content capabilities —",
+        "descriptionHighlight": "eliminating manual intervention and reducing the risk of human error."
       },
       "card3": {
-        "badge": "Dynamic Operation Modes",
-        "title": "Total flexibility in how your slots are configured, booked, and billed.",
-        "description": "Assign tailored operational modes to individual assets—enabling dynamic yield pricing, guaranteed exclusive periods, or programmatic auctioning based on your commercial strategy."
+        "badge": "Operation Modes",
+        "title": "Providing complete flexibility in how bookings are configured and managed.",
+        "description": "Assigning a unique operational mode to each media asset, Allows a tailored scheduling, dynamic availability settings, and optimized utilization based on the specific objectives of each bookings"
       },
       "ctaBanner": {
-        "badge": "Join the Di-wrapp Vendor Network",
-        "title": "Ready to connect your inventory and maximize revenue?",
-        "description": "Register in minutes, link your billboard and display spaces, set custom rates, and start receiving verified bookings.",
-        "contactBtn": "Contact Partnerships",
-        "getStartedBtn": "Get Started"
+        "badge": "Join Di_Wrapp Vendor Network",
+        "title": "Ready to connect your Inventory and earn more?",
+        "description": "Join instantly, link your Space, set your prices, and start Monitoring Bookings",
+        "contactBtn": "Contact Us",
+        "getStartedBtn": "Let's Get Started"
       }
     }
   },
   "contact": {
-    "breadcrumb": {
-      "home": "Di-wrapp",
-      "current": "Contact Us"
-    },
+    "breadcrumb": { "home": "Di-Wrapp", "current": "Contact" },
     "hero": {
-      "title": "Let’s Start a Conversation",
-      "subtitle": "Whether you have questions about media inventory, programmatic campaigns, or enterprise partnerships, our dedicated team is here to assist you."
+      "title": "Let’s Get Connected",
+      "subtitle": "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help."
     },
     "cards": {
-      "callUs": {
-        "label": "Direct Line",
-        "value": "+966 50 572 2153"
-      },
-      "visitUs": {
-        "label": "Headquarters",
-        "value": "View Our Location"
-      },
-      "chatSales": {
-        "label": "Enterprise Partnerships",
-        "value": "sales@di-wrapp.com"
-      },
-      "chatSupport": {
-        "label": "Client Support",
-        "value": "support@di-wrapp.com"
-      }
+      "callUs": { "label": "Call Us", "value": "+966 50 572 2153" },
+      "visitUs": { "label": "Visit Us", "value": "View Our Location" },
+      "chatSales": { "label": "Chat To Sales", "value": "sales@di-wrapp.com" },
+      "chatSupport": { "label": "Chat To Support", "value": "support@di-wrapp.com" }
     },
     "form": {
       "nameLabel": "Your name",
@@ -627,11 +552,11 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Type here...",
       "charLimit": "0/250",
-      "submitButton": "Send Message",
+      "submitButton": "Submit",
       "sendingButton": "Sending...",
       "selectCountryCode": "Select country code",
       "privacyNotice": {
-        "pre": "By submitting this form, you acknowledge that Di-wrapp processes your personal data in accordance with our ",
+        "pre": "By submitting this form, you acknowledge that DiWrapp processes your personal information in accordance with our ",
         "linkText": "Privacy Policy",
         "post": "."
       },
@@ -652,44 +577,44 @@
     }
   },
   "newsletter": {
-    "title": "Market Intelligence & Insights",
-    "description": "Subscribe to our curated newsletter for outdoor advertising benchmarks, DOOH trends, and platform announcements.",
-    "inputPlaceholder": "Enter your corporate email",
+    "title": "Newsletter",
+    "description": "Subscribe to our newsletter to get early news and topics of your choice.",
+    "inputPlaceholder": "Enter email",
     "button": "Subscribe"
   },
   "footer": {
-    "slogan": "Streamline Your Presence, Amplify Your Reach.",
-    "poweredBy": "Operated by",
-    "groupName": "Destin-J Group",
+    "slogan": "Streamline Your Ads, Amplify Your Reach.",
+    "poweredBy": "Powered by",
+    "groupName": "Distin-Gui Group.",
     "address": "Olaya Street - Olaya District,\nRiyadh, Saudi Arabia.",
     "phone": "+966 50 572 2153",
     "email": "info@di-wrapp.com",
     "columns": {
-      "diWrapp": "Di-wrapp",
+      "diWrapp": "Di-Wrapp",
       "support": "Support",
-      "joinIn": "Partnerships"
+      "joinIn": "Join In"
     },
     "links": {
-      "about": "About Us",
+      "about": "About",
       "booking": "Booking",
       "blog": "Blog",
-      "career": "Careers",
+      "career": "Career",
       "contact": "Contact",
       "investors": "Investors",
-      "lifeAtDiWrapp": "Life At Di-wrapp",
+      "lifeAtDiWrapp": "Life At Di-Wrapp",
       "promocodes": "Promocodes",
       "helpCenter": "Help Center",
       "howItWorks": "How It Works",
-      "cancellationOption": "Cancellation Policy",
+      "cancellationOption": "Cancellation Option",
       "liveChat": "Live Chat",
-      "wallet": "Di-wrapp Wallet",
-      "ticket": "Support Ticket",
-      "wrappAi": "Ask Di AI",
+      "wallet": "Wallet",
+      "ticket": "Ticket",
+      "wrappAi": "Wrapp-AI",
       "faq": "FAQ",
-      "vendor": "Vendor Portal",
-      "eBranding": "Digital Signage",
-      "getDiWrapped": "Join Partner Network",
-      "creativePro": "Creative Studio",
+      "vendor": "Vendor",
+      "eBranding": "E-Branding",
+      "getDiWrapped": "Get Di-Wrapped",
+      "creativePro": "CreativePro",
       "responsibility": "Responsibility",
       "resources": "Resources",
       "documentation": "Documentation",
@@ -699,187 +624,187 @@
       "terms": "Terms & Conditions",
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy",
-      "allRightsReserved": "All rights reserved."
+      "allRightsReserved": "All rights reserved"
     }
   },
   "stayTuned": {
     "tag": "#Coming_Soon",
-    "title": "Transformative Capabilities Are on the Way",
-    "description": "We're engineering powerful new capabilities for the Di-wrapp ecosystem. Stay tuned for early access and feature announcements.",
-    "button": "Back to Homepage",
+    "title": "Stay tuned for exclusive updates and early access!",
+    "description": "We have something exciting in the works, and we can't wait to share it with you!",
+    "button": "Back To Homepage",
     "screenLaunching": "Launching Soon",
     "screenStayTuned": "Stay Tuned!"
   },
   "notFound": {
-    "badge": "404",
-    "title": "Page Not Found",
-    "description": "The page you are looking for doesn't exist or may have been moved. Let's guide you back to familiar territory.",
-    "backHome": "Back to Homepage"
+    "badge": "Oops !",
+    "title": "Nothing To See Here...",
+    "description": "It seems like the page that you are trying to reach doesn't Exist, let's take you back to the home page.",
+    "backHome": "Back To Homepage"
   },
   "wallet": {
-    "heroBadge": "Di-wrapp Wallet",
+    "heroBadge": "Di_Wrapp Wallet",
     "heroTitleLine1": "Secure, Flexible &",
     "heroTitleLine2": "Instant Transactions",
-    "heroSubtitlePart1": "The Di-wrapp Wallet is your digital financial hub within the platform. It gives advertisers and media owners full control over transactions, escrow settlements, and campaign disbursements — ",
-    "heroSubtitleLine1": "The Di-wrapp Wallet is your digital financial hub within the platform.",
-    "heroSubtitleLine2": "It gives advertisers and media owners full control over transactions, top-ups, and campaign payments — ",
-    "heroSubtitleLine3": "seamlessly and in real time.",
-    "heroSubtitleHighlight": "seamlessly and in real time.",
-    "ctaButton": "Top Up Wallet",
-    "heroImageAlt": "Di-wrapp Digital Wallet Interface",
-    "statementLight": "Designed for financial clarity, transparency, and absolute peace of mind.",
-    "statementMedium": "Built on enterprise-grade payment rails, our escrow framework protects advertiser deposits while guaranteeing timely vendor disbursements.",
-    "featuresBadge": "Financial Infrastructure",
-    "featuresDesc": "Manage high-velocity campaign transactions, automate escrow milestones, and download audit-ready tax invoices.",
+    "heroSubtitlePart1": "The Di_Wrapp Wallet is your digital financial hub within the platform. It gives advertisers and vendors full control over transactions, top-ups, and campaign payments — ",
+    "heroSubtitleLine1": "The Di_Wrapp Wallet is your digital financial hub within the platform.",
+    "heroSubtitleLine2": "It gives advertisers and vendors full control over transactions,",
+    "heroSubtitleLine3": "top-ups, and campaign payments — ",
+    "heroSubtitleHighlight": "all in one place.",
+    "ctaButton": "Top Up My Wallet",
+    "heroImageAlt": "Di_Wrapp Wallet Visual",
+    "statementLight": "Whether you're running a single ad or managing hundreds of locations — ",
+    "statementMedium": "the Wallet keeps your operations smooth and traceable.",
+    "featuresBadge": "Features",
+    "featuresDesc": "Built for convenience, the Wallet keeps your funds organized and ready to use. Whether you're topping up, monitoring payouts, or reviewing your transaction history, it offers a smooth and transparent way to handle your campaign finances.",
     "cards": {
       "card1": {
-        "title": "Multi-Channel Top-Up & Funding",
-        "description": "Instantly fund your wallet balance via corporate wire, credit cards, Apple Pay, or approved commercial purchase orders (PO)."
+        "title": "Top-Up Any Time",
+        "description": "Instantly fund your wallet using various payment methods (Visa, Apple Pay, Bank Transfer, Purchase Order \"only for verified organizations\")."
       },
       "card2": {
-        "title": "Real-Time Ledger & Escrow Tracking",
-        "description": "Inspect every financial event in granular detail: escrow reserves, proof-of-play releases, top-ups, and settlement statuses."
+        "title": "Real-Time Tracking",
+        "description": "View every wallet-related transaction in detail: top-ups, refunds, order payments, and status."
       },
       "card3": {
-        "title": "ZATCA-Compliant & Audited Ledger",
-        "description": "Enterprise-grade transaction security with automated tax-compliant VAT invoices exportable anytime for audit and accounting reconciliation."
+        "title": "Secure & Audited",
+        "description": "Every wallet transaction is recorded, secured, and available for export and audit."
       }
     }
   },
   "culture": {
     "badge": "Our Culture",
-    "titleLine1": "Fostering a Culture Where Bold Ideas",
-    "titleLine2": "Drive Extraordinary Execution.",
-    "subtitle": "Whether you're an engineer, designer, media strategist, or storyteller, you'll find an environment where bold ideas thrive and continuous growth is the default.",
+    "titleLine1": "We believe in a work culture that",
+    "titleLine2": "feels as good as it performs.",
+    "subtitle": "Whether you're a developer, designer, strategist, or storyteller, you'll find a space where your skills are celebrated and your growth is continuous.",
     "values": {
       "collaboration": {
-        "title": "Radical Collaboration",
-        "description": "We move fast as a unified team, breaking silos to achieve outsized outcomes."
+        "title": "Collaboration",
+        "description": "We move fast together, not alone."
       },
       "flexibility": {
-        "title": "Agility & Autonomy",
-        "description": "We cultivate high ownership and give our teams the trust and flexibility to do their best work."
+        "title": "Flexibility",
+        "description": "Hybrid and remote options that work for your lifestyle."
       },
       "creativity": {
-        "title": "Relentless Invention",
-        "description": "We embrace first-principles thinking and champion bold, unconventional ideas."
+        "title": "Creativity",
+        "description": "Big ideas are always welcome here."
       },
       "diversity": {
-        "title": "Global Perspective",
-        "description": "Diverse backgrounds and multifaceted viewpoints make our solutions smarter, resilient, and globally relevant."
+        "title": "Diversity",
+        "description": "Different perspectives make us smarter, stronger, and more human."
       }
     }
   },
   "lifeAtDiwrapp": {
-    "badge": "Life At Di-wrapp",
-    "title": "Where Innovation Meets Real-World Impact",
-    "statementHighlight": "At Di-wrapp, we're not just building software —",
-    "statementBody": "we're reshaping how brands, media, and audiences connect in the physical world. Every day, our teams merge technology, design, and market intelligence to solve high-scale challenges."
+    "badge": "Life At Di_Wrapp",
+    "title": "Where Innovation Meets Impact",
+    "statementHighlight": "At Di_Wrapp, we're not just building a platform —",
+    "statementBody": "we're reshaping how brands connect with the world around them. Every day, our teams bring together creativity, technology, and purpose to turn ambitious ideas into industry-defining solutions."
   },
   "careersSection": {
     "innovativeWork": {
-      "title": "High-Impact Engineering",
-      "description": "Build mission-critical systems that orchestrate real-world physical and digital media networks at global scale."
+      "title": "Innovative Work",
+      "description": "You're part of creating real-world tech with real-world impact."
     },
     "aiTech": {
-      "title": "AI-Native Infrastructure",
-      "description": "Design generative and predictive models that power programmatic bidding, dynamic layout creation, and predictive yield optimization."
+      "title": "AI & Tech-First:",
+      "description": "Build and work with cutting-edge tools that redefine industries."
     },
     "globalVision": {
-      "title": "Global Footprint & Vision",
-      "description": "Join a fast-growing global platform offering leadership development, equity opportunities, and continuous learning."
+      "title": "Global Vision:",
+      "description": "Join the big goals and a growing footprint. Where learning & leadership opportunities at every stage."
     },
     "cta": {
-      "badge": "Build With Di-wrapp",
-      "title": "Ready to do the best work of your career?",
-      "description": "Explore open positions across engineering, product design, marketing, and enterprise partnerships.",
-      "button": "View Open Roles"
+      "badge": "Build With Us",
+      "title": "Ready to take your career to the next level?",
+      "description": "Explore our open roles or reach out to share your story — we're always looking for passionate, talented minds.",
+      "button": "View Careers"
     }
   },
   "askDiHero": {
-    "badge": "Ask Di — AI Media Assistant",
-    "titleBold": "Just Ask Di — ",
-    "titleRegular": "and let AI handle the heavy lifting.",
-    "subtitleNormal": "Whether you're booking a single screen or managing an enterprise network, Ask Di is always active — ",
-    "subtitleBold": "augmenting your team with real-time intelligence 24/7.",
-    "ctaButton": "Try Ask Di",
+    "badge": "Integrated Across the Platform",
+    "titleBold": "Just Ask_Di” — ",
+    "titleRegular": "and she’ll take care of the rest.",
+    "subtitleNormal": "Whether you're booking a single screen or managing a network, Ask_Di is always active — ",
+    "subtitleBold": "working alongside your team 24/7.",
+    "ctaButton": "Try Ask_Di",
     "cards": {
       "bookingAssistant": {
         "title": "Smart Booking Assistant",
-        "description": "Ready to launch a campaign? Ask Di recommends prime locations, verifies slot availability, and automates scheduling — you just confirm and go live."
+        "description": "Ready to launch a campaign? Ask_Di handles the setup — you just confirm and go live."
       },
       "campaignResults": {
-        "title": "Real-Time Campaign Telemetry",
-        "description": "Instantly access live proof of play, verified audience impressions, screen uptime status, and performance telemetry."
+        "title": "View Campaign Results",
+        "description": "Instantly access reports, screen activity, visual insights and performance metrics."
       },
       "startDesigning": {
-        "title": "Generative Creative Studio",
-        "description": "Our AI creative suite helps you generate, format, and adapt high-impact ad creatives tailored to any screen aspect ratio, or connect with verified creative partners."
+        "title": "Start Designing Ad",
+        "description": "Our AI-powered help you create your ad. Or get connected with a creative agency."
       }
     }
   },
   "askDiCarousel": {
     "slide1": {
-      "badge": "Ask Di — Your AI Advertising Co-Pilot",
-      "title": "Empowering campaign strategy through intelligent, data-driven support.",
-      "description": "Ask Di is the intelligent assistant integrated directly into Di-wrapp. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content — ",
+      "badge": "Wrapp AI – Your Smart Advertising Companion",
+      "title": "Empowering Through intelligent, data-driven support.",
+      "description": "Ask_Di” is your smart, friendly AI assistant built into the Di_Wrapp platform. It helps advertisers, vendors, and support teams navigate booking, optimize campaigns, and even create content —",
       "highlight": "all through intuitive, AI-powered interactions.",
-      "cta": "Try Ask Di"
+      "cta": "Try Ask_Di"
     },
     "slide2": {
-      "badge": "Ask Di — Automated Creative & Placement Engine",
-      "title": "Instant visual drafting, copy generation, and slot recommendation.",
-      "description": "Ask Di accelerates campaign production by generating high-resolution visual drafts, tailoring messaging tone, and recommending prime placement slots — saving time while maximizing audience reach.",
-      "highlight": "delivering measurable value at every stage.",
-      "cta": "Explore Ask Di"
+      "badge": "Ad Creation Tools",
+      "title": "Don’t have a design team? No problem.",
+      "description": "Streamlines your advertising process by generating visual ad drafts, suggests messaging and tone, and recommends trending ad styles tailored to your product. —",
+      "highlight": "so you can build impactful campaigns, all in one place.",
+      "cta": "Create with Ask_Di"
     }
   },
   "vendorPortalHero": {
     "badge": "Vendor Portal",
-    "title": "Monetize Your Media Inventory.\nMaximize Occupancy.",
-    "subtitle": "Join Di-wrapp's Smart Network",
-    "descriptionPrefix": "If you own media inventory — ",
-    "descriptionHighlight": "Di-wrapp gives you the tools to modernize, monetize, and manage with ease.",
-    "descriptionSuffix": " Our Vendor Portal connects your inventory to leading brands and agencies actively searching for premium out-of-home media.",
-    "readMoreBtn": "Learn More",
-    "ctaBtn": "List Your Media Inventory",
-    "imageAlt": "Di-wrapp Vendor Portal Screen Showcase"
+    "title": "Empower Your Inventory, Unlock\nNew Revenue.",
+    "subtitle": "Join Di_Wrapp's Smart Network",
+    "descriptionPrefix": "If you own inventory — ",
+    "descriptionHighlight": "Di_Wrapp gives you the tools to modernize, monetize, and manage with ease.",
+    "descriptionSuffix": " Our Vendor Portal connects your channel to a smart, automated platform where brands are actively looking to book spaces like yours.",
+    "readMoreBtn": "Read More",
+    "ctaBtn": "Let's Get Started",
+    "imageAlt": "Di_Wrapp Vendor Portal Billboard Showcase"
   },
   "whyGetDiWrapped": {
-    "topBadge": "Why Di-wrapp",
-    "heading": "Connect Your Screens. Automate Bookings. Maximize Yield.",
+    "topBadge": "Why Get Di_Wrapped",
+    "heading": "Get Connected. Get Booked. Get Di_Wrapped.",
     "features": {
       "automated": {
-        "title": "Automated Booking Engine",
-        "description": "Receive verified programmatic bookings instantly, eliminating scheduling conflicts and manual negotiations."
+        "title": "Automated Booking",
+        "description": "Instantly receive bookings and reduce manual coordination."
       },
       "advanced": {
-        "title": "Dynamic Yield Scheduling",
-        "description": "Granular availability controls and dynamic pricing algorithms that adapt to prime traffic and peak footfall windows."
+        "title": "Advanced Scheduling",
+        "description": "Flexible Booking management based on availability and location."
       },
       "realTime": {
-        "title": "Audience Telemetry & Insights",
-        "description": "Monitor screen uptime, audience impression telemetry, and occupancy rates in real time from your portal."
+        "title": "Real-Time Insights",
+        "description": "Track impressions, revenue, and performance in one powerful dashboard."
       },
       "smartTech": {
-        "title": "AI Hardware & Sensor Integration",
-        "description": "Our ecosystem supports AI sensors and automated scheduling hardware for verifiable proof of play and precision audience measurement."
+        "title": "Smart Tech Integration",
+        "description": "Our system supports AI sensors and scheduling tech for better ROI and audience measurement."
       },
       "flexible": {
-        "title": "Dynamic Commercial Models",
-        "description": "Choose from flexible revenue-sharing, programmatic auction, or guaranteed reservation models tailored to your business."
+        "title": "Flexible Monetization Modes",
+        "description": "Choose from a variety of models tailored to your setup and pricing needs."
       },
       "verified": {
-        "title": "Verified Enterprise Demand",
-        "description": "Gain direct access to curated campaigns from vetted global brands, media agencies, and verified advertisers."
+        "title": "Verified Profiles",
+        "description": "Get access to curated Bookings from vetted, professional brands."
       }
     },
     "ctaBanner": {
-      "badge": "Join the Di-wrapp Partner Network",
-      "title": "Ready to scale your media inventory with Di-wrapp?",
-      "description": "Register in minutes, link your billboard and display spaces, set custom rates, and start receiving verified bookings.",
-      "contactBtn": "Contact Partnerships",
-      "getStartedBtn": "Get Started"
+      "badge": "Join Di_Wrapp Vendor Network",
+      "title": "Ready to connect your Inventory and earn more?",
+      "description": "Join instantly, link your space, set your prices, and start monitoring bookings.",
+      "contactBtn": "Contact Us",
+      "getStartedBtn": "Let's Get Started"
     }
   },
   "vendorFaq": {
@@ -888,43 +813,43 @@
     "items": [
       {
         "id": "setup-payout",
-        "question": "How do I set up inventory and receive payouts?",
-        "answer": "Register your inventory by adding screen specifications, geo-coordinates, and operating hours in the Vendor Dashboard. Once verified, link your business bank account or digital wallet. Verified earnings are disbursed automatically following campaign completion and proof-of-play validation."
+        "question": "How to set up inventory and get paid",
+        "answer": "You can register your inventory by adding your screen specifications, location, and operating hours through the Vendor Dashboard. Once verified, payout details (bank transfer, digital wallet, or wire) are linked directly, and earnings are credited automatically following campaign completion."
       },
       {
         "id": "pricing-hours",
-        "question": "Can I customize my rates and operating hours?",
-        "answer": "Yes. You maintain complete control over base rates, peak-hour surcharges, minimum booking durations, and blackout dates through dynamic scheduling rules."
+        "question": "Can I set prices and operating hours?",
+        "answer": "Yes, you have full control over your inventory pricing (CPM, hourly, or fixed packages) and daily operating schedules. You can also define surge pricing during peak hours or offer discounts for long-term campaigns."
       },
       {
         "id": "review-bookings",
-        "question": "Can I manually review and approve campaign bookings?",
-        "answer": "Absolutely. You can toggle between programmatic auto-acceptance for verified advertisers or manual review mode where each creative asset and schedule requires your explicit approval before going live."
+        "question": "Can I manually review bookings?",
+        "answer": "Absolutely. You can toggle between automatic approval for verified advertisers or manual review mode where every campaign creative and schedule requires your explicit approval before going live."
       },
       {
         "id": "formats-supported",
-        "question": "Which creative formats are supported across screens?",
-        "answer": "Di-wrapp supports high-resolution static images (PNG, JPEG, WebP), dynamic HTML5 interactive formats, and ultra-high-definition video (MP4, MOV up to 4K resolution) optimized for DOOH displays."
+        "question": "Which formats are supported?",
+        "answer": "Di_Wrapp supports static high-res images (JPEG, PNG, WebP), dynamic HTML5 creatives, and high-definition video formats (MP4, MOV up to 4K resolution) tailored to digital displays and billboards."
       },
       {
         "id": "min-inventories",
-        "question": "Is there a minimum number of screens required to join?",
-        "answer": "There is no minimum requirement. Whether you manage a single retail storefront display or a regional network of hundreds of digital billboards, you can monetize your inventory seamlessly on Di-wrapp."
+        "question": "Minimum number of inventories?",
+        "answer": "There is no minimum requirement. Whether you manage a single storefront screen or a nationwide network of hundreds of digital billboards, you can monetize your inventory seamlessly."
       },
       {
         "id": "taxes-invoices",
-        "question": "How are taxes and commercial invoices handled?",
-        "answer": "All commercial invoices, tax receipts, and payment statements are generated automatically per campaign and are exportable anytime directly from your billing dashboard in full compliance with ZATCA regulations."
+        "question": "Taxes & Invoices",
+        "answer": "All invoices, VAT receipts, and tax statements are generated automatically per campaign and are exportable anytime directly from your billing overview."
       }
     ],
     "guideCard": {
-      "titlePrefix": "Can't find your answer? ",
-      "titleHighlight": "Read the Partner Guide"
+      "titlePrefix": "Can't Find your Question? ",
+      "titleHighlight": "Read the Vendor Guide"
     }
   },
   "vendorOnboarding": {
     "header": {
-      "userName": "Partner Profile",
+      "userName": "Omar AL-Dimassi",
       "cartAriaLabel": "Shopping cart",
       "userBadgeAriaLabel": "User profile",
       "switchLang": "عربي"
@@ -932,29 +857,17 @@
     "step1": {
       "stepBadge": "Step 1",
       "title": "Tell us about your Organization",
-      "subtitle": "Provide key organizational details to verify your business identity on Di-wrapp.",
+      "subtitle": "Enter essential information & details used to identify your organization",
       "logoLabel": "Organization Logo",
       "uploadTitle": "Drag & drop or choose files to upload",
       "uploadFormats": "File Format - Jpeg, Jpg.",
       "ownershipTypeLabel": "Business Ownership Type",
       "ownershipTypePlaceholder": "Select Type",
       "ownershipOptions": [
-        {
-          "value": "sole_proprietorship",
-          "label": "Sole Proprietorship"
-        },
-        {
-          "value": "partnership",
-          "label": "Partnership"
-        },
-        {
-          "value": "corporation",
-          "label": "Corporation"
-        },
-        {
-          "value": "llc",
-          "label": "LLC (Limited Liability Company)"
-        }
+        { "value": "sole_proprietorship", "label": "Sole Proprietorship" },
+        { "value": "partnership", "label": "Partnership" },
+        { "value": "corporation", "label": "Corporation" },
+        { "value": "llc", "label": "LLC (Limited Liability Company)" }
       ],
       "orgNameLabel": "Organization Name",
       "orgNamePlaceholder": "Enter Company Name",
@@ -991,129 +904,48 @@
       "saveAndExit": "Save & Exit",
       "next": "Next",
       "countries": [
-        {
-          "value": "sa",
-          "label": "Saudi Arabia"
-        },
-        {
-          "value": "ae",
-          "label": "United Arab Emirates"
-        },
-        {
-          "value": "qa",
-          "label": "Qatar"
-        },
-        {
-          "value": "kw",
-          "label": "Kuwait"
-        },
-        {
-          "value": "bh",
-          "label": "Bahrain"
-        },
-        {
-          "value": "om",
-          "label": "Oman"
-        },
-        {
-          "value": "eg",
-          "label": "Egypt"
-        }
+        { "value": "sa", "label": "Saudi Arabia" },
+        { "value": "ae", "label": "United Arab Emirates" },
+        { "value": "qa", "label": "Qatar" },
+        { "value": "kw", "label": "Kuwait" },
+        { "value": "bh", "label": "Bahrain" },
+        { "value": "om", "label": "Oman" },
+        { "value": "eg", "label": "Egypt" }
       ],
       "cities": {
         "sa": [
-          {
-            "value": "riyadh",
-            "label": "Riyadh"
-          },
-          {
-            "value": "jeddah",
-            "label": "Jeddah"
-          },
-          {
-            "value": "dammam",
-            "label": "Dammam"
-          },
-          {
-            "value": "khobar",
-            "label": "Khobar"
-          },
-          {
-            "value": "mecca",
-            "label": "Mecca"
-          },
-          {
-            "value": "medina",
-            "label": "Medina"
-          }
+          { "value": "riyadh", "label": "Riyadh" },
+          { "value": "jeddah", "label": "Jeddah" },
+          { "value": "dammam", "label": "Dammam" },
+          { "value": "khobar", "label": "Khobar" },
+          { "value": "mecca", "label": "Mecca" },
+          { "value": "medina", "label": "Medina" }
         ],
         "ae": [
-          {
-            "value": "dubai",
-            "label": "Dubai"
-          },
-          {
-            "value": "abu_dhabi",
-            "label": "Abu Dhabi"
-          },
-          {
-            "value": "sharjah",
-            "label": "Sharjah"
-          }
+          { "value": "dubai", "label": "Dubai" },
+          { "value": "abu_dhabi", "label": "Abu Dhabi" },
+          { "value": "sharjah", "label": "Sharjah" }
         ],
         "qa": [
-          {
-            "value": "doha",
-            "label": "Doha"
-          },
-          {
-            "value": "al_rayyan",
-            "label": "Al Rayyan"
-          }
+          { "value": "doha", "label": "Doha" },
+          { "value": "al_rayyan", "label": "Al Rayyan" }
         ],
         "kw": [
-          {
-            "value": "kuwait_city",
-            "label": "Kuwait City"
-          },
-          {
-            "value": "hawalli",
-            "label": "Hawalli"
-          }
+          { "value": "kuwait_city", "label": "Kuwait City" },
+          { "value": "hawalli", "label": "Hawalli" }
         ],
         "bh": [
-          {
-            "value": "manama",
-            "label": "Manama"
-          },
-          {
-            "value": "riffa",
-            "label": "Riffa"
-          }
+          { "value": "manama", "label": "Manama" },
+          { "value": "riffa", "label": "Riffa" }
         ],
         "om": [
-          {
-            "value": "muscat",
-            "label": "Muscat"
-          },
-          {
-            "value": "salalah",
-            "label": "Salalah"
-          }
+          { "value": "muscat", "label": "Muscat" },
+          { "value": "salalah", "label": "Salalah" }
         ],
         "eg": [
-          {
-            "value": "cairo",
-            "label": "Cairo"
-          },
-          {
-            "value": "alexandria",
-            "label": "Alexandria"
-          },
-          {
-            "value": "giza",
-            "label": "Giza"
-          }
+          { "value": "cairo", "label": "Cairo" },
+          { "value": "alexandria", "label": "Alexandria" },
+          { "value": "giza", "label": "Giza" }
         ]
       }
     },
@@ -1135,17 +967,21 @@
       "saveAndExit": "Save & Exit",
       "submit": "Submit",
       "successTitle": "Application Submitted Successfully!",
-      "successSubtitle": "Thank you for registering with Di-wrapp. Our vendor onboarding team will review your application and get in touch within 24-48 business hours.",
+      "successSubtitle": "Thank you for registering with Di-Wrapp. Our vendor onboarding team will review your application and get in touch within 24-48 business hours.",
       "returnHome": "Back to Home"
     },
     "success": {
       "title": "Your Application is Submitted Successfully For Review!",
       "dear": "Dear",
-      "userName": "Partner",
-      "emailNotice": "an email will be sent to confirm the application process, and you can track your Submission through Di-wrapp Dashboard.",
+      "userName": "Omar AL-Dimassi",
+      "emailNotice": "an email will be sent to confirm the application process, and you can track your Submission through Di-Wrapp Dashboard.",
       "supportNotice": "Our Support Team will have the pleasure to review your submission.",
       "trackSubmission": "Track My Submission",
       "backHome": "Back To Homepage"
     }
   }
 }
+
+
+
+

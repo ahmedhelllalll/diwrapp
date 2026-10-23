@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n-config';
-import { getDictionary } from '@/dictionaries';
-import { constructMetadata } from '@/lib/seo/metadata';
 import { getPrivacyPolicy } from '@/content/legal/privacy';
 import LegalArticle from '@/components/legal/LegalArticle';
 
@@ -14,19 +12,45 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const params = await props.params;
   const lang = (params.lang || 'en') as Locale;
-  const dict = await getDictionary(lang);
-  const meta = dict.metadata?.privacyPolicy;
-  const title = meta?.title || (lang === 'ar' ? 'سياسة الخصوصية | حماية وسرية البيانات الشخصية' : 'Privacy Policy | Data Protection & User Privacy');
-  const description = meta?.description || 'Review the Di-wrapp Privacy Policy to understand how we collect, protect, and process personal data.';
+  const doc = getPrivacyPolicy(lang);
 
-  return constructMetadata({
+  const title = lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy';
+  const description = doc.intro;
+
+  return {
     title,
     description,
-    path: '/privacy-policy',
-    lang,
-    type: 'article',
-    ogImageAlt: lang === 'ar' ? 'سياسة الخصوصية لمنصة Di-wrapp' : 'Di-wrapp Privacy Policy',
-  });
+    alternates: {
+      canonical: `/${lang}/privacy-policy`,
+      languages: {
+        en: 'https://diwrapp.com/en/privacy-policy',
+        ar: 'https://diwrapp.com/ar/privacy-policy',
+        'x-default': 'https://diwrapp.com/en/privacy-policy',
+      },
+    },
+    openGraph: {
+      title: `${title} | DiWrapp`,
+      description,
+      url: `https://diwrapp.com/${lang}/privacy-policy`,
+      siteName: 'DiWrapp',
+      locale: lang === 'ar' ? 'ar_AR' : 'en_US',
+      type: 'article',
+      images: [
+        {
+          url: '/images/og-banner.png',
+          width: 1920,
+          height: 620,
+          alt: `${title} - DiWrapp Media Network`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | DiWrapp`,
+      description,
+      images: ['/images/og-banner.png'],
+    },
+  };
 }
 
 export default async function PrivacyPolicyPage(props: {

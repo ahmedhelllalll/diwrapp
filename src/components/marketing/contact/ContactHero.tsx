@@ -12,7 +12,7 @@ interface ContactHeroProps {
 
 export default function ContactHero({
   lang,
-  breadcrumbHome = "Di-wrapp",
+  breadcrumbHome = "Di-Wrapp",
   breadcrumbCurrent = "Contact",
   title = "Let’s Get Connected",
   subtitle = "Whether you have a question about our services, need assistance, or just want to connect, our team is ready to help.",

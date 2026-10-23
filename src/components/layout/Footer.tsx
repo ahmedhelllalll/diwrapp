@@ -68,7 +68,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
     { label: dict?.links?.career || 'Career', href: `/${lang}/coming-soon?feature=Career` },
     { label: dict?.links?.contact || 'Contact', href: `/${lang}/contact` },
     { label: dict?.links?.investors || 'Investors', href: `/${lang}/coming-soon?feature=Investors` },
-    { label: dict?.links?.lifeAtDiWrapp || 'Life At Di-wrapp', href: `/${lang}/culture` },
+    { label: dict?.links?.lifeAtDiWrapp || 'Life At Di-Wrapp', href: `/${lang}/culture` },
     { label: dict?.links?.promocodes || 'Promocodes', href: `/${lang}/coming-soon?feature=Promocodes` },
   ];
 
@@ -86,7 +86,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
   const joinInLinks = [
     { label: dict?.links?.vendor || 'Vendor', href: `/${lang}/vendor` },
     { label: dict?.links?.eBranding || 'E-Branding', href: `/${lang}/coming-soon?feature=E-Branding` },
-    { label: dict?.links?.getDiWrapped || 'Get Di-wrapped', href: `/${lang}/coming-soon?feature=Get-Di-wrapped` },
+    { label: dict?.links?.getDiWrapped || 'Get Di-Wrapped', href: `/${lang}/coming-soon?feature=Get-Di-Wrapped` },
     { label: dict?.links?.creativePro || 'CreativePro', href: `/${lang}/coming-soon?feature=CreativePro` },
     { label: dict?.links?.responsibility || 'Responsibility', href: `/${lang}/coming-soon?feature=Responsibility` },
     { label: dict?.links?.resources || 'Resources', href: `/${lang}/coming-soon?feature=Resources` },
@@ -222,10 +222,10 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
             </div>
           </div>
 
-          {/* Column 2: Di-wrapp Links */}
+          {/* Column 2: Di-Wrapp Links */}
           <div>
             <h3 className="text-[#0F172A] dark:text-zinc-100 font-bold text-[15px] mb-5 tracking-tight">
-              {dict?.columns?.diWrapp || 'Di-wrapp'}
+              {dict?.columns?.diWrapp || 'Di-Wrapp'}
             </h3>
             <ul className="space-y-3.5 text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400">
               {diWrappLinks.map((item, idx) => (
@@ -289,7 +289,7 @@ export default function Footer({ lang = 'en', dict }: FooterProps) {
           {/* Left: Copyright */}
           <div className="order-3 md:order-1 justify-self-center md:justify-self-start text-[13px] md:text-[13.5px] font-normal text-[#64748B] dark:text-zinc-400 flex items-center gap-1.5 flex-wrap">
             <CopyrightYear />
-            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">Di-wrapp.</span>
+            <span className="font-bold text-[#0F172A] dark:text-zinc-100" dir="ltr">DiWrapp.</span>
             <span>-</span>
             <span>{dict?.legal?.allRightsReserved || 'All rights reserved'}</span>
           </div>

@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
-import { constructMetadata } from '@/lib/seo/metadata';
 import VendorOnboardingWizard from '@/components/marketing/vendor/onboarding/VendorOnboardingWizard';
 
 export async function generateMetadata(props: {
@@ -13,7 +12,6 @@ export async function generateMetadata(props: {
   const searchParams = props.searchParams ? await props.searchParams : {};
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata?.vendorOnboarding;
   const onboarding = (dict as any).vendorOnboarding;
   const stepInfo =
     searchParams.step === '4'
@@ -24,16 +22,18 @@ export async function generateMetadata(props: {
       ? onboarding?.step2
       : onboarding?.step1;
 
-  const title = meta?.title || stepInfo?.title || (lang === 'ar' ? 'تسجيل ملاك الشاشات | انضم لشبكة العرض الإعلاني' : 'Media Owner Onboarding | List Your DOOH Inventory');
-  const description = meta?.description || (stepInfo?.subtitle || stepInfo?.emailNotice || 'Apply to list your digital screens and outdoor billboards on Di-wrapp.').trim();
-
-  return constructMetadata({
-    title,
-    description,
-    path: '/vendor/onboarding',
-    lang,
-    ogImageAlt: lang === 'ar' ? 'تسجيل مورد جديد في Di-wrapp' : 'Di-wrapp Media Owner Onboarding',
-  });
+  return {
+    title: stepInfo?.title || 'Vendor Onboarding',
+    description: (stepInfo?.subtitle || stepInfo?.emailNotice || 'Tell us about your organization').trim(),
+    alternates: {
+      canonical: `/${lang}/vendor/onboarding`,
+      languages: {
+        en: '/en/vendor/onboarding',
+        ar: '/ar/vendor/onboarding',
+        'x-default': '/en/vendor/onboarding',
+      },
+    },
+  };
 }
 
 import { CountryBadge, CountryBadgeSkeleton } from '@/components/common/CountryBadge';

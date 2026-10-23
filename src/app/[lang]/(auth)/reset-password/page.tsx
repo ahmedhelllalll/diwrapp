@@ -1,4 +1,3 @@
-import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { getDictionary } from "../../../../dictionaries";
 import { Locale } from "../../../../i18n-config";
@@ -12,14 +11,18 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata?.resetPassword;
-
-  return constructMetadata({
-    title: meta?.title || (lang === 'ar' ? 'إعادة تعيين كلمة المرور' : 'Reset Password'),
-    description: meta?.description || 'Reset your Di-wrapp account password.',
-    path: '/reset-password',
-    lang,
-  });
+  return {
+    title: dict.metadata.resetPassword.title,
+    description: dict.metadata.resetPassword.description,
+    alternates: {
+      canonical: `/${lang}/reset-password`,
+      languages: {
+        en: '/en/reset-password',
+        ar: '/ar/reset-password',
+        'x-default': '/en/reset-password',
+      },
+    },
+  };
 }
 
 export default async function ResetPassword(props: { params: Promise<{ lang: string }> }) {

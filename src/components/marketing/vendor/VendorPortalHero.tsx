@@ -15,24 +15,24 @@ interface VendorPortalHeroProps {
 const DEFAULT_DATA = {
   badge: 'Vendor Portal',
   title: 'Empower Your Inventory, Unlock\nNew Revenue.',
-  subtitle: "Join Di-wrapp's Smart Network",
+  subtitle: "Join Di_Wrapp's Smart Network",
   descriptionPrefix: 'If you own inventory — ',
-  descriptionHighlight: 'Di-wrapp gives you the tools to modernize, monetize, and manage with ease.',
+  descriptionHighlight: 'Di_Wrapp gives you the tools to modernize, monetize, and manage with ease.',
   descriptionSuffix:
     ' Our Vendor Portal connects your channel to a smart, automated platform where brands are actively looking to book spaces like yours.',
   readMoreBtn: 'Read More',
   ctaBtn: "Let's Get Started",
-  imageAlt: 'Di-wrapp Vendor Portal Billboard Showcase',
+  imageAlt: 'Di_Wrapp Vendor Portal Billboard Showcase',
 };
 
 const renderBidiText = (text?: string) => {
   if (!text) return null;
-  const parts = text.split(/(Di-wrapp|Ask Di|\(24\/7\)|24\/7|\bDi\b)/g);
+  const parts = text.split(/(Di_Wrapp|Ask_Di|\(24\/7\)|24\/7|\bDi\b)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
     if (
-      part === 'Di-wrapp' ||
-      part === 'Ask Di' ||
+      part === 'Di_Wrapp' ||
+      part === 'Ask_Di' ||
       part === 'Di' ||
       part === '(24/7)' ||
       part === '24/7'

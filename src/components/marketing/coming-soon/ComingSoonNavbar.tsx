@@ -49,7 +49,7 @@ export default function ComingSoonNavbar({
   const toggleTheme = () => setTheme(activeTheme === 'dark' ? 'light' : 'dark');
 
   const navLinks = [
-    { name: dictNav?.about || (lang === 'ar' ? 'معلومات عنا' : 'About us'), href: `/${lang}/about` },
+    { name: dictNav?.about || (lang === 'ar' ? 'من نحن' : 'About us'), href: `/${lang}/about` },
     { name: dictNav?.advertise || (lang === 'ar' ? 'أعلن معنا' : 'Advertise'), href: `/${lang}/advertise` },
     { name: dictNav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog'), href: `/${lang}/blog` },
     { name: dictNav?.join || (lang === 'ar' ? 'انضم إلينا' : 'Join us'), href: `/${lang}/join-us` },
@@ -100,7 +100,6 @@ export default function ComingSoonNavbar({
         <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           {/* Theme Toggle Button */}
           <button
-            type="button"
             onClick={toggleTheme}
             className="w-10 h-10 rounded-full border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-gray-700 dark:text-zinc-300 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors shadow-xs active:scale-[0.98]"
             aria-label="Toggle theme"
@@ -135,11 +134,9 @@ export default function ComingSoonNavbar({
           {/* Mobile Hamburger Menu Button */}
           {showNavLinks && (
             <button
-              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden w-10 h-10 rounded-lg border border-gray-200 dark:border-zinc-800 flex items-center justify-center text-[#101828] dark:text-white"
               aria-label="Toggle navigation menu"
-              aria-expanded={mobileMenuOpen}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (

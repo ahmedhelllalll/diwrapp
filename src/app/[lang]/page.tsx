@@ -15,46 +15,10 @@ const FaqSection = dynamic(() => import("@/components/marketing/landing/FaqSecti
 
 export async function generateMetadata(props: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const lang = params.lang as Locale;
-  const dict = await getDictionary(lang);
-  const meta = dict.metadata;
-  const isAr = lang === 'ar';
-  const title = meta.defaultTitle;
-  const description = meta.landing?.description || meta.defaultDescription;
-
+  const dict = await getDictionary(params.lang as Locale);
   return {
-    title: { absolute: title },
-    description,
-    alternates: {
-      canonical: `https://diwrapp.com/${lang}`,
-      languages: {
-        en: 'https://diwrapp.com/en',
-        ar: 'https://diwrapp.com/ar',
-        'x-default': 'https://diwrapp.com/en',
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: `https://diwrapp.com/${lang}`,
-      siteName: 'Di-wrapp',
-      locale: isAr ? 'ar_AR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/images/og-banner.png',
-          width: 1200,
-          height: 630,
-          alt: isAr ? 'شبكة Di-wrapp الإعلانية الموحدة' : 'Di-wrapp Unified DOOH Media Network',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['/images/og-banner.png'],
-    },
+    title: { absolute: dict.metadata.defaultTitle },
+    description: dict.metadata.landing.description,
   };
 }
 

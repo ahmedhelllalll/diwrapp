@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
-import { constructMetadata } from '@/lib/seo/metadata';
 import ComingSoonView from '@/components/marketing/coming-soon/ComingSoonView';
 
 export async function generateMetadata(props: { 
@@ -13,22 +12,25 @@ export async function generateMetadata(props: {
   const lang = params.lang as Locale;
   const searchParams = props.searchParams ? await props.searchParams : undefined;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata?.comingSoon;
+  const stayTuned = (dict as any)?.stayTuned;
 
   const rawFeature = searchParams?.title || searchParams?.feature;
   const featureLabel = rawFeature ? rawFeature.replace(/[-_]/g, ' ') : undefined;
-  const title = featureLabel 
-    ? `${featureLabel} | ${meta?.title || 'Coming Soon'}`
-    : (meta?.title || (lang === 'ar' ? 'ترقبوا جديدنا | ميزات متطورة ومنظومة إعلانية متكاملة' : 'Platform Expansion & Upcoming Features | Stay Tuned'));
-  const description = meta?.description || 'Exciting new programmatic DOOH features and advertising capabilities are launching soon on Di-wrapp.';
 
-  return constructMetadata({
-    title,
-    description,
-    path: '/coming-soon',
-    lang,
-    ogImageAlt: lang === 'ar' ? 'ترقبوا جديد منصة Di-wrapp' : 'Stay Tuned for Di-wrapp New Capabilities',
-  });
+  return {
+    title: featureLabel 
+      ? `${featureLabel} - ${stayTuned?.screenStayTuned || 'Coming Soon'}`
+      : `${stayTuned?.screenStayTuned || 'Stay Tuned'}`,
+    description: stayTuned?.description || 'Stay tuned for exclusive updates and early access!',
+    alternates: {
+      canonical: `/${lang}/coming-soon`,
+      languages: {
+        en: '/en/coming-soon',
+        ar: '/ar/coming-soon',
+        'x-default': '/en/coming-soon',
+      },
+    },
+  };
 }
 
 async function ComingSoonContent({ 

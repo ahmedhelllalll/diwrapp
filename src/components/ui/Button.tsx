@@ -6,7 +6,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = "", variant = "primary", fullWidth, children, type = "button", ...props }, ref) => {
+  ({ className = "", variant = "primary", fullWidth, children, ...props }, ref) => {
     
     const baseStyles = `inline-flex items-center justify-center font-bold text-[13.5px] rounded-lg h-[42px] transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
       fullWidth ? "w-full" : ""
@@ -26,7 +26,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        type={type}
         className={`${baseStyles} ${variantStyles} ${className}`}
         {...props}
       >

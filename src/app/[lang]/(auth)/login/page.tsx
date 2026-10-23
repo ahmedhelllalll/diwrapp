@@ -1,4 +1,3 @@
-import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { getDictionary } from "../../../../dictionaries";
 import { Locale } from "../../../../i18n-config";
@@ -12,14 +11,18 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  const meta = dict.metadata?.login;
-
-  return constructMetadata({
-    title: meta?.title || (lang === 'ar' ? 'تسجيل الدخول' : 'Login'),
-    description: meta?.description || 'Log in to your Di-wrapp account.',
-    path: '/login',
-    lang,
-  });
+  return {
+    title: dict.metadata.login.title,
+    description: dict.metadata.login.description,
+    alternates: {
+      canonical: `/${lang}/login`,
+      languages: {
+        en: '/en/login',
+        ar: '/ar/login',
+        'x-default': '/en/login',
+      },
+    },
+  };
 }
 
 export default async function Login(props: { params: Promise<{ lang: string }> }) {

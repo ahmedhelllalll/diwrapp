@@ -58,8 +58,8 @@ export default function VendorOnboardingSuccess({
               <p>
                 {dict?.emailNotice ||
                   (isRtl
-                    ? "سيتم إرسال بريد إلكتروني لتأكيد عملية التقديم، ويمكنك متابعة طلبك من خلال لوحة تحكم Di-wrapp."
-                    : "an email will be sent to confirm the application process, and you can track your Submission through Di-wrapp Dashboard.")}
+                    ? "سيتم إرسال بريد إلكتروني لتأكيد عملية التقديم، ويمكنك متابعة طلبك من خلال لوحة تحكم Di-Wrapp."
+                    : "an email will be sent to confirm the application process, and you can track your Submission through Di-Wrapp Dashboard.")}
               </p>
               <p>
                 {dict?.supportNotice ||
@@ -73,7 +73,7 @@ export default function VendorOnboardingSuccess({
             <div className="mt-10 flex flex-wrap items-center gap-6">
               {/* Track My Submission Button */}
               <Link
-                href={`/${lang}/coming-soon?feature=Dashboard`}
+                href={`/${lang}/dashboard`}
                 className="h-[46px] px-6 rounded-[12px] bg-[#101828] hover:bg-[#1D2939] dark:bg-white dark:hover:bg-neutral-100 text-white dark:text-[#101828] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[14px] font-medium inline-flex items-center gap-2.5 transition-all shadow-xs cursor-pointer select-none"
               >
                 <span>{dict?.trackSubmission || (isRtl ? "متابعة طلبي" : "Track My Submission")}</span>
