@@ -41,10 +41,10 @@ export default function FaqSection({
   const faqs: FaqDictItem[] = dict?.items && dict.items.length > 0 ? dict.items : [
     {
       id: "q1",
-      question: isRtl ? "ما هو Di_Wrapp وكيف يعمل؟" : "What is Di_Wrapp and how does it work?",
+      question: isRtl ? "ما هو Di-wrapp وكيف يعمل؟" : "What is Di-wrapp and how does it work?",
       answer: isRtl 
-        ? "منصة Di_Wrapp هي شبكة وسائط ذكية تربط بين مساحات الإعلانات والمعلنين بكل سلاسة وسرعة."
-        : "Di_Wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
+        ? "منصة Di-wrapp هي شبكة وسائط ذكية تربط بين مساحات الإعلانات والمعلنين بكل سلاسة وسرعة."
+        : "Di-wrapp is an advanced media network platform that streamlines outdoor and digital advertising across diverse channels."
     },
     {
       id: "q2",
@@ -70,7 +70,7 @@ export default function FaqSection({
     },
     {
       id: "q5",
-      question: isRtl ? "هل يمكنني دمج لوحتي الإعلانية بنظام Di_Wrapp؟" : "Can I integrate My Billboard With Di_Wrapp Sytem?",
+      question: isRtl ? "هل يمكنني دمج لوحتي الإعلانية بنظام Di-wrapp؟" : "Can I integrate My Billboard With Di-wrapp Sytem?",
       answer: isRtl 
         ? "نعم، يمكنك تقديم طلب انضمام الشركاء وربط لوحاتك بالنظام الذكي بسهولة."
         : "Yes, billboard owners can easily connect their inventories and launch smart programmatic booking."
@@ -188,7 +188,7 @@ export default function FaqSection({
                         <>
                           {faq.preLinkText || (isRtl ? "يمكنك التسجيل بكل سهولة عبر زيارة " : "You can sign up easily by visiting ")}
                           <Link 
-                            aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة دي راب وإنشاء حساب جديد" : "Sign up for a new Diwrapp account")}
+                            aria-label={dict?.signUpAria || (isRtl ? "التسجيل في منصة Di-wrapp وإنشاء حساب جديد" : "Sign up for a new Di-wrapp account")}
                             className="font-semibold text-slate-900 dark:text-blue-400 underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" 
                             href={`/${lang}/coming-soon`}
                           >

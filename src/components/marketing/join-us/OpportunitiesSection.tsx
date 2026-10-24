@@ -33,7 +33,7 @@ export default function OpportunitiesSection({
     influencers: 'Influencers',
     digital: 'Digital Channels',
   },
-  description = 'Di_Wrapp simplifies operations, automates scheduling, and maximizes monetization — all while giving media owners complete visibility and control over their media assets.',
+  description = 'Di-wrapp simplifies operations, automates scheduling, and maximizes monetization — all while giving media owners complete visibility and control over their media assets.',
   ctaText = 'Book A Demo',
   ctaHref,
 }: OpportunitiesSectionProps) {

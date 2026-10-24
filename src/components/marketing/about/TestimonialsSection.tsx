@@ -53,7 +53,7 @@ export default function TestimonialsSection({
   badgeText = 'Testimonials',
   headingLine1 = 'Trusted by leaders',
   headingLine2 = 'from various industries',
-  subtitleText = 'Discover why they rely on Di_Wrapp to power every step of their Booking journey',
+  subtitleText = 'Discover why they rely on Di-wrapp to power every step of their booking journey',
   ctaText = 'Book Your Spot Now',
   ctaHref = `/${lang}/advertise`,
 }: TestimonialsSectionProps) {

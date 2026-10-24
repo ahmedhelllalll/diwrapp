@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
+import { constructMetadata } from '@/lib/seo/metadata';
 import WalletHero from '@/components/marketing/wallet/WalletHero';
 import WalletStatement from '@/components/marketing/wallet/WalletStatement';
 import WalletFeatures from '@/components/marketing/wallet/WalletFeatures';
@@ -47,47 +48,19 @@ export async function generateMetadata(props: {
   const meta = dict.metadata?.wallet;
   const wallet = dict.wallet;
   const isAr = lang === 'ar';
-  const title = meta?.title || (isAr ? 'المحفظة' : 'Wallet');
+  const title = meta?.title || (isAr ? 'المحفظة الذكية | مدفوعات فورية وضمان مالي موثوق' : 'Digital Wallet | Instant Payouts & Escrow Billing');
   const description = (
     meta?.description ||
     `${wallet?.heroTitleLine1 || (isAr ? 'معاملات فورية وآمنة' : 'Secure, Flexible &')} ${wallet?.heroTitleLine2 || (isAr ? 'وبمنتهى المرونة' : 'Instant Transactions')}`
   ).trim();
 
-  return {
-    metadataBase: new URL('https://diwrapp.com'),
+  return constructMetadata({
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/wallet`,
-      languages: {
-        en: 'https://diwrapp.com/en/wallet',
-        ar: 'https://diwrapp.com/ar/wallet',
-        'x-default': 'https://diwrapp.com/en/wallet',
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: `https://diwrapp.com/${lang}/wallet`,
-      siteName: 'DiWrapp',
-      locale: isAr ? 'ar_AR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/images/og-banner.png',
-          width: 1920,
-          height: 620,
-          alt: isAr ? 'دي-راب - المحفظة الرقمية' : 'DiWrapp Wallet',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['/images/og-banner.png'],
-    },
-  };
+    path: '/wallet',
+    lang,
+    ogImageAlt: isAr ? 'محفظة Di-wrapp الرقمية' : 'Di-wrapp Digital Wallet',
+  });
 }
 
 export default async function WalletPage(props: {

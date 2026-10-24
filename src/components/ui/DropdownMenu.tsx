@@ -51,6 +51,8 @@ export function DropdownMenu({ trigger, items, align = 'right' }: {
               return (
                 <button
                   key={idx}
+                  type="button"
+                  role="menuitem"
                   onClick={() => { item.onClick?.(); setIsOpen(false); }}
                   className={`w-full text-left px-4 py-2 text-[#0f172a] dark:text-zinc-100 font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 flex items-center gap-2 ${
                     item.danger ? 'text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30' : 'text-[#334155] dark:text-zinc-300 hover:bg-[#f8fafc] dark:hover:bg-zinc-900/50'

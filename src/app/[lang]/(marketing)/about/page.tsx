@@ -1,3 +1,4 @@
+import { constructMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,18 +14,17 @@ export async function generateMetadata(props: { params: Promise<{ lang: string }
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
-  return {
-    title: dict.about?.badge || 'About Us',
-    description: dict.about?.title?.replace(/<[^>]*>?/gm, ''), // strip html tags for meta
-    alternates: {
-      canonical: `/${lang}/about`,
-      languages: {
-        en: '/en/about',
-        ar: '/ar/about',
-        'x-default': '/en/about',
-      },
-    },
-  };
+  const meta = dict.metadata?.about;
+  const title = meta?.title || (lang === 'ar' ? 'عن Di-wrapp | رؤيتنا ومستقبل الإعلانات الخارجية' : 'About Us | Revolutionizing Global DOOH Media');
+  const description = meta?.description || (dict.about?.title?.replace(/<[^>]*>?/gm, '') || '');
+
+  return constructMetadata({
+    title,
+    description,
+    path: '/about',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'عن Di-wrapp - رؤيتنا ومنظومتنا الرقمية' : 'About Di-wrapp - Our Platform & Mission',
+  });
 }
 
 export default async function AboutPage(props: { params: Promise<{ lang: string }> }) {
@@ -177,7 +177,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
             </div>
           </section>
 
-          {/* Key Features / What Makes Di_Wrapp Different Section */}
+          {/* Key Features / What Makes Di-wrapp Different Section */}
           <section className="about-features-section">
             <div className="about-features-container">
               {/* Top Header */}
@@ -222,7 +222,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                   <div className="features-tablet-wrap">
                     <Image 
                       src="/assets/tablet-image.webp" 
-                      alt="Di_Wrapp Tablet Interface" 
+                      alt="Di-wrapp Tablet Interface" 
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
@@ -239,7 +239,7 @@ export default async function AboutPage(props: { params: Promise<{ lang: string 
                     <Link 
                       href={`/${lang}/coming-soon?feature=marketplace`} 
                       className="features-card-btn"
-                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di_Wrapp Media Player'}`}
+                      aria-label={`${features?.card1Btn || 'Read More'}: ${features?.card1Title || 'Di-wrapp Media Player'}`}
                     >
                       <span>{features?.card1Btn}</span>
                       <span className="sr-only"> - {features?.card1Title}</span>

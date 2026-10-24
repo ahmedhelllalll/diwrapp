@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n-config';
+import { getDictionary } from '@/dictionaries';
+import { constructMetadata } from '@/lib/seo/metadata';
 import { getCookiePolicy } from '@/content/legal/cookies';
 import LegalArticle from '@/components/legal/LegalArticle';
 
@@ -12,45 +14,19 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const params = await props.params;
   const lang = (params.lang || 'en') as Locale;
-  const doc = getCookiePolicy(lang);
+  const dict = await getDictionary(lang);
+  const meta = dict.metadata?.cookiePolicy;
+  const title = meta?.title || (lang === 'ar' ? 'سياسة ملفات تعريف الارتباط | الشفافية والتخزين' : 'Cookie Policy | Transparent Tracking & Storage');
+  const description = meta?.description || 'Learn how Di-wrapp utilizes essential first-party cookies and edge routing.';
 
-  const title = lang === 'ar' ? 'سياسة ملفات تعريف الارتباط' : 'Cookie Policy';
-  const description = doc.intro;
-
-  return {
+  return constructMetadata({
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/cookie-policy`,
-      languages: {
-        en: 'https://diwrapp.com/en/cookie-policy',
-        ar: 'https://diwrapp.com/ar/cookie-policy',
-        'x-default': 'https://diwrapp.com/en/cookie-policy',
-      },
-    },
-    openGraph: {
-      title: `${title} | DiWrapp`,
-      description,
-      url: `https://diwrapp.com/${lang}/cookie-policy`,
-      siteName: 'DiWrapp',
-      locale: lang === 'ar' ? 'ar_AR' : 'en_US',
-      type: 'article',
-      images: [
-        {
-          url: '/images/og-banner.png',
-          width: 1920,
-          height: 620,
-          alt: `${title} - DiWrapp Media Network`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | DiWrapp`,
-      description,
-      images: ['/images/og-banner.png'],
-    },
-  };
+    path: '/cookie-policy',
+    lang,
+    type: 'article',
+    ogImageAlt: lang === 'ar' ? 'سياسة ملفات تعريف الارتباط - Di-wrapp' : 'Di-wrapp Cookie Policy',
+  });
 }
 
 export default async function CookiePolicyPage(props: {

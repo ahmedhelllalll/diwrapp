@@ -49,7 +49,7 @@ const DEFAULT_BADGES_EN = {
   ],
   row2: [
     { id: "unified-marketplace", label: "Unified Ad Marketplace" },
-    { id: "smart-wallet", label: "Di_Wrapp Smart Wallet" },
+    { id: "smart-wallet", label: "Di-wrapp Smart Wallet" },
     { id: "iot-hardware", label: "Smart Hardware & AI Sensors" },
   ],
   row3: [
@@ -66,7 +66,7 @@ const DEFAULT_BADGES_AR = {
   ],
   row2: [
     { id: "unified-marketplace", label: "سوق إعلاني رقمي موحد" },
-    { id: "smart-wallet", label: "محفظة Di_Wrapp الذكية" },
+    { id: "smart-wallet", label: "محفظة Di-wrapp الذكية" },
     { id: "iot-hardware", label: "أجهزة ذكية ومستشعرات AI" },
   ],
   row3: [

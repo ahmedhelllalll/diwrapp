@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/dictionaries';
 import { Locale } from '@/i18n-config';
+import { constructMetadata } from '@/lib/seo/metadata';
 import AskDiHero from '@/components/marketing/ai/AskDiHero';
 import AskDiCarousel from '@/components/marketing/ai/AskDiCarousel';
 
@@ -10,20 +11,18 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const lang = params.lang as Locale;
   const dict = await getDictionary(lang);
+  const meta = dict.metadata?.askDi;
   const askDi = (dict as any).askDiHero;
+  const title = meta?.title || (lang === 'ar' ? 'Ask Di | المساعد الذكي لتخطيط الحملات الإعلانية' : 'Ask Di | AI DOOH Campaign & Media Planning Co-Pilot');
+  const description = meta?.description || `${askDi?.subtitleNormal || ''} ${askDi?.subtitleBold || ''}`.trim();
 
-  return {
-    title: askDi?.badge || 'Ask_Di AI Assistant',
-    description: `${askDi?.subtitleNormal || ''} ${askDi?.subtitleBold || ''}`.trim(),
-    alternates: {
-      canonical: `/${lang}/ask-di`,
-      languages: {
-        en: '/en/ask-di',
-        ar: '/ar/ask-di',
-        'x-default': '/en/ask-di',
-      },
-    },
-  };
+  return constructMetadata({
+    title,
+    description,
+    path: '/ask-di',
+    lang,
+    ogImageAlt: lang === 'ar' ? 'Ask Di - المساعد الذكي للإعلانات' : 'Ask Di - AI Advertising Assistant',
+  });
 }
 
 export default async function AskDiPage(props: {
