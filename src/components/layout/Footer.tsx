@@ -58,7 +58,7 @@ export interface FooterProps {
 
 export default function Footer({ lang = 'en', dict }: FooterProps) {
   const isRtl = lang === 'ar';
-  const rawGroupName = dict?.groupName || (isRtl ? 'مجموعة ديستين-جاي' : 'Distin-Gui Group');
+  const rawGroupName = dict?.groupName || (isRtl ? 'ديستين-غوي' : 'Distin-Gui Group');
   const cleanGroupName = rawGroupName.replace(/\.+$/, '').trim();
 
   const diWrappLinks = [
