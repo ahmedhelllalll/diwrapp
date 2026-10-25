@@ -134,8 +134,8 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
             >
               <span>
                 {tab === 'brands' 
-                  ? (dict?.howItWorks?.forBrands || dict?.forBrands || (isRtl ? "أعلن معنا" : "For Brands"))
-                  : (dict?.howItWorks?.forVendors || dict?.forVendors || (isRtl ? "للشركاء وأصحاب المساحات" : "For Vendors"))
+                  ? (dict?.howItWorks?.forBrands || dict?.forBrands || (isRtl ? "المعلنون" : "Media Buyers"))
+                  : (dict?.howItWorks?.forVendors || dict?.forVendors || (isRtl ? "أصحاب المساحات" : "Media Owners"))
                 }
               </span>
             </button>
