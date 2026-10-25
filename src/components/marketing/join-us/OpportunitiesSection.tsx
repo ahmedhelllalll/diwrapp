@@ -29,9 +29,9 @@ export default function OpportunitiesSection({
   titleLine2 = 'One Digital Platform',
   cards = {
     activation: 'Activation Spaces',
-    displays: 'Advertising Displays',
-    influencers: 'Influencers',
-    digital: 'Digital Channels',
+    displays: 'Advertising Display',
+    influencers: 'Influencers Partnership',
+    digital: 'Media Channels',
   },
   description = 'Di-wrapp simplifies operations, automates scheduling, and maximizes monetization — all while giving media owners complete visibility and control over their media assets.',
   ctaText = 'Book A Demo',
@@ -51,17 +51,17 @@ export default function OpportunitiesSection({
     },
     {
       id: 'displays',
-      label: cards?.displays || 'Advertising Displays',
+      label: cards?.displays || 'Advertising Display',
       Icon: AppleImac2021,
     },
     {
       id: 'influencers',
-      label: cards?.influencers || 'Influencers',
+      label: cards?.influencers || 'Influencers Partnership',
       Icon: UserStar,
     },
     {
       id: 'digital',
-      label: cards?.digital || 'Digital Channels',
+      label: cards?.digital || 'Media Channels',
       Icon: Computer,
     },
   ];
