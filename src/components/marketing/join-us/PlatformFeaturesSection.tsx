@@ -240,14 +240,14 @@ export default function PlatformFeaturesSection({
                 {/* Tablet Clipping Wrapper */}
                 <div
                   className="relative w-full h-full flex items-center justify-center pointer-events-none select-none"
-                  style={{ clipPath: 'inset(-300px -300px 0px -300px)' }}
+                  style={{ clipPath: 'inset(-300px -300px 0px -300px round 0 0 16px 16px)' }}
                 >
                   <motion.div
                     initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 10 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true, margin: animMargin }}
                     transition={{ duration: 0.8, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
-                    className="w-[125%] shrink-0 sm:w-[140%] sm:shrink max-w-none h-auto flex items-center justify-center"
+                    className="w-[125%] shrink-0 sm:w-[140%] sm:shrink lg:w-full lg:shrink-0 max-w-none h-auto flex items-center justify-center"
                   >
                     <Image
                       src="/assets/join-tablet.webp"
@@ -255,7 +255,7 @@ export default function PlatformFeaturesSection({
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, 960px"
-                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-0 rtl:translate-x-0 sm:translate-x-8 sm:rtl:-translate-x-8 -translate-y-6"
+                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-0 rtl:translate-x-0 sm:translate-x-8 sm:rtl:-translate-x-8 -translate-y-6 lg:scale-[1.58] lg:translate-x-4 lg:rtl:-translate-x-4 lg:translate-y-[22px]"
                     />
                   </motion.div>
                 </div>
