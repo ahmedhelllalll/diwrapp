@@ -236,7 +236,7 @@ export default function PlatformFeaturesSection({
               </div>
 
               {/* Inner Grey Surface Box */}
-              <div className="relative w-full rounded-2xl bg-[#F2F4F7]/70 dark:bg-zinc-900/60 min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] h-[360px] sm:h-[420px] lg:h-[460px] my-4 overflow-visible flex items-center justify-center">
+              <div className="relative w-full rounded-2xl bg-[#F2F4F7]/70 dark:bg-zinc-900/60 min-h-[250px] sm:min-h-[420px] lg:min-h-[460px] h-[250px] sm:h-[420px] lg:h-[460px] my-4 overflow-visible flex items-center justify-center">
                 {/* Tablet Clipping Wrapper */}
                 <div
                   className="relative w-full h-full flex items-center justify-center pointer-events-none select-none"
@@ -247,7 +247,7 @@ export default function PlatformFeaturesSection({
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true, margin: animMargin }}
                     transition={{ duration: 0.8, delay: noDelay ? 0 : 0.22, ease: appleEasing }}
-                    className="w-[125%] shrink-0 sm:w-[140%] sm:shrink lg:w-full lg:shrink-0 max-w-none h-auto flex items-center justify-center"
+                    className="w-full sm:max-w-[560px] lg:max-w-none shrink-0 h-auto flex items-center justify-center"
                   >
                     <Image
                       src="/assets/join-tablet.webp"
@@ -255,7 +255,7 @@ export default function PlatformFeaturesSection({
                       width={960}
                       height={720}
                       sizes="(max-width: 768px) 100vw, 960px"
-                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl translate-x-0 rtl:translate-x-0 sm:translate-x-8 sm:rtl:-translate-x-8 -translate-y-6 lg:scale-[1.58] lg:translate-x-4 lg:rtl:-translate-x-4 lg:translate-y-[22px]"
+                      className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-xl scale-[1.55] translate-x-1.5 rtl:-translate-x-1.5 translate-y-[24px] sm:scale-[1.58] sm:translate-x-4 sm:rtl:-translate-x-4 sm:translate-y-[24px] lg:scale-[1.58] lg:translate-x-4 lg:rtl:-translate-x-4 lg:translate-y-[22px]"
                     />
                   </motion.div>
                 </div>
