@@ -589,6 +589,18 @@ html[dir="rtl"] .animate-marquee-left-row3 {
   }
 }
 
+/* Very wide displays (>= 2000px, e.g. 2241px): adjust decorative assets to prevent overlap */
+@media (min-width: 2000px) {
+  .hero-float-mid-right {
+    width: 500px !important;
+    right: -12% !important;
+  }
+  .hero-float-mid-left {
+    width: 420px !important;
+    left: -8% !important;
+  }
+}
+
 
 
 

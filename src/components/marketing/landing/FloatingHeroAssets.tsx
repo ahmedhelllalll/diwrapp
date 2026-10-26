@@ -16,6 +16,10 @@ export default function FloatingHeroAssets() {
         {/* Background Grid Line Frame (Top Right) */}
       <div
         className="hidden lg:block absolute top-[175px] right-[-6%] w-[389px] z-0 pointer-events-none hero-float-grid"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 0%, black 215px, transparent 240px)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 215px, transparent 240px)",
+        }}
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -153,7 +157,7 @@ export default function FloatingHeroAssets() {
 
       {/* 3D Decorative Element (Bottom Right) */}
       <div
-        className="hidden lg:block absolute top-[1140px] right-[5%] lg:top-[1140px] lg:right-[5%] z-20 pointer-events-none w-[600px] lg:w-[600px] hero-float-3d"
+        className="hidden lg:block absolute top-[1140px] right-[5%] lg:top-[1140px] lg:right-[5%] z-0 pointer-events-none w-[600px] lg:w-[600px] hero-float-3d"
       >
         <Image
           src="/images/floating/float-3d-element.png"
