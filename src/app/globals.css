@@ -82,6 +82,30 @@ body {
   overflow-x: clip;
 }
 
+/* Airbnb-inspired Container System: Max-width 2520px with responsive margins */
+.site-container {
+  width: 100%;
+  max-width: 2520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px - Mobile */
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    padding-left: 2.5rem; /* 40px - Tablet */
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-container {
+    padding-left: 5rem; /* 80px - Large desktop / 2K+ Airbnb standard */
+    padding-right: 5rem;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -586,18 +610,6 @@ html[dir="rtl"] .animate-marquee-left-row3 {
   .navigation-progress-bar {
     transition: none !important;
     transform: scaleX(1) !important;
-  }
-}
-
-/* Very wide displays (>= 2000px, e.g. 2241px): adjust decorative assets to prevent overlap */
-@media (min-width: 2000px) {
-  .hero-float-mid-right {
-    width: 500px !important;
-    right: -12% !important;
-  }
-  .hero-float-mid-left {
-    width: 420px !important;
-    left: -8% !important;
   }
 }
 

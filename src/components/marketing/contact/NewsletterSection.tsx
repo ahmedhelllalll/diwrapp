@@ -36,7 +36,7 @@ export default function NewsletterSection({ dict, lang = "en" }: NewsletterSecti
       className="newsletter-section border-t border-[#EAECF0] dark:border-[#27272A] bg-[#F2F4F7] dark:bg-[#0a0a0a] transition-colors duration-300 py-12 sm:py-14" 
       aria-label={isRtl ? "الاشتراك في النشرة الإخبارية" : "Newsletter Subscription"}
     >
-      <div className="newsletter-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-start">
+      <div className="newsletter-container site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-start">
         {/* Heading & Description */}
         <div className="newsletter-text-col text-center mx-auto max-w-[380px] sm:max-w-md lg:max-w-xl lg:mx-0 lg:text-start mb-6 lg:mb-0">
           <h2 className="newsletter-title text-[28px] sm:text-3xl font-bold tracking-tight text-[#101828] dark:text-white">

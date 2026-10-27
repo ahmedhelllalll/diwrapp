@@ -31,7 +31,7 @@ export default function VendorOnboardingSuccess({
 
   return (
     <div className="w-full flex-1 flex flex-col justify-center">
-      <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 py-12 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[520px]">
           {/* Left Column: 7 cols (Submission Confirmation) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left rtl:text-right">

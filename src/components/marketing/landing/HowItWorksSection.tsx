@@ -57,7 +57,7 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
   const currentCards = activeTab === 'brands' ? brandsCards : vendorsCards;
 
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 mt-6 sm:mt-12 lg:mt-20 mb-16 sm:mb-20 text-center flex flex-col items-center relative z-20">
+    <section className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 mt-6 sm:mt-12 lg:mt-20 mb-16 sm:mb-20 text-center flex flex-col items-center relative z-20">
       {/* 1. Eyebrow Badge (User Guide) */}
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0 }}

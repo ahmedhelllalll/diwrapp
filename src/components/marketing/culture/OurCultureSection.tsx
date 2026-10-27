@@ -120,7 +120,7 @@ export default function OurCultureSection({ culture }: OurCultureSectionProps) {
 
   return (
     <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300 pt-[104px] sm:pt-28 lg:pt-28 pb-10 sm:pb-14 lg:pb-16 overflow-hidden">
-      <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20">
         {/* A. Header & Typography Block (Server-rendered CSS-only rise matching Landing/About) */}
         <div className="flex flex-col items-center text-center max-w-[880px] mx-auto">
           {/* Badge */}

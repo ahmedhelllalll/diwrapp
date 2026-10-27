@@ -151,7 +151,7 @@ export const CareersBentoGrid: React.FC<CareersBentoGridProps> = ({ dict, lang =
 
   return (
     <section className="w-full bg-white dark:bg-surface-1 transition-colors duration-300">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 py-12 lg:py-16">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 py-12 lg:py-16">
         <motion.div
           initial="hidden"
           whileInView="visible"

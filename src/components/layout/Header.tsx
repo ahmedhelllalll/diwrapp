@@ -195,7 +195,7 @@ export default function Header({
               }`
         } ${className || ""}`}
       >
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between relative" dir="ltr">
+        <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 h-[72px] flex items-center justify-between relative" dir="ltr">
           {/* Left: Brand Logo (Always on the Left) */}
           <div className="flex items-center">
             <Link

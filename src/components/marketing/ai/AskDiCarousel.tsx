@@ -215,7 +215,7 @@ export const AskDiCarousel: React.FC<AskDiCarouselProps> = ({ dict, lang = 'en' 
       aria-label="Ask Di Features Carousel"
       className="w-full py-10 sm:py-16 lg:py-24 bg-transparent"
     >
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 flex flex-col items-center">
         {/* Main Card Container */}
         <div
           tabIndex={0}

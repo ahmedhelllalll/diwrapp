@@ -12,14 +12,10 @@ export default function FloatingHeroAssets() {
 
   return (
     <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-visible" dir="ltr" aria-hidden="true">
-      <div className="relative w-full max-w-[1440px] h-full mx-auto pointer-events-none overflow-visible">
+      <div className="relative w-full max-w-[1440px] 2xl:max-w-[1800px] min-[2100px]:max-w-[2240px] 3xl:max-w-[2520px] h-full mx-auto pointer-events-none overflow-visible">
         {/* Background Grid Line Frame (Top Right) */}
       <div
-        className="hidden lg:block absolute top-[175px] right-[-6%] w-[389px] z-0 pointer-events-none hero-float-grid"
-        style={{
-          maskImage: "linear-gradient(to bottom, black 0%, black 215px, transparent 240px)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 215px, transparent 240px)",
-        }}
+        className="hidden lg:block absolute top-[175px] right-[-6%] 2xl:right-[-4%] min-[1800px]:right-[-2%] min-[2100px]:right-[0%] w-[389px] z-0 pointer-events-none hero-float-grid"
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -33,7 +29,7 @@ export default function FloatingHeroAssets() {
 
       {/* Background Grid Line Frame Reversed (Bottom Left) */}
       <div
-        className="hidden lg:block absolute top-[510px] left-[-6%] w-[389px] z-0 pointer-events-none hero-float-grid"
+        className="hidden lg:block absolute top-[510px] left-[-6%] 2xl:left-[-4%] min-[1800px]:left-[-2%] min-[2100px]:left-[0%] w-[389px] z-0 pointer-events-none hero-float-grid"
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -47,7 +43,7 @@ export default function FloatingHeroAssets() {
 
       {/* Add New Glass Asset (Top Right) - Directional entry from top-right + 6s float loop */}
       <div
-        className="hidden lg:block absolute top-[95px] xl:top-[110px] right-[3%] xl:right-[5%] w-[390px] xl:w-[440px] z-50 pointer-events-none drop-shadow-2xl hero-float-top-right"
+        className="hidden lg:block absolute top-[95px] xl:top-[110px] 2xl:top-[115px] right-[3%] xl:right-[5%] min-[1800px]:right-[5%] min-[2100px]:right-[6%] w-[390px] xl:w-[440px] z-30 pointer-events-none drop-shadow-2xl hero-float-top-right"
       >
         <div className="float-loop-6s">
           <Image
@@ -71,7 +67,7 @@ export default function FloatingHeroAssets() {
 
       {/* Calendar Asset (Middle Left) - Directional entry from left + 7.5s float loop */}
       <div
-        className="hidden lg:block absolute top-[375px] xl:top-[385px] left-[-6%] xl:left-[-4%] w-[480px] xl:w-[540px] z-50 pointer-events-none drop-shadow-2xl hero-float-mid-left"
+        className="hidden lg:block absolute top-[375px] xl:top-[385px] left-[-6%] xl:left-[-4%] 2xl:left-[-3%] min-[1800px]:left-[0%] min-[2100px]:left-[2%] w-[480px] xl:w-[540px] z-30 pointer-events-none drop-shadow-2xl hero-float-mid-left"
       >
         <div className="float-loop-7s">
           <Image
@@ -87,7 +83,7 @@ export default function FloatingHeroAssets() {
 
       {/* Random Floating Cluster (Middle Right) - Directional entry from right + 9s float loop */}
       <div
-        className="hidden lg:block absolute top-[400px] xl:top-[415px] right-[-8%] xl:right-[-6%] w-[680px] xl:w-[760px] z-50 pointer-events-none drop-shadow-2xl hero-float-mid-right"
+        className="hidden lg:block absolute top-[400px] xl:top-[415px] right-[-8%] xl:right-[-6%] 2xl:right-[-4%] min-[1800px]:right-[-2%] min-[2100px]:right-[1%] w-[680px] xl:w-[760px] z-30 pointer-events-none drop-shadow-2xl hero-float-mid-right"
       >
         <div className="float-loop-9s">
           <Image
@@ -111,7 +107,7 @@ export default function FloatingHeroAssets() {
 
       {/* iPad Mini Mockup (Hero Centerpiece) - Production Scale & Position */}
       <div
-        className="hidden lg:block absolute top-[430px] xl:top-[440px] left-[34%] xl:left-[35%] z-[60] w-[125%] max-w-[1450px] pointer-events-none hero-float-centerpiece"
+        className="hidden lg:block absolute top-[430px] xl:top-[440px] 2xl:top-[500px] left-[34%] xl:left-[35%] 2xl:left-[calc(50%-216px)] z-20 w-[125%] max-w-[1450px] 2xl:max-w-[1500px] pointer-events-none hero-float-centerpiece"
       >
         <Image
           src="/images/floating/float-dashboard.webp"
@@ -157,7 +153,7 @@ export default function FloatingHeroAssets() {
 
       {/* 3D Decorative Element (Bottom Right) */}
       <div
-        className="hidden lg:block absolute top-[1140px] right-[5%] lg:top-[1140px] lg:right-[5%] z-0 pointer-events-none w-[600px] lg:w-[600px] hero-float-3d"
+        className="hidden lg:block absolute top-[1140px] right-[5%] 2xl:right-[5%] min-[2100px]:right-[6%] z-10 pointer-events-none w-[600px] lg:w-[600px] hero-float-3d"
       >
         <Image
           src="/images/floating/float-3d-element.png"

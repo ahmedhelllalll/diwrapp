@@ -83,7 +83,7 @@ export default function WalletFeatures({ dict }: WalletFeaturesProps) {
 
   return (
     <section aria-labelledby="wallet-features-heading" className="w-full pt-4 pb-28 md:pb-36 bg-white dark:bg-surface-1 transition-colors duration-300">
-      <div className="max-w-[1240px] mx-auto px-6">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20">
         {/* Top Row: Intro & Badge */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start mb-12"

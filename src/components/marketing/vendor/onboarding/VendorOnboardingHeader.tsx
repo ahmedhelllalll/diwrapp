@@ -42,7 +42,7 @@ export default function VendorOnboardingHeader({
 
   return (
     <header className="w-full bg-white dark:bg-[#080808] border-b border-[#EAECF0] dark:border-neutral-800 sticky top-0 z-[1000] transition-colors">
-      <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 py-4 flex items-center justify-between">
         {/* Start: Logo */}
         <Link
           href={`/${lang}`}

@@ -99,7 +99,7 @@ export default function PlatformFeaturesSection({
   return (
     <section className="relative w-full overflow-hidden bg-white dark:bg-[#080808] transition-colors duration-300 py-16 md:py-24">
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container relative z-10 w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20">
         {/* Subtle Top-Right Background Grid - Light Mode */}
         <motion.div
           aria-hidden="true"

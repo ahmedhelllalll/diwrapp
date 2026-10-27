@@ -93,42 +93,39 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
       <main className="bg-white dark:bg-surface-1 transition-colors duration-300">
         <section id="hero-section" className="hero-section relative pt-[88px] sm:pt-24 lg:pt-28 overflow-visible">
           
-          {/* Shared 1440px container on >=1536px (2xl) so text and floating assets share the same coordinate system */}
-          <div className="contents 2xl:block 2xl:relative 2xl:w-full 2xl:max-w-[1440px] 2xl:mx-auto">
-            {/* Floating Hero Background and Foreground Assets */}
-            <FloatingHeroAssets />
+          {/* Floating Hero Background and Foreground Assets */}
+          <FloatingHeroAssets />
 
-            <div className="hero-content min-h-0 lg:min-h-[clamp(620px,calc(100dvh-180px),780px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10 2xl:!z-30">
-              <div className="w-full max-w-[900px] mx-auto flex flex-col items-center text-center">
-                <div className="hero-anim-badge w-full flex justify-center">
-                  <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />
-                </div>
-
-                <div className="w-full flex justify-center">
-                  <h1 
-                    className="hero-title hero-lcp-title text-heading dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
-                    dangerouslySetInnerHTML={{ __html: l.hero.title }} 
-                  />
-                </div>
-
-                <div className="hero-anim-subtitle w-full flex justify-center">
-                  <p className="hero-subtitle text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[17px] leading-[1.65] rtl:leading-[1.8] max-w-[620px] mx-auto mb-8 relative z-40 text-center transition-colors">
-                    {l.hero.subtitle}
-                  </p>
-                </div>
-
-                <div className="hero-anim-cta w-full flex justify-center">
-                  <Link 
-                    href={`/${lang}/advertise`} 
-                    className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-40 transform-gpu"
-                  >
-                    {l.hero.discover || "Discover More"}
-                  </Link>
-                </div>
+          <div className="hero-content min-h-0 lg:min-h-[clamp(620px,calc(100dvh-180px),780px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10">
+            <div className="w-full max-w-[900px] mx-auto flex flex-col items-center text-center">
+              <div className="hero-anim-badge w-full flex justify-center">
+                <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />
               </div>
 
-              <MobileHeroMockup lang={lang} dictMarquee={l.marquee} />
+              <div className="w-full flex justify-center">
+                <h1 
+                  className="hero-title hero-lcp-title text-heading dark:text-[#F9FAFB] font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] font-bold text-[36px] sm:text-[48px] lg:text-[56px] leading-[1.12] tracking-[-0.03em] relative z-40" 
+                  dangerouslySetInnerHTML={{ __html: l.hero.title }} 
+                />
+              </div>
+
+              <div className="hero-anim-subtitle w-full flex justify-center">
+                <p className="hero-subtitle text-slate-600 dark:text-neutral-300 font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] text-[15px] sm:text-[17px] leading-[1.65] rtl:leading-[1.8] max-w-[620px] mx-auto mb-8 relative z-40 text-center transition-colors">
+                  {l.hero.subtitle}
+                </p>
+              </div>
+
+              <div className="hero-anim-cta w-full flex justify-center relative z-50">
+                <Link 
+                  href={`/${lang}/advertise`} 
+                  className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-50 transform-gpu"
+                >
+                  {l.hero.discover || "Discover More"}
+                </Link>
+              </div>
             </div>
+
+            <MobileHeroMockup lang={lang} dictMarquee={l.marquee} />
           </div>
           
           {/* Spacer to account for absolute dashboard image height */}

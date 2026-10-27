@@ -131,7 +131,7 @@ export const VendorFaq: React.FC<VendorFaqProps> = ({ dict, lang }) => {
 
   return (
     <section className="w-full relative overflow-hidden bg-transparent">
-      <div className="w-full max-w-[1240px] mx-auto relative px-4 sm:px-6 py-16 lg:py-24">
+      <div className="site-container w-full max-w-[2520px] mx-auto relative px-6 sm:px-10 xl:px-20 py-16 lg:py-24">
         {/* ========================================================================= */}
         {/* Background Grid (Desktop Only)                                            */}
         {/* ========================================================================= */}

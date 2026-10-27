@@ -78,7 +78,7 @@ export default function FaqSection({
   ];
 
   return (
-    <section id="faq" className="w-full py-20 sm:py-28 px-4 sm:px-6 relative z-10 overflow-visible">
+    <section id="faq" className="site-container w-full max-w-[2520px] mx-auto py-20 sm:py-28 px-6 sm:px-10 xl:px-20 relative z-10 overflow-visible">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         
         {/* Eyebrow Badge */}

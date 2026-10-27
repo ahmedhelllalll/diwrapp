@@ -58,7 +58,7 @@ export default function ComingSoonNavbar({
 
   return (
     <header className="w-full bg-white dark:bg-[#080808] border-b border-gray-100 dark:border-zinc-800/60 transition-colors duration-300 relative z-[1000]">
-      <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-5 sm:py-6 flex items-center justify-between">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 py-5 sm:py-6 flex items-center justify-between">
         {/* Left: Di_wrapp Logo */}
         <Link href={`/${lang}`} className="inline-flex items-center gap-2 select-none group shrink-0">
           <Image

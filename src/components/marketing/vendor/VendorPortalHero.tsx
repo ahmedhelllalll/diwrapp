@@ -91,7 +91,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
         {/* ========================================================================= */}
         {/* A. Header Stack (Server-rendered CSS-only rise matching Culture/Contact)  */}
         {/* ========================================================================= */}
-        <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+        <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 flex flex-col items-center text-center">
           {/* 1. Hero Badge */}
           <div className="hero-anim-badge flex justify-center mb-5">
             <Badge variant="outline-sm">
@@ -114,7 +114,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
         {/* ========================================================================= */}
         {/* B. Visual Media Card (LCP element with instant paint)                     */}
         {/* ========================================================================= */}
-        <div className="hero-lcp-mockup w-full max-w-[1240px] mx-auto px-4 sm:px-6 mb-10">
+        <div className="hero-lcp-mockup site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 mb-10">
           <div className="w-full relative aspect-[16/7.2] sm:aspect-[16/6.8] lg:aspect-[16/6.2] rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-sm">
             <Image
               src="/assets/vendor-portal-billboard.webp"
@@ -135,7 +135,7 @@ export const VendorPortalHero: React.FC<VendorPortalHeroProps> = ({ dict, lang =
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={containerVariants}
-          className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center"
+          className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 flex flex-col items-center text-center"
         >
           {/* Paragraph */}
           <motion.p

@@ -227,9 +227,9 @@ export default function AiCarouselSection({
             className="ai-carousel-content cursor-grab active:cursor-grabbing"
           >
             {/* Badge (Top Tag) */}
-            <motion.div variants={itemVariants} className="ai-carousel-badge">
-              <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon" aria-hidden="true" />
-              <span>{currentSlide.badge}</span>
+            <motion.div variants={itemVariants} className="ai-carousel-badge whitespace-nowrap">
+              <Sparks width={14} height={14} strokeWidth={1.75} className="ai-carousel-badge-icon shrink-0" aria-hidden="true" />
+              <span className="whitespace-nowrap">{currentSlide.badge}</span>
             </motion.div>
 
             {/* Heading (Slide Title) */}

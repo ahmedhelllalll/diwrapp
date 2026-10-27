@@ -91,7 +91,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
   ];
 
   return (
-    <section id="media-reach-section" className="pioneering-section w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 my-16 sm:my-24 lg:my-32 relative overflow-x-clip z-10">
+    <section id="media-reach-section" className="pioneering-section site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 my-16 sm:my-24 lg:my-32 relative overflow-x-clip z-10">
       
       {/* Dynamic Panorama Banner (Light vs Dark) - Higher z-index than map */}
       <motion.div 

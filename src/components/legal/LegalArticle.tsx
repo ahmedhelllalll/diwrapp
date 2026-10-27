@@ -59,7 +59,7 @@ export default function LegalArticle({ lang, document }: LegalArticleProps) {
   return (
     <article className="w-full bg-white dark:bg-[#080808] text-[#0f172a] dark:text-zinc-100 transition-colors duration-300 font-sans">
       {/* Top spacing to clear fixed header (h-[72px]) + breathing room */}
-      <div className="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-24">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 pt-28 sm:pt-32 pb-16 sm:pb-24">
         
         {/* =================================================================
             1. BREADCRUMB NAVIGATION

@@ -173,7 +173,7 @@ export const AskDiHero: React.FC<AskDiHeroProps> = ({ dict, lang = 'en' }) => {
 
   return (
     <section className="w-full bg-white dark:bg-[#080808] transition-colors duration-300 pt-24 pb-16 sm:pt-24 sm:pb-20 lg:py-24 overflow-hidden">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col items-center">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 flex flex-col items-center">
         {/* ========================================================================= */}
         {/* A. Header Stack                                                           */}
         {/* ========================================================================= */}
