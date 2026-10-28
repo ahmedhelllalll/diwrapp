@@ -15,10 +15,10 @@ const HEADER_OFFSET_Y = 88; // fixed header clearance — the only distance that
 
 /** Positions an asset on the design canvas. x = left edge, y = top, w/h = size (design px). */
 const place = (x: number, y: number, w: number, h?: number): React.CSSProperties => ({
-  left: `calc(50% + ${x - CANVAS_CENTER_X} * var(--u))`,
-  top: `calc(${HEADER_OFFSET_Y}px + ${y - HEADER_OFFSET_Y} * var(--u) + var(--hero-shift))`,
-  width: `calc(${w} * var(--u))`,
-  ...(h ? { height: `calc(${h} * var(--u))` } : {}),
+  left: `calc(50% + ${x - CANVAS_CENTER_X} * var(--u-art, var(--u)))`,
+  top: `calc(${HEADER_OFFSET_Y}px + ${y - HEADER_OFFSET_Y} * var(--u-art, var(--u)) + var(--hero-shift))`,
+  width: `calc(${w} * var(--u-art, var(--u)))`,
+  ...(h ? { height: `calc(${h} * var(--u-art, var(--u)))` } : {}),
 });
 
 export default function FloatingHeroAssets() {
@@ -33,7 +33,11 @@ export default function FloatingHeroAssets() {
         {/* Background Grid Line Frame (Top Right) */}
       <div
         className="hidden lg:block absolute z-0 pointer-events-none hero-float-grid"
-        style={place(1108.6, 175, 389)}
+        style={{
+          ...place(1108.6, 175, 389),
+          maskImage: "linear-gradient(to bottom, black 0%, black 45%, transparent 52%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 45%, transparent 52%)",
+        }}
       >
         <Image
           src="/images/floating/float-grid-frame.png"

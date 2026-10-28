@@ -129,7 +129,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           </div>
           
           {/* Spacer to account for absolute dashboard image height */}
-          <div className="hidden lg:block lg:h-[calc(980*var(--u))] w-full pointer-events-none" aria-hidden="true"></div>
+          <div className="hidden lg:block lg:h-[calc(980*var(--u-art,var(--u)))] w-full pointer-events-none" aria-hidden="true"></div>
         </section>
 
         {/* How It Works Section */}

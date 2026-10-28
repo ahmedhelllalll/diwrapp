@@ -278,9 +278,11 @@ html[lang="ar"] .landing-scope {
   /* Hero design-canvas unit: 1u == 1px on the 1440px reference canvas.
      Shrinks linearly below 1440px viewport width, floored at 0.8px (<= 1152px). */
   --u: clamp(0.8px, calc(100vw / 1440), 1px);
-  --hero-min-h: clamp(calc(620 * var(--u)), calc(100dvh - 180px), calc(780 * var(--u)));
+  --u-art: var(--u);
+  --u-text: var(--u);
+  --hero-min-h: clamp(calc(620 * var(--u-art)), calc(100dvh - 180px), calc(780 * var(--u-art)));
   /* Distance the text block sits below its short-viewport position; floating art follows it. */
-  --hero-shift: calc((var(--hero-min-h) - 620 * var(--u)) / 2);
+  --hero-shift: calc((var(--hero-min-h) - 620 * var(--u-art)) / 2);
 }
 
 @media (min-width: 640px) {
@@ -292,6 +294,19 @@ html[lang="ar"] .landing-scope {
 @media (min-width: 1280px) {
   .hero-section {
     padding-inline: 5rem;
+  }
+}
+
+/* Large screens (>1536px): scale and spread the floating artwork proportionally toward the
+   viewport edges, matching the reference laptop composition while keeping text refined and bounded. */
+@media (min-width: 1537px) {
+  .hero-section {
+    /* Art scales and spreads proportionally from 1536px up to a safe cap of 1.45 at ~2228px */
+    --u-art: clamp(1px, calc(100vw / 1536), 1.45px);
+    /* Text follows the same unit so text-to-art proportions match the laptop reference */
+    --u-text: var(--u-art);
+    --hero-min-h: clamp(calc(620 * var(--u-art)), calc(100dvh - 180px), calc(780 * var(--u-art)));
+    --hero-shift: calc((var(--hero-min-h) - 620 * var(--u-art)) / 2);
   }
 }
 
@@ -338,21 +353,21 @@ html[lang="ar"] .landing-scope {
    equal the previous constants (56 / 18 / 17 / 620 / 28 / 52 / 36 / 16). */
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: calc(56 * var(--u));
-    margin-bottom: calc(18 * var(--u));
+    font-size: calc(56 * var(--u-text));
+    margin-bottom: calc(18 * var(--u-text));
   }
 
   .hero-subtitle {
-    font-size: calc(17 * var(--u));
-    max-width: calc(620 * var(--u));
-    margin-bottom: calc(28 * var(--u));
+    font-size: calc(17 * var(--u-text));
+    max-width: calc(620 * var(--u-text));
+    margin-bottom: calc(28 * var(--u-text));
   }
 
   .hero-cta {
-    height: calc(52 * var(--u));
-    padding-inline: calc(36 * var(--u));
-    border-radius: calc(16 * var(--u));
-    font-size: calc(16 * var(--u));
+    height: calc(52 * var(--u-text));
+    padding-inline: calc(36 * var(--u-text));
+    border-radius: calc(16 * var(--u-text));
+    font-size: calc(16 * var(--u-text));
   }
 }
 
