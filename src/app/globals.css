@@ -277,6 +277,12 @@ html[lang="ar"] .landing-scope {
   margin: 0 auto;
   padding: 88px 20px 0;
   position: relative;
+  /* Hero design-canvas unit: 1u == 1px on the 1440px reference canvas.
+     Shrinks linearly below 1440px viewport width, floored at 0.8px (<= 1152px). */
+  --u: clamp(0.8px, calc(100vw / 1440), 1px);
+  --hero-min-h: clamp(calc(620 * var(--u)), calc(100dvh - 180px), calc(780 * var(--u)));
+  /* Distance the text block sits below its short-viewport position; floating art follows it. */
+  --hero-shift: calc((var(--hero-min-h) - 620 * var(--u)) / 2);
 }
 
 .hero-content {
@@ -314,6 +320,29 @@ html[lang="ar"] .landing-scope {
 
   .hero-section {
     padding-top: 88px;
+  }
+}
+
+/* Desktop hero (>=1024px): text scales with the same unit as the floating art so the
+   composition stays a similarity transform of the 1440px reference. At --u: 1px these
+   equal the previous constants (56 / 18 / 17 / 620 / 28 / 52 / 36 / 16). */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: calc(56 * var(--u));
+    margin-bottom: calc(18 * var(--u));
+  }
+
+  .hero-subtitle {
+    font-size: calc(17 * var(--u));
+    max-width: calc(620 * var(--u));
+    margin-bottom: calc(28 * var(--u));
+  }
+
+  .hero-cta {
+    height: calc(52 * var(--u));
+    padding-inline: calc(36 * var(--u));
+    border-radius: calc(16 * var(--u));
+    font-size: calc(16 * var(--u));
   }
 }
 

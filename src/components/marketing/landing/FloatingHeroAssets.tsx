@@ -4,6 +4,23 @@ import React from "react";
 import Image from "next/image";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
+/**
+ * Hero design canvas: every asset is authored on a 1440px-wide canvas (the approved
+ * laptop/reference composition) and scaled with the `--u` unit defined on `.hero-section`
+ * (1px at >=1440px viewport width, shrinking to 0.8px). Text and art use the same unit,
+ * so the composition scales as one piece and never introduces new overlaps.
+ */
+const CANVAS_CENTER_X = 720; // 1440 / 2
+const HEADER_OFFSET_Y = 88; // fixed header clearance — the only distance that does not scale
+
+/** Positions an asset on the design canvas. x = left edge, y = top, w/h = size (design px). */
+const place = (x: number, y: number, w: number, h?: number): React.CSSProperties => ({
+  left: `calc(50% + ${x - CANVAS_CENTER_X} * var(--u))`,
+  top: `calc(${HEADER_OFFSET_Y}px + ${y - HEADER_OFFSET_Y} * var(--u) + var(--hero-shift))`,
+  width: `calc(${w} * var(--u))`,
+  ...(h ? { height: `calc(${h} * var(--u))` } : {}),
+});
+
 export default function FloatingHeroAssets() {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
@@ -12,10 +29,11 @@ export default function FloatingHeroAssets() {
 
   return (
     <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-visible" dir="ltr" aria-hidden="true">
-      <div className="relative w-full max-w-[1440px] 2xl:max-w-[1800px] min-[2100px]:max-w-[2240px] 3xl:max-w-[2520px] h-full mx-auto pointer-events-none overflow-visible">
+      <div className="relative w-full h-full mx-auto pointer-events-none overflow-visible">
         {/* Background Grid Line Frame (Top Right) */}
       <div
-        className="hidden lg:block absolute top-[175px] right-[-6%] 2xl:right-[-4%] min-[1800px]:right-[-2%] min-[2100px]:right-[0%] w-[389px] z-0 pointer-events-none hero-float-grid"
+        className="hidden lg:block absolute z-0 pointer-events-none hero-float-grid"
+        style={place(1108.6, 175, 389)}
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -29,7 +47,8 @@ export default function FloatingHeroAssets() {
 
       {/* Background Grid Line Frame Reversed (Bottom Left) */}
       <div
-        className="hidden lg:block absolute top-[510px] left-[-6%] 2xl:left-[-4%] min-[1800px]:left-[-2%] min-[2100px]:left-[0%] w-[389px] z-0 pointer-events-none hero-float-grid"
+        className="hidden lg:block absolute z-0 pointer-events-none hero-float-grid"
+        style={place(-57.6, 510, 389)}
       >
         <Image
           src="/images/floating/float-grid-frame.png"
@@ -43,7 +62,8 @@ export default function FloatingHeroAssets() {
 
       {/* Add New Glass Asset (Top Right) - Directional entry from top-right + 6s float loop */}
       <div
-        className="hidden lg:block absolute top-[95px] xl:top-[110px] 2xl:top-[115px] right-[3%] xl:right-[5%] min-[1800px]:right-[5%] min-[2100px]:right-[6%] w-[390px] xl:w-[440px] z-30 pointer-events-none drop-shadow-2xl hero-float-top-right"
+        className="hidden lg:block absolute z-30 pointer-events-none drop-shadow-2xl hero-float-top-right"
+        style={place(928, 115, 440)}
       >
         <div className="float-loop-6s">
           <Image
@@ -51,7 +71,7 @@ export default function FloatingHeroAssets() {
             alt="Add New Glass"
             width={1310}
             height={734}
-            sizes="(min-width: 1280px) 440px, 390px"
+            sizes="440px"
             className="dark:hidden block w-full h-auto object-contain select-none"
           />
           <Image
@@ -59,7 +79,7 @@ export default function FloatingHeroAssets() {
             alt="Add New Glass Dark"
             width={1310}
             height={734}
-            sizes="(min-width: 1280px) 440px, 390px"
+            sizes="440px"
             className="hidden dark:block w-full h-auto object-contain select-none"
           />
         </div>
@@ -67,7 +87,8 @@ export default function FloatingHeroAssets() {
 
       {/* Calendar Asset (Middle Left) - Directional entry from left + 7.5s float loop */}
       <div
-        className="hidden lg:block absolute top-[375px] xl:top-[385px] left-[-6%] xl:left-[-4%] 2xl:left-[-3%] min-[1800px]:left-[0%] min-[2100px]:left-[2%] w-[480px] xl:w-[540px] z-30 pointer-events-none drop-shadow-2xl hero-float-mid-left"
+        className="hidden lg:block absolute z-30 pointer-events-none drop-shadow-2xl hero-float-mid-left"
+        style={place(-43.2, 385, 540)}
       >
         <div className="float-loop-7s">
           <Image
@@ -75,7 +96,7 @@ export default function FloatingHeroAssets() {
             alt="Calendar Asset"
             width={1920}
             height={1080}
-            sizes="(min-width: 1280px) 540px, 480px"
+            sizes="540px"
             className="w-full h-auto object-contain -scale-x-100 select-none"
           />
         </div>
@@ -83,7 +104,8 @@ export default function FloatingHeroAssets() {
 
       {/* Random Floating Cluster (Middle Right) - Directional entry from right + 9s float loop */}
       <div
-        className="hidden lg:block absolute top-[400px] xl:top-[415px] right-[-8%] xl:right-[-6%] 2xl:right-[-4%] min-[1800px]:right-[-2%] min-[2100px]:right-[1%] w-[680px] xl:w-[760px] z-30 pointer-events-none drop-shadow-2xl hero-float-mid-right"
+        className="hidden lg:block absolute z-30 pointer-events-none drop-shadow-2xl hero-float-mid-right"
+        style={place(737.6, 415, 760)}
       >
         <div className="float-loop-9s">
           <Image
@@ -91,7 +113,7 @@ export default function FloatingHeroAssets() {
             alt="Random Floating Cluster"
             width={1920}
             height={1080}
-            sizes="(min-width: 1280px) 760px, 680px"
+            sizes="760px"
             className="dark:hidden block w-full h-auto object-contain select-none"
           />
           <Image
@@ -99,22 +121,23 @@ export default function FloatingHeroAssets() {
             alt="Random Floating Cluster Dark"
             width={1920}
             height={1080}
-            sizes="(min-width: 1280px) 760px, 680px"
+            sizes="760px"
             className="hidden dark:block w-full h-auto object-contain select-none"
           />
         </div>
       </div>
 
-      {/* iPad Mini Mockup (Hero Centerpiece) - Production Scale & Position */}
+      {/* iPad Mini Mockup (Hero Centerpiece) - x is the image CENTER; the image keeps its own translateX(-50%) rotate(25deg) */}
       <div
-        className="hidden lg:block absolute top-[430px] xl:top-[440px] 2xl:top-[500px] left-[34%] xl:left-[35%] 2xl:left-[calc(50%-216px)] z-20 w-[125%] max-w-[1450px] 2xl:max-w-[1500px] pointer-events-none hero-float-centerpiece"
+        className="hidden lg:block absolute z-20 pointer-events-none hero-float-centerpiece"
+        style={place(504, 500, 1500)}
       >
         <Image
           src="/images/floating/float-dashboard.webp"
           alt="iPad Mini Mockup"
           width={3000}
           height={2250}
-          sizes="(min-width: 1280px) 1200px, (min-width: 1024px) 1080px, 100vw"
+          sizes="1500px"
           className="w-full h-auto object-contain drop-shadow-2xl select-none"
           style={{ transform: "translateX(-50%) rotate(25deg)" }}
         />
@@ -122,8 +145,9 @@ export default function FloatingHeroAssets() {
 
       {/* Bottom-Left Adaptive Faded Grid Pattern (Behind Tablet - 50px Cells) */}
       <div
-        className="hidden lg:block absolute top-[1200px] left-[2.5%] lg:top-[1200px] lg:left-[2.5%] z-0 w-[440px] lg:w-[440px] h-[440px] lg:h-[440px] pointer-events-none select-none overflow-hidden hero-float-grid"
+        className="hidden lg:block absolute z-0 pointer-events-none select-none overflow-hidden hero-float-grid"
         style={{
+          ...place(36, 1200, 440, 440),
           maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 75%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 75%)",
         }}
@@ -153,7 +177,8 @@ export default function FloatingHeroAssets() {
 
       {/* 3D Decorative Element (Bottom Right) */}
       <div
-        className="hidden lg:block absolute top-[1140px] right-[5%] 2xl:right-[5%] min-[2100px]:right-[6%] z-10 pointer-events-none w-[600px] lg:w-[600px] hero-float-3d"
+        className="hidden lg:block absolute z-10 pointer-events-none hero-float-3d"
+        style={place(768, 1140, 600)}
       >
         <Image
           src="/images/floating/float-3d-element.png"
@@ -175,8 +200,9 @@ export default function FloatingHeroAssets() {
 
       {/* Native Adaptive Faded Grid Pattern (Replaces Decorative Element 527) */}
       <div
-        className="hidden lg:block absolute top-[800px] right-[2.5%] lg:top-[800px] lg:right-[2.5%] z-10 w-[380px] lg:w-[380px] h-[380px] lg:h-[380px] pointer-events-none select-none overflow-hidden hero-float-grid"
+        className="hidden lg:block absolute z-10 pointer-events-none select-none overflow-hidden hero-float-grid"
         style={{
+          ...place(1024, 800, 380, 380),
           maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 75%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 75%)",
         }}

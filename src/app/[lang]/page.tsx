@@ -96,7 +96,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           {/* Floating Hero Background and Foreground Assets */}
           <FloatingHeroAssets />
 
-          <div className="hero-content min-h-0 lg:min-h-[clamp(620px,calc(100dvh-180px),780px)] pt-4 pb-0 lg:pb-8 flex flex-col items-center justify-center w-full relative z-10">
+          <div className="hero-content min-h-0 lg:min-h-[var(--hero-min-h)] pt-4 lg:pt-[calc(16*var(--u))] pb-0 lg:pb-[calc(32*var(--u))] flex flex-col items-center justify-center w-full relative z-40">
             <div className="w-full max-w-[900px] mx-auto flex flex-col items-center text-center">
               <div className="hero-anim-badge w-full flex justify-center">
                 <HeroEyebrowBadge text={l.hero.eyebrow || l.hero.badge} />
@@ -118,7 +118,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
               <div className="hero-anim-cta w-full flex justify-center relative z-50">
                 <Link 
                   href={`/${lang}/advertise`} 
-                  className="inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-50 transform-gpu"
+                  className="hero-cta inline-flex items-center justify-center h-[52px] px-9 rounded-[16px] bg-brand text-white font-medium text-[16px] tracking-[-0.01em] shadow-[0_4px_12px_rgba(0,102,255,0.25)] hover:shadow-[0_8px_20px_rgba(0,102,255,0.35)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer font-['Lufga',sans-serif] rtl:font-['Cairo',sans-serif] relative z-50 transform-gpu"
                 >
                   {l.hero.discover || "Discover More"}
                 </Link>
@@ -129,7 +129,7 @@ export default async function LandingPage(props: { params: Promise<{ lang: strin
           </div>
           
           {/* Spacer to account for absolute dashboard image height */}
-          <div className="hidden lg:block lg:h-[980px] w-full pointer-events-none" aria-hidden="true"></div>
+          <div className="hidden lg:block lg:h-[calc(980*var(--u))] w-full pointer-events-none" aria-hidden="true"></div>
         </section>
 
         {/* How It Works Section */}
