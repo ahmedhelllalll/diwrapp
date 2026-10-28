@@ -17,16 +17,22 @@
 }
 
 .advertise-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .advertise-container {
-    padding: 0 40px;
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .advertise-container {
+    padding-inline: 5rem;
   }
 }
 

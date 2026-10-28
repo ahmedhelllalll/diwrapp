@@ -144,7 +144,7 @@ export default function HowItWorksSection({ dict, lang = 'en' }: HowItWorksSecti
       </motion.div>
 
       {/* 3 & 4. Cards Structure with Staggered Entrance and Smooth In-Place Crossfade */}
-      <div className="w-full max-w-[1100px] mx-auto">
+      <div className="w-full mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {currentCards.map((card, idx) => (
             <motion.div

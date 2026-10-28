@@ -43,7 +43,7 @@ export default async function ContactPage(props: { params: Promise<{ lang: strin
         />
 
         {/* Main Content Container */}
-        <div className="contact-main-container relative z-10 px-4 sm:px-6 md:px-8">
+        <div className="contact-main-container relative z-10">
           {/* Hero & Breadcrumb */}
           <ContactHero
             lang={lang}

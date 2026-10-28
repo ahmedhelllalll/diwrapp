@@ -128,18 +128,29 @@
   font-family: var(--font-cairo), sans-serif;
 }
 
-/* Grid Layout for the Cards */
+/* Grid Layout for the Cards - Aligned to site-container (2520px Airbnb standard) */
 .about-cards-container {
-  max-width: 1380px;
-  /* Matched perfectly to header-container */
-  margin: 0 auto;
-  padding: 0 40px 4rem;
-  /* Matched perfectly to header padding */
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  padding-bottom: 4rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
   position: relative;
   z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .about-cards-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-cards-container {
+    padding-inline: 5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -337,7 +348,8 @@
   }
 
   .about-cards-container {
-    padding: 0 24px 3.5rem;
+    padding-inline: 2.5rem;
+    padding-bottom: 3.5rem;
     gap: 20px;
   }
 
@@ -402,7 +414,8 @@
   }
 
   .about-cards-container {
-    padding: 0 16px 2.5rem;
+    padding-inline: 1.5rem;
+    padding-bottom: 2.5rem;
     gap: 16px;
   }
 
@@ -481,14 +494,20 @@
 }
 
 .about-overview-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 16px;
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .about-overview-container {
-    padding: 0 24px;
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-overview-container {
+    padding-inline: 5rem;
   }
 }
 
@@ -663,9 +682,21 @@
 }
 
 .about-features-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 40px;
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .about-features-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-features-container {
+    padding-inline: 5rem;
+  }
 }
 
 /* Header */
@@ -1201,14 +1232,20 @@
 }
 
 .testimonials-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .testimonials-container {
-    padding: 0 40px;
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .testimonials-container {
+    padding-inline: 5rem;
   }
 }
 

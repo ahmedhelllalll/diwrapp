@@ -86,23 +86,19 @@ body {
 .site-container {
   width: 100%;
   max-width: 2520px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem; /* 24px - Mobile */
-  padding-right: 1.5rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* 24px - Mobile */
 }
 
 @media (min-width: 640px) {
   .site-container {
-    padding-left: 2.5rem; /* 40px - Tablet */
-    padding-right: 2.5rem;
+    padding-inline: 2.5rem; /* 40px - Tablet */
   }
 }
 
 @media (min-width: 1280px) {
   .site-container {
-    padding-left: 5rem; /* 80px - Large desktop / 2K+ Airbnb standard */
-    padding-right: 5rem;
+    padding-inline: 5rem; /* 80px - Large desktop / 2K+ Airbnb standard */
   }
 }
 
@@ -273,9 +269,11 @@ html[lang="ar"] .landing-scope {
 .hero-section {
   text-align: center;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 88px 20px 0;
+  max-width: 2520px;
+  margin-inline: auto;
+  padding-top: 88px;
+  padding-bottom: 0;
+  padding-inline: 1.5rem;
   position: relative;
   /* Hero design-canvas unit: 1u == 1px on the 1440px reference canvas.
      Shrinks linearly below 1440px viewport width, floored at 0.8px (<= 1152px). */
@@ -283,6 +281,18 @@ html[lang="ar"] .landing-scope {
   --hero-min-h: clamp(calc(620 * var(--u)), calc(100dvh - 180px), calc(780 * var(--u)));
   /* Distance the text block sits below its short-viewport position; floating art follows it. */
   --hero-shift: calc((var(--hero-min-h) - 620 * var(--u)) / 2);
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section {
+    padding-inline: 5rem;
+  }
 }
 
 .hero-content {

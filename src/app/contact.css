@@ -14,21 +14,21 @@
 
 .contact-main-container {
   max-width: 2520px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
   .contact-main-container {
-    padding: 0 2.5rem;
+    padding-inline: 2.5rem;
   }
 }
 
 @media (min-width: 1280px) {
   .contact-main-container {
-    padding: 0 5rem;
+    padding-inline: 5rem;
   }
 }
 

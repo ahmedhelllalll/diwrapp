@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MarketingLoading() {
   return (
-    <main className="w-full flex-grow pt-28 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-[1380px] mx-auto animate-pulse">
+    <main className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20 pt-28 sm:pt-32 pb-16 animate-pulse">
       {/* Hero Rhythm Placeholder */}
       <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         {/* Pill Badge */}

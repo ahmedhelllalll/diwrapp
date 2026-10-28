@@ -53,7 +53,7 @@ export default function BentoShowcaseSection({
 
   return (
     <section className="relative w-full bg-white dark:bg-[#080808] transition-colors duration-300 py-12 md:py-16">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <div className="site-container w-full max-w-[2520px] mx-auto px-6 sm:px-10 xl:px-20">
         {/* 2-Row Structural Architecture */}
         <div className="flex flex-col gap-6">
           {/* Row 1 (Top Row — 2 Equal Columns): Card 1 (Left) & Card 2 (Right) */}

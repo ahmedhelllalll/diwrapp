@@ -306,7 +306,7 @@ export const WhyGetDiWrapped: React.FC<WhyGetDiWrappedProps> = ({ dict, lang = '
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="site-container w-full max-w-[2520px] mx-auto rounded-[16px] border vendor-banner-card backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
+          className="w-full rounded-[16px] border vendor-banner-card backdrop-blur-sm p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xs relative z-10"
         >
           {/* Content Stack (Left) */}
           <div className="flex flex-col items-start text-start">

@@ -99,7 +99,7 @@ export default function PioneeringSection({ dict, lang = "en" }: PioneeringSecti
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.85, ease: appleEasing }}
-        className="relative z-20 w-full max-w-7xl mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20"
+        className="relative z-20 w-full mx-auto overflow-hidden mb-8 sm:mb-12 lg:mb-20"
       >
         {/* Light Mode Banner */}
         <div className="block dark:hidden relative w-full h-[160px] sm:h-[220px] md:h-[280px] lg:h-[460px] lg:aspect-auto">
